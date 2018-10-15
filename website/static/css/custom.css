@@ -1,0 +1,34 @@
+/* your custom css */
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+
+@media only screen and (max-width: 1023px) {
+}
+
+@media only screen and (min-width: 1400px) {
+}
+
+@media only screen and (min-width: 1500px) {
+}
+
+.fixedHeaderContainer, .nav-footer {
+    background: $secondaryColor;
+}
+
+.toc .toggleNav ul li a:hover  {
+    text-decoration: none;
+}
+
+.navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover, .navigationSlider .slidingNav ul li.siteNavItemActive a, .navigationSlider .slidingNav ul li.siteNavGroupActive a {
+    background: none;
+    color: $primaryColor;
+    text-decoration: none;
+}
+
+.mainContainer a:hover, .onPageNav a:hover {
+    text-decoration: underline;
+}

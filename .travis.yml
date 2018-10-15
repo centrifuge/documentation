@@ -1,0 +1,20 @@
+# .travis.yml
+language: node_js
+node_js:
+- '8'
+branches:
+  only:
+  - master
+cache:
+  yarn: true
+
+
+jobs:
+  include:
+  - stage: Deploy docker image
+    if: (NOT type IN (pull_request)) AND ((branch = develop) OR (branch = master))
+    script:
+    - git config --global user.name "${GH_NAME}"
+    - git config --global user.email "${GH_EMAIL}"
+    - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
+    - cd website && yarn install && GIT_USER="${GH_NAME}" yarn run publish-gh-pages
