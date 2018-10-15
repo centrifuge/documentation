@@ -14,7 +14,6 @@ script:
 jobs:
   include:
   - stage: Deploy
-    if: (NOT type IN (pull_request)) AND ((branch = develop) OR (branch = master))
     deploy:
       provider: pages
       skip-cleanup: true
