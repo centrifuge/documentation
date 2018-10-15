@@ -1,14 +1,15 @@
-# .travis.yml
 language: node_js
 node_js:
 - '8'
 cache:
   yarn: true
+script:
+- cd website && yarn install
 jobs:
   include:
     - stage: Test
     script:
-    - cd website && yarn install && yarn build
+      yarn build
     - stage: Deploy
     script:
     - git config --global user.name "${GH_NAME}"
