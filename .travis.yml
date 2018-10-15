@@ -9,7 +9,7 @@ cache:
   yarn: true
 
 script:
-- cd website && yarn install yarn build
+- cd website && yarn install && yarn build
 
 jobs:
   include:
