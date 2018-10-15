@@ -8,12 +8,13 @@ branches:
 cache:
   yarn: true
 
-script:
-- cd website && yarn install && yarn build
 
 jobs:
   include:
-  - stage: Deploy
+    - stage: Test
+    script:
+    - cd website && yarn install && yarn build
+    - stage: Deploy
     script:
     - git config --global user.name "${GH_NAME}"
     - git config --global user.email "${GH_EMAIL}"
