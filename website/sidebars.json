@@ -1,0 +1,12 @@
+{
+  "Understanding Centrifuge": {
+    "What is centrifuge?": ["understanding-centrifuge/doc1"],
+    "Terms Contracts": ["understanding-centrifuge/doc2"],
+    "Architecture Overview": ["understanding-centrifuge/doc3"]
+  },
+  "Api Reference": {
+    "Cent Node API": ["api-reference/doc1", "api-reference/doc1"]
+  },
+  "FAQ": ["faq/doc1", "faq/some-other-name"]
+
+}
