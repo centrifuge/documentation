@@ -2,13 +2,8 @@
 language: node_js
 node_js:
 - '8'
-branches:
-  only:
-  - master
 cache:
   yarn: true
-
-
 jobs:
   include:
     - stage: Test
