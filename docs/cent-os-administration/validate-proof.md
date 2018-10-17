@@ -1,12 +1,51 @@
 ---
-id: doc1
-title: Latin-ish
-sidebar_label: Example Page
+id: validate-proof
+title: HowTo Validate Proof
 ---
 
 Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
 
 ## Lorem
+
+```bash
+root-directory
+├── docs
+└── website
+    ├── blog
+    ├── core
+    │   └── Footer.js
+    ├── package.json
+    ├── pages
+    │   ├── index.js
+    │   ├── users.js
+    │   └── help.js
+    ├── sidebars.json
+    ├── siteConfig.js
+    └── static
+```
+
+```jsx
+const React = require('react');
+
+class Footer extends React.Component {
+  render() {
+    return null;
+  }
+}
+
+module.exports = Footer;
+```
+
+```json
+{
+  "identifier": "string",
+  "type": "string",
+  "fields": [
+    "string"
+  ]
+}
+
+```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.
 

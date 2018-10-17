@@ -10,91 +10,92 @@
 
 // List of projects/orgs using your project for the users page.
 const users = [
-  {
-    caption: 'User1',
-    // You will need to prepend the image path with your baseUrl
-    // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-    image: '/img/docusaurus.svg',
-    infoLink: 'https://www.facebook.com',
-    pinned: true,
-  },
+    {
+        caption: 'User1',
+        // You will need to prepend the image path with your baseUrl
+        // if it is not '/', like: '/test-site/img/docusaurus.svg'.
+        image: '/img/docusaurus.svg',
+        infoLink: 'https://www.facebook.com',
+        pinned: true,
+    },
 ];
 
 const siteConfig = {
-  title: 'Centrifuge Developers', // Title for your website.
-  tagline: '',
-  url: 'https://centrifuge.github.io', // Your website URL
-  baseUrl: '/developer.centrifuge.io/', // Base URL for your project */
-  // For github.io type URLs, you would set the url and baseUrl like:
-  //   url: 'https://facebook.github.io',
-  //   baseUrl: '/test-site/',
+    title: 'Developer', // Title for your website.
+    tagline: '',
+    url: 'http://develoer.centrifuge.io', // Your website URL
+    baseUrl: '/', // Base URL for your project */
+    // For github.io type URLs, you would set the url and baseUrl like:
+    //   url: 'https://facebook.github.io',
+    //   baseUrl: '/test-site/',
 
-  // Used for publishing and more
-  projectName: 'developer.centrifuge.io',
-  organizationName: 'centrifuge',
-  // For top-level user or org sites, the organization is still the same.
-  // e.g., for the https://JoelMarcey.github.io site, it would be set like...
-  //   organizationName: 'JoelMarcey'
+    // Used for publishing and more
+    projectName: 'centrifuge',
+    organizationName: 'centrifuge',
+    // For top-level user or org sites, the organization is still the same.
+    // e.g., for the https://JoelMarcey.github.io site, it would be set like...
+    //   organizationName: 'JoelMarcey'
 
-  // For no header links in the top nav bar -> headerLinks: [],
-  headerLinks: [
-    {doc: 'understanding-centrifuge/doc1', label: 'Understanding Centrifuge OS'},
-    {doc: 'api-reference/doc1', label: 'API Reference'},
-    {doc: 'faq/doc1', label: 'FAQ'},
-    {page: 'help', label: 'Help'}
-  ],
-
-  // If you have users set above, you add it here:
-  users,
-
-  /* path to images for header/footer */
-  headerIcon: 'img/centrifuge_mark_white.svg',
-  footerIcon: 'img/centrifuge_mark_white.svg',
-  favicon: 'img/favicon.png',
-
-  /* Colors for website */
-  colors: {
-    primaryColor: '#FF9F00',
-    secondaryColor: '#212121',
-  },
-
-  /* Custom fonts for website */
-  /*
-  fonts: {
-    myFont: [
-      "Times New Roman",
-      "Serif"
+    // For no header links in the top nav bar -> headerLinks: [],
+    headerLinks: [
+        {doc: 'introduction/centrifuge', label: 'Docs'},
+        {href: 'https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2', label: 'Centrifuge Node API'},
+        {href: 'https://github.com/centrifuge', label: 'GitHub'}
     ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
-  },
-  */
 
-  // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+    // If you have users set above, you add it here:
+    users,
 
-  highlight: {
-    // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default',
-  },
+    /* path to images for header/footer */
+    headerIcon: 'img/logo@2x.png',
+    footerIcon: 'img/centrifuge_mark_white.svg',
+    favicon: 'img/favicon.png',
 
-  // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+    /* Colors for website */
+    colors: {
+        primaryColor: '#FF9F00',
+        secondaryColor: '#212121',
+    },
 
-  // On page navigation for the current documentation page.
-  onPageNav: 'separate',
-  // No .html extensions for paths.
-  cleanUrl: true,
+    /* Custom fonts for website */
+    /*
+    fonts: {
+      myFont: [
+        "Times New Roman",
+        "Serif"
+      ],
+      myOtherFont: [
+        "-apple-system",
+        "system-ui"
+      ]
+    },
+    */
 
-  // Open Graph and Twitter card images.
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
+    // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
+    copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+    usePrism: ['jsx'],
 
-  // You may provide arbitrary config keys to be used as needed by your
-  // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
+    highlight: {
+        // Highlight.js theme to use for syntax highlighting in code blocks.
+        theme: 'atom-one-dark',
+    },
+
+    // Add custom scripts here that would be placed in <script> tags.
+    scripts: ['https://buttons.github.io/buttons.js'],
+
+    // On page navigation for the current documentation page.
+    onPageNav: 'separate',
+    // No .html extensions for paths.
+    cleanUrl: true,
+
+    // Open Graph and Twitter card images.
+    ogImage: 'img/docusaurus.png',
+    twitterImage: 'img/docusaurus.png',
+
+    // You may provide arbitrary config keys to be used as needed by your
+    // template. For example, if you need your repo's URL...
+    //   repoUrl: 'https://github.com/facebook/test-site',
+    wrapPagesHTML: true,
 };
 
 module.exports = siteConfig;
