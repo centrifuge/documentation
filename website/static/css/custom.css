@@ -32,3 +32,14 @@
 .mainContainer a:hover, .onPageNav a:hover {
     text-decoration: underline;
 }
+
+.fixedHeaderContainer header {
+    padding: 12px 0px;
+}
+
+.fixedHeaderContainer header .headerTitleWithLogo {
+    margin-top: 6.5px;
+    margin-left: -5px;
+    font-weight: 400;
+    opacity: 0.7;
+}
