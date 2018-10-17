@@ -23,14 +23,14 @@ const users = [
 const siteConfig = {
     title: 'Developer', // Title for your website.
     tagline: '',
-    url: 'http://develoer.centrifuge.io', // Your website URL
+    url: 'http://developer.centrifuge.io', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
     //   baseUrl: '/test-site/',
 
     // Used for publishing and more
-    projectName: 'centrifuge',
+    projectName: 'developer.centrifuge.io',
     organizationName: 'centrifuge',
     // For top-level user or org sites, the organization is still the same.
     // e.g., for the https://JoelMarcey.github.io site, it would be set like...
