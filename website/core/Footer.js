@@ -45,19 +45,15 @@ class Footer extends React.Component {
             </a>
           </div>
           <div>
-            <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
-            </a>
+            <h5>Follow us</h5>
             <a
-              href="http://stackoverflow.com/questions/tagged/"
+              href="https://medium.com/centrifuge"
               target="_blank"
               rel="noreferrer noopener">
-              Stack Overflow
+              Medium
             </a>
-            <a href="https://discordapp.com/">Project Chat</a>
             <a
-              href="https://twitter.com/"
+              href="https://twitter.com/centrifuge"
               target="_blank"
               rel="noreferrer noopener">
               Twitter
@@ -65,13 +61,12 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://github.com/centrifuge" target="_blank" rel="noreferrer noopener">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
+              data-count-href="/centrifuge/go-centrifuge/stargazers"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">

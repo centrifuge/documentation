@@ -77,7 +77,7 @@ const siteConfig = {
     */
 
     // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-    copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+    copyright: `Copyright © ${new Date().getFullYear()} Centrifuge Inc`,
     usePrism: ['jsx'],
 
     highlight: {

@@ -1,6 +1,6 @@
 ---
 id: code-of-conduct
-title: Centrifuge Code of Conduct
+title: Code of Conduct
 ---
 Creating a new system for the global financial supply chain is only possible through the collaboration of a global ecosystem and community of companies, groups, organizations, and individuals. 
 We want to come together to exchange ideas and build Centrifuge as an inclusive, welcoming, and safe community of collaborators, operators, investors, and users. Harmful or discriminating behavior by anyone will not be tolerated.
