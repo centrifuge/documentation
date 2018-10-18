@@ -9,7 +9,7 @@ title: Prerequisites
          ```
         $ sudo apt-get install jq
         ```
-     * Install the truffle framework:
+     * Install the `truffle` framework:
          ```
         $ npm install -g truffle@4.0.4
         ```
@@ -29,7 +29,7 @@ title: Prerequisites
          ```
         $ brew install jq
         ```
-      * Install the truffle framework:
+      * Install the `truffle` framework:
          ```
         $ npm install -g truffle@4.0.4
         ```
@@ -53,6 +53,9 @@ title: Prerequisites
     $ sudo apt-get install ethereum
     ```
 4. Clone the `go-centrifuge` repository:
+    ```
+    # mkdir -p $GOPATH/src/github.com/centrifuge/go-centrifuge
+    ```
      ```
     # git clone git@github.com:centrifuge/go-centrifuge.git $GOPATH/src/github.com/centrifuge/go-centrifuge
     ```
