@@ -39,7 +39,6 @@ const siteConfig = {
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
         {doc: 'overview/introduction', label: 'Docs'},
-        {doc: 'overview/code-of-conduct', label: 'Code of conduct'},
         {
             href: 'https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2',
             label: 'Centrifuge Node API',
@@ -100,7 +99,7 @@ const siteConfig = {
 
     // You may provide arbitrary config keys to be used as needed by your
     // template. For example, if you need your repo's URL...
-    //   repoUrl: 'https://github.com/facebook/test-site',
+    repoUrl: 'https://github.com/centrifuge/go-centrifuge',
     wrapPagesHTML: true,
 };
 

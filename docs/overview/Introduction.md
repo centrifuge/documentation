@@ -9,7 +9,7 @@ Centrifuge is an open, decentralized operating system which provides a method to
 
 Centrifuge OS provides a censorship resistant way to verify the authenticity of data that is transacted through and stored in it.
 
-## Ethereuem
+## Ethereum
 
 Ethereum is a decentralized platform that runs smart contracts. Smart contracts are applications that run exactly as programmed without any possibility of downtime, censorship, fraud or third-party interference. Functionality deployed on Ethereum acts as the primary and trusted entry point and anchor for the other Centrifuge OS components. The censorship­ resistance and decentralized nature of the platform provide trustless lookups for Centrifuge OS users. Ethereum allows users to publish identity, reputation management, and document information through Centrifuge OS Smart Contracts without relying on any Third party. Furthermore, Ethereum’s architecture provides a well-tested system for the issuance of
 tokens to incentivize honest participation within the OS, issuance of tokens directly related to business documents, as well as decentralized governance layers of the OS at large.
