@@ -1,10 +1,10 @@
 {
   "Docs": {
-    "Introduction": [
-      "introduction/centrifuge",
-      "introduction/centrifuge-identity",
-      "introduction/centrifuge-node",
-      "introduction/ethereum"
+    "Overview": [
+      "overview/introduction",
+      "overview/centrifuge-identity",
+      "overview/centrifuge-node",
+      "overview/ethereum"
     ],
     "Getting Started": [
       "getting-started/prerequisites",

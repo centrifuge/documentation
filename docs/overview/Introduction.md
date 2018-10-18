@@ -1,4 +1,7 @@
-id: Introduction
+---
+id: introduction
+title: Introduction
+---
 
 # Introduction
 
