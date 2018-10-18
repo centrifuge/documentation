@@ -23,7 +23,7 @@ const users = [
 const siteConfig = {
     title: 'Developer', // Title for your website.
     tagline: '',
-    url: 'http://developer.centrifuge.io', // Your website URL
+    url: 'https://developer.centrifuge.io/', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
