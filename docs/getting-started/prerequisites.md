@@ -2,7 +2,6 @@
 id: prerequisites
 title: Prerequisites
 ---
- # Prerequisites
  1. Make sure you have installed the following packages. Based on your OS, the commands are as follows:
       **Linux**:
      * Install the `jq` package:
