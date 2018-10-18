@@ -2,9 +2,7 @@
   "Docs": {
     "Overview": [
       "overview/introduction",
-      "overview/centrifuge-identity",
-      "overview/centrifuge-node",
-      "overview/ethereum"
+      "overview/more-info"
     ],
     "Getting Started": [
       "getting-started/prerequisites",
