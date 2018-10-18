@@ -34,7 +34,7 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('getting-started/prerequisites.html', this.props.language)}>
+            <a href={this.docUrl('getting-started/prerequisites')}>
               Getting Started
             </a>
             <a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2"
@@ -42,7 +42,7 @@ class Footer extends React.Component {
               rel="noreferrer noopener">
               Centrifuge Node Api
             </a>
-            <a href={this.docUrl('overview/code-of-conduct.html', this.props.language)}>
+            <a href={this.docUrl('overview/code-of-conduct')}>
               Code of conduct
             </a>
           </div>
