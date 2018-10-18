@@ -43,7 +43,7 @@ class Footer extends React.Component {
               Centrifuge Node Api
             </a>
             <a href={this.docUrl('overview/code-of-conduct.html', this.props.language)}>
-              ]Code of conduct
+              Code of conduct
             </a>
           </div>
           <div>
@@ -64,12 +64,11 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <a href="https://github.com/centrifuge" target="_blank" rel="noreferrer noopener">GitHub</a>
-          <!-- Place this tag where you want the button to render. -->
             <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="https://github.com/centrifuge/go-centrifuge"
+              data-count-href="/centrifuge/go-centrifuge/stargazers"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
