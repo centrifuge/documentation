@@ -38,7 +38,7 @@ const siteConfig = {
 
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
-        {doc: 'introduction/centrifuge', label: 'Docs'},
+        {doc: 'overview/introduction', label: 'Docs'},
         {href: 'https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2', label: 'Centrifuge Node API'},
         {href: 'https://github.com/centrifuge', label: 'GitHub'}
     ],
