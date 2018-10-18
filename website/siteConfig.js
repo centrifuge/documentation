@@ -35,12 +35,17 @@ const siteConfig = {
     // For top-level user or org sites, the organization is still the same.
     // e.g., for the https://JoelMarcey.github.io site, it would be set like...
     //   organizationName: 'JoelMarcey'
-    cname:"developer.centrifuge.io",
+    cname: "developer.centrifuge.io",
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
         {doc: 'overview/introduction', label: 'Docs'},
-        {href: 'https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2', label: 'Centrifuge Node API'},
-        {href: 'https://github.com/centrifuge', label: 'GitHub'}
+        {doc: 'overview/code-of-conduct', label: 'Code of conduct'},
+        {
+            href: 'https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2',
+            label: 'Centrifuge Node API',
+            external: true
+        },
+        {href: 'https://github.com/centrifuge', label: 'GitHub', external: true}
     ],
 
     // If you have users set above, you add it here:
@@ -87,6 +92,7 @@ const siteConfig = {
     onPageNav: 'separate',
     // No .html extensions for paths.
     cleanUrl: true,
+    scrollToTop:true,
 
     // Open Graph and Twitter card images.
     ogImage: 'img/docusaurus.png',
