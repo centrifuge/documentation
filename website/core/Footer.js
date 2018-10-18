@@ -34,14 +34,16 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
-              Getting Started (or other categories)
+            <a href={this.docUrl('getting-started/prerequisites.html', this.props.language)}>
+              Getting Started
             </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
-              Guides (or other categories)
+            <a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2"
+              target="_blank"
+              rel="noreferrer noopener">
+              Centrifuge Node Api
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              API Reference (or other categories)
+            <a href={this.docUrl('overview/code-of-conduct.html', this.props.language)}>
+              ]Code of conduct
             </a>
           </div>
           <div>
@@ -62,11 +64,12 @@ class Footer extends React.Component {
           <div>
             <h5>More</h5>
             <a href="https://github.com/centrifuge" target="_blank" rel="noreferrer noopener">GitHub</a>
+          <!-- Place this tag where you want the button to render. -->
             <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="/centrifuge/go-centrifuge/stargazers"
+              data-count-href="https://github.com/centrifuge/go-centrifuge"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
