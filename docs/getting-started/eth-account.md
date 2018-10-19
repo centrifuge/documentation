@@ -1,5 +1,5 @@
 ---
-id: prerequisites
+id: eth-account
 title: Prerequisites - packages to install
 ---
 

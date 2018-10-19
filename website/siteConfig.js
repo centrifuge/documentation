@@ -23,7 +23,7 @@ const users = [
 const siteConfig = {
     title: 'Developer', // Title for your website.
     tagline: '',
-    url: 'http://developer.centrifuge.io', // Your website URL
+    url: 'https://developer.centrifuge.io/', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
     //   url: 'https://facebook.github.io',
@@ -35,12 +35,16 @@ const siteConfig = {
     // For top-level user or org sites, the organization is still the same.
     // e.g., for the https://JoelMarcey.github.io site, it would be set like...
     //   organizationName: 'JoelMarcey'
-
+    cname: "developer.centrifuge.io",
     // For no header links in the top nav bar -> headerLinks: [],
     headerLinks: [
-        {doc: 'introduction/centrifuge', label: 'Docs'},
-        {href: 'https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2', label: 'Centrifuge Node API'},
-        {href: 'https://github.com/centrifuge', label: 'GitHub'}
+        {doc: 'overview/introduction', label: 'Docs'},
+        {
+            href: 'https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2',
+            label: 'Centrifuge Node API',
+            external: true
+        },
+        {href: 'https://github.com/centrifuge', label: 'GitHub', external: true}
     ],
 
     // If you have users set above, you add it here:
@@ -72,7 +76,7 @@ const siteConfig = {
     */
 
     // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-    copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+    copyright: `Copyright © ${new Date().getFullYear()} Centrifuge Inc`,
     usePrism: ['jsx'],
 
     highlight: {
@@ -87,6 +91,7 @@ const siteConfig = {
     onPageNav: 'separate',
     // No .html extensions for paths.
     cleanUrl: true,
+    scrollToTop:true,
 
     // Open Graph and Twitter card images.
     ogImage: 'img/docusaurus.png',
@@ -94,7 +99,7 @@ const siteConfig = {
 
     // You may provide arbitrary config keys to be used as needed by your
     // template. For example, if you need your repo's URL...
-    //   repoUrl: 'https://github.com/facebook/test-site',
+    repoUrl: 'https://github.com/centrifuge/go-centrifuge',
     wrapPagesHTML: true,
 };
 

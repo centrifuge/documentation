@@ -23,10 +23,14 @@
     text-decoration: none;
 }
 
-.navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover, .navigationSlider .slidingNav ul li.siteNavItemActive a, .navigationSlider .slidingNav ul li.siteNavGroupActive a {
+.navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover {
     background: none;
     color: $primaryColor;
     text-decoration: none;
+}
+
+.navigationSlider .slidingNav ul li.siteNavItemActive a, .navigationSlider .slidingNav ul li.siteNavGroupActive a {
+    background: none;
 }
 
 .mainContainer a:hover, .onPageNav a:hover {
