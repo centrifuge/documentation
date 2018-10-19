@@ -31,6 +31,7 @@ class Button extends React.Component {
   render() {
     return (
       <div className="pluginWrapper buttonWrapper">
+
         <a className="button" href={this.props.href} target={this.props.target}>
           {this.props.children}
         </a>
@@ -46,6 +47,7 @@ Button.defaultProps = {
 const SplashContainer = props => (
   <div className="homeContainer">
     <div className="homeSplashFade">
+
       <div className="wrapper homeWrapper">{props.children}</div>
     </div>
   </div>
@@ -58,10 +60,10 @@ const Logo = props => (
 );
 
 const ProjectTitle = () => (
-  <h2 className="projectTitle">
-    {siteConfig.title}
+<h2 className="projectTitle">
+    Centrifuge Operating System
     <small>{siteConfig.tagline}</small>
-  </h2>
+    </h2>
 );
 
 const PromoSection = props => (
@@ -77,13 +79,17 @@ class HomeSplash extends React.Component {
     const language = this.props.language || '';
     return (
       <SplashContainer>
-        <Logo img_src={imgUrl('docusaurus.svg')} />
+
         <div className="inner">
+
           <ProjectTitle />
+          <p className="splashDescription">
+          Centrifuge is an open, decentralized operating system which provides a method to create, exchange, and use the data that is used in the financial supply chain. It creates transparent and shareable relationships between interacting companies.
+          </p>
+
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
+            <Button className="primary" href="#try">Lean more about Centrifuge OS</Button>
+
           </PromoSection>
         </div>
       </SplashContainer>
@@ -97,97 +103,73 @@ const Block = props => (
     id={props.id}
     background={props.background}>
     <GridBlock align="center" contents={props.children} layout={props.layout} />
+
   </Container>
 );
 
-const Features = () => (
-  <Block layout="fourColumn">
-    {[
-      {
-        content: 'This is the content of my feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature One',
-      },
-      {
-        content: 'The content of my second feature',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'top',
-        title: 'Feature Two',
-      },
-    ]}
-  </Block>
+const GettingStarted = () => (
+        <div  className=" lightBackground ">
+
+            <div className="container getting-started paddingTop paddingBottom" style={{textAlign: 'center'}}>
+            <h2 className="section-title">Start building on Centrifuge OS</h2>
+                <Block layout="fourColumn">
+                    {
+                        siteConfig.quickLinks.map(section => (
+
+                            {
+                                title: section.title,
+                                content: section.description,
+                                image: section.image,
+                                imageAlign: 'top',
+                                imageLink: section.infoLink
+                            }
+
+                        ))
+
+                    }
+                </Block>
+            </div>
+
+        </div>
 );
 
-const FeatureCallout = () => (
-  <div
-    className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
-    <h2>Feature Callout</h2>
-    <MarkdownBlock>These are features of this project</MarkdownBlock>
-  </div>
-);
 
-const LearnHow = () => (
-  <Block background="light">
-    {[
-      {
-        content: 'Talk about learning how to use this',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'right',
-        title: 'Learn How',
-      },
-    ]}
-  </Block>
-);
 
-const TryOut = () => (
-  <Block id="try">
-    {[
-      {
-        content: 'Talk about trying this out',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'left',
-        title: 'Try it Out',
-      },
-    ]}
-  </Block>
-);
 
-const Description = () => (
-  <Block background="dark">
-    {[
-      {
-        content: 'This is another description of how this project is useful',
-        image: imgUrl('docusaurus.svg'),
-        imageAlign: 'right',
-        title: 'Description',
-      },
-    ]}
-  </Block>
-);
+
 
 const Showcase = props => {
   if ((siteConfig.users || []).length === 0) {
     return null;
   }
 
-  const showcase = siteConfig.users.filter(user => user.pinned).map(user => (
-    <a href={user.infoLink} key={user.infoLink}>
-      <img src={user.image} alt={user.caption} title={user.caption} />
-    </a>
-  ));
+
+    const showcase = <Block layout="threeColumn">
+        {
+            siteConfig.users.filter(user => user.pinned).map(user => (
+
+                {
+                    title:user.caption,
+                    content: user.description,
+                    image: user.image,
+                    imageAlign: 'top',
+                    imageLink: user.infoLink
+                }
+
+            ))
+        }
+    </Block>
+
+
 
   return (
-    <div className="productShowcaseSection paddingBottom">
-      <h2>Who is Using This?</h2>
-      <p>This project is used by all these people</p>
-      <div className="logos">{showcase}</div>
-      <div className="more-users">
-        <a className="button" href={pageUrl('users.html', props.language)}>
-          More {siteConfig.title} Users
-        </a>
-      </div>
+    <div className="productShowcaseSection paddingTop paddingBottom">
+
+      <div className="users">
+        <h2>Who is Using This?</h2>
+        {showcase}
+        </div>
+
     </div>
   );
 };
@@ -198,13 +180,14 @@ class Index extends React.Component {
 
     return (
       <div>
+        <div id="particle-canvas"></div>
         <HomeSplash language={language} />
         <div className="mainContainer">
-          <Features />
-          <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
+
+
+          <GettingStarted />
+
+
           <Showcase language={language} />
         </div>
       </div>

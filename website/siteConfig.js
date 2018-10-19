@@ -11,18 +11,49 @@
 // List of projects/orgs using your project for the users page.
 const users = [
     {
-        caption: 'User1',
+        caption: 'Hokodo',
         // You will need to prepend the image path with your baseUrl
         // if it is not '/', like: '/test-site/img/docusaurus.svg'.
-        image: '/img/docusaurus.svg',
-        infoLink: 'https://www.facebook.com',
+        description:"Centrifuge and crossinx move invoice documents on the blockchain <br/>[read more](https://medium.com/centrifuge/centrifuge-and-crossinx-move-invoice-documents-on-the-blockchain-1220b588294)",
+        infoLink:"https://medium.com/centrifuge/centrifuge-and-crossinx-move-invoice-documents-on-the-blockchain-1220b588294",
+        image: '/img/hokodo.svg',
+        pinned: true,
+    },
+
+    {
+        caption: 'Crossinx',
+        description:"Hokodo and Centrifuge announce partnership to build first decentralized trade insurance  <br/>[read more](https://medium.com/centrifuge/centrifuge-and-crossinx-move-invoice-documents-on-the-blockchain-1220b588294)",
+        infoLink:"https://medium.com/centrifuge/hokodo-and-centrifuge-announce-partnership-to-build-first-decentralized-trade-insurance-e1da1dbbe92c",
+        // You will need to prepend the image path with your baseUrl
+        // if it is not '/', like: '/test-site/img/docusaurus.svg'.
+        image: '/img/crossinx_logo_simple.png',
         pinned: true,
     },
 ];
 
+
+const quickLinks = [
+    {
+        title: 'Quick Start',
+
+        description:"[Read the guide →](/docs/getting-started/prerequisites)",
+        image: '/img/rocket-icon.svg',
+    },
+    {
+        title: 'Enviroment Setup',
+        description:"[Read the guide →](http://localhost:3000/docs/getting-started/prerequisites)",
+        image: '/img/block-icon.svg',
+    },
+    {
+        title: 'Peer-to-Peer Layer',
+        description:"[Read the guide →](/cent-os-administration/send-document)",
+        image: '/img/p2p-icon.svg',
+    },
+]
+
 const siteConfig = {
     title: 'Developer', // Title for your website.
-    tagline: '',
+    tagline: 'A Decentralized Operating System For The Financial Supply Chain',
     url: 'https://developer.centrifuge.io/', // Your website URL
     baseUrl: '/', // Base URL for your project */
     // For github.io type URLs, you would set the url and baseUrl like:
@@ -49,6 +80,7 @@ const siteConfig = {
 
     // If you have users set above, you add it here:
     users,
+    quickLinks,
 
     /* path to images for header/footer */
     headerIcon: 'img/logo@2x.png',
@@ -85,7 +117,7 @@ const siteConfig = {
     },
 
     // Add custom scripts here that would be placed in <script> tags.
-    scripts: ['https://buttons.github.io/buttons.js'],
+    scripts: ['https://buttons.github.io/buttons.js','https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js','components/particle.js',],
 
     // On page navigation for the current documentation page.
     onPageNav: 'separate',
