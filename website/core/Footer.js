@@ -47,7 +47,7 @@ class Footer extends React.Component {
             </a>
           </div>
           <div>
-            <h5>Follow us</h5>
+            <h5>Community</h5>
             <a
               href="https://medium.com/centrifuge"
               target="_blank"
@@ -59,6 +59,12 @@ class Footer extends React.Component {
               target="_blank"
               rel="noreferrer noopener">
               Twitter
+            </a>
+            <a
+              href="https://centrifuge-io.slack.com/"
+              target="_blank"
+              rel="noreferrer noopener">
+              Slack
             </a>
           </div>
           <div>
