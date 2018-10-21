@@ -174,12 +174,12 @@ const Showcase = props => {
   );
 };
 
-class Index extends React.Component {
+class IndexLanding extends React.Component {
   render() {
     const language = this.props.language || '';
 
     return (
-      <div>
+      <div className="homePage">
         <div id="particle-canvas"></div>
         <HomeSplash language={language} />
         <div className="mainContainer">
@@ -195,4 +195,4 @@ class Index extends React.Component {
   }
 }
 
-module.exports = Index;
+module.exports = IndexLanding;
