@@ -6,30 +6,29 @@ This section describes the procedure to install the Centrifuge node. This involv
 
 ## Creating an Ethereum account
 
-1. Install Ethereum:
+1. Install the stable version of Go Ethereum:
 
-  ```
+  ```bash
   $ sudo add-apt-repository -y ppa:ethereum/ethereum
   ```
-
-2. Next, install the stable version of Go Ethereum:
-
-  ```
+  ```bash
   $ sudo apt-get update
   ```
-  ```
+  ```bash
   $ sudo apt-get install ethereum
   ```
 
-3. Install `geth`:
+2. Install `geth`:
 
-  ```
+  ```bash
   $ sudo apt install geth
   ```
 
-4. Create a new `geth` account:
+  For instructions to install `geth` on MacOS, see [Instructions for MacOS](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Mac).
 
-    ```
+3. Create a new `geth` account:
+
+    ```bash
     $ geth account new
     Your new account is locked with a password. Please give a password. Do not forget this password.
     Passphrase:
@@ -49,58 +48,43 @@ To accept the incoming P2P connections, you will need to open two ports for inco
 
 **Resource Requirements for Centrifuge API Node**
 
-* Operating System:
-
-  * Linux environment as Docker Container
-
-    * Alpine based
-    * Wrapper around official Ethereum `go-client` docker image to handle various running modes.
 * 1 Gigabyte memory
 * 1 core
 * Allocate 100 Gigabyte of disk space (local copy of document data).
 
 
-### Installing the Centrifuge API Node
+### Installing the Centrifuge Node
 
 Once you have installed all the necessary packages, follow these steps to install the Centrifuge node:
 
-1. You can download and install the [`centrifuge` binary](https://storage.cloud.google.com/centrifuge-artifact-releases/cent-api-linux-amd64-20180822-9ff3bfe.tar.gz?_ga=2.117646349.-508916774.1524644306).
+1. You can download and install the [centrifuge binary](https://storage.googleapis.com/centrifuge-artifact-releases/cent-api-linux-amd64-develop-2018101920-5559af3.tar.gz).
 
-  Alternatively, you can run the `make install` command to create the `centrifuge` binary:
+  If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
 
-  ```
-  make install
-  ```
-
-2. Add the `centrifuge` binary to the `$PATH`. Or, modify the command invocation to point to the correct library.
+2. Add the centrifuge binary to the `$PATH`. Or, modify the command invocation to point to the correct library.
 
 3. Create the `config.yaml` file using the `createconfig` utility:
 
-  ```
+  ```bash
   $ centrifuge createconfig -z  ~/.ethereum/keystore/KEY-FILE> -e ws://127.0.0.1:8546 -t <PATH-FOR-CONFIG-FILE> -a 8082 -p 38204`
   ```
 
   This command automatically adds the Identity keys to the `config.yaml` file.
-  Replace the _KEY-FILE_ with the key file you obtained when creating the Ethereum account and _PATH-FOR-CONFIG-FILE_ with the location where you want the `config.yaml`  file to be stored.
+  Replace the `_KEY-FILE_` with the key file you obtained when creating the Ethereum account and `_PATH-FOR-CONFIG-FILE_` with the location where you want the `config.yaml`  file to be stored.
 
 3. Run the Centrifuge Node using the `config.yaml` file you created:
 
-  ```
+  ```bash
   $ centrifuge run -c /PATH-TO-CONFIG-FILE/config.yaml
   ```
-  Replace the _PATH-FOR-CONFIG-FILE_ with the location of the `config.yaml` file.
+  Replace the `_PATH-FOR-CONFIG-FILE_` with the location of the `config.yaml` file.
 
 ### Installing the Ethereum Rinkeby Node
 
 Rinkeby is a testnet
+
 **Resource Requirements**
 
-* Operating System:
-  * Linux environment as a docker Container
-    * Alpine based
-    * Wrapper around official Ethereum `go-client` docker image to handle various running modes
-* Docker
-* Docker-compose
 * 4 Gigabyte memory
   * Syncing mode uses around 3 Gigabyte
   * Normal sync uses around 400 Megabyte
@@ -118,18 +102,16 @@ Rinkeby is a testnet
 
 2. Set the following environment variables in the `config.yaml` file:
 
-  * RPC_PORT=8545
-  * WS_PORT=8546
-  * ETH_DATADIR=$HOME/Ethereum/Library/rinkeby
+  * RPC_PORT = 8545
+  * WS_PORT = 8546
+  * ETH_DATADIR = $HOME/Ethereum/Library/rinkeby
 
 
 3. Start the `geth` process:
 
-  ```
-  geth --rinkeby --light --rpc --rpcport $RPC_PORT --rpcaddr 0.0.0.0 \
-  --rpcapi db,eth,net,web3,txpool --ws --wsport $WS_PORT --wsaddr 0.0.0.0 \
-  --wsorigins "*" --wsapi db,eth,net,web3,txpool --datadir $ETH_DATADIR \
-  --ethash.dagdir $ETH_DATADIR/.ethash > /tmp/geth.log 2>&1 &
+  ```bash
+  geth --rinkeby --light --rpc --rpcapi db,eth,net,web3,txpool --ws \
+  --wsorigins "*" --wsapi db,eth,net,web3,txpool > /tmp/geth.log 2>&1 &
      ```
 
 You now need to wait for about 1-2 hours depending on the resources under the P2P connected network for the local node to sync up with the Rinkeby network.
@@ -140,11 +122,22 @@ To make sure that your Centrifuge node setup was successful, you can run the fol
 
 * To perform a health check, ping your node:
 
-  ```
+  ```bash
   curl -X GET "https://localhost/ping" -H "accept: application/json"
   ```
 * To create an invoice:
 
-  ```
-  curl -X POST "https://localhost/invoice" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"collaborators\": [ \"string\" ], \"data\": { \"invoice_status\": \"string\", \"invoice_number\": \"string\", \"sender_name\": \"string\", \"sender_street\": \"string\", \"sender_city\": \"string\", \"sender_zipcode\": \"string\", \"sender_country\": \"string\", \"recipient_name\": \"string\", \"recipient_street\": \"string\", \"recipient_city\": \"string\", \"recipient_zipcode\": \"string\", \"recipient_country\": \"string\", \"currency\": \"string\", \"gross_amount\": \"string\", \"net_amount\": \"string\", \"tax_amount\": \"string\", \"tax_rate\": \"string\", \"recipient\": \"string\", \"sender\": \"string\", \"payee\": \"string\", \"comment\": \"string\", \"due_date\": \"2018-10-19T08:18:22.167Z\", \"date_created\": \"2018-10-19T08:18:22.167Z\", \"extra_data\": \"string\" }}"
+  ```bash
+  curl -X POST "https://localhost/invoice" -H "accept: application/json" -H \
+  "Content-Type: application/json" -d "{ \"collaborators\": [ \"string\" ], \
+  \"data\": { \"invoice_status\": \"string\", \"invoice_number\": \"string\", \
+  \"sender_name\": \"string\", \"sender_street\": \"string\", \"sender_city\": \
+  \"string\", \"sender_zipcode\": \"string\", \"sender_country\": \"string\", \
+  \"recipient_name\": \"string\", \"recipient_street\": \"string\", \
+  \"recipient_city\": \"string\", \"recipient_zipcode\": \"string\", \
+  \"recipient_country\": \"string\", \"currency\": \"string\", \
+  \"gross_amount\": \"string\", \"net_amount\": \"string\", \
+  \"tax_amount\": \"string\", \"tax_rate\": \"string\", \
+  \"recipient\": \"string\", \"sender\": \"string\", \"payee\": \"string\", \
+  \"comment\": \"string\", \"due_date\": \"2018-10-19T08:18:22.167Z\", \ \"date_created\": \"2018-10-19T08:18:22.167Z\", \"extra_data\": \"string\" }}"
   ```
