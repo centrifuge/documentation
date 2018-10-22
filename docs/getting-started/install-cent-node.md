@@ -24,19 +24,19 @@ This section describes the procedure to install the Centrifuge node. This involv
   $ sudo apt install geth
   ```
 
-  For instructions to install `geth` on MacOS, see [Instructions for MacOS](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Mac).
+For instructions to install `geth` on MacOS, see [Instructions for MacOS](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Mac).
 
 3. Create a new `geth` account:
 
-    ```bash
-    $ geth account new
-    Your new account is locked with a password. Please give a password. Do not forget this password.
-    Passphrase:
-    Repeat Passphrase:
-    Address: {168bc315a2ee09042d83d7c5811b533620531f67}
-    ```
+  ```bash
+  $ geth account new
+  Your new account is locked with a password. Please give a password. Do not forget this password.
+  Passphrase:
+  Repeat Passphrase:
+  Address: {168bc315a2ee09042d83d7c5811b533620531f67}
+  ```
 
-    Creating a new `geth` account generates a keyfile stored at `~/.ethereum/keystore`.
+  Creating a new `geth` account generates a keyfile stored at `~/.ethereum/keystore`.
 
 > NOTE: You will not be able to access the account if you lose the `Passphrase`. Make sure to store it securely. There is no **Forgot my password** option available here.
 
@@ -59,7 +59,7 @@ Once you have installed all the necessary packages, follow these steps to instal
 
 1. You can download and install the [centrifuge binary](https://storage.googleapis.com/centrifuge-artifact-releases/cent-api-linux-amd64-develop-2018101920-5559af3.tar.gz).
 
-  If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
+    If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
 
 2. Add the centrifuge binary to the `$PATH`. Or, modify the command invocation to point to the correct library.
 
@@ -110,9 +110,9 @@ Rinkeby is a testnet
 3. Start the `geth` process:
 
   ```bash
-  geth --rinkeby --light --rpc --rpcapi db,eth,net,web3,txpool --ws \
+  $ geth --rinkeby --light --rpc --rpcapi db,eth,net,web3,txpool --ws \
   --wsorigins "*" --wsapi db,eth,net,web3,txpool > /tmp/geth.log 2>&1 &
-     ```
+   ```
 
 You now need to wait for about 1-2 hours depending on the resources under the P2P connected network for the local node to sync up with the Rinkeby network.
 
