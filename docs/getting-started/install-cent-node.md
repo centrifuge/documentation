@@ -47,11 +47,11 @@ For instructions to install `geth` on MacOS, see [Instructions for MacOS](https:
 To accept the incoming P2P connections, you will need to open two ports for incoming TCP connections.
 
 **Resource Requirements for Centrifuge API Node**
-
+<!--
 * 1 Gigabyte memory
 * 1 core
 * Allocate 100 Gigabyte of disk space (local copy of document data).
-
+-->
 
 ### Installing the Centrifuge Node
 
@@ -94,7 +94,7 @@ Rinkeby is a testnet
 * Allocated disk space of at least 100 Gigabyte
   * Sync mode uses about 1 Gigabyte
   * Full node requires about 50 Gigabyte
-* Syncing will take about 1-2 hours
+* Syncing will take about 1-2 hours. This can vary depending on the resource availability of the full node(s).
   * Optionally, you can use SSDs speed it up.
 
 
