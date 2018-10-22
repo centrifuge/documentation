@@ -57,7 +57,7 @@ To accept the incoming P2P connections, you will need to open two ports for inco
 
 Once you have installed all the necessary packages, follow these steps to install the Centrifuge node:
 
-1. You can download and install the [centrifuge binary](https://storage.googleapis.com/centrifuge-artifact-releases/cent-api-linux-amd64-develop-2018101920-5559af3.tar.gz).
+1. Download and install the latest [centrifuge binary](https://github.com/centrifuge/go-centrifuge/releases).
 
     If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
 
