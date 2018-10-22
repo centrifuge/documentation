@@ -45,9 +45,8 @@ For instructions to install `geth` on MacOS, see [Instructions for MacOS](https:
 ### System Requirements for Installing the Centrifuge Node:
 
 To accept the incoming P2P connections, you will need to open two ports for incoming TCP connections.
-
-**Resource Requirements for Centrifuge API Node**
 <!--
+**Resource Requirements for Centrifuge API Node**
 * 1 Gigabyte memory
 * 1 core
 * Allocate 100 Gigabyte of disk space (local copy of document data).
