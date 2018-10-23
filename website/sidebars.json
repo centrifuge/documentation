@@ -9,8 +9,9 @@
     "Usage": [
       "cent-os-administration/manage-cent-os"
     ],
-    "Further Reading":[
-      "further-reading/more-info"
+    "Further Reading": [
+      "further-reading/more-info",
+      "further-reading/code-of-conduct"
     ]
   }
 }
