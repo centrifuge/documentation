@@ -1,6 +1,6 @@
 ---
 id: manage-cent-os
-title: Interacting with a Centrifuge Node
+title: Usage
 ---
 
 The following section lists the API calls to perform functions like sending documents, validating proofs and so on.
@@ -52,7 +52,7 @@ The following section lists the API calls to perform functions like sending docu
   \"date_created\": \"2018-10-22T01:36:35.832Z\", \"extra_data\": \"string\" }}"
   ```
 
-## Mint NFT
+## Minting an NFT
 
 To mint an NFT from the Centrifuge document:
 
