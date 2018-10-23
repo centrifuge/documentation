@@ -5,7 +5,6 @@
       "overview/more-info",
     ],
     "Getting Started": [
-      "getting-started/prerequisites",
       "getting-started/install-cent-node"
     ],
     "Interacting with the Centrifuge Node": [
