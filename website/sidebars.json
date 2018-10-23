@@ -9,7 +9,7 @@
       "getting-started/prerequisites",
       "getting-started/install-cent-node"
     ],
-    "Interacting with the Centrifuge OS": [
+    "Interacting with the Centrifuge Node": [
       "cent-os-administration/manage-cent-os"
     ]
   }
