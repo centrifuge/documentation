@@ -30,4 +30,4 @@ A CentrifugeID has the following credentials:
 
 ## Centrifuge Node
 
-The Centrifuge Node serves an interface to the upstream system in addition to being a part of the peer to peer network that forms the Centrifuge OS ecosystem. (Need more information here).
+The Centrifuge Node serves an interface to the upstream system in addition to being a part of the peer to peer network that forms the Centrifuge OS ecosystem.<!-- (Need more information here).-->
