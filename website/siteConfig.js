@@ -52,7 +52,7 @@ const quickLinks = [
 ]
 
 const siteConfig = {
-    title: 'Developer', // Title for your website.
+    title: 'Centrifuge Developer', // Title for your website.
     tagline: 'A Decentralized Operating System For The Financial Supply Chain',
     url: 'https://developer.centrifuge.io/', // Your website URL
     baseUrl: '/', // Base URL for your project */
@@ -83,7 +83,7 @@ const siteConfig = {
     quickLinks,
 
     /* path to images for header/footer */
-    headerIcon: 'img/logo@2x.png',
+    headerIcon: 'img/centrifuge.developer.png',
     footerIcon: 'img/centrifuge_mark_white.svg',
     favicon: 'img/favicon.png',
 
@@ -120,10 +120,11 @@ const siteConfig = {
     scripts: ['https://buttons.github.io/buttons.js','https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js','components/particle.js',],
 
     // On page navigation for the current documentation page.
-    onPageNav: 'separate',
+
     // No .html extensions for paths.
     cleanUrl: true,
     scrollToTop:true,
+    disableHeaderTitle:true,
 
     // Open Graph and Twitter card images.
     ogImage: 'img/docusaurus.png',
