@@ -29,7 +29,7 @@ The following section lists the API calls to perform functions like sending docu
 * To get an invoice:
 
   ```bash
-  $ curl -X POST "https://localhost/legacy/invoice/get" -H \
+  $ curl -X POST "https://localhost/invoice/get" -H \
   "accept: application/json" -H "Content-Type: application/json" \
   -d "{ \"document_identifier\": \"string\"}"
   ```
