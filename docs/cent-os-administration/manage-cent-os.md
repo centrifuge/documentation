@@ -1,6 +1,6 @@
 ---
 id: manage-cent-os
-title: Administering Centrifuge OS
+title: Interacting with a Centrifuge Node
 ---
 
 The following section lists the API calls to perform functions like sending documents, validating proofs and so on.
