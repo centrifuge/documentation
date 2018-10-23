@@ -3,7 +3,7 @@ id: manage-cent-os
 title: Usage
 ---
 
-The following section lists the API calls to perform functions like sending documents, validating proofs and so on.
+The following section lists the API calls to perform functions like sending documents, validating proofs and so on. For more information, see [Centrifuge Node API documentation](https://app.swaggerhub.com/apis-docs/centrifuge.io/cent-node/0.0.2).
 
 ## Invoice Document service
 
@@ -63,4 +63,4 @@ To mint an NFT from the Centrifuge document:
   \"proof_fields\": [ \"string\" ]}"
   ```
 
-For more information, see [Centrifuge Node API documentation](https://app.swaggerhub.com/apis-docs/centrifuge.io/cent-node/0.0.2).
+
