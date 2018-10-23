@@ -1,14 +1,16 @@
 {
   "Docs": {
     "Overview": [
-      "overview/introduction",
-      "overview/more-info",
+      "overview/introduction"
     ],
     "Getting Started": [
       "getting-started/install-cent-node"
     ],
     "Interacting with the Centrifuge Node": [
       "cent-os-administration/manage-cent-os"
+    ],
+    "Further Reading":[
+      "further-reading/more-info"
     ]
   }
 }
