@@ -31,3 +31,6 @@ A CentrifugeID has the following credentials:
 ## Centrifuge Node
 
 The Centrifuge Node serves an interface to the upstream system in addition to being a part of the peer to peer network that forms the Centrifuge OS ecosystem.<!-- (Need more information here).-->
+
+## Contributing to the Centrifuge Project
+To become a part of the Centrifuge community, read the [Code of Conduct](https://developer.centrifuge.io/docs/overview/code-of-conduct) and join [Slack](https://centrifuge-io.slack.com/). If you find a bug, file an issue on [GitHub](https://github.com/centrifuge/go-centrifuge/issues).
