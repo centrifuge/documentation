@@ -10,8 +10,7 @@
       "getting-started/install-cent-node"
     ],
     "Administering the Centrifuge OS": [
-      "cent-os-administration/send-document",
-      "cent-os-administration/validate-proof"
+      "cent-os-administration/manage-cent-os"
     ]
   }
 }
