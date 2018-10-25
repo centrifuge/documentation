@@ -60,7 +60,7 @@ Once you have installed all the necessary packages, follow these steps to instal
 
     If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
 
-2. Add the centrifuge binary to the `$PATH`. Or, modify the command invocation to point to the correct library.
+2. Add the Centrifuge binary to the `$PATH`. Or, modify the command invocation to point to the correct library.
 
 3. Create the `config.yaml` file using the `createconfig` utility:
 
