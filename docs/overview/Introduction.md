@@ -5,7 +5,7 @@ title: Introduction
 
 ## Centrifuge Operating System
 
-Centrifuge is an open, decentralized operating system which provides a method to create, exchange, and use the data that is used in the financial supply chain. It creates transparent and shareable relationships between interacting companies. Data owners can selectively share the information with their business partners or other users of the OS. This creates the foundation for data ownership, privacy, and transparency throughout the financial supply chain. It also allows Third parties to offer additional services based on the information shared with them. The data owners have the power to decide whether or not to take advantage of those services.
+Centrifuge is an open, decentralized operating system which provides a method to create, exchange, and use the data that is used in the financial supply chain. It creates transparent and shareable relationships between interacting companies. Data owners can selectively share the information with their business partners or other users of the OS. This creates the foundation for data ownership, privacy, and transparency throughout the financial supply chain. It also allows third parties to offer additional services based on the information shared with them. The data owners have the power to decide whether or not to take advantage of those services.
 
 Centrifuge OS provides a censorship resistant way to verify the authenticity of data that is transacted through and stored in it.
 
