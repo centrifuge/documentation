@@ -37,12 +37,12 @@ class Footer extends React.Component {
             <a href={this.docUrl('getting-started/prerequisites')}>
               Getting Started
             </a>
-            <a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2"
+            <a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1"
               target="_blank"
               rel="noreferrer noopener">
               Centrifuge Node Api
             </a>
-            <a href={this.docUrl('overview/code-of-conduct')}>
+            <a href={this.docUrl('further-reading/code-of-conduct')}>
               Code of conduct
             </a>
           </div>
@@ -69,7 +69,7 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href="https://github.com/centrifuge" target="_blank" rel="noreferrer noopener">GitHub</a>
+            <a href="https://github.com/centrifuge/go-centrifuge" target="_blank" rel="noreferrer noopener">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}
