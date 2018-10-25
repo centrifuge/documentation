@@ -6,11 +6,12 @@
     "Getting Started": [
       "getting-started/install-cent-node"
     ],
-    "Interacting with the Centrifuge Node": [
+    "Usage": [
       "cent-os-administration/manage-cent-os"
     ],
-    "Further Reading":[
-      "further-reading/more-info"
+    "Further Reading": [
+      "further-reading/more-info",
+      "further-reading/code-of-conduct"
     ]
   }
 }
