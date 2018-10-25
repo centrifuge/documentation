@@ -2,7 +2,7 @@
 
 const e = React.createElement;
 Redoc.init(
-    "https://api.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2/swagger.json",
+    "https://api.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1/swagger.json",
     {
         nativeScrollbars: true,
         theme: {
