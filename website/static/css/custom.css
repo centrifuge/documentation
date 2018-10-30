@@ -8,10 +8,15 @@
 }
 
 @media only screen and (min-width: 1024px) {
+    .fixedHeaderContainer header {
+        padding: 12px 0px;
+    }
+
     .navPusher {
         min-height: calc(100vh - 74px);
         padding-top: 74px;
     }
+
     .onPageNav {
         top: 44px;
     }
@@ -27,18 +32,37 @@
         font-weight: 400;
         opacity: 0.7;
     }
+
     .docMainContainer {
         flex-basis: 1062px;
     }
+
     .docMainContainer .wrapper {
         max-width: 1062px;
-        margin-left:0px;
+        margin-left: 0px;
     }
 }
 
 @media only screen and (max-width: 1023px) {
     .mainContainer {
         min-height: calc(100vh - 356px);
+    }
+
+    .fixedHeaderContainer header {
+        padding-top: 6px;
+    }
+
+    .navSearchWrapper {
+        width: 40%;
+        top: 14px;
+    }
+
+    .reactNavSearchWrapper input#search_input_react {
+        color: #ffffff;
+    }
+
+    .reactNavSearchWrapper input#search_input_react:focus, .reactNavSearchWrapper input#search_input_react:active {
+        background: rgba(242, 196, 178, 0.25);
     }
 }
 
@@ -48,11 +72,17 @@
 @media only screen and (min-width: 1500px) {
 }
 
+.reactNavSearchWrapper input#search_input_react {
+    background: rgba(242, 196, 178, 0.25);
+    border-radius: 5px;
+    padding: 7px 0px 7px 25px;
+}
+
 .navPusher {
     overflow-x: hidden;
 }
 
-.toc .toggleNav .navGroup .navGroupCategoryTitle  {
+.toc .toggleNav .navGroup .navGroupCategoryTitle {
     text-transform: uppercase;
     font-size: 14px;
 }
@@ -63,11 +93,12 @@
     text-transform: uppercase;
     font-size: 14px;
 }
+
 .fixedHeaderContainer, .nav-footer {
     background: $secondaryColor;
 }
 
-.toc .toggleNav ul li a:hover  {
+.toc .toggleNav ul li a:hover {
     text-decoration: none;
 }
 
@@ -86,13 +117,6 @@
     text-decoration: underline;
 }
 
-.fixedHeaderContainer header {
-    padding: 12px 0px;
-}
-
-
-
-
 .productShowcaseSection .users .imageAlignTop .blockImage {
     max-width: 100%;
 }
@@ -110,9 +134,9 @@
     margin: 40px 0px 20px 0px;
 }
 
-.promoRow .button{
+.promoRow .button {
     background: $primaryColor;
-    color:white;
+    color: white;
 }
 
 .homePage .mainContainer {
@@ -130,12 +154,13 @@
 }
 
 h2.section-title {
-    font-size:30px;
+    font-size: 30px;
 }
 
 .homeContainer .homeWrapper {
     padding: 8em 10px;
 }
+
 .splashDescription {
     max-width: 720px;
     margin-left: auto;
@@ -148,4 +173,25 @@ h2.section-title {
 
 .getting-started.paddingTop h2 {
     margin-top: 20px;
+}
+
+.navSearchWrapper
+.aa-dropdown-menu
+.algolia-docsearch-suggestion--category-header {
+    background: $secondaryColor;
+    font-size: 14px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.navSearchWrapper
+.aa-dropdown-menu
+.algolia-docsearch-suggestion--category-header
+.algolia-docsearch-suggestion--highlight {
+    background-color: $secondaryColor;
+    color: $primaryColor;
+
 }
