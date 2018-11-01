@@ -118,9 +118,7 @@ const siteConfig = {
 
     // Add custom scripts here that would be placed in <script> tags.
     scripts: ['https://buttons.github.io/buttons.js','https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js','components/particle.js',],
-
-    // On page navigation for the current documentation page.
-
+    gaTrackingId: 'UA-100764518-3',
     // No .html extensions for paths.
     cleanUrl: true,
     scrollToTop:true,
