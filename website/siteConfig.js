@@ -86,7 +86,10 @@ const siteConfig = {
     headerIcon: 'img/centrifuge.developer.png',
     footerIcon: 'img/centrifuge_mark_white.svg',
     favicon: 'img/favicon.png',
-
+    algolia: {
+        apiKey: 'e1804220d11b9eefa76395d7f70a2e45',
+        indexName: 'centrifuge'
+    },
     /* Colors for website */
     colors: {
         primaryColor: '#FF9F00',
@@ -117,7 +120,8 @@ const siteConfig = {
     },
 
     // Add custom scripts here that would be placed in <script> tags.
-    scripts: ['https://buttons.github.io/buttons.js','https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js','components/particle.js',],
+
+    scripts: ['https://buttons.github.io/buttons.js'],
     gaTrackingId: 'UA-100764518-3',
     // No .html extensions for paths.
     cleanUrl: true,
