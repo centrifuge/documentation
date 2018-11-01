@@ -65,7 +65,8 @@ Once you have installed all the necessary packages, follow these steps to instal
 3. Create the `config.yaml` file using the `createconfig` utility:
 
   ```bash
-  $ centrifuge createconfig -z  ~/.ethereum/keystore/KEY-FILE> -e ws://127.0.0.1:8546 -t <PATH-FOR-CONFIG-FILE> -a 8082 -p 38204`
+  $ centrifuge createconfig -z  ~/.ethereum/keystore/KEY-FILE> -e ws://127.0.0.1:8546 -t <PATH-TO-CONFIG-FILE> \
+  -a 8082 -p 38204
   ```
 
   This command automatically adds the Identity keys to the `config.yaml` file.
@@ -76,7 +77,7 @@ Once you have installed all the necessary packages, follow these steps to instal
   ```bash
   $ centrifuge run -c /PATH-TO-CONFIG-FILE/config.yaml
   ```
-  Replace the `_PATH-FOR-CONFIG-FILE_` with the location of the `config.yaml` file.
+  Replace the `_PATH-TO-CONFIG-FILE_` with the location of the `config.yaml` file.
 
 ### Installing the Ethereum Rinkeby Node
 
