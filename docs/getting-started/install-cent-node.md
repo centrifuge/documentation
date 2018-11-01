@@ -70,7 +70,7 @@ Once you have installed all the necessary packages, follow these steps to instal
   ```
 
   This command automatically adds the Identity keys to the `config.yaml` file.
-  Replace the `_KEY-FILE_` with the key file you obtained when creating the Ethereum account and `_PATH-FOR-CONFIG-FILE_` with the location where you want the `config.yaml`  file to be stored.
+  Replace the `_KEY-FILE_` with the key file you obtained when creating the Ethereum account and `_PATH-TO-CONFIG-FILE_` with the location where you want the `config.yaml`  file to be stored.
 
 3. Run the Centrifuge Node using the `config.yaml` file you created:
 
