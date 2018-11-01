@@ -120,10 +120,9 @@ const siteConfig = {
     },
 
     // Add custom scripts here that would be placed in <script> tags.
+
     scripts: ['https://buttons.github.io/buttons.js'],
-
-    // On page navigation for the current documentation page.
-
+    gaTrackingId: 'UA-100764518-3',
     // No .html extensions for paths.
     cleanUrl: true,
     scrollToTop:true,
