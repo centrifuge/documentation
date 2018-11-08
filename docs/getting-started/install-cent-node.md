@@ -71,12 +71,14 @@ Rinkeby is a testnet
 * Syncing will take about 1-2 hours. This can vary depending on the resource availability of the full node(s).
   * Optionally, you can use SSDs speed it up.
 
-Start the `geth` process, we chose running `go-ethereum` in light mode, for speed and simplicity, feel free to tailor this setup to fit your needs: 
+Start the `geth` process: 
 
   ```bash
   $ geth --rinkeby --light --rpc --rpcapi db,eth,net,web3,txpool --ws \
   --wsorigins "*" --wsapi db,eth,net,web3,txpool > /tmp/geth.log 2>&1 &
    ```
+
+This command runs go-ethereum in the light mode for speed and simplicity. You can modify this command based on your requirements.
 
 You now need to wait for about 1-2 hours depending on the resources under the P2P connected network for the local node to sync up with the Rinkeby network.
 
@@ -97,7 +99,8 @@ Once you have installed all the necessary packages, follow these steps to instal
   -a 8082 -p 38204
   ```
 
-  This command automatically creates an Identity and keys needed and generates the `config.yaml` file required to run the node.
+  This command automatically creates an Identity and the key pairs. It then generates the config.yaml file required to run the node.
+  
   Replace the `_KEY-FILE_` with the key file you obtained when creating the Ethereum account and `_PATH-TO-CONFIG-FILE_` with the location where you want the `config.yaml`  file to be stored.
 
 4. Run the Centrifuge Node using the `config.yaml` file you created:
@@ -110,7 +113,7 @@ Once you have installed all the necessary packages, follow these steps to instal
 #### Additional custom configuration
 * Configure node under NAT
 
-If you want your node to be reachable outside of your private network you will need to manually specify the External IP where the node will be available:
+If you want your node to be accessible outside your private network, you will need to manually specify the External IP of the node:
 ```yaml
 p2p:
   externalIP: "100.111.112.113"
@@ -118,15 +121,13 @@ p2p:
 
 * Configure notification webhook (for incoming data from other peers)
 
-We provide a way to your upstream systems to receive events whenever a new document has been shared with your node, and we do it through WebHooks:
+To receive an event when a new document has been shared with your node, set your WebHook endpoint in the config.yaml file:
 ```yaml
 notifications:
   endpoint: "YOUR_WEBHOOK_ENDPOINT"
 ```
-You can find information about the notification payload here:
+For more information, see the [Notification Payload](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1#/NotificationDummyService/Notify)
  
-https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1#/NotificationDummyService/Notify 
-
 ### Post-Install Verification
 
 To make sure that your Centrifuge node setup was successful, you can run the following API calls. For example:
