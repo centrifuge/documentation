@@ -51,6 +51,10 @@ In a block, the Merkel tree is a tree in which every lead node is assigned a has
 
 Centrifuge OS uses Merkel trees fir proving data validation for documents. In the Centrifuge OS, Merkel trees can be used to share the subset of a document with a third party to prove authenticity of the whole data structure while keeping the rest of the document private.
 
+## Webhooks
+
+An application using Webhooks will POST a message to an URL when certain events occur. In the Centrifuge OS, webhooks are generally a REST API endpoint that you can set the in the `config.yaml` file. Currently, webhooks for Centrifuge node exist in the Ethereum blockchain and are not maintained by the Centrifuge node.   
+
 ## Centrifuge OS Architecture
 
 The core components of the Centrifuge OS are:
