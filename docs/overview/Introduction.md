@@ -18,51 +18,49 @@ For more information, see [Ethereum Project](https://www.ethereum.org/)
 
 ## Centrifuge Identity
 
-A Centrifuge Identity (CentrifugeID) is a unique ID assigned to a participant of the Centrifuge OS in a network. When a new CentrifugeID is generated, a unique public representation of the Identity is created in the public blockchain as a _smart contract_. The data associated with a CentrifugeID is only modifiable by the creator and/or a delegate chosen by the creator.
+A Centrifuge Identity (CentrifugeID) is a unique ID assigned to a participant of the Centrifuge OS in a network. When a new CentrifugeID is generated, a unique public representation of the identity is created in the public blockchain as a _smart contract_. The data associated with a CentrifugeID is only modifiable by the creator and/or a delegate chosen by the creator.
 
 A CentrifugeID has the following credentials:
 
 * Peer to Peer Messaging Encryption Keys: are responsible for message encryption. These keys are used to identify the nodes over the P2P protocol.
 
-* Signing Keys: Documents that pass through the P2P layer are signed with the signing keys. These signatures are a part of the merkle root that is anchored on the public chain and verifiable at a later time.
+* Signing Keys: Documents that pass through the P2P layer are signed with the signing keys. These signatures are a part of the Merkle root that is anchored on the public chain and verifiable at a later time.
 
 * Ethereuem Accounts: When interacting with a smart contract on Ethereum, an account needs to be linked to the identity to act on its behalf. The linked Ethereum accounts are the accounts that are allowed to interact with DApps utilizing Centrifuge OS.
 
 Centrifuge OS users register their identity on the public Ethereum network and
 maintain a set of public keys as part of their identity. These identities and their keys are used to resolve nodes on the P2P layer when one node wants to transmit data to
 another Centrifuge user. This means that nodes on the P2P layer find others by
-looking up their public keys from the public identity register based on CentrifugeID.
+looking up their public keys from the public identity register.
 
 ## Centrifuge Peer-to-Peer Network
 
-A peer-to-peer (P2P) network consists of two or more systems connected and sharing resources without going through a separate server. Centrifuge consists of a P2P network for decentralized data exchange using smart contracts on Ethereum. The Centrifuge P2P node supports handling of incoming and outgoing data using a service bus principal where plugins and outside systems can subscribe to messages about specific objects.
+A peer-to-peer (P2P) network consists of multiple systems connected and sharing resources without going through a separate server. Centrifuge consists of a P2P network for decentralized data exchange using smart contracts on Ethereum. The Centrifuge P2P node supports handling of incoming and outgoing data  and the interpretation on the client side.
 
 ## Centrifuge Node
 
 The Centrifuge Node serves an interface to the upstream system in addition to being a part of the peer to peer network that forms the Centrifuge OS ecosystem.<!-- (Need more information here).-->
-
+<!---
 ## Centrifuge Sidechain
 
 The Centrifuge sidechain is a public Ethereum-based blockchain that deploys proof-of-authority consensus algorithm. The collaborators operating on the sidechain are voted in or out based on a token curated registry (TCR) located on the Ethereum mainnet.
+--->
+## Merkle Tree
 
-## Merkel Tree
+A Merkle tree is a data structure in which every leaf node is assigned a hash of the data block and every non-leaf node is the hash of the hash of its child nodes. A Merkle tree allows to validate that any element in a large set of values is a part of a set. In the Ethereum blockchain, Merkle trees are created for each block to verify that a specific transaction is part of a mined block.
 
-In a block, the Merkel tree is a tree in which every lead node is assigned a hash of the data block and every non-leaf node is labelled with a cryptographic hash of the lables of its child nodes. Merkel trees allow you to validate that any element in a large set of values is a part of one Merkel root hash. In the Ethereum blockchain, Merkle trees are created for each block to verify that a specific transaction is part of a mined block.
-
-Centrifuge OS uses Merkel trees fir proving data validation for documents. In the Centrifuge OS, Merkel trees can be used to share the subset of a document with a third party to prove authenticity of the whole data structure while keeping the rest of the document private.
+Centrifuge OS uses Merkle trees for proving data validation for documents. In the Centrifuge OS, Merkle trees can be used to share the subset of a document with a third party to prove authenticity of the whole data structure while keeping the rest of the document private.
 
 ## Webhooks
 
-An application using Webhooks will POST a message to an URL when certain events occur. In the Centrifuge OS, webhooks are generally a REST API endpoint that you can set the in the `config.yaml` file. Currently, webhooks for Centrifuge node exist in the Ethereum blockchain and are not maintained by the Centrifuge node.   
+An application using Webhooks will POST a message to an URL when certain events occur. In the Centrifuge OS, webhooks are generally a REST API endpoint that you can set the in the `config.yaml` file. Currently, webhooks for Centrifuge Node should be developed by the user following our swagger notification API message model.
 
 ## Centrifuge OS Architecture
 
 The core components of the Centrifuge OS are:
 
 * Contracts deployed on Ethereum.
-
 * Centrifuge nodes that facilitate data exchange on a P2P layer.
-
 * An Ethereum-based sidechain with Centrifuge specific contracts and data.
 
 The following image describes the Centrifuge OS architecture and the components:
