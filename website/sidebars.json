@@ -4,7 +4,8 @@
       "overview/introduction"
     ],
     "Getting Started": [
-      "getting-started/install-cent-node"
+      "getting-started/install-cent-node",
+      "getting-started/workflow"
     ],
     "Usage": [
       "cent-os-administration/manage-cent-os"
