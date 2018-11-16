@@ -2,7 +2,6 @@
 id: workflow
 Title: CoreDocument Consensus
 ---
-
 Now that you have installed the Centrifuge node, you can send documents such as invoices, purchase orders, and so on. The following section describes some scenarios for sending documents and how consensus on document state is reached between the collaborating parties.
 
 For the peer-to-peer document exchange, the Centrifuge network considers cost-effectiveness, scalability, privacy and auditability. This requires a network that allows direct, verifiable, communication between the collaborators at high speeds without waiting for commits and transactions being propagated through the public blockchain. For this purpose, Centrifuge uses nodes that communicate in a peer-to-peer fashion to exchange cryptographically signed messages between the users.
