@@ -1,6 +1,6 @@
 ---
 id: workflow
-Title: CoreDocument Consensus
+Title: Document State Consensus
 ---
 Now that you have installed the Centrifuge node, you can send documents such as invoices, purchase orders, and so on. The following section describes some scenarios for sending documents and how consensus on document state is reached between the collaborating parties.
 
