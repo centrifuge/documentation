@@ -37,14 +37,6 @@ looking up their public keys from the public identity register.
 
 A peer-to-peer (P2P) network consists of multiple systems connected and sharing resources without going through a separate server. Centrifuge consists of a P2P network for decentralized data exchange using smart contracts on Ethereum. The Centrifuge P2P node supports handling of incoming and outgoing data  and the interpretation on the client side.
 
-## Centrifuge Node
-
-The Centrifuge Node serves an interface to the upstream system in addition to being a part of the peer to peer network that forms the Centrifuge OS ecosystem.<!-- (Need more information here).-->
-<!---
-## Centrifuge Sidechain
-
-The Centrifuge sidechain is a public Ethereum-based blockchain that deploys proof-of-authority consensus algorithm. The collaborators operating on the sidechain are voted in or out based on a token curated registry (TCR) located on the Ethereum mainnet.
---->
 ## Merkle Tree
 
 A Merkle tree is a data structure in which every leaf node is assigned a hash of the data block and every non-leaf node is the hash of the hash of its child nodes. A Merkle tree allows to validate that any element in a large set of values is a part of a set. In the Ethereum blockchain, Merkle trees are created for each block to verify that a specific transaction is part of a mined block.
