@@ -74,7 +74,7 @@ Rinkeby is a testnet
 Start the `geth` process: 
 
   ```bash
-  $ geth --rinkeby --light --rpc --rpcapi db,eth,net,web3,txpool --ws \
+  $ geth --rinkeby --syncmode light --rpc --rpcapi db,eth,net,web3,txpool --ws \
   --wsorigins "*" --wsapi db,eth,net,web3,txpool > /tmp/geth.log 2>&1 &
    ```
 
