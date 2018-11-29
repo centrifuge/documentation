@@ -135,12 +135,12 @@ To make sure that your Centrifuge node setup was successful, you can run the fol
 * To perform a health check, ping your node:
 
   ```bash
-  $ curl -X GET "https://localhost/ping" -H "accept: application/json"
+  $ curl -k -X GET "https://localhost:8082/ping" -H "accept: application/json"
   ```
 * To create an invoice:
 
   ```bash
-  $ curl -X POST "https://localhost/invoice" -H "accept: application/json" \
+  $ curl -k -X POST "https://localhost:8082/invoice" -H "accept: application/json" \
   -H "Content-Type: application/json" -d "{ \"collaborators\": [ \"string\" ], \
   \"data\": { \"invoice_status\": \"string\", \"invoice_number\": \"string\", \
   \"sender_name\": \"string\", \"sender_street\": \"string\", \"sender_city\": \
