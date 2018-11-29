@@ -61,7 +61,7 @@ class Footer extends React.Component {
               Twitter
             </a>
             <a
-              href="https://centrifuge-io.slack.com/"
+              href="https://join.slack.com/t/centrifuge-io/shared_invite/enQtNDYwMzQ5ODA3ODc0LTU4ZjU0NDNkOTNhMmUwNjI2NmQ2MjRiNzA4MGIwYWViNTkxYzljODU2OTk4NzM4MjhlOTNjMDAwNWZkNzY2YWY"
               target="_blank"
               rel="noreferrer noopener">
               Slack
