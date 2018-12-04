@@ -6,4 +6,4 @@ This project documents the procedure to setup a Centrifuge Node. For the step by
 
 For information on the Centrifuge code, see the [go-centrifuge project](https://github.com/centrifuge/go-centrifuge).
 
-To become a part of the Centrifuge community, read the [Code of Conduct](https://developer.centrifuge.io/docs/overview/code-of-conduct) and join [Slack](https://centrifuge-io.slack.com/).
+To become a part of the Centrifuge community, read the [Code of Conduct](https://developer.centrifuge.io/docs/overview/code-of-conduct) and join [Slack](https://join.slack.com/t/centrifuge-io/shared_invite/enQtNDk1MzkwODM4OTgxLWRlNTU4NDQzOWIwYWEzNGRhN2UzMzQwNThjZjI0ZmIxMTU4NmQwMjc2ZDBkOTEyNWJhMjE4MzA2NTE5MWU1NWE).
