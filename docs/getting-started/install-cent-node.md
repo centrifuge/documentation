@@ -45,8 +45,8 @@ For instructions to install `geth` on MacOS, see [Instructions for MacOS](https:
 ### System Requirements for Installing the Centrifuge Node:
 
 To accept the incoming P2P connections, you will need to open two ports for incoming TCP connections.
- P2P Port: open ingress/egress
- API Port: restrict at will, only you or your upstream systems should need to talk to it
+ P2P Port: open ingress/egress. This port will be configured under `p2p` `port` in your config.
+ API Port: restrict at will, only you or your upstream systems should need to talk to it. This port will be configured as `nodeport` in your config.
 <!--
 **Resource Requirements for Centrifuge API Node**
 * 1 Gigabyte memory
@@ -55,7 +55,7 @@ To accept the incoming P2P connections, you will need to open two ports for inco
 
 ### Running the Ethereum Rinkeby Node
 
-Rinkeby is a testnet
+Centrifuge supports Rinkeby as a testnet. We are currently putting the finishing touches on supporting Kovan out of the box.
 
 **Resource Requirements**
 
@@ -137,20 +137,27 @@ To make sure that your Centrifuge node setup was successful, you can run the fol
   ```bash
   $ curl -k -X GET "https://localhost:8082/ping" -H "accept: application/json"
   ```
-* To create an invoice:
+* To create a test invoice, that is not being sent to any other Centrifuge ID:
 
   ```bash
-  $ curl -k -X POST "https://localhost:8082/invoice" -H "accept: application/json" \
-  -H "Content-Type: application/json" -d "{ \"collaborators\": [ \"string\" ], \
-  \"data\": { \"invoice_status\": \"string\", \"invoice_number\": \"string\", \
-  \"sender_name\": \"string\", \"sender_street\": \"string\", \"sender_city\": \
-  \"string\", \"sender_zipcode\": \"string\", \"sender_country\": \"string\", \
-  \"recipient_name\": \"string\", \"recipient_street\": \"string\", \
-  \"recipient_city\": \"string\", \"recipient_zipcode\": \"string\", \
-  \"recipient_country\": \"string\", \"currency\": \"string\", \
-  \"gross_amount\": \"string\", \"net_amount\": \"string\", \
-  \"tax_amount\": \"string\", \"tax_rate\": \"string\", \
-  \"recipient\": \"string\", \"sender\": \"string\", \"payee\": \"string\", \
-  \"comment\": \"string\", \"due_date\": \"2018-10-19T08:18:22.167Z\", \ 
-  \"date_created\": \"2018-10-19T08:18:22.167Z\", \"extra_data\": \"string\" }}"
+  $ curl -k -X POST "https://localhost:8082/invoice" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"data\": { \"invoice_status\": \"new\", \"invoice_number\": \"test invoice 1\", \"sender_name\": \"Jane Doe\", \"currency\": \"USD\", \"gross_amount\": \"100100\", \"due_date\": \"2019-01-01T08:18:22.167Z\", \"date_created\": \"2018-10-19T08:18:22.167Z\" }}"
   ```
+
+Assuming all your previous configuration steps were successful this will result in the following output for your local Centrifuge Node
+```
+06.12.2018 10:46:58.193   INFO   coredocument:  Anchoring document with identifiers: [document: 0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, current: 0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, next: 0xbcfa64158b0f99ce60b95bdcf575ac07bf5e27770a20d82110bffa33c622082e], rootHash: 0xb7635cf1fd562f363b6abfa75ae255e1e18536886f01d135aaf3f0760faa90f3 processor.go:225
+06.12.2018 10:46:58.313   INFO   anchorRepository:  Waiting for confirmation for the anchorID [c314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc] anchor_confirmation_task.go:136
+06.12.2018 10:46:58.610   INFO   anchorRepository:  Sent off the anchor [id: c314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, hash: b7635cf1fd562f363b6abfa75ae255e1e18536886f01d135aaf3f0760faa90f3] to registry. Ethereum transaction hash [3fd64d2a66346169038bf3466f3c3dbe6e654114c46f8d251189b5d640a04171] and Nonce [7] and Check [true] ethereum_anchor_repository.go:135
+06.12.2018 10:46:58.610   INFO   anchorRepository:  Transfer pending: 0x3fd64d2a66346169038bf3466f3c3dbe6e654114c46f8d251189b5d640a04171
+ ethereum_anchor_repository.go:137
+06.12.2018 10:47:03.653   INFO   anchorRepository:  Received filtered event Anchor Confirmation for AnchorID [c314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc] and CentrifugeID [0x4ce3c9b3e17f]
+ anchor_confirmation_task.go:159
+06.12.2018 10:47:03.662   INFO   coredocument:  Anchored document with identifiers: [document: 0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, current: 0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, next: 0xbcfa64158b0f99ce60b95bdcf575ac07bf5e27770a20d82110bffa33c622082e], rootHash: 0xb7635cf1fd562f363b6abfa75ae255e1e18536886f01d135aaf3f0760faa90f3 processor.go:232
+```
+
+The node received the request to process the invoice data, then signed the document state with its keys and anchored the result on Ethereum. In this example the automatically generated document identifier is `0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc`, which is also returned back in the JSON response. As no other `collaborator` was specified in this simple call, the only collaborator (Centrifuge ID) on this invoice is automatically set to the Centrifuge ID, configured in your node.
+
+The result of your `curl` call would look like this
+```JSON
+{"header":{"document_id":"0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc","version_id":"0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc","collaborators":["0x4ce3c9b3e17f"]},"data":{"invoice_number":"test invoice 1","sender_name":"Jane Doe","currency":"USD","gross_amount":"100100","due_date":"2019-01-01T08:18:22.167Z","date_created":"2018-10-19T08:18:22.167Z"}}
+```
