@@ -71,7 +71,7 @@ const siteConfig = {
     headerLinks: [
         {doc: 'overview/introduction', label: 'Docs'},
         {
-            href: 'https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1',
+            href: 'https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2',
             label: 'Centrifuge Node API',
             external: true
         },
