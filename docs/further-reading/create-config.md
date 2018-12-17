@@ -14,6 +14,8 @@ Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethere
 
 > **NOTE:** If the provided `keystore/<KEY-FILE>` is encrypted the password needs to be added with `-z SAMPLE_PASSWORD` to successfully create the config.
 
+Per default the centrifuge network `russianhill` is using the Ethereum testnet rinkeby.
+
 
 **Flags for createconfig command:**
 
@@ -46,7 +48,10 @@ The generated keys are saved in PEM files.
 
 > NOTE: The generated `config.yaml` includes information about your Ethereum private key. Make sure to store it in a secure environment.
 
-  
+The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to execute the `centrifuge createconfig` command.
+
+[Rinkeby faucet](https://www.rinkeby.io/#faucet) to get ETH for testing.
+
 ## Using Infura 
 It is recommended to setup up a local Ethereum node with `geth` to be fully independent and decentralized.
 However, it is possible to run the centrifuge node against [Infura](https://infura.io/).
