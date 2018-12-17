@@ -95,20 +95,23 @@ Once you have installed all the necessary packages, follow these steps to instal
 3. Create the `config.yaml` file using the `createconfig` utility:
 
   ```bash
-  $ centrifuge createconfig -z  ~/.ethereum/keystore/KEY-FILE> -e ws://127.0.0.1:8546 -t <PATH-TO-CONFIG-FILE> \
+  $ centrifuge createconfig -z  ~/.ethereum/keystore/<KEY-FILE> -e ws://127.0.0.1:8546 -t <DEFINE_CONFIG_DIR_NAME> \
   -a 8082 -p 38204
   ```
 
   This command automatically creates an Identity and the key pairs. It then generates the config.yaml file required to run the node.
   
-  Replace the `_KEY-FILE_` with the key file you obtained when creating the Ethereum account and `_PATH-TO-CONFIG-FILE_` with the location where you want the `config.yaml`  file to be stored.
+  Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored.
+
+> NOTE: The generated `config.yaml` includes information about your Ethereum private key. Make sure to store it in a secure environment.
+
 
 4. Run the Centrifuge Node using the `config.yaml` file you created:
 
   ```bash
-  $ centrifuge run -c /PATH-TO-CONFIG-FILE/config.yaml
+  $ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
   ```
-  Replace the `_PATH-TO-CONFIG-FILE_` with the location of the `config.yaml` file.
+  Replace the `PATH-TO-CONFIG-FILE` with the location of the `config.yaml` file.
 
 #### Additional custom configuration
 * Configure node under NAT
