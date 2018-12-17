@@ -62,7 +62,7 @@ To mint an NFT from the Centrifuge invoice document:
   \"proof_fields\": [ \"string\" ]}"
   ```
  
-On Rinkeby testnet a payment obligation  [NFT registry](https://rinkeby.etherscan.io/address/0xdb0581a9328664855328addb0e251184640f9e5d) is deployed for testing.
+On Rinkeby testnet a payment obligation  [NFT registry](https://rinkeby.etherscan.io/address/0xdb0581a9328664855328addb0e251184640f9e5d) is deployed.
 
 The payment obligation can be minted with an invoice document. 
 
