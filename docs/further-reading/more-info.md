@@ -1,6 +1,6 @@
 ---
 id: more-info
-title: Further Details
+title: Node API
 ---
 
 For more information on the API calls, see [Centrifuge Node API documentation](https://app.swaggerhub.com/apis-docs/centrifuge.io/cent-node/0.0.1).

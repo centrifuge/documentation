@@ -103,8 +103,7 @@ Once you have installed all the necessary packages, follow these steps to instal
   
   Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored.
 
-> NOTE: The generated `config.yaml` includes information about your Ethereum private key. Make sure to store it in a secure environment.
-
+  Additional information about [Create Config](/docs/further-reading/create-config).
 
 4. Run the Centrifuge Node using the `config.yaml` file you created:
 
