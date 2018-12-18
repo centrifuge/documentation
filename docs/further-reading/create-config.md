@@ -20,7 +20,7 @@ Per default the centrifuge network `russianhill` is using the Ethereum testnet r
 **Flags for createconfig command:**
 
 ```text
-  -z, --accountkeypath string   Path of Ethereum Account Key JSON file (default "/Users/username/datadir/main.key")
+   -z, --accountkeypath string   Path of Ethereum Account Key JSON file (default "$HOME/datadir/main.key")
   -k, --accountpwd string       Ethereum Account Password
   -a, --apiPort int             Api Port (default 8082)
   -b, --bootstraps strings      Bootstrap P2P Nodes
