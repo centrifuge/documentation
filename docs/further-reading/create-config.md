@@ -28,7 +28,7 @@ Per default the centrifuge network `russianhill` is using the Ethereum testnet r
   -h, --help                    help for createconfig
   -n, --network string          Default Network (default "russianhill")
   -p, --p2pPort int             Peer-to-Peer Port (default 38202)
-  -t, --targetdir string        Target Data Dir (default "/Users/username/datadir")
+   -t, --targetdir string        Target Data Dir (default "$HOME/datadir")
   -x, --txpoolaccess            Transaction Pool access (default true)
  ```
   
