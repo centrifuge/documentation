@@ -61,7 +61,7 @@ However, it is possible to run the centrifuge node against [Infura](https://infu
   -a 8082 -p 38204 -x=false
   ```
 
-Instead of running against a local node replace -e `https://rinkeby.infura.io/v3/<INFURA_ENDPOINT_ID>` with your 
+ Instead of running against a local node replace -e `https://rinkeby.infura.io/v3/<INFURA_PROJECT_ID>` with your 
 personal Infura endpoint instead.
 
 For Infura the flag for transaction pool access needs to be `-x=false`
