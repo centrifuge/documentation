@@ -110,7 +110,7 @@ Once you have installed all the necessary packages, follow these steps to instal
   ```bash
   $ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
   ```
-  Replace the `PATH-TO-CONFIG-FILE` with the location of the `config.yaml` file.
+   Replace the `PATH-TO-CONFIG-DIR` with the location of the `config.yaml` file.
 
 #### Additional custom configuration
 * Configure node under NAT
