@@ -54,13 +54,24 @@ The following section lists the API calls to perform functions like sending docu
 
 ## Minting an NFT
 
-To mint an NFT from the Centrifuge document:
+To mint an NFT from the Centrifuge invoice document:
 
   ```bash
   $ curl -X POST "https://localhost/token/mint" -H "accept: application/json" \
-  -H "Content-Type: application/json" -d "{ \"identifier\": \"string\", \"type\": \
-  \"string\", \"registry_address\": \"string\", \"deposit_address\": \"string\", \
+  -H "Content-Type: application/json" -d "{ \"identifier\": \"string\", \"registry_address\": \"string\", \"deposit_address\": \"string\", \
   \"proof_fields\": [ \"string\" ]}"
   ```
+ 
+On Rinkeby testnet a payment obligation  [NFT registry](https://rinkeby.etherscan.io/address/0xdb0581a9328664855328addb0e251184640f9e5d) is deployed.
+
+The payment obligation can be minted with an invoice document. 
+
+The address [`0xdb0581A9328664855328AdDb0E251184640f9e5D`](https://rinkeby.etherscan.io/address/0xdb0581a9328664855328addb0e251184640f9e5d) can be used as `registry_address`
+
+The following `proof_fields` are required `["invoice.gross_amount", "invoice.currency", "invoice.due_date", "collaborators[0]"]`
+to mint a payment obligation NFT.
+
+The `deposit_address` can be any arbitrary address which should own the NFT. 
+  
 
 
