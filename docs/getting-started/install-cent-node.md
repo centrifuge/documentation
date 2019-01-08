@@ -75,7 +75,7 @@ Start the `geth` process:
 
   ```bash
   $ geth --rinkeby --syncmode light --rpc --rpcapi db,eth,net,web3,txpool --ws \
-  --wsorigins "*" --wsapi db,eth,net,web3,txpool > /tmp/geth.log 2>&1 &
+  --wsorigins "*" --wsapi db,eth,net,web3,txpool > /tmp/geth.log 2>&1
    ```
 
 This command runs go-ethereum in the light mode for speed and simplicity. You can modify this command based on your requirements.
