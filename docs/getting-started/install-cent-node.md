@@ -103,6 +103,13 @@ Once you have installed all the necessary packages, follow these steps to instal
   
   Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored.
 
+  If you have entered a password when creating the geth node in the previous step, you will need to enter this password at this step as well:
+
+    ```bash
+  $ centrifuge createconfig -z  ~/.ethereum/keystore/<KEY-FILE> -e ws://127.0.0.1:8546 -t <DEFINE_CONFIG_DIR_NAME> \
+  -a 8082 -p 38204 -k <PASSWORD>
+  ```
+
   Additional information about [Create Config](/docs/further-reading/create-config).
 
 4. Run the Centrifuge Node using the `config.yaml` file you created:
