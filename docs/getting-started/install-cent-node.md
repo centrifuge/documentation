@@ -36,7 +36,7 @@ For instructions to install `geth` on MacOS, see [Instructions for MacOS](https:
   Address: {168bc315a2ee09042d83d7c5811b533620531f67}
   ```
 
-  Creating a new `geth` account generates a keyfile stored at `~/.ethereum/keystore`.
+  Creating a new `geth` account generates a keyfile stored at `~/.ethereum/keystore`. For MacOS, this keyfile will be generated at ~/Library/Ethereum/keystore/.
 
 > NOTE: You will not be able to access the account if you lose the `Passphrase`. Make sure to store it securely. There is no **Forgot my password** option available here.
 
