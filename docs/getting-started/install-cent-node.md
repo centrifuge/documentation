@@ -36,7 +36,7 @@ For instructions to install `geth` on MacOS, see [Instructions for MacOS](https:
   Address: {168bc315a2ee09042d83d7c5811b533620531f67}
   ```
 
-  Creating a new `geth` account generates a keyfile stored at `~/.ethereum/keystore`.
+  Creating a new `geth` account generates a keyfile stored at `~/.ethereum/keystore`. For MacOS, this keyfile will be generated at ~/Library/Ethereum/keystore/.
 
 > NOTE: You will not be able to access the account if you lose the `Passphrase`. Make sure to store it securely. There is no **Forgot my password** option available here.
 
@@ -102,6 +102,13 @@ Once you have installed all the necessary packages, follow these steps to instal
   This command automatically creates an Identity and the key pairs. It then generates the config.yaml file required to run the node.
   
   Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored.
+
+  If you have entered a password when creating the geth node in the previous step, you will need to enter this password at this step as well:
+
+    ```bash
+  $ centrifuge createconfig -z  ~/.ethereum/keystore/<KEY-FILE> -e ws://127.0.0.1:8546 -t <DEFINE_CONFIG_DIR_NAME> \
+  -a 8082 -p 38204 -k <PASSWORD>
+  ```
 
   Additional information about [Create Config](/docs/further-reading/create-config).
 
