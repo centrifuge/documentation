@@ -71,7 +71,7 @@ Centrifuge supports Rinkeby as a testnet. We are currently putting the finishing
 * Syncing will take about 1-2 hours. This can vary depending on the resource availability of the full node(s).
   * Optionally, you can use SSDs speed it up.
 
-Start the `geth` process: 
+Start the `geth` process:
 
   ```bash
   $ geth --rinkeby --syncmode light --rpc --rpcapi db,eth,net,web3,txpool --ws \
@@ -100,12 +100,12 @@ Once you have installed all the necessary packages, follow these steps to instal
   ```
 
   This command automatically creates an Identity and the key pairs. It then generates the config.yaml file required to run the node.
-  
+
   Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored.
 
   If you have entered a password when creating the geth node in the previous step, you will need to enter this password at this step as well:
 
-    ```bash
+   ```bash
   $ centrifuge createconfig -z  ~/.ethereum/keystore/<KEY-FILE> -e ws://127.0.0.1:8546 -t <DEFINE_CONFIG_DIR_NAME> \
   -a 8082 -p 38204 -k <PASSWORD>
   ```
@@ -126,7 +126,7 @@ If you want your node to be accessible outside your private network, you will ne
 ```yaml
 p2p:
   externalIP: "100.111.112.113"
-``` 
+```
 
 * Configure notification webhook (for incoming data from other peers)
 
@@ -136,7 +136,7 @@ notifications:
   endpoint: "YOUR_WEBHOOK_ENDPOINT"
 ```
 For more information, see the [Notification Payload](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1#/NotificationDummyService/Notify)
- 
+
 ### Post-Install Verification
 
 To make sure that your Centrifuge node setup was successful, you can run the following API calls. For example:
