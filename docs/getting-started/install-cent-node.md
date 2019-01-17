@@ -149,7 +149,7 @@ To make sure that your Centrifuge node setup was successful, you can run the fol
 * To create a test invoice, that is not being sent to any other Centrifuge ID:
 
   ```bash
-  $ curl -k -X POST "https://localhost:8082/invoice" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"data\": { \"invoice_status\": \"new\", \"invoice_number\": \"test invoice 1\", \"sender_name\": \"Jane Doe\", \"currency\": \"USD\", \"gross_amount\": \"100100\", \"due_date\": \"2019-01-01T08:18:22.167Z\", \"date_created\": \"2018-10-19T08:18:22.167Z\" }}"
+  $ curl -k -X POST "https://localhost:8082/invoice" -H "authorization:\${hex(CentrifugeID)}" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"data\": { \"invoice_status\": \"new\", \"invoice_number\": \"test invoice 1\", \"sender_name\": \"Jane Doe\", \"currency\": \"USD\", \"gross_amount\": \"100100\", \"due_date\": \"2019-01-01T08:18:22.167Z\", \"date_created\": \"2018-10-19T08:18:22.167Z\" }}"
   ```
 
 Assuming all your previous configuration steps were successful this will result in the following output for your local Centrifuge Node
@@ -168,5 +168,17 @@ The node received the request to process the invoice data, then signed the docum
 
 The result of your `curl` call would look like this
 ```JSON
-{"header":{"document_id":"0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc","version_id":"0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc","collaborators":["0x4ce3c9b3e17f"]},"data":{"invoice_number":"test invoice 1","sender_name":"Jane Doe","currency":"USD","gross_amount":"100100","due_date":"2019-01-01T08:18:22.167Z","date_created":"2018-10-19T08:18:22.167Z"}}
+{"header":{"document_id":"0x520986bd649d7b48d3a7e1ebaf74bafbfea004290736bdc4f84fc99836e54d85","version_id":"0x520986bd649d7b48d3a7e1ebaf74bafbfea004290736bdc4f84fc99836e54d85","collaborators":["0x8c8cfaf732d3"],"transaction_id":"2c572bb1-d3ec-47c3-941d-b55bcdd02a15"},"data":{"invoice_number":"test invoice 1","sender_name":"Jane Doe","currency":"USD","gross_amount":"100100","due_date":"2019-01-01T08:18:22.167Z","date_created":"2018-10-19T08:18:22.167Z"}}
 ```
+Note the `"transaction_id":"2c572bb1-d3ec-47c3-941d-b55bcdd02a15"` parameter. The Centrifuge Node will perform most of write operations in an asynchronous manner.
+
+* To check on the status of the transaction:
+  ```bash
+  $ curl -k -X GET "https://35.184.66.29:8082/transactions/2c572bb1-d3ec-47c3-941d-b55bcdd02a15" -H "accept: application/json" -H "authorization:\${hex(CentrifugeID)}"
+  ```
+  Eventually will return:
+  ```JSON
+  {"transaction_id":"2c572bb1-d3ec-47c3-941d-b55bcdd02a15","status":"success","last_updated":"1970-01-01T00:00:18.726081868Z"}
+  ```
+  Other possible states are `pending` and `failed`
+ 

@@ -10,8 +10,8 @@ The following section lists the API calls to perform functions like sending docu
 * To create a list of precise proofs for the specified fields of the document given by ID:
 
   ```bash
-  $ curl -X POST "https://localhost/document/IDENTIFIER/proof" -H \
-  "accept: application/json" -H "Content-Type: application/json" \
+  $ curl -X POST "https://localhost/document/IDENTIFIER/proof" -H "authorization:\${hex(CentrifugeID)}" \ 
+  -H   "accept: application/json" -H "Content-Type: application/json" \
   -d "{ \"identifier\": \"string\", \"type\": \"string\", \"fields\": [ \"string\" ]}"
   ```
 
@@ -20,8 +20,8 @@ The following section lists the API calls to perform functions like sending docu
 * To create a list of precise proof for the specified fields of the given version of the document given by ID:
 
   ```bash
-  $ curl -X POST "https://localhost/document/IDENTIFIER/VERSION/proof" -H \
-  "accept: application/json" -H "Content-Type: application/json" \
+  $ curl -X POST "https://localhost/document/IDENTIFIER/VERSION/proof" -H "authorization:\${hex(CentrifugeID)}" \ 
+  -H "accept: application/json" -H "Content-Type: application/json" \
   -d "{ \"identifier\": \"string\", \"type\": \"string\", \"version\": \"string\", \
   \"fields\": [ \"string\" ]}"
   ```
@@ -29,16 +29,16 @@ The following section lists the API calls to perform functions like sending docu
 * To get an invoice:
 
   ```bash
-  $ curl -X POST "https://localhost/invoice/get" -H \
-  "accept: application/json" -H "Content-Type: application/json" \
+  $ curl -X POST "https://localhost/invoice/get" -H "authorization:\${hex(CentrifugeID)}" \ 
+  -H "accept: application/json" -H "Content-Type: application/json" \
   -d "{ \"document_identifier\": \"string\"}"
   ```
 
 * To create an invoice:
 
   ```bash
-  curl -X POST "https://localhost/invoice" -H "accept: application/json" -H \
-  "Content-Type: application/json" -d "{ \"collaborators\": [ \"string\" ], \
+  curl -X POST "https://localhost/invoice" -H "accept: application/json" -H "authorization:\${hex(CentrifugeID)}" \
+  -H "Content-Type: application/json" -d "{ \"collaborators\": [ \"string\" ], \
   \"data\": { \"invoice_status\": \"string\", \"invoice_number\": \"string\", \
   \"sender_name\": \"string\", \"sender_street\": \"string\", \"sender_city\": \
   \"string\", \"sender_zipcode\": \"string\", \"sender_country\": \"string\", \
@@ -57,7 +57,7 @@ The following section lists the API calls to perform functions like sending docu
 To mint an NFT from the Centrifuge invoice document:
 
   ```bash
-  $ curl -X POST "https://localhost/token/mint" -H "accept: application/json" \
+  $ curl -X POST "https://localhost/token/mint" -H "accept: application/json" -H "authorization:\${hex(CentrifugeID)}" \
   -H "Content-Type: application/json" -d "{ \"identifier\": \"string\", \"registry_address\": \"string\", \"deposit_address\": \"string\", \
   \"proof_fields\": [ \"string\" ]}"
   ```
