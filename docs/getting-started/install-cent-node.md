@@ -135,7 +135,7 @@ To receive an event when a new document has been shared with your node, set your
 notifications:
   endpoint: "YOUR_WEBHOOK_ENDPOINT"
 ```
-For more information, see the [Notification Payload](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1#/NotificationDummyService/Notify)
+For more information, see the [Notification Payload](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.3#/NotificationDummyService/Notify)
 
 ### Post-Install Verification
 

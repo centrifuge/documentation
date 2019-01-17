@@ -37,7 +37,7 @@ class Footer extends React.Component {
             <a href={this.docUrl('getting-started/prerequisites')}>
               Getting Started
             </a>
-            <a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1"
+            <a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.3"
               target="_blank"
               rel="noreferrer noopener">
               Centrifuge Node Api
