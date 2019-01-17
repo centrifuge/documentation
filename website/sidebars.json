@@ -11,6 +11,7 @@
       "cent-os-administration/manage-cent-os"
     ],
     "Further Reading": [
+      "further-reading/auth-header",
       "further-reading/more-info",
       "further-reading/create-config",
       "further-reading/code-of-conduct"
