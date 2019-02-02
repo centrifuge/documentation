@@ -35,6 +35,7 @@ Per default the centrifuge network `russianhill` is using the Ethereum testnet r
 
 
 In detail the command performs the following actions:
+
 - create a personal centrifugeID
 - create a directory for the [levelDB](http://leveldb.org/) (key/value storage)
 - create an Identity Contract ([ERC725](https://github.com/ethereum/EIPs/issues/725)) on Ethereum
@@ -43,8 +44,7 @@ In detail the command performs the following actions:
 - add the generated public keys to the identity contract
 - create a custom `config.yaml` file
 
-The generated keys are saved in PEM files. 
-
+The generated keys are saved in PEM files.
 
 > NOTE: The generated `config.yaml` includes information about your Ethereum private key. Make sure to store it in a secure environment.
 
@@ -52,9 +52,9 @@ The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to 
 
 [Rinkeby faucet](https://www.rinkeby.io/#faucet) to get ETH for testing.
 
-## Using Infura 
+# Using Infura 
 It is recommended to setup up a local Ethereum node with `geth` to be fully independent and decentralized.
-However, it is possible to run the centrifuge node against [Infura](https://infura.io/).
+However, it is possible to run the Centrifuge node against [Infura](https://infura.io/).
 
   ```bash
   $ centrifuge createconfig -z  ~/.ethereum/keystore/<KEY-FILE> -e https://rinkeby.infura.io/v3/<INFURA_ENDPOINT_ID> -t <DEFINE_CONFIG_DIR_NAME> \
@@ -64,7 +64,7 @@ However, it is possible to run the centrifuge node against [Infura](https://infu
  Instead of running against a local node replace -e `https://rinkeby.infura.io/v3/<INFURA_PROJECT_ID>` with your 
  personal Infura project ID instead.
 
-For Infura the flag of the centrifuge node for transaction pool access needs to be `-x=false`
+For Infura the flag of the Centrifuge node for transaction pool access needs to be `-x=false`
 
-## Using Parity
-For using a Parity node instead of a geth node. Please reach us on Slack. 
+# Using Parity
+For using a Parity node instead of a geth node. Please reach us on Slack.
