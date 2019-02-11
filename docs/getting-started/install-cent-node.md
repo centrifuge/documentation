@@ -149,7 +149,7 @@ To make sure that your Centrifuge node setup was successful, you can run the fol
 * To create a test invoice, that is not being sent to any other Centrifuge ID:
 
   ```bash
-  $ curl -k -X POST "https://localhost:8082/invoice" -H "authorization:\${hex(CentrifugeID)}" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"data\": { \"invoice_status\": \"new\", \"invoice_number\": \"test invoice 1\", \"sender_name\": \"Jane Doe\", \"currency\": \"USD\", \"gross_amount\": \"100100\", \"due_date\": \"2019-01-01T08:18:22.167Z\", \"date_created\": \"2018-10-19T08:18:22.167Z\" }}"
+  $ curl -k -X POST "https://localhost:8082/invoice" -H "authorization: YOURCENTIDHERE" -H "accept: application/json" -H "Content-Type: application/json" -d '{ "data": { "invoice_status": "new", "invoice_number": "test invoice 1", "sender_name": "Jane Doe", "currency": "USD", "gross_amount": "100100", "due_date": "2019-01-01T08:18:22.167Z", "date_created": "2018-10-19T08:18:22.167Z" }}'
   ```
 
 Assuming all your previous configuration steps were successful this will result in the following output for your local Centrifuge Node
@@ -174,7 +174,7 @@ Note the `"transaction_id":"2c572bb1-d3ec-47c3-941d-b55bcdd02a15"` parameter. Th
 
 * To check on the status of the transaction:
   ```bash
-  $ curl -k -X GET "https://35.184.66.29:8082/transactions/2c572bb1-d3ec-47c3-941d-b55bcdd02a15" -H "accept: application/json" -H "authorization:\${hex(CentrifugeID)}"
+  $ curl -k -X GET "https://35.184.66.29:8082/transactions/2c572bb1-d3ec-47c3-941d-b55bcdd02a15" -H "accept: application/json" -H "authorization:YOURCENTIDHERE"
   ```
   Eventually will return:
   ```JSON
