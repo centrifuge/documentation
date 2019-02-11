@@ -13,8 +13,6 @@ module.exports = {
         extensions: [`.mdx`, `.md`]
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
