@@ -1,6 +1,7 @@
 ---
 id: auth-header
 title: Auth Header
+category: Further Reading
 ---
 
 A Centrifuge Node can be used as a host of multiple Centrifuge accounts. Therefore every API call, that requires an account as a context, needs to provide an authorization header.

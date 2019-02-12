@@ -1,6 +1,7 @@
 ---
 id: introduction
 title: Introduction
+category: Overview
 ---
 
 ## Centrifuge Operating System

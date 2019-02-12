@@ -1,6 +1,7 @@
 ---
 id: interacting-with-node
 title: Interacting with the Centrifuge Node
+category: Usage
 ---
 
 The following section lists the API calls to perform functions like sending documents, validating proofs and so on. For more information, see [Centrifuge Node API documentation](https://app.swaggerhub.com/apis-docs/centrifuge.io/cent-node/0.0.3).
