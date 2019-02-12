@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Sidebar from "../sidebar";
+import Sidebar from "../Sidebar";
+import Nav from "../Nav";
 
 const Layout = ({ children }) => (
   <>
+    <header>
+      <Nav />
+    </header>
     <aside>
       <Sidebar />
     </aside>
