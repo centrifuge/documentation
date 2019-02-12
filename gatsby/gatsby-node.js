@@ -22,6 +22,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     });
 
     createNodeField({
+      name: `category`,
+      node,
+      value: node.frontmatter.category || ``
+    });
+
+    createNodeField({
       name: "id",
       node,
       value: node.id
