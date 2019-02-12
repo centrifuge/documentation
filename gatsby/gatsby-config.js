@@ -12,6 +12,7 @@ module.exports = {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        hastPlugins: [require("rehype-slug")],
         defaultLayouts: {
           default: require.resolve("./src/components/Layout/index.js"),
           docs: require.resolve("./src/components/DocsLayout/index.js")
