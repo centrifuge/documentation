@@ -13,15 +13,16 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: require.resolve("./src/components/Layout/index.js")
+          default: require.resolve("./src/components/Layout/index.js"),
+          docs: require.resolve("./src/components/DocsLayout/index.js")
         }
       }
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "pages",
-        path: `${__dirname}/src/pages/`
+        name: `docs`,
+        path: `${__dirname}/docs/`
       }
     },
     `gatsby-transformer-sharp`,
@@ -40,9 +41,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-netlify-cache`,
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {}
-    }
+    `gatsby-plugin-netlify`
   ]
 };
