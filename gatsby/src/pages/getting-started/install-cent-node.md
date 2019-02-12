@@ -1,6 +1,7 @@
 ---
 id: install-cent-node
 title: Installing the Centrifuge Node
+category: Getting Started
 ---
 This section describes the procedure to install the Centrifuge node. This involves creating an Ethereum account, installing the Centrifuge API node and installing the Ethereum Rinkeby node.
 

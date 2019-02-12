@@ -1,6 +1,7 @@
 ---
 id: create-config
 title: Create Config
+category: Further Reading
 ---
 The `centrifuge createconfig` command automatically generates all required key pairs and config files
 to run the node.
