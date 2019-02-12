@@ -1,7 +1,7 @@
 import React from "react";
-import { graphql, StaticQuery, Link } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 
-const Sidebar = ({}) => (
+const Sidebar = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -17,13 +17,14 @@ const Sidebar = ({}) => (
         }
       }
     `}
-    render={({ allMdx }) => {
-      return (
+    render={({ allMdx }) => (
+      <>
+        <p>Sidebar</p>
         <pre>
-          <code>{JSON.parse(allMdx.edges, null, 2)}</code>
+          <code>{JSON.stringify(allMdx.edges, null, 2)}</code>
         </pre>
-      );
-    }}
+      </>
+    )}
   />
 );
 
