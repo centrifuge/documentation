@@ -4,18 +4,17 @@ import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import { MDXProvider } from "@mdx-js/tag";
 
 import Layout from "../Layout";
+import ToC from "../ToC";
 
 const DocsLayout = ({ data: { mdx } }) => (
   <Layout>
     <h1>{mdx.frontmatter.title}</h1>
 
-    <MDXProvider
-      components={{
-        p: props => <p {...props} style={{ color: "rebeccapurple" }} />
-      }}
-    >
+    <MDXProvider components={{}}>
       <MDXRenderer>{mdx.code.body}</MDXRenderer>
     </MDXProvider>
+
+    <ToC content={mdx.tableOfContents} />
   </Layout>
 );
 
@@ -29,6 +28,7 @@ export const query = graphql`
       code {
         body
       }
+      tableOfContents
     }
   }
 `;
