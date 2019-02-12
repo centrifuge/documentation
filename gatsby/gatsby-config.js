@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Centrifuge Developer`,
     siteUrl: process.env.URL || "http://localhost:8000",
+    docsUrl: `https://github.com/centrifuge/developer.centrifuge.io/tree/develop/gatsby/src/pages`,
     description: `A Decentralized Operating System For The Financial Supply Chain`,
     author: `@centrifuge`
   },
