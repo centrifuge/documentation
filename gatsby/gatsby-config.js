@@ -27,6 +27,11 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/centrifuge-logo.png`
       }
+    },
+    `gatsby-plugin-netlify-cache`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {}
     }
   ]
 };
