@@ -1,5 +1,11 @@
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
+  const { createNodeField, createRedirect } = actions;
+
+  createRedirect({
+    fromPath: "/",
+    toPath: "/overview/introduction",
+    isPermanent: true
+  });
 
   if (node.internal.type === `Mdx`) {
     const parent = getNode(node.parent);
