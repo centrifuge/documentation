@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "grommet": "^2.4.0",
-    "grommet-icons": "^4.2.0",
-    "styled-components": "^4.1.3",
-    "styled-icons": "^7.1.1"
-  }
-}
