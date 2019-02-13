@@ -6,6 +6,7 @@ import * as Grommet from "grommet";
 
 import Layout from "../Layout";
 import ToC from "../ToC";
+import CodeHighlighter from "../CodeHighlighter";
 
 const mdxGrommetMap = {
   p: Grommet.Paragraph,
@@ -16,7 +17,13 @@ const mdxGrommetMap = {
   h5: props => <Grommet.Heading {...props} level={5} />,
   h6: props => <Grommet.Heading {...props} level={6} />,
   a: Grommet.Anchor,
-  img: Grommet.Image
+  img: Grommet.Image,
+  code: props => (
+    <CodeHighlighter
+      code={props.children.trim()}
+      language={String(props.className).split("language-")[1]}
+    />
+  )
 };
 
 const DocsLayout = ({ data: { mdx } }) => (
