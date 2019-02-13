@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 
 import Sidebar from "../Sidebar";
 import Nav from "../Nav";
+import Theme from "../Theme";
 
 const Layout = ({ children }) => (
-  <>
+  <Theme>
     <header>
       <Nav />
     </header>
@@ -13,7 +14,7 @@ const Layout = ({ children }) => (
       <Sidebar />
     </aside>
     <main>{children}</main>
-  </>
+  </Theme>
 );
 
 Layout.propTypes = {
