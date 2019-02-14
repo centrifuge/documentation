@@ -1,36 +1,46 @@
 import React from "react";
+import styled from "styled-components";
+import { Anchor as GrommetAnchor } from "grommet";
+
+import { List, Item } from "../List";
+
+const Anchor = styled(GrommetAnchor)`
+  line-height: 1.5;
+  font-size: 12px;
+  margin-bottom: 6px;
+`;
 
 const ToC = ({ content }) => {
   if (content.items)
     return (
-      <ul>
+      <List>
         {/* Level 1 */}
         {content.items.map((level1, index) => (
-          <li key={index}>
-            <a href={level1.url}>{level1.title}</a>
+          <Item key={index}>
+            <Anchor href={level1.url}>{level1.title}</Anchor>
             {/* Level 2 */}
             {level1.items && (
-              <ul>
+              <List style={{ paddingLeft: 16 }}>
                 {level1.items.map((level2, index) => (
-                  <li key={index}>
-                    <a href={level2.url}>{level2.title}</a>
+                  <Item key={index}>
+                    <Anchor href={level2.url}>{level2.title}</Anchor>
                     {/* Level 3 */}
                     {/* {level2.items && (
-                      <ul>
+                      <List>
                         {level2.items.map((level3, index) => (
-                          <li key={index}>
-                            <a href={level3.url}>{level3.title}</a>
-                          </li>
+                          <Item key={index}>
+                            <Anchor href={level3.url}>{level3.title}</Anchor>
+                          </Item>
                         ))}
-                      </ul>
+                      </List>
                     )} */}
-                  </li>
+                  </Item>
                 ))}
-              </ul>
+              </List>
             )}
-          </li>
+          </Item>
         ))}
-      </ul>
+      </List>
     );
 
   return null;
