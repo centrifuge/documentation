@@ -5,7 +5,7 @@ import { MDXProvider } from "@mdx-js/tag";
 import * as Grommet from "grommet";
 
 import Layout from "../Layout";
-import ToC from "../ToC";
+import TableOfContents from "../TableOfContents";
 import CodeHighlighter from "../CodeHighlighter";
 import Sidebar from "../Sidebar";
 
@@ -42,7 +42,7 @@ const DocsLayout = ({ data: { mdx } }) => (
     </Grommet.Box>
 
     <Grommet.Box gridArea="toc" as="aside">
-      <ToC content={mdx.tableOfContents} />
+      <TableOfContents content={mdx.tableOfContents} />
     </Grommet.Box>
   </Layout>
 );

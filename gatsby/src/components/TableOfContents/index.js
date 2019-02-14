@@ -10,7 +10,7 @@ const Anchor = styled(GrommetAnchor)`
   margin-bottom: 6px;
 `;
 
-const ToC = ({ content }) => {
+const TableOfContents = ({ content }) => {
   if (content.items)
     return (
       <List>
@@ -46,4 +46,4 @@ const ToC = ({ content }) => {
   return null;
 };
 
-export default ToC;
+export default TableOfContents;
