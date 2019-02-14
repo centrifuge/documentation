@@ -34,7 +34,7 @@ const DocsLayout = ({ data: { mdx } }) => (
     </Grommet.Box>
 
     <Grommet.Box gridArea="main" as="main">
-      <h1>{mdx.frontmatter.title}</h1>
+      <Grommet.Heading level={1}>{mdx.frontmatter.title}</Grommet.Heading>
 
       <MDXProvider components={mdxGrommetMap}>
         <MDXRenderer>{mdx.code.body}</MDXRenderer>
