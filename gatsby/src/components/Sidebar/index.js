@@ -1,5 +1,14 @@
 import React from "react";
-import { graphql, StaticQuery, Link } from "gatsby";
+import { graphql, StaticQuery, Link as GatsbyLink } from "gatsby";
+import styled from "styled-components";
+import { Text } from "grommet";
+
+import { List, Item } from "../List";
+
+const Link = styled(GatsbyLink)`
+  line-height: 24px;
+  font-size: 12px;
+`;
 
 const Sidebar = () => (
   <StaticQuery
@@ -21,20 +30,28 @@ const Sidebar = () => (
       }
     `}
     render={({ allMdx }) => (
-      <ul>
+      <List>
         {allMdx.group.map((category, index) => (
-          <li key={index}>
-            <p>{category.fieldValue}</p>
-            <ul>
+          <Item key={index}>
+            <Text
+              weight={600}
+              as="p"
+              size="12px"
+              margin={{ bottom: "none", top: "16px" }}
+              style={{ lineHeight: "24px" }}
+            >
+              {category.fieldValue}
+            </Text>
+            <List>
               {category.edges.map((doc, index) => (
-                <li key={index}>
+                <Item key={index}>
                   <Link to={doc.node.fields.slug}>{doc.node.fields.title}</Link>
-                </li>
+                </Item>
               ))}
-            </ul>
-          </li>
+            </List>
+          </Item>
         ))}
-      </ul>
+      </List>
     )}
   />
 );
