@@ -7,6 +7,7 @@ import * as Grommet from "grommet";
 import Layout from "../Layout";
 import ToC from "../ToC";
 import CodeHighlighter from "../CodeHighlighter";
+import Sidebar from "../Sidebar";
 
 const mdxGrommetMap = {
   p: Grommet.Paragraph,
@@ -28,13 +29,21 @@ const mdxGrommetMap = {
 
 const DocsLayout = ({ data: { mdx } }) => (
   <Layout>
-    <h1>{mdx.frontmatter.title}</h1>
+    <Grommet.Box gridArea="sidebar" as="aside">
+      <Sidebar />
+    </Grommet.Box>
 
-    <MDXProvider components={mdxGrommetMap}>
-      <MDXRenderer>{mdx.code.body}</MDXRenderer>
-    </MDXProvider>
+    <Grommet.Box gridArea="main" as="main">
+      <h1>{mdx.frontmatter.title}</h1>
 
-    <ToC content={mdx.tableOfContents} />
+      <MDXProvider components={mdxGrommetMap}>
+        <MDXRenderer>{mdx.code.body}</MDXRenderer>
+      </MDXProvider>
+    </Grommet.Box>
+
+    <Grommet.Box gridArea="toc" as="aside">
+      <ToC content={mdx.tableOfContents} />
+    </Grommet.Box>
   </Layout>
 );
 
