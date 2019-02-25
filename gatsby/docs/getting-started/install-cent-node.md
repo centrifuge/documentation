@@ -158,10 +158,8 @@ Assuming all your previous configuration steps were successful this will result 
 06.12.2018 10:46:58.193   INFO   coredocument:  Anchoring document with identifiers: [document: 0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, current: 0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, next: 0xbcfa64158b0f99ce60b95bdcf575ac07bf5e27770a20d82110bffa33c622082e], rootHash: 0xb7635cf1fd562f363b6abfa75ae255e1e18536886f01d135aaf3f0760faa90f3 processor.go:225
 06.12.2018 10:46:58.313   INFO   anchorRepository:  Waiting for confirmation for the anchorID [c314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc] anchor_confirmation_task.go:136
 06.12.2018 10:46:58.610   INFO   anchorRepository:  Sent off the anchor [id: c314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, hash: b7635cf1fd562f363b6abfa75ae255e1e18536886f01d135aaf3f0760faa90f3] to registry. Ethereum transaction hash [3fd64d2a66346169038bf3466f3c3dbe6e654114c46f8d251189b5d640a04171] and Nonce [7] and Check [true] ethereum_anchor_repository.go:135
-06.12.2018 10:46:58.610   INFO   anchorRepository:  Transfer pending: 0x3fd64d2a66346169038bf3466f3c3dbe6e654114c46f8d251189b5d640a04171
- ethereum_anchor_repository.go:137
-06.12.2018 10:47:03.653   INFO   anchorRepository:  Received filtered event Anchor Confirmation for AnchorID [c314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc] and CentrifugeID [0x4ce3c9b3e17f]
- anchor_confirmation_task.go:159
+06.12.2018 10:46:58.610   INFO   anchorRepository:  Transfer pending: 0x3fd64d2a66346169038bf3466f3c3dbe6e654114c46f8d251189b5d640a04171 ethereum_anchor_repository.go:137
+06.12.2018 10:47:03.653   INFO   anchorRepository:  Received filtered event Anchor Confirmation for AnchorID [c314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc] and CentrifugeID [0x4ce3c9b3e17f] anchor_confirmation_task.go:159
 06.12.2018 10:47:03.662   INFO   coredocument:  Anchored document with identifiers: [document: 0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, current: 0xc314b9558fbdd3fe0533d25f27c1daa702cca535e0cb39ea4f8e88119bff06dc, next: 0xbcfa64158b0f99ce60b95bdcf575ac07bf5e27770a20d82110bffa33c622082e], rootHash: 0xb7635cf1fd562f363b6abfa75ae255e1e18536886f01d135aaf3f0760faa90f3 processor.go:232
 ```
 
@@ -169,7 +167,22 @@ The node received the request to process the invoice data, then signed the docum
 
 The result of your `curl` call would look like this
 ```JSON
-{"header":{"document_id":"0x520986bd649d7b48d3a7e1ebaf74bafbfea004290736bdc4f84fc99836e54d85","version_id":"0x520986bd649d7b48d3a7e1ebaf74bafbfea004290736bdc4f84fc99836e54d85","collaborators":["0x8c8cfaf732d3"],"transaction_id":"2c572bb1-d3ec-47c3-941d-b55bcdd02a15"},"data":{"invoice_number":"test invoice 1","sender_name":"Jane Doe","currency":"USD","gross_amount":"100100","due_date":"2019-01-01T08:18:22.167Z","date_created":"2018-10-19T08:18:22.167Z"}}
+{ 
+  "header": {
+    "document_id": "0x520986bd649d7b48d3a7e1ebaf74bafbfea004290736bdc4f84fc99836e54d85",
+    "version_id": "0x520986bd649d7b48d3a7e1ebaf74bafbfea004290736bdc4f84fc99836e54d85",
+    "collaborators": ["0x8c8cfaf732d3"],
+    "transaction_id": "2c572bb1-d3ec-47c3-941d-b55bcdd02a15"
+  },
+  "data": {
+    "invoice_number": "test invoice 1",
+    "sender_name": "Jane Doe",
+    "currency": "USD",
+    "gross_amount" :"100100",
+    "due_date": "2019-01-01T08:18:22.167Z",
+    "date_created": "2018-10-19T08:18:22.167Z"
+  }
+}
 ```
 Note the `"transaction_id":"2c572bb1-d3ec-47c3-941d-b55bcdd02a15"` parameter. The Centrifuge Node will perform most of write operations in an asynchronous manner.
 
@@ -179,7 +192,11 @@ Note the `"transaction_id":"2c572bb1-d3ec-47c3-941d-b55bcdd02a15"` parameter. Th
   ```
   Eventually will return:
   ```JSON
-  {"transaction_id":"2c572bb1-d3ec-47c3-941d-b55bcdd02a15","status":"success","last_updated":"1970-01-01T00:00:18.726081868Z"}
+  {
+    "transaction_id": "2c572bb1-d3ec-47c3-941d-b55bcdd02a15",
+    "status": "success",
+    "last_updated": "1970-01-01T00:00:18.726081868Z"
+  }
   ```
   Other possible states are `pending` and `failed`
  
