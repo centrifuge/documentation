@@ -41,7 +41,11 @@ const Nav = () => (
           Slack
         </ExternalAnchor>
       </Item>
-      <Item>🔍</Item>
+      <Item>
+        <span role="img" aria-label="Search">
+          🔍
+        </span>
+      </Item>
     </Box>
   </Box>
 );
