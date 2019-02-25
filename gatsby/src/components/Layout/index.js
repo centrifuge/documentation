@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Grid, Box } from "grommet";
+import { AxisTheme } from "@centrifuge/axis-theme/";
 
 import Nav from "../Nav";
-import Theme from "../Theme";
 
 const Layout = ({ children }) => (
-  <Theme>
+  <AxisTheme>
     <Grid
       style={{ maxWidth: 1152 - 32 }}
       margin={{ horizontal: "auto" }}
@@ -39,7 +39,7 @@ const Layout = ({ children }) => (
       </Box>
       {children}
     </Grid>
-  </Theme>
+  </AxisTheme>
 );
 
 Layout.propTypes = {
