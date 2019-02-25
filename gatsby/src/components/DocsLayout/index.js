@@ -14,7 +14,7 @@ const DocsLayout = ({ data: { mdx } }) => (
     </Box>
 
     <Box gridArea="main" as="main">
-      <Heading level={1}>{mdx.frontmatter.title}</Heading>
+      <Heading level={1} lined>{mdx.frontmatter.title}</Heading>
 
       <DocsContent mdx={mdx} />
     </Box>
