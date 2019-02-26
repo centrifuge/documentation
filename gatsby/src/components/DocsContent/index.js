@@ -7,12 +7,13 @@ import CodeHighlighter from "../CodeHighlighter";
 
 const mdxGrommetMap = {
   p: Grommet.Paragraph,
-  h1: props => <Grommet.Heading {...props} level={1} />,
-  h2: props => <Grommet.Heading {...props} level={2} />,
+  h1: props => <Grommet.Heading {...props} level={1} lined />,
+  h2: props => <Grommet.Heading {...props} level={2} lined />,
   h3: props => <Grommet.Heading {...props} level={3} />,
   h4: props => <Grommet.Heading {...props} level={4} />,
   h5: props => <Grommet.Heading {...props} level={5} />,
   h6: props => <Grommet.Heading {...props} level={6} />,
+  li: props => <Grommet.Text {...props} as="li" />,
   a: Grommet.Anchor,
   img: Grommet.Image,
   code: props => (

@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@centrifuge/axis-theme": "^0.2.0",
     "@mdx-js/mdx": "^0.16.8",
     "@mdx-js/tag": "^0.16.8",
     "gatsby": "^2.0.118",

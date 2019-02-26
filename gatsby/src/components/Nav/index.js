@@ -37,11 +37,15 @@ const Nav = () => (
         </ExternalAnchor>
       </Item>
       <Item>
-        <ExternalAnchor href="https://join.slack.com/t/centrifuge-io/shared_invite/enQtNDk1MzkwODM4OTgxLWRlNTU4NDQzOWIwYWEzNGRhN2UzMzQwNThjZjI0ZmIxMTU4NmQwMjc2ZDBkOTEyNWJhMjE4MzA2NTE5MWU1NWE">
+        <ExternalAnchor href="https://centrifuge.io/slack/">
           Slack
         </ExternalAnchor>
       </Item>
-      <Item>🔍</Item>
+      <Item>
+        <span role="img" aria-label="Search">
+          🔍
+        </span>
+      </Item>
     </Box>
   </Box>
 );
