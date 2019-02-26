@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import { Item as ListItem } from "../List";
 import { navLinkStyles } from "../Links";
+import Search from "../Search";
 
 import wordmark from "../../images/centrifuge-developer-wordmark.svg";
 
@@ -57,9 +58,7 @@ const Nav = () => (
             </ExternalAnchor>
           </Item>
           <Item>
-            <span role="img" aria-label="Search">
-              🔍
-            </span>
+            <Search />
           </Item>
         </Box>
       </Box>

@@ -8,6 +8,7 @@
     "@centrifuge/axis-theme": "^0.2.0",
     "@mdx-js/mdx": "^0.16.8",
     "@mdx-js/tag": "^0.16.8",
+    "docsearch.js": "^2.6.2",
     "gatsby": "^2.0.118",
     "gatsby-image": "^2.0.29",
     "gatsby-mdx": "^0.3.6",
