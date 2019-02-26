@@ -4,6 +4,7 @@ import { Anchor as GrommetAnchor } from "grommet";
 import { axisThemeConfig } from "@centrifuge/axis-theme";
 
 import { List, Item as ListItem } from "../List";
+import { navLinkStyles } from "../Links";
 
 const Item = styled(ListItem)`
   font-size: 14px;
@@ -12,12 +13,11 @@ const Item = styled(ListItem)`
 `;
 
 const Anchor = styled(GrommetAnchor).attrs({ color: "#666666" })`
+  ${navLinkStyles}
   font-size: 12px;
-  text-decoration: none;
 
   &:hover {
     color: ${axisThemeConfig.global.colors.black};
-    text-decoration: underline;
   }
 `;
 

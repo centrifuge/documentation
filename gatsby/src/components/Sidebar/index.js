@@ -5,6 +5,7 @@ import { Text } from "grommet";
 import { axisThemeConfig } from "@centrifuge/axis-theme";
 
 import { List, Item as ListItem } from "../List";
+import { navLinkStyles } from "../Links";
 
 const Item = styled(ListItem)`
   font-size: 14px;
@@ -17,15 +18,11 @@ const Link = styled(GatsbyLink).attrs({
     color: axisThemeConfig.global.colors.brand
   }
 })`
+  ${navLinkStyles}
   line-height: 1.4;
   font-size: 12px;
   font-weight: 500;
-  text-decoration: none;
   color: ${axisThemeConfig.global.colors.black};
-
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 const Sidebar = () => (
@@ -51,7 +48,11 @@ const Sidebar = () => (
       <List>
         {allMdx.group.map((category, index) => (
           <Item key={index}>
-            <Text as="p" weight={600} margin={{ bottom: "none", top: "16px" }}>
+            <Text
+              as="p"
+              weight={600}
+              margin={{ bottom: "none", top: index !== 0 ? "16px" : "none" }}
+            >
               {category.fieldValue}
             </Text>
             <List>

@@ -8,10 +8,9 @@ import Nav from "../Nav";
 const Layout = ({ children }) => (
   <AxisTheme>
     <Grid
-      style={{ maxWidth: 1152 - 32 }}
+      style={{ maxWidth: 1152 - 32, gridColumnGap: 32 }}
       margin={{ horizontal: "auto" }}
       fill
-      gap={{ column: "medium" }} // This needs to be 32px but /shrug
       columns={Array(12).fill("1fr")}
       rows={["auto", "auto"]}
       areas={[
