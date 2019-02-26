@@ -12,20 +12,7 @@ const Layout = ({ children }) => (
       margin={{ horizontal: "auto" }}
       fill
       gap={{ column: "medium" }} // This needs to be 32px but /shrug
-      columns={[
-        "1fr",
-        "1fr",
-        "1fr",
-        "1fr",
-        "1fr",
-        "1fr",
-        "1fr",
-        "1fr",
-        "1fr",
-        "1fr",
-        "1fr",
-        "1fr"
-      ]}
+      columns={Array(12).fill("1fr")}
       rows={["auto", "auto"]}
       areas={[
         { name: "header", start: [0, 0], end: [12, 0] },

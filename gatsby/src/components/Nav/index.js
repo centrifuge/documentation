@@ -1,7 +1,16 @@
 import React from "react";
-import { Anchor, Box } from "grommet";
+import { Anchor, Box, Image } from "grommet";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
 import { Item } from "../List";
+
+import wordmark from "../../images/centrifuge-developer-wordmark.svg";
+
+const Logo = styled(Image)`
+  vertical-align: middle;
+  height: 32px;
+`;
 
 const ExternalAnchor = ({ href, children }) => (
   <Anchor target="_blank" rel="noopener noreferrer" href={href}>
@@ -18,8 +27,10 @@ const Nav = () => (
       style={{ listStyle: "none" }}
       pad={{ vertical: "medium", left: "none" }}
     >
-      <Box flex="grow" as="li">
-        Logo
+      <Box flex="grow" as="li" alignContent="center">
+        <Link to="/overview/introduction/">
+          <Logo src={wordmark} />
+        </Link>
       </Box>
       <Item>
         <ExternalAnchor href="https://centrifuge-os-node-api.api-docs.io/0.0.3/">
