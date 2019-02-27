@@ -55,7 +55,12 @@ const Layout = ({ children }) => (
             <Box
               gridArea="header"
               as="header"
-              style={{ backgroundColor: "white", top: 0, position: "sticky" }}
+              style={{
+                backgroundColor: "white",
+                top: 0,
+                position: "sticky",
+                zIndex: 1
+              }}
             >
               <Nav />
             </Box>

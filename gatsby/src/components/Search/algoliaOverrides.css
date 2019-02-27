@@ -1,6 +1,19 @@
 /* Main dropdown wrapper */
 .algolia-autocomplete .ds-dropdown-menu {
   margin-top: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+  border-radius: 6px;
+}
+
+.algolia-autocomplete .ds-dropdown-menu:before {
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.algolia-autocomplete .ds-dropdown-menu [class^="ds-dataset-"] {
+  border: none;
+  padding: 0 0.75rem 0.75rem;
+  border-radius: 6px;
 }
 
 .algolia-autocomplete .algolia-docsearch-suggestion {
@@ -10,6 +23,7 @@
 /* Main category (eg. Getting Started) */
 .algolia-autocomplete .algolia-docsearch-suggestion--category-header {
   padding-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 /* Category (eg. Downloads) */
@@ -25,6 +39,7 @@
 
 /* Description description (eg. Bootstrap currently works...) */
 .algolia-autocomplete .algolia-docsearch-suggestion--text {
+  line-height: 1.5;
   color: #000;
 }
 
