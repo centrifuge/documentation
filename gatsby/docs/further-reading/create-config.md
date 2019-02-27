@@ -3,13 +3,17 @@ id: create-config
 title: Create Config
 category: Further Reading
 ---
+
 The `centrifuge createconfig` command automatically generates all required key pairs and config files
 to run the node.
 
-  ```bash
-  $ centrifuge createconfig -z  ~/.ethereum/keystore/<KEY-FILE> -e ws://127.0.0.1:8546 -t <DEFINE_CONFIG_DIR_NAME> \
-  -a 8082 -p 38204
-  ```
+```bash
+$ centrifuge createconfig \\
+-z ~/.ethereum/keystore/<KEY-FILE> \\
+-e ws://127.0.0.1:8546 \\
+-t <DEFINE_CONFIG_DIR_NAME> \\
+-a 8082 -p 38204
+```
 
 Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored.
 
@@ -17,23 +21,20 @@ Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethere
 
 Per default the centrifuge network `russianhill` is using the Ethereum testnet rinkeby.
 
-
 **Flags for createconfig command:**
 
 ```text
-   -z, --accountkeypath string   Path of Ethereum Account Key JSON file (default "$HOME/datadir/main.key")
-  -k, --accountpwd string       Ethereum Account Password
-  -a, --apiPort int             Api Port (default 8082)
-  -b, --bootstraps strings      Bootstrap P2P Nodes
-  -e, --ethnodeurl string       URL of Ethereum Client Node (default "http://127.0.0.1:9545")
-  -h, --help                    help for createconfig
-  -n, --network string          Default Network (default "russianhill")
-  -p, --p2pPort int             Peer-to-Peer Port (default 38202)
-   -t, --targetdir string        Target Data Dir (default "$HOME/datadir")
-  -x, --txpoolaccess            Transaction Pool access (default true)
- ```
-  
-
+-z, --accountkeypath string   Path of Ethereum Account Key JSON file (default "$HOME/datadir/main.key")
+-k, --accountpwd string       Ethereum Account Password
+-a, --apiPort int             Api Port (default 8082)
+-b, --bootstraps strings      Bootstrap P2P Nodes
+-e, --ethnodeurl string       URL of Ethereum Client Node (default "http://127.0.0.1:9545")
+-h, --help                    help for createconfig
+-n, --network string          Default Network (default "russianhill")
+-p, --p2pPort int             Peer-to-Peer Port (default 38202)
+-t, --targetdir string        Target Data Dir (default "$HOME/datadir")
+-x, --txpoolaccess            Transaction Pool access (default true)
+```
 
 In detail the command performs the following actions:
 
@@ -54,13 +55,17 @@ The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to 
 [Rinkeby faucet](https://www.rinkeby.io/#faucet) to get ETH for testing.
 
 # Using Infura 
+
 It is recommended to setup up a local Ethereum node with `geth` to be fully independent and decentralized.
 However, it is possible to run the Centrifuge node against [Infura](https://infura.io/).
 
-  ```bash
-  $ centrifuge createconfig -z  ~/.ethereum/keystore/<KEY-FILE> -e https://rinkeby.infura.io/v3/<INFURA_ENDPOINT_ID> -t <DEFINE_CONFIG_DIR_NAME> \
-  -a 8082 -p 38204 -x=false
-  ```
+```bash
+$ centrifuge createconfig \\
+-z  ~/.ethereum/keystore/<KEY-FILE> \\
+-e https://rinkeby.infura.io/v3/<INFURA_ENDPOINT_ID> \\
+-t <DEFINE_CONFIG_DIR_NAME> \\
+-a 8082 -p 38204 -x=false
+```
 
  Instead of running against a local node replace -e `https://rinkeby.infura.io/v3/<INFURA_PROJECT_ID>` with your 
  personal Infura project ID instead.
@@ -68,4 +73,5 @@ However, it is possible to run the Centrifuge node against [Infura](https://infu
 For Infura the flag of the Centrifuge node for transaction pool access needs to be `-x=false`
 
 # Using Parity
-For using a Parity node instead of a geth node. Please reach us on Slack.
+
+For using a Parity node instead of a geth node. Please reach us on [Slack](https://centrifuge.io/slack/).

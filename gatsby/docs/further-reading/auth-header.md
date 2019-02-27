@@ -11,4 +11,3 @@ At the moment the authorization header is simply the Centrifuge ID of the accoun
 Assuming that my Centrifuge ID is `0x8c8cfaf851d1`, the header will be as shown for a curl request: 
 
 `-H "authorization: "0x8c8cfaf851d1"`
-
