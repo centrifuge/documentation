@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import { Item as ListItem } from "../List";
 import { navLinkStyles } from "../Links";
+import Search from "../Search";
 
 import wordmark from "../../images/centrifuge-developer-wordmark.svg";
 
@@ -27,7 +28,7 @@ const Item = styled(ListItem)`
 `;
 
 const Nav = () => (
-  <Box as="nav" margin={{ bottom: "large" }}>
+  <Box as="nav">
     <Box as="ul" direction="row">
       <Box flex="grow" as="li" justify="center">
         <Link to="/overview/introduction/">
@@ -56,11 +57,9 @@ const Nav = () => (
               Slack
             </ExternalAnchor>
           </Item>
-          <Item>
-            <span role="img" aria-label="Search">
-              🔍
-            </span>
-          </Item>
+          <ListItem>
+            <Search />
+          </ListItem>
         </Box>
       </Box>
     </Box>
