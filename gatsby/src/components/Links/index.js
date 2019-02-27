@@ -13,4 +13,10 @@ const navLinkStyles = css`
   }
 `;
 
-export { navLinkStyles };
+const asideLinkStyles = css`
+  line-height: 1.5;
+  font-size: 12px;
+  display: inline-block;
+`;
+
+export { navLinkStyles, asideLinkStyles };

@@ -5,11 +5,9 @@ import { Text } from "grommet";
 import { axisThemeConfig } from "@centrifuge/axis-theme";
 
 import { List, Item as ListItem } from "../List";
-import { navLinkStyles } from "../Links";
+import { navLinkStyles, asideLinkStyles } from "../Links";
 
 const Item = styled(ListItem)`
-  font-size: 14px;
-  line-height: 1.4;
   margin-bottom: 6px;
 `;
 
@@ -19,8 +17,8 @@ const Link = styled(GatsbyLink).attrs({
   }
 })`
   ${navLinkStyles}
-  line-height: 1.4;
-  font-size: 12px;
+  ${asideLinkStyles}
+  
   font-weight: 500;
   color: ${axisThemeConfig.global.colors.black};
 `;
