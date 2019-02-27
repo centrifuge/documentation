@@ -26,7 +26,7 @@ const mdxGrommetMap = {
   code: props => (
     <CodeHighlighter
       code={props.children.trim()}
-      language={String(props.className).split("language-")[1]}
+      language={props.className.replace(/^language-/, "")}
     />
   )
 };
