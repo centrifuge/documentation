@@ -12,21 +12,58 @@ const ListBase = styled(Grommet.Text)`
 
 const mdxGrommetMap = {
   p: Grommet.Paragraph,
-  h1: props => <Grommet.Heading {...props} level={1} />,
-  h2: props => <Grommet.Heading {...props} level={2} />,
-  h3: props => <Grommet.Heading {...props} level={3} />,
-  h4: props => <Grommet.Heading {...props} level={4} />,
-  h5: props => <Grommet.Heading {...props} level={5} />,
-  h6: props => <Grommet.Heading {...props} level={6} />,
+  h1: props => (
+    <Grommet.Heading
+      {...props}
+      margin={{ bottom: "large", top: "small" }}
+      level={1}
+    />
+  ),
+  h2: props => (
+    <Grommet.Heading
+      {...props}
+      margin={{ bottom: "large", top: "small" }}
+      level={2}
+    />
+  ),
+  h3: props => (
+    <Grommet.Heading
+      {...props}
+      margin={{ bottom: "medium", top: "small" }}
+      level={3}
+    />
+  ),
+  h4: props => (
+    <Grommet.Heading
+      {...props}
+      margin={{ bottom: "medium", top: "small" }}
+      level={4}
+    />
+  ),
+  h5: props => (
+    <Grommet.Heading
+      {...props}
+      margin={{ bottom: "medium", top: "small" }}
+      level={5}
+    />
+  ),
+  h6: props => (
+    <Grommet.Heading
+      {...props}
+      margin={{ bottom: "medium", top: "small" }}
+      level={6}
+    />
+  ),
   li: props => <Grommet.Text {...props} as="li" />,
   ul: props => <ListBase {...props} as="ul" />,
   ol: props => <ListBase {...props} as="ol" />,
   a: Grommet.Anchor,
   img: Grommet.Image,
+  inlineCode: props => <Grommet.Text color="brand" as="code" {...props} />,
   code: props => (
     <CodeHighlighter
       code={props.children.trim()}
-      language={props.className.replace(/^language-/, "")}
+      language={String(props.className).replace(/^language-/, "")}
     />
   )
 };
