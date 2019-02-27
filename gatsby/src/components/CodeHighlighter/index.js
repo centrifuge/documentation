@@ -24,12 +24,7 @@ const LineNo = styled.span`
 `;
 
 export const CodeHighlighter = ({ code, language }) => (
-  <Highlight
-    {...defaultProps}
-    code={code}
-    language={language}
-    theme={theme}
-  >
+  <Highlight {...defaultProps} code={code} language={language} theme={theme}>
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <Pre className={className} style={style}>
         {tokens.map((line, i) => (
