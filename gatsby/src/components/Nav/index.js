@@ -57,9 +57,9 @@ const Nav = () => (
               Slack
             </ExternalAnchor>
           </Item>
-          <Item>
+          <ListItem>
             <Search />
-          </Item>
+          </ListItem>
         </Box>
       </Box>
     </Box>
