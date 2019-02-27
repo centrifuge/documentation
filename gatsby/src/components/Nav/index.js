@@ -28,7 +28,7 @@ const Item = styled(ListItem)`
 `;
 
 const Nav = () => (
-  <Box as="nav" margin={{ bottom: "large" }}>
+  <Box as="nav">
     <Box as="ul" direction="row">
       <Box flex="grow" as="li" justify="center">
         <Link to="/overview/introduction/">
