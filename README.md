@@ -4,7 +4,8 @@
 
 This is a Gatsby site.
 
-The develop branch is continuously deployed to a preview site. [View dev site](https://...)
+The develop branch is continuously deployed to a preview site. [View dev site](http://develop.developer.centrifuge.io/docs/overview/introduction/
+)
 
 The develop branch is merged to production weekly (unless we need to do a release sooner than that).
 
@@ -13,6 +14,8 @@ The master branch is continuously deployed to production.)
 ### _Please_, feel free to make any contributions you feel will make Centrifuge Documentation better.
 
 **Submit all pull requests to the develop branch**
+
+## About
 
 Centrifuge is an open, decentralized operating system which provides a method to create, exchange, and use the data that is used in the financial supply chain. It creates transparent and shareable relationships between interacting companies.
 
