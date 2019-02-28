@@ -31,7 +31,7 @@ const Nav = () => (
   <Box as="nav">
     <Box as="ul" direction="row">
       <Box flex="grow" as="li" justify="center">
-        <Link to="/overview/introduction/">
+        <Link to="/docs/overview/introduction/">
           <Logo src={wordmark} />
         </Link>
       </Box>
