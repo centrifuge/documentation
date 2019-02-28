@@ -16,6 +16,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const value = createFilePath({ node, getNode });
 
     createNodeField({
+      name: `file`,
+      node,
+      value: `docs${value.slice(0, -1)}.md`
+    });
+
+    createNodeField({
       name: `slug`,
       node,
       value: `docs${value}`

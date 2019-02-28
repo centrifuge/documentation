@@ -1,6 +1,6 @@
 {
   "name": "developer.centrifuge.io",
-  "description": "This project documents the procedure to setup a Centrifuge Node.",
+  "description": "A Decentralized Operating System For The Financial Supply Chain",
   "version": "0.1.0",
   "author": "@centrifuge",
   "dependencies": {

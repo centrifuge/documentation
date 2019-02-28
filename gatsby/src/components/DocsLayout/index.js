@@ -7,12 +7,10 @@ import TableOfContents from "../TableOfContents";
 import Sidebar from "../Sidebar";
 import DocsContent from "../DocsContent";
 
-const EditPage = ({ path }) => {
+const EditPage = ({ file }) => {
   const GITHUB_BASE =
-    "https://github.com/centrifuge/developer.centrifuge.io/tree/develop/";
-  const githubLink = `${GITHUB_BASE}${
-    path.match(/.*(developer.centrifuge.io)(.*)/)[2]
-  }`;
+    "https://github.com/centrifuge/developer.centrifuge.io/tree/develop";
+  const githubLink = `${GITHUB_BASE}/${file}`;
 
   return (
     <Box margin={{ top: "large" }}>
@@ -37,7 +35,7 @@ const DocsLayout = ({ data: { mdx } }) => (
 
             <DocsContent mdx={mdx} />
 
-            <EditPage path={mdx.fileAbsolutePath} />
+            <EditPage file={mdx.fields.file} />
           </Box>
 
           {size === "large" && (
@@ -55,7 +53,9 @@ export const query = graphql`
   query DocsQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
-      fileAbsolutePath
+      fields {
+        file
+      }
       frontmatter {
         title
       }
