@@ -1,9 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Box, ResponsiveContext } from "grommet";
+import { Grid as GrommetGrid, Box, ResponsiveContext } from "grommet";
 import { AxisTheme } from "@centrifuge/axis-theme/";
+import styled from "styled-components";
 
 import Nav from "../Nav";
+
+const Grid = styled(GrommetGrid).attrs({
+  margin: { horizontal: "auto" },
+  fill: true
+})`
+  max-width: calc(1152px - 32px);
+  width: 100%;
+  grid-column-gap: 32px;
+  grid-row-gap: 40px;
+
+  @media only screen and (max-width: 1120px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+`;
 
 const Layout = ({ children }) => (
   <AxisTheme>
@@ -39,22 +55,15 @@ const Layout = ({ children }) => (
             columns = ["1fr"];
             rows = Array(4).fill("auto");
             areas = [
-              { name: "header", start: [0, 0], end: [1, 0] },
-              { name: "sidebar", start: [0, 1], end: [1, 1] },
-              { name: "main", start: [0, 2], end: [1, 2] },
-              { name: "footer", start: [0, 3], end: [1, 3] }
+              { name: "header", start: [0, 0], end: [0, 0] },
+              { name: "sidebar", start: [0, 1], end: [0, 1] },
+              { name: "main", start: [0, 2], end: [0, 2] },
+              { name: "footer", start: [0, 3], end: [0, 3] }
             ];
         }
 
         return (
-          <Grid
-            style={{ maxWidth: 1152 - 32, gridColumnGap: 32, gridRowGap: 40 }}
-            margin={{ horizontal: "auto" }}
-            fill
-            columns={columns}
-            rows={rows}
-            areas={areas}
-          >
+          <Grid columns={columns} rows={rows} areas={areas}>
             <Box
               gridArea="header"
               as="header"
