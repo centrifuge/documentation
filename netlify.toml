@@ -1,3 +1,21 @@
 [build]
   command = "yarn build"
   publish = "public"
+
+[[redirects]]
+  from = "/"
+  to = "/docs/overview/introduction/"
+  status = 301
+
+[[redirects]]
+  from = "https://centrifuge-documentation.netlify.com/*"
+  to = "https://developer.centrifuge.io/:splat"
+  status = 301
+  force = true
+
+[context.develop]
+  [[redirects]]
+    from = "http://staging-centrifuge-documentation.netlify.com/*"
+    to = "http://develop.developer.centrifuge.io/:splat"
+    status = 301
+    force = true
