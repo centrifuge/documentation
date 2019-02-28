@@ -24,6 +24,7 @@
     "gatsby-source-filesystem": "^2.0.20",
     "gatsby-transformer-sharp": "^2.1.13",
     "grommet": "^2.4.0",
+    "grommet-icons": "^4.2.0",
     "prism-react-renderer": "^0.1.5",
     "prop-types": "^15.7.1",
     "react": "^16.8.0",
