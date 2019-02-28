@@ -22,7 +22,9 @@ const Anchor = styled(GrommetAnchor).attrs({ color: "#666666" })`
 const TableOfContents = ({ content }) => {
   if (content.items)
     return (
-      <List style={{ position: "sticky", top: 64 + 40 }}>
+      <List
+        style={{ position: "sticky", position: "-webkit-sticky", top: 64 + 40 }}
+      >
         {/* Level 1 */}
         {content.items.map((level1, index) => (
           <Item key={index}>
