@@ -6,53 +6,98 @@ import * as Grommet from "grommet";
 
 import CodeHighlighter from "../CodeHighlighter";
 
+import link from "../../images/link.svg";
+
 const ListBase = styled(Grommet.Text)`
   padding-left: 1rem;
+`;
+
+const Anchor = styled.a.attrs({
+  "aria-hidden": "true"
+})`
+  display: block;
+  position: relative;
+  top: -80px;
+`;
+
+const Heading = styled(Grommet.Heading)`
+  position: relative;
+`;
+
+const Hash = styled.a.attrs({
+  "aria-hidden": "true"
+})`
+  opacity: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s;
+  position: absolute;
+  left: -24px;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    display: block;
+    background-image: url(${link});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 16px;
+    width: 16px;
+  }
+
+  ${Heading}:hover & {
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 `;
 
 const mdxGrommetMap = {
   p: Grommet.Paragraph,
   h1: props => (
-    <Grommet.Heading
-      {...props}
-      margin={{ bottom: "large", top: "small" }}
-      level={1}
-    />
+    <Heading margin={{ bottom: "large", top: "small" }} level={1}>
+      <Anchor id={props.id} />
+      <Hash href={`#${props.id}`} />
+      {props.children}
+    </Heading>
   ),
   h2: props => (
-    <Grommet.Heading
-      {...props}
-      margin={{ bottom: "large", top: "small" }}
-      level={2}
-    />
+    <Heading margin={{ bottom: "large", top: "small" }} level={2}>
+      <Anchor id={props.id} />
+      <Hash href={`#${props.id}`} />
+      {props.children}
+    </Heading>
   ),
   h3: props => (
-    <Grommet.Heading
-      {...props}
-      margin={{ bottom: "medium", top: "small" }}
-      level={3}
-    />
+    <Heading margin={{ bottom: "medium", top: "small" }} level={3}>
+      <Anchor id={props.id} />
+      <Hash href={`#${props.id}`} />
+      {props.children}
+    </Heading>
   ),
   h4: props => (
-    <Grommet.Heading
-      {...props}
-      margin={{ bottom: "medium", top: "small" }}
-      level={4}
-    />
+    <Heading margin={{ bottom: "medium", top: "small" }} level={4}>
+      <Anchor id={props.id} />
+      <Hash href={`#${props.id}`} />
+      {props.children}
+    </Heading>
   ),
   h5: props => (
-    <Grommet.Heading
-      {...props}
-      margin={{ bottom: "medium", top: "small" }}
-      level={5}
-    />
+    <Heading margin={{ bottom: "medium", top: "small" }} level={5}>
+      <Anchor id={props.id} />
+      <Hash href={`#${props.id}`} />
+      {props.children}
+    </Heading>
   ),
   h6: props => (
-    <Grommet.Heading
-      {...props}
-      margin={{ bottom: "medium", top: "small" }}
-      level={6}
-    />
+    <Heading margin={{ bottom: "medium", top: "small" }} level={6}>
+      <Anchor id={props.id} />
+      <Hash href={`#${props.id}`} />
+      {props.children}
+    </Heading>
   ),
   li: props => <Grommet.Text {...props} as="li" />,
   ul: props => <ListBase {...props} as="ul" />,

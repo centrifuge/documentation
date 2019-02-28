@@ -36,7 +36,7 @@ module.exports = {
       options: {
         name: `centrifuge-developers`,
         short_name: `developers`,
-        start_url: `/`,
+        start_url: `/docs/overview/introduction/`,
         background_color: `#fff`,
         theme_color: `#2762ff`,
         display: `minimal-ui`,
