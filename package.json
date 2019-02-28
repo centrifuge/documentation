@@ -39,5 +39,13 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/centrifuge/developer.centrifuge.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/centrifuge/developer.centrifuge.io/issues"
+  },
+  "homepage": "https://github.com/centrifuge/developer.centrifuge.io#readme"
 }
