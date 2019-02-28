@@ -744,10 +744,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@centrifuge/axis-theme@^0.2.1-develop.2":
-  version "0.2.1-develop.2"
-  resolved "https://registry.yarnpkg.com/@centrifuge/axis-theme/-/axis-theme-0.2.1-develop.2.tgz#1b75fea066964018bd0b565f666b4217c7a782f1"
-  integrity sha512-CqIKJkpODU8RV6OweFbRq0Vl0Xo2/QxuppkynBbkoMLWlUsIRQL/lxkGDsS6unD5eR/39Xi9GLTwfzz60Cv3qQ==
+"@centrifuge/axis-theme@^0.2.1-develop.4":
+  version "0.2.1-develop.4"
+  resolved "https://registry.yarnpkg.com/@centrifuge/axis-theme/-/axis-theme-0.2.1-develop.4.tgz#e0c101eb27d7845beb98961b874d334b644fcd5f"
+  integrity sha512-c+OaO0TmfRX+IzhZOWL6mdd9liyZRuTd6QDLGbkKXKtUUj6jr1XaJGgXameONSLPfU5ndVBBXbA9LnXri3cPBA==
 
 "@emotion/is-prop-valid@^0.7.3":
   version "0.7.3"
