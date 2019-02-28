@@ -10,7 +10,6 @@ import {
   Heading
 } from "grommet";
 import { FormDown, FormUp } from "grommet-icons";
-import { axisThemeConfig } from "@centrifuge/axis-theme";
 
 import { List, Item as ListItem } from "../List";
 import { navLinkStyles, asideLinkStyles } from "../Links";
@@ -19,16 +18,15 @@ const Item = styled(ListItem)`
   margin-bottom: 6px;
 `;
 
-const Link = styled(GatsbyLink).attrs({
-  activeStyle: {
-    color: axisThemeConfig.global.colors.brand
-  }
-})`
+const Link = styled(GatsbyLink)`
   ${navLinkStyles}
   ${asideLinkStyles}
-  
   font-weight: 500;
-  color: ${axisThemeConfig.global.colors.black};
+  color: ${props => props.theme.global.colors.black};
+
+  &.activeLink {
+    color: ${props => props.theme.global.colors.brand};
+  }
 `;
 
 const renderPanelHeader = (title, active) => (
@@ -122,7 +120,9 @@ const SidebarContent = () => (
             <List>
               {category.edges.map((doc, index) => (
                 <Item key={index}>
-                  <Link to={doc.node.fields.slug}>{doc.node.fields.title}</Link>
+                  <Link to={doc.node.fields.slug} activeClassName="activeLink">
+                    {doc.node.fields.title}
+                  </Link>
                 </Item>
               ))}
             </List>

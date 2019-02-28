@@ -20,7 +20,7 @@ const Anchor = styled.a.attrs({
   top: -80px;
 `;
 
-const Heading = styled(Grommet.Heading)`
+const Heading = styled(Grommet.Heading).attrs({ margin: { vertical: "1.5em" } })`
   position: relative;
 `;
 
@@ -58,42 +58,42 @@ const Hash = styled.a.attrs({
 const mdxGrommetMap = {
   p: Grommet.Paragraph,
   h1: props => (
-    <Heading margin={{ bottom: "large", top: "small" }} level={1}>
+    <Heading level={1}>
       <Anchor id={props.id} />
       <Hash href={`#${props.id}`} />
       {props.children}
     </Heading>
   ),
   h2: props => (
-    <Heading margin={{ bottom: "large", top: "small" }} level={2}>
+    <Heading level={2}>
       <Anchor id={props.id} />
       <Hash href={`#${props.id}`} />
       {props.children}
     </Heading>
   ),
   h3: props => (
-    <Heading margin={{ bottom: "medium", top: "small" }} level={3}>
+    <Heading level={3}>
       <Anchor id={props.id} />
       <Hash href={`#${props.id}`} />
       {props.children}
     </Heading>
   ),
   h4: props => (
-    <Heading margin={{ bottom: "medium", top: "small" }} level={4}>
+    <Heading level={4}>
       <Anchor id={props.id} />
       <Hash href={`#${props.id}`} />
       {props.children}
     </Heading>
   ),
   h5: props => (
-    <Heading margin={{ bottom: "medium", top: "small" }} level={5}>
+    <Heading level={5}>
       <Anchor id={props.id} />
       <Hash href={`#${props.id}`} />
       {props.children}
     </Heading>
   ),
   h6: props => (
-    <Heading margin={{ bottom: "medium", top: "small" }} level={6}>
+    <Heading level={6}>
       <Anchor id={props.id} />
       <Hash href={`#${props.id}`} />
       {props.children}
