@@ -1,4 +1,0 @@
-/  /docs/overview/introduction  301
-
-# Redirect default Netlify subdomain to primary domain
-http://staging-centrifuge-documentation.netlify.com/*  http://develop.developer.centrifuge.io/:splat  301!
