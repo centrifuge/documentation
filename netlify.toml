@@ -1,4 +1,3 @@
 [build]
-  base = "gatsby"
   command = "yarn build"
-  publish = "gatsby/public"
+  publish = "public"
