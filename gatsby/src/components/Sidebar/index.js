@@ -43,7 +43,13 @@ const Sidebar = () => (
       }
     `}
     render={({ allMdx }) => (
-      <List style={{ position: "sticky", top: 64 + 40 }}>
+      <List
+        style={{
+          position: "sticky",
+          position: "-webkit-sticky",
+          top: 64 + 40
+        }}
+      >
         {allMdx.group.map((category, index) => (
           <Item key={index}>
             <Text

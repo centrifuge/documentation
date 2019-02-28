@@ -71,6 +71,7 @@ const Layout = ({ children }) => (
                 backgroundColor: "white",
                 top: 0,
                 position: "sticky",
+                position: "-webkit-sticky",
                 zIndex: 1
               }}
             >
