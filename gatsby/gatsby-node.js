@@ -2,14 +2,7 @@ const { createFilePath } = require("gatsby-source-filesystem");
 const path = require("path");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField, createRedirect } = actions;
-
-  // Redirect
-  createRedirect({
-    fromPath: "/",
-    toPath: "/docs/overview/introduction",
-    isPermanent: true
-  });
+  const { createNodeField } = actions;
 
   // Add New Fields To GraphQL
   if (node.internal.type === "Mdx") {
