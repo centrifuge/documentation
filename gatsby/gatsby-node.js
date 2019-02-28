@@ -3,7 +3,7 @@ const path = require("path");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
-
+  
   // Add New Fields To GraphQL
   if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode });

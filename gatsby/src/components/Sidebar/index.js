@@ -21,6 +21,7 @@ const Item = styled(ListItem)`
 const Link = styled(GatsbyLink)`
   ${navLinkStyles}
   ${asideLinkStyles}
+
   font-weight: 500;
   color: ${props => props.theme.global.colors.black};
 
