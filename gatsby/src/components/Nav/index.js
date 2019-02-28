@@ -1,5 +1,5 @@
 import React from "react";
-import { Anchor, Box, Image } from "grommet";
+import { Anchor, Box, Image, ResponsiveContext } from "grommet";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
@@ -35,33 +35,37 @@ const Nav = () => (
           <Logo src={wordmark} />
         </Link>
       </Box>
-      <Box as="li">
-        <Box as="ul" direction="row" align="center" gap="large">
-          <Item>
-            <ExternalAnchor href="https://centrifuge-os-node-api.api-docs.io/0.0.3/">
-              Node API
-            </ExternalAnchor>
-          </Item>
-          <Item>
-            <ExternalAnchor href="https://github.com/centrifuge">
-              GitHub
-            </ExternalAnchor>
-          </Item>
-          <Item>
-            <ExternalAnchor href="https://centrifuge.io/centrifuge_os_white_paper.pdf">
-              Whitepaper
-            </ExternalAnchor>
-          </Item>
-          <Item>
-            <ExternalAnchor href="https://centrifuge.io/slack/">
-              Slack
-            </ExternalAnchor>
-          </Item>
-          <ListItem>
-            <Search />
-          </ListItem>
-        </Box>
-      </Box>
+      <ResponsiveContext.Consumer>
+        {size => size !== "small" &&(
+          <Box as="li">
+            <Box as="ul" direction="row" align="center" gap="large">
+              <Item>
+                <ExternalAnchor href="https://centrifuge-os-node-api.api-docs.io/0.0.3/">
+                  Node API
+                </ExternalAnchor>
+              </Item>
+              <Item>
+                <ExternalAnchor href="https://github.com/centrifuge">
+                  GitHub
+                </ExternalAnchor>
+              </Item>
+              <Item>
+                <ExternalAnchor href="https://centrifuge.io/centrifuge_os_white_paper.pdf">
+                  Whitepaper
+                </ExternalAnchor>
+              </Item>
+              <Item>
+                <ExternalAnchor href="https://centrifuge.io/slack/">
+                  Slack
+                </ExternalAnchor>
+              </Item>
+              <ListItem>
+                <Search />
+              </ListItem>
+            </Box>
+          </Box>
+        )}
+      </ResponsiveContext.Consumer>
     </Box>
   </Box>
 );

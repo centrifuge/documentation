@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Heading, Box } from "grommet";
+import { Heading, Box, ResponsiveContext } from "grommet";
 
 import Layout from "../Layout";
 import TableOfContents from "../TableOfContents";
@@ -9,21 +9,29 @@ import DocsContent from "../DocsContent";
 
 const DocsLayout = ({ data: { mdx } }) => (
   <Layout>
-    <Box gridArea="sidebar" as="aside">
-      <Sidebar />
-    </Box>
+    <ResponsiveContext.Consumer>
+      {size => (
+        <>
+          <Box gridArea="sidebar" as="aside">
+            <Sidebar />
+          </Box>
 
-    <Box gridArea="main" as="main">
-      <Heading level={1} lined>
-        {mdx.frontmatter.title}
-      </Heading>
+          <Box gridArea="main" as="main">
+            <Heading level={1} lined>
+              {mdx.frontmatter.title}
+            </Heading>
 
-      <DocsContent mdx={mdx} />
-    </Box>
+            <DocsContent mdx={mdx} />
+          </Box>
 
-    <Box gridArea="toc" as="aside">
-      <TableOfContents content={mdx.tableOfContents} />
-    </Box>
+          {size === "large" && (
+            <Box gridArea="toc" as="aside">
+              <TableOfContents content={mdx.tableOfContents} />
+            </Box>
+          )}
+        </>
+      )}
+    </ResponsiveContext.Consumer>
   </Layout>
 );
 

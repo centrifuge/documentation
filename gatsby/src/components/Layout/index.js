@@ -36,10 +36,13 @@ const Layout = ({ children }) => (
             break;
           // Mobile
           case "small":
+            columns = ["1fr"];
+            rows = Array(4).fill("auto");
             areas = [
-              { name: "header", start: [0, 0], end: [12, 0] },
-              { name: "main", start: [0, 1], end: [12, 1] },
-              { name: "footer", start: [0, 2], end: [12, 2] }
+              { name: "header", start: [0, 0], end: [1, 0] },
+              { name: "sidebar", start: [0, 1], end: [1, 1] },
+              { name: "main", start: [0, 2], end: [1, 2] },
+              { name: "footer", start: [0, 3], end: [1, 3] }
             ];
         }
 
