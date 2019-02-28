@@ -7,7 +7,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   // Redirect
   createRedirect({
     fromPath: "/",
-    toPath: "/overview/introduction",
+    toPath: "/docs/overview/introduction",
     isPermanent: true
   });
 
@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value
+      value: `docs${value}`
     });
 
     createNodeField({
