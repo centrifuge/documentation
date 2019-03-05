@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Heading, Paragraph, Button } from "grommet";
 
 import Layout from "../components/Layout";
-import SEO from "../components/seo";
+import SEO from "../components/SEO";
 
 const NotFoundPage = () => (
   <Layout>

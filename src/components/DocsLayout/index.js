@@ -6,6 +6,7 @@ import Layout from "../Layout";
 import TableOfContents from "../TableOfContents";
 import Sidebar from "../Sidebar";
 import DocsContent from "../DocsContent";
+import SEO from "../SEO";
 
 const EditPage = ({ file }) => {
   const GITHUB_BASE =
@@ -21,6 +22,7 @@ const EditPage = ({ file }) => {
 
 const DocsLayout = ({ data: { mdx } }) => (
   <Layout>
+    <SEO title={mdx.frontmatter.title} />
     <ResponsiveContext.Consumer>
       {size => (
         <>
