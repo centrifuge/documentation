@@ -15,7 +15,7 @@ The following section lists the API calls to perform functions like sending docu
 ```bash
 curl -X POST "https://localhost/invoice" \\
 -H "accept: application/json" \\
--H "authorization: YOURCENTIDHERE" \\
+-H "authorization: YOUR_DID_HERE" \\
 -H "Content-Type: application/json" \\
 -d @- << 'EOF'
 {
