@@ -94,11 +94,15 @@ Once you have installed all the necessary packages, follow these steps to instal
 
 1. Download and install the latest [centrifuge binary](https://github.com/centrifuge/go-centrifuge/releases).
 
-  If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
+     If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
 
 2. Add the Centrifuge binary to the `$PATH`. Or, modify the command invocation to point to the correct library.
 
-3. Create the `config.yaml` file using the `createconfig` utility:
+3. Create the `config.yaml` file using the `createconfig` utility, as seen in the example below. 
+    
+   Note that the target direction -t should be specified with an absolute path.
+   
+   Please be sure that the address you have specified via the keyfile has been fueled.
 
   ```bash
   $ centrifuge createconfig \\
