@@ -173,7 +173,7 @@ To make sure that your Centrifuge node setup was successful, you can run the fol
 
   ```bash
   $ curl -k -X POST "https://localhost:8082/invoice" \\
-  -H "authorization: YOURDIDHERE" \\
+  -H "authorization: YOUR_DID_HERE" \\
   -H "accept: application/json" \\
   -H "Content-Type: application/json" \\
   -d @- << 'EOF'
