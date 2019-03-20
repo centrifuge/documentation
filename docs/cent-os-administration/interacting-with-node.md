@@ -54,14 +54,14 @@ EOF
 
 ### Example: Create an invoice and anchor the document
 
-Replace _YOURCENTIDHERE_ with the Centrifuge ID configured on your node.
+Replace _YOUR_DID_HERE_ with the Centrifuge ID configured on your node.
 
 If you want to send the invoice to another Centrifuge participant, add the "collaborators" parameter to the API call to add an additional collaborator and with that send the document to them.
 
 ```bash
 curl -k -X POST "https://localhost/invoice" \\
 -H "accept: application/json" \\
--H "authorization: YOURCENTIDHERE" \\
+-H "authorization: YOUR_DID_HERE" \\
 -H "Content-Type: application/json" \\
 -d @- << 'EOF'
 {
@@ -79,11 +79,11 @@ curl -k -X POST "https://localhost/invoice" \\
 EOF
 ```
 
-### Retrieveing details of an invoice
+### Retrieving details of an invoice
 
 ```bash
 $ curl -X POST "https://localhost/invoice/get" \\
--H "authorization: YOURCENTIDHERE" \\
+-H "authorization: YOUR_DID_HERE" \\
 -H "accept: application/json" \\
 -H "Content-Type: application/json" \\
 -d '{ "document_identifier": "string"}'
@@ -100,7 +100,7 @@ This call creates the precise proofs for the specified fields of the document gi
 ```bash
 $ curl -X POST \\
 "https://localhost/document/IDENTIFIER/proof" \\
--H "authorization: YOURCENTIDHERE" \\
+-H "authorization: YOUR_DID_HERE" \\
 -H "accept: application/json" \\
 -H "Content-Type: application/json" \\
 -d @- << 'EOF'
@@ -123,7 +123,7 @@ This call creates precise proofs for the specified fields of the given version o
 ```bash
 $ curl -X POST \\
 "https://localhost/document/IDENTIFIER/VERSION/proof" \\
--H "authorization: YOURCENTIDHERE" \\
+-H "authorization: YOUR_DID_HERE" \\
 -H "accept: application/json" \\
 -H "Content-Type: application/json" \\
 -d @- << 'EOF'
@@ -147,7 +147,7 @@ Replace the _IDENTIFIER_ and _VERSION_ parameters with the ID and version of you
 ```bash
 $ curl -X POST "https://localhost/token/mint" \\
 -H "accept: application/json" \\
--H "authorization: YOURCENTIDHERE" \\
+-H "authorization: YOUR_DID_HERE" \\
 -H "Content-Type: application/json" \\
 -d @- << 'EOF'
 {
@@ -176,14 +176,14 @@ The `deposit_address` can be any arbitrary address which should own the NFT.
 
 An example mint call for a payment obligation of an invoice that was anchored on Rinkeby.
 
-* Replace _YOURCENTIDHERE_ with the Centrifuge ID configured on your node.
+* Replace _YOUR_DID_HERE_ with the Centrifuge ID configured on your node.
 * Replace _INVOICE_DOCUMENT_IDENTIFIER_ with the identifier of the invoice you want to mint the token for. For example, _0x285ab92f61507e83a10cbafd1f059e769b93639f960e7ac24c438192f7488989_
 * Replace _DEPOSIT_ADDRESS_ with the Ethereum address that should receive the minted NFT.
 
 ```bash
 curl -k -X POST "https://localhost/token/mint" \\
 -H "accept: application/json" \\
--H "authorization: YOURCENTIDHERE" \\
+-H "authorization: YOUR_DID_HERE" \\
 -H "Content-Type: application/json" \\
 -d @- << 'EOF'
 {
