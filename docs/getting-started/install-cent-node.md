@@ -157,7 +157,7 @@ Once you have installed all the necessary packages, follow these steps to instal
     endpoint: "YOUR_WEBHOOK_ENDPOINT"
   ```
 
-  For more information, see the [Notification Payload](https://centrifuge-os-node-api.api-docs.io/0.0.3/dummy/Gbku2Joxnodad8i2J)
+  For more information, see the [Notification Payload](https://centrifuge-os-node-api-1.api-docs.io/0.0.3-alpha4/dummy/TQY4YNy4ckTyHN6i4)
 
 ### Post-Install Verification
 
