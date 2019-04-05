@@ -94,11 +94,15 @@ Once you have installed all the necessary packages, follow these steps to instal
 
 1. Download and install the latest [centrifuge binary](https://github.com/centrifuge/go-centrifuge/releases).
 
-  If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
+     If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
 
 2. Add the Centrifuge binary to the `$PATH`. Or, modify the command invocation to point to the correct library.
 
-3. Create the `config.yaml` file using the `createconfig` utility:
+3. Create the `config.yaml` file using the `createconfig` utility, as seen in the example below. 
+    
+   Note that the target direction -t should be specified with an absolute path.
+   
+   Please be sure that the address you have specified via the keyfile has been fueled.
 
   ```bash
   $ centrifuge createconfig \\
@@ -153,7 +157,7 @@ Once you have installed all the necessary packages, follow these steps to instal
     endpoint: "YOUR_WEBHOOK_ENDPOINT"
   ```
 
-  For more information, see the [Notification Payload](https://centrifuge-os-node-api.api-docs.io/0.0.3/dummy/Gbku2Joxnodad8i2J)
+  For more information, see the [Notification Payload](https://centrifuge-os-node-api-1.api-docs.io/0.0.3-alpha4/dummy/TQY4YNy4ckTyHN6i4)
 
 ### Post-Install Verification
 
@@ -169,7 +173,7 @@ To make sure that your Centrifuge node setup was successful, you can run the fol
 
   ```bash
   $ curl -k -X POST "https://localhost:8082/invoice" \\
-  -H "authorization: YOURCENTIDHERE" \\
+  -H "authorization: YOUR_DID_HERE" \\
   -H "accept: application/json" \\
   -H "Content-Type: application/json" \\
   -d @- << 'EOF'
@@ -231,7 +235,7 @@ Note the `"transaction_id":"2c572bb1-d3ec-47c3-941d-b55bcdd02a15"` parameter. Th
   $ curl -k \\
   -X GET "https://35.184.66.29:8082/transactions/2c572bb1-d3ec-47c3-941d-b55bcdd02a15" \\
   -H "accept: application/json" \\
-  -H "authorization:YOURCENTIDHERE"
+  -H "authorization:YOUR_DID_HERE"
   ```
 
   Eventually will return:

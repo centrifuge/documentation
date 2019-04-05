@@ -4,7 +4,7 @@ title: Interacting with the Centrifuge Node
 category: Usage
 ---
 
-The following section lists the API calls to perform functions like sending documents, validating proofs and so on. For more information, see [Centrifuge Node API documentation](https://centrifuge-os-node-api.api-docs.io/0.0.3/).
+The following section lists the API calls to perform functions like sending documents, validating proofs and so on. For more information, see [Centrifuge Node API documentation](https://centrifuge-os-node-api-1.api-docs.io/0.0.3-alpha4/).
 
 # Document-Specific APIs
 
