@@ -6,7 +6,7 @@ category: Getting started
 
 # Recommended tools 
 
-To quickly get started, there are two services that will make your life easier:
+To get started quickly, there are two services that will make your life easier:
 
 <!--## Ethereum Wallet (TBD if included)
 To be able to send and receive payments and convert from fiat to crypto the user must have a wallet that is funded with ETH.-->
