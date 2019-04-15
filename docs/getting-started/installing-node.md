@@ -13,7 +13,7 @@ Before being able to transfer and anchor financial documents and mint NFTs the u
 <!-- this feels redundant since we explained a bit about infure in the previous section. I would recommend updating the previous section and remove this infure introduction 
 AGREED, delete and refer to previous Section -->
 
-For this, we recommend[INCLUDE LINK TO Recommended Tools SECTION] using [Infura](https://infura.io). Once you have registered an account, you can create a new project and select the respective endpoint. It will give the user the option to select: Mainnet, Ropsten, Rinkeby or Kovan. 
+For this, we [recommend](https://developer.centrifuge.io/docs/getting-started/tools) using [Infura](https://infura.io). Once you have registered an account, you can create a new project and select the respective endpoint. It will give the user the option to select: Mainnet, Ropsten, Rinkeby or Kovan. 
 
 Find the correct Infura link for the different Ethereum testnets on your Infura dahsboard. Choose the correct endpoint and it will give you the option to copy to clipboard. You will need this link again later in the process.
 
