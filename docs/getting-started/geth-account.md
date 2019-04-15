@@ -4,7 +4,7 @@ title: Greating a geth account
 category: Getting started
 ---
 
-# Creating an new go-ethereum (geth) account
+# Creating a new go-ethereum (geth) account
 
 ## Install Go Ethereum
 
