@@ -5,7 +5,7 @@ category: Overview
 ---
 
 
-# Centrifuge is Provided "As Is"
+# Centrifuge is provided "As Is"
 
 The "Software", which includes but is not limited to the source code of components of Centrifuge OS, related repositories, client implementations, user interfaces, compiled or deployed binaries and smart contracts all of its components, libraries, supporting services (including, but not limited to, build pipelines, tests, deployments, "boot nodes", code samples, intergrations) is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitnress for a particular purpose and noninfringement.
 
