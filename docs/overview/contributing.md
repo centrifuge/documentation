@@ -4,8 +4,6 @@ title: Contributing and Code of Conduct
 category: Overview
 ---
 
-# Contributing to the Centrifuge Project
-
 ## How to Contribute
 To become a part of the Centrifuge community, read the Code of Conduct below and join [Slack](https://centrifuge.io/slack/). If you find a bug, file an issue on [GitHub](https://github.com/centrifuge).
 
