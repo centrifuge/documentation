@@ -24,11 +24,11 @@ Please find examples for sending invoices and minting business NFTs below:
 To create an invoice use the POST call under the menu item _invoice_. Always make sure to add your Centrifuge ID under **Header** > **authorization**. Then go to **Body** and fill in the document template accordingly. 
 
 *Header:*
-![](https://i.imgur.com/8BjlQDY.png | width=100)
+![](https://i.imgur.com/8BjlQDY.png | width=50)
 
 
 *Body:*
-![](https://i.imgur.com/1ef4Hg0.png | width=100)
+![](https://i.imgur.com/1ef4Hg0.png | width=50)
 
 
 ## Update an invoice
