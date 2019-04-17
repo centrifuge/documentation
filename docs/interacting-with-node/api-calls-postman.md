@@ -1,7 +1,7 @@
 ---
-id: api-calls-postman
+id: 1-api-calls-postman
 title: API calls via Postman
-category: Interacting with the Centrifuge Node
+category: 3 Interacting with the Centrifuge Node
 ---
 
 Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents  via simple API calls. For this, you can either use Postman (see [Recommended tools](https://developer.centrifuge.io/docs/getting-started/tools) or use your standard command-line interface. If you use Postman, make sure you have imported the most recent [Centrifuge Postman Collection](https://www.getpostman.com/collections/0d9126c8586a03af7cc7).
