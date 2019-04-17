@@ -1,5 +1,5 @@
 ---
-id: 1-geth-account
+id: 2-geth-account
 title: Greating a geth account
 category: 2 Getting started
 ---
