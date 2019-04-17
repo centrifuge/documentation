@@ -97,6 +97,7 @@ To look up your Centrifuge ID via Terminal use:
 Before running your Centrifuge Node, you need to add your Ethereum key and password as environment variables.
 
 <!-- `CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=/Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-0UTC--2019-mm-dd` -->
+
 `CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)`
 
 `CENT_ETHEREUM_ACCOUNTS_MAIN_PASSWORD=<YOUR_PASSWORD, if any; Else leave blank>`
