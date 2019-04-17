@@ -1,7 +1,7 @@
 ---
 id: 3-installing-node
 title: Installing the Centrifuge Node
-category: 1 Getting started
+category: 2 Getting started
 ---
 
 Before being able to transfer and anchor financial documents and mint NFTs you need to spin up a Centrifuge node your machine. This is a one time setup. 
