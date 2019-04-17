@@ -1,7 +1,7 @@
 ---
-id: geth-account
+id: 1-geth-account
 title: Greating a geth account
-category: Getting started
+category: 2 Getting started
 ---
 
 # Creating a new go-ethereum (geth) account
