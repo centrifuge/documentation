@@ -39,7 +39,7 @@ Use the PUT command to update an invoice. Creating an invoice automatically gene
 
 
 ## Mint business NFTs
-To mint a business NFT use the POST command under the menu item _token_. First add your Centrifuge ID under **Header** > **authorization**. Then select **Body** and fill in the document template. Keep in mind that you want to use a deposit address where you are able to move the NFT later on (e.g. MetaMask).
+To mint a business NFT use the POST command under the menu item _token_. First add your Centrifuge ID under **Header** > **authorization**. Then select **Body** and fill in the document template. Keep in mind that you want to use a deposit address where you are able to move the NFT later on.
 
 ![](https://i.imgur.com/7Y2oNZc.png | width=100)
 
