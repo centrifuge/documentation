@@ -1,7 +1,7 @@
 ---
-id: contributing
+id: 3-contributing
 title: Contributing and Code of Conduct
-category: Overview
+category: 1 Overview
 ---
 
 ## How to Contribute
