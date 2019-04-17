@@ -1,7 +1,7 @@
 ---
-id: configuration
-title: Centrifuge Configuraion
-category: Getting started
+id: 4-configuration
+title: Centrifuge Configuration
+category: 2 Getting started
 ---
 
 The default configuration with all available options is accessible [here](https://github.com/centrifuge/go-centrifuge/blob/develop/build/configs/default_config.yaml). You may adjust certain configurations according to your requirements.
