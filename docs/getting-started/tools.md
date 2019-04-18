@@ -5,12 +5,6 @@ title: Recommended tools
 category: 2.Getting Started
 ---
 
----
-id: tools
-title: 1 Recommended tools
-category: 2 Getting started
----
-
 To get started quickly, we recommend using two services that will make your life easier:
 
 ## Infura
