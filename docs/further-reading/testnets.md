@@ -14,6 +14,7 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 - Client: geth
 - Purpose: Testnet
 - Bootstrap Nodes: 
+
   ```/ip4/35.225.200.42/tcp/38202/ipfs/```
   ```12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df```
   
@@ -32,6 +33,7 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 - Client: parity
 - Purpose: Testnet
 - Bootstrap Nodes:
+
     ```/ip4/104.154.18.51/tcp/38202/ipfs/```
     ```12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z```
     
