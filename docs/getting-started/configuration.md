@@ -36,7 +36,7 @@ The default configuration with all available options is accessible [here](https:
     maxGasPrice: "xx000000000"
   ```
   
-  > Note: 20 Gwei would be "20000000000"
+  Note: 20 Gwei would be "20000000000"
     
 * Disable Pre-commit
 
