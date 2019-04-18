@@ -10,7 +10,7 @@ category: 1 Overview
 ## Centrifuge protocol
 The components of the Centrifuge protocol are a collection of Ethereum smart contracts and a peer to peer (P2P) network implemented on libp2p. Ethereum smart contracts are used for (i) maintaining identities in a similar format to the ERC725 standard (ii) anchoring state commitments and (iii) minting NFTs from off chain Centrifuge documents. The peer to peer network is used for private, off-chain transactions and business document exchange.
 
-![Centrifuge architecture](https://i.imgur.com/FrPAbnc.png =500x)
+![Centrifuge architecture](https://i.imgur.com/FrPAbnc.png)
 
 ## Centrifuge Nodes
 
