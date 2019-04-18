@@ -85,7 +85,7 @@ As a next step, adjust the following accordingly and add the corresponding Infur
 
 ------
 
-## Centrifuge ID 
+## Look up your Centrifuge ID 
 
 A participant of the Centrifuge OS will be identified by an identity (Centrifuge ID) within the network. The createconfig command automatically creates an identity and the key pairs. 
 
