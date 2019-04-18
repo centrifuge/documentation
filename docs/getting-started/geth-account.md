@@ -12,7 +12,7 @@ Before you can create a new go-ethereum (`Geth`) account you have to install a s
 
 ## Create a new account
 
-Once you have installed the latest Version of Go Ethereum, create a new ```Geth``` Account by:
+Once you have installed the latest Version of Go Ethereum, create a new ```Geth``` account by:
 
   ``` $ geth account new```
 
