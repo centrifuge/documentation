@@ -32,11 +32,11 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 - Client: parity
 - Purpose: Testnet
 - Bootstrap Nodes:
-    ```/ip4/104.154.18.51/tcp/38202/ipfs/
-       12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z```
+    ```/ip4/104.154.18.51/tcp/38202/ipfs/```
+    ```12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z```
     
-    ```/ip4/104.155.185.237/tcp/38202/ipfs/
-       12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x```
+    ```/ip4/104.155.185.237/tcp/38202/ipfs/```
+    ```12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x```
 
 - Deployed Smart Contracts:
     - IdentityFactory: ``0x1362EcBf8679243E24fA0EC425d2e10A08223c7D``
