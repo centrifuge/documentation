@@ -1,6 +1,6 @@
 ---
-id: disclaimer
-title: 4 Disclaimer
+id: 4-disclaimer
+title: Disclaimer
 category: 1 Overview
 ---
 
