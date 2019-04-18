@@ -33,7 +33,7 @@ Once you are set up, follow these steps to install the Centrifuge node:
 3) Run `centrifuge createconfig` as seen in the example below. This command automatically creates an identity and the required key pairs. It then generates the `config.yaml` file required to run the node.
 
  
-   > **NOTE:** The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to execute the `centrifuge createconfig` command. 
+> **NOTE:** The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to execute the `centrifuge createconfig` command. 
 
       ```
       $ centrifuge createconfig \
