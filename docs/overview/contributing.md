@@ -1,6 +1,6 @@
 ---
-id: contributing
-title: 3 Contributing and Code of Conduct
+id: 3-contributing
+title: Contributing and Code of Conduct
 category: 1 Overview
 ---
 
