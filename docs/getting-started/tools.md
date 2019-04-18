@@ -2,7 +2,7 @@
 id: tools
 order: 1
 title: Recommended tools
-category: 2.Getting Started
+category: 2.Getting started
 ---
 
 To get started quickly, we recommend using two services that will make your life easier:
