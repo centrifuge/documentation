@@ -97,6 +97,9 @@ const SidebarContent = () => (
             fieldValue
             edges {
               node {
+                frontmatter {
+                  order
+                }
                 fields {
                   title
                   slug
@@ -119,7 +122,9 @@ const SidebarContent = () => (
               {category.fieldValue}
             </Text>
             <List>
-              {category.edges.map((doc, index) => (
+              {category.edges.sort((a,b)=> {
+                  return a.node.frontmatter.order - b.node.frontmatter.order
+                }).map((doc, index) => (
                 <Item key={index}>
                   <Link to={doc.node.fields.slug} activeClassName="activeLink">
                     {doc.node.fields.title}

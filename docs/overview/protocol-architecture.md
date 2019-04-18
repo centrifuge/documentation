@@ -1,5 +1,6 @@
 ---
-id: 2-protocol-architecture
+id: protocol-architecture
+order: 2
 title: Centrifuge protocol architecture
 category: 1 Overview
 ---
