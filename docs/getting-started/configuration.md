@@ -1,7 +1,7 @@
 ---
 id: configuration
 order: 4
-title: Centrifuge Configuration
+title: Centrifuge configuration
 category: 2.Getting started
 ---
 
