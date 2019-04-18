@@ -103,7 +103,7 @@ const mdxGrommetMap = {
   ul: props => <ListBase {...props} as="ul" />,
   ol: props => <ListBase {...props} as="ol" />,
   a: Grommet.Anchor,
-  img: Grommet.Image,
+  img: props => <Grommet.Image fit="contain">,
   inlineCode: props => <Grommet.Text color="brand" as="code" {...props} />,
   code: props => (
     <CodeHighlighter
