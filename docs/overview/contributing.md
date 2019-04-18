@@ -2,7 +2,7 @@
 id: contributing
 order: 3
 title: Contributing and Code of Conduct
-category: 1 Overview
+category: 1.Overview
 ---
 
 ## How to Contribute

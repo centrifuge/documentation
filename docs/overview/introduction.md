@@ -2,7 +2,7 @@
 id: introduction
 order: 1
 title: Introduction
-category: 1 Overview
+category: 1.Overview
 ---
 
 ## Centrifuge Operating System
