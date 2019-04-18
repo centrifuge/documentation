@@ -1,6 +1,6 @@
 ---
-id: introduction
-title: 1 Introduction
+id: 1-introduction
+title: Introduction
 category: 1 Overview
 ---
 
