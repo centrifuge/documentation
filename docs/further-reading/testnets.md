@@ -14,11 +14,11 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 - Client: geth
 - Purpose: Testnet
 - Bootstrap Nodes: 
-  ```/ip4/35.225.200.42/tcp/38202/ipfs/
-     12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df```
+  ```/ip4/35.225.200.42/tcp/38202/ipfs/```
+  ```12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df```
   
-  ```/ip4/35.225.86.210/tcp/38202/ipfs/
-     12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub```
+  ```/ip4/35.225.86.210/tcp/38202/ipfs/```
+  ```12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub```
 
 - Deployed Smart Contracts:
     - IdentityFactory: ``0xf880b860103bd45a523574AeeC07C492031f4781``
