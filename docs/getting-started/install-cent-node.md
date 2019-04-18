@@ -33,7 +33,7 @@ Once you are set up, follow these steps to install the Centrifuge node:
 3) Run `centrifuge createconfig` as seen in the example below. This command automatically creates an identity and the required key pairs. It then generates the `config.yaml` file required to run the node.
 
  
-   > **NOTE:** The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to execute the `centrifuge createconfig` command. 
+> **NOTE:** The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to execute the `centrifuge createconfig` command. 
 
       ```
       $ centrifuge createconfig \
@@ -44,14 +44,11 @@ Once you are set up, follow these steps to install the Centrifuge node:
       -n embarcadero
       ```
 
-     Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path.
+ Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path.
 
-
-
-      The password for the provided `keystore/<KEY-FILE>` file is asked once the `createconfig` command is run. If the password is not set, just press `enter`.
+The password for the provided `keystore/<KEY-FILE>` file is asked once the `createconfig` command is run. If the password is not set, just press `enter`.
       
-      
-    > **NOTE**: The generated `config.yaml` includes information about your Ethereum private key. Make sure to store it in a secure environment.
+> **NOTE**: The generated `config.yaml` includes information about your Ethereum private key. Make sure to store it in a secure environment.
 
 
 ## Set up your Centrifuge Node config.yaml for the corresponding testnet or mainnet
