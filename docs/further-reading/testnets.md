@@ -31,6 +31,7 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 - Purpose: Testnet
 - Bootstrap Nodes:
     ```/ip4/104.154.18.51/tcp/38202/ipfs/12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z```
+    
     ```/ip4/104.155.185.237/tcp/38202/ipfs/12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x```
 
 - Deployed Smart Contracts:
@@ -45,6 +46,7 @@ This network is a testnet that operates over a Proof-of-Work Ethereum network.
 - Purpose: Testnet
 - Bootstrap Nodes:
     ```/ip4/35.225.200.42/tcp/38202/ipfs/12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df```
+    
     ```/ip4/35.225.86.210/tcp/38202/ipfs/12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub```
 
 - Deployed Smart Contracts:
@@ -61,6 +63,7 @@ This network is the production network that operates over the main Proof-of-Work
 - Purpose: Mainnet
 - Bootstrap Nodes:
     ```/ip4/35.198.122.117/tcp/38202/ipfs/12D3KooWAg3EcAtrYVCxwz6k6sT9iZSRztz9D7yUzpBPREFzrUoV```
+    
     ```/ip4/35.242.221.111/tcp/38202/ipfs/12D3KooWKGwixXenuXAVqkJKmnHSAJDjzf7eGMo6troigZxm7A5R```
 
 - Deployed Smart Contracts:
