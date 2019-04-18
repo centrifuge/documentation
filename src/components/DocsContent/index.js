@@ -56,7 +56,7 @@ const Hash = styled.a.attrs({
 `;
 
 const mdxGrommetMap = {
-  p: Grommet.Paragraph,
+  p: prop => <Grommet.Paragraph {...props} style={{wordBreak:'break-all'}}/>,
   h1: props => (
     <Heading level={1}>
       <Anchor id={props.id} />
