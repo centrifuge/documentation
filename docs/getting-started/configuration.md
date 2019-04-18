@@ -29,13 +29,14 @@ The default configuration with all available options is accessible [here](https:
   
 * Ethereum max gas price
 
-To adjust the maximum gas price (in wei) you are willing to pay per transaction:
+  To adjust the maximum gas price (in wei) you are willing to pay per transaction:
     
   ```yaml
   ethereum:
     maxGasPrice: "xx000000000"
   ```
- > Note: 20 Gwei would be "20000000000"
+  
+  > Note: 20 Gwei would be "20000000000"
     
 * Disable Pre-commit
 
