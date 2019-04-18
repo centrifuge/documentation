@@ -21,12 +21,6 @@ To accept the incoming P2P connections, you will need to open two ports for inco
 - P2P Port: open ingress/egress. This port will be configured under `p2p` `port` in your config.
 - API Port: restrict at will, only you or your upstream systems should need to talk to it. This port will be configured as `nodeport` in your config.
 
-<!--
-**Resource Requirements for Centrifuge API Node**
-* 1 Gigabyte memory
-* 1 core
--->
-
 ## Installing the Centrifuge Node
 Once you are set up, follow these steps to install the Centrifuge node:
 
@@ -62,7 +56,7 @@ Once you are set up, follow these steps to install the Centrifuge node:
 
 ## Set up your Centrifuge Node config.yaml for the corresponding testnet or mainnet
 
-As a next step, adjust the following accordingly and add the corresponding Infura link (see above).
+As a next step, adjust the following accordingly and add the corresponding Infura link (see above).  Manually add: https:// to the Infura link.
 
 **Networks:** 
 
