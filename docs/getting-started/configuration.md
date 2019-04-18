@@ -27,7 +27,6 @@ The default configuration with all available options is accessible [here](https:
   For more information, see the [Notification Payload](https://centrifuge-os-node-api.api-docs.io/0.0.3/dummy/Gbku2Joxnodad8i2J)
   
 * Ethereum max gas price
-    <!-- TODO: specify the unit of the gasprice -->
     To adjust the maximum gas price you are willing to pay per transaction:
     
   ```yaml
