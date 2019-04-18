@@ -1,6 +1,6 @@
 ---
 id: tools
-order: 2
+order: 1
 title: Recommended tools
 category: 2.Getting Started
 ---
