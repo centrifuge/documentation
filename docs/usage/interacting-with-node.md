@@ -35,7 +35,7 @@ Creating an invoice automatically generates a document ID for the said invoice. 
 
 ## Receive an invoice
 
-The recipient is able to look up the specific invoice by calling GET under the menu item _invoice_. The recipient will need the document ID and add it to the call, e.g: 'http://localhost:8082/invoice/<Add DocumentID>. Then press send. The invoice details will be shown in the **Body** below.
+The recipient is able to look up the specific invoice by calling GET under the menu item _invoice_. The recipient will need the document ID and add it to the call, e.g: `http://localhost:8082/invoice/<Add DocumentID>`. Then press send. The invoice details will be shown in the **Body** below.
   
 ![ReceiveInvoice](https://i.imgur.com/tV5Iu04.png)
 
