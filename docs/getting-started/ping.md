@@ -9,13 +9,13 @@ To make sure that your Centrifuge node setup was successful and is running prope
 
   ```bash
   $ curl -X GET "http://localhost:8082/ping" -H "accept: application/json"
+  ```
   
   It will return (e.g. Kovan - Bernalheights):
   
+  ```
   {"version":"0.0.4+master","network":"bernalheights"}
   ```
-
-
 ---
 
 If you use Postman, make sure you have imported the most recent [Centrifuge Postman Collection](https://www.getpostman.com/collections/0d9126c8586a03af7cc7). Then simply ping the node under the menu item _ping_ by clicking _Send_ (do not forget to enter your Centrifuge ID in **Header** > **authorization**).
