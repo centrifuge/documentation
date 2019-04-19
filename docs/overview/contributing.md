@@ -39,27 +39,6 @@ We want to come together to exchange ideas and build Centrifuge as an inclusive,
 
 Community members should be judged by their actions, not criteria such as age, race, nationality, sex, sexual orientation, gender, gender identity or expression, disability, physical appearance, religion (or lack thereof), degrees, geographic location, or position.
 
-### Be Open
-
-Be welcoming to all. Especially welcome newcomers to the community. Everyone brings a different background and experiences to contribute to the systems and tools we want to build and use in the future. Great things can happen when we show up with an open mind and curiosity.
-
-### Be Respectful
-
-Be kind to others. Respect their work, time, and perspectives. Do not insult or put down community members. Respect each other and respect the challenges we are facing as individuals and a community.
-
-### Build With Purpose
-
-Always build for the user. Make public data available, protect private data, and create secure systems. Scalability is important. Promote Decentralization. We are building global systems for enterprise-scale deployments.
-
-
-### Contribute
-
-Contributions to the codebase, network, systems, online or offline materials, events, documentation, the overall knowledge base, and other community business are always welcome. Acceptance criteria for contributions will vary depending on the circumstances but we aim for a low barrier of entry for contributors.
-
-### Bugs & Vulnerabilities
-
-If you believe you have found a bug or vulnerability, please submit a report to the appropriate individual, team, or project right away. Make a good faith effort not to access or destroy data of others. Act for the common good through the prompt reporting of all found vulnerabilities. Never willfully exploit others without their permission.
-
 ### Unacceptable Behavior
 
 Unacceptable behaviors include: intimidating, harassing, abusive, discriminatory, derogatory or demeaning speech or actions by any participant in our community online, at all related events and in one-on-one communications carried out in the context of community business. 
