@@ -1,8 +1,8 @@
 ---
 id: contributing
-order: 3
+order: 2
 title: Contributing and Code of Conduct
-category: 1.Overview
+category: 4.Further information
 ---
 
 ## How to Contribute
