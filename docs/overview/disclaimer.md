@@ -1,8 +1,8 @@
 ---
 id: disclaimer
-order: 4
+order: 3
 title: Disclaimer
-category: 1.Overview
+category: 4.Further information
 ---
 
 

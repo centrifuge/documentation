@@ -1,11 +1,11 @@
 ---
 id: testnets
-order: 2
+order: 1
 title: Network configurations
 category: 4.Further information
 ---
 
-Besides the mainnet, Ethereum has three testnets (Rinkeby, Kovan, Ropsten) than can be used. The network configuration for the different testnets is also part of the [code base](https://github.com/centrifuge/go-centrifuge/blob/master/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed.
+Besides the mainnet, Ethereum has three testnets (Rinkeby, Kovan, Ropsten). The network configuration for the different testnets is also part of the [code base](https://github.com/centrifuge/go-centrifuge/blob/master/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed. Please find the most important information summarized below.
 
 ## RussianHill  -  Rinkeby
 
@@ -15,11 +15,13 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 - Purpose: Testnet
 - Bootstrap Nodes: 
 
-  ```/ip4/35.225.200.42/tcp/38202/ipfs/```
-  ```12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df```
+```
+/ip4/35.225.200.42/tcp/38202/ipfs/12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df
+```
   
-  ```/ip4/35.225.86.210/tcp/38202/ipfs/```
-  ```12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub```
+```
+/ip4/35.225.86.210/tcp/38202/ipfs/12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub
+```
 
 - Deployed Smart Contracts:
     - IdentityFactory: ``0xf880b860103bd45a523574AeeC07C492031f4781``
@@ -34,11 +36,13 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 - Purpose: Testnet
 - Bootstrap Nodes:
 
-    ```/ip4/104.154.18.51/tcp/38202/ipfs/```
-    ```12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z```
+```
+/ip4/104.154.18.51/tcp/38202/ipfs/12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z
+```
     
-    ```/ip4/104.155.185.237/tcp/38202/ipfs/```
-    ```12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x```
+```
+/ip4/104.155.185.237/tcp/38202/ipfs/12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x
+```
 
 - Deployed Smart Contracts:
     - IdentityFactory: ``0x1362EcBf8679243E24fA0EC425d2e10A08223c7D``
@@ -51,11 +55,14 @@ This network is a testnet that operates over a Proof-of-Work Ethereum network.
 - Client: geth
 - Purpose: Testnet
 - Bootstrap Nodes:
-    ```/ip4/35.225.200.42/tcp/38202/ipfs/
-       12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df```
+
+```
+/ip4/35.225.200.42/tcp/38202/ipfs/12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df
+```
     
-    ```/ip4/35.225.86.210/tcp/38202/ipfs/
-       12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub```
+```
+/ip4/35.225.86.210/tcp/38202/ipfs/12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub
+```
 
 - Deployed Smart Contracts:
     - IdentityFactory: ``0x0d391E72325CedC41E48053E77288a89F2E31115``
@@ -70,11 +77,14 @@ This network is the production network that operates over the main Proof-of-Work
 - Client: geth | parity
 - Purpose: Mainnet
 - Bootstrap Nodes:
-    ```/ip4/35.198.122.117/tcp/38202/ipfs/
-       12D3KooWAg3EcAtrYVCxwz6k6sT9iZSRztz9D7yUzpBPREFzrUoV```
+
+```
+/ip4/35.198.122.117/tcp/38202/ipfs/12D3KooWAg3EcAtrYVCxwz6k6sT9iZSRztz9D7yUzpBPREFzrUoV
+```
     
-    ```/ip4/35.242.221.111/tcp/38202/ipfs/
-        12D3KooWKGwixXenuXAVqkJKmnHSAJDjzf7eGMo6troigZxm7A5R```
+```
+/ip4/35.242.221.111/tcp/38202/ipfs/ 12D3KooWKGwixXenuXAVqkJKmnHSAJDjzf7eGMo6troigZxm7A5R
+```
 
 - Deployed Smart Contracts:
     - IdentityFactory: ``0xAF456c16386a64fd4F4b69af13a86Df0B562Aa00``
