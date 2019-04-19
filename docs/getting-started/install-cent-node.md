@@ -71,7 +71,7 @@ $ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--
 
  `
 $ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for ropsten testnet" -x=false -n dogpatch
- `
+`
 
 * **Mainnet - Embarcadero**
 
