@@ -26,30 +26,28 @@ Once you are set up, follow these steps to install the Centrifuge node:
 
 1. Download and install the latest [centrifuge binary](https://github.com/centrifuge/go-centrifuge/releases). <!-- update link-->
 
-     If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
+If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
 
 2. Add the Centrifuge binary to the `$PATH` or modify the command invocation to point to the correct library.
 
-3) Run `centrifuge createconfig` as seen in the example below. This command automatically creates an identity and the required key pairs. It then generates the `config.yaml` file required to run the node.
+3. Run `centrifuge createconfig` as seen in the example below. This command automatically creates an identity and the required key pairs. It then generates the `config.yaml` file required to run the node.
 
- 
-> **NOTE:** The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to execute the `centrifuge createconfig` command. 
+**NOTE:** The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to execute the `centrifuge createconfig` command. 
 
-      ```
-      $ centrifuge createconfig \
-      -z ~/.ethereum/keystore/<KEY-FILE> \
-      -e <infura or your own geth url> \
-      -t <DEFINE_CONFIG_DIR_NAME> \
-      -a 8082 -p 38204 -x=false
-      -n embarcadero
-      ```
+```
+$ centrifuge createconfig \
+-z ~/.ethereum/keystore/<KEY-FILE> \
+-e <infura or your own geth url> \
+-t <DEFINE_CONFIG_DIR_NAME> \
+-a 8082 -p 38204 -x=false
+-n embarcadero
+```
 
- Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path.
+Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path.
 
 The password for the provided `keystore/<KEY-FILE>` file is asked once the `createconfig` command is run. If the password is not set, just press `enter`.
       
-> **NOTE**: The generated `config.yaml` includes information about your Ethereum private key. Make sure to store it in a secure environment.
-
+**NOTE**: The generated `config.yaml` includes information about your Ethereum private key. Make sure to store it in a secure environment.
 
 ## Set up your Centrifuge Node config.yaml for the corresponding testnet or mainnet
 
@@ -57,13 +55,15 @@ As a next step, adjust the following accordingly and add the corresponding Infur
 
 **Networks:** 
 
-* **Rinkeby - Russian Hill**
+**Rinkeby - Russian Hill**
+
 ```$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019--mm-dd -e "add Infura link for rinkeby testnet" -x=false -n russianhill```
 
-* **Kovan - Bernal Heights**
+**Kovan - Bernal Heights**
 ```$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for kovan testnet" -x=false -n bernalheights```
 
 * **Ropsten - Dogpatch**
+
  ```$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for ropsten testnet" -x=false -n dogpatch```
 
 * **Mainnet - Embarcadero**
@@ -96,8 +96,8 @@ Before running your Centrifuge Node, you need to add your Ethereum key and passw
 
 Afterwards, you can run the Centrifuge Node using the `config.yaml` file you created:
 
-  ```bash
-  $ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
-  ```
+```bash
+$ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
+```
 
-  Replace the `PATH-TO-CONFIG-DIR` with the location of the `config.yaml` file.
+Replace the `PATH-TO-CONFIG-DIR` with the location of the `config.yaml` file.
