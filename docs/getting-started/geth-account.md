@@ -26,7 +26,7 @@ Once you have installed the latest Version of Go Ethereum, create a new ```Geth`
   Address: {168bc315a2ee09042d83d7c5811b533620531f67}
   ```
   
-NOTE: You will not be able to access the account if you lose your `passphrase`. Make sure to store it in a safe place. There is no **Forgot my password** option available here.
+NOTE: You will not be able to access the account if you lose your `passphrase`. Make sure to store it in a safe place. There is  **no "Forgot my password"** option available here.
 
 Creating a new `geth` account generates a keyfile stored at `~/.ethereum/keystore`. For MacOS, this keyfile will be generated at ~/Library/Ethereum/keystore/.
 
