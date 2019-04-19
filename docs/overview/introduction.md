@@ -19,5 +19,6 @@ Ethereum is a decentralized platform that runs smart contracts. Functionality de
 
 For more information, see the [Ethereum Project](https://www.ethereum.org/).
 
+
 ---
 Centrifuge OS and all its components are Beta Software, which might and will lead to substantial changes in the future. See [Disclaimer](/docs/overview/disclaimer/).
