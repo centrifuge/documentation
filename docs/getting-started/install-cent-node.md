@@ -34,14 +34,14 @@ If you want to build the node from source, follow the description in the [source
 
 **NOTE:** The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to execute the `centrifuge createconfig` command. 
 
-```
+`
 $ centrifuge createconfig \
 -z ~/.ethereum/keystore/<KEY-FILE> \
 -e <infura or your own geth url> \
 -t <DEFINE_CONFIG_DIR_NAME> \
 -a 8082 -p 38204 -x=false
 -n embarcadero
-```
+`
 
 Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path.
 
@@ -51,15 +51,15 @@ The password for the provided `keystore/<KEY-FILE>` file is asked once the `crea
 
 ## Set up your Centrifuge Node config.yaml for the corresponding testnet or mainnet
 
-As a next step, adjust the following accordingly and add the corresponding Infura link (see above).  Manually add: https:// to the Infura link.
+As a next step, adjust the following accordingly and add the corresponding Infura link (see above).  Manually add `https://` to the Infura link.
 
 **Networks:** 
 
 * **Rinkeby - Russian Hill**
 
-```
+`
 $ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019--mm-dd -e "add Infura link for rinkeby testnet" -x=false -n russianhill
-```
+`
 
 * **Kovan - Bernal Heights**
 
@@ -102,14 +102,13 @@ Before running your Centrifuge Node, you need to add your Ethereum key and passw
 
 <!-- `CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=/Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-0UTC--2019-mm-dd` -->
 
-```
+`
 CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
-```
+`
 
-```
+`
 CENT_ETHEREUM_ACCOUNTS_MAIN_PASSWORD=<YOUR_PASSWORD, if any; Else leave blank>`
-```
-
+`
 Afterwards, you can run the Centrifuge Node using the `config.yaml` file you created:
 
 ```
