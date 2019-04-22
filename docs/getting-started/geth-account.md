@@ -2,7 +2,7 @@
 id: geth-account
 order: 2
 title: Greating a geth account
-category: 2.Getting started
+category: 2. Getting started
 ---
 
 ## Install Go Ethereum
