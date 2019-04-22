@@ -2,7 +2,7 @@
 id: protocol-architecture
 order: 2
 title: Centrifuge protocol architecture
-category: 1.Overview
+category: 1. Overview
 ---
 
 ## Centrifuge protocol
