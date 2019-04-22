@@ -2,7 +2,7 @@
 id: testnets
 order: 1
 title: Network configurations
-category: 4.Further information
+category: 4. Further information
 ---
 
 Besides the mainnet, Ethereum has three testnets (Rinkeby, Kovan, Ropsten). The network configuration for the different testnets is also part of the [code base](https://github.com/centrifuge/go-centrifuge/blob/master/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed. Please find the most important information summarized below.
