@@ -2,7 +2,7 @@
 id: contributing
 order: 2
 title: Contributing and Code of Conduct
-category: 4.Further information
+category: 4. Further information
 ---
 
 ## How to Contribute
