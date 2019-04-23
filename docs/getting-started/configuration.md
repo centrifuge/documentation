@@ -2,7 +2,7 @@
 id: configuration
 order: 4
 title: Centrifuge configuration
-category: 2.Getting started
+category: 2. Getting started
 ---
 
 The default configuration with all available options is accessible [here](https://github.com/centrifuge/go-centrifuge/blob/develop/build/configs/default_config.yaml). You may adjust certain configurations according to your requirements.
@@ -25,7 +25,7 @@ The default configuration with all available options is accessible [here](https:
     endpoint: "http://localhost:8080/endpoint/"
   ```
 
-  For more information, see the [Notification Payload](https://centrifuge-os-node-api.api-docs.io/0.0.3/dummy/Gbku2Joxnodad8i2J)
+  For more information, see the [Notification Payload](https://centrifuge-os-node-api.api-docs.io/0.0.3/dummy/Gbku2Joxnodad8i2J).
   
 * Ethereum max gas price
 
@@ -36,7 +36,7 @@ The default configuration with all available options is accessible [here](https:
     maxGasPrice: "xx000000000"
   ```
   
-  Note: 20 Gwei would be "20000000000"
+  Note: 20 Gwei would be "20000000000".
     
 * Disable Pre-commit
 

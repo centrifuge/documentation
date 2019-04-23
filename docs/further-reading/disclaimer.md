@@ -2,7 +2,7 @@
 id: disclaimer
 order: 3
 title: Disclaimer
-category: 4.Further information
+category: 4. Further information
 ---
 
 

@@ -2,7 +2,7 @@
 id: ping
 order: 5
 title: Post install verification
-category: 2.Getting started
+category: 2. Getting started
 ---
 
 To make sure that your Centrifuge node setup was successful and is running properly you can ping your node. 
