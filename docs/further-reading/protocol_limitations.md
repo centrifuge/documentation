@@ -13,8 +13,9 @@ Following is a list of important limitations and not yet implemented features of
 
 When two Centrifuge nodes exchange documents with each other, they automatically attach signatures to the transferred documents after validation of the data payload and signatures/keys. A Centrifuge node validates the structural integrity of a received document as well as the validity of previous signatures compared to the public keys of the corresponding Centrifuge ID of the counterparty. A Centrifuge itself does not validate if the document data makes sense from a business point of view.
 
->> A Centrifuge node is a technical client to Centrifuge OS. This client exchanges and signs data in well-known formats. It does not validate document data authenticity.
->> Data authenticity and correctness are always validated by the upstream system. E.g. the accounting system interacting with a Centrifuge node.
+A Centrifuge node is a technical client to Centrifuge OS. This client exchanges and signs data in well-known formats. It does not validate document data authenticity.
+
+Data authenticity and correctness are always validated by the upstream system. E.g. the accounting system interacting with a Centrifuge node.
 
 A signature of a collaborator on a Centrifuge document signifies the technical receipt and validation of a message. It does not signify the agreement that a document itself is valid, e.g. if an invoice amount is matching the underlying purchase order.
 
