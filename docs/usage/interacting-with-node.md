@@ -16,7 +16,7 @@ Confirm that your Centrifuge Node is up und running, for example with a PING (Se
 
 where `PATH-TO-CONFIG-DIR` is your location of the `config.yaml`.
 
-Open the Postman Desktop App and select the calls you want to make. You find more information on these calls here: [Node API](https://centrifuge-os-node-api-1.api-docs.io/0.0.5/). 
+Open the Postman Desktop App and select the calls you want to make. You find more information on these calls here: [Node API](https://centrifuge-os-node-api-2.api-docs.io/0.0.5/). 
 
 Please find examples for exchanging invoices and minting business NFTs below: 
 
@@ -25,7 +25,7 @@ Please find examples for exchanging invoices and minting business NFTs below:
 To create an invoice use the POST call under the menu item _invoice_. Always make sure to add your Centrifuge ID under **Header** > **authorization**. Then go to **Body** and fill in the document template accordingly. Press send to create the invoice.
 
 **Header:**
-![CreateInvoiceHeader](https://imgur.com/MjwRrTC.png)
+![CreateInvoiceHeader](https://i.imgur.com/MjwRrTC.png)
 
 
 **Body:**
