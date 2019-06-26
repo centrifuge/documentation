@@ -44,7 +44,7 @@ const Nav = () => (
             <Box as="li">
               <Box as="ul" direction="row" align="center" gap="large">
                 <Item>
-                  <ExternalAnchor href="https://centrifuge-os-node-api-1.api-docs.io/0.0.3-alpha4/">
+                  <ExternalAnchor href="https://centrifuge-os-node-api-1.api-docs.io/0.0.5/">
                     Node API
                   </ExternalAnchor>
                 </Item>
