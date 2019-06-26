@@ -95,12 +95,12 @@ $ cat /Users/YOURUSERNAME/datadir/config.yaml | grep -i 'identityid' | awk '{pri
 
 ## Running the Centrifuge node after creating the config.yaml
 
-Before running your Centrifuge Node, you need to add your Ethereum key and password as environment variables.
+Before running your Centrifuge Node, you need to add your Ethereum key and password as environment variables. The following bash commands show how to set the variables based on the default ethereum key location in macOS for a sample key.
 
-<!-- `CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=/Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-0UTC--2019-mm-dd` -->
+<!-- `CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$HOME/Library/Ethereum/keystore/UTC--2019-0UTC--2019-mm-dd` -->
 
 ```bash
-CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
+CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
 ````
 
 ```bash
