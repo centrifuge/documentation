@@ -11,8 +11,8 @@ Once the Centrifuge node is up and running you are able to start submitting invo
 Confirm that your Centrifuge Node is up und running, for example with a PING (See section [Post install verification](/docs/getting-started/ping)). If it is not running, run the Centrifuge Node using the `config.yaml` file you created:
 
   ```bash
-  $ CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
-  $ CENT_ETHEREUM_ACCOUNTS_MAIN_PASSWORD=<YOUR_PASSWORD>
+  $ export CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
+  $ export CENT_ETHEREUM_ACCOUNTS_MAIN_PASSWORD=<YOUR_PASSWORD>
   $ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
   ```
 
