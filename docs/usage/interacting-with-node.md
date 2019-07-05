@@ -5,7 +5,7 @@ title: API calls via Postman
 category: 3. Using the Centrifuge Node
 ---
 
-Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via simple API calls. For this, you can either use Postman (see [Recommended tools](/docs/getting-started/tools) or use your standard command-line interface. If you use Postman, make sure you have imported the most recent [Centrifuge Postman Collection](https://www.getpostman.com/collections/778e9c17a9fc7c5c57af).
+Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via simple API calls. For this, you can either use Postman (see [Recommended tools](/docs/getting-started/tools) or use your standard command-line interface. If you use Postman, make sure you have imported the most recent [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42).
 
 ## Before you start 
 Confirm that your Centrifuge Node is up und running, for example with a PING (See section [Post install verification](/docs/getting-started/ping)). If it is not running, run the Centrifuge Node using the `config.yaml` file you created:
