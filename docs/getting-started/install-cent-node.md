@@ -39,7 +39,7 @@ $ centrifuge createconfig \\
 -z ~/.ethereum/keystore/<KEY-FILE> \\
 -e <infura or your own geth url> \\
 -t <DEFINE_CONFIG_DIR_NAME> \\
--a 8082 -p 38204 -x=false \\
+-a 8082 -p 38204 \\
 -n embarcadero
 ```
 
@@ -58,25 +58,25 @@ As a next step, adjust the following accordingly and add the corresponding Infur
 * **Rinkeby - Russian Hill**
 
 `
-$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019--mm-dd -e "add Infura link for rinkeby testnet" -x=false -n russianhill
+$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019--mm-dd -e "add Infura link for rinkeby testnet" -n russianhill
 `
 
 * **Kovan - Bernal Heights**
 
 `
-$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for kovan testnet" -x=false -n bernalheights
+$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for kovan testnet" -n bernalheights
 `
 
 * **Ropsten - Dogpatch**
 
 `
-$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for ropsten testnet" -x=false -n dogpatch
+$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for ropsten testnet" -n dogpatch
 `
 
 * **Mainnet - Embarcadero**
 
 `
-$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for mainnet" -x=false -n embarcadero
+$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for mainnet" -n embarcadero
 `
 ------ 
 **If you like to run the centrifuge node with your own ethereum node please replace the infura urls with your own `Geth` Node-URL.**
@@ -90,17 +90,17 @@ A participant of the Centrifuge OS will be identified by an identity (Centrifuge
 To look up your Centrifuge ID via Terminal use:
 
 ```bash
-$ cat /Users/YOURUSERNAME/datadir/config.yaml
+$ cat /Users/YOURUSERNAME/datadir/config.yaml | grep -i 'identityid' | awk '{print $2}'
 ````
 
 ## Running the Centrifuge node after creating the config.yaml
 
-Before running your Centrifuge Node, you need to add your Ethereum key and password as environment variables.
+Before running your Centrifuge Node, you need to add your Ethereum key and password as environment variables. The following bash commands show how to set the variables based on the default ethereum key location in macOS for a sample key.
 
-<!-- `CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=/Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-0UTC--2019-mm-dd` -->
+<!-- `CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$HOME/Library/Ethereum/keystore/UTC--2019-0UTC--2019-mm-dd` -->
 
 ```bash
-CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
+CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
 ````
 
 ```bash
