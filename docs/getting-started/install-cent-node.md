@@ -15,12 +15,6 @@ Find the correct Infura link for the different Ethereum testnets on your Infura 
 
 ![](https://i.imgur.com/EydBc5a.jpg)
 
-## Open ports for incoming P2P connections
-
-To accept the incoming P2P connections, you will need to open two ports for incoming TCP connections.
-- P2P Port: open ingress/egress. This port will be configured under `p2p` `port` in your config.
-- API Port: restrict at will, only you or your upstream systems should need to talk to it. This port will be configured as `nodeport` in your config.
-
 ## Installing the Centrifuge Node
 Once you are set up, follow these steps to install the Centrifuge node:
 
