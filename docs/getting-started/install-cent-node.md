@@ -37,7 +37,7 @@ $ centrifuge createconfig \\
 -n embarcadero
 ```
 
-Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path.
+Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path. Manually add `https://` to the Infura link (see above).
 
 The password for the provided `keystore/<KEY-FILE>` file is asked once the `createconfig` command is run. If the password is not set, just press `enter`.
       
@@ -45,7 +45,7 @@ The password for the provided `keystore/<KEY-FILE>` file is asked once the `crea
 
 ## Set up your Centrifuge Node config.yaml for the corresponding testnet or mainnet
 
-As a next step, adjust the following accordingly and add the corresponding Infura link (see above).  Manually add `https://` to the Infura link.
+If you want to switch between testnets and mainnet, adjust the following accordingly and add the corresponding Infura link (see above).  Manually add `https://` to the Infura link.
 
 **Networks:** 
 
