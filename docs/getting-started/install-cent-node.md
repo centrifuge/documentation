@@ -84,7 +84,7 @@ A participant of the Centrifuge OS will be identified by an identity (Centrifuge
 To look up your Centrifuge ID via Terminal use:
 
 ```bash
-$ cat /Users/YOURUSERNAME/datadir/config.yaml | grep -i 'identityid' | awk '{print $2}'
+$ cat /<PATH-TO-CONFIG-DIR>/config.yaml | grep -i 'identityid' | awk '{print $2}'
 ````
 
 ## Running the Centrifuge node after creating the config.yaml
