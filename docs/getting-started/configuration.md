@@ -5,6 +5,8 @@ title: Centrifuge configuration
 category: 2. Getting started
 ---
 
+## Changing the default configuration
+
 The default configuration with all available options is accessible [here](https://github.com/centrifuge/go-centrifuge/blob/develop/build/configs/default_config.yaml). You may adjust certain configurations according to your requirements.
 
 * Configure node under NAT
@@ -46,3 +48,9 @@ The default configuration with all available options is accessible [here](https:
   anchoring:
       precommit: false
     ```
+    
+ ## Open ports for incoming P2P connections
+
+To accept the incoming P2P connections, you will need to open two ports for incoming TCP connections.
+- P2P Port: open ingress/egress. This port will be configured under `p2p` `port` in your config.
+- API Port: restrict at will, only you or your upstream systems should need to talk to it. This port will be configured as `nodeport` in your config.

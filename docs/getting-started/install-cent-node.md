@@ -15,12 +15,6 @@ Find the correct Infura link for the different Ethereum testnets on your Infura 
 
 ![](https://i.imgur.com/EydBc5a.jpg)
 
-## Open ports for incoming P2P connections
-
-To accept the incoming P2P connections, you will need to open two ports for incoming TCP connections.
-- P2P Port: open ingress/egress. This port will be configured under `p2p` `port` in your config.
-- API Port: restrict at will, only you or your upstream systems should need to talk to it. This port will be configured as `nodeport` in your config.
-
 ## Installing the Centrifuge Node
 Once you are set up, follow these steps to install the Centrifuge node:
 
@@ -43,7 +37,7 @@ $ centrifuge createconfig \\
 -n embarcadero
 ```
 
-Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path.
+Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path. Manually add `https://` to the Infura link (see above).
 
 The password for the provided `keystore/<KEY-FILE>` file is asked once the `createconfig` command is run. If the password is not set, just press `enter`.
       
@@ -51,7 +45,7 @@ The password for the provided `keystore/<KEY-FILE>` file is asked once the `crea
 
 ## Set up your Centrifuge Node config.yaml for the corresponding testnet or mainnet
 
-As a next step, adjust the following accordingly and add the corresponding Infura link (see above).  Manually add `https://` to the Infura link.
+If you want to switch between testnets and mainnet, adjust the following accordingly and add the corresponding Infura link (see above).  Manually add `https://` to the Infura link.
 
 **Networks:** 
 
@@ -90,7 +84,7 @@ A participant of the Centrifuge OS will be identified by an identity (Centrifuge
 To look up your Centrifuge ID via Terminal use:
 
 ```bash
-$ cat /Users/YOURUSERNAME/datadir/config.yaml | grep -i 'identityid' | awk '{print $2}'
+$ cat /<PATH-TO-CONFIG-DIR>/config.yaml | grep -i 'identityid' | awk '{print $2}'
 ````
 
 ## Running the Centrifuge node after creating the config.yaml
