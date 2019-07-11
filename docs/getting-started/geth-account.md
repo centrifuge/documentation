@@ -1,7 +1,7 @@
 ---
 id: geth-account
 order: 2
-title: Greating a geth account
+title: Creating a geth account
 category: 2. Getting started
 ---
 
