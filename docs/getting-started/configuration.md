@@ -27,7 +27,7 @@ The default configuration with all available options is accessible [here](https:
     endpoint: "http://localhost:8080/endpoint/"
   ```
 
-  For more information, see the [Notification Payload](https://centrifuge-os-node-api.api-docs.io/0.0.3/dummy/Gbku2Joxnodad8i2J).
+  For more information, see the [Notification Payload](https://centrifuge-os-node-api-2.api-docs.io/0.0.5/dummy/Kuc5Qft4RNZ5SuR37).
   
 * Ethereum max gas price
 
