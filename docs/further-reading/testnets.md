@@ -16,11 +16,11 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 - Bootstrap Nodes: 
 
 ```
-/ip4/35.225.200.42/tcp/38202/ipfs/12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df
+/ip4/35.246.134.95/tcp/38202/ipfs/12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df
 ```
   
 ```
-/ip4/35.225.86.210/tcp/38202/ipfs/12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub
+/ip4/35.198.161.180/tcp/38202/ipfs/12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub
 ```
 
 - Deployed Smart Contracts:
@@ -37,11 +37,11 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 - Bootstrap Nodes:
 
 ```
-/ip4/104.154.18.51/tcp/38202/ipfs/12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z
+/ip4/35.242.230.116/tcp/38202/ipfs/12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z
 ```
     
 ```
-/ip4/104.155.185.237/tcp/38202/ipfs/12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x
+/ip4/35.234.72.127/tcp/38202/ipfs/12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x
 ```
 
 - Deployed Smart Contracts:
@@ -57,11 +57,11 @@ This network is a testnet that operates over a Proof-of-Work Ethereum network.
 - Bootstrap Nodes:
 
 ```
-/ip4/35.225.200.42/tcp/38202/ipfs/12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df
+/ip4/35.246.134.95/tcp/38202/ipfs/12D3KooWNsZsW7TbcZ58N71UQSK5DjZqmFkHPHwxFKTAyoUUD8df
 ```
     
 ```
-/ip4/35.225.86.210/tcp/38202/ipfs/12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub
+/ip4/35.198.161.180/tcp/38202/ipfs/12D3KooWDe2swWE3f2iJbUeQ9GUUQBHCrWLbBca9MGMqfmbCgrub
 ```
 
 - Deployed Smart Contracts:
