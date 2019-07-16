@@ -1,11 +1,13 @@
 ---
 id: api-calls-postman
 order: 1
-title: API calls via Postman
+title: Rest API
 category: 3. Using the Centrifuge Node
 ---
 
-Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via simple API calls. For this, you can either use Postman (see [Recommended tools](/docs/getting-started/tools) or use your standard command-line interface. If you use Postman, make sure you have imported the most recent [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42).
+Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-2.api-docs.io/0.0.5/) documentation for a complete list of endpoints.
+
+In the section below we show how you can interact with the API through Postman (see [Recommended tools](/docs/getting-started/tools). If you use Postman, can import the [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42).
 
 ## Before you start 
 Confirm that your Centrifuge Node is up und running, for example with a PING (See section [Post install verification](/docs/getting-started/ping)). If it is not running, run the Centrifuge Node using the `config.yaml` file you created:
@@ -18,9 +20,9 @@ Confirm that your Centrifuge Node is up und running, for example with a PING (Se
 
 where `PATH-TO-CONFIG-DIR` is your location of the `config.yaml`.
 
-Open the Postman Desktop App and select the calls you want to make. You find more information on these calls here: [Node API](https://centrifuge-os-node-api-2.api-docs.io/0.0.5/). 
+Open the Postman Desktop App and select the calls you want to make. 
 
-Please find examples for exchanging invoices, minting business NFTs, and the creation of other document types below: 
+Please find examples for exchanging invoices, minting NFTs, and the creation of other document types below: 
 
 ## Create an invoice
 
@@ -48,7 +50,7 @@ Use the PUT command under the menu item _invoice_ to update an invoice. Add the 
 ![Update Invoice](https://i.imgur.com/70q6ivs.png)
 
 
-## Mint business NFTs
+## Mint an NFTs
 To mint a business NFT, use the POST command under the menu item _token_. First, add your Centrifuge ID under **Header** > **authorization**. Then, select **Body** and fill in the document template. Keep in mind that you want to use a deposit address where you are able to move the NFT later on.
 
 ![Mint Invoice](https://i.imgur.com/55A5vLl.png)
