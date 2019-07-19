@@ -12,10 +12,10 @@ The Centrifuge node is capable of maintaining multiple accounts. Accounts are us
 
 | Header        | Value |
 |---------------|-------|
-| authorization | hex encoded identity of the account, e.g. 0xafe241...) | 
+| **authorization:** | hex encoded identity of the account, e.g. 0xafe241...) | 
 
 ## Usage Examples
-In the section below we show how you can interact with the API through Postman (see [Recommended tools](/docs/getting-started/tools). If you use Postman, can import the [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42).
+In the section below we show how you can interact with the API through Postman (see [Recommended tools](/docs/getting-started/tools). If you use Postman, can import the [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42). Make sure you have imported the most recent version if you've used previous versions of the collection.
 
 ### Before you start 
 Confirm that your Centrifuge Node is up und running, for example with a PING (See section [Post install verification](/docs/getting-started/ping)). If it is not running, run the Centrifuge Node using the `config.yaml` file you created:
