@@ -17,7 +17,7 @@ To make sure that your Centrifuge node setup was successful and is running prope
   
 ---
 
-If you use Postman, make sure you have imported the most recent [Centrifuge Postman Collection](https://www.getpostman.com/collections/0d9126c8586a03af7cc7). Then simply ping the node under the menu item _ping_ by clicking _Send_ (do not forget to enter your Centrifuge ID in **Header** > **authorization**).
+If you use Postman, make sure you have imported the most recent [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42). Then simply ping the node under the menu item _ping_ by clicking _Send_ (do not forget to enter your Centrifuge ID in **Header** > **authorization**).
 
 ![Ping](https://i.imgur.com/cI8Ux83.png)
 ![Ping_Selection](https://i.imgur.com/TLqc6RM.png)
