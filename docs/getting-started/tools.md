@@ -15,4 +15,4 @@ Register and create an Infura account here: https://infura.io/. Create a new pro
 
 
 ## Postman
-To be able to manage documents on Centrifuge OS the user will have to make API calls. Instead of doing this via the command line we recommend a handier approach via Postman. Create an account here: https://www.getpostman.com/ and import the [Centrifuge collection](https://www.getpostman.com/collections/f6e4da013e8a8dbdf8e9).
+To be able to manage documents on Centrifuge OS the user will have to make API calls. Instead of doing this via the command line we recommend a handier approach via Postman. Create an account here: https://www.getpostman.com/ and import the [Centrifuge collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42).
