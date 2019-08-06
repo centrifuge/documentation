@@ -1,4 +1,4 @@
-import {Box, Button, Grid, Heading} from "grommet";
+import {Box, Button, Grid, Heading, Paragraph} from "grommet";
 import React from "react";
 import styled from 'styled-components'
 
@@ -79,47 +79,59 @@ export const FooterMenu = ({size, gap}) => {
   }
 
   return (
-    <Grid style={gridStyle} columns={columns} rows={rows} areas={areas}>
-      <Box gridArea="deAddress">
-        <Address>
-          Centrifuge GmbH
-          <br/>
-          Glogauer Straße 6
-          <br/>
-          10999 Berlin
-        </Address>
+    <>
+      <Grid style={gridStyle} columns={columns} rows={rows} areas={areas}>
+        <Box gridArea="deAddress">
+          <Link href="https://goo.gl/maps/nKjRqRUnsDF2">
+            <Address>
+              Centrifuge GmbH
+              <br/>
+              Glogauer Straße 6
+              <br/>
+              10999 Berlin
+            </Address>
+          </Link>
+        </Box>
+
+        <Box gridArea="usAddress">
+          <Link href="https://goo.gl/maps/MLDj8i2SwSv">
+            <Address>
+              San-Francisco
+              <br/>
+              548 Market Street #67433
+              <br/>
+              San Francisco, CA 94104
+              <br/>
+            </Address>
+          </Link>
+        </Box>
+
+        <Box gridArea="social" textAlign={'right'}>
+
+          <Link href="https://twitter.com/centrifuge">
+            Twitter
+          </Link>
+          <Link href="https://medium.com/centrifuge">
+            Medium
+          </Link>
+          <Link href="https://centrifuge.io/slack">
+            Slack
+          </Link>
+          <Link href="https://github.com/centrifuge/">
+            GitHub
+          </Link>
+
+        </Box>
+        <Box gridArea="support">
+          <Link href="mailto:support@centrifuge.io">support@centrifuge.io</Link>
+        </Box>
+      </Grid>
+      <Box fill={true}>
+        <Paragraph style={{fontSize: 12}}>
+          Centrifuge Inc. © Copyright {new Date().getFullYear()}
+        </Paragraph>
       </Box>
 
-      <Box gridArea="usAddress">
-        <Address>
-          San-Francisco
-          <br/>
-          548 Market Street #67433
-          <br/>
-          San Francisco, CA 94104
-          <br/>
-        </Address>
-      </Box>
-
-      <Box gridArea="social" textAlign={'right'}>
-
-        <Link href="https://twitter.com/centrifuge">
-          Twitter
-        </Link>
-        <Link href="https://medium.com/centrifuge">
-          Medium
-        </Link>
-        <Link href="https://centrifuge.io/slack">
-          Slack
-        </Link>
-        <Link href="https://github.com/centrifuge/">
-          GitHub
-        </Link>
-
-      </Box>
-      <Box gridArea="support">
-        <Link href="mailto:support@centrifuge.io">support@centrifuge.io</Link>
-      </Box>
-    </Grid>
+    </>
   )
 }
