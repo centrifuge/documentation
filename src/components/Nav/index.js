@@ -1,10 +1,10 @@
 import React from "react";
-import { Anchor, Box, Image, ResponsiveContext } from "grommet";
-import { Link } from "gatsby";
+import {Anchor, Box, Image, ResponsiveContext} from "grommet";
+import {Link} from "gatsby";
 import styled from "styled-components";
 
-import { Item as ListItem } from "../List";
-import { navLinkStyles } from "../Links";
+import {Item as ListItem} from "../List";
+import {navLinkStyles} from "../Links";
 import Search from "../Search";
 
 import wordmark from "../../images/centrifuge-developer-wordmark.svg";
@@ -28,13 +28,13 @@ const Item = styled(ListItem)`
   line-height: 1rem;
 `;
 
-const Nav = () => (
-  <Box as="nav">
+const Nav = (props) => (
+  <Box as="nav" {...props}>
     <Box as="ul" direction="row">
       <Box flex="grow" as="li" justify="center">
         <div>
           <Link to="/docs/overview/introduction/">
-            <Logo src={wordmark} />
+            <Logo src={wordmark}/>
           </Link>
         </div>
       </Box>
@@ -64,7 +64,7 @@ const Nav = () => (
                   </ExternalAnchor>
                 </Item>
                 <ListItem>
-                  <Search />
+                  <Search/>
                 </ListItem>
               </Box>
             </Box>

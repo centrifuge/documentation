@@ -1,18 +1,11 @@
-import React, { useState } from "react";
-import { graphql, StaticQuery, Link as GatsbyLink } from "gatsby";
+import React, {useState} from "react";
+import {graphql, Link as GatsbyLink, StaticQuery} from "gatsby";
 import styled from "styled-components";
-import {
-  Text,
-  Box,
-  Accordion,
-  AccordionPanel,
-  ResponsiveContext,
-  Heading
-} from "grommet";
-import { FormDown, FormUp } from "grommet-icons";
+import {Accordion, AccordionPanel, Box, Heading, ResponsiveContext} from "grommet";
+import {FormDown, FormUp} from "grommet-icons";
 
-import { List, Item as ListItem } from "../List";
-import { navLinkStyles, asideLinkStyles } from "../Links";
+import {Item as ListItem, List} from "../List";
+import {asideLinkStyles, navLinkStyles} from "../Links";
 
 const Item = styled(ListItem)`
   margin-bottom: 6px;
@@ -32,14 +25,14 @@ const Link = styled(GatsbyLink)`
 
 const renderPanelHeader = (title, active) => (
   <Box direction="row" align="center" justify="between">
-    <Heading level={4} margin={{ vertical: "medium" }}>
+    <Heading level={4} margin={{vertical: "medium"}}>
       {title}
     </Heading>
-    {active ? <FormUp /> : <FormDown />}
+    {active ? <FormUp/> : <FormDown/>}
   </Box>
 );
 
-const SidebarAccordion = ({ children }) => {
+const SidebarAccordion = ({children}) => {
   const [activeIndex, setActiveIndex] = useState([]);
 
   return (
@@ -66,22 +59,16 @@ const Sidebar = () => (
         return (
           <Box>
             <SidebarAccordion>
-              <Box pad={{ bottom: "medium" }}>
-                <SidebarContent />
+              <Box pad={{bottom: "medium"}}>
+                <SidebarContent/>
               </Box>
             </SidebarAccordion>
           </Box>
         );
 
       return (
-        <Box
-          style={{
-            position: "sticky",
-            position: "-webkit-sticky",
-            top: 64 + 40
-          }}
-        >
-          <SidebarContent />
+        <Box>
+          <SidebarContent/>
         </Box>
       );
     }}
@@ -110,21 +97,18 @@ const SidebarContent = () => (
         }
       }
     `}
-    render={({ allMdx }) => (
+    render={({allMdx}) => (
       <List>
         {allMdx.group.map((category, index) => (
           <Item key={index}>
-            <Text
-              as="p"
-              weight={600}
-              margin={{ bottom: "none", top: index !== 0 ? "16px" : "none" }}
+            <Heading level={5} style={{marginBottom: '8px'}}
             >
               {category.fieldValue}
-            </Text>
+            </Heading>
             <List>
-              {category.edges.sort((a,b)=> {
-                  return a.node.frontmatter.order - b.node.frontmatter.order
-                }).map((doc, index) => (
+              {category.edges.sort((a, b) => {
+                return a.node.frontmatter.order - b.node.frontmatter.order
+              }).map((doc, index) => (
                 <Item key={index}>
                   <Link to={doc.node.fields.slug} activeClassName="activeLink">
                     {doc.node.fields.title}
