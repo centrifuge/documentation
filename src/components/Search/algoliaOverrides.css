@@ -1,3 +1,7 @@
+.algolia-autocomplete {
+  width: 100%;
+}
+
 /* Main dropdown wrapper */
 .algolia-autocomplete .ds-dropdown-menu {
   margin-top: 1rem;

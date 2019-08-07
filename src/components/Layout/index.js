@@ -39,7 +39,7 @@ const Layout = ({children, gap, size}) => {
           fill={true}
           border={{side: 'bottom', color: 'light-4'}}
         >
-          <Nav {...sectionProps}/>
+          <Nav {...sectionProps} size={size}/>
         </Box>
       </Header>
       <Box align={'center'}>
