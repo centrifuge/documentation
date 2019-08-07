@@ -46,7 +46,11 @@ const SidebarAccordion = ({children}) => {
           String(activeIndex).includes(0)
         )}
       >
-        {children}
+        <Box overflow="auto"
+             style={{ maxHeight: "300px" }}>
+          {children}
+        </Box>
+
       </AccordionPanel>
     </Accordion>
   );
@@ -57,7 +61,7 @@ const Sidebar = () => (
     {size => {
       if (size === "small")
         return (
-          <Box>
+          <Box >
             <SidebarAccordion>
               <Box pad={{bottom: "medium"}}>
                 <SidebarContent/>

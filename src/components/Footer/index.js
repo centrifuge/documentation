@@ -37,9 +37,7 @@ export const Link = styled.a`
 
 
 export const FooterMenu = ({size, gap}) => {
-  let gridStyle = {
-    gridGap: '32px'
-  }
+  let gridStyle = {gridGap: gap, width: '100%'};
   let areas;
   let columns = [
     'minmax(160px,220px)',
@@ -54,11 +52,24 @@ export const FooterMenu = ({size, gap}) => {
     case "large":
     case "medium":
     default:
-      gridStyle = {gridGap: gap, width: '100%'};
+
       areas = [
         {name: "copyright", start: [0, 0], end: [0, 0]},
         {name: "social", start: [2, 0], end: [2, 0]},
         {name: "support", start: [3, 0], end: [3, 0]},
+
+      ];
+      break;
+
+    case "small":
+      columns = [
+        '1fr'
+      ]
+      rows = ['auto','auto','auto'];
+      areas = [
+        {name: "copyright", start: [0, 0], end: [0, 2]},
+        {name: "social", start: [0, 0], end: [0, 0]},
+        {name: "support", start: [0, 1], end: [0, 1]},
 
       ];
       break;

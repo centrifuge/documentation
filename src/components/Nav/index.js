@@ -37,10 +37,11 @@ const Nav = (props) => {
   const closeMenu = () => setOpened(false);
 
   const onMobile = size === 'small';
+  const gap = onMobile ? 'medium': 'large';
 
   return (
     <Box as="nav" {...rest}>
-      <Box as="ul"  direction="row" gap="large">
+      <Box as="ul"  direction="row" gap={gap}>
         <Box  as="li" flex={!onMobile} justify="center">
           <div>
             <Link to="/docs/overview/introduction/">
