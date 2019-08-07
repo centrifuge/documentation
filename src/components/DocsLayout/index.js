@@ -41,9 +41,9 @@ const DocsLayout = ({data: {mdx}}) => (
         let gap = '32px'
         let areas;
         let columns = [
-          'minmax(182px,236px)',
-          ...(Array(10).fill("1fr")),
-          '236px'
+          'minmax(182px,320px)',
+          'minmax(700px,1fr)',
+          'minmax(236px,320px)',
         ];
         let rows = ['auto']
 
@@ -55,16 +55,20 @@ const DocsLayout = ({data: {mdx}}) => (
             areas = [
 
               {name: "sidebar", start: [0, 0], end: [0, 0]},
-              {name: "main", start: [1, 0], end: [11, 0]},
-              {name: "toc", start: [11, 0], end: [11, 0]},
+              {name: "main", start: [1, 0], end: [1, 0]},
+              {name: "toc", start: [2, 0], end: [2, 0]},
 
             ];
             break;
           // Tablet
           case "medium":
+            columns = [
+              'minmax(182px,280px)',
+              'minmax(600px,1fr)',
+            ];
             areas = [
               {name: "sidebar", start: [0, 0], end: [0, 0]},
-              {name: "main", start: [1, 0], end: [11, 0]},
+              {name: "main", start: [1, 0], end: [1, 0]},
 
             ];
             break;

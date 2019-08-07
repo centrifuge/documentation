@@ -2,12 +2,13 @@ import {Box, Button, Grid, Heading, Paragraph} from "grommet";
 import React from "react";
 import styled from 'styled-components'
 
-export const JoinUs = () => {
+
+
+export const JoinSlack = () => {
   return (
     <>
-      <Heading textAlign={'center'} level={'5'} color={'white'}>Come join our team of experienced, smart, and nice
-        people building the future of B2B software!</Heading>
-      <Button white={'true'} label={'Join the Team'} href={'https://centrifuge.io/careers'} target={'_blank'}/>
+      <Heading textAlign={'center'} level={'5'} color={'white'}>Do you want to know more? Do you have questions to ask?</Heading>
+      <Button white={'true'} label={'Join Slack'} href={'https://centrifuge.io/slack'} target={'_blank'}/>
     </>
   )
 }
@@ -36,12 +37,13 @@ export const Link = styled.a`
 
 
 export const FooterMenu = ({size, gap}) => {
-  let gridStyle = {}
+  let gridStyle = {
+    gridGap: '32px'
+  }
   let areas;
   let columns = [
-    '118px',
-    '166px',
-    ...Array(8).fill("auto"),
+    'minmax(160px,220px)',
+    '1fr',
     '54px',
     '142px'
   ]
@@ -54,23 +56,9 @@ export const FooterMenu = ({size, gap}) => {
     default:
       gridStyle = {gridGap: gap, width: '100%'};
       areas = [
-        {name: "deAddress", start: [0, 0], end: [0, 0]},
-        {name: "usAddress", start: [1, 0], end: [1, 0]},
-        {name: "social", start: [10, 0], end: [10, 0]},
-        {name: "support", start: [11, 0], end: [11, 0]},
-
-      ];
-      break;
-    case "small":
-      columns = ["1fr,1fr,1fr"];
-      rows = ['auto', 'auto'];
-      gridStyle = {gridGap: gap, width: '100%', justifyContent: 'space-between'};
-      areas = [
-        {name: "deAddress", start: [0, 0], end: [0, 0]},
-        {name: "usAddress", start: [2, 0], end: [2, 0]},
-        {name: "social", start: [0, 1], end: [0, 1]},
-        {name: "support", start: [2, 1], end: [2, 1]},
-
+        {name: "copyright", start: [0, 0], end: [0, 0]},
+        {name: "social", start: [2, 0], end: [2, 0]},
+        {name: "support", start: [3, 0], end: [3, 0]},
 
       ];
       break;
@@ -81,30 +69,13 @@ export const FooterMenu = ({size, gap}) => {
   return (
     <>
       <Grid style={gridStyle} columns={columns} rows={rows} areas={areas}>
-        <Box gridArea="deAddress">
-          <Link href="https://goo.gl/maps/nKjRqRUnsDF2">
-            <Address>
-              Centrifuge GmbH
-              <br/>
-              Glogauer Straße 6
-              <br/>
-              10999 Berlin
-            </Address>
-          </Link>
+        <Box gridArea="copyright">
+          <Paragraph>
+            Centrifuge Inc. © Copyright {new Date().getFullYear()}
+          </Paragraph>
         </Box>
 
-        <Box gridArea="usAddress">
-          <Link href="https://goo.gl/maps/MLDj8i2SwSv">
-            <Address>
-              San-Francisco
-              <br/>
-              548 Market Street #67433
-              <br/>
-              San Francisco, CA 94104
-              <br/>
-            </Address>
-          </Link>
-        </Box>
+
 
         <Box gridArea="social" textAlign={'right'}>
 
@@ -127,9 +98,7 @@ export const FooterMenu = ({size, gap}) => {
         </Box>
       </Grid>
       <Box fill={true}>
-        <Paragraph style={{fontSize: 12}}>
-          Centrifuge Inc. © Copyright {new Date().getFullYear()}
-        </Paragraph>
+
       </Box>
 
     </>
