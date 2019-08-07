@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {graphql, Link as GatsbyLink, StaticQuery} from "gatsby";
+import {Link as GatsbyLink} from "gatsby";
 import styled from "styled-components";
-import {Accordion, AccordionPanel, Box, Heading, ResponsiveContext} from "grommet";
+import {Accordion, AccordionPanel, Box, Heading} from "grommet";
 import {FormDown, FormUp} from "grommet-icons";
 
 import {Item as ListItem, List} from "../List";
@@ -56,52 +56,27 @@ const SidebarAccordion = ({children}) => {
   );
 };
 
-const Sidebar = () => (
-  <ResponsiveContext.Consumer>
-    {size => {
-      if (size === "small")
-        return (
-          <Box >
-            <SidebarAccordion>
-              <Box pad={{bottom: "medium"}}>
-                <SidebarContent/>
-              </Box>
-            </SidebarAccordion>
+const Sidebar = ({allMdx, size}) => {
+  if (size === "small")
+    return (
+      <Box>
+        <SidebarAccordion>
+          <Box pad={{bottom: "medium"}}>
+            <SidebarContent allMdx={allMdx}/>
           </Box>
-        );
+        </SidebarAccordion>
+      </Box>
+    );
 
-      return (
-        <Box>
-          <SidebarContent/>
-        </Box>
-      );
-    }}
-  </ResponsiveContext.Consumer>
-);
+  return (
+    <Box>
+      <SidebarContent allMdx={allMdx}/>
+    </Box>
+  );
+};
 
-const SidebarContent = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        allMdx(filter: { fields: { title: { ne: "404" } } }) {
-          group(field: fields___category) {
-            fieldValue
-            edges {
-              node {
-                frontmatter {
-                  order
-                }
-                fields {
-                  title
-                  slug
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={({allMdx}) => (
+const SidebarContent = ({allMdx}) => {
+    return (
       <List>
         {allMdx.group.map((category, index) => (
           <Item key={index}>
@@ -123,8 +98,8 @@ const SidebarContent = () => (
           </Item>
         ))}
       </List>
-    )}
-  />
-);
+    )
+  }
+;
 
 export default Sidebar;

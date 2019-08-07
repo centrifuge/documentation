@@ -8,23 +8,35 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `cent-node`,
+        path: `${__dirname}/docs/cent-node`
+      }
+    },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `tinlake`,
+        path: `${__dirname}/docs/tinlake`
+      }
+    },
+    {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
         hastPlugins: [require("rehype-slug")],
-        defaultLayouts: {
-          default: require.resolve("./src/components/Layout/index.js"),
-          docs: require.resolve("./src/components/DocsLayout/index.js")
-        }
+
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-redirect-from',
       options: {
-        name: `docs`,
-        path: `${__dirname}/docs/`
+        query: 'allMdx'
       }
     },
+    'gatsby-plugin-meta-redirect',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
@@ -35,7 +47,7 @@ module.exports = {
       options: {
         name: `centrifuge-developers`,
         short_name: `centrifuge`,
-        start_url: `/docs/overview/introduction/`,
+        start_url: `/cent-node/overview/introduction/`,
         background_color: `#fff`,
         theme_color: `#2762ff`,
         display: `minimal-ui`,

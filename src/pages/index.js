@@ -6,10 +6,10 @@ import SEO from "../components/SEO";
 import {AxisTheme} from "@centrifuge/axis-theme";
 import {theme} from "../theme";
 
-const NotFoundPage = () => (
+const HomePage = () => (
   <AxisTheme theme={theme}>
     <Layout>
-      <SEO title="Something went wrong"/>
+      <SEO title="Centrifuge documentation"/>
       <Box
         fill
         as="main"
@@ -36,4 +36,4 @@ const NotFoundPage = () => (
   </AxisTheme>
 );
 
-export default NotFoundPage;
+export default HomePage;
