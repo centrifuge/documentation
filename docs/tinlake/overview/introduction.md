@@ -29,11 +29,11 @@ redirect_from:
  In Tinlake the collateral generally is in form of an NFT. Though with a custom adapter, any other collateral could be used. For an asset to be used as collateral in Tinlake it generally must satisfy two conditions:
   
   1. Ownership of the asset must be transferable to the Tinlake `Shelf` which holds it in escrow until the loan is repaid
-  2. Appraisal: There must be a way to determine the value of the collateral with oracles or automated pricing models. 
+  2. Appraisal: There must be a way to determine the value of the collateral with oracles or automated pricing models.
+
 
  *Add overview graphic of Tinlake*
-  
- 
+
  ## Contracts Overview
  | Contract | Description |
  |----------|-------------|
