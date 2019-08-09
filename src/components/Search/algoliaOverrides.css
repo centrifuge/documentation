@@ -1,8 +1,17 @@
+.algolia-autocomplete {
+  width: 100%;
+}
+
 /* Main dropdown wrapper */
 .algolia-autocomplete .ds-dropdown-menu {
   margin-top: 1rem;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
   border-radius: 6px;
+  z-index: 2;
+}
+
+.algolia-autocomplete .ds-dropdown-menu {
+  min-width: 295px;
 }
 
 .algolia-autocomplete .ds-dropdown-menu:before {
