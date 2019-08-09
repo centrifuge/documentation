@@ -45,8 +45,8 @@ const Nav = (props) => {
   const openMenu = () => setOpened(true);
   const closeMenu = () => setOpened(false);
 
-  const onMobile = size === 'small';
-  const gap = onMobile ? 'medium': 'large';
+  const onMobile = size === 'small' || size === 'medium';
+  const gap = size === 'small' ? 'medium': 'large';
 
   return (
     <Box as="nav" {...rest}>
@@ -59,7 +59,7 @@ const Nav = (props) => {
           </div>
         </Box>
 
-        {size !== "small" && (
+        {!onMobile && (
           <Box  as="li">
             {renderMainMenuItems('row')}
           </Box>
@@ -70,7 +70,7 @@ const Nav = (props) => {
           </ListItem>
         </Box>
 
-        {size === "small" && (
+        {onMobile && (
           <Box as="li" justify={'center'}>
             <ListItem>
               <Anchor>
