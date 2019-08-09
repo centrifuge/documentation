@@ -53,7 +53,7 @@ const Nav = (props) => {
       <Box as="ul"  direction="row" gap={gap}>
         <Box  as="li" flex={!onMobile} justify="center">
           <div>
-            <Link to="/docs/overview/introduction/">
+            <Link to="/">
               <Logo src={wordmark}/>
             </Link>
           </div>
