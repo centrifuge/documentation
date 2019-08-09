@@ -85,9 +85,8 @@ const HomePage = () => (
                 gap={'large'}
               >
                 <Image style={{maxWidth: '480px'}} src={centrifugeLogo}/>
-                <Link to="/cent-node/">
-                  <Anchor style={anchorStyles}>Centrifuge Node Documentation</Anchor>
-                </Link>
+                <Anchor href="/cent-node/" style={anchorStyles}>Centrifuge Node Documentation</Anchor>
+
               </Box>
               <Box
                 margin={{vertical: '48px'}}
@@ -99,9 +98,7 @@ const HomePage = () => (
                 <Box height={'62px'} justify={'center'}>
                   <Image src={tinlakeLogo}/>
                 </Box>
-                <Link to="/tinlake/">
-                  <Anchor style={anchorStyles}>Tinlake Documentation</Anchor>
-                </Link>
+                  <Anchor href="/tinlake/" style={anchorStyles}>Tinlake Documentation</Anchor>
               </Box>
 
               <Box

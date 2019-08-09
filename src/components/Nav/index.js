@@ -116,7 +116,6 @@ const renderMainMenuItems = (direction) => {
     <Item>
       <Link partiallyActive={true} activeClassName="activeLink" to="/cent-node/">
         <Anchor>Cent node</Anchor>
-
       </Link>
     </Item>
     <Item>

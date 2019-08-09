@@ -11,6 +11,33 @@ export const theme = deepMerge(axisThemeConfig, {
       }
     }
   },
+  table: {
+    header: {
+      align: 'start',
+      pad: { horizontal: 'small', vertical: 'xsmall' },
+      border: 'bottom',
+      verticalAlign: 'bottom',
+      fill: 'false',
+    },
+    body: {
+      align: 'start',
+      pad: {horizontal: 'small', vertical: 'xsmall'},
+      border: null,
+      extend: props => css`
+           
+           border-bottom: 1px solid ${axisThemeConfig.global.colors['light-4']} ;
+          
+          `,
+    },
+    footer: {
+      align: 'start',
+      pad: { horizontal: 'small', vertical: 'xsmall' },
+      border: 'top',
+      verticalAlign: 'top',
+      fill: 'vertical',
+      // extend: undefined,
+    },
+  },
   heading: {
     extend: props => css`
            max-width: 100%; 

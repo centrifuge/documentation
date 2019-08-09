@@ -99,10 +99,17 @@ const mdxGrommetMap = {
       {props.children}
     </Heading>
   ),
+  table: props => <Grommet.Box fill={true}><Grommet.Table className={'MdxTable'}>{props.children}</Grommet.Table></Grommet.Box>,
+  thead: props => <Grommet.TableHeader>{props.children}</Grommet.TableHeader>,
+  tbody: props => <Grommet.TableBody>{props.children}</Grommet.TableBody>,
+  tr: props => <Grommet.TableRow as={"tr"}>{props.children}</Grommet.TableRow>,
+  td: props => <Grommet.TableCell  as="div">{props.children}</Grommet.TableCell>,
+  th: props => <Grommet.TableCell  as="th" >{props.children}</Grommet.TableCell>,
   li: props => <Grommet.Text {...props} as="li" />,
   ul: props => <ListBase {...props} as="ul" />,
   ol: props => <ListBase {...props} as="ol" />,
   a: Grommet.Anchor,
+
   img: props => <Grommet.Image {...props} style={{width:"100%"}}/>,
   inlineCode: props => <Grommet.Text color="brand" as="code" {...props} />,
   code: props => (

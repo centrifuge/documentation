@@ -37,7 +37,7 @@ const DocsLayout = ({data}) => {
 
   const {mdx, allMdx} = data;
 
-  return (<AxisTheme full={true} theme={theme}>
+  return (<AxisTheme theme={theme}>
     <ResponsiveContext.Consumer>
       {size => {
 
