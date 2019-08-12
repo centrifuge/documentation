@@ -1,4 +1,4 @@
-import {Box, Button, Grid, Heading, Paragraph} from "grommet";
+import {Box, Button, Grid, Heading} from "grommet";
 import React from "react";
 import styled from 'styled-components'
 
@@ -40,9 +40,8 @@ export const FooterMenu = ({size, gap}) => {
   let gridStyle = {gridGap: gap, width: '100%'};
   let areas;
   let columns = [
-    'minmax(160px,220px)',
-    '1fr',
     '54px',
+    '1fr',
     '142px'
   ]
   let rows = ['auto'];
@@ -54,39 +53,18 @@ export const FooterMenu = ({size, gap}) => {
     default:
 
       areas = [
-        {name: "copyright", start: [0, 0], end: [0, 0]},
-        {name: "social", start: [2, 0], end: [2, 0]},
-        {name: "support", start: [3, 0], end: [3, 0]},
 
-      ];
-      break;
-
-    case "small":
-      columns = [
-        '1fr'
-      ]
-      rows = ['auto','auto','auto'];
-      areas = [
-        {name: "copyright", start: [0, 0], end: [0, 2]},
         {name: "social", start: [0, 0], end: [0, 0]},
-        {name: "support", start: [0, 1], end: [0, 1]},
+        {name: "support", start: [2, 0], end: [2, 0]},
 
       ];
       break;
-
 
   }
 
   return (
     <>
       <Grid style={gridStyle} columns={columns} rows={rows} areas={areas}>
-        <Box gridArea="copyright">
-          <Paragraph>
-            Centrifuge Inc. © Copyright {new Date().getFullYear()}
-          </Paragraph>
-        </Box>
-
-
 
         <Box gridArea="social" textAlign={'right'}>
 

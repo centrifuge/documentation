@@ -3,11 +3,6 @@
   publish = "public"
 
 [[redirects]]
-  from = "/"
-  to = "/docs/overview/introduction/"
-  status = 301
-
-[[redirects]]
   from = "https://centrifuge-documentation.netlify.com/*"
   to = "https://developer.centrifuge.io/:splat"
   status = 301

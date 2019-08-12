@@ -1,23 +1,31 @@
 const { createFilePath } = require("gatsby-source-filesystem");
 const path = require("path");
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+exports.onCreateNode = (args) => {
+  const { node, actions, getNode } = args;
   const { createNodeField } = actions;
-  
+
   // Add New Fields To GraphQL
   if (node.internal.type === "Mdx") {
+
     const value = createFilePath({ node, getNode });
+    const instanceName = getNode(node.parent).sourceInstanceName
+    createNodeField({
+      name: `instanceName`,
+      node,
+      value: instanceName
+    });
 
     createNodeField({
       name: `file`,
       node,
-      value: `docs${value.slice(0, -1)}.md`
+      value: `${instanceName}${value.slice(0, -1)}.md`
     });
 
     createNodeField({
       name: `slug`,
       node,
-      value: `docs${value}`
+      value: `/${instanceName}${value}`
     });
 
     createNodeField({
@@ -38,6 +46,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: node.frontmatter.title || parent.name
     });
   }
+
+
 };
 
 exports.createPages = ({ graphql, actions }) => {
@@ -54,6 +64,7 @@ exports.createPages = ({ graphql, actions }) => {
                   id
                   fields {
                     slug
+                    instanceName
                   }
                 }
               }
@@ -68,6 +79,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // We'll call `createPage` for each result
         result.data.allMdx.edges.forEach(({ node }) => {
+
           createPage({
             // This is the slug we created before
             // (or `node.frontmatter.slug`)
@@ -78,7 +90,7 @@ exports.createPages = ({ graphql, actions }) => {
 
             // We can use the values in this context in
             // our page layout component
-            context: { id: node.id }
+            context: { id: node.id,instanceName:node.fields.instanceName }
           });
         });
       })

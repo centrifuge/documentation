@@ -20,13 +20,22 @@ const ExternalAnchor = styled(Anchor).attrs({
   target: "_blank",
   rel: "noopener noreferrer"
 })`
-  ${navLinkStyles}
-  font-weight: 500;
+ 
 `;
 
 const Item = styled(ListItem)`
   padding: 1.5rem 0;
   line-height: 1rem;
+  a {
+     ${navLinkStyles}
+     color: inherit;
+    font-weight: 500;
+  }
+  
+  .activeLink {
+    color: ${props => props.theme.global.colors.brand};
+  }
+  
 `;
 
 const Nav = (props) => {
@@ -36,21 +45,21 @@ const Nav = (props) => {
   const openMenu = () => setOpened(true);
   const closeMenu = () => setOpened(false);
 
-  const onMobile = size === 'small';
-  const gap = onMobile ? 'medium': 'large';
+  const onMobile = size === 'small' || size === 'medium';
+  const gap = size === 'small' ? 'medium': 'large';
 
   return (
     <Box as="nav" {...rest}>
       <Box as="ul"  direction="row" gap={gap}>
         <Box  as="li" flex={!onMobile} justify="center">
           <div>
-            <Link to="/docs/overview/introduction/">
+            <Link to="/">
               <Logo src={wordmark}/>
             </Link>
           </div>
         </Box>
 
-        {size !== "small" && (
+        {!onMobile && (
           <Box  as="li">
             {renderMainMenuItems('row')}
           </Box>
@@ -61,7 +70,7 @@ const Nav = (props) => {
           </ListItem>
         </Box>
 
-        {size === "small" && (
+        {onMobile && (
           <Box as="li" justify={'center'}>
             <ListItem>
               <Anchor>
@@ -104,6 +113,16 @@ const Nav = (props) => {
 
 const renderMainMenuItems = (direction) => {
   return <Box as="ul" direction={direction} align="center" gap="large">
+    <Item>
+      <Link partiallyActive={true} activeClassName="activeLink" to="/cent-node/">
+        <Anchor>Cent node</Anchor>
+      </Link>
+    </Item>
+    <Item>
+      <Link partiallyActive={true} activeClassName="activeLink" to="/tinlake/">
+        <Anchor>Tinlake</Anchor>
+      </Link>
+    </Item>
     <Item>
       <ExternalAnchor href="https://centrifuge-os-node-api-2.api-docs.io/0.0.5">
         Node API

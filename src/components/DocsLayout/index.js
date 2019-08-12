@@ -33,8 +33,11 @@ const SidebarContainer = styled(Box)`
   `}
 `
 
-const DocsLayout = ({data: {mdx}}) => (
-  <AxisTheme full={true} theme={theme}>
+const DocsLayout = ({data}) => {
+
+  const {mdx, allMdx} = data;
+
+  return (<AxisTheme theme={theme}>
     <ResponsiveContext.Consumer>
       {size => {
 
@@ -47,7 +50,6 @@ const DocsLayout = ({data: {mdx}}) => (
         ];
         let rows = ['auto']
 
-        console.log('size', size)
         switch (size) {
           // Desktop
           case "large":
@@ -89,7 +91,7 @@ const DocsLayout = ({data: {mdx}}) => (
                 border={{side: 'right', color: 'light-4'}}
                 gridArea="sidebar" background={'white'}
                 pad={{bottom: 'large'}} size={size}>
-                <Sidebar/>
+                <Sidebar size={size} allMdx={allMdx}/>
               </SidebarContainer>
 
               <Box gridArea="main" as="main" pad={{bottom: 'large'}}>
@@ -102,7 +104,7 @@ const DocsLayout = ({data: {mdx}}) => (
                 <EditPage file={mdx.fields.file}/>
               </Box>
 
-              {size === "large" && (<Box pad={{bottom: 'large'}} gridArea="toc" as="aside" pad={{top: 'medium'}}>
+              {size === "large" && (<Box pad={{bottom: 'large', top: 'medium'}} gridArea="toc" as="aside">
                 <TableOfContents content={mdx.tableOfContents}/>
               </Box>)}
 
@@ -111,16 +113,17 @@ const DocsLayout = ({data: {mdx}}) => (
         )
       }}
     </ResponsiveContext.Consumer>
-  </AxisTheme>
+  </AxisTheme>)
 
-);
+};
 
 export const query = graphql`
-  query DocsQuery($id: String) {
+  query DocsQuery($id: String, $instanceName: String) {
     mdx(id: { eq: $id }) {
       id
       fields {
         file
+        instanceName
       }
       frontmatter {
         title
@@ -130,6 +133,22 @@ export const query = graphql`
       }
       tableOfContents
     }
+    allMdx(filter: { fields: { title: { ne: "404" }, instanceName:{eq: $instanceName} } }) {
+          group(field: fields___category) {
+            fieldValue
+            edges {
+              node {
+                frontmatter {
+                  order
+                }
+                fields {
+                  title
+                  slug
+                }
+              }
+            }
+          }
+        }
   }
 `;
 
