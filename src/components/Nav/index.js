@@ -115,7 +115,7 @@ const renderMainMenuItems = (direction) => {
   return <Box as="ul" direction={direction} align="center" gap="large">
     <Item>
       <Link partiallyActive={true} activeClassName="activeLink" to="/cent-node/">
-        <Anchor>Centrifuge node</Anchor>
+        <Anchor>Centrifuge P2P Node</Anchor>
       </Link>
     </Item>
     <Item>
