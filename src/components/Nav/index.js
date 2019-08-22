@@ -115,7 +115,7 @@ const renderMainMenuItems = (direction) => {
   return <Box as="ul" direction={direction} align="center" gap="large">
     <Item>
       <Link partiallyActive={true} activeClassName="activeLink" to="/cent-node/">
-        <Anchor>Cent node</Anchor>
+        <Anchor>Centrifuge P2P Node</Anchor>
       </Link>
     </Item>
     <Item>
@@ -131,11 +131,6 @@ const renderMainMenuItems = (direction) => {
     <Item>
       <ExternalAnchor href="https://github.com/centrifuge">
         GitHub
-      </ExternalAnchor>
-    </Item>
-    <Item>
-      <ExternalAnchor href="https://centrifuge.io/centrifuge_os_white_paper.pdf">
-        Whitepaper
       </ExternalAnchor>
     </Item>
     <Item>

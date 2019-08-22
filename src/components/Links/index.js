@@ -1,4 +1,5 @@
-import {css} from "styled-components";
+import styled,{css} from "styled-components";
+import {Anchor} from "grommet";
 
 const navLinkStyles = css`
   text-decoration: none;
@@ -18,4 +19,16 @@ const asideLinkStyles = css`
   display: inline-block;
 `;
 
-export {navLinkStyles, asideLinkStyles};
+const UnstyledAnchor = styled(Anchor)`
+  &, &:hover {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+  }
+`
+
+export {navLinkStyles, asideLinkStyles,UnstyledAnchor};
+
+
