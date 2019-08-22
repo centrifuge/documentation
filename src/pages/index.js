@@ -4,10 +4,11 @@ import {theme} from "../theme";
 import {Anchor, Box, Grid, Heading, Image, ResponsiveContext} from "grommet";
 import helloWordImage from "../images/hello_world-42.svg";
 import centrifugeLogo from "../images/centrifuge_logo_dev.svg";
-import {Link} from "gatsby";
 import tinlakeLogo from "../images/tinlake_logo_dev.svg";
 import SEO from "../components/SEO";
 import Layout from "../components/Layout";
+import {UnstyledAnchor} from "../components/Links";
+
 
 const HomePage = () => (
   <AxisTheme theme={theme}>
@@ -84,7 +85,7 @@ const HomePage = () => (
                 gridArea={'cent-node'}
                 gap={'large'}
               >
-                <Image style={{maxWidth: '480px'}} src={centrifugeLogo}/>
+                <Anchor href="/cent-node/"><Image style={{maxWidth: '480px'}} src={centrifugeLogo}/></Anchor>
                 <Anchor href="/cent-node/" style={anchorStyles}>Centrifuge Node Documentation</Anchor>
 
               </Box>
@@ -96,9 +97,9 @@ const HomePage = () => (
                 gap={'large'}
               >
                 <Box height={'62px'} justify={'center'}>
-                  <Image src={tinlakeLogo}/>
+                  <Anchor href="/tinlake/"><Image src={tinlakeLogo}/></Anchor>
                 </Box>
-                  <Anchor href="/tinlake/" style={anchorStyles}>Tinlake Documentation</Anchor>
+                <Anchor href="/tinlake/" style={anchorStyles}>Tinlake Documentation</Anchor>
               </Box>
 
               <Box
@@ -110,11 +111,16 @@ const HomePage = () => (
 
               >
                 <Heading level={1} style={{margin: '0px 0px 6px 0px'}}>
-                  Protocol Paper
+                  <UnstyledAnchor
+                    href={'https://staticw.centrifuge.io/assets/centrifuge_os_protocol_paper.pdf'}
+                    target={'_blank'}>
+                    Protocol Paper
+                  </UnstyledAnchor>
                 </Heading>
-                <Anchor style={anchorStyles}
-                        href={'https://staticw.centrifuge.io/assets/centrifuge_os_protocol_paper.pdf'}
-                        target={'_blank'}>Centrifuge
+                <Anchor
+                  style={anchorStyles}
+                  href={'https://staticw.centrifuge.io/assets/centrifuge_os_protocol_paper.pdf'}
+                  target={'_blank'}>Centrifuge
                   Protocol Paper</Anchor>
               </Box>
             </Grid>
