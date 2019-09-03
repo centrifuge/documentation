@@ -7,4 +7,4 @@ redirect_from:
   - /tinlake/
 ---
 
-# Tinlake JS
+Coming soon

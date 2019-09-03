@@ -14,7 +14,14 @@ module.exports = {
         path: `${__dirname}/docs/cent-node`
       }
     },
-
+    {
+        resolve: `gatsby-transformer-remark`,
+        options: {
+            plugins: [
+                `gatsby-remark-mathjax`,
+            ],
+        },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
