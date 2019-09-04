@@ -18,7 +18,11 @@ const EditPage = ({file}) => {
 
   return (
     <Box margin={{top: "large"}}>
-      <Anchor href={githubLink}>Edit this page on GitHub</Anchor>
+      <Anchor
+        style={{fontSize: '12px', opacity: '0.8'}}
+        href={githubLink}>
+        Edit this page on GitHub
+      </Anchor>
     </Box>
   );
 };
