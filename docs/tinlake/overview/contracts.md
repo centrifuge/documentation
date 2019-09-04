@@ -38,7 +38,7 @@ An admin (underwriter) can whitelist an NFT for Tinlake. The admin has to define
 #### Borrow a loan
 `Reception.borrow(uint loan, address deposit)`
 
-The owner of a whitelisted NFT can call `borrow` on the reception contract. As a first step, the ownership of the NFT is transferred to the Tinlake shelf contract. (Pre required is an `approve` in the NFT registry contract). The new locked NFT causes a value (appraisal) increase of the collateral pool. New CVT are minted to represent the increase. Afterwards, the new CVT are used as collateral in a decentralized lending protocol like Maker or Compound (depending on the adapter) to receive funding in DAI (principal amount).  The borrow transaction automatically whithdraws the received DAI to the deposit address. If borrow is successful, the loan status changes to `ongoing` and interest accrues.
+The owner of a whitelisted NFT can call `borrow` on the reception contract. As a first step, the ownership of the NFT is transferred to the Tinlake shelf contract. (Pre required is an `approve` in the NFT registry contract). The new locked NFT causes a value (appraisal) increase of the collateral pool. New CVT are minted to represent the increase. Afterwards, the new CVT are used as collateral in a decentralized lending protocol like Maker or Compound (depending on the adapter) to receive funding in DAI (principal amount). The borrow transaction automatically whithdraws the received DAI to the deposit address. If borrow is successful, the loan status changes to `ongoing` and interest accrues.
 
 #### Repay a loan
 `Reception.close(uint loan, address usr)`
