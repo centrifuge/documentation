@@ -1,0 +1,43 @@
+---
+id: anatomy
+order: 2
+title: Anatomy of an NFT
+category: 1. Overview
+redirect_from:
+  - /nfts/
+---
+
+We recommend a certain anatomy for an NFT created with the Centrifuge [privacy enable ERC721 library](https://github.com/centrifuge/privacy-enabled-erc721/tree/develop).
+
+### Metadata
+
+It is useful to store publicly accessible data about the NFT in a separate metadata structure, in order to access and render this data in user facing applications. 
+
+We store this metadata in a TokenData structure which typically contains at least the document version and the address of the minter, as well as the fields which are contained in the precise proofs.
+
+For example:
+
+```  
+struct TokenData {
+  uint document_version;
+  uint gross_amount;
+  uint currency;
+  uint due_date;
+  address invoice_sender;
+}
+  ```
+  
+### Checks
+
+There are several checks that should be done prior to the minting of an NFT:
+
+1. `_latestDoc`: Checking that the document is the latest version
+
+
+2. `_checkAnchor`: Checking that the document has been properly anchored
+
+3. `_signed`: Checking that the identity trying the mint the NFT is a valid Centrifuge identity, and that the signing key used for minting contains a signing purpose and is not revoked
+
+4. `_checkTokenData`: Checking that the passed in token uniquess proof matches the data on the token to be minted
+
+5. `verify`:  Verify the submitted proofs against the NFT to be minted. For more information, please read the information in Verification of Proof Fields
