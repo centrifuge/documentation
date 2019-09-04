@@ -7,7 +7,7 @@ redirect_from:
   - /tinlake/
 ---
 
-### Small modular contracts
+## Small modular contracts
 The Tinlake contracts use the ward pattern for authorizing internal contracts to modify system parameters. To modularize and simplify the code base, independent functions are put into different contracts that can be changed out. 
 
 ## Contract Call Authorization Scheme
@@ -22,7 +22,7 @@ contract Shelf {
     function deny(address usr) public auth { wards[usr] = 0; }
     modifier auth { require(wards[msg.sender] == 1); _; }
 
-// [...]
+    // [...]
 
 }
 ```
