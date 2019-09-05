@@ -14,7 +14,6 @@ module.exports = {
         path: `${__dirname}/docs/cent-node`
       }
     },
-
     {
       resolve: `gatsby-source-filesystem`,
       options: {
