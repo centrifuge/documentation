@@ -124,7 +124,7 @@ const renderMainMenuItems = (direction) => {
       </Link>
     </Item>
     <Item>
-      <Link partiallyActive={true} activeClassName="activeLink" to="/nfts/">
+      <Link partiallyActive={true} activeClassName="activeLink" to="/nfts/overview/introduction/">
         <Anchor>NFTs</Anchor>
       </Link>
     </Item>
