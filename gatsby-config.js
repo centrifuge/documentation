@@ -22,6 +22,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `nfts`,
+        path: `${__dirname}/docs/nfts`
+      }
+    },
+    {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
