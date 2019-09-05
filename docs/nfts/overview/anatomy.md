@@ -15,7 +15,7 @@ It is useful to store publicly accessible data about the NFT in a separate metad
 
 We store this metadata in a TokenData structure which typically contains at least the document version and the address of the minter, as well as the fields which are contained in the precise proofs.
 
-For example:
+For example, an Invoice Document could contain these metadata fields:
 
 ```  
 struct TokenData {
@@ -38,6 +38,6 @@ There are several checks that should be done prior to the minting of an NFT:
 
 3. `_signed`: Checking that the identity trying the mint the NFT is a valid Centrifuge identity, and that the signing key used for minting contains a signing purpose and is not revoked
 
-4. `_checkTokenData`: Checking that the passed in token uniquess proof matches the data on the token to be minted
+4. `_checkTokenData`: If there is a proof present that there is no other token minted in this registry for the provided document, checking that the token data in the passed in token uniqueness proof matches the data on the token to be minted
 
 5. `verify`:  Verify the submitted proofs against the NFT to be minted. For more information, please read the information in Verification of Proof Fields
