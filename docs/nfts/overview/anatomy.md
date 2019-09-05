@@ -7,7 +7,7 @@ redirect_from:
   - /nfts/
 ---
 
-We recommend a certain anatomy for an NFT created with the Centrifuge [privacy enable ERC721 library](https://github.com/centrifuge/privacy-enabled-erc721/tree/develop).
+We recommend a certain anatomy for an NFT created with the Centrifuge [privacy enabled ERC721 library](https://github.com/centrifuge/privacy-enabled-erc721/tree/develop).
 
 ### Metadata
 
