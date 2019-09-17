@@ -18,7 +18,7 @@ The Centrifuge node is capable of maintaining multiple accounts. Accounts are us
 In the section below we show how you can interact with the API through Postman (see [Recommended tools](/docs/centrifuge-node/getting-started/tools). If you use Postman, can import the [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42). Make sure you have imported the most recent version if you've used previous versions of the collection.
 
 ### Before you start 
-Confirm that your Centrifuge Node is up und running, for example with a PING (See section [Post install verification](/docs/centrifuge-node/getting-started/ping)). If it is not running, run the Centrifuge Node using the `config.yaml` file you created:
+Confirm that your Centrifuge Node is up und running, for example with a PING (See section [Post install verification](/cent-node/getting-started/ping)). If it is not running, run the Centrifuge Node using the `config.yaml` file you created:
 
   ```bash
   $ export CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
