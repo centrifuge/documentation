@@ -13,7 +13,7 @@ To make sure that your Centrifuge node setup was successful and is running prope
   
   It will return (e.g. Kovan - Bernalheights):
   
-  ``` {"version":"0.0.5+master","network":"bernalheights"}```
+  ``` {"version":"0.0.6+master","network":"bernalheights"}```
   
 ---
 
