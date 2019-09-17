@@ -5,7 +5,7 @@ title: Rest API
 category: 3. Using the Centrifuge Node
 ---
 
-Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-2.api-docs.io/0.0.5/) documentation for a complete list of endpoints.
+Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-4.api-docs.io/0.0.6/) documentation for a complete list of endpoints.
 
 ## Authentication Headers
 The Centrifuge node is capable of maintaining multiple accounts. Accounts are used to track of the different users that might be using a single instance of a Centrifuge node. We use an http header for specifying which account to use for a given request.
@@ -15,10 +15,10 @@ The Centrifuge node is capable of maintaining multiple accounts. Accounts are us
 | **authorization:** | hex encoded identity of the account, e.g. 0xafe241...) | 
 
 ## Usage Examples
-In the section below we show how you can interact with the API through Postman (see [Recommended tools](/docs/centrifuge-node/getting-started/tools). If you use Postman, can import the [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42). Make sure you have imported the most recent version if you've used previous versions of the collection.
+In the section below we show how you can interact with the API through Postman (see [Recommended tools](/cent-node/getting-started/tools). If you use Postman, can import the [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42). Make sure you have imported the most recent version if you've used previous versions of the collection.
 
 ### Before you start 
-Confirm that your Centrifuge Node is up und running, for example with a PING (See section [Post install verification](/docs/centrifuge-node/getting-started/ping)). If it is not running, run the Centrifuge Node using the `config.yaml` file you created:
+Confirm that your Centrifuge Node is up und running, for example with a PING (See section [Post install verification](/cent-node/getting-started/ping)). If it is not running, run the Centrifuge Node using the `config.yaml` file you created:
 
   ```bash
   $ export CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
