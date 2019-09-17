@@ -9,7 +9,7 @@ Before being able to transfer and anchor financial documents and mint NFTs you n
 
 ## Set-up Infura
 
-For this, we [recommend](/docs/centrifuge-node/getting-started/tools) [setting up](docs/getting-started/geth-account) your own geth node.
+For this, we [recommend](/cent-node/getting-started/tools) [setting up](/cent-node/getting-started/geth-account) your own geth node.
 
 Otherwise, for convenience in getting started, you can use [Infura](https://infura.io). Once you have registered an account, you can create a new project and select the respective endpoint. It will give the user the option to select: Mainnet, Ropsten, Rinkeby or Kovan. 
 
