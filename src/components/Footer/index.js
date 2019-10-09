@@ -3,7 +3,6 @@ import React from "react";
 import styled from 'styled-components'
 
 
-
 export const JoinSlack = () => {
   return (
     <>
@@ -14,11 +13,11 @@ export const JoinSlack = () => {
 }
 
 
-const Address = styled.address`
+/*const Address = styled.address`
   font-style: normal;
   line-height: 24px;
   display: inline;
-`;
+`;*/
 
 
 export const Link = styled.a`
