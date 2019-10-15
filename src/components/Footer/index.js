@@ -13,13 +13,6 @@ export const JoinSlack = () => {
 }
 
 
-/*const Address = styled.address`
-  font-style: normal;
-  line-height: 24px;
-  display: inline;
-`;*/
-
-
 export const Link = styled.a`
   color: inherit;
   text-decoration: none;
