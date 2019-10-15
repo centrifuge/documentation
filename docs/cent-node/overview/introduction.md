@@ -7,9 +7,6 @@ redirect_from:
   - /cent-node/
 ---
 
-<!-- Apply katex css -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css" integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG" crossOrigin="anonymous"/>
-
 ## Centrifuge Operating System
 
 The Centrifuge Operating System is a decentralized network to support a new generation of applications for the financial supply chain. Centrifuge OS provides users with the ability to remove intermediaries and create financial business documents as Non-Fungible Tokens (Business NFTs) that have long-term verifiability, are censorship resistant, and are stored and processed in a decentralized fashion. Initially, Centrifuge OS supports the document types _Invoice_, _Purchase Order_, _Company Data_ and _Business Relationship_. The first Business NFT implementation is an "Unpaid invoice".
