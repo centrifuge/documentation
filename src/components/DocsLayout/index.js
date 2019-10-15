@@ -13,7 +13,7 @@ import SEO from "../SEO";
 
 const EditPage = ({file}) => {
   const GITHUB_BASE =
-    "https://github.com/centrifuge/developer.centrifuge.io/tree/develop";
+    "https://github.com/centrifuge/developer.centrifuge.io/tree/develop/docs";
   const githubLink = `${GITHUB_BASE}/${file}`;
 
   return (
