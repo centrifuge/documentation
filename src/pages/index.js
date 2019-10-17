@@ -9,13 +9,14 @@ import SEO from "../components/SEO";
 import Layout from "../components/Layout";
 import {UnstyledAnchor} from "../components/Links";
 
+// Import KaTex styles to render Math functions
+import 'katex/dist/katex.css'
+
 
 const HomePage = () => (
   <AxisTheme theme={theme}>
     <ResponsiveContext.Consumer>
       {size => {
-
-
         const anchorStyles = {
           fontWeight: '500',
           fontSize: '16px'
