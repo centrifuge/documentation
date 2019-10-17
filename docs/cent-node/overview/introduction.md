@@ -24,13 +24,3 @@ For more information, see the [Ethereum Project](https://www.ethereum.org/).
 
 ## Centrifuge is Beta Software
 Centrifuge OS and all its components are Beta Software. There will be substantial changes in the future and backwards compatibility is not guaranteed. Please use with caution. See [Disclaimer](/docs/centrifuge-node/further-reading/disclaimer/). Also, please read the details about the [protocol and implementation limitations](/docs/centrifuge-node/further-reading/protocol_limitations/).
-
-The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-x = {-b \pm \sqrt{b^2-4ac} \over 2a}.
-$$
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
