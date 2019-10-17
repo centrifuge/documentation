@@ -3,8 +3,6 @@ id: nft
 order: 1
 title: NFT Assets
 category: 5 . Further Information
-redirect_from:
-  - /tinlake/
 ---
 
 In Tinlake, the collateral generally is in form of an NFT, though any other collateral could be used with a custom adapter. For an asset to be used as collateral in Tinlake, it generally must satisfy two conditions:

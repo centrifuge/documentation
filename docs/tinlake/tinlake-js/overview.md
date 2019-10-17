@@ -3,8 +3,6 @@ id: js
 order: 1
 title: Overview
 category: 3. Tinlake.js
-redirect_from:
-  - /tinlake/
 ---
 
 The Tinlake client JavaScript implementation can be used to interact with the contracts.
