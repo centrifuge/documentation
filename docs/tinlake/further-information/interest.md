@@ -14,10 +14,9 @@ n = the number of times the interest is compounded
 t = time 
 ```
 
-```
-D = P * (1 + r/n)^nt
-
-```
+$$
+D = P * (1 + r/n)\^{nt}
+$$
 
 **Example: Interest rate compounding per second**
 ```
