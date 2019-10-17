@@ -6,30 +6,35 @@ category: 5 . Further Information
 ---
 
 In Tinlake the interest is calculated with compounding per second:
-```
-P = Principal
-D = Debt
-r = interest rate (5% would be 0.05) 
-n = the number of times the interest is compounded
-t = time 
-```
+
+| Variable | Description | 
+|----------|-------------|
+| $P$ | Principal |
+| $D$ | Debt |
+| $r$ | interest rate (5% would be 0.05) |
+| $n$ | the number of times the interest is compounded, compounding is once per second|
+| $t$ | time |
+
 
 $$
 D = P \times (1 + \frac{r}{n})^{nt}
 $$
 
 **Example: Interest rate compounding per second**
-```
-P = 100
-r = 0.05
-n = 3600 * 24 * 365 (= 31536000 seconds per year)
-t = passed time in seconds 
 
-Using the formula above, the Debt D after half a year 
-(t = 31536000 / 2 = 15768000) would be D = 102.5315.
+$$
+P = 100 \\
+r = 0.05 \\
+n = 3600 * 24 * 365 \text{(= 31536000 seconds per year)} \\
+t = \text{passed time in seconds} \\
+$$
 
-After one year (t = 31536000) the Debt D would be 105.1271.
-```
+Using the formula above, the Debt $D$ after half a year 
+$(t = 31536000 / 2 = 15768000)$ would be $D = 102.5315$.
+
+After one year ($t = 31536000$) the $D$ would be $105.1271$.
+
+
 Thus a 5.00% interest rate r compounded every second is equivalent 
 to an annually compounded rate i of 5.127%. 
 
