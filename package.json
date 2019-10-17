@@ -43,7 +43,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "yarn run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve"
   },
   "repository": {
