@@ -20,7 +20,7 @@ $$
 D = P \times (1 + \frac{r}{n})^{nt}
 $$
 
-**Example: Interest rate compounding per second**
+## Example: Interest rate compounding per second
 
 $$
 P = 100 \\
@@ -42,7 +42,7 @@ This rate i
 could also be calculated directly (using n = 31536000):
  i = (1 + (0.05 / n)) ^ n  = 1.05127.
 
-**Tinlake Fee**
+### Tinlake Fee
 
 To calculate the Debt, we initialize an interest rate in Tinlake with a variable called `fee`
 
@@ -52,7 +52,7 @@ fee = (1 + r/n)
 Fee represents the interest accrued per second in Tinlake.
 
 
-**Calculate Debt**
+### Calculate Debt
 ```
 D = P * fee^t
 ```
@@ -65,7 +65,7 @@ fee = (1 + 0.05 / 31536000) = 1,0000000015854900.
 D = 100 * 1,0000000015854900 ^ 31536000 = 105.1271.
 ```
 
-### Using an annual percentage rate (APR) in Tinlake
+## Using an annual percentage rate (APR) in Tinlake
 
 The current Tinlake implementation uses an annual percentage rate (APR) as input. Tinlake transforms this annually compounded rate `i` into the equivalent rate used for compounding per secondes `r`. This is achieved by solving the equation:
 ```
