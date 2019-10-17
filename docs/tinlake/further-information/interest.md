@@ -25,8 +25,8 @@ $$
 $$
 P = 100 \\
 r = 0.05 \\
-n = 3600 * 24 * 365 \text{(= 31536000 seconds per year)} \\
-t = \text{passed time in seconds} \\
+n = 3600 * 24 * 365\\
+t = \text{time in seconds} \\
 $$
 
 Using the formula above, the Debt $D$ after half a year 
