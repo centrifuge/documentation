@@ -23,10 +23,10 @@ $$
 ## Example: Interest rate compounding per second
 
 $$
-P = 100
-r = 0.05
-n = 3600 * 24 * 365
-t = \text{time in seconds}
+P = 100 \newline
+r = 0.05 \newline
+n = 3600 * 24 * 365 \newline
+t = \text{time in seconds} \newline
 $$
 
 Using the formula above, the Debt $D$ after half a year 
