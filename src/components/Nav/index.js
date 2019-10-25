@@ -24,11 +24,12 @@ const ExternalAnchor = styled(Anchor).attrs({
 `;
 
 const Item = styled(ListItem)`
-  padding: 1.5rem 0;
+  padding: 0.5rem 0;
   line-height: 1rem;
+  
   a {
-     ${navLinkStyles}
-     color: inherit;
+    ${navLinkStyles}
+    color: inherit;
     font-weight: 500;
   }
   
@@ -50,8 +51,8 @@ const Nav = (props) => {
 
   return (
     <Box as="nav" {...rest}>
-      <Box as="ul"  direction="row" gap={gap}>
-        <Box  as="li" flex={!onMobile} justify="center">
+      <Box as="ul" direction="row" gap={gap} align="stretch">
+        <Box as="li" flex={!onMobile} justify="center">
           <div>
             <Link to="/">
               <Logo src={wordmark}/>
@@ -64,6 +65,7 @@ const Nav = (props) => {
             {renderMainMenuItems('row')}
           </Box>
         )}
+
         <Box flex={onMobile} as="li" direction={'column'} justify="center">
           <ListItem flex={'grow'}>
             <Search/>
@@ -73,8 +75,8 @@ const Nav = (props) => {
         {onMobile && (
           <Box as="li" justify={'center'}>
             <ListItem>
-              <Anchor>
-                <Menu onClick={openMenu}/>
+              <Anchor onClick={opened ? closeMenu : openMenu}>
+                {opened ? <Close size="20px" /> : <Menu size="20px" />}
               </Anchor>
             </ListItem>
           </Box>
@@ -82,29 +84,21 @@ const Nav = (props) => {
 
         {opened && (
           <Layer
-            width={'500px'}
             position="right"
             full="vertical"
             responsive={false}
             animate={true}
             onClickOutside={closeMenu}
             onEsc={closeMenu}
+            margin={{ top: 'large' }}
           >
-           <Box width={'70vw'} pad={'medium'}>
-             <Box fill={'horizontal'} align={'end'}>
-               <Anchor onClick={closeMenu}>
-                 <Close/>
-               </Anchor>
-
-             </Box>
+           <Box width={'100vw'} pad={'medium'}>
              <Box as="li"  pad={'large'}>
                {renderMainMenuItems('column')}
              </Box>
            </Box>
-
-          </Layer>)
-        }
-
+          </Layer>
+        )}
       </Box>
     </Box>
   )
@@ -112,7 +106,7 @@ const Nav = (props) => {
 
 
 const renderMainMenuItems = (direction) => {
-  return <Box as="ul" direction={direction} align="center" gap="large">
+  return <Box as="ul" direction={direction} align="start" gap="xsmall">
     <Item>
       <Link partiallyActive={true} activeClassName="activeLink" to="/cent-node/">
         <Anchor>Centrifuge P2P Node</Anchor>
