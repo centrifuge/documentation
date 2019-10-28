@@ -36,3 +36,53 @@ proofs = new bytes32[][](5);
 ```
 
 The verification method can be found in our optimised [Merkle Verifier](https://github.com/centrifuge/privacy-enabled-erc721/blob/develop/src/merkle.sol) contract.
+
+An example of an NFT with one proof which can be minted using methods from the precise-proofs library is as follows:
+
+    pragma solidity >=0.4.23;
+    pragma experimental ABIEncoderV2;
+    
+    import "privacy-enabled-erc721/nft.sol";
+    
+    
+    contract DocumentationNFT is NFT {
+        // compact property for 'loanAmount'
+        bytes constant internal AMOUNT = hex"010000000000001cdb691b0c78e9e1432d354d52e26b3cd5054cd1261c4272bf8fce2bcf285908f300000005";
+    
+        struct TokenData {
+            uint document_version;
+            uint amount;
+            address borrower;
+        }
+        mapping (uint => TokenData) public data;
+    
+        constructor (address anchors_) NFT("Documentation NFT", "DNFT", anchors_) public {
+        }
+    
+        // --- Utils ---
+        function bytesToUint(bytes memory b) public returns (uint256){
+          uint256 number;
+          for (uint i = 0; i < b.length; i++){
+                  number = number + uint8(b[i]) * (2 ** (8 * (b.length - (i + 1))));
+                }
+          return number;
+        }
+    
+        // --- Mint Method ---
+        function mint(address usr, uint tkn, uint anchor, bytes32 data_root, bytes32 signatures_root, bytes[ memory value, bytes32 memory salt, bytes32[][] memory proofs) public {
+    
+          data[tkn] = TokenData(
+            anchor,
+            bytesToUint(values),
+            usr
+          );
+    
+          bytes32 leaf = sha256(abi.encodePacked(AMOUNT, value, salt));
+    
+          require(verify(proofs, data_root, leaves), "Validation of proofs failed.");
+          require(_checkAnchor(anchor, data_root, signatures_root), "Validation against document anchor failed.");
+          _mint(usr, tkn);
+        }
+    }
+    
+ The mint method on this NFT would expect one proof of "loanAmount", which has been hardcoded as a state variable. It would furthermore also check that the document from which the NFT should be minted has been properly anchored, before minting the NFT.
