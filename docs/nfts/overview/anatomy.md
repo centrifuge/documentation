@@ -31,12 +31,10 @@ struct TokenData {
 
 There are several checks that should be done prior to the minting of an NFT:
 
-1. `_latestDoc`: Checking that the document is the latest version
+1. `_checkAnchor`: Checking that the document has been properly anchored
 
-2. `_checkAnchor`: Checking that the document has been properly anchored
+2. `_signed`: Checking that the identity trying to mint the NFT is a valid Centrifuge identity, and that the signing key used for minting contains a signing purpose and is not revoked
 
-3. `_signed`: Checking that the identity trying to mint the NFT is a valid Centrifuge identity, and that the signing key used for minting contains a signing purpose and is not revoked
+3. `_checkTokenData`: If there is a proof present that there is no other token minted in this registry for the provided document, checking that the token data in the passed in token uniqueness proof matches the data on the token to be minted
 
-4. `_checkTokenData`: If there is a proof present that there is no other token minted in this registry for the provided document, checking that the token data in the passed in token uniqueness proof matches the data on the token to be minted
-
-5. `verify`:  Verify the submitted proofs against the NFT to be minted. For more information, please read the information in Verification of Proof Fields in the subsequent section
+4. `verify`:  Verify the submitted proofs against the NFT to be minted. For more information, please read the information in Verification of Proof Fields in the subsequent section
