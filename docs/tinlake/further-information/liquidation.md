@@ -3,8 +3,6 @@ id: liquidation
 order: 2
 title: Liquidation
 category: 5 . Further Information
-redirect_from:
-  - /tinlake/
 ---
 
 The total amount of CVT minted by the Tinlake contracts always represents the value of the entire pool. If a new loan is borrowed by locking an NFT, new CVT are minted to represent the pool value increase.  In case of repayment, the CVT related to the loan are burned. The value of a pool increases or decreases not only by borrowing new loans or repaying existing ones. Individual NFTs could also increase or decrease in value. For example, an invoice NFT would decrease in value if an invoice is overdue for couple of days because it increases the risk of a default. A decrease or increase of an individual assets affects the entire pool.

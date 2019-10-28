@@ -3,8 +3,6 @@ id: contracts
 order: 1
 title: Contracts Overview
 category: 2. Contracts
-redirect_from:
-  - /tinlake/
 ---
 
 ### List of all Tinlake contracts

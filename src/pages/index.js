@@ -14,8 +14,6 @@ const HomePage = () => (
   <AxisTheme theme={theme}>
     <ResponsiveContext.Consumer>
       {size => {
-
-
         const anchorStyles = {
           fontWeight: '500',
           fontSize: '16px'

@@ -32,8 +32,7 @@ module.exports = {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        hastPlugins: [require("rehype-slug")],
-
+        hastPlugins: [require("rehype-slug"), require("remark-math"), require("rehype-katex")]
       }
     },
     {

@@ -3,8 +3,6 @@ id: patterns
 order: 3
 title: Smart Contract - Design Patterns
 category: 2. Contracts
-redirect_from:
-  - /tinlake/
 ---
 
 ## Small modular contracts
