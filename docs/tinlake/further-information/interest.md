@@ -2,7 +2,7 @@
 id: interest
 order: 3
 title: Interest Calculation
-category: 5 . Further Information
+category: 6 . Further Information
 ---
 
 In Tinlake the interest is calculated with compounding per second:
