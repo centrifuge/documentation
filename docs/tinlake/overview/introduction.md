@@ -21,4 +21,5 @@ Tinlake interacts with borrowers and lenders. Generally, borrowers have individu
 Generally, an administrator determines what assets borrowers are allowed to bring in as collateral and how much they are allowed to borrow against the assets. This administrator could be a single centralized entity, a set of smart contracts automatically qualifying and pricing an asset or a decentralised autonomous organisation (DAO) that manages the Tinlake deployment.
 
 ## System Overview
-![tinlake overview](https://centrifuge.io/static/tinlake-work-desktop-23ec0d1949774739533ca02062f8c3cc.svg)
+
+![tinlake overview](/tinlake-work-desktop.svg)
