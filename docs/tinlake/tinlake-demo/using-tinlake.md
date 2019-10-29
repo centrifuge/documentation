@@ -45,16 +45,10 @@ If you `Connect` to your Metamask account, the available tabs will change and le
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_d8cea3e87c3d3395d8faa430f8c7cee8.png)
 
-In the top right corner of the tab bar you will also find information about the account your are currently connected with as well as a link 
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_d95afc08399dfb8db6b8e16813cf6a2c.png) 
-
-to this guide in case you have any problems or questions.
+In the top right corner of the tab bar you will also find information about the account your are currently connected with as well as a link  to this guide in case you have any problems or questions.
 
 ## Using Metamask
 The Tinlake DEMO Dashboard is publicly accessible, however to use all features of Tinlake DEMO you need to be logged-in to your Metamask Extension. Metamask holds the private keys that are required to confirm your transactions when using Tinlake DEMO. Choose an account you want to use for Tinlake DEMO and connect it to Tinlake via the `Connect` button (see more detailed instructions below). For every transaction, a Metamask confirmation modal will pop-up and ask you to confirm the transaction. Note, that these windows sometimes do not pop up but are rather indicated on the extension's icon in the toolbar 
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_603c651886263ab2c83f725afde3bff6.png).
 
 To use Tinlake DEMO your account should be funded with sufficient Kovan faucet (~Testnet ETH). Please see information on how to fund your account e.g. [here](https://github.com/kovan-testnet/faucet/blob/master/README.md). 
 

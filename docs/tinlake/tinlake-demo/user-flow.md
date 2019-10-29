@@ -39,13 +39,12 @@ Follow this link: https://kovan.demo.tinlake.centrifuge.io to access Tinlake DEM
 ## 2. Connect your Metamask account to Tinlake
 - Make sure you are logged-in to your Metamask extension
 - Switch to the account you want to use
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_349ce7ef87d63428fc632248ccdcfc40.png)
 - [Optional: Before using TINLAKE DEMO or your account the first time, make sure you added the Dummy Currency `DKTN` and the `TPT` NFT to you Metamask account (see above for instructions)]
-- Make sure you have selected the `Kovan Test Network` as your network ![](https://storage.googleapis.com/centrifuge-hackmd/upload_d8478d02555f217343b4caa26caba120.png)
-- Click on ![](https://storage.googleapis.com/centrifuge-hackmd/upload_39384b727860520fdedf79dce6f0c551.png) in the tab bar
-- This opens a Modal with available wallets. Click on Metamask to confirm ![](https://storage.googleapis.com/centrifuge-hackmd/upload_0064410ab3b23b0bf505c1c112d41b20.png)
+- Make sure you have selected the `Kovan Test Network` as your network
+- Click on `Connect` in the tab bar
+- This opens a Modal with available wallets. Click on Metamask to confirm
 - [Optional: When using Tinlake DEMO and/or the account the first time, a Metamask pop-up asks you to confirm the connection between Metamask and Tinlake. Click on `Confirm`]
-- You are now connected to Tinlake with your Metamask account ![](https://storage.googleapis.com/centrifuge-hackmd/upload_f49441840a655640a88ad9fe5c3ffb62.png)
+- You are now connected to Tinlake with your Metamask account
 - Note, that you are automatically connected as an Admin
 
 
