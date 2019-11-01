@@ -9,7 +9,7 @@ redirect_from:
 
 We recommend a certain anatomy for an NFT created with the Centrifuge [privacy enabled ERC721 library](https://github.com/centrifuge/privacy-enabled-erc721/tree/develop).
 
-*Please note that the proposed NFT structure will chain pending the launch of the Centrifuge Chain.*
+*Please note that the proposed NFT structure will change pending the launch of the Centrifuge Chain.*
 
 ### Metadata
 
