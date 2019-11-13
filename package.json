@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "@centrifuge",
   "dependencies": {
+    "@centrifuge/axis-nav-bar": "^0.3.2-develop.47",
     "@centrifuge/axis-theme": "0.3.1",
     "@mdx-js/mdx": "^0.16.8",
     "@mdx-js/tag": "^0.16.8",

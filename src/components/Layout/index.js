@@ -4,7 +4,8 @@ import {Box} from "grommet";
 
 import styled from "styled-components";
 
-import Nav from "../Nav";
+// import Nav from "../Nav";
+import Navbar from "../Nav/Navbar";
 import {theme} from "../../theme";
 import {FooterMenu, JoinSlack} from "../Footer";
 
@@ -39,7 +40,8 @@ const Layout = ({children, gap, size}) => {
           fill={true}
           border={{side: 'bottom', color: 'light-4'}}
         >
-          <Nav {...sectionProps} size={size}/>
+          <Navbar />
+          {/*<Nav {...sectionProps} size={size}/>*/}
         </Box>
       </Header>
       <Box align={'center'}>

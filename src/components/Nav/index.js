@@ -51,7 +51,7 @@ const Nav = (props) => {
 
   return (
     <Box as="nav" {...rest}>
-      <Box as="ul" direction="row" gap={gap} align="stretch">
+      <Box as="ul" direction="row" gap={gap}>
         <Box as="li" flex={!onMobile} justify="center">
           <div>
             <Link to="/">

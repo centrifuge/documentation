@@ -744,6 +744,11 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@centrifuge/axis-nav-bar@^0.3.2-develop.47":
+  version "0.3.2-develop.47"
+  resolved "https://registry.yarnpkg.com/@centrifuge/axis-nav-bar/-/axis-nav-bar-0.3.2-develop.47.tgz#d3eef04fc0b0846696fd6b598d5b055d1831de1b"
+  integrity sha512-i6FK15oCSuZn5OrQLzvfNUeiF0OwBQ6xLllkVplRObJxXkIy02RalwWB+dhHVhSPIgA3bdaNLLbhMeFliFQKpg==
+
 "@centrifuge/axis-theme@0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@centrifuge/axis-theme/-/axis-theme-0.3.1.tgz#eea88bd94206c76b98ae676591dec4ef1041c35e"
