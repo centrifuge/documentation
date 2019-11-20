@@ -18,4 +18,6 @@ Tinlake UI provides a simple interface for Admins & Borrowers to interact with T
 
 ![](https://static.tildacdn.com/tild3537-3663-4064-a435-303665333966/Macbook_Pro_2016_-_T.png)
 
+![Metamask Demo Account](../../../src/images/metamask.png)
+
 For contract communication the UI integrates tinlake.js  - the Tinlake JavaScript client implementation.

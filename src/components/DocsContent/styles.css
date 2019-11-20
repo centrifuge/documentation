@@ -1,3 +1,8 @@
 .gatsby-resp-image-background-image {
     display: none !important;
 }
+
+img[alt="Metamask Demo Account"] {
+    width: 350px;
+    float: right;
+}
