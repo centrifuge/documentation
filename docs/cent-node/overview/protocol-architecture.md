@@ -11,7 +11,7 @@ The components of the Centrifuge protocol are a collection of Ethereum smart con
 
 For detailed information of the Centrifuge Protocol, its first implementation and limitations, read the [Centrifuge Protocol Yellowpaper](https://github.com/centrifuge/protocol/releases)
 
-![Centrifuge architecture](https://i.imgur.com/FrPAbnc.png)
+![Centrifuge architecture](../../../src/images/cent-node/architecture.png)
 
 ## Centrifuge Nodes
 
