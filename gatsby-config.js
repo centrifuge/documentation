@@ -44,6 +44,12 @@ module.exports = {
         hastPlugins: [require("rehype-slug"), require("remark-math"), require("rehype-katex")],
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`],
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               backgroundColor: 'none',

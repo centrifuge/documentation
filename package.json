@@ -22,6 +22,7 @@
     "gatsby-plugin-sitemap": "^2.0.5",
     "gatsby-plugin-styled-components": "^3.0.5",
     "gatsby-redirect-from": "^0.2.1",
+    "gatsby-remark-copy-linked-files": "^2.1.31",
     "gatsby-remark-images": "^3.1.32",
     "gatsby-remark-mathjax": "^1.0.0",
     "gatsby-source-filesystem": "^2.0.20",
