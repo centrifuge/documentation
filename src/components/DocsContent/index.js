@@ -3,8 +3,11 @@ import MDXRenderer from "gatsby-mdx/mdx-renderer";
 import { MDXProvider } from "@mdx-js/tag";
 import styled from "styled-components";
 import * as Grommet from "grommet";
+import qs from "query-string";
 
 import CodeHighlighter from "../CodeHighlighter";
+
+import "./styles.css";
 
 import link from "../../images/link.svg";
 
@@ -109,21 +112,31 @@ const mdxGrommetMap = {
   ul: props => <ListBase {...props} as="ul" />,
   ol: props => <ListBase {...props} as="ol" />,
   a: Grommet.Anchor,
-
-  img: props => <Grommet.Image {...props} style={{width:"100%"}}/>,
+  img: props => {
+    const styleProps = qs.parseUrl(props.src, { parseBooleans: true }).query;
+    return <Grommet.Image
+      {...props}
+      style={{
+        float: styleProps.float || 'auto',
+        width: styleProps.width || '100%'
+      }}
+    />
+  },
   inlineCode: props => <Grommet.Text color="brand" as="code" {...props} />,
   code: props => (
     <CodeHighlighter
       code={props.children.trim()}
       language={String(props.className).replace(/^language-/, "")}
     />
-  )
+  ),
 };
 
-const DocsContent = ({ mdx }) => (
-  <MDXProvider components={mdxGrommetMap}>
-    <MDXRenderer>{mdx.code.body}</MDXRenderer>
-  </MDXProvider>
-);
+const DocsContent = ({ mdx }) => {
+  return (
+    <MDXProvider components={mdxGrommetMap}>
+      <MDXRenderer>{mdx.code.body}</MDXRenderer>
+    </MDXProvider>
+  );
+}
 
 export default DocsContent;
