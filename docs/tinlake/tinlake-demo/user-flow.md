@@ -1,161 +1,173 @@
 ---
 id: userflow
 order: 3
-title: User Flow 
+title: How to use Tinlake DEMO
 category: 5. Tinlake DEMO 
 ---
 
-# User flow
-## User roles
-As mentioned, each Tinlake pool usually has an Operator or Admin, that manages the pool of assets and whitelists NFTs. Thus, certain Tinlake functions are only available to "Admins", while borrowing and repaying the loan is usually conducted by "Borrowers".  Tinlake DEMO has a simplified feature set, where every user automatically is connected as an Admin. This means, that you can whitelist you own NFTs that you can then use to draw loans.
+# How to use Tinlake DEMO
+## Introduction
+Recall, that the main features you can test in Tinlake DEMO are:
+- Mint an NFT representing a financial asset as collateral
+- Whitelist this NFT as eligible for a loan in Tinlake
+- Borrow and repay a loan with the NFT as collateral
 
-## 0. Before you (initially) start
-Note, that the steps described in this section are a one-time set-up for every account you want to use with Tinlake DEMO.
+These actions typically need to be conducted in this order:
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_eabef585660776bb146dc568bca2ecaa.png)
 
-### Fund your account with Kovan Faucet
-To use Tinlake DEMO your account should be funded with sufficient Kovan faucet (~Testnet ETH). Please see information on how to fund your account e.g. [here](https://github.com/kovan-testnet/faucet/blob/master/README.md).
-
-### Adding Tinlake DEMO Tokens to your Metamask account
-As mentioned above, the Dummy Currency `DTKN` and NFT `TPT` used by Tinlake DEMO should to be added to your Metamask extension for the account balance to be displayed. This is a one time set-up for the specific account you want to use for Tinlake. To add these tokens to the Metamask account you want to use with Tinlake DEMO, first change to your desired account
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_349ce7ef87d63428fc632248ccdcfc40.png)
-
-#### Adding Dummy Currency `DTKN`
-Then click on `Menu` ![](https://storage.googleapis.com/centrifuge-hackmd/upload_26ea9441c987f33514905f3d43178c2a.png), scroll down and click on `Add Token`. Change to the `Custom token` tab and paste the following Token Address `0x2cab5720ce6e95fdfda58c1a6c693580324b7109` into the `Token Contract Address` field. : 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_e96b2bb50ba1530de89271e991f20030.png)
-
-Token Symboal and Decimals of Precision will be filled in automatically. Click on `Next` and then confirm by clicking on `Add Tokens`.
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_a5af2b7caa8a30a4239c3737654ea5e2.png)
-
-#### Adding the Tinlake DEMO NFT `TPT`
-Repeat the same steps as described above for the Tinlake DEMO NFT `TPT`. The NFT Token address is `0xac0c1ef395290288028a0a9fdfc8fdebebe54a24`.
-
-You should now see both Tokens in your Metamask account:
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_0dab799fe2e4f91812542a3d465ceb34.png)
-
-## 1. Open Tinlake DEMO
+## Open Tinlake DEMO
 Follow this link: https://kovan.demo.tinlake.centrifuge.io to access Tinlake DEMO.
 
-## 2. Connect your Metamask account to Tinlake
-- Make sure you are logged-in to your Metamask extension
-- Switch to the account you want to use
-- [Optional: Before using TINLAKE DEMO or your account the first time, make sure you added the Dummy Currency `DKTN` and the `TPT` NFT to you Metamask account (see above for instructions)]
-- Make sure you have selected the `Kovan Test Network` as your network
-- Click on `Connect` in the tab bar
-- This opens a Modal with available wallets. Click on Metamask to confirm
-- [Optional: When using Tinlake DEMO and/or the account the first time, a Metamask pop-up asks you to confirm the connection between Metamask and Tinlake. Click on `Confirm`]
-- You are now connected to Tinlake with your Metamask account
-- Note, that you are automatically connected as an Admin
+## The Dashboard
+The first screen you see when accessing Tinlake DEMO will be the Dashboard.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_6b8bf596c9f59ce4f2bf175fa5ab02b8.png =600x)
 
 
-## 3. Mint NFT
-Note, that this feature is only made available for Tinlake DEMO's simplified feature set. If you are interested in minting customized NFTs please see the [Centrifuge Node Documentation](https://developer.centrifuge.io/cent-node/overview/introduction/) or contact us. 
-- Change to the `Mint NFT` tab
+This shows you the current status of the DEMO deployment summarized in key metrics and a graph on top as well as a list of all repaid and ongoing loans.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_1d8b115771f186d347c6363451f02443.png)
+## Connect your Metamask account
+To use the full feature-set of Tinlake DEMO you need to be connected with your Metamask account. First, switch to the account you want to use in Metamask.
 
-- Fill in the NFT metadata of your "Generic Asset":
-    - Choose a Reference ID or Name that describes your asset (string)
-    - Define your asset type (string)
-    - Fill in amount reflecting the value in USD (number)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_72aaf934c57cba65b44b6b1afc3ecc68.png =200x)
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_e1770de10ec862998e39ed580befe0e0.png)
+Make sure you have selected the `Kovan Test Network` as your network.
+
+If you click on `Connect` in the top right corner, a modal opens with available wallets. Note, that at the moment, Tinlake DEMO only supports the Metamask wallet. You can then select Metamask to connect with your Metamask account.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_ad89db28922ef3dadd8f873125d942fb.png =x100)
+
+Once connected, the available tabs will change and lead you to the respective features.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_4d6d354cfd2a963cf7eaf1a13a5fe654.png =600x)
+
+
+In the top right corner of the tab bar you will also find information about the account your are currently connected with as well as a `Help` link to this guide in case you have any problems or questions. Note, that you are also automatically connected as an Admin.
+
+[Optional: Before using TINLAKE DEMO or your account the first time, make sure you added the Dummy Currency `DKTN` and the `TPT` NFT to you Metamask account (see section `Getting Started` for instructions)]
+
+When using Metamask, for every transaction you initiate in Tinlake, a Metamask confirmation modal will pop-up and ask you to confirm the transaction. Note, that these windows sometimes do not pop up but are rather indicated on the extension's icon in the toolbar.
+
+## Mint NFT
+In this demo, you can mint a test NFT reflecting an sample invoice worth USD 1.000 into your wallet. Note, that this feature is only made available for Tinlake DEMO's adapted feature set. If you are interested in minting customized NFTs please see the [Centrifuge Node Documentation](https://developer.centrifuge.io/cent-node/overview/introduction/) or contact us. 
+
+- To mint an NFT, change to the `Mint NFT` tab
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_10b27bc296c9d954d6d8996c2d1084b8.png)
+
+
+- Fill in a "NFT Reference" as a unique identifier for your invoice NFT
+- Asset type (="Invoice") and Invoice amount (= 1.000 USD) are filled in automatically
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_c3f11ed4d014857a9723c070d321b979.png)
+
 
 - Click on `Mint NFT`
 - Confirm the transaction in Metamask
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_0ca1edd26b6e87839e4db70d0cf6c6e8.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_21aeb8e17f081112f570da9264d80f10.png =200x)
 
-- Tinlake automatically mints the NFT to your connected account (You can verify this in Metamask, if you added the `TPT` Token to your extension. See above for instructions)
-- Once minted, the UI will display the Token ID:
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_20961601a71553a5756b69f56b1230f0.png)
+- Tinlake automatically mints the NFT to your connected account (You can verify this in Metamask, if you have added the `TPT` Token to your extension. See above for instructions)
 
-- **Copy/Store the Token ID for Whitelisting**. Note that if you do not copy or store your Token ID, you cannot whitelist the NFT and will have to mint a new NFT.
-- Click on "Proceed to whitelisting" in the confirmation box or change to the `Whitelisting` tab
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_90fc444a01b51c286843ced3f8e7877c.png =200x)
 
-## 4. Whitelist NFT
+- Once minted, the Tinlake DEMO UI will display the Token ID:
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_20912618f88c179343c93cfc81e746d3.png)
+
+- You can procedd to whitelist the NFT by clicking on the corresponding link `Proceed to whitelisting` in the confirmation box
+- In this case, your Token ID will be pasted in automatically in the corresponding field in the subsequent whitelisting screen. 
+- If you want to whitelist your NFT later, **please copy/store the Token ID for whitelisting**. Note that if you do not copy or store your Token ID, you cannot whitelist the NFT later and will have to mint a new NFT.
+
+## Whitelist NFT
 - Change to the `Whitelisting` tab
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_521c85cb8943b924a7eff9f8011a18dc.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_37a8050f48af5002af99ba8b6c01e426.png =600x)
 
-- Paste the copied/stored Token ID into the respective field. The corresponding NFT metadata will automatically be displayed.
+- Paste the copied/stored Token ID into the respective field. If you were forwared from minting the NFT, the Token ID will be pasted automatically. The corresponding NFT metadata will automatically be displayed.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_a044120ecec208c9166393403bb82911.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_f6a90cc9bfc88fa48be6392dd75bd53a.png)
 
-- Fill in the Appraisal (reflecting the value of the underlying asset), the Principal (defining the maximum loan amount) and the annual interest rate.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_38095c0587d68eb6e22d9ffc460dacad.png)
+- Fill in the "Appraisal" (reflecting the value of the underlying asset), the "Principal" (defining the maximum loan amount) and the annual interest rate.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_45658f85a25b26d265cbc972cf029157.png)
 
 - Click on the ```Whitelist``` button
 - Confirm transactions in Metamask
 - Tinlake DEMO will display a confirmation message
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_a118c764e274f8b95d70fe86502728d3.png)
-
-- The whitelisted loan should appear at the bottom of the loan list. Note that this may take a few seconds.
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_97e2f823e31043f8b0a4c5fee615bd59.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_9f0dac9a250e5e4f9d35c32c19ae6a5b.png)
 
 
-## 4. Borrow Loan
+- If you change to the `My loans` tab, the whitelisted NFT should appear at the top of the loan list. Note that this may take a few seconds.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_ee15075a143b0d21daaadae9f21596a1.png)
+
+
+
+## Borrow Loan
+- Make sure you have succesfully minted and whitelisted an NFT (see above)
 - Change to ```My loans``` tab
-- The loan list will be empty, if your are using Tinlake DEMO for the first time. Otherwise, your previously whitelisted, borrowed and repaid loans will be shown here
+- In the ```Loans``` list, find the whitelisted loan and click on ```View``` in the `Actions` column
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_97e2f823e31043f8b0a4c5fee615bd59.png)
-
-
-- In the ```Loans``` list, find the whitelisted loan (usually at the bottom) and click on ```View``` in the `Actions` column
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_98749e0a2946d5953828c5189f434031.png)
 
 - The next screen shows you all the details in regards to your loan and the underlying NFT
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_de1ea12b3974c16e1203272d95efb9d4.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_6618b86995e660b690e5be3fa5453632.png)
+
 
 - Click on the ```Borrow``` Button
 - The ```Borrow Amount``` will be filled in automatically in Tinlake DEMO equal to the Principal
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_a353f9004c2ee973cbeb298e53de7bd5.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_958fcd5a2991d87ef6bb9599dc5873a4.png)
+
 
 - Click on the ```Confirm``` Button
 - Confirm transactions in Metamask
 - Tinlake DEMO will display a confirmation message
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_42c6a338b26d1d9a9f49391d068d3869.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_740882cde941fd351c345e5f1df04bdb.png)
 
-- Check you Metamask account, that the loan amount in "Dummy DAI"`DTKN` has been transferred to your account. Note, that it may take Metamask a few seconds to display the transfer.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_cd8fdcec2e6a47b4168b619bb5f3e6e0.png)
+- Check you Metamask account, that the loan amount in "Testnet DAI"`DTKN` has been transferred to your account. Note, that it may take Metamask a few seconds to display the transfer.
 
-- Note that the NFT has automatically been transferred to the Tinlake smart contracts as collateral
-- You can view the status of your lown at any time by clicking on `View` in the `My loans` list
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_d47183172a78385df5fe9b8f4f448cee.png =200x)
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_7139832eacbfd2e76f2bc5abd16c4c81.png)
+- The NFT has automatically been transferred to the Tinlake smart contracts as collateral and is not in your wallet anymore
+- You can view the status of your loan at any time by clicking on `View` in the `My loans` list
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_a6f479f122d5157419903e077af8d4cf.png)
 
 - Note, that interest will accrue every second from the moment you take out the loan
 
-## 5. Repay Loan
+## Repay Loan
 - Change to ```My loans``` tab
 - In the ```Loans``` list, find the loan you want ro repay and click on ```View``` in the action column. Your loan details will be displayed:
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_7defe533c3ba8a534b9c058a4a9a4595.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_9024fe2b7b58ce8aa3c1d4dc5db616e0.png)
+
 
 - Click on the ```Repay``` Button
-- Tinlake DEMO displays the total Debt you will need to repay including accrued interest. Note, that in Tinlake DEMO you can only repay the full amount:
+- Tinlake DEMO displays the total "Debt" you will need to repay including accrued interest. Note, that in Tinlake DEMO you can only repay the entire amount:
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_0a7037d967c13a664ed14f6a20ae9b7a.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_960d219cbf0a056e95d459d6c0d7efa7.png)
 
-- Make sure, your account is funded with enough "Dummy DAI" to cover your accrued interest 
+- Make sure, your account is funded with enough "Testnet DAI" to cover your accrued interest 
     - If you need to fund your account, click on ```Fund wallet``` button
     - Confirm transaction in Metamask
-    - Tinlake DEMO will display a confirmation message and your account will automatically be funded with 1.000 Dummy DAI. The `Fund wallet` button will be deactivated.
-    - ![](https://storage.googleapis.com/centrifuge-hackmd/upload_6a3d443f9304b15e4368b812bbdf687e.png)
+    - Tinlake DEMO will display a confirmation message and your account will automatically be funded with 100 Testnet DAI. The `Fund wallet` button will be deactivated.
+    - ![](https://storage.googleapis.com/centrifuge-hackmd/upload_14f8c36b15034e176c5bce7aadae9cf6.png)
+
     - Verify that you now have sufficient funds in your Metamask account.
 - To repay the loan, click on the ```Confirm``` Button
 - Confirm the transaction in Metamask
 - Tinlake DEMO will display a confirmation message
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_4715ddad747cb453fdbd0d88a6c1cc4e.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_0ecaef73318ee5f2a0e8eb2e91f4612f.png)
 
-- You have succesfully repaid your loan. Your NFT was automatically returned. Check the `DTKN` and `TODO` balance in your Metamask account.
+- You have succesfully repaid your loan. Your NFT was automatically returned. Check the `DTKN` and `TPT` balance in your Metamask account.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_9ca1333e46de8343515c6b205dac46fa.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_5e8a35fc9fad4b9056142a8030663f32.png =200x)
