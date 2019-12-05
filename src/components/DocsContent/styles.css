@@ -3,5 +3,5 @@
 }
 .img[alt="demo_metamask"] {
     width: 200px;
-    float: right; // To align image left/right to the content
+    float: right;
 }
