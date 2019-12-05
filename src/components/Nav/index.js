@@ -124,6 +124,11 @@ const renderMainMenuItems = (direction) => {
       </Link>
     </Item>
     <Item>
+      <Link partiallyActive={true} activeClassName="activeLink" to="/nfts/overview/introduction/">
+        <Anchor>NFTs</Anchor>
+      </Link>
+    </Item>
+    <Item>
       <ExternalAnchor href="https://centrifuge-os-node-api-4.api-docs.io/0.0.6">
         Node API
       </ExternalAnchor>

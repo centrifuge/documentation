@@ -23,7 +23,7 @@ category: 2. Contracts
 | Deployer | Deploys all components in one transaction, and sets the right access control |
 
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_ebcf6c3a9716a904257e42842c4536fd.png)
+![Contracts](../../../src/images/tinlake/contracts.png)
 
 
 ### Main Interactions
