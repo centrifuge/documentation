@@ -22,6 +22,8 @@
     "gatsby-plugin-sitemap": "^2.0.5",
     "gatsby-plugin-styled-components": "^3.0.5",
     "gatsby-redirect-from": "^0.2.1",
+    "gatsby-remark-copy-linked-files": "^2.1.31",
+    "gatsby-remark-images": "^3.1.32",
     "gatsby-remark-mathjax": "^1.0.0",
     "gatsby-source-filesystem": "^2.0.20",
     "gatsby-transformer-remark": "^2.6.21",
@@ -30,6 +32,7 @@
     "grommet-icons": "^4.2.0",
     "prism-react-renderer": "^0.1.5",
     "prop-types": "^15.7.1",
+    "query-string": "^6.9.0",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
@@ -43,7 +46,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "start": "yarn run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve"
   },
   "repository": {

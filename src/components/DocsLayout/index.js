@@ -11,6 +11,9 @@ import {AxisTheme} from "@centrifuge/axis-theme/";
 import styled from "styled-components";
 import SEO from "../SEO";
 
+// Import KaTex styles to render Math functions
+import 'katex/dist/katex.css'
+
 const EditPage = ({file}) => {
   const GITHUB_BASE =
     "https://github.com/centrifuge/developer.centrifuge.io/tree/develop/docs";

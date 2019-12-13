@@ -6,31 +6,35 @@ category: 5 . Further Information
 ---
 
 In Tinlake the interest is calculated with compounding per second:
-```
-P = Principal
-D = Debt
-r = interest rate (5% would be 0.05) 
-n = the number of times the interest is compounded
-t = time 
-```
 
-```
-D = P * (1 + r/n)^nt
+| Variable | Description | 
+|----------|-------------|
+| $P$ | Principal |
+| $D$ | Debt |
+| $r$ | interest rate (5% would be 0.05) |
+| $n$ | the number of times the interest is compounded, compounding is once per second|
+| $t$ | time |
 
-```
 
-**Example: Interest rate compounding per second**
-```
-P = 100
-r = 0.05
-n = 3600 * 24 * 365 (= 31536000 seconds per year)
-t = passed time in seconds 
+$$
+D = P \times (1 + \frac{r}{n})^{nt}
+$$
 
-Using the formula above, the Debt D after half a year 
-(t = 31536000 / 2 = 15768000) would be D = 102.5315.
+## Example: Interest rate compounding per second
 
-After one year (t = 31536000) the Debt D would be 105.1271.
-```
+$$
+P = 100 \newline
+r = 0.05 \newline
+n = 3600 * 24 * 365 \newline
+t = \text{time in seconds} \newline
+$$
+
+Using the formula above, the Debt $D$ after half a year 
+$(t = 31536000 / 2 = 15768000)$ would be $D = 102.5315$.
+
+After one year ($t = 31536000$) the $D$ would be $105.1271$.
+
+
 Thus a 5.00% interest rate r compounded every second is equivalent 
 to an annually compounded rate i of 5.127%. 
 
@@ -38,7 +42,7 @@ This rate i
 could also be calculated directly (using n = 31536000):
  i = (1 + (0.05 / n)) ^ n  = 1.05127.
 
-**Tinlake Fee**
+### Tinlake Fee
 
 To calculate the Debt, we initialize an interest rate in Tinlake with a variable called `fee`
 
@@ -48,7 +52,7 @@ fee = (1 + r/n)
 Fee represents the interest accrued per second in Tinlake.
 
 
-**Calculate Debt**
+### Calculate Debt
 ```
 D = P * fee^t
 ```
@@ -61,7 +65,7 @@ fee = (1 + 0.05 / 31536000) = 1,0000000015854900.
 D = 100 * 1,0000000015854900 ^ 31536000 = 105.1271.
 ```
 
-### Using an annual percentage rate (APR) in Tinlake
+## Using an annual percentage rate (APR) in Tinlake
 
 The current Tinlake implementation uses an annual percentage rate (APR) as input. Tinlake transforms this annually compounded rate `i` into the equivalent rate used for compounding per secondes `r`. This is achieved by solving the equation:
 ```
