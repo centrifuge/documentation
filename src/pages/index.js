@@ -31,16 +31,18 @@ const HomePage = () => (
           '348px',
           '1fr'
         ]
-        let rows = ['auto'];
+        let rows = ['auto', 'auto'];
 
         switch (size) {
           // Desktop
           case "large":
             areas = [
 
-              {name: "cent-node", start: [1, 0], end: [1, 0]},
+              {name: "chain", start: [1, 0], end: [1, 0]},
               {name: "tinlake", start: [2, 0], end: [2, 0]},
-              {name: "paper", start: [3, 0], end: [3, 0]},
+              {name: "cent-node", start: [3, 0], end: [3, 0]},
+              {name: "nft", start: [1, 1], end: [1, 1]},
+              {name: "paper", start: [2, 1], end: [2, 1]},
 
             ];
             break;
@@ -50,17 +52,18 @@ const HomePage = () => (
             columns = [
               '1fr', '348px', '1fr'
             ];
-            rows = ['auto', 'auto', 'auto'];
+            rows = ['auto', 'auto', 'auto', 'auto', 'auto'];
 
 
             areas = [
-              {name: "cent-node", start: [1, 0], end: [1, 0]},
+              {name: "chain", start: [1, 0], end: [1, 0]},
               {name: "tinlake", start: [1, 1], end: [1, 1]},
-              {name: "paper", start: [1, 2], end: [1, 2]},
+              {name: "cent-node", start: [1, 2], end: [1, 2]},
+              {name: "nft", start: [1, 3], end: [1, 3]},
+              {name: "paper", start: [1, 4], end: [1, 4]},
 
             ];
             break;
-
         }
 
         return <Layout size={size}>
@@ -80,13 +83,17 @@ const HomePage = () => (
                 margin={{vertical: '48px'}}
                 align="center"
                 style={{width: '348px'}}
-                gridArea={'cent-node'}
+                gridArea={'chain'}
                 gap={'large'}
               >
-                <Anchor href="/cent-node/"><Image style={{maxWidth: '480px'}} src={centrifugeLogo}/></Anchor>
-                <Anchor href="/cent-node/" style={anchorStyles}>Centrifuge Node Documentation</Anchor>
-
+                <Heading level={1} style={{margin: '0px 0px 6px 0px'}}>
+                  <UnstyledAnchor href={'/chain/'}>
+                    Centrifuge Chain
+                  </UnstyledAnchor>
+                </Heading>
+                <Anchor href="/chain/" style={anchorStyles}>Centrifuge Chain Validator Guide</Anchor>
               </Box>
+
               <Box
                 margin={{vertical: '48px'}}
                 align="center"
@@ -98,6 +105,35 @@ const HomePage = () => (
                   <Anchor href="/tinlake/"><Image src={tinlakeLogo}/></Anchor>
                 </Box>
                 <Anchor href="/tinlake/" style={anchorStyles}>Tinlake Documentation</Anchor>
+              </Box>
+
+              <Box
+                margin={{vertical: '48px'}}
+                align="center"
+                style={{width: '348px'}}
+                gridArea={'cent-node'}
+                gap={'large'}
+              >
+                <Anchor href="/cent-node/"><Image style={{maxWidth: '480px'}} src={centrifugeLogo}/></Anchor>
+                <Anchor href="/cent-node/" style={anchorStyles}>Centrifuge Node Documentation</Anchor>
+              </Box>
+
+              <Box
+                margin={{vertical: '48px'}}
+                align="center"
+                style={{width: '348px'}}
+                gridArea={'nft'}
+                gap={'large'}
+
+              >
+                <Heading level={1} style={{margin: '0px 0px 6px 0px'}}>
+                  <UnstyledAnchor href={'/nfts/'}>
+                    NFTs
+                  </UnstyledAnchor>
+                </Heading>
+                <Anchor style={anchorStyles} href={'/nfts/'}>
+                  NFTs
+                </Anchor>
               </Box>
 
               <Box
@@ -118,8 +154,9 @@ const HomePage = () => (
                 <Anchor
                   style={anchorStyles}
                   href={'https://staticw.centrifuge.io/assets/centrifuge_os_protocol_paper.pdf'}
-                  target={'_blank'}>Centrifuge
-                  Protocol Paper</Anchor>
+                  target={'_blank'}>
+                  Centrifuge Protocol Paper
+                </Anchor>
               </Box>
             </Grid>
           </Box>

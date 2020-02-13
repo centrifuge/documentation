@@ -19,6 +19,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `chain`,
+        path: `${__dirname}/docs/chain`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `tinlake`,
         path: `${__dirname}/docs/tinlake`
       }

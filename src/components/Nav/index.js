@@ -129,9 +129,9 @@ const renderMainMenuItems = (direction) => {
       </Link>
     </Item>
     <Item>
-      <ExternalAnchor href="https://centrifuge-os-node-api-4.api-docs.io/0.0.6">
-        Node API
-      </ExternalAnchor>
+      <Link partiallyActive={true} activeClassName="activeLink" to="/chain/">
+        <Anchor>Centrifuge Chain</Anchor>
+      </Link>
     </Item>
     <Item>
       <ExternalAnchor href="https://github.com/centrifuge">
