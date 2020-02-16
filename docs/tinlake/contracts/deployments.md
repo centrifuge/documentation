@@ -4,8 +4,6 @@ order: 2
 title: Deployments
 category: 2. Contracts
 ---
-
-# Deploying Tinlake
 The Tinlake contracts are intended to be deployed once for every asset class. There are is no shared code between any deployments to allow for a maximum of flexibility. We intend for users to customize and modify the codebase to better suit their needs. The codebase is clearly split into components that could and should be adjusted and core contracts. The core contracts enforce fairly basic rules (such as making sure a borrower can only unlock their NFT if they repaid their entire debt) while allowing other behaviors to be configured (such as how much interest the borrwer needs to pay).
 
 The architecture for the contracts is built to make sure that the contracts intended to be customized have extremely simple interfaces and are purely limited to that functionality. By making these contracts small and simple, the amount of code that needs to be modified is minimized and thus the risk of bugs being introduced through that code is too.
@@ -16,7 +14,7 @@ The downside of deploying an entire set of new contracts every time is that the 
 * The deployment can be verified for integrity by reading out the deployer contract state and verifying the contract bytecode. There is no need to scan transactions for any interference.
 * There are no special permissions in the deployment contract and the account used to deploy them does not keep any special properties. This means the deployment can be done from an "untrusted" account/computer.
 
-## Deployemnt Structure
+## Deployment Structure
 There are three components used in the deploy process.
 
 ### Fabs
@@ -128,7 +126,7 @@ contract TinlakeRoot is Auth {
 }
 ```
 
-#### Governance Functions using the ward pattern
+## Governance Functions using the ward pattern
 The TinlakeRoot also provides basic functions to change the behavior of the Tinlake contracts itself. It can designate additional wards on any contracts it is a ward on by exposing a method `relyContract(address target, address usr)` to call the target contract's rely function. Contract access can be revoked by calling `denyContract(address target, address usr)`.
 
 The root will allow any ward on the root to call this function. Once an address is a ward on another contract in the deployment it's `file()` and `depend()` can be called by it. This will allow modifying the system arbitrarily. Therefore wards on the TinlakeRoot have practically unlimited power in the system and should only be given to contracts that limit this by different ways (e.g. a DAO, a time lock or a multisig).

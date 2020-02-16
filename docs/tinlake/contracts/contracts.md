@@ -7,14 +7,11 @@ category: 2. Contracts
 ## Architecture
 The contracts are separated into two logical areas: loan contracts and investor contracts. They mostly function independently of each other and are explained individually.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_6ffc9a2051de37b5055a3c875679ea63.png)
-
-
 ## How they work
 ## Borrower
 The loan contracts look as follows:
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_06f208ec6e2fde1aec78554757fa0ca5.png)
+![Borrower Contracts](../../../src/images/tinlake/borrower.svg)
 
 
 ### Currency
@@ -56,8 +53,6 @@ This method ensures a few conditions are met:
 * Pile.borrow(loan, wad) is called and needs to not revert to make the Pile aware of the increase in debt
 * Ceiling.borrow(loan, wad) is called and needs to not revert to make the Ceiling aware of the increase in debt
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_ac772f9d97cb61487a5b41c7f57b6cfc.png)
-
 #### `withdraw(uint loan, uint wad, address usr)`
 Withdraw `wad` amount of currency from Tinlake. This subtracts `wad` from the loan `balance` and triggers an ERC20 token transfer of `currency` from the Shelf to `usr`.
 
@@ -93,10 +88,13 @@ To initiate the collection, any user can call `seize` on the Collector. The Coll
 ## Lender Contracts
 The Lender Contracts interact with the borrower side by supplying an amount of Currency ERC20 as requested by the Shelf.balanceRequest() method.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_dcfca946fc1c2284e319a0e704a4cad9.png)
+![Lender Contracts Call Graph](../../../src/images/tinlake/lender.svg)
 
 
-Tinlake enables lenders to invest two differenct tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. This structure is similar to common A/B | senior/junior structures in finance. (Note: find an intro to structured finance [here](https://centrifuge.hackmd.io/wCpJxwftTGq9FHzBXhVZHw), tbd, whether and how this should be included into the final documentation).
+Tinlake enables lenders to invest two differenct tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. This structure is similar to common A/B | senior/junior structures in finance.
+
+// TODO:
+// (Note: find an intro to structured finance [here](https://centrifuge.hackmd.io/wCpJxwftTGq9FHzBXhVZHw), tbd, whether and how this should be included into the final documentation).
 
 In a set-up with two tranches, risk and returns of the portfolio are usually not allocated "pro rata" (corresponding to their investment volume) but according to a predefined waterfall.
 
@@ -142,6 +140,6 @@ The `Assessor` contract is responsible for tracking a few different metrics used
 The token price can be calculated in a number of ways by the assessor. For example it can take the outstanding debt from all borrowers and discount it by a factor (as implemented in the default). It could also rely on an external price oracle to provide a market price of the tokens.
 
 #### Interest
-
+// TODO
 #### Ratio
-
+// TODO
