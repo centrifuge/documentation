@@ -1,7 +1,7 @@
 ---
 id: limitations
 order: 4
-title: Limitations of Centrifuge
+title: Protocol Limitations
 category: 4. Further information
 ---
 
