@@ -7,7 +7,6 @@ category: 2. Contracts
 ## Architecture
 The contracts are separated into two logical areas: loan contracts and investor contracts. They mostly function independently of each other and are explained individually.
 
-## How they work
 ## Borrower
 The loan contracts look as follows:
 
