@@ -91,10 +91,8 @@ The Lender Contracts interact with the borrower side by supplying an amount of C
 ![Lender Contracts Call Graph](../../../src/images/tinlake/lender.svg)
 
 
-Tinlake enables lenders to invest two differenct tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. This structure is similar to common A/B | senior/junior structures in finance.
+Tinlake enables lenders to invest two differenct tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. This structure is similar to [senior/junior structures in finance](blah).
 
-// TODO:
-// (Note: find an intro to structured finance [here](https://centrifuge.hackmd.io/wCpJxwftTGq9FHzBXhVZHw), tbd, whether and how this should be included into the final documentation).
 
 In a set-up with two tranches, risk and returns of the portfolio are usually not allocated "pro rata" (corresponding to their investment volume) but according to a predefined waterfall.
 

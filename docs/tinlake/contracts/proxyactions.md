@@ -1,5 +1,5 @@
 ---
-id: contracts
+id: proxy-actions
 order: 3
 title: Proxy Actions Pattern
 category: 2. Contracts
