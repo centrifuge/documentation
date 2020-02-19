@@ -10,7 +10,7 @@ category: 1. Overview
 Centrifuge Chain will use its own native token - the Radial (RAD) token. It will also incentivize Validators and Nominators to participate through a block reward.
 
 Centrifuge Chain is built on [Parity Substrate](https://substrate.dev), and relies on staked Validators to come to consensus over 3 components to commit blocks to the blockchain:
-* BABE - block production
+* BABE - block production/authorship
 * GRANDPA - finality gadget
 * NPoS - Validator selection algorithm
 
