@@ -1,3 +1,10 @@
+---
+id: resources
+order: 1
+title: Further Resources
+category: 3. Further Resources
+---
+
 # Further Resources
 
 * Centrifuge Chain on [Github](https://github.com/centrifuge/centrifuge-chain)
