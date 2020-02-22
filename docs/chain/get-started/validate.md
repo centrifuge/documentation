@@ -5,12 +5,10 @@ title: Start to Validate on Amber/Flint Testnet
 category: 2. Get Started
 ---
 
-## Start to Validate on Amber/Flint Testnet
+1. Open the Portal:
 
-1. Open the Portal: 
-    
     a) Amber: http://35.198.185.220/#?rpc=ws://35.246.192.167:9944
-    
+
     b) Flint: http://35.198.185.220/#?rpc=ws://35.234.84.110:9944
 
 1. Create a new key pair for your validator – a stash account (`Vanessa Stash` in this example) that is holding the funds to be staked/bonded and can transfer them, and a separate controller account (`Vanessa` in this example) that will be able to switch between validating/nominating/chilling and can set session keys, which will be used for the validator tasks such as block proposals, finalization etc: ![](../../../src/images/chain/stash-account.png) ![](../../../src/images/chain/controller-account.png)

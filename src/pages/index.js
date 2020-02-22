@@ -37,10 +37,9 @@ const HomePage = () => (
           // Desktop
           case "large":
             areas = [
-
-              {name: "chain", start: [1, 0], end: [1, 0]},
-              {name: "tinlake", start: [2, 0], end: [2, 0]},
-              {name: "cent-node", start: [3, 0], end: [3, 0]},
+              {name: "tinlake", start: [1, 0], end: [1, 0]},
+              {name: "cent-node", start: [2, 0], end: [2, 0]},
+              {name: "chain", start: [3, 0], end: [3, 0]},
               {name: "nft", start: [1, 1], end: [1, 1]},
               {name: "paper", start: [2, 1], end: [2, 1]},
 
@@ -56,9 +55,9 @@ const HomePage = () => (
 
 
             areas = [
-              {name: "chain", start: [1, 0], end: [1, 0]},
-              {name: "tinlake", start: [1, 1], end: [1, 1]},
-              {name: "cent-node", start: [1, 2], end: [1, 2]},
+              {name: "tinlake", start: [1, 0], end: [1, 0]},
+              {name: "cent-node", start: [1, 1], end: [1, 1]},
+              {name: "chain", start: [1, 2], end: [1, 2]},
               {name: "nft", start: [1, 3], end: [1, 3]},
               {name: "paper", start: [1, 4], end: [1, 4]},
 
