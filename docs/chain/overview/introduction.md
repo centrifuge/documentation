@@ -11,18 +11,38 @@ Ask questions in our [Community Slack](https://centrifuge.io/slack)
 
 ## The Centrifuge Stack
 
-![](../../../src/images/chain/cent-stack.jpeg)
+The Centrifuge mission is to change the rules of global trade to foster economic opportunity everywhere. Global B2B spend (a.k.a. sent invoices) amounts to roughly [$180 Trillion](https://www.businesswire.com/news/home/20121017005521/en/Visa-Estimates-109.1-Trillion-Global-Commercial-Spend). With payment terms at an average of [60 days](https://www.statista.com/statistics/474224/average-wait-for-invoice-payment-by-sector-united-kingdom/), businesses, and especially SMEs, need financing to bridge the gap. It is one of the main reasons that sustainable growth is so much harder for SMEs than for larger corporates. Existing solutions today, such as factoring and reverse factoring, only address a small portion of that need. This is why we built Centrifuge OS — to allow businesses to exchange business documents (such as invoices) and tokenize those assets to have [greater access to financing](https://medium.com/centrifuge/centrifuge-tinlake-adding-real-world-assets-to-mcd-68cbcb67e9a4) — **thereby unlocking value that has previously been inaccessible.**
 
-The Centrifuge Operating System is a decentralized platform to support a new generation of applications for the financial supply chain. It enables businesses to exchange financial documents such as invoices, and tokenize those assets to have greater access to financing — thereby unlocking value that has previously been inaccessible.
+![](../../../src/images/chain/cent-stack.png)
 
+Centrifuge OS is a decentralized platform to support a new generation of applications for the financial supply chain. The stack consists of a peer-to-peer messaging protocol to store and exchange business documents in a private, secure way. As the next layer, we built Centrifuge Chain using Substrate to hold the unalterable, single source of truth of these documents for all parties. Using Centrifuge Chain and dApps built on top, businesses can tokenize documents and use this as collateral to access financing. Tinlake is our securitization protocol for these tokenized assets built on Centrifuge Chain to optimize risk allocation and connect Centrifuge to the DeFi ecosystem.
 
+### How does Centrifuge Work Today?
+
+![](../../../src/images/chain/howcentrifugeworkstoday.gif)
+
+A company, such as Paper Records, uses the Centrifuge P2P Network to sign and send an invoice to Spotify. Spotify verifies receipt of the document and its correctness with its signature and sends an updated, signed version of the document back to Paper Records. Ethereum is used for the node identities, allowing Paper Records to look up Spotify and for Spotify to verify Paper Records. Paper Records is then able to anchor the document hash with both signatures onto Ethereum. Using these elements Paper Records can now mint an NFT on Ethereum that represents the unpaid invoice — ***and use this NFT as collateral to access financing***. Third parties, from traditional lenders to DeFi lending pools, can verify the value of the NFT against the on-chain anchors and identities, as well as get access granted to the off-chain document whose authenticity can be verified against the on-chain anchor as well.
+
+Though we are built on and love Ethereum, we have [investigated](https://medium.com/centrifuge/https-medium-com-centrifuge-how-to-design-a-token-for-a-functioning-economy-a3e3aec932c0) and started building our own chain in order to achieve efficiencies and new possibilities over our architecture as it exists today.
 
 ## Centrifuge Chain
-[Centrifuge Chain](https://github.com/centrifuge/centrifuge-chain) is the gateway for real-world assets to the Blockchain Multiverse. It is being built on [Parity Substrate](https://substrate.dev) with an initial bridge to Ethereum.
+[Centrifuge Chain](https://github.com/centrifuge/centrifuge-chain) is the gateway for real-world assets to the Blockchain Multiverse. We are building Centrifuge Chain on [Parity Substrate](https://substrate.dev) with an initial bridge to Ethereum. This allows us to move faster and use a consistent approach for certain features. 
 
-Substrate will allow us to easily tap into the [Polkadot](https://polkadot.network) ecosystem at a future point in time as well as re-using [XCMP](https://wiki.polkadot.network/docs/en/learn-crosschain) modules to connect with other blockchains that support the standard.
+At the same time we are able to develop a standardized bridge to Ethereum that can be reused by other projects, which in turn increases interoperability. Substrate will allow us to easily tap into the [Polkadot](https://polkadot.network) ecosystem at a future point in time as well as re-using [XCMP](https://wiki.polkadot.network/docs/en/learn-crosschain) to connect with other blockchains that support the standard.
 
-We envision a larger ecosystem of many, connected blockchains—where Centrifuge Chain can [enable off-chain assets to access financing](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1) through DeFi.
+We envision a larger ecosystem of many, connected blockchains- where dApps on Ethereum could use data from other chains, value could move freely, and Centrifuge Chain can  [enable off-chain assets to access financing](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1) through DeFi.
+
+### Centrifuge Chain Efficiencies
+
+Centrifuge Chain is optimized specifically for the transactions required by our specific use case. This focus allows us to improve upon our current architecture in a few key ways: speed, cost, storage efficiencies, and privacy.
+
+![](../../../src/images/chain/CentrifugeOS-flow.png)
+
+Ethereum works well for low volumes of high value transactions. High volumes of privacy-requiring use-cases require a different solution. The average business user, SMBs and large enterprises alike, would be paying many times more using Centrifuge on Ethereum compared to their existing solutions. It wouldn’t be worth it for most businesses to make a switch. But what if we could lower that cost and have high throughput capabilities?
+
+The transactions on the Centrifuge Chain are optimized for the small subset of operations needed by our specific use case. This allows for faster execution of logic and finality of transactions. The optimization of transactions, together with our PoS architecture, is also what brings down the transaction costs dramatically. Centrifuge Chain also implements a state rent model that requires users to pay for continuous availability of their data over long periods of time. This encourages decentralization because less resources are required to run a node. Building our own chain also allows us to improve upon the user and developer experience for Centrifuge. Our users require privacy, and this is something we can build for directly — targeting the features they need from the start. For developers, we can provide custom APIs and tools that come with the blockchain node itself instead of smart contract APIs which are harder to integrate with.
+
+Centrifuge Chain is optimized specifically for the transactions required by the protocol. This achieves a much more efficient execution of these transactions and allows for targeted use-cases. While there are downsides to building a single purpose chain, the advantages for our use case outweigh the costs. Integration with other Ethereum and DeFi projects becomes a bit more involved. Our experience with Ethereum development, combined with a standardized bridge to get data to/from our Parity Substrate based chain reduces the overhead substantially, while still benefiting from the upside of our own chain.
 
 
 ## Chain Architecture
