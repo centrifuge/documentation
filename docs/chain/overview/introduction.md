@@ -21,7 +21,7 @@ Centrifuge OS is a decentralized platform to support a new generation of applica
 
 At the same time we are able to develop a standardized bridge to Ethereum that can be reused by other projects, which in turn increases interoperability. Substrate allows us to easily tap into the [Polkadot](https://polkadot.network) ecosystem and to connect with other blockchains that support the standard.
 
-We envision a larger ecosystem of many, connected blockchains- where dApps on Ethereum could use data from other chains, value could move freely, and Centrifuge Chain can  [enable off-chain assets to access financing](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1) through DeFi.
+We envision a larger ecosystem of many, connected blockchains- where Dapps on Ethereum could use data from other chains, value could move freely, and Centrifuge Chain can  [enable off-chain assets to access financing](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1) through DeFi.
 
 ### Centrifuge Chain Efficiencies
 
