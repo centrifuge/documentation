@@ -7,7 +7,7 @@ redirect_from:
   - /tinlake/
 ---
 
-[Tinlake](https://centrifuge.io/technology/tinlake) is a set of smart contracts that enables borrowers to draw loans against non-fungible assets, such as invoices, royalty payments or warehouse receipts. Anything that can be represented on-chain as NFTs (Non-Fungible Tokens) can be financed using the Tinlake infrastructure. This is done by issuing an ERC20 token, the Collateral Value Token (CVT), against all of the collateral NFTs that are deposited into the Tinlake contracts.
+[Tinlake](https://centrifuge.io/technology/tinlake) is a set of smart contracts that enables borrowers to draw loans against non-fungible assets, such as invoices, royalty payments or warehouse receipts. Anything that can be represented on-chain as NFTs (Non-Fungible Tokens) can be financed using the Tinlake infrastructure. Investors can invest by depositing an ERC20 token such as a stablecoin and in return receive a token that represents their share of the pool.
 
 ## System Overview
 Tinlake’s set of smart contracts pools NFTs that represent non-fungible assets and issues fungible, interest bearing tokens that represent a claim on a fraction of the proceeds of the entire pool. These fungible tokens can be locked in DeFi lending protocols or transferred to investors to draw funding. When liquidity is injected into Tinlake tokens are minted accordingly. The same mechanism applies in reverse when funding is paid out and tokens are burned.
