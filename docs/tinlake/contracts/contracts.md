@@ -90,12 +90,12 @@ The `Collector` contract handles the collection of undercollaterized loans. If t
 To initiate the collection, any user can call `seize` on the Collector. The Collector then calls `get` on Threshold. If ```Debt < Threshold```, Collector aborts the action. If ```Debt > Threshold```, Collector calls `claim` to move the NFT from the Shelf to the Collector. From there, Liquidators can collect the NFT at a price set by a service provider. Note, that only whitelisted Liquidators can call `collect`.
 
 ## Lender Contracts
-The Lender Contracts interact with the borrower side by supplying an amount of Currency ERC20 as requested by the Shelf.balanceRequest() method.
+The Lender Contracts interact with the borrower side by supplying an amount of Currency ERC20 as requested by the `Shelf.balanceRequest()` method.
 
 ![Lender Contracts Call Graph](../../../src/images/tinlake/lender.svg)
 
 
-Tinlake enables lenders to invest two differenct tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. This structure is similar to [senior/junior structures in finance](blah).
+Tinlake enables lenders to invest in two differenct tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. This structure is similar to [senior/junior structures in finance](blah).
 
 
 In a set-up with two tranches, risk and returns of the portfolio are usually not allocated "pro rata" (corresponding to their investment volume) but according to a predefined waterfall.
@@ -105,7 +105,7 @@ Usually senior tranches have a lower/stable return and bear less risk, while jun
 This means, that the senior tranche usually receives proceeds from loans first, until the (fixed) return is met. The remaining (variable) proceeds are then allocated to the junior tranche.
 
 ### Distributor
-The Distributor module manages how money is moved from lenders to the Shelf that then distributes it to the borrowers. It also is responsible to move money from the Shelf to the Tranches to return it to investors. The Distributor implements a waterfall and makes sure that as long as the Senior tranche reports any outstanding debt it is repaid first.
+The `Distributor` module manages how money is moved from lenders to the Shelf that then distributes it to the borrowers. It also is responsible to move money from the Shelf to the Tranches to return it to investors. The Distributor implements a waterfall and makes sure that as long as the Senior tranche reports any outstanding debt it is repaid first.
 
 The Distributor calls the method `balanceRequest` on the Shelf contract to find out if it needs to give money to the borrower side or take money from it. The logic to do so is implemented in the `balance` method which can be called at any point in time by anyone. This method is called by default from certain borrower actions.
 
@@ -119,9 +119,9 @@ Let's say `Shelf.balanceRequest()` returns that 100 DAI are needed. The Distribu
 Let's say `Shelf.balanceRequest()` returns that 75 DAI are available. The Distributor calls for the debt of senior first. `Senior.debt()` says that 60 DAI debt are outstanding. Thus Distributor calls `Senior.repay(60 DAI)` first and then repays the remain to the Junior Tranche with `Junior.repay(15 DAI)`.
 
 ### Junior/Senior Tranche
-The Tranche contract is responsible for tracking investments from investors and its outstanding debt. The debt is calculated with an external interest accrual function that can be configured at deployment. It mints/burns and transfers tokens to investors in exchange for `Currency` ERC20.
+The `Tranche` contract is responsible for tracking investments from investors and its outstanding debt. The debt is calculated with an external interest accrual function that can be configured at deployment. It mints/burns and transfers tokens to investors in exchange for `Currency` ERC20.
 
-It requires an ERC20 contract to be configured that is used to track ownership by an investor in the tranche. The tranche itself does not have any logic to enforce limits and permissions on who may invest and redeem how much at what point in tiem. This responsibility is delegated to an `Operator` contract that can implement different mechanisms (for example an automated market maker, auction contracts or a trusted fund manager).
+It requires an ERC20 contract to be configured that is used to track ownership by an investor in the tranche. The Tranche itself does not have any logic to enforce limits and permissions on who may invest and redeem how much at what point in time. This responsibility is delegated to an `Operator` contract that can implement different mechanisms (for example an automated market maker, auction contracts or a trusted fund manager).
 
 #### `borrow(address usr, uint amount)` and `repay(address usr, uint amount)`
 The `Distributor` interacts with the Tranches using the `borrow` and `repay` methods. These methods tell the Tranche to move funds to the specified address. Internally the Tranche updates the borrowed balance and can instruct the `Assessor` to start accruing interest.
@@ -133,7 +133,7 @@ The `Operator` contract is the primary point of interaction for investors intere
 The `Operator` calls the `supply` and `redeem` methods. When an investor wants to provide liquidity, the supply method is used to take a specified amount of `Currency` and issue an amount of Tranche tokens. The conversion rate is defined by the `Assessor`'s `calcTokenPrice(address tranche)` method.
 
 ### Assessor
-The `Assessor` contract is responsible for tracking a few different metrics used to define the beavior of the lender side:
+The `Assessor` contract is responsible for tracking a few different metrics used to define the behavior of the lender side:
 * Tranche token (Tin & Drop) prices
 * Interest accumulated in a tranche
 * Required investment ratio between Senior & Junior tranche
