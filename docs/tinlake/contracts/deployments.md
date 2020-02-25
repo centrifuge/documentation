@@ -4,7 +4,7 @@ order: 2
 title: Deployments
 category: 2. Contracts
 ---
-The Tinlake contracts are intended to be deployed once for every asset class. There are is no shared code between any deployments to allow for a maximum of flexibility. We intend for users to customize and modify the codebase to better suit their needs. The codebase is clearly split into components that could and should be adjusted and core contracts. The core contracts enforce fairly basic rules (such as making sure a borrower can only unlock their NFT if they repaid their entire debt) while allowing other behaviors to be configured (such as how much interest the borrwer needs to pay).
+The Tinlake contracts are intended to be deployed once for every asset class. There is no shared code between any deployments to allow for a maximum of flexibility. We intend for users to customize and modify the codebase to better suit their needs. The codebase is clearly split into components that could and should be adjusted and core contracts. The core contracts enforce fairly basic rules (such as making sure a borrower can only unlock their NFT if they repaid their entire debt) while allowing other behaviors to be configured (such as how much interest the borrwer needs to pay).
 
 The architecture for the contracts is built to make sure that the contracts intended to be customized have extremely simple interfaces and are purely limited to that functionality. By making these contracts small and simple, the amount of code that needs to be modified is minimized and thus the risk of bugs being introduced through that code is too.
 
@@ -18,7 +18,7 @@ The downside of deploying an entire set of new contracts every time is that the 
 There are three components used in the deploy process.
 
 ### Fabs
-To deploy each contract, a contract factory, called `fab`, is created first. The fabs are created beceause uploading the complete byte code for all contracts in one transaction exceeds the gas limit. Fabs can be deployed in separate transactions to allow for smaller transactions.
+To deploy each contract, a contract factory, called `fab`, is created first. The fabs are created because uploading the complete byte code for all contracts in one transaction exceeds the gas limit. Fabs can be deployed in separate transactions to allow for smaller transactions.
 
 A fab typically adheres to the following pattern:
 
@@ -85,7 +85,7 @@ contract Deployer {
 
 
 ### TinlakeRoot Contract
-The `TinlakeRoot` takes both the lender and borrower deployer as arguments. It does the last step of connecting lender and borrower contracts and authorizing certain calls. It also has
+The `TinlakeRoot` takes both the lender and borrower deployer as arguments. It does the last step of connecting lender and borrower contracts and authorizing certain calls.
 
 
 ```
