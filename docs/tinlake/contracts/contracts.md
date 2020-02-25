@@ -34,7 +34,7 @@ It depends on other contracts for certain parts of the logic. These contracts ca
 It also allows for the collector to `seize` bad loans (take the NFT away from the borrower).
 
 #### `issue(address registry, uint token)`
-Issue a loan for the specified collateral NFT (registry address & token). Internally calls `Title` to issue a loan NFT into the sender's account. Only successful if sender is also the owner of the collateral NFT.
+Issue a loan for the specified collateral NFT (registry address & token). Internally calls `Title` to issue a loan NFT into the sender's account. This is only successful if the sender is also the owner of the collateral NFT.
 
 The Shelf keeps track of NFTs already linked to a loan and ensures no two loans for one collateral NFT can be created. If there is a previous loan open for an NFT, the method `close` needs to be called.
 
@@ -63,7 +63,7 @@ This method does a few calls:
 * Ceiling.repay(loan, wad) is called and needs to not revert to make the Ceiling aware of the decrease in debt
 
 ### Pile
-The default implementation of the `Pile` allows creating of different interest rate groups and assigning each loan a rate group. Each interest rate group has an interest rate that is calculated on a per second compounding basis.
+The default implementation of the `Pile` allows creating of different interest rate groups and assigning each loan to a rate group. Each interest rate group has an interest rate that is calculated on a per second compounding basis.
 
 It's task is to report the outstanding debt for each loan with the method `debt(uint loan) returns (uint)`.
 
@@ -95,7 +95,7 @@ The Lender Contracts interact with the borrower side by supplying an amount of C
 ![Lender Contracts Call Graph](../../../src/images/tinlake/lender.svg)
 
 
-Tinlake enables lenders to invest in two differenct tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. This structure is similar to [senior/junior structures in finance](blah).
+Tinlake enables lenders to invest in two differenct tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. This structure is similar to [senior/junior structures in finance](https://github.com/centrifuge/developer.centrifuge.io/blob/develop/docs/tinlake/further-information/droptin.md).
 
 
 In a set-up with two tranches, risk and returns of the portfolio are usually not allocated "pro rata" (corresponding to their investment volume) but according to a predefined waterfall.
