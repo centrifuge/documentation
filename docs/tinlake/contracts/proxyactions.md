@@ -15,7 +15,7 @@ The proxy contract enforces access control through the same way that the core co
 
 
 ## Proxy Registry
-To interact with Tinlake through a proxy, the user first needs to deploy a proxy by calling the ProxyRegistry.build() method. This method mints an NFT that into the sender's wallet that is then used to verify access to the contract.
+To interact with Tinlake through a proxy, the user first needs to deploy a proxy by calling the ProxyRegistry.build() method. This method mints an NFT into the sender's wallet that is then used to verify access to the contract.
 
 The `ProxyRegistry` implements an ERC721 NFT interface. To transfer ownership over a proxy contract you can use a standard NFT token transfer (`transferFrom(from, to, tokenId)`).
 
@@ -28,7 +28,8 @@ Returns the proxy contract address for a given `id`. The `id` is the id of the t
 ### `ownerOf(uint id) public returns (address)`
 Returns the owner of the corresponding NFT.
 
-The contract also implements all other ERC721 standard methods as defined in [...] TODO: link
+The contract also implements all other ERC721 standard methods as defined in 
+[https://eips.ethereum.org/EIPS/eip-721](https://eips.ethereum.org/EIPS/eip-721).
 
 ## Proxy
 The proxy contract allows execution of arbitray code using the `execute(bytes memory _code, bytes memory _data)` method. This method deploys a contract with the provided code, if it is not already cached and executes it with delegate call.
