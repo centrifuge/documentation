@@ -43,5 +43,8 @@ One key point is that once `borrow` has been called, in the default model the bo
 
 In most cases, both actions can be made atomically in a single block and we provide helpers in tinlake-actions to do so thus avoiding this risk of borrowing without being able ot withdraw.
 
-## System Overview
-![System Overview](../../../src/images/tinlake/system-overview.svg)
+
+
+## Overview of contracts
+
+![System Overview](../../../src/images/tinlake/core.svg)
