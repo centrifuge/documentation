@@ -139,4 +139,4 @@ The `Assessor` contract is responsible for tracking a few different metrics used
 * Required investment ratio between Senior & Junior tranche
 
 #### Tranche Token Price: `calcTokenPrice(address tranche)`
-The token price can be calculated in a number of ways by the assessor. For example it can take the outstanding debt from all borrowers and discount it by a factor (as implemented in the default). It could also rely on an external price oracle to provide a market price of the tokens.
+The default implementation of the tranche token price calculation is based on the outstanding debt of the entire pool discounted by a risk factor. It could also rely on an external price oracle to provide a market price of the tokens.
