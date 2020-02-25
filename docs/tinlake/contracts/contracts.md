@@ -121,11 +121,11 @@ It requires an ERC20 contract to be configured that is used to track ownership b
 #### `borrow(address usr, uint amount)` and `repay(address usr, uint amount)`
 The `Distributor` interacts with the Tranches using the `borrow` and `repay` methods. These methods tell the Tranche to move funds to the specified address. Internally the Tranche updates the borrowed balance and can instruct the `Assessor` to start accruing interest.
 
+### Operator
+The `Operator` contract is the primary point of interaction for investors interested in supplying a Tinlake tranche, or redeeming tokens from the tranche.  
+
 #### `supply(address usr, uint amount)` and `redeem(address usr, uint amount)`
 The `Operator` calls the `supply` and `redeem` methods. When an investor wants to provide liquidity, the supply method is used to take a specified amount of `Currency` and issue an amount of Tranche tokens. The conversion rate is defined by the `Assessor`'s `calcTokenPrice(address tranche)` method.
-
-### Operator
-TODO
 
 ### Assessor
 The `Assessor` contract is responsible for tracking a few different metrics used to define the beavior of the lender side:
@@ -135,8 +135,3 @@ The `Assessor` contract is responsible for tracking a few different metrics used
 
 #### Tranche Token Price: `calcTokenPrice(address tranche)`
 The token price can be calculated in a number of ways by the assessor. For example it can take the outstanding debt from all borrowers and discount it by a factor (as implemented in the default). It could also rely on an external price oracle to provide a market price of the tokens.
-
-#### Interest
-// TODO
-#### Ratio
-// TODO
