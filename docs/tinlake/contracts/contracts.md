@@ -27,14 +27,14 @@ In the above diagram, all green method
 ### Shelf
 The `Shelf` is the main contract handling custody of the NFT and allowing the borrower to borrow and repay.
 
-It depends on other contracts for certain parts of the logic. These contracts can be customized to fit a deployment's needs:
-1) Pile: keeps track of the outstanding debt per loan
+It depends on other contracts for certain parts of the logic. These contracts can be customized to fit a deployment's needs:\
+1) Pile: keeps track of the outstanding debt per loan\
 2) Ceiling: this module can be used to control when and how much may be borrowed/repaid per loan and wh.
 
 It also allows for the collector to `seize` bad loans (take the NFT away from the borrower).
 
 #### `issue(address registry, uint token)`
-Issue a loan for the specified collateral NFT (registry address & token). Internally calls `Title` to issue a loan NFT into the sender's account.
+Issue a loan for the specified collateral NFT (registry address & token). Internally calls `Title` to issue a loan NFT into the sender's account. Only successful if sender is also the owner of the collateral NFT.
 
 The Shelf keeps track of NFTs already linked to a loan and ensures no two loans for one collateral NFT can be created. If there is a previous loan open for an NFT, the method `close` needs to be called.
 
@@ -63,7 +63,7 @@ This method does a few calls:
 * Ceiling.repay(loan, wad) is called and needs to not revert to make the Ceiling aware of the decrease in debt
 
 ### Pile
-The default implementation of the Pile allows creating of different interest rate groups and assigning each loan a rate group. Each interest rate group has an interest rate that is calculated on a per second compounding basis.
+The default implementation of the `Pile` allows creating of different interest rate groups and assigning each loan a rate group. Each interest rate group has an interest rate that is calculated on a per second compounding basis.
 
 It's task is to report the outstanding debt for each loan with the method `debt(uint loan) returns (uint)`.
 
@@ -72,17 +72,22 @@ The method `accrue(uint loan)` needs to be called by the Shelf before any modifi
 Whenever `decDebt` and `incDebt` are called, first the debt is updated with the compounded interest and then the debt is increased or decreased by the specified amount.
 
 ### Ceiling
-The purpose of the Ceiling contract is to ensure any borrow/repay transaction is allowed to succeed. It is used to determine whether a borrower is allowed to borrow for a certain amount.
+The purpose of the `Ceiling` contract is to ensure any borrow/repay transaction is allowed to succeed. It is used to determine whether a borrower is allowed to borrow for a certain amount.
 
 If the Shelf has an NFT locked and a borrower calls `borrow` or `repay` on it, it will call the Ceiling contract with the amount the borrower wants to borrow. The Ceiling contract can then either revert the transaction to reject this request or return to let it succeed. In the default repository there are two different implementations for the Ceiling contract module:
 
-1) Principal: The Principal ceiling let's a loan borrow up to a given amount exactly once. Wards can set different amounts for each loan using the `file` method. When the user wants to borrow, the amount will be deducted from the user's principal.
-2) Creditline: This ceiling contract keeps track of a credit limit. It will allow any borrow request to go through provided sum of the requested amount and the debt reported by the Pile for the loan is not greater than the credit limit. The credit limit can be set by a ward on the contract using the `file` method.
+1) Principal: The Principal ceiling let's a loan borrow up to a given amount exactly once. Wards can set different amounts for each loan using the `file` method. When the user wants to borrow, the amount will be deducted from the user's principal.\
+2) Creditline: This ceiling contract keeps track of a credit limit. It will allow any borrow request to go through provided sum of the requested amount and the debt reported by the Pile for the loan is not greater than the credit limit. The credit limit can be set by a ward on the contract using the `file` method.\
+
+### Threshold
+
+The `Threshold` contract is essential to keep track of the loans' health. For each loan it stores the maximum amount the loan debt is allowed to reach before a loan is considered undercollaterized.
+The threshold can be set by a ward on the contract using the `file` method.
 
 ### Collector
-The Collector contract handles the collection of undercollaterized loans. If the Debt of a loan is larger than the Treshold, Collector then allows Liquidators/Keepers to collect the underlying NFTs from Tinlake.
+The `Collector` contract handles the collection of undercollaterized loans. If the Debt of a loan is larger than the Threshold, Collector then allows Liquidators/Keepers to collect the underlying NFTs from Tinlake.
 
-To initiate the collection, any user can call `seize` on the Collector. The Collector then calls `get` on Threshold. If Debt < Threshold, Collector aborts the action. If Debt > Threshold, Collector calls `claim` to move the NFT from the Shelf to the Collector. From there, Liquidators can collect the NFT at a price set by a service provider. Note, that only whitelisted Liquidators can call `collect`.
+To initiate the collection, any user can call `seize` on the Collector. The Collector then calls `get` on Threshold. If ```Debt < Threshold```, Collector aborts the action. If ```Debt > Threshold```, Collector calls `claim` to move the NFT from the Shelf to the Collector. From there, Liquidators can collect the NFT at a price set by a service provider. Note, that only whitelisted Liquidators can call `collect`.
 
 ## Lender Contracts
 The Lender Contracts interact with the borrower side by supplying an amount of Currency ERC20 as requested by the Shelf.balanceRequest() method.
