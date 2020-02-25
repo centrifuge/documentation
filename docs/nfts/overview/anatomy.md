@@ -40,3 +40,4 @@ There are several checks that should be done prior to the minting of an NFT:
 3. `_checkTokenData`: If there is a proof present that there is no other token minted in this registry for the provided document, checking that the token data in the passed in token uniqueness proof matches the data on the token to be minted
 
 4. `verify`:  Verify the submitted proofs against the NFT to be minted. For more information, please read the information in Verification of Proof Fields in the subsequent section
+
