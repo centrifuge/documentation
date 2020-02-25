@@ -1,6 +1,6 @@
 ---
-id: anatomy
-order: 2
+id: nft-info
+order: 200
 title: Anatomy of an NFT
 category: 1. Overview
 redirect_from:
@@ -13,13 +13,13 @@ We recommend a certain anatomy for an NFT created with the Centrifuge [privacy e
 
 ### Metadata
 
-It is useful to store publicly accessible data about the NFT in a separate metadata structure, in order to access and render this data in user facing applications. 
+It is useful to store publicly accessible data about the NFT in a separate metadata structure, in order to access and render this data in user facing applications.
 
 We store this metadata in a TokenData structure which typically contains at least the document version and the address of the minter, as well as the fields which are contained in the precise proofs.
 
 For example, an Invoice Document could contain these metadata fields:
 
-```  
+```
 struct TokenData {
   uint document_version;
   uint gross_amount;
@@ -28,7 +28,7 @@ struct TokenData {
   address invoice_sender;
 }
   ```
-  
+
 ### Checks
 
 There are several checks that should be done prior to the minting of an NFT:
@@ -40,3 +40,4 @@ There are several checks that should be done prior to the minting of an NFT:
 3. `_checkTokenData`: If there is a proof present that there is no other token minted in this registry for the provided document, checking that the token data in the passed in token uniqueness proof matches the data on the token to be minted
 
 4. `verify`:  Verify the submitted proofs against the NFT to be minted. For more information, please read the information in Verification of Proof Fields in the subsequent section
+
