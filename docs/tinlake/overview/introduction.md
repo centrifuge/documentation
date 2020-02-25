@@ -32,7 +32,7 @@ Tinlake's loans can go through a number of stages in the life cycle depending on
 Borrow and repay can be done repeatedly and with arbitrary amounts (up to some limits). Therefore both borrow and repay can be done multiple times for any amounts (as long as the user is allowed to borrow). A loan can move from `open` to `ready for withdrawal` to `active` and back several times.
 
 ### Closing a loan
-The contracts enforce that only one loan can be active per NFT. You can not have two loan contract active with the same type of callateral. When a user does not plan to make use of an open loan contract anymore, the loan should be closed. However there is an edge case that we need to handle here:
+The contracts enforce that only one loan can be active per NFT. You can not have two loan contracts active with the same type of callateral. When a user does not plan to make use of an open loan contract anymore, the loan should be closed. However there is an edge case that we need to handle here:
 
 When a loan is created for a collateral NFT and the NFT is then later transferred to someone else, that person couldn't borrow from that pool if the loan can't be closed by either the loan owner or the collateral NFT owner.
 
