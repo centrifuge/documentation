@@ -5,12 +5,10 @@ title: Liquidation
 category: 5 . Further Information
 ---
 
-The total amount of CVT minted by the Tinlake contracts always represents the value of the entire pool. If a new loan is borrowed by locking an NFT, new CVT are minted to represent the pool value increase.  In case of repayment, the CVT related to the loan are burned. The value of a pool increases or decreases not only by borrowing new loans or repaying existing ones. Individual NFTs could also increase or decrease in value. For example, an invoice NFT would decrease in value if an invoice is overdue for couple of days because it increases the risk of a default. A decrease or increase of an individual assets affects the entire pool.
+## How does loan liquidation in Tinlake work?
+The liquidation of bad assets from a Tinlake pool is executed by Liquidators. These can be, e.g. loan collection agencies. These Liquidators are whitelisted by the Administrator and can also be assigned to specific loans. If no dedicated keeper is assigned to a loan, all whitelisted keepers are eligible to collect the loan.
 
-### Liquidation by Underwriter
-If the value of an NFT within the pool drops below its required collateralization value, the underlying loan has to be repaid by the underwriter. In this scenario, the debt (principal + interest) is transferred to the lending protocol by the underwriter in exchange for CVT tokens. The underlying NFT is removed from the pool and placed in escrow, temporarily transferring ownership to the underwriter for the duration of the loan period.
+Every loan has a specific Threshold, which is set by the Administrator when the loan is created. This Threshold defines the Maximum Debt amount per loan. If Debt > Treshold, Liquidators can remove the underlying NFT from the Tinlake pool at a price supplied by a service provider, e.g. a dedicated valuation firm, through a price oracle.
 
-
-### Liquidation by Lending Protocol
-Liquidation by the lending protocol should only occur in case the admin is not reacting on a value decrease of the pool which exceeds the preconfigured risk margin/threshhold. In order to protect the lenders from defaults, the admin has a high incentive to react on value decreases of the pool which bring the pool value below the defined threshhold. In the ideal case, a liquidation from the lending protocol like in CDP liquidation in Maker should never occur. In addition, each pool has a collateral factor which prevents a liquidation.
-Each pool can have a different collaterization ratio which determines a liquidation event.
+## Technical implementation
+The collection of undercollaterized loans is handled by the Collector contract. To initiate the collection, any user can call `seize` on the Collector. The Collector then calls `get` on Threshold. If Debt < Threshold, Collector aborts the action. If Debt > Threshold, Collector calls `claim` to move the NFT from the Shelf to the Collector. From there, whitelisted Liquidators can call `collect` to collect the NFT at the price set by the service provider. The funds provided by the Liquidator are transferred to Shelf and `distributor.balance()` is triggered to move it to the tranches. If the loan is not collected and Debt becomes larger than Treshold again, e.g. through repayments, the NFT is moved back to the Shelf.
