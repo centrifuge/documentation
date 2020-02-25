@@ -27,8 +27,8 @@ In the above diagram, all green method
 ### Shelf
 The `Shelf` is the main contract handling custody of the NFT and allowing the borrower to borrow and repay.
 
-It depends on other contracts for certain parts of the logic. These contracts can be customized to fit a deployment's needs:\
-1) Pile: keeps track of the outstanding debt per loan\
+It depends on other contracts for certain parts of the logic. These contracts can be customized to fit a deployment's needs:  
+1) Pile: keeps track of the outstanding debt per loan  
 2) Ceiling: this module can be used to control when and how much may be borrowed/repaid per loan and wh.
 
 It also allows for the collector to `seize` bad loans (take the NFT away from the borrower).
@@ -76,8 +76,8 @@ The purpose of the `Ceiling` contract is to ensure any borrow/repay transaction 
 
 If the Shelf has an NFT locked and a borrower calls `borrow` or `repay` on it, it will call the Ceiling contract with the amount the borrower wants to borrow. The Ceiling contract can then either revert the transaction to reject this request or return to let it succeed. In the default repository there are two different implementations for the Ceiling contract module:
 
-1) Principal: The Principal ceiling let's a loan borrow up to a given amount exactly once. Wards can set different amounts for each loan using the `file` method. When the user wants to borrow, the amount will be deducted from the user's principal.\
-2) Creditline: This ceiling contract keeps track of a credit limit. It will allow any borrow request to go through provided sum of the requested amount and the debt reported by the Pile for the loan is not greater than the credit limit. The credit limit can be set by a ward on the contract using the `file` method.\
+1) Principal: The Principal ceiling let's a loan borrow up to a given amount exactly once. Wards can set different amounts for each loan using the `file` method. When the user wants to borrow, the amount will be deducted from the user's principal.  
+2) Creditline: This ceiling contract keeps track of a credit limit. It will allow any borrow request to go through provided sum of the requested amount and the debt reported by the Pile for the loan is not greater than the credit limit. The credit limit can be set by a ward on the contract using the `file` method.  
 
 ### Threshold
 
