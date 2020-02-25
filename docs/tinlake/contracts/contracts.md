@@ -87,7 +87,7 @@ The threshold can be set by a ward on the contract using the `file` method.
 ### Collector
 The `Collector` contract handles the collection of undercollaterized loans. If the Debt of a loan is larger than the Threshold, Collector then allows Liquidators/Keepers to collect the underlying NFTs from Tinlake.
 
-To initiate the collection, any user can call `seize` on the Collector. The Collector then calls `get` on Threshold. If ```Debt < Threshold```, Collector aborts the action. If ```Debt > Threshold```, Collector calls `claim` to move the NFT from the Shelf to the Collector. From there, Liquidators can collect the NFT at a price set by a service provider. Note, that only whitelisted Liquidators can call `collect`.
+To initiate the collection, any user can call `seize` on the Collector. The Collector then calls `get` on Threshold. If ```Debt < Threshold```, Collector aborts the action. If ```Debt >= Threshold```, Collector calls `claim` to move the NFT from the Shelf to the Collector. From there, Liquidators can collect the NFT at a price set by a service provider. Note, that only whitelisted Liquidators can call `collect`.
 
 ## Lender Contracts
 The Lender Contracts interact with the borrower side by supplying an amount of Currency ERC20 as requested by the `Shelf.balanceRequest()` method.
