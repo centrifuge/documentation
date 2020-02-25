@@ -10,21 +10,19 @@ Tinlake UI provides a simple interface for Admins & Borrowers to interact with T
 **Admins’ perspective**
 - Set maximum borrow amounts for loans
 - Set thresholds for loans
+- Create interest rate groups
 - Set interest rates for loans
-- Set recovery prices for loans
-- Whitelist keepers to collect loans
 - Whitelist investors to supply funds into tranches
-- Whitelist investors to redeem funds from tranches
+- Whitelist investors to redeem funds from tranches 
 
 **Borrowers’ perspective**
-- Borrowing loans
-- Repaying loans
+- Borrow loans
+- Repay loans
 
 **Lenders’ perspective**
-- Invest in Tranches 
-- 
+- Supply funds into tranches
+- Redeem funds from tranches 
 
-**Keepers’ perspective**
 
 ![Tinlake UI](../../../src/images/tinlake/tinlake-ui.png)
 
