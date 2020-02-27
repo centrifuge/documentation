@@ -38,6 +38,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `code-of-conduct`,
+        path: `${__dirname}/docs/code-of-conduct.md`
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
