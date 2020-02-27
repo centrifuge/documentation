@@ -32,11 +32,11 @@ export const FooterMenu = ({size, gap}) => {
   let gridStyle = {gridGap: gap, width: '100%'};
   let areas;
   let columns = [
-    '54px',
+    '142px',
     '1fr',
     '142px'
   ]
-  let rows = ['auto'];
+  let rows = ['27px', '81px'];
 
   switch (size) {
     // Desktop
@@ -45,8 +45,8 @@ export const FooterMenu = ({size, gap}) => {
     default:
 
       areas = [
-
-        {name: "social", start: [0, 0], end: [0, 0]},
+        {name: "code-of-conduct", start: [0, 0], end: [0, 0]},
+        {name: "social", start: [0, 1], end: [0, 1]},
         {name: "support", start: [2, 0], end: [2, 0]},
 
       ];
@@ -56,10 +56,13 @@ export const FooterMenu = ({size, gap}) => {
 
   return (
     <>
+
       <Grid style={gridStyle} columns={columns} rows={rows} areas={areas}>
+        <Box gridArea="code-of-conduct" textAlign={'right'}>
+          <Link href="/code-of-conduct">Code of Conduct</Link>
+        </Box>
 
         <Box gridArea="social" textAlign={'right'}>
-
           <Link href="https://twitter.com/centrifuge">
             Twitter
           </Link>
@@ -72,8 +75,8 @@ export const FooterMenu = ({size, gap}) => {
           <Link href="https://github.com/centrifuge/">
             GitHub
           </Link>
-
         </Box>
+
         <Box gridArea="support">
           <Link href="mailto:support@centrifuge.io">support@centrifuge.io</Link>
         </Box>
