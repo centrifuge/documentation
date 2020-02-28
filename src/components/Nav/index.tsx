@@ -57,7 +57,7 @@ const Logo = styled(Image)`
               theme={theme}
               selectedRoute={selectedRoute}
               onRouteClick={(item: MenuItem) => {onRouteClick(item.route);}}
-              logo={<Logo src={wordmark} />}
+              logo={<Logo src={wordmark} onClick={navigate('/')} />}
             />
           </Box>
         </AxisTheme>
