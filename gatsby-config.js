@@ -96,6 +96,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-netlify-cache`,
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-typescript`
   ]
 };

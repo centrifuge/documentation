@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "@centrifuge",
   "dependencies": {
+    "@centrifuge/axis-nav-bar": "^0.3.2-develop.47",
     "@centrifuge/axis-theme": "0.3.1",
     "@mdx-js/mdx": "^0.16.8",
     "@mdx-js/tag": "^0.16.8",
@@ -21,6 +22,7 @@
     "gatsby-plugin-sharp": "^2.0.20",
     "gatsby-plugin-sitemap": "^2.0.5",
     "gatsby-plugin-styled-components": "^3.0.5",
+    "gatsby-plugin-typescript": "^2.1.27",
     "gatsby-redirect-from": "^0.2.1",
     "gatsby-remark-copy-linked-files": "^2.1.31",
     "gatsby-remark-images": "^3.1.32",
