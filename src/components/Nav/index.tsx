@@ -8,17 +8,17 @@ import { Menu as MenuIcon, User as UserIcon, Close as CloseIcon } from "grommet-
 import styled from "styled-components";
 import { navigate } from "gatsby";
 const wordmark = require("../../images/centrifuge-developer-wordmark.svg") as string;
+
+
 const Logo = styled(Image)`
   vertical-align: middle;
   height: 32px;
   margin: 16px 0;
 `;
 
-
   const Nav = (props) => {
     const Comp = (props) => {
       const [selectedRoute, setSelectedRoute] = useState("");
-      const logo = Logo;
       const menuItems: MenuItem[] = [
         {
           label: "Centrifuge P2P Node",
@@ -35,11 +35,24 @@ const Logo = styled(Image)`
         {
           label: 'Centrifuge Chain',
           route: "/chain/"
+        },
+        {
+          label: 'Github',
+          route: "https://github.com/centrifuge"
+        },
+        {
+          label: 'Slack',
+          route: "https://centrifuge.io/slack/"
         }
       ];
       const onRouteClick = (route) => {
         setSelectedRoute(route);
-        navigate(route);
+        if (route.startsWith('/')){
+          navigate(route);
+        }
+        else {
+          window.open(route);
+        }
       };
       const theme = { navBar: { icons: {
         menu: MenuIcon,
@@ -47,20 +60,18 @@ const Logo = styled(Image)`
         user: UserIcon,
       }}};
    
-    
-
       return (
-        <AxisTheme>
-          <Box>
             <NavBar
               menuItems={menuItems}
               theme={theme}
               selectedRoute={selectedRoute}
               onRouteClick={(item: MenuItem) => {onRouteClick(item.route);}}
-              logo={<Logo src={wordmark} onClick={navigate('/')} />}
+              logo={<Logo src={wordmark} />}
+              width={"100%"}
+              
             />
-          </Box>
-        </AxisTheme>
+
+
       );
     };
 
