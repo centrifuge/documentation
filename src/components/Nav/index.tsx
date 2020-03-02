@@ -5,6 +5,7 @@ import { Box, Image } from "grommet";
 import { NavBar } from "@centrifuge/axis-nav-bar";
 import { MenuItem } from "@centrifuge/axis-nav-bar";
 import { Menu as MenuIcon, User as UserIcon, Close as CloseIcon } from "grommet-icons";
+import Search from "../Search";
 import styled from "styled-components";
 import { navigate } from "gatsby";
 const wordmark = require("../../images/centrifuge-developer-wordmark.svg") as string;
@@ -61,16 +62,17 @@ const Logo = styled(Image)`
       }}};
    
       return (
+        <Box>
             <NavBar
               menuItems={menuItems}
               theme={theme}
               selectedRoute={selectedRoute}
               onRouteClick={(item: MenuItem) => {onRouteClick(item.route);}}
-              logo={<Logo src={wordmark} />}
+              logo={<Logo src={wordmark}/>}
               width={"100%"}
-              
             />
-
+            <Search />
+        </Box>
 
       );
     };
