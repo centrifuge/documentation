@@ -19,7 +19,7 @@ const Logo = styled(Image)`
 
   const Nav = (props) => {
     const Comp = (props) => {
-      const [selectedRoute, setSelectedRoute] = useState("");
+      const [selectedRoute, setSelectedRoute] = useState("/");
       const menuItems: MenuItem[] = [
         {
           label: "Centrifuge P2P Node",
@@ -68,7 +68,7 @@ const Logo = styled(Image)`
               theme={theme}
               selectedRoute={selectedRoute}
               onRouteClick={(item: MenuItem) => {onRouteClick(item.route);}}
-              logo={<Logo src={wordmark}/>}
+              logo={<Logo src={wordmark} onClick={() => {onRouteClick('/')}} />}
               width={"100%"}
             />
             <Search />
