@@ -3,7 +3,7 @@ import docsearch from "docsearch.js";
 import styled from "styled-components";
 
 import { Box, Button, Keyboard, TextInput, Image } from 'grommet';
-import SearchIcon from "../../images/search.svg";
+import { Search as SearchIcon } from "grommet-icons";
 
 import "docsearch.js/dist/cdn/docsearch.min.css";
 import "./algoliaOverrides.css";
@@ -68,7 +68,7 @@ const Search = ({ open, setOpen }) => {
           style={{minHeight: '12px', padding: '12px'}}
           background={hover ? 'active' : undefined}
         >
-          <Image src={SearchIcon}/>
+          <SearchIcon />
         </Box>
       )}
     </Button>
