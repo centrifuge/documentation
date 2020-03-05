@@ -60,6 +60,7 @@ const Search = ({ open, setOpen }) => {
       onClick={() => {
         setOpen(true);
       }}
+      style={{minHeight: '12px'}}
     >
       {({ hover }) => (
         <Box
