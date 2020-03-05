@@ -51,11 +51,11 @@ const Layout = ({children, gap, size}) => {
       <Box as="footer">
         <Box background={'brand'} align={'center'}>
           <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, vertical: 'large'}}>
-            <JoinSlack />
+            <JoinSlack/>
           </Box>
         </Box>
         <Box background={'black'} align={'center'}>
-        <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, vertical: 'large'}}>
+          <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, vertical: 'large'}}>
             <FooterMenu size={size} gap={gap}/>
           </Box>
         </Box>
