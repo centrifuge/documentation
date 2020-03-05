@@ -42,7 +42,7 @@ const HomePage = () => (
           '1fr'
         ]
         let rows = ['auto', 'auto'];
-        console.log(size)
+
         switch (size) {
           case "large":
             areas = [
