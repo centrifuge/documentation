@@ -64,7 +64,7 @@ const Search = ({ open, setOpen }) => {
       {({ hover }) => (
         <Box
           round="xlarge"
-          style={{padding: '12px'}}
+          style={{minHeight: '12px'}}
           background={hover ? 'active' : undefined}
         >
           <SearchIcon />
