@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import Nav from "../Nav";
 import {theme} from "../../theme";
-import {FooterMenu, JoinUs} from "../Footer";
+import {FooterMenu, JoinSlack } from "../Footer";
 
 
 const Header = styled.header`
@@ -50,12 +50,12 @@ const Layout = ({children, gap, size}) => {
 
       <Box as="footer">
         <Box background={'brand'} align={'center'}>
-          <Box {...sectionProps} direction="row" justify={'center'} align={'center'} pad={{...sectionProps.pad, horizontal: 'xlarge', vertical: 'large'}}>
-            <JoinUs/>
+          <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, vertical: 'large'}}>
+            <JoinSlack />
           </Box>
         </Box>
         <Box background={'black'} align={'center'}>
-          <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, horizontal: 'large', vertical: 'large'}}>
+        <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, vertical: 'large'}}>
             <FooterMenu size={size} gap={gap}/>
           </Box>
         </Box>

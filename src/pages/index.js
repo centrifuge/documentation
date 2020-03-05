@@ -6,11 +6,7 @@ import {Box, Grid, Image, ResponsiveContext, Text, Button} from "grommet";
 import helloWordImage from "../images/hello_world-42.svg";
 import SEO from "../components/SEO";
 import Layout from "../components/Layout";
-import CentrifugeChain from '../components/Home/centrifuge-chain';
-import Tinlake from '../components/Home/tinlake';
-import P2PNode from "../components/Home/p2pNode";
-import Nft from "../components/Home/nft";
-import ProtocolPaper from "../components/Home/protocol-paper";
+import Products from '../components/Home/products';
 
 const JoinUsButton = styled(Button)`
   max-width: 30%;
@@ -37,11 +33,6 @@ const HomePage = () => (
   <AxisTheme theme={theme}>
     <ResponsiveContext.Consumer>
       {size => {
-        const anchorStyles = {
-          fontWeight: '500',
-          fontSize: '16px'
-        }
-
         let areas;
         let columns = [
           '1fr',
@@ -101,13 +92,7 @@ const HomePage = () => (
           </Box>
 
           <Box fill={true} pad={{bottom: 'large'}}>
-            <Grid areas={areas} columns={columns} rows={rows} justifyContent={'between'} gap={'large'}>
-              <CentrifugeChain anchorStyles={anchorStyles} />
-              <Tinlake anchorStyles={anchorStyles} />
-              <P2PNode anchorStyles={anchorStyles} />
-              <Nft anchorStyles={anchorStyles} />
-              <ProtocolPaper anchorStyles={anchorStyles}/>
-            </Grid>
+            <Products areas={areas} columns={columns} rows={rows} />
           </Box>
           <Box fill={true} pad={'large'}>
             <Grid
