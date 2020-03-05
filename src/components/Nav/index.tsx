@@ -18,7 +18,6 @@ const Logo = styled(Image)`
 `;
 
   const Nav = (props) => {
-    const Comp = (props) => {
       const [selectedRoute, setSelectedRoute] = useState("/");
       const menuItems: MenuItem[] = [
         {
@@ -75,9 +74,6 @@ const Logo = styled(Image)`
         </Box>
 
       );
-    };
-
-    return <Comp />;
   };
 
 export default Nav;
