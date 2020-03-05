@@ -1,8 +1,15 @@
 ---
-id: coc
-order: 1
-title: Code of Conduct
+id: contributing
+order: 2
+title: Contributing and Code of Conduct
+category: 4. Further information
 ---
+
+## How to Contribute
+To become a part of the Centrifuge community, read the Code of Conduct below and join [Slack](https://centrifuge.io/slack/). If you find a bug, file an issue on [GitHub](https://github.com/centrifuge).
+
+## Code of Conduct
+
 Creating a new system for the global financial supply chain is only possible through the collaboration of a global ecosystem and community of companies, groups, organizations, and individuals. 
 We want to come together to exchange ideas and build Centrifuge as an inclusive, welcoming, and safe community of collaborators, operators, investors, and users. Harmful or discriminating behavior by anyone will not be tolerated.
 

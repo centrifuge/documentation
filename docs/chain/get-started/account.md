@@ -8,9 +8,9 @@ category: 2. Get Started
 ## Create an account/key pair
 1. Open the Portal:
 
-    a) Amber: https://portal.chain.centrifuge.io/#?rpc=wss://fullnode.amber.centrifuge.io
+    a) Amber: http://35.198.185.220/#?rpc=ws://35.246.192.167:9944
 
-    b) Flint: https://portal.chain.centrifuge.io/#?rpc=wss://fullnode.flint.centrifuge.io
+    b) Flint: http://35.198.185.220/#?rpc=ws://35.234.84.110:9944
 
 1. Create a new account for your user by navigating to "Accounts" and clicking "Add account".
 

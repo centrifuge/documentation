@@ -1,14 +1,37 @@
 import React from "react";
 import {AxisTheme} from "@centrifuge/axis-theme";
+import styled from 'styled-components'
 import {theme} from "../theme";
-import {Anchor, Box, Grid, Heading, Image, ResponsiveContext} from "grommet";
+import {Box, Grid, Image, ResponsiveContext, Text, Button} from "grommet";
 import helloWordImage from "../images/hello_world-42.svg";
-import centrifugeLogo from "../images/centrifuge_logo_dev.svg";
-import tinlakeLogo from "../images/tinlake_logo_dev.svg";
 import SEO from "../components/SEO";
 import Layout from "../components/Layout";
-import {UnstyledAnchor} from "../components/Links";
+import CentrifugeChain from '../components/Home/centrifuge-chain';
+import Tinlake from '../components/Home/tinlake';
+import P2PNode from "../components/Home/p2pNode";
+import Nft from "../components/Home/nft";
+import ProtocolPaper from "../components/Home/protocol-paper";
 
+const JoinUsButton = styled(Button)`
+  max-width: 30%;
+`;
+
+const JoinUsText = styled(Text)`
+  padding: 0 0 50px;
+  position: relative;
+
+  ::after {
+    background-color: #000000;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,0);
+    width: 300px;
+  }
+`
 
 const HomePage = () => (
   <AxisTheme theme={theme}>
@@ -17,10 +40,6 @@ const HomePage = () => (
         const anchorStyles = {
           fontWeight: '500',
           fontSize: '16px'
-        }
-
-        let gridStyles = {
-          gridGap: '32px'
         }
 
         let areas;
@@ -32,34 +51,39 @@ const HomePage = () => (
           '1fr'
         ]
         let rows = ['auto', 'auto'];
-
+        console.log(size)
         switch (size) {
-          // Desktop
           case "large":
             areas = [
-              {name: "tinlake", start: [1, 0], end: [1, 0]},
-              {name: "cent-node", start: [2, 0], end: [2, 0]},
-              {name: "chain", start: [3, 0], end: [3, 0]},
+              {name: "centrifugeChain", start: [1, 0], end: [1, 0]},
+              {name: "tinlake", start: [2, 0], end: [2, 0]},
+              {name: "p2pNode", start: [3, 0], end: [3, 0]},
               {name: "nft", start: [1, 1], end: [1, 1]},
-              {name: "paper", start: [2, 1], end: [2, 1]},
-
+              {name: "protocolPaper", start: [2, 1], end: [2, 1]},
             ];
             break;
           case "medium":
+            rows = ['auto', 'auto', 'auto'];
+            areas = [
+              {name: "centrifugeChain", start: [1, 0], end: [1, 0]},
+              {name: "tinlake", start: [2, 0], end: [2, 0]},
+              {name: "p2pNode", start: [1, 1], end: [1, 1]},
+              {name: "nft", start: [2, 1], end: [2, 1]},
+              {name: "protocolPaper", start: [1, 2], end: [1, 2]},
+            ];
+            break;
           default:
-            gridStyles = {};
             columns = [
               '1fr', '348px', '1fr'
             ];
             rows = ['auto', 'auto', 'auto', 'auto', 'auto'];
 
-
             areas = [
-              {name: "tinlake", start: [1, 0], end: [1, 0]},
-              {name: "cent-node", start: [1, 1], end: [1, 1]},
-              {name: "chain", start: [1, 2], end: [1, 2]},
+              {name: "centrifugeChain", start: [1, 0], end: [1, 0]},
+              {name: "tinlake", start: [1, 1], end: [1, 1]},
+              {name: "p2pNode", start: [1, 2], end: [1, 2]},
               {name: "nft", start: [1, 3], end: [1, 3]},
-              {name: "paper", start: [1, 4], end: [1, 4]},
+              {name: "protocolPaper", start: [1, 4], end: [1, 4]},
 
             ];
             break;
@@ -73,89 +97,43 @@ const HomePage = () => (
             align="center"
             pad={'xlarge'}
           >
-            <Image style={{maxWidth: '480px'}} src={helloWordImage}/>
+            <Image style={{maxWidth: '440px'}} src={helloWordImage}/>
           </Box>
 
           <Box fill={true} pad={{bottom: 'large'}}>
-            <Grid style={gridStyles} areas={areas} columns={columns} rows={rows} justifyContent={'between'}>
-              <Box
-                margin={{vertical: '48px'}}
-                align="center"
-                style={{width: '348px'}}
-                gridArea={'chain'}
-                gap={'large'}
-              >
-                <Heading level={1} style={{margin: '0px 0px 6px 0px'}}>
-                  <UnstyledAnchor href={'/chain/'}>
-                    Centrifuge Chain
-                  </UnstyledAnchor>
-                </Heading>
-                <Anchor href="/chain/" style={anchorStyles}>Centrifuge Chain Validator Guide</Anchor>
+            <Grid areas={areas} columns={columns} rows={rows} justifyContent={'between'} gap={'large'}>
+              <CentrifugeChain anchorStyles={anchorStyles} />
+              <Tinlake anchorStyles={anchorStyles} />
+              <P2PNode anchorStyles={anchorStyles} />
+              <Nft anchorStyles={anchorStyles} />
+              <ProtocolPaper anchorStyles={anchorStyles}/>
+            </Grid>
+          </Box>
+          <Box fill={true} pad={'large'}>
+            <Grid
+              justifyContent="center"
+              gap="large"
+              areas={[
+                { name: "text", start: [0, 0], end: [0, 0] },
+                { name: "button", start: [0, 1], end: [0, 1] }
+              ]}
+              columns={["flex"]}
+              rows={["flex", "flex"]}
+            >
+              <Box gridArea="text">
+                <JoinUsText textAlign="center" size="large" weight="bold">
+                  New to Centrifuge? Get a brif introduction how the <br />
+                  different parts of Centrifuge work together.
+                </JoinUsText>
               </Box>
-
-              <Box
-                margin={{vertical: '48px'}}
-                align="center"
-                style={{width: '348px'}}
-                gridArea={'tinlake'}
-                gap={'large'}
-              >
-                <Box height={'62px'} justify={'center'}>
-                  <Anchor href="/tinlake/"><Image src={tinlakeLogo}/></Anchor>
-                </Box>
-                <Anchor href="/tinlake/" style={anchorStyles}>Tinlake Documentation</Anchor>
-              </Box>
-
-              <Box
-                margin={{vertical: '48px'}}
-                align="center"
-                style={{width: '348px'}}
-                gridArea={'cent-node'}
-                gap={'large'}
-              >
-                <Anchor href="/cent-node/"><Image style={{maxWidth: '480px'}} src={centrifugeLogo}/></Anchor>
-                <Anchor href="/cent-node/" style={anchorStyles}>Centrifuge Node Documentation</Anchor>
-              </Box>
-
-              <Box
-                margin={{vertical: '48px'}}
-                align="center"
-                style={{width: '348px'}}
-                gridArea={'nft'}
-                gap={'large'}
-
-              >
-                <Heading level={1} style={{margin: '0px 0px 6px 0px'}}>
-                  <UnstyledAnchor href={'/nfts/'}>
-                    NFTs
-                  </UnstyledAnchor>
-                </Heading>
-                <Anchor style={anchorStyles} href={'/nfts/'}>
-                  NFTs
-                </Anchor>
-              </Box>
-
-              <Box
-                margin={{vertical: '48px'}}
-                align="center"
-                style={{width: '348px'}}
-                gridArea={'paper'}
-                gap={'large'}
-
-              >
-                <Heading level={1} style={{margin: '0px 0px 6px 0px'}}>
-                  <UnstyledAnchor
-                    href={'https://staticw.centrifuge.io/assets/centrifuge_os_protocol_paper.pdf'}
-                    target={'_blank'}>
-                    Protocol Paper
-                  </UnstyledAnchor>
-                </Heading>
-                <Anchor
-                  style={anchorStyles}
-                  href={'https://staticw.centrifuge.io/assets/centrifuge_os_protocol_paper.pdf'}
-                  target={'_blank'}>
-                  Centrifuge Protocol Paper
-                </Anchor>
+              <Box gridArea="button" align="center">
+                <JoinUsButton
+                  primary
+                  white={'true'}
+                  label={'Join the Team'}
+                  href={'https://centrifuge.io/slack'}
+                  target={'_blank'}
+                />
               </Box>
             </Grid>
           </Box>

@@ -1,13 +1,41 @@
-import {Box, Button, Grid, Heading} from "grommet";
+import {Box, Button, Grid, Text} from "grommet";
 import React from "react";
 import styled from 'styled-components'
 
 
-export const JoinSlack = () => {
+export const JoinUs = () => {
   return (
     <>
-      <Heading textAlign={'center'} level={'5'} color={'white'}>Do you want to know more? Do you have questions to ask?</Heading>
-      <Button white={'true'} label={'Join Slack'} href={'https://centrifuge.io/slack'} target={'_blank'}/>
+      <Grid
+        areas={[
+          { name: "main", start: [1, 0], end: [1, 0] },
+          { name: "nav", start: [0, 0], end: [0, 0] }
+        ]}
+        columns={["3/5", "2/5"]}
+        rows={["flex"]}
+        gap="medium"
+        justifyContent="center"
+      >
+        <Box
+          gridArea="nav"
+          alignSelf="center"
+        >
+          <Text
+            color={'white'}
+            margin={ {top: '0', bottom: '0'} }
+          >
+            Come join our team of experienced, smart, and nice people building the future of B2B software!?
+          </Text>
+        </Box>
+        <Box gridArea="main">
+          <Button
+            white={'true'}
+            label={'Join the Team'}
+            href={'https://centrifuge.io/slack'}
+            target={'_blank'}
+          />
+        </Box>
+      </Grid>
     </>
   )
 }
@@ -27,58 +55,58 @@ export const Link = styled.a`
   }
 `;
 
-
 export const FooterMenu = ({size, gap}) => {
   let gridStyle = {gridGap: gap, width: '100%'};
-  let areas;
-  let columns = [
-    '142px',
-    '1fr',
-    '142px'
-  ]
-  let rows = ['27px', '81px'];
-
-  switch (size) {
-    // Desktop
-    case "large":
-    case "medium":
-    default:
-
-      areas = [
-        {name: "code-of-conduct", start: [0, 0], end: [0, 0]},
-        {name: "social", start: [0, 1], end: [0, 1]},
-        {name: "support", start: [2, 0], end: [2, 0]},
-
-      ];
-      break;
-
-  }
 
   return (
     <>
-
-      <Grid style={gridStyle} columns={columns} rows={rows} areas={areas}>
-        <Box gridArea="code-of-conduct" textAlign={'right'}>
-          <Link href="/code-of-conduct">Code of Conduct</Link>
+      <Grid style={gridStyle} columns={{
+        count: 4,
+        size: "auto"
+      }}
+      gap="medium">
+        <Box textAlign={'right'}>
+          <Text size="xsmall">
+            Berlin<br />
+            Full Node, Skalitzer Strasse 85-86<br />
+            10997 Berlin
+          </Text>
+          <br />
+          <Text size="xsmall">Centrifuge Inc. © Copyright 2018</Text>
         </Box>
-
-        <Box gridArea="social" textAlign={'right'}>
-          <Link href="https://twitter.com/centrifuge">
-            Twitter
-          </Link>
-          <Link href="https://medium.com/centrifuge">
-            Medium
-          </Link>
-          <Link href="https://centrifuge.io/slack">
-            Slack
-          </Link>
-          <Link href="https://github.com/centrifuge/">
-            GitHub
-          </Link>
+        <Box textAlign={'right'}>
+          <Text size="xsmall">
+            San-Francisco<br />
+            548 Market Street #67433<br />
+            San Francisco, CA 94104<br />
+          </Text>
         </Box>
-
-        <Box gridArea="support">
-          <Link href="mailto:support@centrifuge.io">support@centrifuge.io</Link>
+        <Box textAlign={'right'}>
+          <Text size="xsmall">
+            <Link href="https://twitter.com/centrifuge">
+              Twitter
+            </Link>
+          </Text>
+          <Text size="xsmall">
+            <Link href="https://medium.com/centrifuge">
+              Medium
+            </Link>
+          </Text>
+          <Text size="xsmall">
+            <Link href="https://github.com/centrifuge/">
+              GitHub
+            </Link>
+          </Text>
+          <Text size="xsmall">
+            <Link href="https://centrifuge.io/slack">
+              Slack
+            </Link>
+          </Text>
+        </Box>
+        <Box>
+          <Text size="xsmall">
+            <Link href="mailto:support@centrifuge.io">support@centrifuge.io</Link>
+          </Text>
         </Box>
       </Grid>
       <Box fill={true}>

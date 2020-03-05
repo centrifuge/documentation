@@ -20,7 +20,6 @@ const ExternalAnchor = styled(Anchor).attrs({
   target: "_blank",
   rel: "noopener noreferrer"
 })`
- 
 `;
 
 const Item = styled(ListItem)`
@@ -31,16 +30,15 @@ const Item = styled(ListItem)`
      color: inherit;
     font-weight: 500;
   }
-  
   .activeLink {
     color: ${props => props.theme.global.colors.brand};
   }
-  
 `;
 
 const Nav = (props) => {
   const {size, ...rest} = props;
   const [opened, setOpened] = useState(false);
+  const [searchOpen, setSearchOpen] = React.useState(false);
 
   const openMenu = () => setOpened(true);
   const closeMenu = () => setOpened(false);
@@ -66,7 +64,7 @@ const Nav = (props) => {
         )}
         <Box flex={onMobile} as="li" direction={'column'} justify="center">
           <ListItem flex={'grow'}>
-            <Search/>
+            <Search open={searchOpen} setOpen={value => setSearchOpen(value)}/>
           </ListItem>
         </Box>
 
@@ -115,28 +113,18 @@ const renderMainMenuItems = (direction) => {
   return <Box as="ul" direction={direction} align="center" gap="large">
     <Item>
       <Link partiallyActive={true} activeClassName="activeLink" to="/cent-node/">
-        <Anchor>Centrifuge P2P Node</Anchor>
-      </Link>
-    </Item>
-    <Item>
-      <Link partiallyActive={true} activeClassName="activeLink" to="/tinlake/">
-        <Anchor>Tinlake</Anchor>
-      </Link>
-    </Item>
-    <Item>
-      <Link partiallyActive={true} activeClassName="activeLink" to="/nfts/overview/introduction/">
-        <Anchor>NFTs</Anchor>
-      </Link>
-    </Item>
-    <Item>
-      <Link partiallyActive={true} activeClassName="activeLink" to="/chain/">
-        <Anchor>Centrifuge Chain</Anchor>
+        <Anchor>Node API</Anchor>
       </Link>
     </Item>
     <Item>
       <ExternalAnchor href="https://github.com/centrifuge">
         GitHub
       </ExternalAnchor>
+    </Item>
+    <Item>
+      <Link partiallyActive={true} activeClassName="activeLink" to="/chain/">
+        <Anchor>Whitepaper</Anchor>
+      </Link>
     </Item>
     <Item>
       <ExternalAnchor href="https://centrifuge.io/slack/">
