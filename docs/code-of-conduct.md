@@ -54,3 +54,4 @@ If a community member engages in unacceptable behavior, the community organizers
 - [CCC Hacker Ethics](https://www.ccc.de/en/hackerethics)
 - [Hacker One Disclosure Guidelines](https://www.hackerone.com/disclosure-guidelines)
 - [Steven Levy’s Hacker Ethic](https://en.wikipedia.org/wiki/Hacker_ethic)
+
