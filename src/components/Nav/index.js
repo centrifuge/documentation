@@ -113,18 +113,28 @@ const renderMainMenuItems = (direction) => {
   return <Box as="ul" direction={direction} align="center" gap="large">
     <Item>
       <Link partiallyActive={true} activeClassName="activeLink" to="/cent-node/">
-        <Anchor>Node API</Anchor>
+        <Anchor>Centrifuge P2P Node</Anchor>
+      </Link>
+    </Item>
+    <Item>
+      <Link partiallyActive={true} activeClassName="activeLink" to="/tinlake/">
+        <Anchor>Tinlake</Anchor>
+      </Link>
+    </Item>
+    <Item>
+      <Link partiallyActive={true} activeClassName="activeLink" to="/nfts/overview/introduction/">
+        <Anchor>NFTs</Anchor>
+      </Link>
+    </Item>
+    <Item>
+      <Link partiallyActive={true} activeClassName="activeLink" to="/chain/">
+        <Anchor>Centrifuge Chain</Anchor>
       </Link>
     </Item>
     <Item>
       <ExternalAnchor href="https://github.com/centrifuge">
         GitHub
       </ExternalAnchor>
-    </Item>
-    <Item>
-      <Link partiallyActive={true} activeClassName="activeLink" to="/chain/">
-        <Anchor>Whitepaper</Anchor>
-      </Link>
     </Item>
     <Item>
       <ExternalAnchor href="https://centrifuge.io/slack/">

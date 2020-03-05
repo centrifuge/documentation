@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import Nav from "../Nav";
 import {theme} from "../../theme";
-import {FooterMenu, JoinSlack } from "../Footer";
+import {FooterMenu, JoinSlack} from "../Footer";
 
 
 const Header = styled.header`
