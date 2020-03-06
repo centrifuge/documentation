@@ -60,12 +60,12 @@ const Search = ({ open, setOpen }) => {
       onClick={() => {
         setOpen(true);
       }}
-      style={{height: '12px'}}
+      style={{height: '48px'}}
     >
       {({ hover }) => (
         <Box
           round="xlarge"
-          style={{minHeight: '12px', padding: '12px'}}
+          style={{minHeight: '48px', padding: '12px'}}
           background={hover ? 'active' : undefined}
         >
           <SearchIcon />
