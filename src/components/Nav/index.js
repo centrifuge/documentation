@@ -63,7 +63,7 @@ const Nav = (props) => {
           </Box>
         )}
         <Box flex={onMobile} as="li" direction={'column'} justify="center">
-          <ListItem flex={'grow'}>
+          <ListItem style={{minHeight: '48px', padding: '12px'}} flex={'grow'}>
             <Search open={searchOpen} setOpen={value => setSearchOpen(value)}/>
           </ListItem>
         </Box>
