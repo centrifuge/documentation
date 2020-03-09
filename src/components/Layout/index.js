@@ -14,7 +14,7 @@ const Header = styled.header`
   display:flex;
   align-items: center;
   top: 0;
-  position: sticky; 
+  position: sticky;
   flex-direction: column;
   z-index: 100;
 `
