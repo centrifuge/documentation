@@ -8,26 +8,6 @@ import SEO from "../components/SEO";
 import Layout from "../components/Layout";
 import Products from '../components/Home/products';
 
-const JoinUsButton = styled(Button)`
-  max-width: 30%;
-`;
-
-const JoinUsText = styled(Text)`
-  padding: 0 0 50px;
-  position: relative;
-
-  ::after {
-    background-color: #000000;
-    bottom: 0;
-    content: '';
-    display: block;
-    height: 1px;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,0);
-    width: 300px;
-  }
-`
 
 const HomePage = () => (
   <AxisTheme theme={theme}>
@@ -93,34 +73,6 @@ const HomePage = () => (
 
           <Box fill={true} pad={{bottom: 'large'}}>
             <Products areas={areas} columns={columns} rows={rows} />
-          </Box>
-          <Box fill={true} pad={'large'}>
-            <Grid
-              justifyContent="center"
-              gap="large"
-              areas={[
-                { name: "text", start: [0, 0], end: [0, 0] },
-                { name: "button", start: [0, 1], end: [0, 1] }
-              ]}
-              columns={["flex"]}
-              rows={["flex", "flex"]}
-            >
-              <Box gridArea="text">
-                <JoinUsText textAlign="center" size="large" weight="bold">
-                  New to Centrifuge? Get a brif introduction how the <br />
-                  different parts of Centrifuge work together.
-                </JoinUsText>
-              </Box>
-              <Box gridArea="button" align="center">
-                <JoinUsButton
-                  primary
-                  white={'true'}
-                  label={'Join the Team'}
-                  href={'https://centrifuge.io/slack'}
-                  target={'_blank'}
-                />
-              </Box>
-            </Grid>
           </Box>
         </Layout>
       }}
