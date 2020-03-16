@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 
 import {Box, Image, Grid} from "grommet";
-import {NavBar} from "@centrifuge/axis-nav-bar";
+//import {NavBar} from "@centrifuge/axis-nav-bar";
+import {NavBar} from "./navbar"
 import {MenuItem} from "@centrifuge/axis-nav-bar";
 import {Menu as MenuIcon, User as UserIcon, Close as CloseIcon} from "grommet-icons";
 import Search from "../Search";
@@ -96,17 +97,17 @@ const Nav = (props) => {
                 }/>
             <Box direction="row" gridArea="navBar">
 
-                <NavBar align="end"
+                <NavBar 
+                    border={false}
                     menuItems={menuItems}
                     theme={theme}
-                    width={"100%"}
                     selectedRoute={selectedRoute}
                     onRouteClick={
                         (item : MenuItem) => {
                             onRouteClick(item.route);
                         }
                 }>
-                    <Search/></NavBar>
+                <Search /></NavBar>
             </Box>
         </Grid>
     );
