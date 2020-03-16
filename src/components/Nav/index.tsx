@@ -62,42 +62,18 @@ const Nav = (props) => {
     };
 
     return (
-        <Grid fill
-            areas={
-                [
-                    {
-                        name: "logo",
-                        start: [
-                            0, 0
-                        ],
-                        end: [0, 0]
-                    }, {
-                        name: "navBar",
-                        start: [
-                            1, 0
-                        ],
-                        end: [1, 0]
-                    }
-                ]
-            }
-            columns={
-                ["small", "flex"]
-            }
-            rows={
-                ["flex"]}
-                margin={{left:"large"}}>
+        <Box direction="row" 
+        fill="vertical"
+        align="center"
+        justify="between"
+        pad={{ horizontal: 'medium' }}
+        width="xlarge" > 
             <Logo src={wordmark}
-                alignSelf="start"
-                gridArea="logo"
-                onClick={
-                    () => {
-                        onRouteClick('/')
-                    }
-                
-                }/>
-            <Box direction="row" gridArea="navBar">
+                    alignSelf="start"
+                    onClick={ () => { onRouteClick('/') }       
+                    }/>
 
-                <NavBar 
+            <NavBar 
                     border={false}
                     menuItems={menuItems}
                     theme={theme}
@@ -107,9 +83,10 @@ const Nav = (props) => {
                             onRouteClick(item.route);
                         }
                 }>
-                <Search /></NavBar>
-            </Box>
-        </Grid>
+                <Search />
+            </NavBar>
+        </Box>
+     
     );
 };
 
