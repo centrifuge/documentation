@@ -42,12 +42,12 @@ const SidebarAccordion = ({children}) => {
     >
       <AccordionPanel
         header={renderPanelHeader(
-          "Expand Sidebar",
+          "Table of Contents",
           String(activeIndex).includes(0)
         )}
       >
-        <Box overflow="auto"
-             style={{ maxHeight: "300px" }}>
+        <Box overflow="visible"
+             >
           {children}
         </Box>
 
