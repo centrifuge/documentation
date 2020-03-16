@@ -63,17 +63,17 @@ const Nav = (props) => {
 
     return (
         <Box direction="row" 
-        fill="vertical"
-        align="center"
-        justify="between"
-        pad={{ horizontal: 'medium' }}
-        width="xlarge" > 
-            <Logo src={wordmark}
-                    alignSelf="start"
+        fill="horizontal"
+        align="stretch"
+        width="xxlarge" > 
+            <Box pad={{"horizontal":"small"}}>
+                <Logo src={wordmark}
+                    
                     onClick={ () => { onRouteClick('/') }       
                     }/>
-
+            </Box>
             <NavBar 
+                    mainMenuAlignment="right"
                     border={false}
                     menuItems={menuItems}
                     theme={theme}
