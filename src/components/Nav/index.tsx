@@ -66,7 +66,7 @@ const Nav = (props) => {
         fill="horizontal"
         align="stretch"
         width="xxlarge" > 
-            <Box pad={{"horizontal":"small"}}>
+            <Box pad={{"left":"small"}}>
                 <Logo src={wordmark}
                     
                     onClick={ () => { onRouteClick('/') }       
