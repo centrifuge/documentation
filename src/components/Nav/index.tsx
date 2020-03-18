@@ -82,7 +82,9 @@ const Nav = (props) => {
                         (item : MenuItem) => {
                             onRouteClick(item.route);
                         }
-                }>
+                    }
+                    overlayWidth="100vw"
+                    >
                 <Search />
             </NavBar>
         </Box>

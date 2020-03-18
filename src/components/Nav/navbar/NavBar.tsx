@@ -44,6 +44,8 @@ interface Props extends BoxProps, StyledThemeProps<ThemeProps> {
   mainMenuAlignment?: 'right' | 'left',
   sticky?: boolean,
   menuItems: MenuItem[],
+  overlayWidth: string,
+  theme: ThemeProps,
   onRouteClick: (item: MenuItem) => void,
 }
 
@@ -75,6 +77,7 @@ const NavBar: FunctionComponent<Props> = (props) => {
     mainMenuAlignment,
     theme,
     children,
+    overlayWidth,
     ...rest
   } = props;
 
@@ -212,7 +215,7 @@ const NavBar: FunctionComponent<Props> = (props) => {
               onClickOutside={closeMenu}
               onEsc={closeMenu}
             >
-              <Box width={'100vw'} pad={{"top":'medium'}}>
+              <Box width={overlayWidth} pad={{"top":'medium'}}>
                 <Box fill={'horizontal'} align={'end'}>
                   <Anchor onClick={closeMenu}>
                     <icons.close size={icons.size}/>
