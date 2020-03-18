@@ -44,8 +44,7 @@ interface Props extends BoxProps, StyledThemeProps<ThemeProps> {
   mainMenuAlignment?: 'right' | 'left',
   sticky?: boolean,
   menuItems: MenuItem[],
-  overlayWidth: string,
-  theme: ThemeProps,
+  overlayWidth?: string,
   onRouteClick: (item: MenuItem) => void,
 }
 
