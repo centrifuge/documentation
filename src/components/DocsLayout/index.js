@@ -33,8 +33,6 @@ const EditPage = ({file}) => {
 const SidebarContainer = styled(Box)`
   ${props => props.size === 'small' && `
     border: none;
-    position: sticky;
-    position: -webkit-sticky;
     z-index: 1;
     top: 65px; 
   `}
