@@ -66,13 +66,10 @@ const Nav = (props) => {
         fill="horizontal"
         align="stretch"
         width="xxlarge" > 
-            <Box pad={{"left":"small"}}>
-                <Logo src={wordmark}
-                    
-                    onClick={ () => { onRouteClick('/') }       
-                    }/>
-            </Box>
             <NavBar 
+                    logo={<Logo src={wordmark}                    
+                    onClick={ () => { onRouteClick('/') }       
+                    }/>}
                     mainMenuAlignment="right"
                     border={false}
                     menuItems={menuItems}
@@ -84,7 +81,7 @@ const Nav = (props) => {
                         }
                     }
                     overlayWidth="100vw"
-                    >
+                    >                                       
                 <Search />
             </NavBar>
         </Box>

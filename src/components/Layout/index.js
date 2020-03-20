@@ -16,7 +16,7 @@ const Header = styled.header`
   top: 0;
   position: sticky; 
   flex-direction: column;
-  z-index: 100;
+  z-index: 10;
 `
 
 const Layout = ({children, gap, size}) => {
