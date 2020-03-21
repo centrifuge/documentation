@@ -26,7 +26,7 @@ Tinlake's loans can go through a number of stages in the life cycle depending on
 
 &nbsp;<br /><br />
 
-![Loan Lifecycle Diagram](../../../src/images/tinlake/loan_lifecycle.svg)
+![Loan Lifecycle Diagram](./loan_lifecycle.svg)
 
 ### Borrow and repay any amount
 Once the collateral NFT is locked borrow and repay can be done multiple times for any amounts as long as the user is allowed to borrow and does not exceed the loan's maximum borrow limit. A loan can move from `open` to `ready for withdrawal` to `active` and back several times.
@@ -47,4 +47,4 @@ In most cases, both actions can be made atomically in a single block and we prov
 
 ## Overview of contracts
 
-![System Overview](../../../src/images/tinlake/core.svg)
+![System Overview](./core.svg)

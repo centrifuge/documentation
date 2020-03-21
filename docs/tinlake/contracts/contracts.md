@@ -10,7 +10,7 @@ The contracts are separated into two logical areas: loan contracts and investor 
 ## Borrower
 The loan contracts look as follows:
 
-![Borrower Contracts](../../../src/images/tinlake/borrower.svg)
+![Borrower Contracts](./borrower.svg)
 
 
 ### Currency
@@ -92,7 +92,7 @@ To initiate the collection, any user can call `seize` on the Collector. The Coll
 ## Lender Contracts
 The Lender Contracts interact with the borrower side by supplying an amount of Currency ERC20 as requested by the `Shelf.balanceRequest()` method.
 
-![Lender Contracts Call Graph](../../../src/images/tinlake/lender.svg)
+![Lender Contracts Call Graph](./lender.svg)
 
 
 Tinlake enables lenders to invest in two differenct tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. This structure is similar to [senior/junior structures in finance](https://medium.com/centrifuge/a-tale-of-two-tokens-introducing-tin-drop-our-two-investment-tokens-d4c7342c799a).
