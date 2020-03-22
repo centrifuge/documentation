@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import {Box, Image, Grid} from "grommet";
+import {Box, Image, ResponsiveContext} from "grommet";
 //import {NavBar} from "@centrifuge/axis-nav-bar";
 import {NavBar} from "./navbar"
 import {MenuItem} from "@centrifuge/axis-nav-bar";
@@ -19,6 +19,8 @@ const Logo = styled(Image)`
 
 const Nav = (props) => {
     const [selectedRoute, setSelectedRoute] = useState("/");
+    const [searchOpen, setSearchOpen] = React.useState(false);
+
     const menuItems: MenuItem[] = [
         {
             label: "Centrifuge P2P Node",
@@ -62,6 +64,9 @@ const Nav = (props) => {
     };
 
     return (
+        <ResponsiveContext.Consumer>
+        { size => size === "large" ? 
+        (
         <Box direction="row" 
         fill="horizontal"
         align="stretch"
@@ -74,6 +79,7 @@ const Nav = (props) => {
                     border={false}
                     menuItems={menuItems}
                     theme={theme}
+                    itemGap="small"
                     selectedRoute={selectedRoute}
                     onRouteClick={
                         (item : MenuItem) => {
@@ -82,10 +88,37 @@ const Nav = (props) => {
                     }
                     overlayWidth="100vw"
                     >                                       
-                <Search />
+                <Search open={searchOpen} setOpen={value => setSearchOpen(value)}/>
             </NavBar>
-        </Box>
-     
+        </Box>)
+        :
+        (<Box direction="row" 
+            fill="horizontal"
+            align="stretch"
+            > 
+            <Box margin={{"left":"medium"}} fill={true}>
+                <Logo src={wordmark}                    
+                    onClick={ () => { onRouteClick('/') }       
+                }/>
+            </Box>
+            <Box style={{minHeight: '48px', padding: '12px'}} flex={'grow'} alignContent="end">
+                <Search open={searchOpen} setOpen={value => setSearchOpen(value)}/>
+            </Box>
+                <NavBar 
+                    mainMenuAlignment="right"
+                    border={false}
+                    menuItems={menuItems}
+                    theme={theme}
+                    selectedRoute={selectedRoute}
+                    onRouteClick={
+                        (item : MenuItem) => {
+                            onRouteClick(item.route);
+                        }
+                    }
+                    overlayWidth="100vw"
+                    />
+            </Box>)}
+        </ResponsiveContext.Consumer>
     );
 };
 
