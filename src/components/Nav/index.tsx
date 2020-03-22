@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 
 import {Box, Image, ResponsiveContext} from "grommet";
-//import {NavBar} from "@centrifuge/axis-nav-bar";
-import {NavBar} from "./navbar"
+import {NavBar} from "@centrifuge/axis-nav-bar";
 import {MenuItem} from "@centrifuge/axis-nav-bar";
 import {Menu as MenuIcon, User as UserIcon, Close as CloseIcon} from "grommet-icons";
 import Search from "../Search";
