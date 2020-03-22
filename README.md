@@ -30,12 +30,20 @@ To become a part of the Centrifuge community, read the [Code of Conduct](https:/
 
 ### Images
 
-Place all the static images under `src/images` folder and
+Place all the static images under `docs/images` folder and
 add the relative path of the image along with alt tag in the Markdown file like below
 
+```md
+![Tinlake UI](../../images/tinlake/tinlake-ui.png)
 ```
-![Tinlake UI](../../../src/images/tinlake/tinlake-ui.png)
+
+You can use styling attributes on images
+
+```md
+![Tinlake UI](../../images/tinlake/tinlake-ui.png width=200px;float=right)
 ```
+
+For more information and how to add custom attributes, refer to the [gatsby-remark-image-attributes](https://github.com/rbeer/gatsby-remark-image-attributes) plugin.
 
 ### LaTeX
 

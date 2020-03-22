@@ -47,32 +47,43 @@ module.exports = {
     {
       resolve: `gatsby-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`],
-        hastPlugins: [require("rehype-slug"), require("remark-math"), require("rehype-katex")],
+        extensions: [".mdx", ".md"],
+        hastPlugins: [
+          require("rehype-slug"),
+          require("remark-math"),
+          require("remark-image-attributes"),
+          require("rehype-katex")
+        ],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              ignoreFileExtensions: [`png`, `jpg`, `jpeg`],
-            },
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`]
+            }
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              backgroundColor: 'none',
+              backgroundColor: "none",
               disableBgImage: true
-            },
+            }
           },
-        ],
+          {
+            resolve: "gatsby-remark-image-attributes",
+            options: {
+              styleAttributes: ["box-shadow"]
+            }
+          }
+        ]
       }
     },
     {
-      resolve: 'gatsby-redirect-from',
+      resolve: "gatsby-redirect-from",
       options: {
-        query: 'allMdx'
+        query: "allMdx"
       }
     },
-    'gatsby-plugin-meta-redirect',
+    "gatsby-plugin-meta-redirect",
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
