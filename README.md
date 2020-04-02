@@ -40,7 +40,7 @@ add the relative path of the image along with alt tag in the Markdown file like 
 You can use styling attributes on images
 
 ```md
-![Tinlake UI](../../images/tinlake/tinlake-ui.png width=200px;float=right)
+![Tinlake UI](../../images/tinlake/tinlake-ui.png#width=200px;float=right)
 ```
 
 For more information and how to add custom attributes, refer to the [gatsby-remark-image-attributes](https://github.com/rbeer/gatsby-remark-image-attributes) plugin.

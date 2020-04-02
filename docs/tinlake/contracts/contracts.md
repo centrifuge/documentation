@@ -12,7 +12,6 @@ The loan contracts look as follows:
 
 ![Borrower Contracts](./borrower.svg)
 
-
 ### Currency
 Tinlake functions with any ERC20 contract. When deploying an instance of Tinlake, the address of the ERC20 token, we refer to as currency, is set.
 
