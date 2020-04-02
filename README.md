@@ -30,7 +30,7 @@ To become a part of the Centrifuge community, read the [Code of Conduct](https:/
 
 ### Images
 
-Place all the static images under `docs/images` folder and
+Place all the static images under `docs/` folder close to the relevant content and
 add the relative path of the image along with alt tag in the Markdown file like below
 
 ```md
