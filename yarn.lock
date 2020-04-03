@@ -11979,10 +11979,10 @@ relay-runtime@2.0.0:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
 
-remark-image-attributes@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/remark-image-attributes/-/remark-image-attributes-0.1.0.tgz#fd5dfb758d6c2714a1423e07ec2ac4dad37a9dcf"
-  integrity sha512-2i2Ags5xyzChvXrch3SGtZz05BQEqsQa8EEtoeiv7OM3W6jR9XEomfi/Evw1YhB8Qadvp5gEOcj+tWeqUV6W2w==
+remark-image-attributes@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/remark-image-attributes/-/remark-image-attributes-0.1.3.tgz#a3e1e77a1cde8a52f8bd6d3ee145b0f8d1a25eda"
+  integrity sha512-Q9DuaEeNUUDVW7qZ5CgzFWN7BO3aKzSOdTojJJf23sr7Yauh3pmG2M65UXIRzwRYvoUf/WhctvQHB+v8D1S1xA==
 
 remark-math@^1.0.3:
   version "1.0.6"
