@@ -71,7 +71,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-image-attributes",
             options: {
-              styleAttributes: ["box-shadow"]
+              styleAttributes: ["box-shadow", "margin"]
             }
           }
         ]

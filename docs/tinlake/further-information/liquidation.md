@@ -2,7 +2,7 @@
 id: liquidation
 order: 2
 title: Liquidation
-category: 5 . Further Information
+category: 5. Further Information
 ---
 
 ## How does loan liquidation in Tinlake work?
