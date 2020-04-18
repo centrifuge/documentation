@@ -15,4 +15,4 @@ For **Amber**:
 For **Flint**:
  `ws://35.234.84.110:9944`
 
-as the custom endpoint on the settings screen: ![](../../../src/images/chain/custom-endpoint.png)
+as the custom endpoint on the settings screen: ![](./custom-endpoint.png)

@@ -24,6 +24,6 @@ Tinlake UI provides a simple interface for Admins & Borrowers to interact with T
 - Redeem funds from tranches 
 
 
-![Tinlake UI](../../../src/images/tinlake/tinlake-ui.png)
+![Tinlake UI](./tinlake-ui.png)
 
 For contract communication the UI integrates tinlake.js  - the Tinlake JavaScript client implementation.

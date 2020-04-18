@@ -15,7 +15,7 @@ Otherwise, for convenience in getting started, you can use [Infura](https://infu
 
 Find the correct Infura link for the different Ethereum testnets on your Infura dahsboard. Choose the correct endpoint and it will give you the option to copy to clipboard. You will need this link again later in the process.
 
-![](../../../src/images/cent-node/infura.jpg)
+![](./infura.jpg)
 
 ## Installing the Centrifuge Node
 Once you are set up, follow these steps to install the Centrifuge node:
