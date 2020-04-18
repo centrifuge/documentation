@@ -1,8 +1,9 @@
 ---
 id: droptin-tranches
 order: 3
-title: "Drop & Tin: An Intro to Tranches"
+title: "Drop & Tin: The Two Tranches"
 category: 1. Overview
+redirect_from:
 - /tinlake/further-information/droptin/
 ---
 
@@ -44,6 +45,8 @@ The senior tranche would be protected against any losses of their investment and
 
 ### Interest Rate Model 
 The Drop token’s return is defined by a fee function. Unless modified, the default implementation has a fixed interest per pool compounding per second. The interest is only charged on the deployed capital. The Tin token only gets a return on their investment if the Drop token holders have all been fully redeemed. Therefore, Tin token holders do not have a guaranteed fee or return but measure their return by what the Drop token contract leaves in the system.
+
+An overview of how to calculate interest rates for Tinlake contracts can be found [here](../../further-information/interest/). 
 
 ## Minimum Tranche Ratio 
 A Drop purchaser taking the senior tranche would want to have a guarantee that there is at least a minimum percentage of Tin in the pool to make sure that they are protected against a certain amount of losses. Setting this variable guarantees them a certain risk profile. When deploying a pool this variable is set upon initialization and enforced by the contracts. When the minimum ratio is broken, investments and the issuance of additional Drop token is stopped until the minimum ratio is restored.
