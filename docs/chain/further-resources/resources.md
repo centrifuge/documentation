@@ -18,4 +18,4 @@ category: 3. Further Resources
 * Join the conversation on [Discourse](https://discourse.centrifuge.io)
 * Read our [Medium Blog](https://medium.com/centrifuge)
 
-![](../../../src/images/chain/cent-chain-graphic.png)
+![](./cent-chain-graphic.png)

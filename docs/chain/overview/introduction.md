@@ -11,7 +11,7 @@ redirect_from:
 
 The Centrifuge mission is to change the rules of global trade to foster economic opportunity everywhere. Global B2B spend (a.k.a. sent invoices) amounts to roughly [$180 Trillion](https://www.businesswire.com/news/home/20121017005521/en/Visa-Estimates-109.1-Trillion-Global-Commercial-Spend). With payment terms at an average of [60 days](https://www.statista.com/statistics/474224/average-wait-for-invoice-payment-by-sector-united-kingdom/), businesses, and especially SMEs, need financing to bridge the gap. It is one of the main reasons that sustainable growth is so much harder for SMEs than for larger corporates. Existing solutions today, such as factoring and reverse factoring, only address a small portion of that need. This is why we built Centrifuge OS — to allow businesses to exchange business documents (such as invoices) and tokenize those assets to have [greater access to financing](https://medium.com/centrifuge/centrifuge-tinlake-adding-real-world-assets-to-mcd-68cbcb67e9a4) — **thereby unlocking value that has previously been inaccessible.**
 
-![](../../../src/images/chain/cent-stack.png)
+![](./cent-stack.png)
 
 Centrifuge OS is a decentralized platform to support a new generation of applications for the financial supply chain. The stack consists of a peer-to-peer messaging protocol to store and exchange business documents in a private, secure way. As the next layer, we built Centrifuge Chain using Substrate to hold the unalterable, single source of truth of these documents for all parties. Using Centrifuge Chain and dApps built on top, businesses can tokenize documents and use this as collateral to access financing. Tinlake is our securitization protocol for these tokenized assets built on Centrifuge Chain to optimize risk allocation and connect Centrifuge to the DeFi ecosystem.
 
@@ -35,7 +35,7 @@ Centrifuge Chain is optimized specifically for the transactions required by the 
 
 ### How does Centrifuge Work?
 
-![](../../../src/images/chain/CentrifugeOS-flow.png)
+![](./CentrifugeOS-flow.png)
 
 A company, such as Paper Records, uses the Centrifuge P2P Network to sign and send an invoice to Spotify. Spotify verifies receipt of the document and its correctness with its signature and sends an updated, signed version of the document back to Paper Records. Centrifuge Chain is used for the node identities, allowing Paper Records to look up Spotify and for Spotify to verify Paper Records. Paper Records is then able to anchor the document hash with both signatures onto Centrifuge Chain. Using these elements Paper Records can now mint an NFT on Centrifuge Chain that represents the unpaid invoice — ***and use this NFT as collateral to access financing*** on other blockchains such as Ethereum. Third parties, from traditional lenders to DeFi lending pools, can verify the value of the NFT against the on-chain anchors and identities, as well as get access granted to the off-chain document whose authenticity can be verified against the on-chain anchor as well.
 

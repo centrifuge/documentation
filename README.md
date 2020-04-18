@@ -4,8 +4,7 @@
 
 This is a Gatsby site.
 
-The develop branch is continuously deployed to a preview site. [View dev site](http://develop.developer.centrifuge.io/docs/overview/introduction/
-)
+The develop branch is continuously deployed to a preview site. [View dev site](http://develop.developer.centrifuge.io/)
 
 The develop branch is merged to production weekly (unless we need to do a release sooner than that).
 
@@ -15,11 +14,11 @@ The master branch is continuously deployed to production.)
 
 Centrifuge is an open, decentralized operating system which provides a method to create, exchange, and use the data that is used in the financial supply chain. It creates transparent and shareable relationships between interacting companies.
 
-This project documents the procedure to setup a Centrifuge Node. For the step by step procedure, see [Docs](https://developer.centrifuge.io/docs/overview/introduction).
+This project documents the procedure to setup a Centrifuge Node. For the step by step procedure, see [Docs](https://developer.centrifuge.io/).
 
-For information on the Centrifuge code, see the [go-centrifuge project](https://github.com/centrifuge/go-centrifuge).
+For information on the Centrifuge code, see our other repos.
 
-To become a part of the Centrifuge community, read the [Code of Conduct](https://developer.centrifuge.io/docs/overview/code-of-conduct) and join [Slack](https://centrifuge.io/slack/).
+To become a part of the Centrifuge community, read the [Code of Conduct](https://developer.centrifuge.io/cent-node/further-reading/contributing/) and join [Slack](https://centrifuge.io/slack/).
 
 ## Contributing
 
@@ -31,22 +30,20 @@ To become a part of the Centrifuge community, read the [Code of Conduct](https:/
 
 ### Images
 
-Place all the static images under `src/images` folder and
+Place all the static images under `docs/` folder close to the relevant content and
 add the relative path of the image along with alt tag in the Markdown file like below
 
-```
-![Tinlake UI](../../../src/images/tinlake/tinlake-ui.png)
+```md
+![Tinlake UI](../../images/tinlake/tinlake-ui.png)
 ```
 
-To style the above image for a specific width or inlining with content,
-add the below line to the `src/components/DocsContent/styles.css` file
+You can use styling attributes on images
 
+```md
+![Tinlake UI](../../images/tinlake/tinlake-ui.png#width=200px;float=right)
 ```
-img[alt="Tinlake UI"] {
-    width: 350px;
-    float: right; // To align image left/right to the content
-}
-```
+
+For more information and how to add custom attributes, refer to the [gatsby-remark-image-attributes](https://github.com/rbeer/gatsby-remark-image-attributes) plugin.
 
 ### LaTeX
 

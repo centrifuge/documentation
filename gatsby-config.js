@@ -38,41 +38,52 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images`
+        name: `code-of-conduct`,
+        path: `${__dirname}/docs/code-of-conduct.md`
       }
     },
     {
       resolve: `gatsby-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`],
-        hastPlugins: [require("rehype-slug"), require("remark-math"), require("rehype-katex")],
+        extensions: [".mdx", ".md"],
+        hastPlugins: [
+          require("rehype-slug"),
+          require("remark-math"),
+          require("remark-image-attributes"),
+          require("rehype-katex")
+        ],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              ignoreFileExtensions: [`png`, `jpg`, `jpeg`],
-            },
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`]
+            }
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              backgroundColor: 'none',
+              backgroundColor: "none",
               disableBgImage: true
-            },
+            }
           },
-        ],
+          {
+            resolve: "gatsby-remark-image-attributes",
+            options: {
+              styleAttributes: ["box-shadow", "margin"]
+            }
+          }
+        ]
       }
     },
     {
-      resolve: 'gatsby-redirect-from',
+      resolve: "gatsby-redirect-from",
       options: {
-        query: 'allMdx'
+        query: "allMdx"
       }
     },
-    'gatsby-plugin-meta-redirect',
+    "gatsby-plugin-meta-redirect",
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
@@ -89,6 +100,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-netlify-cache`,
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-typescript`
   ]
 };
