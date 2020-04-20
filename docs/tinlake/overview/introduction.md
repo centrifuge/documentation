@@ -14,6 +14,11 @@ Tinlake’s set of smart contracts pools NFTs that represent non-fungible assets
 
 Tinlake enables lenders to invest in two different tranches: A senior tranche issuing a token called DROP, and a junior tranche issuing a token called TIN. The senior tranche has a lower/stable return and bears less risk, while the junior tranche has higher/more volatile returns and takes on more risk of defaulted loans, thus protecting the senior tranche. This structure is similar to common A/B or senior/junior structures in finance.
 
+## Where to go from here
+This documentation is split up into different sections. You can learn more about the mechanics of Tinlake in the following chapters:
+* [Tin and Drop](../tranches/)
+* [Interest Calculation](../../further-information/interest/)
+
 ## User roles
 ### Borrowers and Lenders
 Tinlake interacts with borrowers and lenders. Generally, borrowers have individual loans with varying terms and varying durations drawn against their collateral. Lenders invest in the entire collateral portfolio at a defined rate. Borrowers can borrow by depositing an NFT collateral representing ownership of an asset, which they can get back upon repaying their debt.
