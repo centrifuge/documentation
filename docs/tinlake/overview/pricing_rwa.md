@@ -1,7 +1,7 @@
 ---
 id: pricing-rwa
 order: 4
-title: "Tinlake Pricing and Valuation Series — Part 1"
+title: "Pricing Trade Finance Assets"
 category: 1. Overview
 redirect_from:
 - /tinlake/further-information/pricing-rwa/
@@ -83,10 +83,3 @@ D | 20-29 | 70% | 8.00%
 F | 5-20 | No financing approved | ("Risk cut-off")
 
 Based on this scorecard, Laces would be assigned a risk rating of C and Lender could offer Laces financing with an advance rate of 80% and an interest rate/fee of 7.00% against the invoice as collateral. The Asset Originator would advance $786 (80% advance less $14 interest at 7% interest) and collect $800 in 90 days from Laces. 
-
-
-## Outlook
-Let’s take a step further and assume this invoice would be financed through Tinlake. The Asset Originator approached by Laces would be connected to a Tinlake pool. The financed invoice would be tokenized into an NFT and this NFT could be used as collateral to draw a loan from a DeFi lending protocol.
-
-
-The crucial question for DeFi is, ***How can these pricing parameters be brought on-chain for real-world assets to be priced and used as collateral?*** 
