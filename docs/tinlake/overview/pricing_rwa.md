@@ -8,9 +8,7 @@ redirect_from:
 ---
 
 ## How To Price Real-World Assets
-*This post is co-written by Dennis Wellmann, Product Manager at Centrifuge and Howard Krieger, Founder of Residual Token Inc. Howard is an experienced valuation professional with nearly 20 years of experience and specializes in the valuation of fixed income securities and complex financial instruments. He is a Managing Director for a top 10 U.S. accounting firm, a former Big-4 Senior Manager responsible for a variety of structured finance valuation assignments, and a leading pricing expert in the crypto community.*
 
-## Introduction
 Centrifuge’s Tinlake is an asset-backed smart contract lending platform built to responsibly bridge real-world assets, such as invoices, mortgages or streaming royalties to the DeFi ecosystem. This post is the first in a multiple part series about how valuation and pricing of **real-world assets** work within the Tinlake ecosystem. Collectively, this series will form our knowledge base on real-world asset pricing and will be used to educate the DeFi community as we bridge non-native crypto assets into the decentralized finance ecosystem.
 This post starts with the **fundamentals of pricing real-world assets.** It will focus on one particular asset — an invoice — and explain which factors are usually considered in pricing this asset and how these factors may be turned into an interest rate. Invoices are particularly interesting collateral for Tinlake and DeFi because they have historically low default rates and a short maturity of 30–90 days.
 
@@ -27,7 +25,12 @@ Suppliers around the world typically have to wait for 30–90 days to get paid f
 
 The parties involved in issuing and financing an invoice through Tinlake usually are the following:
 
-![](./pricing-rwa-1.png)
+Roles | Description |
+--- | --- |
+Supplier/Borrower | Invoices the buyer for delievered goods or services; has to wait for payment by the buyer; finances this invoice to get paid right away.
+Buyer | Purchases the goods or services and incurs the charges related to the invoice for the goods or services
+Asset Originator | Provides capital to supplier at a discount to the face value of the invoice, and 100% of the collections related to the invoices.
+Lender | Lends money to the Asset Originator in exchange for certain rights and privileges regarding the invoice payments of buyers.
 
 Financing an invoice can be structured as a simple loan with one bullet repayment. The two decisive pricing parameters are **advance rate** and **interest rate.** The advance rate acts as a reserve or protection for the Lender against losses. The interest amount/finance fee is usually deducted up-front and the loan is then paid back in relation to the payment due date of the invoice.
 
@@ -52,27 +55,38 @@ There is inherent bias baked into repeating relationships that can be either pos
 The most important factor when estimating the advance rate/fee for invoices is volume. To a Lender, a large number of invoices means the risk of non-payment is spread across a number of counterparties — more invoices are better than less. If one is pricing a pool of invoices, the statistics around the invoice pool can be considered. One can think of a distribution function where a great sample amount means a smoother distribution. Lower invoice counts mean that collecting on the discrete, single invoice has a more significant impact on the pool’s return.
 
 ## Estimating Advance Fee and Rate 
-One of our users is ConsolFreight, which is a SaaS freight technology provider that advances working capital finance to freight forwarders’ operations (e.g. air, ocean, rail, road, multi-modal, etc.) and collects from shippers (e.g. supermarkets, hospitals, office supplies, etc.). The founding team combines 50+ years of experience running successful freight forwarding businesses in the U.S., Latin America, and Europe.
+Now let’s take a look at how considering all these factors may translate into advance rate and a fee/interest rate for financing an invoice. This will be illustrated with a very simple example. Having this in mind, please note that valuation and pricing generally come with a large variety of approaches and different, usually higher levels of complexity.
 
-We will use ConsolFreight to take a closer look at how considering all these factors may translate into an advance rate and a fee/interest rate for financing an invoice.
+Imagine a large Buyer, “Sneaker Group” and a Supplier, “Laces Inc”. There is also  “Lender Co” willing to provide financing. Laces invoices Sneaker for its delivery of laces worth USD $1,000 with payment due in 90 days. Laces wants to request financing from Lender with the invoice as collateral.
 
-A typical freight forwarder invoice is about USD $5,000 with payment due in 30 days. ConsolFreight has embedded itself into the payment systems of hundreds of retailers and freight forwarders. A freight forwarder can electronically request financing from ConsolFreight for an invoice that is already identified in the system. The invoice will serve as collateral and ConsolFreight will collect from the shipper.
+To set interest and advance rates, the Lender may use a homemade risk scorecard. These scorecards come in a variety of forms and different levels of complexity. For this purpose, we will assume a very simple scorecard, where with five individual factors described above (Note, that portfolio aspects are not considered for this simple example of an individual invoice) contribute equally with a score from 1 (the worst) to 10 (the best) to an overall risk score of up to 50. Let’s assume the following scores for Laces Inc:
 
-To set interest and advance rates, ConsolFreight has two approaches. Often they hire a trade finance insurance company that evaluates and pre-approves every shipper before providing insurance coverage. In other cases, they may also underwrite based on their own risk scorecard. For this example, we will use a highly simplified version of one of ConsolFreight’s scorecards to match the pricing factors we have described above. We further assume that each of the five individual factors described above contributes equally with a score from 1 (the worst) to 10 (the best) to an overall risk score of up to 50.
 
-Now let’s assume we have a shipment from a grocery supplier (“Merchandise Co”) to a supermarket (“Supermarket 24”) in Panama handled by freight forwarder “Tech Cargo”. Tech Cargo invoices Supermarket 24 and requests financing from ConsolFreight. Here is what the scores for an invoice from Tech Cargo may look like:
+Factor | Score | Description
+--- | --- | ---
+Supplier Credit Worthiness ("Laces, Inc.") | 7 | Laces provides its financial information, tax returns, bank statements to AO so that it can estimate credit worthiness. The analysis leads to an above average score which implies risk of default is lower compared to the overall market. Lower advance rates needed. 
+Buyer Credit Worthiness (“Sneaker Group”) | 10 | Sneaker is a large buyer and publicly traded with excellent credit ratings provided by established rating agencies
+Relationship/History | 7 | A strong relationship means less variance around the outcome, thus lower risk.
+Industry | 5 | Lace’s industry is cyclical and can impact collections.
+Country | 7 | Sneaker and Laces operate lower risk jurisdictions and warrant pricing that reflects this lower risk.
 
-![](pricing-rwa-2.png)
+Adding up the individual scores for each of these factors leads to a risk score of 36 for Laces. 
 
-Adding up the individual scores for each of these factors leads to a risk score of 42 for Tech Cargo.
+This risk score can be mapped on a risk scorecard with assigned advance and interest rates for risk scores. The typical advance rate is usually between 70% to 90%. As of the writing of this blog, annual rates (APR) around 6% to 8% on a loan 90-day invoice are consistent with observable market rates. These rates would also include and reflect the Lenders operational costs and cost of capital, which are similar for all loans. Having this in mind, a simple scorecard could look like this:
 
-This risk score can be mapped on a risk scorecard with assigned advance and interest rates for risk scores. The typical advance rate is usually between 85% to 95%. As of the writing of this blog, annual rates (APR) around 10%-15% on a loan backed by a 30-day invoice are consistent with observable market rates. Having this in mind, a simple scorecard could look like this:
+Risk Rating | Score | Advance Rate | Interest Rate
+--- | --- | --- | --- |
+A | 45-50 | 90% | 5.00% 
+B | 40-44 | 80% | 6.00%
+C | 30-39 | 80% | 7.00% 
+D | 20-29 | 70% | 8.00%
+F | 5-20 | No financing approved | ("Risk cut-off")
 
-![](pricing-rwa-3.png)
+Based on this scorecard, Laces would be assigned a risk rating of C and Lender could offer Laces financing with an advance rate of 80% and an interest rate/fee of 7.00% against the invoice as collateral. The Asset Originator would advance $786 (80% advance less $14 interest at 7% interest) and collect $800 in 90 days from Laces. 
 
-Tech Cargo would be assigned a risk rating of B and ConsolFreight would offer Tech Cargo financing with an advance rate of 95% and an interest rate/fee of 12.00% against the invoice as collateral. If the invoice is $5,000, then ConsolFreight would advance $4,704 (95% advance less 12% interest) and collect $4,750 in 30 days from Tech Cargo.
 
 ## Outlook
-Let’s take a step further and assume this invoice would be financed through Tinlake. ConsolFreight would be connected to a Tinlake pool. The financed invoice would be tokenized into an NFT, and this NFT could be used as collateral to draw a loan from a DeFi lending protocol.
+Let’s take a step further and assume this invoice would be financed through Tinlake. The Asset Originator approached by Laces would be connected to a Tinlake pool. The financed invoice would be tokenized into an NFT and this NFT could be used as collateral to draw a loan from a DeFi lending protocol.
 
-The crucial question for DeFi is, ***How can these pricing parameters be brought on-chain for real-world assets to be priced and used as collateral?*** This question and others related to pricing will be addressed in subsequent blog posts describing how Tinlake pricing oracles will work and enable decentralized, public pricing of real-world assets as collateral in DeFi.
+
+The crucial question for DeFi is, ***How can these pricing parameters be brought on-chain for real-world assets to be priced and used as collateral?*** 
