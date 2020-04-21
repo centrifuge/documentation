@@ -45,14 +45,13 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
-        hastPlugins: [
-          require("rehype-slug"),
-          require("remark-math"),
+        rehypePlugins: [require("rehype-slug"), require("rehype-katex")],
+        remarkPlugins: [
           require("remark-image-attributes"),
-          require("rehype-katex")
+          require("remark-math")
         ],
         gatsbyRemarkPlugins: [
           {
@@ -65,7 +64,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               backgroundColor: "none",
-              disableBgImage: true
+              linkImagesToOriginal: false
             }
           },
           {
