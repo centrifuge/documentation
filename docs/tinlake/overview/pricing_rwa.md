@@ -7,7 +7,7 @@ redirect_from:
 - /tinlake/further-information/pricing-rwa/
 ---
 
-# How To Price Real-World Assets
+## How To Price Real-World Assets
 *This post is co-written by Dennis Wellmann, Product Manager at Centrifuge and Howard Krieger, Founder of Residual Token Inc. Howard is an experienced valuation professional with nearly 20 years of experience and specializes in the valuation of fixed income securities and complex financial instruments. He is a Managing Director for a top 10 U.S. accounting firm, a former Big-4 Senior Manager responsible for a variety of structured finance valuation assignments, and a leading pricing expert in the crypto community.*
 
 ## Introduction
@@ -27,7 +27,7 @@ Suppliers around the world typically have to wait for 30–90 days to get paid f
 
 The parties involved in issuing and financing an invoice through Tinlake usually are the following:
 
-![](pricing-rwa-1.png)
+![](./pricing-rwa-1.png)
 
 Financing an invoice can be structured as a simple loan with one bullet repayment. The two decisive pricing parameters are **advance rate** and **interest rate.** The advance rate acts as a reserve or protection for the Lender against losses. The interest amount/finance fee is usually deducted up-front and the loan is then paid back in relation to the payment due date of the invoice.
 
