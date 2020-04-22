@@ -6937,12 +6937,12 @@ gatsby-remark-copy-linked-files@^2.1.31:
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-image-attributes@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-image-attributes/-/gatsby-remark-image-attributes-0.1.3.tgz#863cae513079e92eb08c4afd53d65a9862163195"
+gatsby-remark-image-attributes@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-image-attributes/-/gatsby-remark-image-attributes-0.1.4.tgz#06305fe8052eaa48f4ecce17a36ad4f6b30633e3"
+  integrity sha512-Pwj+QQPH6RD8bKM5ewPxvp9T3Z8ypY340KwCeOSqZOElVZZb8NJ4gt/DI5hKYJeYc13/zjjk78s1H/N6mKenIQ==
   dependencies:
     "@babel/runtime" "^7.8.7"
-    cheerio "^1.0.0-rc.3"
     lodash.isstring "^4.0.1"
     lodash.uniq "^4.5.0"
     unist-util-visit "^2.0.2"
