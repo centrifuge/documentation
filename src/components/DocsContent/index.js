@@ -7,8 +7,6 @@ import qs from "query-string";
 
 import CodeHighlighter from "../CodeHighlighter";
 
-import "./styles.css";
-
 import link from "../../images/link.svg";
 
 const ListBase = styled(Grommet.Text)`
