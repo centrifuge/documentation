@@ -1,7 +1,7 @@
 ---
 id: pricing-rwa
 order: 4
-title: "Pricing Trade Finance Assets"
+title: "Pricing Real-World Assets"
 category: 1. Overview
 redirect_from:
 - /tinlake/further-information/pricing-rwa/
