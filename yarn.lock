@@ -5932,6 +5932,11 @@ executable@^4.1.0:
   dependencies:
     pify "^2.2.0"
 
+exenv@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+  integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
+
 exif-parser@^0.1.12:
   version "0.1.12"
   resolved "https://registry.yarnpkg.com/exif-parser/-/exif-parser-0.1.12.tgz#58a9d2d72c02c1f6f02a0ef4a9166272b7760922"
@@ -6937,10 +6942,10 @@ gatsby-remark-copy-linked-files@^2.1.31:
     probe-image-size "^4.1.1"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-image-attributes@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-image-attributes/-/gatsby-remark-image-attributes-0.1.4.tgz#06305fe8052eaa48f4ecce17a36ad4f6b30633e3"
-  integrity sha512-Pwj+QQPH6RD8bKM5ewPxvp9T3Z8ypY340KwCeOSqZOElVZZb8NJ4gt/DI5hKYJeYc13/zjjk78s1H/N6mKenIQ==
+gatsby-remark-image-attributes@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-image-attributes/-/gatsby-remark-image-attributes-0.2.1.tgz#f7c0fb31c5ea1347c9c75bbf3c689666f96ef941"
+  integrity sha512-n66pnCaoB2Tm6e6OFwDl61OUdfZLSs8L+8R196XH/+kyqiURb2RQPMLF5ezFFsT+bN/br5H/2Z9uwZsniC6VdA==
   dependencies:
     "@babel/runtime" "^7.8.7"
     lodash.isstring "^4.0.1"
@@ -7905,6 +7910,7 @@ hast-util-to-string@^1.0.0:
 hast-util-to-text@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hast-util-to-text/-/hast-util-to-text-1.0.1.tgz#90d75c82084c10b260b6fe23a7a8f9b84d2d6b3c"
+  integrity sha512-Xvp9fWiWVb4WaHc1E1g6dtyYlcVwyjRT0CC9oXtVUNhbmIB1gqRVBuBIFJgrFkYxdo+T3UIl5i5ipPGaPRnUOw==
   dependencies:
     hast-util-is-element "^1.0.2"
     repeat-string "^1.6.1"
@@ -9409,6 +9415,7 @@ jsx-ast-utils@^2.2.1, jsx-ast-utils@^2.2.3:
 katex@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/katex/-/katex-0.11.1.tgz#df30ca40c565c9df01a466a00d53e079e84ffaa2"
+  integrity sha512-5oANDICCTX0NqYIyAiFCCwjQ7ERu3DQG2JFHLbYOf+fXaMoH8eg/zOq5WSYJsKMi/QebW+Eh3gSM+oss1H/bww==
   dependencies:
     commander "^2.19.0"
 
@@ -12468,14 +12475,32 @@ react-hot-loader@^4.12.20:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
+react-image-lightbox@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-image-lightbox/-/react-image-lightbox-5.1.1.tgz#872d1a4336b5a6410ea7909b767cf59014081004"
+  integrity sha512-GprldD8AqpRb2hsOdns3sI7Xeo9hJlcybDxuli4RB+ml1J/GaFaUuRkT/7IrTLv2+4vkR74ahz2LD0HOUHI7wA==
+  dependencies:
+    prop-types "^15.6.2"
+    react-modal "^3.8.1"
+
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
+react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-modal@^3.8.1:
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.11.2.tgz#bad911976d4add31aa30dba8a41d11e21c4ac8a4"
+  integrity sha512-o8gvvCOFaG1T7W6JUvsYjRjMVToLZgLIsi5kdhFIQCtHxDkA47LznX62j+l6YQkpXDbvQegsDyxe/+JJsFQN7w==
+  dependencies:
+    exenv "^1.2.0"
+    prop-types "^15.5.10"
+    react-lifecycles-compat "^3.0.0"
+    warning "^4.0.3"
 
 react-reconciler@^0.24.0:
   version "0.24.0"
@@ -12798,6 +12823,7 @@ regjsparser@^0.6.4:
 rehype-katex@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/rehype-katex/-/rehype-katex-2.0.0.tgz#1cfb6d9bf675cdac8001f678ef36f4134dddccfd"
+  integrity sha512-Fp3kbixgg6bNd04m5XfhJa2BX073lKFZ5TgBAkS5vLQD20ej2gCrQBUfhLgNqoQeoahi7JiRn4I0jKSA3484Sw==
   dependencies:
     hast-util-to-text "^1.0.0"
     katex "^0.11.0"
@@ -12808,6 +12834,7 @@ rehype-katex@^2.0.0:
 rehype-parse@^6.0.0:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/rehype-parse/-/rehype-parse-6.0.2.tgz#aeb3fdd68085f9f796f1d3137ae2b85a98406964"
+  integrity sha512-0S3CpvpTAgGmnz8kiCyFLGuW5yA4OQhyNTm/nwPopZ7+PI11WnGl1TTWTGv/2hPEe/g2jRLlhVVSsoDH8waRug==
   dependencies:
     hast-util-from-parse5 "^5.0.0"
     parse5 "^5.0.0"
@@ -15001,6 +15028,7 @@ unist-builder@^1.0.1:
 unist-util-find-after@^2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/unist-util-find-after/-/unist-util-find-after-2.0.4.tgz#3fcccf0df3a2e7291fa119224c0f22158357cc10"
+  integrity sha512-zo0ShIr+E/aU9xSK7JC9Kb+WP9seTFCuqVYdo5+HJSjN009XMfhiA1FIExEKzdDP1UsgvKGleGlB/pSdTSqZww==
   dependencies:
     unist-util-is "^3.0.0"
 

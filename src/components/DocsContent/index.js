@@ -3,9 +3,9 @@ import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import { MDXProvider } from "@mdx-js/react";
 import styled from "styled-components";
 import * as Grommet from "grommet";
-import qs from "query-string";
 
 import CodeHighlighter from "../CodeHighlighter";
+import { LightBox } from "../LightBox";
 
 import link from "../../images/link.svg";
 
@@ -121,7 +121,8 @@ const mdxGrommetMap = {
   ol: (props) => <ListBase {...props} as="ol" />,
   a: Grommet.Anchor,
   img: (props) => {
-    return <Grommet.Image {...props} />;
+    const useLightBox = !!props["data-zoom"];
+    return useLightBox ? <LightBox {...props} /> : <Grommet.Image {...props} />;
   },
   inlineCode: (props) => <Grommet.Text color="brand" as="code" {...props} />,
   code: (props) => (
