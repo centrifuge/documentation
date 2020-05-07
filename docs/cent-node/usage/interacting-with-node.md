@@ -5,7 +5,7 @@ title: Rest API
 category: 3. Using the Centrifuge Node
 ---
 
-Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-4.api-docs.io/0.0.6/) documentation for a complete list of endpoints.
+Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-6.api-docs.io/2.0.0) documentation for a complete list of endpoints.
 
 ## Authentication Headers
 The Centrifuge node is capable of maintaining multiple accounts. Accounts are used to track of the different users that might be using a single instance of a Centrifuge node. We use an http header for specifying which account to use for a given request.
