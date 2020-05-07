@@ -46,8 +46,8 @@ const Products = ({ areas, columns, rows }) => {
         <CardBox
           gridArea={'p2pNode'}
         >
-          <Anchor href="/p2p-node/"><Image style={{maxWidth: '480px'}} src={p2pNodeLogo}/></Anchor>
-          <Anchor href="/p2p-node/" style={anchorStyles}>Centrifuge P2P Node</Anchor>
+          <Anchor href="/cent-node/"><Image style={{maxWidth: '480px'}} src={p2pNodeLogo}/></Anchor>
+          <Anchor href="/cent-node/" style={anchorStyles}>Centrifuge P2P Node</Anchor>
           <Text textAlign="center">Exchange documents privately via our P2P network and interact with tokens on chain.</Text>
         </CardBox>
         <CardBox gridArea={'nft'}>
