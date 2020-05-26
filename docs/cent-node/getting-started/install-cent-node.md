@@ -81,7 +81,7 @@ $ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--
 
 ## Look up your Centrifuge ID 
 
-A participant of the Centrifuge OS will be identified by an identity (Centrifuge ID) within the network. The createconfig command automatically creates an identity and the key pairs. 
+A participant of the Centrifuge P2P network will be identified by an identity (Centrifuge ID) within the network. The createconfig command automatically creates an identity and the key pairs. 
 
 To look up your Centrifuge ID via Terminal use:
 

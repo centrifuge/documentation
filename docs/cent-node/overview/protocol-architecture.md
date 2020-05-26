@@ -19,7 +19,7 @@ The Centrifuge Node provides a simple API interface to interact with the peer to
 
 ## Centrifuge Identities
 
-A Centrifuge Identity (CentrifugeID) is a unique ID assigned to a participant of Centrifuge OS in a network. Centrifuge identities smart contracts on Ethereum. It keeps track of the different cryptographic keys in use and enforces that this data can only be modified by the creator and/or a delegate chosen by the creator.
+A Centrifuge Identity (CentrifugeID) is a unique ID assigned to a participant of Centrifuge in a network. Centrifuge identities smart contracts on Ethereum. It keeps track of the different cryptographic keys in use and enforces that this data can only be modified by the creator and/or a delegate chosen by the creator.
 
 An identity has the following credentials:
 
@@ -27,7 +27,7 @@ An identity has the following credentials:
 
 * Signing Keys: Documents in Centrifuge are signed with signing keys. These signatures are a part of the Merkle root that is anchored on the public chain and verifiable at a later time.
 
-* Ethereum Accounts: When interacting with a smart contract on Ethereum, an account needs to be linked to the identity to act on its behalf. The linked Ethereum accounts are the accounts that are allowed to interact with DApps utilizing Centrifuge OS.
+* Ethereum Accounts: When interacting with a smart contract on Ethereum, an account needs to be linked to the identity to act on its behalf. The linked Ethereum accounts are the accounts that are allowed to interact with DApps utilizing Centrifuge.
 
 The unique identifier of a participant in the Centrifuge protocol is equivalent to the Ethereum address of his/her identity contract. Centrifuge is adopting the DID-compatible ERC725v1 Ethereum standard for self sovereign identities. More information can be found [here](https://w3c-ccg.github.io/did-spec/).
 
