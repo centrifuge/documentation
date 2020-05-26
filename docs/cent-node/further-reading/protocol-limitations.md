@@ -5,15 +5,15 @@ title: Protocol Limitations
 category: 4. Further information
 ---
 
-Centrifuge OS is in an early stage of its development. The protocol and its first client implementation have a limited feature set compared to the end-vision. Not all features are implemented yet, and tradeoffs between security, speed, end-user features, and protocol flexibility are made continuously.
+Centrifuge is in an early stage of its development. The protocol and its first client implementation have a limited feature set compared to the end-vision. Not all features are implemented yet, and tradeoffs between security, speed, end-user features, and protocol flexibility are made continuously.
 
-Following is a list of important limitations and not yet implemented features of Centrifuge OS.
+Following is a list of important limitations and not yet implemented features of Centrifuge.
 
 ## The Meaning of a Signature
 
 When two Centrifuge nodes exchange documents with each other, they automatically attach signatures to the transferred documents after validation of the data payload and signatures/keys. A Centrifuge node validates the structural integrity of a received document as well as the validity of previous signatures compared to the public keys of the corresponding Centrifuge ID of the counterparty. A Centrifuge itself does not validate if the document data makes sense from a business point of view.
 
-A Centrifuge node is a technical client to Centrifuge OS. This client exchanges and signs data in well-known formats. It does not validate document data authenticity.
+A Centrifuge node is a technical client to Centrifuge. This client exchanges and signs data in well-known formats. It does not validate document data authenticity.
 
 Data authenticity and correctness are always validated by the upstream system. E.g. the accounting system interacting with a Centrifuge node.
 
@@ -31,7 +31,7 @@ For the initial implementation, we assume that businesses only add their already
 
 ## No Document Forking
 
-Centrifuge OS does not support forking or successive merging of document state. If disagreement of document state between collaborators exist this has to be solved by the user by creating a new document.
+Centrifuge does not support forking or successive merging of document state. If disagreement of document state between collaborators exist this has to be solved by the user by creating a new document.
 
 Collaborators can withhold their signature on a given document update if they choose to do so. The mitigation to this behavior is to remove the withholding/offline collaborator from the document's collaborator list and re-issue the document update and/or create a new document based on the original document data with a new set of collaborators.
 
