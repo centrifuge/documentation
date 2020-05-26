@@ -1,9 +1,11 @@
 ---
 id: validate
 order: 5
-title: Start to Validate on Amber/Flint Testnet
+title: Running your own to Validator 
 category: 2. Get Started
 ---
+Here's a quick guide to get started validating Centrifuge Chain Amber or Flint testnets.
+
 
 1. Open the Portal 
 
