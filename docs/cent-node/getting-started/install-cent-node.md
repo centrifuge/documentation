@@ -9,13 +9,13 @@ Before being able to transfer and anchor financial documents and mint NFTs you n
 
 ## Set-up Infura
 
-For this, we [recommend](/docs/centrifuge-node/getting-started/tools) [setting up](docs/getting-started/geth-account) your own geth node.
+For this, we [recommend](/cent-node/getting-started/tools) [setting up](/cent-node/getting-started/geth-account) your own geth node.
 
 Otherwise, for convenience in getting started, you can use [Infura](https://infura.io). Once you have registered an account, you can create a new project and select the respective endpoint. It will give the user the option to select: Mainnet, Ropsten, Rinkeby or Kovan. 
 
 Find the correct Infura link for the different Ethereum testnets on your Infura dahsboard. Choose the correct endpoint and it will give you the option to copy to clipboard. You will need this link again later in the process.
 
-![](https://i.imgur.com/EydBc5a.jpg)
+![](./infura.jpg)
 
 ## Installing the Centrifuge Node
 Once you are set up, follow these steps to install the Centrifuge node:
@@ -81,7 +81,7 @@ $ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--
 
 ## Look up your Centrifuge ID 
 
-A participant of the Centrifuge OS will be identified by an identity (Centrifuge ID) within the network. The createconfig command automatically creates an identity and the key pairs. 
+A participant of the Centrifuge P2P network will be identified by an identity (Centrifuge ID) within the network. The createconfig command automatically creates an identity and the key pairs. 
 
 To look up your Centrifuge ID via Terminal use:
 

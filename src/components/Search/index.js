@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import docsearch from "docsearch.js";
-import { TextInput } from "grommet";
 import styled from "styled-components";
+
+import { Box, Button, Keyboard, TextInput, Image } from 'grommet';
+import { Search as SearchIcon } from "grommet-icons";
 
 import "docsearch.js/dist/cdn/docsearch.min.css";
 import "./algoliaOverrides.css";
@@ -19,7 +21,11 @@ const SearchBox = styled(TextInput).attrs({
   dark: true
 })``;
 
-const Search = () => {
+const onEnter = () => {
+
+};
+
+const SearchInput = ({ setOpen }) => {
   useEffect(() => {
     docsearch({
       apiKey: algolia.apiKey,
@@ -29,7 +35,44 @@ const Search = () => {
     });
   }, []);
 
-  return <SearchBox />;
+  return (
+    <Keyboard
+      onEsc={() => {
+        setOpen(false);
+      }}
+      onEnter={onEnter}
+    >
+      <SearchBox focusIndicator={false} />
+    </Keyboard>
+  );
+}
+
+const Search = ({ open, setOpen }) => {
+  if (open) {
+    return (
+      <SearchInput setOpen={setOpen}/>
+    );
+  }
+
+  return (
+    <Button
+      plain
+      onClick={() => {
+        setOpen(true);
+      }}
+      style={{height: '48px'}}
+    >
+      {({ hover }) => (
+        <Box
+          round="xlarge"
+          style={{minHeight: '48px', padding: '12px'}}
+          background={hover ? 'active' : undefined}
+        >
+          <SearchIcon />
+        </Box>
+      )}
+    </Button>
+  );
 };
 
 export default Search;

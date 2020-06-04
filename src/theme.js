@@ -18,16 +18,17 @@ export const theme = deepMerge(axisThemeConfig, {
       border: 'bottom',
       verticalAlign: 'bottom',
       fill: 'false',
+      extend: props => css`
+       font-weight: bold;
+      `,
     },
     body: {
       align: 'start',
       pad: {horizontal: 'small', vertical: 'xsmall'},
       border: null,
       extend: props => css`
-           
-           border-bottom: 1px solid ${axisThemeConfig.global.colors['light-4']} ;
-          
-          `,
+        border-bottom: 1px solid ${axisThemeConfig.global.colors['light-4']} ;
+      `,
     },
     footer: {
       align: 'start',

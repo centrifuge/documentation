@@ -7,6 +7,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,27 +19,71 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `chain`,
+        path: `${__dirname}/docs/chain`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `tinlake`,
         path: `${__dirname}/docs/tinlake`
       }
     },
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        extensions: [`.mdx`, `.md`],
-        hastPlugins: [require("rehype-slug")],
-
+        name: `nfts`,
+        path: `${__dirname}/docs/nfts`
       }
     },
     {
-      resolve: 'gatsby-redirect-from',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        query: 'allMdx'
+        name: `code-of-conduct`,
+        path: `${__dirname}/docs/code-of-conduct.md`
       }
     },
-    'gatsby-plugin-meta-redirect',
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: [".mdx", ".md"],
+        hastPlugins: [
+          require("rehype-slug"),
+          require("remark-math"),
+          require("remark-image-attributes"),
+          require("rehype-katex")
+        ],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: []
+            }
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              backgroundColor: "none",
+              disableBgImage: true
+            }
+          },
+          {
+            resolve: "gatsby-remark-image-attributes",
+            options: {
+              styleAttributes: ["box-shadow", "margin"]
+            }
+          }
+        ]
+      }
+    },
+    {
+      resolve: "gatsby-redirect-from",
+      options: {
+        query: "allMdx"
+      }
+    },
+    "gatsby-plugin-meta-redirect",
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
@@ -54,6 +100,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-netlify-cache`,
-    `gatsby-plugin-netlify`
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-typescript`
   ]
 };
