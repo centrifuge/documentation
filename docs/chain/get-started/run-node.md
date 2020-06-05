@@ -70,6 +70,7 @@ docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centri
     --bootnodes=/ip4/34.89.236.50/tcp/30333/p2p/Qma8avu1Cwhiynk6vUv5e1vK5LV7zzmLsoaVEd7La4ju8D
 ```
 ** Mainnet deployments should follow a more secure setup. Learn more here: https://github.com/w3f/polkadot-secure-validator
+
 4. Generate new session keys in your node's keystore by running: `curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_rotateKeys", "id": 1 }' http://127.0.0.1:9933` This command will return the public keys under the "result" field starting with `0x...`, which you should copy in order to use them in the next chapter.
 
 ### Option 2) Run a bare metal node
