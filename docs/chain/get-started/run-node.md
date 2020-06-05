@@ -1,11 +1,11 @@
 ---
 id: run-node
 order: 4
-title: Run Your Own Node on Amber/Flint Testnet
+title: Run Your Own Node on Mainnet/Amber/Flint Networks
 category: 2. Get Started
 ---
 
-## Run Your Own Node on Amber/Flint Testnet
+## Run Your Own Node on Mainnet/Amber/Flint Networks
 ---
 ***System Requirements***
 The system has not been officially load-tested yet but a machine with the following specs will be able to run a validator for Flint
@@ -17,7 +17,7 @@ Validators for the testnet are being run on
 - Google Cloud n1-standard-1 instances
 - Digital Ocean droplets with 2GB Memory, 1vCPU
 - Standard desktop machines with Docker
-- Theoretically also runable on Raspberry Pi 4, but not confirmed
+- Theoretically also runnable on Raspberry Pi 4, but not confirmed
 ---
 
 To run your own node, you have 2 options: 
@@ -30,38 +30,46 @@ Running a bare metal setup requires you to compile centrifuge chain from source,
 
 ### Option 1) Run your node in a Docker Container
 
-1. Ensure you have [docker](https://docs.docker.com/install/) as well as [subkey](https://substrate.dev/docs/en/development/tools/subkey#installation) installed.
-1. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. 
+1. Ensure you have [docker](https://docs.docker.com/install/) as well as [subkey](https://substrate.dev/docs/en/development/tools/subkey#installation) installed. Use `subkey` version `v2.0.0-alpha3`.
+2. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. For mainnet keys use network flag: `subkey generate -n centrifuge`  
 1. Start your node by running the following, where {name} is the name that will show up in Polkadot Telemetry and {node-key} is the private key you just generated (without the `0x` prefix). Note that we do expose RPC and WS ports here for simplicity – these ports should not be exposed in a production grade setup.
 
 a) Amber: 
 ```
-docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20200203153054-c2132bb \
+docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20200506231744-908086f \
     centrifuge-chain \
     --validator \
     --name="{name}" \
     --node-key={node-key} \
     --chain=amber \
     --bootnodes=/ip4/35.242.216.93/tcp/30333/p2p/QmeoT4nzw5QDRaqdkBfnaqW9grMTLiEuYUpu4hSbseKB8C \
-    --bootnodes=/ip4/34.89.161.185/tcp/30333/p2p/QmbNXcLkbD7Z2BaSUTfqb1VEkEDTij9rhS79b8F2uiJ3Ki \
-    --bootnodes=/ip4/35.246.201.166/tcp/30333/p2p/QmX1hSCYFgeW876VQvWYkkmxon91ofvsnmk8ceCk1i8Tyv \
-    --bootnodes=/ip4/35.242.226.138/tcp/30333/p2p/QmW2NQVT1nLqAJCsxXixHkuCN93bCbbdminYKNSGyEX77R \
+    --bootnodes=/ip4/34.89.161.185/tcp/30333/p2p/QmbNXcLkbD7Z2BaSUTfqb1VEkEDTij9rhS79b8F2uiJ3Ki
     --unsafe-rpc-external --unsafe-ws-external --rpc-cors="*"
 ```
 b) Flint:
 ```
-docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20200117180836-638b681 \
+docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20200506231744-908086f \
     centrifuge-chain \
     --validator \
     --name="{name}" \
     --node-key={node-key} \
-    --chain=/resources/flint-cc2-spec.json \
+    --chain=flint \
     --bootnodes=/ip4/34.89.190.227/tcp/30333/p2p/QmdMJoLc6yduqfrJtMAB6xHegydr3YXzfDCZWEYsaCJaRZ \
     --bootnodes=/ip4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK \
-    --bootnodes=/ip4/35.246.244.114/tcp/30333/p2p/QmdjEGZ9ZNVv4aTGGV46AkBqgCdWTHrh9wr9itYhs61gJA \
-    --bootnodes=/ip4/34.89.148.219/tcp/30333/p2p/QmNd8inSbEvFuwbRToj5VQBNReqtb414oWGyDjF7tQ1qfX \
     --unsafe-rpc-external --unsafe-ws-external --rpc-cors="*"
 ```
+c) Mainnet:
+```
+docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20200506231744-908086f \
+    centrifuge-chain \
+    --validator \
+    --name="{name}" \
+    --node-key={node-key} \
+    --chain=mainnet \
+    --bootnodes=/ip4/35.242.220.32/tcp/30333/p2p/QmNeEcU7pfcvqYHJhakBvZsAndd2o1wLecpiu5kSDXebSW \
+    --bootnodes=/ip4/34.89.236.50/tcp/30333/p2p/Qma8avu1Cwhiynk6vUv5e1vK5LV7zzmLsoaVEd7La4ju8D
+```
+** Mainnet deployments should follow a more secure setup. Learn more here: https://github.com/w3f/polkadot-secure-validator
 4. Generate new session keys in your node's keystore by running: `curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_rotateKeys", "id": 1 }' http://127.0.0.1:9933` This command will return the public keys under the "result" field starting with `0x...`, which you should copy in order to use them in the next chapter.
 
 ### Option 2) Run a bare metal node
@@ -75,12 +83,7 @@ docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centri
 1. Make sure that you are using the latest Rust stable by default: `rustup default stable`
 1. Install nightly for WASM support: `rustup update nightly`
 1. Add the WASM target: `rustup target add wasm32-unknown-unknown --toolchain nightly`
-1. Clone centrifuge-chain:
-
-   a) Amber: `git clone -b v0.0.2 git@github.com:centrifuge/centrifuge-chain.git`
-
-   b) Flint: `git clone -b v0.0.1 git@github.com:centrifuge/centrifuge-chain.git`
-
+1. Clone centrifuge-chain: `git clone -b v1.1.0 git@github.com:centrifuge/centrifuge-chain.git`
 7. Change directory: `cd centrifuge-chain`
 4. Optional - run the tests: `cargo test --all`
 5. Build Centrifuge Chain: `cargo build --release`
@@ -106,9 +109,7 @@ ExecStart={pwd}/target/release/centrifuge-chain \
     --node-key={node_key} \
     --chain=amber \
     --bootnodes=/ip4/35.242.216.93/tcp/30333/p2p/QmeoT4nzw5QDRaqdkBfnaqW9grMTLiEuYUpu4hSbseKB8C \
-    --bootnodes=/ip4/34.89.161.185/tcp/30333/p2p/QmbNXcLkbD7Z2BaSUTfqb1VEkEDTij9rhS79b8F2uiJ3Ki \
-    --bootnodes=/ip4/35.246.201.166/tcp/30333/p2p/QmX1hSCYFgeW876VQvWYkkmxon91ofvsnmk8ceCk1i8Tyv \
-    --bootnodes=/ip4/35.242.226.138/tcp/30333/p2p/QmW2NQVT1nLqAJCsxXixHkuCN93bCbbdminYKNSGyEX77R
+    --bootnodes=/ip4/34.89.161.185/tcp/30333/p2p/QmbNXcLkbD7Z2BaSUTfqb1VEkEDTij9rhS79b8F2uiJ3Ki
 
 [Install]
 WantedBy=multi-user.target
@@ -131,14 +132,33 @@ ExecStart={pwd}/target/release/centrifuge-chain \
     --node-key={node_key} \
     --chain=flint \
     --bootnodes=/ip4/34.89.190.227/tcp/30333/p2p/QmdMJoLc6yduqfrJtMAB6xHegydr3YXzfDCZWEYsaCJaRZ \
-    --bootnodes=/ip4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK \
-    --bootnodes=/ip4/35.246.244.114/tcp/30333/p2p/QmdjEGZ9ZNVv4aTGGV46AkBqgCdWTHrh9wr9itYhs61gJA \
-    --bootnodes=/ip4/34.89.148.219/tcp/30333/p2p/QmNd8inSbEvFuwbRToj5VQBNReqtb414oWGyDjF7tQ1qfX
+    --bootnodes=/ip4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK
 
 [Install]
 WantedBy=multi-user.target
 ```
+c) Mainnet:
+```service
+[Unit]
+Description=Centrifuge Chain Validator
+After=network.target
+StartLimitIntervalSec=0
 
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart={pwd}/target/release/centrifuge-chain \
+    --validator \
+    --name="{name}" \
+    --node-key={node_key} \
+    --chain=mainnet \
+    --bootnodes=/ip4/35.242.220.32/tcp/30333/p2p/QmNeEcU7pfcvqYHJhakBvZsAndd2o1wLecpiu5kSDXebSW \
+    --bootnodes=/ip4/34.89.236.50/tcp/30333/p2p/Qma8avu1Cwhiynk6vUv5e1vK5LV7zzmLsoaVEd7La4ju8D
+
+[Install]
+WantedBy=multi-user.target
+```
 14. Start your service: `systemctl start centrifuge-chain`
 1. Enable automatic restarts of your service after every boot: `systemctl enable centrifuge-chain`
 1. To view and follow your logs, run `tail -f /var/log/syslog`
