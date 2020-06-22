@@ -18,6 +18,6 @@ Centrifuge has multiple testnets online that have been created to test and stabi
 
 Some nodes on our testnets are reporting telemetry ot telemetry.polkadot.io. You can look at the information here:
 
-* [Amber Network Telemetry](https://telemetry.polkadot.io/#list/Centrifuge%20Testnet%20Amber)
+* [Amber Network Telemetry](https://telemetry.polkadot.io/#list/Centrifuge%20Testnet%20Amber%20CC2)
 
-* [Flint Network Telemetry](https://telemetry.polkadot.io/#list/Flint%20Testnet%20CC2)
+* [Flint Network Telemetry](https://telemetry.polkadot.io/#list/Centrifuge%20Testnet%20Flint%20CC3)
