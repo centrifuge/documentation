@@ -5,13 +5,14 @@ title: Run Your Own Node on Mainnet/Amber/Flint Networks
 category: 2. Get Started
 ---
 
+## Run Your Own Node on Mainnet/Amber/Flint Networks
+
 ***System Requirements***
 We recommend a machine with at least the following capacity to run the different networks. Likely you will need more in the future though.
 - 4 GB RAM
 - 50 GB disk
 - Standard desktop/server CPU 
 
-## How to run?
 
 1. **Docker Container**
 This is the recommended way to experiment with your own node. It will get you started within 5 minutes. Since docker is running pre-build containers, this setup minimizes the steps required to get started and isolates any potential issues.
@@ -71,11 +72,11 @@ docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centri
     a) On Unix systems (Debian, Ubuntu, ...): `sudo apt install -y cmake pkg-config libssl-dev git gcc build-essential clang libclang-dev`
 
     b) On MacOS: `brew install openssl cmake llvm`
-1. Install Rust: `curl https://sh.rustup.rs -sSf | sh`
-1. Make sure that you are using the latest Rust stable by default: `rustup default stable`
-1. Install nightly for WASM support: `rustup update nightly`
-1. Add the WASM target: `rustup target add wasm32-unknown-unknown --toolchain nightly`
-1. Clone centrifuge-chain: `git clone -b release-v1.1.0 git@github.com:centrifuge/centrifuge-chain.git`
+2. Install Rust: `curl https://sh.rustup.rs -sSf | sh`
+3. Make sure that you are using the latest Rust stable by default: `rustup default stable`
+4. Install nightly for WASM support: `rustup update nightly`
+5. Add the WASM target: `rustup target add wasm32-unknown-unknown --toolchain nightly`
+6. Clone centrifuge-chain: `git clone -b release-v1.1.0 git@github.com:centrifuge/centrifuge-chain.git`
 7. Change directory: `cd centrifuge-chain`
 4. Optional - run the tests: `cargo test --all`
 5. Build Centrifuge Chain: `cargo build --release`
@@ -200,8 +201,8 @@ ExecStart={pwd}/target/release/centrifuge-chain \
 [Install]
 WantedBy=multi-user.target
 ```
+
 To run the service:
 1. Start your service: `systemctl start centrifuge-chain`
 2. Enable automatic restarts of your service after every boot: `systemctl enable centrifuge-chain`
 3. To view and follow your logs, run `tail -f /var/log/syslog`
-
