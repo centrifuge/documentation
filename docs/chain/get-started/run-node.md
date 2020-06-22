@@ -6,21 +6,13 @@ category: 2. Get Started
 ---
 
 ## Run Your Own Node on Mainnet/Amber/Flint Networks
----
+
 ***System Requirements***
-The system has not been officially load-tested yet but a machine with the following specs will be able to run a validator for Flint
+We recommend a machine with at least the following capacity to run the different networks. Likely you will need more in the future though.
 - 4 GB RAM
 - 50 GB disk
 - Standard desktop/server CPU 
 
-Validators for the testnet are being run on 
-- Google Cloud n1-standard-1 instances
-- Digital Ocean droplets with 2GB Memory, 1vCPU
-- Standard desktop machines with Docker
-- Theoretically also runnable on Raspberry Pi 4, but not confirmed
----
-
-To run your own node, you have 2 options: 
 
 1. **Docker Container**
 This is the recommended way to experiment with your own node. It will get you started within 5 minutes. Since docker is running pre-build containers, this setup minimizes the steps required to get started and isolates any potential issues.
@@ -28,7 +20,7 @@ This is the recommended way to experiment with your own node. It will get you st
 2. **Bare Metal**
 Running a bare metal setup requires you to compile centrifuge chain from source, which can take between a 10 minutes up to 4 hours, depending on your specs. For a production grade setup, we do recommend to run a bare metal validators for 2 reasons: a) It minimizes the tools involved, which increases security, b) The performance is slightly supperior.
 
-### Option 1) Run your node in a Docker Container
+## Run your node in a Docker Container
 
 1. Ensure you have [docker](https://docs.docker.com/install/) as well as [subkey](https://substrate.dev/docs/en/development/tools/subkey#installation) installed. Use `subkey` version `v2.0.0-alpha3`.
 2. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. For mainnet keys use network flag: `subkey generate -n centrifuge`  
@@ -73,25 +65,73 @@ docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centri
 
 4. Generate new session keys in your node's keystore by running: `curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_rotateKeys", "id": 1 }' http://127.0.0.1:9933` This command will return the public keys under the "result" field starting with `0x...`, which you should copy in order to use them in the next chapter.
 
-### Option 2) Run a bare metal node
+## Bare metal instructions
 
 1. Install dependencies: 
 
     a) On Unix systems (Debian, Ubuntu, ...): `sudo apt install -y cmake pkg-config libssl-dev git gcc build-essential clang libclang-dev`
 
     b) On MacOS: `brew install openssl cmake llvm`
-1. Install Rust: `curl https://sh.rustup.rs -sSf | sh`
-1. Make sure that you are using the latest Rust stable by default: `rustup default stable`
-1. Install nightly for WASM support: `rustup update nightly`
-1. Add the WASM target: `rustup target add wasm32-unknown-unknown --toolchain nightly`
-1. Clone centrifuge-chain: `git clone -b v1.1.0 git@github.com:centrifuge/centrifuge-chain.git`
+2. Install Rust: `curl https://sh.rustup.rs -sSf | sh`
+3. Make sure that you are using the latest Rust stable by default: `rustup default stable`
+4. Install nightly for WASM support: `rustup update nightly`
+5. Add the WASM target: `rustup target add wasm32-unknown-unknown --toolchain nightly`
+6. Clone centrifuge-chain: `git clone -b release-v1.1.0 git@github.com:centrifuge/centrifuge-chain.git`
 7. Change directory: `cd centrifuge-chain`
 4. Optional - run the tests: `cargo test --all`
 5. Build Centrifuge Chain: `cargo build --release`
-6. Ensure you have [subkey](https://substrate.dev/docs/en/development/tools/subkey#installation) installed (can be on another machine).
+6. Ensure you have [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) installed (can be on another machine).
 7. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. 
-8. Find out your current working directory: `pwd`
-9. Create a service, where {pwd} is your current working directory, {name} is the name that will show up in Polkadot Telemetry and {node-key} is the private key you just generated (without the 0x prefix): `vim /etc/systemd/system/centrifuge-chain.service`
+
+The node is now built and available in `target/release/centrifuge-chain`.
+
+### Executing the binary
+
+Below are the commands to start a node as a validator. `{name}` is the name that will show up in [Polkadot Telemetry](https://telemetry.polkadot.io) and `{node-key}` is the private key (`Secret seed` in the output of subkey) you just generated (without the 0x prefix).
+
+To run the node for Flint you can use: 
+
+```
+./target/release/centrifuge-chain \
+    --validator \
+    --name="{name}" \
+    --node-key={node_key} \
+    --chain=flint \
+    --bootnodes=/ip4/34.89.190.227/tcp/30333/p2p/QmdMJoLc6yduqfrJtMAB6xHegydr3YXzfDCZWEYsaCJaRZ \
+    --bootnodes=/ip /etc/systemd/system/centrifuge-chain.servic4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK
+```
+
+or Amber:
+
+```
+./target/release/centrifuge-chain \
+    --validator \
+    --name="{name}" \
+    --node-key={node_key} \
+    --chain=amber \
+    --bootnodes=/ip4/35.242.216.93/tcp/30333/p2p/QmeoT4nzw5QDRaqdkBfnaqW9grMTLiEuYUpu4hSbseKB8C \
+    --bootnodes=/ip4/34.89.161.185/tcp/30333/p2p/QmbNXcLkbD7Z2BaSUTfqb1VEkEDTij9rhS79b8F2uiJ3Ki
+```
+
+Mainnet:
+
+```
+./target/release/centrifuge-chain \
+    --validator \
+    --name="{name}" \
+    --node-key={node_key} \
+    --chain=mainnet \
+    --bootnodes=/ip4/35.242.220.32/tcp/30333/p2p/QmNeEcU7pfcvqYHJhakBvZsAndd2o1wLecpiu5kSDXebSW \
+    --bootnodes=/ip4/34.89.236.50/tcp/30333/p2p/Qma8avu1Cwhiynk6vUv5e1vK5LV7zzmLsoaVEd7La4ju8D
+```
+
+### Creating a service
+
+For your convenience, below are templates for running it as a systemd service:
+
+Create a service, where {pwd} is your current working directory, `{name}` is the name that will show up in [Polkadot Telemetry](https://telemetry.polkadot.io) and `{node-key}` is the private key (`Secret seed` in the output of subkey) you just generated (without the 0x prefix).
+
+Copy below template to ` /etc/systemd/system/centrifuge-chain.servic` and replace the `{}` placeholders with your local settings.
 
 a) Amber:
 ```service
@@ -138,6 +178,7 @@ ExecStart={pwd}/target/release/centrifuge-chain \
 [Install]
 WantedBy=multi-user.target
 ```
+
 c) Mainnet:
 ```service
 [Unit]
@@ -160,7 +201,8 @@ ExecStart={pwd}/target/release/centrifuge-chain \
 [Install]
 WantedBy=multi-user.target
 ```
-14. Start your service: `systemctl start centrifuge-chain`
-1. Enable automatic restarts of your service after every boot: `systemctl enable centrifuge-chain`
-1. To view and follow your logs, run `tail -f /var/log/syslog`
-1. Generate new session keys in your node's keystore by running: `curl -H 'Content-Type: application/json' --data '{ "jsonrpc":"2.0", "method":"author_rotateKeys", "id": 1 }' http://127.0.0.1:9933` This command will return the public keys under the "result" field starting with `0x...`, which you should copy in order to use them in the next chapter.
+
+To run the service:
+1. Start your service: `systemctl start centrifuge-chain`
+2. Enable automatic restarts of your service after every boot: `systemctl enable centrifuge-chain`
+3. To view and follow your logs, run `tail -f /var/log/syslog`
