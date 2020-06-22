@@ -4,15 +4,14 @@ order: 4
 title: Run Your Own Node on Mainnet/Amber/Flint Networks
 category: 2. Get Started
 ---
-
-## Run Your Own Node on Mainnet/Amber/Flint Networks
-
+## Requirements
 ***System Requirements***
 We recommend a machine with at least the following capacity to run the different networks. Likely you will need more in the future though.
 - 4 GB RAM
 - 50 GB disk
 - Standard desktop/server CPU 
 
+Below we describe two ways of running our chain node:
 
 1. **Docker Container**
 This is the recommended way to experiment with your own node. It will get you started within 5 minutes. Since docker is running pre-build containers, this setup minimizes the steps required to get started and isolates any potential issues.
