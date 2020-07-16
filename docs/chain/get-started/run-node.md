@@ -97,7 +97,7 @@ To run the node for Flint you can use:
     --node-key={node_key} \
     --chain=flint \
     --bootnodes=/ip4/34.89.190.227/tcp/30333/p2p/QmdMJoLc6yduqfrJtMAB6xHegydr3YXzfDCZWEYsaCJaRZ \
-    --bootnodes=/ip /etc/systemd/system/centrifuge-chain.servic4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK
+    --bootnodes=/ip4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK
 ```
 
 or Amber:
@@ -130,7 +130,7 @@ For your convenience, below are templates for running it as a systemd service:
 
 Create a service, where {pwd} is your current working directory, `{name}` is the name that will show up in [Polkadot Telemetry](https://telemetry.polkadot.io) and `{node-key}` is the private key (`Secret seed` in the output of subkey) you just generated (without the 0x prefix).
 
-Copy below template to ` /etc/systemd/system/centrifuge-chain.servic` and replace the `{}` placeholders with your local settings.
+Copy below template to ` /etc/systemd/system/centrifuge-chain.service` and replace the `{}` placeholders with your local settings.
 
 a) Amber:
 ```service
