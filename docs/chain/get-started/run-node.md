@@ -202,6 +202,7 @@ WantedBy=multi-user.target
 ```
 
 To run the service:
+
 1. Start your service: `systemctl start centrifuge-chain`
 2. Enable automatic restarts of your service after every boot: `systemctl enable centrifuge-chain`
 3. To view and follow your logs, run `tail -f /var/log/syslog`
