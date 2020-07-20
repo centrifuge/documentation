@@ -1,7 +1,7 @@
 ---
 id: run-node
 order: 4
-title: Run Your Own Node on Mainnet/Amber/Flint Networks
+title: Run Your Own Node
 category: 2. Get Started
 ---
 ## Requirements
@@ -23,7 +23,7 @@ Running a bare metal setup requires you to compile centrifuge chain from source,
 
 1. Ensure you have [docker](https://docs.docker.com/install/) as well as [subkey](https://substrate.dev/docs/en/development/tools/subkey#installation) installed. Use `subkey` version `v2.0.0-alpha3`.
 2. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. For mainnet keys use network flag: `subkey generate -n centrifuge`  
-1. Start your node by running the following, where {name} is the name that will show up in Polkadot Telemetry and {node-key} is the private key you just generated (without the `0x` prefix). Note that we do expose RPC and WS ports here for simplicity – these ports should not be exposed in a production grade setup.
+3. Start your node by running the following, where {name} is the name that will show up in Polkadot Telemetry and {node-key} is the private key you just generated (without the `0x` prefix). Note that we do expose RPC and WS ports here for simplicity – these ports should not be exposed in a production grade setup.
 
 a) Amber: 
 ```
@@ -97,7 +97,7 @@ To run the node for Flint you can use:
     --node-key={node_key} \
     --chain=flint \
     --bootnodes=/ip4/34.89.190.227/tcp/30333/p2p/QmdMJoLc6yduqfrJtMAB6xHegydr3YXzfDCZWEYsaCJaRZ \
-    --bootnodes=/ip /etc/systemd/system/centrifuge-chain.servic4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK
+    --bootnodes=/ip4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK
 ```
 
 or Amber:
@@ -130,7 +130,7 @@ For your convenience, below are templates for running it as a systemd service:
 
 Create a service, where {pwd} is your current working directory, `{name}` is the name that will show up in [Polkadot Telemetry](https://telemetry.polkadot.io) and `{node-key}` is the private key (`Secret seed` in the output of subkey) you just generated (without the 0x prefix).
 
-Copy below template to ` /etc/systemd/system/centrifuge-chain.servic` and replace the `{}` placeholders with your local settings.
+Copy below template to ` /etc/systemd/system/centrifuge-chain.service` and replace the `{}` placeholders with your local settings.
 
 a) Amber:
 ```service
@@ -202,6 +202,7 @@ WantedBy=multi-user.target
 ```
 
 To run the service:
+
 1. Start your service: `systemctl start centrifuge-chain`
 2. Enable automatic restarts of your service after every boot: `systemctl enable centrifuge-chain`
 3. To view and follow your logs, run `tail -f /var/log/syslog`
