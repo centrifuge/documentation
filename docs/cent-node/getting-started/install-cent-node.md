@@ -32,11 +32,15 @@ If you want to build the node from source, follow the description in the [source
 
 ```bash
 $ centrifuge createconfig \\
+-n mainnet
+-t <DEFINE_CONFIG_DIR_NAME> \\
 -z ~/.ethereum/keystore/<KEY-FILE> \\
 -e <infura or your own geth url> \\
--t <DEFINE_CONFIG_DIR_NAME> \\
 -a 8082 -p 38204 \\
--n embarcadero
+--centchainurl <your centchain endpoint> \\
+--centchainaddr <your ss58 address> \\
+--centchainid  <your public id> \\
+--centchainsecret <your secret> 
 ```
 
 Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml`  file to be stored. Note that the target direction -t should be specified with an absolute path. Manually add `https://` to the Infura link (see above).
@@ -51,31 +55,20 @@ If you want to switch between testnets and mainnet, adjust the following accordi
 
 **Networks:** 
 
-* **Rinkeby - Russian Hill**
+* **Kovan - Flint**
 
-`
-$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019--mm-dd -e "add Infura link for rinkeby testnet" -n russianhill
-`
+Use network `-n flint`
 
-* **Kovan - Bernal Heights**
+* **Kovan - Amber**
 
-`
-$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for kovan testnet" -n bernalheights
-`
+Use network `-n amber`
 
-* **Ropsten - Dogpatch**
+* **Mainnet**
 
-`
-$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for ropsten testnet" -n dogpatch
-`
+Use network `-n mainnet`
 
-* **Mainnet - Embarcadero**
-
-`
-$ centrifuge createconfig -z /Users/YOURUSERNAME/Library/Ethereum/keystore/UTC--2019-mm-dd -e "add Infura link for mainnet" -n embarcadero
-`
 ------ 
-**If you like to run the centrifuge node with your own ethereum node please replace the infura urls with your own `Geth` Node-URL.**
+**If you like to run the centrifuge node with your own ethereum or centrifuge chain node please replace the infura urls with your own `Geth` and `centrifuge-chain` Node-URL.**
 
 ------
 
@@ -97,6 +90,7 @@ Before running your Centrifuge Node, you need to add your Ethereum key and passw
 
 ```bash
 CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
+CENT_CENTCHAIN_ACCOUNT_SECRET=<YOUR_CENTCHAIN_SECRET>
 ````
 
 ```bash

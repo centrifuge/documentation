@@ -23,6 +23,7 @@ Confirm that your Centrifuge Node is up und running, for example with a PING (Se
   ```bash
   $ export CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
   $ export CENT_ETHEREUM_ACCOUNTS_MAIN_PASSWORD=<YOUR_PASSWORD>
+  $ export CENT_CENTCHAIN_ACCOUNT_SECRET=<YOUR_CENTCHAIN_SECRET>
   $ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
   ```
 

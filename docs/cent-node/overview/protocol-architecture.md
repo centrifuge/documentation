@@ -7,7 +7,7 @@ category: 1. Overview
 
 ## Centrifuge Protocol
 
-The components of the Centrifuge protocol are a collection of Ethereum smart contracts and a peer to peer (P2P) network implemented on libp2p. Ethereum smart contracts are used for (i) maintaining identities in a similar format to the ERC725 standard, (ii) anchoring state commitments and (iii) minting NFTs from off chain Centrifuge documents. The peer to peer network is used for private, off-chain transactions and business document exchange.
+The components of the Centrifuge protocol are a collection of Ethereum smart contracts, Substrate Pallets and a peer to peer (P2P) network implemented on libp2p. Ethereum smart contracts are used for (i) maintaining identities in a similar format to the ERC725 standard and (ii) minting NFTs from off chain Centrifuge documents. Substrate Pallets are used for anchoring state commitments. The peer to peer network is used for private, off-chain transactions and business document exchange.
 
 For detailed information of the Centrifuge Protocol, its first implementation and limitations, read the [Centrifuge Protocol Yellowpaper](https://github.com/centrifuge/protocol/releases)
 
@@ -15,7 +15,7 @@ For detailed information of the Centrifuge Protocol, its first implementation an
 
 ## Centrifuge Nodes
 
-The Centrifuge Node provides a simple API interface to interact with the peer to peer network as well as the Ethereum smart contracts. The Node operates on a “service bus” principal where plugins and outside systems can subscribe to messages about specific objects (e.g., a procurement application can subscribe to changes of order objects). The P2P Node abstracts the events that occur on the public blockchain, sidechain, and P2P Layer and translates them into messages on this internal bus for other applications to consume. The Node also offers the connectivity to Ethereum for applications that build on top of the network.
+The Centrifuge Node provides a simple API interface to interact with the peer to peer network as well as the Ethereum smart contracts and Substrate Pallets. The Node operates on a “service bus” principal where plugins and outside systems can subscribe to messages about specific objects (e.g., a procurement application can subscribe to changes of order objects). The P2P Node abstracts the events that occur on the public blockchains and P2P Layer and translates them into messages on this internal bus for other applications to consume. The Node also offers the connectivity to Ethereum and Substrate for applications that build on top of the network.
 
 ## Centrifuge Identities
 
