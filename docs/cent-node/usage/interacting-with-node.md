@@ -5,7 +5,7 @@ title: Rest API
 category: 3. Using the Centrifuge Node
 ---
 
-Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-6.api-docs.io/2.0.0) documentation for a complete list of endpoints.
+Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-7.api-docs.io/2.0.0) documentation for a complete list of endpoints.
 
 ## Authentication Headers
 The Centrifuge node is capable of maintaining multiple accounts. Accounts are used to track of the different users that might be using a single instance of a Centrifuge node. We use an http header for specifying which account to use for a given request.
@@ -23,6 +23,7 @@ Confirm that your Centrifuge Node is up und running, for example with a PING (Se
   ```bash
   $ export CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
   $ export CENT_ETHEREUM_ACCOUNTS_MAIN_PASSWORD=<YOUR_PASSWORD>
+  $ export CENT_CENTCHAIN_ACCOUNT_SECRET=<YOUR_CENTCHAIN_SECRET>
   $ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
   ```
 

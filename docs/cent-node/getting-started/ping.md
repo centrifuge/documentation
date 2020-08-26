@@ -11,9 +11,9 @@ To make sure that your Centrifuge node setup was successful and is running prope
   $ curl -X GET "http://localhost:8082/ping" -H "accept: application/json"
   ```
   
-  It will return (e.g. Kovan - Bernalheights):
+  It will return (e.g. Kovan - Amber):
   
-  ``` {"version":"0.0.6+master","network":"bernalheights"}```
+  ``` {"version":"0.0.6+master","network":"amber"}```
   
 ---
 
@@ -22,5 +22,5 @@ If you use Postman, make sure you have imported the most recent [Centrifuge Post
 ![Ping](./ping.png)
 ![Ping_Selection](./ping-selection.png)
 
-If your node is running you will get the status "200 OK" and the additional information about what network you are running on (e.g. bernalheights - Kovan).
+If your node is running you will get the status "200 OK" and the additional information about what network you are running on (e.g. amber - Kovan).
  
