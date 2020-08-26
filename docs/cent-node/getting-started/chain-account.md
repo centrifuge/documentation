@@ -42,9 +42,7 @@ You can now fund the newly generated centrifuge chain account with RAD to be abl
 
 ## Fund the account through faucets 
 
-**Amber/Flint** 
-https://faucets.blockxlabs.com/
+**Amber/Flint:** https://faucets.blockxlabs.com/
 
-**Mainnet** 
-https://faucet.chain.centrifuge.io/
+**Mainnet:** https://faucet.chain.centrifuge.io/
 
