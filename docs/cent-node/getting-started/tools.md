@@ -12,5 +12,11 @@ In order to interact with Ethereum and the Ethereum testnets you need to install
 
 Register and create an Infura account here: https://infura.io/. Create a new project. 
 
+## Centrifuge Chain 
+In order to interact with our Centrifuge Chain, you can either start your own node and sync with the network or use one of the public full nodes that Centrifuge provides:
+- mainnet: `wss://fullnode.centrifuge.io`
+- amber: `wss://fullnode.amber.centrifuge.io`
+- flint: `wss://fullnode.flint.centrifuge.io` 
+
 ## Postman
 To be able to manage documents on Centrifuge the user will have to make API calls. You can browser our Postman collection to look at a few examples. Create an account here: https://www.getpostman.com/ and import the [Centrifuge collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42).
