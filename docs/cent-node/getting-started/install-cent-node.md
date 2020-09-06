@@ -32,7 +32,7 @@ If you want to build the node from source, follow the description in the [source
 
 ```bash
 $ centrifuge createconfig \\
--n mainnet
+-n mainnet \\
 -t <DEFINE_CONFIG_DIR_NAME> \\
 -z ~/.ethereum/keystore/<KEY-FILE> \\
 -e <infura or your own geth url> \\
