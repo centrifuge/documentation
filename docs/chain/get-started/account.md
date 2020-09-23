@@ -61,6 +61,7 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 1. Turn off wifi & bluetooth (**NEVER TURN IT ON AGAIN!**)
 1. Create a key for Centrifuge Mainnet using the Parity Signer App
     - Create your identity to get started
+    
     ![](./new-identity.png)
     - Write down your 24 word Recovery Phrase (**THIS IS VERY IMPORTANT**)
     ![](./recovery-phrase.png)
@@ -103,6 +104,7 @@ If you intend to stake your tokens towards validators on Centrifuge Chain, it is
 To add a new identity:
 - Select the person icon on the top right
 - Select 'Add Identity'
+
 ![](./add-identity.png)
 
 
