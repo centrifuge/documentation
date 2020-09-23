@@ -76,7 +76,7 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
    - Make sure the endpoint is set to `wss://fullnode.centrifuge.io`
    - Click on Accounts
    - Click on 'Add via QR'
-![](.add-via-qr/.png)
+![](./add-via-qr.png)
     - Scan the QR code on your device for your Centrifuge Mainnet Public Address
     ![](./public-address-qr.png)
 
