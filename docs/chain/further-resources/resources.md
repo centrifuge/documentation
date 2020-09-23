@@ -2,7 +2,7 @@
 id: resources
 order: 1
 title: Further Resources
-category: 3. Further Resources
+category: 4. Further Resources
 ---
 ## Substrate/Polkadot Resources
 * [Kusama Documentation](https://guide.kusama.network/en/latest/try/validate)
