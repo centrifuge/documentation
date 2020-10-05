@@ -26,7 +26,7 @@ Centrifuge hosts an instance of the chain portal at [portal.chain.centrifuge.io]
 
 ## Create an account using the Parity Signer App
 
-This is an unofficial guide on how to use the Parity Signer App to create an account on Centrifuge Chain. 
+This is an unofficial guide on how to use the Parity Signer App to create an account on Centrifuge Chain. Please consult the official Parity Signer documentation [here](https://github.com/paritytech/parity-signer).
 
 | DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind._ |
 | --- |
@@ -110,7 +110,9 @@ To add a new identity:
 
 > **A note on app updates:** 
 >If a new version of the app becomes available, please exercise the following caution.
->1. (Ideally) Hard reset the device and wipe everything
+>Ideally, replace the device or do not update the app.
+>If an update is necessary:
+>1. Hard reset the device and wipe everything
 >2. Re-install the new parity signer app
 >3. Turn off wifi & bluetooth (**NEVER TURN IT ON AGAIN**)
 >4. Recover your key from seed phrase 
