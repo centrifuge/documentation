@@ -21,44 +21,46 @@ Running a bare metal setup requires you to compile centrifuge chain from source,
 
 ## Run your node in a Docker Container
 
-1. Ensure you have [docker](https://docs.docker.com/install/) as well as [subkey](https://substrate.dev/docs/en/development/tools/subkey#installation) installed. Use `subkey` version `v2.0.0-alpha3`.
-2. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. For mainnet keys use network flag: `subkey -n centrifuge generate`  
+1. Ensure you have [docker](https://docs.docker.com/install/) as well as [subkey](https://substrate.dev/docs/en/development/tools/subkey#installation) installed. Use `subkey` version `v2.0.0`.
+2. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. For mainnet keys use network flag: `subkey generate -n centrifuge`  
 3. Start your node by running the following, where {name} is the name that will show up in Polkadot Telemetry and {node-key} is the private key you just generated (without the `0x` prefix). Note that we do expose RPC and WS ports here for simplicity – these ports should not be exposed in a production grade setup.
 
-a) Amber: 
+a) Flint:
 ```
-docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20200506231744-908086f \
-    centrifuge-chain \
-    --validator \
-    --name="{name}" \
-    --node-key={node-key} \
-    --chain=amber \
-    --bootnodes=/ip4/35.242.216.93/tcp/30333/p2p/QmeoT4nzw5QDRaqdkBfnaqW9grMTLiEuYUpu4hSbseKB8C \
-    --bootnodes=/ip4/34.89.161.185/tcp/30333/p2p/QmbNXcLkbD7Z2BaSUTfqb1VEkEDTij9rhS79b8F2uiJ3Ki
-    --unsafe-rpc-external --unsafe-ws-external --rpc-cors="*"
-```
-b) Flint:
-```
-docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20200506231744-908086f \
+docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20201022093419-da56ac5 \
     centrifuge-chain \
     --validator \
     --name="{name}" \
     --node-key={node-key} \
     --chain=flint \
-    --bootnodes=/ip4/34.89.190.227/tcp/30333/p2p/QmdMJoLc6yduqfrJtMAB6xHegydr3YXzfDCZWEYsaCJaRZ \
-    --bootnodes=/ip4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK \
+    --bootnodes=/ip4/35.246.197.135/tcp/30333/p2p/12D3KooWBF1RdctVztxLLzEwUiuMtqEDVicCjVCS8eyxh71nonxz \
+    --bootnodes=/ip4/34.89.219.76/tcp/30333/p2p/12D3KooWNHRdve4U1rsZsDnTKbY8C94Y7VJTrifBy9P2LXLDhCnG \
     --unsafe-rpc-external --unsafe-ws-external --rpc-cors="*"
 ```
+
+b) Amber: 
+```
+docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20201022093419-da56ac5 \
+    centrifuge-chain \
+    --validator \
+    --name="{name}" \
+    --node-key={node-key} \
+    --chain=amber \
+    --bootnodes=/ip4/34.107.94.59/tcp/30333/p2p/12D3KooWQ3YL8sP2M1S9PVNj8JjmACUjawwRPckzL8fJmXZ7YRPY \
+    --bootnodes=/ip4/35.242.247.213/tcp/30333/p2p/12D3KooWECFKJirQiVHeidSkwrEocPr7wkUw3ijbJKNyvCVd3xcu \
+    --unsafe-rpc-external --unsafe-ws-external --rpc-cors="*"
+```
+
 c) Mainnet:
 ```
-docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20200506231744-908086f \
+docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centrifuge-chain:20201022093419-da56ac5 \
     centrifuge-chain \
     --validator \
     --name="{name}" \
     --node-key={node-key} \
     --chain=mainnet \
-    --bootnodes=/ip4/35.242.220.32/tcp/30333/p2p/QmNeEcU7pfcvqYHJhakBvZsAndd2o1wLecpiu5kSDXebSW \
-    --bootnodes=/ip4/34.89.236.50/tcp/30333/p2p/Qma8avu1Cwhiynk6vUv5e1vK5LV7zzmLsoaVEd7La4ju8D
+    --bootnodes=/ip4/34.89.245.58/tcp/30333/p2p/12D3KooWAVAMPNJywZS3J4be8gFGZACfgt1rXS3MyJ2MxEGtLXjr \
+    --bootnodes=/ip4/35.246.188.4/tcp/30333/p2p/12D3KooWCUjDbbhJf1o6skuE1EJ5PnKpJMaK6scmvWsHnjAULzDU
 ```
 ** Mainnet deployments should follow a more secure setup. Learn more here: https://github.com/w3f/polkadot-secure-validator
 
@@ -73,14 +75,29 @@ docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 --rm -it centrifugeio/centri
     b) On MacOS: `brew install openssl cmake llvm`
 2. Install Rust: `curl https://sh.rustup.rs -sSf | sh`
 3. Make sure that you are using the latest Rust stable by default: `rustup default stable`
-4. Install nightly for WASM support: `rustup update nightly`
-5. Add the WASM target: `rustup target add wasm32-unknown-unknown --toolchain nightly`
-6. Clone centrifuge-chain: `git clone -b release-v1.1.0 git@github.com:centrifuge/centrifuge-chain.git`
-7. Change directory: `cd centrifuge-chain`
-4. Optional - run the tests: `cargo test --all`
-5. Build Centrifuge Chain: `cargo build --release`
-6. Ensure you have [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) installed (can be on another machine).
-7. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. 
+4. Install nightly for WASM support: 
+    ```
+    RUST_TOOLCHAIN=nightly
+    rustup update $RUST_TOOLCHAIN
+    ```
+5. If above does not work, use:
+    ```
+    RUST_TOOLCHAIN=nightly-2020-08-16
+    rustup update $RUST_TOOLCHAIN
+    
+    rustup toolchain install $RUST_TOOLCHAIN
+    rustup default $RUST_TOOLCHAIN
+    
+    rustup target add wasm32-unknown-unknown --toolchain $RUST_TOOLCHAIN
+    ``` 
+
+6. Add the WASM target: `rustup target add wasm32-unknown-unknown --toolchain $RUST_TOOLCHAIN`
+7. Clone centrifuge-chain: `git clone -b v2.0.0-rc6.0 git@github.com:centrifuge/centrifuge-chain.git`
+8. Change directory: `cd centrifuge-chain`
+9. Optional - run the tests: `cargo test --all`
+10. Build Centrifuge Chain: `cargo build --release`
+11. Ensure you have [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) installed (can be on another machine).
+12. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. 
 
 The node is now built and available in `target/release/centrifuge-chain`.
 
@@ -96,8 +113,8 @@ To run the node for Flint you can use:
     --name="{name}" \
     --node-key={node_key} \
     --chain=flint \
-    --bootnodes=/ip4/34.89.190.227/tcp/30333/p2p/QmdMJoLc6yduqfrJtMAB6xHegydr3YXzfDCZWEYsaCJaRZ \
-    --bootnodes=/ip4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK
+    --bootnodes=/ip4/35.246.197.135/tcp/30333/p2p/12D3KooWBF1RdctVztxLLzEwUiuMtqEDVicCjVCS8eyxh71nonxz \
+    --bootnodes=/ip4/34.89.219.76/tcp/30333/p2p/12D3KooWNHRdve4U1rsZsDnTKbY8C94Y7VJTrifBy9P2LXLDhCnG
 ```
 
 or Amber:
@@ -108,8 +125,8 @@ or Amber:
     --name="{name}" \
     --node-key={node_key} \
     --chain=amber \
-    --bootnodes=/ip4/35.242.216.93/tcp/30333/p2p/QmeoT4nzw5QDRaqdkBfnaqW9grMTLiEuYUpu4hSbseKB8C \
-    --bootnodes=/ip4/34.89.161.185/tcp/30333/p2p/QmbNXcLkbD7Z2BaSUTfqb1VEkEDTij9rhS79b8F2uiJ3Ki
+    --bootnodes=/ip4/34.107.94.59/tcp/30333/p2p/12D3KooWQ3YL8sP2M1S9PVNj8JjmACUjawwRPckzL8fJmXZ7YRPY \
+    --bootnodes=/ip4/35.242.247.213/tcp/30333/p2p/12D3KooWECFKJirQiVHeidSkwrEocPr7wkUw3ijbJKNyvCVd3xcu
 ```
 
 Mainnet:
@@ -120,8 +137,8 @@ Mainnet:
     --name="{name}" \
     --node-key={node_key} \
     --chain=mainnet \
-    --bootnodes=/ip4/35.242.220.32/tcp/30333/p2p/QmNeEcU7pfcvqYHJhakBvZsAndd2o1wLecpiu5kSDXebSW \
-    --bootnodes=/ip4/34.89.236.50/tcp/30333/p2p/Qma8avu1Cwhiynk6vUv5e1vK5LV7zzmLsoaVEd7La4ju8D
+    --bootnodes=/ip4/34.89.245.58/tcp/30333/p2p/12D3KooWAVAMPNJywZS3J4be8gFGZACfgt1rXS3MyJ2MxEGtLXjr \
+    --bootnodes=/ip4/35.246.188.4/tcp/30333/p2p/12D3KooWCUjDbbhJf1o6skuE1EJ5PnKpJMaK6scmvWsHnjAULzDU
 ```
 
 ### Creating a service
@@ -132,30 +149,7 @@ Create a service, where {pwd} is your current working directory, `{name}` is the
 
 Copy below template to ` /etc/systemd/system/centrifuge-chain.service` and replace the `{}` placeholders with your local settings.
 
-a) Amber:
-```service
-[Unit]
-Description=Centrifuge Chain Validator
-After=network.target
-StartLimitIntervalSec=0
-
-[Service]
-Type=simple
-Restart=always
-RestartSec=1
-ExecStart={pwd}/target/release/centrifuge-chain \
-    --validator \
-    --name="{name}" \
-    --node-key={node_key} \
-    --chain=amber \
-    --bootnodes=/ip4/35.242.216.93/tcp/30333/p2p/QmeoT4nzw5QDRaqdkBfnaqW9grMTLiEuYUpu4hSbseKB8C \
-    --bootnodes=/ip4/34.89.161.185/tcp/30333/p2p/QmbNXcLkbD7Z2BaSUTfqb1VEkEDTij9rhS79b8F2uiJ3Ki
-
-[Install]
-WantedBy=multi-user.target
-```
-
-b) Flint:
+a) Flint:
 ```service
 [Unit]
 Description=Centrifuge Chain Validator
@@ -171,8 +165,31 @@ ExecStart={pwd}/target/release/centrifuge-chain \
     --name="{name}" \
     --node-key={node_key} \
     --chain=flint \
-    --bootnodes=/ip4/34.89.190.227/tcp/30333/p2p/QmdMJoLc6yduqfrJtMAB6xHegydr3YXzfDCZWEYsaCJaRZ \
-    --bootnodes=/ip4/35.234.68.18/tcp/30333/p2p/Qma5M7P5qym3Gfgp1wu6yk1QyMv2RzFV9GztP9AxHoK8PK
+    --bootnodes=/ip4/35.246.197.135/tcp/30333/p2p/12D3KooWBF1RdctVztxLLzEwUiuMtqEDVicCjVCS8eyxh71nonxz \
+    --bootnodes=/ip4/34.89.219.76/tcp/30333/p2p/12D3KooWNHRdve4U1rsZsDnTKbY8C94Y7VJTrifBy9P2LXLDhCnG
+
+[Install]
+WantedBy=multi-user.target
+```
+
+b) Amber:
+```service
+[Unit]
+Description=Centrifuge Chain Validator
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart={pwd}/target/release/centrifuge-chain \
+    --validator \
+    --name="{name}" \
+    --node-key={node_key} \
+    --chain=amber \
+    --bootnodes=/ip4/34.107.94.59/tcp/30333/p2p/12D3KooWQ3YL8sP2M1S9PVNj8JjmACUjawwRPckzL8fJmXZ7YRPY \
+    --bootnodes=/ip4/35.242.247.213/tcp/30333/p2p/12D3KooWECFKJirQiVHeidSkwrEocPr7wkUw3ijbJKNyvCVd3xcu
 
 [Install]
 WantedBy=multi-user.target
@@ -194,8 +211,8 @@ ExecStart={pwd}/target/release/centrifuge-chain \
     --name="{name}" \
     --node-key={node_key} \
     --chain=mainnet \
-    --bootnodes=/ip4/35.242.220.32/tcp/30333/p2p/QmNeEcU7pfcvqYHJhakBvZsAndd2o1wLecpiu5kSDXebSW \
-    --bootnodes=/ip4/34.89.236.50/tcp/30333/p2p/Qma8avu1Cwhiynk6vUv5e1vK5LV7zzmLsoaVEd7La4ju8D
+    --bootnodes=/ip4/34.89.245.58/tcp/30333/p2p/12D3KooWAVAMPNJywZS3J4be8gFGZACfgt1rXS3MyJ2MxEGtLXjr \
+    --bootnodes=/ip4/35.246.188.4/tcp/30333/p2p/12D3KooWCUjDbbhJf1o6skuE1EJ5PnKpJMaK6scmvWsHnjAULzDU
 
 [Install]
 WantedBy=multi-user.target
