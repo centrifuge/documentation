@@ -45,6 +45,12 @@ exports.onCreateNode = (args) => {
       node,
       value: node.frontmatter.title || parent.name
     });
+
+    createNodeField({
+      name: "subtitle",
+      node,
+      value: node.frontmatter.subtitle || ``
+    });
   }
 
 
