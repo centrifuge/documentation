@@ -61,7 +61,7 @@ const HomePage = () => (
         }
 
         return <Layout size={size}>
-          <SEO title="Centrifuge documentation"/>
+          <SEO title="Centrifuge Docs"/>
           <Box
             fill
             as="main"
