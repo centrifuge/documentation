@@ -26,6 +26,13 @@ To become a part of the Centrifuge community, read the [Code of Conduct](https:/
 
 **Submit all pull requests to the develop branch**
 
+### Running a docker container with node
+
+```
+    docker run --volume=`pwd`:/app -i -t -p 127.0.0.1:8000:8000 node /bin/bash
+    npm install
+    npm run develop
+```
 ## Development
 
 ### Images
