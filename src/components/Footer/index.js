@@ -66,9 +66,6 @@ export const FooterMenu = ({size, gap}) => {
           <Link href="https://twitter.com/centrifuge">
             Twitter
           </Link>
-          <Link href="https://t.me/centrifuge_chat">
-            Telegram
-          </Link>
           <Link href="https://medium.com/centrifuge">
             Medium
           </Link>

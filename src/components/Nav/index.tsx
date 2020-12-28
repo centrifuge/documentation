@@ -7,7 +7,7 @@ import {Menu as MenuIcon, User as UserIcon, Close as CloseIcon} from "grommet-ic
 import Search from "../Search";
 import styled from "styled-components";
 import {navigate} from "gatsby";
-const wordmark = require("../../images/centrifuge-documentation-wordmark.svg")as string;
+const wordmark = require("../../images/centrifuge-developer-wordmark.svg")as string;
 
 
 const Logo = styled(Image)`
