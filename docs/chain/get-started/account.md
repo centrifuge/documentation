@@ -87,7 +87,7 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
      - Recover the key from your backed up phrase 
      - Verify the address matches what you obtained above
 1. Send some test RAD to another address and use Parity Signer to sign this transaction
-     - Use the public [Centrifuge Mainnet faucet](https://faucet.chain.centrifuge.io) to obtain some RAD for this test
+     - If you don't have any RAD, email faucet@centrifuge.foundation to request some RAD for this test
      - Initiate a transfer on the Portal Website by selecting 'Transfer' in the left menu or on 'Send' from the Accounts page
      - Click 'Make Transfer'
      - Click 'Sign via QR'
@@ -125,7 +125,7 @@ To add a new identity:
 
 ## Getting Tokens
 ### Mainnet
-A faucet is available giving out 0.1RAD per user per day at [faucet.chain.centrifuge.io](https://faucet.chain.centrifuge.io)
+If you need RAD to run a Validator or interact with Centrifuge Chain, email faucet@centrifuge.foundation.
 
 
 ### Amber/Flint
