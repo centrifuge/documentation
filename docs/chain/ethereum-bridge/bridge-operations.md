@@ -63,7 +63,7 @@ export ETH_GAS_PRICE=40000000000
 ```
 
 ## Substrate Native to ERC20 Ethereum
-In the substrate UI select the `Extrinsics` tab, and call `example.transferNative` with these parameters:
+In the substrate UI select the `Extrinsics` tab, and call `palletBridge.transferNative` with these parameters:
 - Amount: `1000000000000000000` 1 RAD **(select `Atto` for units)**
 - Recipient: `0xff93B45308FD417dF303D6515aB04D9e89a750Ca` (Your ETH target account)
 - Dest Id: `0`
@@ -89,6 +89,5 @@ TARGET_PUBLICKEY=`subkey -o json inspect $TARGET_SUBSTRATE_ADDR | jq  -r '.publi
 
 cb-sol-cli --gasLimit $ETH_GAS_LIMIT --gasPrice $ETH_GAS_PRICE --privateKey $ETH_PRIVATE_KEY --url $ETH_RPC_URL erc20 deposit --amount 1000000000000000000 --dest 1 --recipient $TARGET_PUBLICKEY --resourceId $BRIDGE_ERC20_RESOURCE_ID --bridge $BRIDGE_ADDRESS
 ```
-
 
 
