@@ -36,9 +36,10 @@ In the bash snippet below we use `jq` to parse a JSON output, you can omit that 
 Otherwise follow instructions here to install in your distribution: https://stedolan.github.io/jq/
 
 ## Set environment variables
+**Please reach out to us on [Slack](https://centrifuge.io/slack) or [Telegram](https://t.me/centrifuge_chat) for contract addresses.**
 ```=bash
 export ETH_RPC_URL="YOUR_ETH_CLIENT_URL"
-export ETH_PRIVATE_KEY="YOU_PRIVATE_KEY"
+export ETH_PRIVATE_KEY="YOUR_PRIVATE_KEY"
 export ETH_GAS_LIMIT=300000
 export BRIDGE_ERC20_RESOURCE_ID="0x00000000000000000000000000000009e974040e705c10fb4de576d6cc261900"
 
@@ -46,18 +47,18 @@ export BRIDGE_ERC20_RESOURCE_ID="0x00000000000000000000000000000009e974040e705c1
 
 Amber (Kovan) Config:
 ```=bash
-export ERC20_ADDRESS="0xE222266F3307dee63056230646AD6cD06a7D6627"
-export BRIDGE_ADDRESS="0x478ab279Ac5F4bd69382D34cF2382606E6208eFc"
-export BRIDGE_ERC20_HANDLER="0x3483c3a1Af5e78AE5AaB07de3Ea57b6F3877745F"
+export ERC20_ADDRESS="AMBER_ERC20_CONTRACT"
+export BRIDGE_ADDRESS="AMBER_BRIDGE_CONTRACT"
+export BRIDGE_ERC20_HANDLER="AMBER_ERC20_HANDLER"
 export ETH_GAS_PRICE=10000000000
 
 ```
 
 Mainnet Config:
 ```=bash
-export ERC20_ADDRESS="0xd5209a7dfD89Ad5288D2464d99D1575a673BC795"
-export BRIDGE_ADDRESS="0xFe50BA7241b635Eda23a32875c383A34E8a3596c"
-export BRIDGE_ERC20_HANDLER="0x84D1e77F472a4aA697359168C4aF4ADD4D2a71fa"
+export ERC20_ADDRESS="MAINNET_ERC20_CONTRACT"
+export BRIDGE_ADDRESS="MAINNET_BRIDGE_CONTRACT"
+export BRIDGE_ERC20_HANDLER="MAINNET_ERC20_HANDLER"
 export ETH_GAS_PRICE=40000000000
 
 ```
@@ -65,14 +66,14 @@ export ETH_GAS_PRICE=40000000000
 ## Substrate Native to ERC20 Ethereum
 In the substrate UI select the `Extrinsics` tab, and call `palletBridge.transferNative` with these parameters:
 - Amount: `1000000000000000000` 1 RAD 
-- Recipient: `0xff93B45308FD417dF303D6515aB04D9e89a750Ca` (Your ETH target account)
+- Recipient: `YOUR_ETH_TARGET_ACCOUNT` 
 - Dest Id: `0`
 
 Depending on environment and network state, might take some time.
 
 You can query the recipients balance on ethereum:
 ```=bash
-cb-sol-cli --url $ETH_RPC_URL  erc20 balance --address 0xff93B45308FD417dF303D6515aB04D9e89a750Ca --erc20Address $ERC20_ADDRESS
+cb-sol-cli --url $ETH_RPC_URL  erc20 balance --address YOUR_ETH_TARGET_ACCOUNT --erc20Address $ERC20_ADDRESS
 ```
 
 ## ERC20 to Substrate Native
