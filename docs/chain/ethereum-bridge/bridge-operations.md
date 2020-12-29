@@ -64,7 +64,7 @@ export ETH_GAS_PRICE=40000000000
 
 ## Substrate Native to ERC20 Ethereum
 In the substrate UI select the `Extrinsics` tab, and call `palletBridge.transferNative` with these parameters:
-- Amount: `1000000000000000000` 1 RAD **(select `Atto` for units)**
+- Amount: `1000000000000000000` 1 RAD 
 - Recipient: `0xff93B45308FD417dF303D6515aB04D9e89a750Ca` (Your ETH target account)
 - Dest Id: `0`
 
