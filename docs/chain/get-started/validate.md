@@ -1,7 +1,7 @@
 ---
 id: validate
 order: 5
-title: Running your own to Validator 
+title: Running your own Validator 
 category: 2. Get Started
 ---
 Here's a quick guide to get started validating Centrifuge Chain Amber or Flint testnets.
