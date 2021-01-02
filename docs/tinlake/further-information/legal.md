@@ -19,7 +19,7 @@ This article goes into the current template for a general offering structure, wa
 There is also work to bring offering structures for other non-US jurisdictions. The outlined structure is supporting either a 506(b) or a 506(c) offering under Regulation D of the US Securities Act of 1933 for a US-based issuing SPV offering investments directly to either US investors with accredited investor status or non-US investors from domiciled in jurisdictions with United States Income Tax Treaties under the Foreign Account Tax Compliance Act FATCA.
 
 #### What is an SPV?
-A Special Purpose Vehicle (SPV) is a separate legal entity. The SPV is a distinct company with its own assets and liabilities, as well as its own legal status. Usually, they are created for a specific objective, often to isolate financial risk. As it is a separate legal entity, if the parent company goes bankrupt, the special purpose vehicle can carry on. Read more on https://corporatefinanceinstitute.com/resources/knowledge/strategy/special-purpose-vehicle-spv/
+A Special Purpose Vehicle (SPV) is a separate legal entity. The SPV is a distinct company with its own assets and liabilities, as well as its own legal status. Usually, they are created for a specific objective, often to isolate financial risk. As it is a separate legal entity, if the parent company goes bankrupt, the special purpose vehicle can carry on. [Read more](https://corporatefinanceinstitute.com/resources/knowledge/strategy/special-purpose-vehicle-spv/)
 
 ## Overview of a Transaction
 ### Asset Finance Flow
