@@ -24,6 +24,8 @@ A Special Purpose Vehicle (SPV) is a separate legal entity. The SPV is a distinc
 ## Overview of a Transaction
 ### Asset Finance Flow
 
+![Asset Finance Flow](./legal_origination_flow.svg)
+
 The general flow of financing typically looks as follow:
 
 1. The Asset Originator sets up a legal entity, a special purpose vehicle per pool. They set up the SPV to keep all financings remote and separate from the Asset Originator.
