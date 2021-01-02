@@ -8,13 +8,15 @@ category: 5. Further Information
 _Disclaimer: This is not legal advice. The information provided here is solely for informational purposes. We recommend you consult a lawyer if you want legal advice. No attorney-client or confidential relationship exists or will be formed between you and any contributors to Centrifuge.
 This article describes the legal structure at a high level and provides boilerplate legal agreements as an example for how to set up the legal framework necessary to ensure Real World Assets can be tokenized and a legal recourse exists for anyone holding these tokens._
 
-
 The legal setup for each pool is mirroring the Tinlake smart-contract structure and real-world relationships between the involved parties. It is structured with two goals in mind:
 
 1. Ensure that investors in the pool have the most protection possible giving them recourse on the RWA used as collateral in the pool
 The source of truth is on chain. The legal contracts delegate all possible responsibilities to the on chain smart contracts.
 2. For this purpose, each pool as a legal entity tied to it. This special purpose vehicle (SPV) serves the purpose of keeping the Asset Originators' own business and the financing activity in the pool separate.
 
+This article goes into the current template for a general offering structure, was developed for US-based offerings. It is the simplest and most straight forward offering structure but is continuously being developed with law firms with a background in international asset-backed financing, security laws, and token, crypto, or virtual/digital assets regulations.
+
+There is also work to bring offering structures for other non-US jurisdictions. The outlined structure is supporting either a 506(b) or a 506(c) offering under Regulation D of the US Securities Act of 1933 for a US-based issuing SPV offering investments directly to either US investors with accredited investor status or non-US investors from domiciled in jurisdictions with United States Income Tax Treaties under the Foreign Account Tax Compliance Act FATCA.
 
 #### What is an SPV?
 A Special Purpose Vehicle (SPV) is a separate legal entity. The SPV is a distinct company with its own assets and liabilities, as well as its own legal status. Usually, they are created for a specific objective, often to isolate financial risk. As it is a separate legal entity, if the parent company goes bankrupt, the special purpose vehicle can carry on. Read more on https://corporatefinanceinstitute.com/resources/knowledge/strategy/special-purpose-vehicle-spv/
