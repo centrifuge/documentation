@@ -6,34 +6,20 @@ subtitle: How to conduct your DROP investment/redemption with Tinlake UI
 category: 2. User Guide
 ---
 
-_For further investment details please refer to the respective legal documentation in [Securitize.io](https://centrifuge.invest.securitize.io/#/login)._
-
-Command Line Instructions for Power Users: https://centrifuge.hackmd.io/-VQUDTEDTPWutLhNT2oYaw
-
 ## Investment requirements
 ### Legal requirements
 - Onboarding incl. KYC through [Securitize.io](https://centrifuge.invest.securitize.io/#/login) has been succesfully completed
 - Legal documentation (`Subscription Agreement`) for the pool you want to invest in has been signed in Securitize.io
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_89b3a8c1b7030a6e718512bdea588857.png#width=600px)
+![](investing/onboarding_flow.png#width=600px)
 
 ### Technical requirements
-- A web browser (preferably Chrome)
-- A web3 wallet. Tinlake supports [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply approporiate security measures when setting up your web3 wallet(see also below).
-- You need to be able to operate the Ethereum address you have specified in the Subscription Agreement through your web3 wallet
+- A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply approporiate security measures when setting up your web3 wallet(see also below).
+- _**If you use a Ledger, please make sure to activate `Contract data` in the settings of the Ethereum app and to update to the latest firmware.**_
+- You need use the Ethereum address you have specified in the Subscription Agreement through your web3 wallet
 - The "Ethereum Address of the Subscriber" needs to hold the DAI you want to invest
 
-## Technical set-up
-_If you are familiar with how to use web3wallets such as Metamask please skip to the next section._
-
-### 1. Install Metamask
-Tinlake works together with a web3 wallet that holds your private keys to confirm the transactions with Tinlake. To use [Metamask](https://metamask.io), please make sure you have the Metamask plugin installed **in your browser** and have access to the Ethereum address that you want to use for investing. See guides on how to use and install Metamask e.g. [here](https://tokenmarket.net/what-is/how-to-install-and-setup-metamask/) or [here](https://medium.com/publicaio/a-complete-guide-to-using-metamask-updated-version-cd0d6f8c338f).
-
-We recommend to follow appropriate security measures, e.g. use a multisig or hardware wallet such as a Ledger for holding larger amounts for longer periods. Back-up your seed phrases on paper only. For inexperienced users we recommend to use a freshly generated address without previous transactions.
-
-_**If you use a Ledger, please make sure to activate `Contract data` in the settings of the Ethereum app and to update to the latest firmware.**_
-
-### 2. Display DAI and TIN/DROP in Metamsk
+### Display DAI and TIN/DROP in Metamsk
 By default, Metamask only displays your ETH balance under `Assets`. Other tokens need to be added to be displayed. To display the DAI and DROP balances in Metamask, you need to add both tokens to Metamask.
 For DROP and TIN this can be done through Tinlake UI. Just click on `Add DROP/TIN to your wallet` in the respective investment component (see below) and confirm in Metamask.
 If you haven't added DAI yet, in Metamask:
@@ -47,23 +33,17 @@ If you haven't added DAI yet, in Metamask:
 ## Fund your Ethereum address
 Please make sure that your Ethereum address is funded with the investment amount in DAI and sufficient ETH to pay for the transactions. There are [several centralized and decentralized exchanges](https://cointelegraph.com/ethereum-for-beginners/how-to-buy-ethereum), such as [Coinbase](https://www.coinbase.com/) or [Uniswap](https://uniswap.org/) where you can buy and/or trade ETH and DAI against USD and other tokens.
 
-_Please note that Ethereum Gas prices are historically high at the moment. Please make sure to set sufficient gas to ensure adequate transaction times. You find current gas prices e.g. [here](https://etherscan.io/gasTracker). Assuming an ETH price of USD 450, the two transactions required for the initial investment will cost appr._
-
-| Gas price | Cost in ETH | Cost in USD |
-| -------- | -------- | -------- |
-| 10 gwei     | 0.002     | ~USD 1     |
-| 100 gwei     | 0.02     | ~USD 10     |
-| 500 gwei     | 0.1     | ~USD 50     |
-
 ## The investment interface
-The investment will be made through the Tinlake UI available at https://tinlake.centrifuge.io/. Select the pool you want to invest in, change to the `Investments` tab and connect your web3 wallet.
-At the top of the page you find the most important pool information, such as the current Pool and Tranche values (please refer to [INCLUDE LINK TO TINLAKE DOCUMENTATION] for more details on Tinlake terminology.)
+The investment will be made through the Tinlake UI available at [tinlake.centrifuge.io](https://tinlake.centrifuge.io/). Select the pool you want to invest in and connect your web3 wallet.
+At the top of the page you find the most important pool information, such as the current Pool and Tranche values ([more on Tranches](../../overview/tranches/) and other on Tinlake terminology.)
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_2055718cadf334da85b0e3043137f657.png)
+![](investing/pool_overview.png)
+
 
 Below you find the current epoch state to your left and the TIN/DROP invest and redeem components to your right:
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_7cdf2224b61642e5e9676d45ed9e3dd5.png)
+![](investing/epoch_details.png)
+
 Under `Current epoch` you can see how much time and investment capacity is left in the current epoch. You can lock your investment/redemption at any time during an epoch. After the minimum epoch duration has passed, the epoch can be closed and all locked orders will be executed following a best effort approach. The table under `Total locked orders` shows you how many TIN/DROP investment and redemption order are locked for the current epoch.
 
 ## Investment flow summary
@@ -73,7 +53,7 @@ Tinlake's investment's and redemptions are executed in (usually daily ) epochs. 
 
 ## Step- by-step investment guide
 ### Connect to Tinlake pool
-- Go to the [Tinlake URL](https://tinlake.centrifuge.io/) in your browser (preferrably Chrome)
+- Go to the [Tinlake URL](https://tinlake.centrifuge.io/) in your browser
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_ee9209a6661542a1ccda0eb229e012c6.png)
 - Click on the pool you want to invest in in the list of pools or visit it directly with the provided pool URL. You will see the pool details.
 - Select the Ethereum address used for investing in Metamask. Make sure you also select the `Main Ethereum Network` as network.
@@ -85,9 +65,9 @@ and your connected wallet should be displayed in the web3 component in the tob r
 
 
 ### Lock your investment
-You find the TIN/DROP investment and redemption components at the bottom right corner of the page.
+You find the TIN/DROP investment and redemption components on the investment page of the pool.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_f3828a045eda505dec5eec89c6a709ea.png#width=400px)
+![](investing/drop_modal.png#width=400px)
 
 When you are connected with your whitelisted address after succesfully going through KYC and signing the Subsription Agreement on Securitize, your component will give you the Option to Invest and Redeem
 
@@ -139,5 +119,3 @@ The TIN/DROP token will be transferred to your wallet.
 The TIN/DROP token will continue to collect yield reflected in the token price. You can redeem these TIN/DROP at any time (see below).
 Note that the token immediatelly start to accrue interest also if you do not collect them immediately. However, you will need to collect these tokens before you can redeem them or make another investment.
 
-### Collecting a partially executed order
-If your order has only been partially executed, you can collect the executed part of your order. The unfulffilled part will remain locked. You can keep this locked until the order is fullfilled or cancel at any time

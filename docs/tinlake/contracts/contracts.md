@@ -1,6 +1,6 @@
 ---
 id: contracts
-order: 3
+order: 1
 title: Contracts Overview
 category: 3. Contracts
 ---
