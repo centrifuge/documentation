@@ -1,13 +1,13 @@
 ---
 id: securitize
-order: 1
-title: Onboarding with Securitize 
-category: 6. Investment Guide
+order: 3
+title: Onboarding with Securitize
+category: 2. User Guide
 ---
 
 ## This Document
 
-This document describes the process to subscribe for an opportunity on Securitize after you have clicked on the button: 
+This document describes the process to subscribe for an opportunity on Securitize after you have clicked on the button:
 
 ![](./invest-now-btn.png#width=400px)
 
@@ -51,7 +51,7 @@ The W-8BEN tax form is also available from https://www.irs.gov/pub/irs-pdf/fw8be
 This is the W-8BEN-E tax form each Investor that is (i) not an individual and (ii) not a U.S. person (e.g., a corporation organized under U.S. law or an estate or trust (other than a foreign estate or trust whose income from sources without the U.S. is not includible in the beneficiaries’ gross income)), must provide the Issuer with its taxpayer identification number on a signed IRS form W8-BEN-E, as applicable. This form is necessary for the Issuer to comply with its tax filing obligations and to establish that the Investor is not subject to certain withholding tax obligations applicable to non-U.S. persons. The enclosed form contains detailed instructions for furnishing this information.
 The completed form W- 8BEN-E should be returned to the Issuer; do not send it to the IRS.
 You can either upload the filled and signed W-8BEN-E tax form in the signature process later on or you fill out the W-8BEN-E tax form which is embedded in the subscription agreement during the signature process later on.
-The W-8BEN-E tax form is also available from https://www.irs.gov/pub/irs-pdf/fw8bene.pdf 
+The W-8BEN-E tax form is also available from https://www.irs.gov/pub/irs-pdf/fw8bene.pdf
 
 ### Set your Investment Amount
 
