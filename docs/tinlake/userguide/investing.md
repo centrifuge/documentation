@@ -42,36 +42,34 @@ At the top of the page you find the most important pool information, such as the
 
 Below you find the current epoch state to your left and the TIN/DROP invest and redeem components to your right:
 
-![](./investing/epoch_details.png)
+![](./investing_imgs/epoch_details.png)
 
 Under `Current epoch` you can see how much time and investment capacity is left in the current epoch. You can lock your investment/redemption at any time during an epoch. After the minimum epoch duration has passed, the epoch can be closed and all locked orders will be executed following a best effort approach. The table under `Total locked orders` shows you how many TIN/DROP investment and redemption order are locked for the current epoch.
 
 ## Investment flow summary
 Tinlake's investment's and redemptions are executed in (usually daily ) epochs. During the epoch you can lock your investment or redemption order. You can cancel your locked order at any time throughout the epoch. At the end of the epoch all locked orders automatically executed at best effort considering investment/redemption supply and demand and the pools risk metrics. You can collect your TIN/DROP (in case of an investment) or DAI (in case of an redemption) token at any time following the start of the new epoch. If your order is only partially executed you can collect the executed order. The unfullfilled part of the order remains locked for investment/redemption but can this lock can be cancelled at any time.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_b64f5e85b6d7c2bf12af9b4f39786720.png#width=600px)
+![](./investing_imgs/investment_flow.png#width=600px)
 
-## Step- by-step investment guide
+## Step-by-step investment guide
 ### Connect to Tinlake pool
 - Go to the [Tinlake URL](https://tinlake.centrifuge.io/) in your browser
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_ee9209a6661542a1ccda0eb229e012c6.png)
 - Click on the pool you want to invest in in the list of pools or visit it directly with the provided pool URL. You will see the pool details.
 - Select the Ethereum address used for investing in Metamask. Make sure you also select the `Main Ethereum Network` as network.
-- Click on the `Connect` button ![](https://storage.googleapis.com/centrifuge-hackmd/upload_44863a396b1b63dabf3530cf2cdbfb88.png =x20) in the top right corner to connect your Ethereum address for the use with Tinlake. Confirm that you want to connect with your Metamask wallet.
-- The Navbar changes to:
+- Click on the `Connect` button in the top right corner to connect your Ethereum address for the use with Tinlake. Confirm that you want to connect with your Metamask wallet.
+- You should now see your address at the top right
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_676dff1fce8625342cb4eefa1be49b70.png)
-and your connected wallet should be displayed in the web3 component in the tob right corner.
 - Click on the `Investments` tab.
 
 
 ### Lock your investment
 You find the TIN/DROP investment and redemption components on the investment page of the pool.
 
-![](investing/drop_modal.png#width=400px)
+![](./investing_imgs/drop_modal.png#width=400px)
 
 When you are connected with your whitelisted address after succesfully going through KYC and signing the Subsription Agreement on Securitize, your component will give you the Option to Invest and Redeem
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_9f75baf3b09810c637886235d2174268.png#width=400px)
+![](./investing_imgs/drop_modal_whitelisted.png#width=400px)
 
 Before you start investing, you may want to `Add TIN/DROP token to your wallet` by simply clicking on the link at the bottom of the component.
 
@@ -80,14 +78,14 @@ To lock your TIN/DROP investment:
 - Input the amount in DAI you want to invest (Note, that the Tinlake Minimum Investment amount is 10,000 DAI)
 - Click on `Lock DAI`
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_678017512f8d04c2ed0a43cb0d3d723b.png#width=400px)
+![](./investing_imgs/drop_modal_invest.png#width=400px)
 
 - This will open Metamask to confirm the transaction
-    - If you are "just" using Metamask there will one transaction to confirm
+    - If you are using Metamask without a hardware wallet there will one transaction to confirm
     - If you are using a hardware wallet there will be two transactions to confirm at your first transaction (First `Token Approval` then the `Invest Order`). For all your folling investments there will only be one confirmation in Metamask
 - Your sucessfully locked order will be displayed in the component
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_2543ce9b23275ed6613ea457de1e810d.png#width=400px)
+![](./investing_imgs/drop_modal_order.png#width=400px)
 
 - Your investment amount in DAI will be transferred from your wallet and locked in the Tinlake contracts
 
@@ -98,7 +96,7 @@ You can cancel your locked invest order at any time during the epoch. To cancel 
 - Click on the `Cancel Order` button
 - Confirm that you want to cancel
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_7db9566e8cc94aff6cf4e529ed8bb9a3.png#width=400px)
+![](./investing_imgs/drop_modal_cancel.png#width=400px)
 
 - This will open Metamask where you need to confirm the cancel transaction
 
@@ -108,13 +106,13 @@ When the epoch is closed all locked orders will be executed by the smart contrac
 ### Collect your executed investment
 After all orders are executed your fullfilled TIN/DROP order will be ready for collection:
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_4cbdf58793a6b94d609db3bec3ede4c4.png#width=400px)
+![](./investing_imgs/drop_modal_collect.png#width=400px)
 
 To collect your TIN/DROP token simply
 - Click on the `Collect button`
 The TIN/DROP token will be transferred to your wallet.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_236a0a309e83afd017477ecf37fb8448.png#width=400px)
+![](./investing_imgs/drop_modal_balance.png#width=400px)
 
 The TIN/DROP token will continue to collect yield reflected in the token price. You can redeem these TIN/DROP at any time (see below).
 Note that the token immediatelly start to accrue interest also if you do not collect them immediately. However, you will need to collect these tokens before you can redeem them or make another investment.
