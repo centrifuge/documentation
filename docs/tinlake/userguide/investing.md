@@ -11,7 +11,7 @@ category: 2. User Guide
 - Onboarding incl. KYC through [Securitize.io](https://centrifuge.invest.securitize.io/#/login) has been succesfully completed
 - Legal documentation (`Subscription Agreement`) for the pool you want to invest in has been signed in Securitize.io
 
-![](./investing/onboarding_flow.png#width=600px)
+![](./investing_imgs/onboarding_flow.png#width=600px)
 
 ### Technical requirements
 - A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply approporiate security measures when setting up your web3 wallet(see also below).
@@ -37,7 +37,7 @@ Please make sure that your Ethereum address is funded with the investment amount
 The investment will be made through the Tinlake UI available at [tinlake.centrifuge.io](https://tinlake.centrifuge.io/). Select the pool you want to invest in and connect your web3 wallet.
 At the top of the page you find the most important pool information, such as the current Pool and Tranche values ([more on Tranches](../../overview/tranches/) and other on Tinlake terminology.)
 
-![](./investing/pool_overview.png)
+![](./investing_imgs/pool_overview.png)
 
 
 Below you find the current epoch state to your left and the TIN/DROP invest and redeem components to your right:
