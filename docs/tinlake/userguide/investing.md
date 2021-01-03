@@ -1,12 +1,12 @@
 ---
-id: investor-guide
+id: investing
 order: 2
-title: Tinlake Investor Guide
+title: Investing in a pool
 subtitle: How to conduct your DROP investment/redemption with Tinlake UI
-category: 6. Investment Guide
+category: 2. User Guide
 ---
 
-_If you have any questions regarding the technical set-up or how to conduct the investment, please contact tinlake@centrifuge.io. For further investment details please refer to the respective legal documentation in [Securitize.io](https://centrifuge.invest.securitize.io/#/login)._
+_For further investment details please refer to the respective legal documentation in [Securitize.io](https://centrifuge.invest.securitize.io/#/login)._
 
 Command Line Instructions for Power Users: https://centrifuge.hackmd.io/-VQUDTEDTPWutLhNT2oYaw
 
@@ -27,14 +27,14 @@ Command Line Instructions for Power Users: https://centrifuge.hackmd.io/-VQUDTED
 _If you are familiar with how to use web3wallets such as Metamask please skip to the next section._
 
 ### 1. Install Metamask
-Tinlake works together with a web3 wallet that holds your private keys to confirm the transactions with Tinlake. To use [Metamask](https://metamask.io), please make sure you have the Metamask plugin installed **in your browser** and have access to the Ethereum address that you want to use for investing. See guides on how to use and install Metamask e.g. [here](https://tokenmarket.net/what-is/how-to-install-and-setup-metamask/) or [here](https://medium.com/publicaio/a-complete-guide-to-using-metamask-updated-version-cd0d6f8c338f). 
+Tinlake works together with a web3 wallet that holds your private keys to confirm the transactions with Tinlake. To use [Metamask](https://metamask.io), please make sure you have the Metamask plugin installed **in your browser** and have access to the Ethereum address that you want to use for investing. See guides on how to use and install Metamask e.g. [here](https://tokenmarket.net/what-is/how-to-install-and-setup-metamask/) or [here](https://medium.com/publicaio/a-complete-guide-to-using-metamask-updated-version-cd0d6f8c338f).
 
-We recommend to follow appropriate security measures, e.g. use a multisig or hardware wallet such as a Ledger for holding larger amounts for longer periods. Back-up your seed phrases on paper only. For inexperienced users we recommend to use a freshly generated address without previous transactions. 
+We recommend to follow appropriate security measures, e.g. use a multisig or hardware wallet such as a Ledger for holding larger amounts for longer periods. Back-up your seed phrases on paper only. For inexperienced users we recommend to use a freshly generated address without previous transactions.
 
 _**If you use a Ledger, please make sure to activate `Contract data` in the settings of the Ethereum app and to update to the latest firmware.**_
 
 ### 2. Display DAI and TIN/DROP in Metamsk
-By default, Metamask only displays your ETH balance under `Assets`. Other tokens need to be added to be displayed. To display the DAI and DROP balances in Metamask, you need to add both tokens to Metamask. 
+By default, Metamask only displays your ETH balance under `Assets`. Other tokens need to be added to be displayed. To display the DAI and DROP balances in Metamask, you need to add both tokens to Metamask.
 For DROP and TIN this can be done through Tinlake UI. Just click on `Add DROP/TIN to your wallet` in the respective investment component (see below) and confirm in Metamask.
 If you haven't added DAI yet, in Metamask:
 - Click on `Assets` tab
@@ -85,7 +85,7 @@ and your connected wallet should be displayed in the web3 component in the tob r
 
 
 ### Lock your investment
-You find the TIN/DROP investment and redemption components at the bottom right corner of the page. 
+You find the TIN/DROP investment and redemption components at the bottom right corner of the page.
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_f3828a045eda505dec5eec89c6a709ea.png#width=400px)
 
@@ -93,7 +93,7 @@ When you are connected with your whitelisted address after succesfully going thr
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_9f75baf3b09810c637886235d2174268.png#width=400px)
 
-Before you start investing, you may want to `Add TIN/DROP token to your wallet` by simply clicking on the link at the bottom of the component. 
+Before you start investing, you may want to `Add TIN/DROP token to your wallet` by simply clicking on the link at the bottom of the component.
 
 To lock your TIN/DROP investment:
 - Click on the `Invest` button
@@ -105,11 +105,11 @@ To lock your TIN/DROP investment:
 - This will open Metamask to confirm the transaction
     - If you are "just" using Metamask there will one transaction to confirm
     - If you are using a hardware wallet there will be two transactions to confirm at your first transaction (First `Token Approval` then the `Invest Order`). For all your folling investments there will only be one confirmation in Metamask
-- Your sucessfully locked order will be displayed in the component 
+- Your sucessfully locked order will be displayed in the component
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_2543ce9b23275ed6613ea457de1e810d.png#width=400px)
 
-- Your investment amount in DAI will be transferred from your wallet and locked in the Tinlake contracts 
+- Your investment amount in DAI will be transferred from your wallet and locked in the Tinlake contracts
 
 **Note that locked DAI are not invested in Tinlake yet and thus do not accrue interest. Your order will be automatically executed at best effort at the close of the epoch.**
 
@@ -137,7 +137,7 @@ The TIN/DROP token will be transferred to your wallet.
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_236a0a309e83afd017477ecf37fb8448.png#width=400px)
 
 The TIN/DROP token will continue to collect yield reflected in the token price. You can redeem these TIN/DROP at any time (see below).
-Note that the token immediatelly start to accrue interest also if you do not collect them immediately. However, you will need to collect these tokens before you can redeem them or make another investment. 
+Note that the token immediatelly start to accrue interest also if you do not collect them immediately. However, you will need to collect these tokens before you can redeem them or make another investment.
 
 ### Collecting a partially executed order
-If your order has only been partially executed, you can collect the executed part of your order. The unfulffilled part will remain locked. You can keep this locked until the order is fullfilled or cancel at any time 
+If your order has only been partially executed, you can collect the executed part of your order. The unfulffilled part will remain locked. You can keep this locked until the order is fullfilled or cancel at any time
