@@ -16,7 +16,7 @@ import "katex/dist/katex.css";
 
 const EditPage = ({ file }) => {
   const GITHUB_BASE =
-    "https://github.com/centrifuge/developer.centrifuge.io/tree/develop/docs";
+    "https://github.com/centrifuge/documentation/tree/develop/docs";
   const githubLink = `${GITHUB_BASE}/${file}`;
 
   return (
@@ -34,7 +34,7 @@ const SidebarContainer = styled(Box)`
     `
     border: none;
     z-index: 1;
-    top: 65px; 
+    top: 65px;
   `}
 `;
 
