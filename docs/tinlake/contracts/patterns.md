@@ -1,8 +1,8 @@
 ---
 id: patterns
 order: 4
-title: Smart Contract - Design Patterns
-category: 2. Contracts
+title: Smart Contract Design Patterns
+category: 3. Contracts
 ---
 
 ## Small modular contracts

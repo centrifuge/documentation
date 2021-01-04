@@ -2,7 +2,7 @@
 id: contracts
 order: 2
 title: Deployments
-category: 2. Contracts
+category: 3. Contracts
 ---
 The Tinlake contracts are intended to be deployed once for every asset class. There is no shared code between any deployments to allow for a maximum of flexibility. We intend for users to customize and modify the codebase to better suit their needs. The codebase is clearly split into components that could and should be adjusted and core contracts. The core contracts enforce fairly basic rules (such as making sure a borrower can only unlock their NFT if they repaid their entire debt) while allowing other behaviors to be configured (such as how much interest the borrwer needs to pay).
 

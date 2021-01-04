@@ -1,13 +1,13 @@
 ---
 id: securitize
-order: 1
-title: Onboarding with Securitize 
-category: 6. Investment Guide
+order: 3
+title: Onboarding with Securitize
+category: 2. User Guide
 ---
 
 ## This Document
 
-This document describes the process to subscribe for an opportunity on Securitize after you have clicked on the button: 
+This document describes the process to subscribe for an opportunity on Securitize after you have clicked on the button:
 
 ![](./invest-now-btn.png#width=400px)
 
@@ -15,20 +15,16 @@ of an opportunity.
 
 ## Step 1: Review Documents and Investment Amount
 
-### List of Documents
-
-You should see the following document available to download under
-
-
-#### Executive Summary
+### Executive Summary
 
 Download and read the executive summary. It gives you an overview of the asset originator, the underlying assets, and the opportunity details including specific risk factors. Please reach out to the issuer if you have any questions.
 
-#### DROP Subscription Agreement
+### DROP Subscription Agreement
 
 Download and read the DROP subscription agreement. It needs to be signed in a later step to subscribe to the opportunity and being able to purchase DROP tokens. The agreement outlines your rights and obligations as an investor, it includes the Executive Summary and all general risk factors. Please reach out to the issuer if you have any questions.
 
-U.S. Person Taxpayer Identification Number and Certification
+### Tax Forms
+#### U.S. Person Taxpayer Identification Number and Certification
 This is the W-9 tax form each investor that is a U.S. person (e.g., a U.S. citizen or resident, a partnership organized under U.S. law, a corporation organized under U.S. law, a limited liability company organized under U.S. law, or an estate or trust (other than a foreign estate or trust whose income from sources without the U.S. is not includible in the beneficiaries’ gross income)), must provide the issuer with its taxpayer identification number on a signed IRS form W-9. This form is necessary for the issuer to comply with its tax filing obligations and to establish that the investor is not subject to certain withholding tax obligations applicable to non-U.S. persons. The enclosed form contains detailed instructions for furnishing this information.
 
 **The completed form W-9 should be returned to the issuer; do not send it to the IRS.**
@@ -46,16 +42,9 @@ You can either upload the filled and signed W-8BEN tax form in the signature pro
 
 The W-8BEN tax form is also available from https://www.irs.gov/pub/irs-pdf/fw8ben.pdf.
 
-#### Non-U.S. Person Non-Individual Taxpayer Identification Number and Certification
-
-This is the W-8BEN-E tax form each Investor that is (i) not an individual and (ii) not a U.S. person (e.g., a corporation organized under U.S. law or an estate or trust (other than a foreign estate or trust whose income from sources without the U.S. is not includible in the beneficiaries’ gross income)), must provide the Issuer with its taxpayer identification number on a signed IRS form W8-BEN-E, as applicable. This form is necessary for the Issuer to comply with its tax filing obligations and to establish that the Investor is not subject to certain withholding tax obligations applicable to non-U.S. persons. The enclosed form contains detailed instructions for furnishing this information.
-The completed form W- 8BEN-E should be returned to the Issuer; do not send it to the IRS.
-You can either upload the filled and signed W-8BEN-E tax form in the signature process later on or you fill out the W-8BEN-E tax form which is embedded in the subscription agreement during the signature process later on.
-The W-8BEN-E tax form is also available from https://www.irs.gov/pub/irs-pdf/fw8bene.pdf 
-
 ### Set your Investment Amount
 
-Set the amount you would like to invest, at least enter the minimum amount:
+Set the amount you would like to invest, you will be able to change this later so start by entering your initial amount:
 
 ![](./set-investment-amt.png)
 
