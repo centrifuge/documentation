@@ -2,7 +2,7 @@
 id: proxy-actions
 order: 3
 title: Proxy Actions Pattern
-category: 2. Contracts
+category: 3. Contracts
 ---
 ## Introduction
 The Tinlake core contracts are a low level set of contracts exposing a set of atomic and simple method calls to interact with the system. This architecture was chosen to keep the core contracts easy to test and secure.
@@ -28,7 +28,7 @@ Returns the proxy contract address for a given `id`. The `id` is the id of the t
 ### `ownerOf(uint id) public returns (address)`
 Returns the owner of the corresponding NFT.
 
-The contract also implements all other ERC721 standard methods as defined in 
+The contract also implements all other ERC721 standard methods as defined in
 [https://eips.ethereum.org/EIPS/eip-721](https://eips.ethereum.org/EIPS/eip-721).
 
 ## Proxy
