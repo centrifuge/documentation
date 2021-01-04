@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Centrifuge Developer`,
+    title: `Centrifuge Documentation`,
     siteUrl: process.env.URL || "http://localhost:8000",
-    description: `A Decentralized Operating System For The Financial Supply Chain`,
+    description: `Learn about Centrifuge`,
     author: `@centrifuge`
   },
   plugins: [
