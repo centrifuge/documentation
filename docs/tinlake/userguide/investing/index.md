@@ -11,7 +11,7 @@ category: 2. User Guide
 - Onboarding incl. KYC through [Securitize.io](https://centrifuge.invest.securitize.io/#/login) has been succesfully completed
 - Legal documentation (`Subscription Agreement`) for the pool you want to invest in has been signed in Securitize.io
 
-![](./investing_imgs/onboarding_flow.png#width=600px)
+![](./onboarding_flow.png#width=600px)
 
 ### Technical requirements
 - A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply approporiate security measures when setting up your web3 wallet(see also below).
@@ -37,19 +37,19 @@ Please make sure that your Ethereum address is funded with the investment amount
 The investment will be made through the Tinlake UI available at [tinlake.centrifuge.io](https://tinlake.centrifuge.io/). Select the pool you want to invest in and connect your web3 wallet.
 At the top of the page you find the most important pool information, such as the current Pool and Tranche values ([more on Tranches](../../overview/tranches/) and other on Tinlake terminology.)
 
-![](./investing_imgs/pool_overview.png)
+![](./pool_overview.png)
 
 
 Below you find the current epoch state to your left and the TIN/DROP invest and redeem components to your right:
 
-![](./investing_imgs/epoch_details.png)
+![](./epoch_details.png)
 
 Under `Current epoch` you can see how much time and investment capacity is left in the current epoch. You can lock your investment/redemption at any time during an epoch. After the minimum epoch duration has passed, the epoch can be closed and all locked orders will be executed following a best effort approach. The table under `Total locked orders` shows you how many TIN/DROP investment and redemption order are locked for the current epoch.
 
 ## Investment flow summary
 Tinlake's investment's and redemptions are executed in (usually daily ) epochs. During the epoch you can lock your investment or redemption order. You can cancel your locked order at any time throughout the epoch. At the end of the epoch all locked orders automatically executed at best effort considering investment/redemption supply and demand and the pools risk metrics. You can collect your TIN/DROP (in case of an investment) or DAI (in case of an redemption) token at any time following the start of the new epoch. If your order is only partially executed you can collect the executed order. The unfullfilled part of the order remains locked for investment/redemption but can this lock can be cancelled at any time.
 
-![](./investing_imgs/investment_flow.png#width=600px)
+![](./investment_flow.png#width=600px)
 
 ## Step-by-step investment guide
 ### Connect to Tinlake pool
@@ -65,11 +65,11 @@ Tinlake's investment's and redemptions are executed in (usually daily ) epochs. 
 ### Lock your investment
 You find the TIN/DROP investment and redemption components on the investment page of the pool.
 
-![](./investing_imgs/drop_modal.png#width=400px)
+![](./drop_modal.png#width=400px)
 
 When you are connected with your whitelisted address after succesfully going through KYC and signing the Subsription Agreement on Securitize, your component will give you the Option to Invest and Redeem
 
-![](./investing_imgs/drop_modal_whitelisted.png#width=400px)
+![](./drop_modal_whitelisted.png#width=400px)
 
 Before you start investing, you may want to `Add TIN/DROP token to your wallet` by simply clicking on the link at the bottom of the component.
 
@@ -78,14 +78,14 @@ To lock your TIN/DROP investment:
 - Input the amount in DAI you want to invest (Note, that the Tinlake Minimum Investment amount is 10,000 DAI)
 - Click on `Lock DAI`
 
-![](./investing_imgs/drop_modal_invest.png#width=400px)
+![](./drop_modal_invest.png#width=400px)
 
 - This will open Metamask to confirm the transaction
     - If you are using Metamask without a hardware wallet there will one transaction to confirm
     - If you are using a hardware wallet there will be two transactions to confirm at your first transaction (First `Token Approval` then the `Invest Order`). For all your folling investments there will only be one confirmation in Metamask
 - Your sucessfully locked order will be displayed in the component
 
-![](./investing_imgs/drop_modal_order.png#width=400px)
+![](./drop_modal_order.png#width=400px)
 
 - Your investment amount in DAI will be transferred from your wallet and locked in the Tinlake contracts
 
@@ -96,7 +96,7 @@ You can cancel your locked invest order at any time during the epoch. To cancel 
 - Click on the `Cancel Order` button
 - Confirm that you want to cancel
 
-![](./investing_imgs/drop_modal_cancel.png#width=400px)
+![](./drop_modal_cancel.png#width=400px)
 
 - This will open Metamask where you need to confirm the cancel transaction
 
@@ -106,13 +106,13 @@ When the epoch is closed all locked orders will be executed by the smart contrac
 ### Collect your executed investment
 After all orders are executed your fullfilled TIN/DROP order will be ready for collection:
 
-![](./investing_imgs/drop_modal_collect.png#width=400px)
+![](./drop_modal_collect.png#width=400px)
 
 To collect your TIN/DROP token simply
 - Click on the `Collect button`
 The TIN/DROP token will be transferred to your wallet.
 
-![](./investing_imgs/drop_modal_balance.png#width=400px)
+![](./drop_modal_balance.png#width=400px)
 
 The TIN/DROP token will continue to collect yield reflected in the token price. You can redeem these TIN/DROP at any time (see below).
 Note that the token immediatelly start to accrue interest also if you do not collect them immediately. However, you will need to collect these tokens before you can redeem them or make another investment.
