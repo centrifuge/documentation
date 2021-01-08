@@ -1,0 +1,2 @@
+# redurect developer.centrifuge.io to docs.centrifuge.io
+https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
