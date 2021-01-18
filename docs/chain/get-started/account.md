@@ -80,7 +80,6 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 ![](./add-via-qr.png#width=400)
     - Scan the QR code on your device for your Centrifuge Mainnet Public Address
     ![](./public-address-qr.png#width=400)
-
     - Your address for Centrifuge Mainnet should begin with a '4...'
 1. To manually check the above process:
      - Delete the key from the app
