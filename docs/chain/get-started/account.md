@@ -31,7 +31,7 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 | DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind._ |
 | --- |
 
-### How to connect to Centrifuge Chain Mainnet 
+### How to connect to Centrifuge Chain Mainnet
 
 1. Open the Portal Website on your computer at: https://portal.chain.centrifuge.io/
 
@@ -61,30 +61,30 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 1. Turn off wifi & bluetooth (**NEVER TURN IT ON AGAIN!**)
 1. Create a key for Centrifuge Mainnet using the Parity Signer App
     - Create your identity to get started
-    
-    ![](./new-identity.png)
+
+    ![](./new-identity.png#width=400)
     - Write down your 24 word Recovery Phrase (**THIS IS VERY IMPORTANT**)
-    ![](./recovery-phrase.png)
+    ![](./recovery-phrase.png#width=400)
 
     - Set your Identity PIN
-        - **You will use this PIN to sign all of your transactions using this device.** 
+        - **You will use this PIN to sign all of your transactions using this device.**
     - Create your first Keypair - select the Centrifuge Mainnet Network
-    ![](./create-keypair.png)
+    ![](./create-keypair.png#width=400)
 
 
-1. Get your address by scanning the QR code on the Portal Website. 
+1. Get your address by scanning the QR code on the Portal Website.
    - On your computer, navigate to https://portal.chain.centrifuge.io/
    - Make sure the endpoint is set to `wss://fullnode.centrifuge.io`
    - Click on Accounts
    - Click on 'Add via QR'
-![](./add-via-qr.png)
+![](./add-via-qr.png#width=400)
     - Scan the QR code on your device for your Centrifuge Mainnet Public Address
-    ![](./public-address-qr.png)
+    ![](./public-address-qr.png#width=400)
 
     - Your address for Centrifuge Mainnet should begin with a '4...'
 1. To manually check the above process:
      - Delete the key from the app
-     - Recover the key from your backed up phrase 
+     - Recover the key from your backed up phrase
      - Verify the address matches what you obtained above
 1. Send some test RAD to another address and use Parity Signer to sign this transaction
      - If you don't have any RAD, email faucet@centrifuge.foundation to request some RAD for this test
@@ -92,9 +92,9 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
      - Click 'Make Transfer'
      - Click 'Sign via QR'
      - Using the Parity Signer App, scan the QR code in your browser with the App's QR Scanner from this account screen:
-     ![](./public-address-qr.png)
+     ![](./public-address-qr.png#width=400)
      - In the app, confirm your signature of the transaction by entering your PIN
-     - Click 'Scan Signature QR' in the browser 
+     - Click 'Scan Signature QR' in the browser
      - Sign the transaction
 
 1. Backup your Recovery Phrase and keep it somewhere safe. Please do research on secure methods for storage and recovery.
@@ -105,17 +105,17 @@ To add a new identity:
 - Select the person icon on the top right
 - Select 'Add Identity'
 
-![](./add-identity.png)
+![](./add-identity.png#width=400)
 
 
-> **A note on app updates:** 
+> **A note on app updates:**
 >If a new version of the app becomes available, please exercise the following caution.
 >Ideally, replace the device or do not update the app.
 >If an update is necessary:
 >1. Hard reset the device and wipe everything
 >2. Re-install the new parity signer app
 >3. Turn off wifi & bluetooth (**NEVER TURN IT ON AGAIN**)
->4. Recover your key from seed phrase 
+>4. Recover your key from seed phrase
 
 
 ### Remember to write down your secret phrase & STORE IT SAFELY!
