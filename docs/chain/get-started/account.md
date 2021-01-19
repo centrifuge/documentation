@@ -64,11 +64,12 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 
     ![](./new-identity.png#width=400)
     - Write down your 24 word Recovery Phrase (**THIS IS VERY IMPORTANT**)
-    ![](./recovery-phrase.png#width=400)
 
+    ![](./recovery-phrase.png#width=400)
     - Set your Identity PIN
         - **You will use this PIN to sign all of your transactions using this device.**
     - Create your first Keypair - select the Centrifuge Mainnet Network
+
     ![](./create-keypair.png#width=400)
 
 
@@ -77,10 +78,12 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
    - Make sure the endpoint is set to `wss://fullnode.centrifuge.io`
    - Click on Accounts
    - Click on 'Add via QR'
-![](./add-via-qr.png#width=400)
-    - Scan the QR code on your device for your Centrifuge Mainnet Public Address
-    ![](./public-address-qr.png#width=400)
-    - Your address for Centrifuge Mainnet should begin with a '4...'
+
+     ![](./add-via-qr.png#width=400)
+   - Scan the QR code on your device for your Centrifuge Mainnet Public Address
+
+     ![](./public-address-qr.png#width=400)
+   - Your address for Centrifuge Mainnet should begin with a '4...'
 1. To manually check the above process:
      - Delete the key from the app
      - Recover the key from your backed up phrase
