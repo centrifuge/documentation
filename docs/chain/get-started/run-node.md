@@ -6,10 +6,7 @@ category: 2. Get Started
 ---
 ## Requirements
 ***System Requirements***
-We recommend a machine with at least the following capacity to run the different networks. Likely you will need more in the future though.
-- 4 GB RAM
-- 50 GB disk
-- Standard desktop/server CPU 
+We recommend consulting the [standard hardware](https://wiki.polkadot.network/docs/en/maintain-guides-how-to-validate-polkadot#standard-hardware) section of the Polkadot Wiki for specs. 
 
 Below we describe two ways of running our chain node:
 
