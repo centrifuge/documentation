@@ -3,46 +3,39 @@ module.exports = {
     title: `Centrifuge Documentation`,
     siteUrl: process.env.URL || "http://localhost:8000",
     description: `Learn about Centrifuge`,
-    author: `@centrifuge`
+    author: `@centrifuge`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `code-of-conduct`,
+    //     path: `${__dirname}/docs/code-of-conduct.md`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `cent-node`,
-        path: `${__dirname}/docs/cent-node`
-      }
+        name: `learn`,
+        path: `${__dirname}/docs/learn`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `chain`,
-        path: `${__dirname}/docs/chain`
-      }
+        name: `use`,
+        path: `${__dirname}/docs/use`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `tinlake`,
-        path: `${__dirname}/docs/tinlake`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `nfts`,
-        path: `${__dirname}/docs/nfts`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `code-of-conduct`,
-        path: `${__dirname}/docs/code-of-conduct.md`
-      }
+        name: `build`,
+        path: `${__dirname}/docs/build`,
+      },
     },
     {
       resolve: `gatsby-mdx`,
@@ -52,36 +45,36 @@ module.exports = {
           require("rehype-slug"),
           require("remark-math"),
           require("remark-image-attributes"),
-          require("rehype-katex")
+          require("rehype-katex"),
         ],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              ignoreFileExtensions: []
-            }
+              ignoreFileExtensions: [],
+            },
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
               backgroundColor: "none",
-              disableBgImage: true
-            }
+              disableBgImage: true,
+            },
           },
           {
             resolve: "gatsby-remark-image-attributes",
             options: {
-              styleAttributes: ["box-shadow", "margin"]
-            }
-          }
-        ]
-      }
+              styleAttributes: ["box-shadow", "margin"],
+            },
+          },
+        ],
+      },
     },
     {
       resolve: "gatsby-redirect-from",
       options: {
-        query: "allMdx"
-      }
+        query: "allMdx",
+      },
     },
     "gatsby-plugin-meta-redirect",
     `gatsby-plugin-sitemap`,
@@ -96,11 +89,11 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#2762ff`,
         display: `minimal-ui`,
-        icon: `src/images/centrifuge-logo.png`
-      }
+        icon: `src/images/centrifuge-logo.png`,
+      },
     },
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-typescript`
-  ]
+    `gatsby-plugin-typescript`,
+  ],
 };

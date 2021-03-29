@@ -1,73 +1,69 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Box} from "grommet";
+import { Box } from "grommet";
 
-import styled from "styled-components";
+import "./styles.css";
+import "@fontsource/space-mono";
 
-import Nav from "../Nav";
-import {theme} from "../../theme";
-import {FooterMenu, JoinSlack} from "../Footer";
+import { theme } from "../../theme";
+import Search from "../Search";
+import SideNav from "../SideNav";
+import SocialFooter from "../SocialFooter";
 
-
-const Header = styled.header`
-  width: 100%;
-  display:flex;
-  align-items: center;
-  top: 0;
-  position: sticky;
-  flex-direction: column;
-  z-index: 10;
-`
-
-const Layout = ({children, gap, size}) => {
-
+const Layout = ({ children, hideFooter }) => {
   let sectionProps = {
-    fill: 'horizontal',
-    pad: {horizontal: 'medium'},
+    fill: "horizontal",
+    pad: { horizontal: "48px" },
     style: {
-      maxWidth: theme.maxContentWidth
-    }
-  }
+      maxWidth: theme.maxContentWidth,
+    },
+  };
 
   return (
-
-    <>
-      <Header>
-        <Box
-          align={"center"}
-          background={'white'}
-          fill={true}
-          border={{side: 'bottom', color: 'light-4'}}
-        >
-          <Nav {...sectionProps} size={size}/>
+    <Box direction="row" style={{ minHeight: "100vh" }}>
+      <Box direction="row" width="20%" flex="grow">
+        <Box>
+          {/* side nav */}
+          <SideNav />
         </Box>
-      </Header>
-      <Box align={'center'}>
-        <Box {...sectionProps}>
+        <Box
+          fill="vertical"
+          width="8px"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(216, 216, 216, 0) 0%, #D8D8D8 100%)",
+          }}
+        />
+      </Box>
+      <Box width="80%">
+        {/* search */}
+        <Box
+          direction="row"
+          fill="horizontal"
+          justify="end"
+          pad={{ horizontal: "medium", vertical: "medium" }}
+        >
+          <Box>
+            <Search open={true} />
+          </Box>
+        </Box>
+        {/* content */}
+        <Box align="center" {...sectionProps} flex="grow">
           {children}
         </Box>
+        {/* footer */}
+        {!hideFooter && <SocialFooter />}
       </Box>
-
-      <Box as="footer">
-        <Box background={'brand'} align={'center'}>
-          <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, vertical: 'large'}}>
-            <JoinSlack/>
-          </Box>
-        </Box>
-        <Box background={'black'} align={'center'}>
-          <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, vertical: 'large'}}>
-            <FooterMenu size={size} gap={gap}/>
-          </Box>
-        </Box>
-      </Box>
-    </>
-
+    </Box>
   );
-
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+};
+
+Layout.defaultProps = {
+  hideFooter: false,
 };
 
 export default Layout;

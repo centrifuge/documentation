@@ -71,9 +71,9 @@ const HomePage = () => (
             <Image style={{maxWidth: '440px'}} src={helloWordImage}/>
           </Box>
 
-          <Box fill={true} pad={{bottom: 'large'}}>
+          {/* <Box fill={true} pad={{bottom: 'large'}}>
             <Products areas={areas} columns={columns} rows={rows} />
-          </Box>
+          </Box> */}
         </Layout>
       }}
     </ResponsiveContext.Consumer>

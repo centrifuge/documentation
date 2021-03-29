@@ -882,6 +882,11 @@
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
 
+"@fontsource/space-mono@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/space-mono/-/space-mono-4.2.2.tgz#e7a5b7fd788ab6c32e4b2b3e161b7c02e579118e"
+  integrity sha512-XK0OaGDMWn9s3KZjReZhbDMdAfutWWajpz+Kvnnhq9xku0qW5TJqhF0ouXmJG7KQlyUuGloKTuiELNS/Y0WOqw==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
