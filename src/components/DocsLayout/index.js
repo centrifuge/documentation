@@ -49,8 +49,12 @@ const DocsLayout = ({ data }) => {
             </Heading>
             <Box direction="row" gap="medium">
               <EditPage file={mdx.fields.file} />
-              <Box border={{ side: "right" }} />
-              <Contributors />
+              {!!mdx.frontmatter?.contributors && (
+                <Box direction="row" gap="medium">
+                  <Box border={{ side: "right" }} />
+                  <Contributors contributors={mdx.frontmatter.contributors} />
+                </Box>
+              )}
             </Box>
           </Box>
           <DocsContent mdx={mdx} />
@@ -74,6 +78,7 @@ export const query = graphql`
       frontmatter {
         title
         order
+        contributors
       }
       code {
         body

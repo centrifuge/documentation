@@ -10,13 +10,15 @@ import Search from "../Search";
 import SideNav from "../SideNav";
 import SocialFooter from "../SocialFooter";
 
-const Layout = ({ children, hideFooter }) => {
+const Layout = ({ children, hideFooter, fullWidth }) => {
   let sectionProps = {
     fill: "horizontal",
     pad: { horizontal: "48px" },
-    style: {
-      maxWidth: theme.maxContentWidth,
-    },
+    style: fullWidth
+      ? {}
+      : {
+          maxWidth: theme.maxContentWidth,
+        },
   };
 
   return (
@@ -64,6 +66,7 @@ Layout.propTypes = {
 
 Layout.defaultProps = {
   hideFooter: false,
+  fullWidth: false,
 };
 
 export default Layout;
