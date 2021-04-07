@@ -1,15 +1,11 @@
 ---
 id: cent-chain
 order: 1
-title:  Centrifuge Chain
+title: Centrifuge Chain
 redirect_from:
-    - /build/
+  - /build/
 ---
 
-# heading 1
+## aa
 
-## subheading 1
-
-# heading 2
-
-## subheading 2
+## fff
