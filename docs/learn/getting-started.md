@@ -10,7 +10,7 @@ redirect_from:
 
 Centrifuge bridges real-world assets into DeFi (“Decentralized Finance”) to bring down the cost of capital for SMEs and provide DeFi investors with a stable source of yield uncorrelated from volatile crypto assets.
 
-In today’s financial system, only the largest businesses get direct access to liquid capital markets. Most depend on banks for their capital needs. The lack of an open and transparent marketplace denies these smaller businesses access to competitive interest rates mostly due to market inefficiencies and transaction costs. ![](https://storage.googleapis.com/centrifuge-hackmd/upload_1b1adf116ed7021f4ea4d243d36a102b.png)
+In today’s financial system, only the largest businesses get direct access to liquid capital markets. Most depend on banks for their capital needs. The lack of an open and transparent marketplace denies these smaller businesses access to competitive interest rates mostly due to market inefficiencies and transaction costs. ![](https://storage.googleapis.com/centrifuge-hackmd/upload_1b1adf116ed7021f4ea4d243d36a102b.png#float=right;margin=20px;width=70%;)
 
 DeFi is a growing financial system without any barriers of entry. Centrifuge wants to bring this benefit to all borrowers that until now had no access to DeFi liquidity.
 
