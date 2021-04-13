@@ -1,7 +1,7 @@
 ---
 id: cent-chain
 order: 4
-title: A deep dive into our Cent chain - the home for real world assets
+title: Deep Dive into our Cent chain
 contributors: <Dylan Dedi:dylan@centrifuge.io>, <Sounak Pradhan:sounak@abc.io>
 ---
 

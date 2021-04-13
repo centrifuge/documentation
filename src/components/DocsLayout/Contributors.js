@@ -33,7 +33,7 @@ const Contributors = ({ contributors }) => {
       <Box direction="row" gap="small">
         <Text style={{ fontFamily: "Space Mono" }}>Contributors</Text>
         {contributorsList.map((contributor, i) => (
-          <Contributor {...contributor} avatar={avatars[i % 4]} />
+          <Contributor key={i} {...contributor} avatar={avatars[i % 4]} />
         ))}
       </Box>
     )

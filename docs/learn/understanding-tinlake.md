@@ -1,7 +1,7 @@
 ---
 id: understanding-tinlake
 order: 3
-title: Understanding Tinlake - our decentralized asset financing platform
+title: Understanding Tinlake
 contributors: <Dylan Dedi:dylan@centrifuge.io>, <Sounak Pradhan:sounak@abc.io>
 ---
 

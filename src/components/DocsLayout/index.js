@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useContext } from "react";
 import { graphql } from "gatsby";
-import { Box, Heading, Text } from "grommet";
+import { Box, Heading, Text, ResponsiveContext } from "grommet";
 
 import Layout from "../Layout";
 import { theme } from "../../theme";
@@ -31,38 +31,49 @@ const DocsLayout = ({ data }) => {
 
   return (
     <AxisTheme theme={theme}>
-      <Layout hideFooter>
-        <SEO title={mdx.frontmatter.title} />
-        <Box width="100%" gap="medium" pad={{ bottom: "large" }}>
-          <Box>
-            <Text
-              size="large"
-              style={{
-                fontFamily: "Space Mono",
-                textTransform: "capitalize",
-              }}
-            >
-              {mdx.fields.instanceName}
-            </Text>
-            <Heading level={1} margin={{ vertical: "0" }}>
-              {mdx.frontmatter.title}
-            </Heading>
-            <Box direction="row" gap="medium">
-              <EditPage file={mdx.fields.file} />
-              {!!mdx.frontmatter?.contributors && (
-                <Box direction="row" gap="medium">
-                  <Box border={{ side: "right" }} />
-                  <Contributors contributors={mdx.frontmatter.contributors} />
+      <ResponsiveContext.Consumer>
+        {(size) => {
+          return (
+            <Layout hideFooter size={size}>
+              <SEO title={mdx.frontmatter.title} />
+              <Box width="100%" gap="medium" pad={{ bottom: "large" }}>
+                <Box>
+                  <Text
+                    size="large"
+                    style={{
+                      fontFamily: "Space Mono",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {mdx.fields.instanceName}
+                  </Text>
+                  <Heading level={1} margin={{ vertical: "0" }}>
+                    {mdx.frontmatter.title}
+                  </Heading>
+                  <Box
+                    direction={size === "small" ? "column" : "row"}
+                    gap="medium"
+                  >
+                    <EditPage file={mdx.fields.file} />
+                    {!!mdx.frontmatter?.contributors && (
+                      <Box direction="row" gap="medium">
+                        {size !== "small" && <Box border={{ side: "right" }} />}
+                        <Contributors
+                          contributors={mdx.frontmatter.contributors}
+                        />
+                      </Box>
+                    )}
+                  </Box>
                 </Box>
-              )}
-            </Box>
-          </Box>
-          <DocsContent mdx={mdx} />
-          <Box>
-            <NodeNavigation prevNode={prevNode} nextNode={nextNode} />
-          </Box>
-        </Box>
-      </Layout>
+                <DocsContent mdx={mdx} />
+                <Box>
+                  <NodeNavigation prevNode={prevNode} nextNode={nextNode} />
+                </Box>
+              </Box>
+            </Layout>
+          );
+        }}
+      </ResponsiveContext.Consumer>
     </AxisTheme>
   );
 };

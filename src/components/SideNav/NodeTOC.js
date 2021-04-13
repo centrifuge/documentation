@@ -3,7 +3,7 @@ import { Box } from "grommet";
 
 import InternalLink from "./InternalLink";
 
-const NodeTOC = ({ slug, title, order, tableOfContents }) => {
+const NodeTOC = ({ slug, title, order, tableOfContents, size }) => {
   const [isActive, setActive] = useState(false);
   const linkRef = useRef(null);
 
@@ -14,7 +14,7 @@ const NodeTOC = ({ slug, title, order, tableOfContents }) => {
   return (
     <Box gap="xsmall">
       <InternalLink primary href={slug} label={title} ref={linkRef} />
-      {!!tableOfContents?.items && isActive && (
+      {!!tableOfContents?.items && isActive && size !== "small" && (
         <Box pad={{ left: "small" }}>
           {tableOfContents.items.map((heading, i) => (
             <InternalLink

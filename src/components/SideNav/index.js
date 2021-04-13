@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
-import { Box, Image } from "grommet";
+import { Box, Image, Button } from "grommet";
+import { Close } from "grommet-icons";
 import { graphql, useStaticQuery, Link } from "gatsby";
 
 import docs_wordmark from "../../images/docs_wordmark.svg";
@@ -9,7 +10,7 @@ import build_face from "../../images/faces/build.svg";
 
 import InstanceTOC from "./InstanceTOC";
 
-const SideNav = () => {
+const SideNav = ({ onClose, size }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       allMdx {
@@ -69,10 +70,27 @@ const SideNav = () => {
       align="start"
       gap="medium"
     >
-      <Link to="/">
-        <Image src={docs_wordmark} height="32px" />
-      </Link>
-      <Box gap="small">
+      {size === "small" ? (
+        <Box direction="row" fill="horizontal" justify="between" align="center">
+          <Link to="/">
+            <Image src={docs_wordmark} height="32px" />
+          </Link>
+          {!!onClose && (
+            <Button
+              icon={<Close />}
+              style={{
+                padding: "0",
+              }}
+              onClick={onClose}
+            />
+          )}
+        </Box>
+      ) : (
+        <Link to="/">
+          <Image src={docs_wordmark} height="32px" />
+        </Link>
+      )}
+      <Box gap="small" fill="horizontal">
         {instances.map((instance, i) => {
           return (
             <Box gap="small" key={i}>
@@ -81,7 +99,7 @@ const SideNav = () => {
                   border={{ side: "top", size: "0.5px", color: "light-5" }}
                 />
               )}
-              <InstanceTOC {...instance} />
+              <InstanceTOC {...instance} size={size} />
             </Box>
           );
         })}

@@ -4,7 +4,7 @@ import { Box, Image } from "grommet";
 import NodeTOC from "./NodeTOC";
 import InternalLink from "./InternalLink";
 
-const InstanceTOC = ({ name, title, icon, nodes }) => {
+const InstanceTOC = ({ name, title, icon, nodes, size }) => {
   return (
     <Box gap="small">
       <Box direction="row" align="center" gap="small">
@@ -19,7 +19,7 @@ const InstanceTOC = ({ name, title, icon, nodes }) => {
       </Box>
       <Box gap="xsmall">
         {nodes.map((node, i) => (
-          <NodeTOC key={i} {...node} />
+          <NodeTOC key={i} {...node} size={size} />
         ))}
       </Box>
     </Box>

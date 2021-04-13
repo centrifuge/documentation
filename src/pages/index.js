@@ -114,53 +114,6 @@ const HomePage = () => (
   <AxisTheme theme={theme}>
     <ResponsiveContext.Consumer>
       {(size) => {
-        // let areas;
-        // let columns = [
-        //   '1fr',
-        //   '348px',
-        //   '348px',
-        //   '348px',
-        //   '1fr'
-        // ]
-        // let rows = ['auto', 'auto'];
-
-        // switch (size) {
-        //   case "large":
-        //     areas = [
-        //       {name: "centrifugeChain", start: [1, 0], end: [1, 0]},
-        //       {name: "tinlake", start: [2, 0], end: [2, 0]},
-        //       {name: "p2pNode", start: [3, 0], end: [3, 0]},
-        //       {name: "nft", start: [1, 1], end: [1, 1]},
-        //       {name: "protocolPaper", start: [2, 1], end: [2, 1]},
-        //     ];
-        //     break;
-        //   case "medium":
-        //     rows = ['auto', 'auto', 'auto'];
-        //     areas = [
-        //       {name: "centrifugeChain", start: [1, 0], end: [1, 0]},
-        //       {name: "tinlake", start: [2, 0], end: [2, 0]},
-        //       {name: "p2pNode", start: [1, 1], end: [1, 1]},
-        //       {name: "nft", start: [2, 1], end: [2, 1]},
-        //       {name: "protocolPaper", start: [1, 2], end: [1, 2]},
-        //     ];
-        //     break;
-        //   default:
-        //     columns = [
-        //       '1fr', '348px', '1fr'
-        //     ];
-        //     rows = ['auto', 'auto', 'auto', 'auto', 'auto'];
-
-        //     areas = [
-        //       {name: "centrifugeChain", start: [1, 0], end: [1, 0]},
-        //       {name: "tinlake", start: [1, 1], end: [1, 1]},
-        //       {name: "p2pNode", start: [1, 2], end: [1, 2]},
-        //       {name: "nft", start: [1, 3], end: [1, 3]},
-        //       {name: "protocolPaper", start: [1, 4], end: [1, 4]},
-
-        //     ];
-        //     break;
-        // }
-
         return (
           <Layout size={size} hideFooter fullWidth>
             <SEO title="Centrifuge documentation" />
@@ -170,27 +123,25 @@ const HomePage = () => (
               </Box>
               <Box width="70%">
                 <Text>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  Welcome to the Centrifuge documentation. If you are new, head
+                  to the <strong>Learn</strong> section to understand our
+                  ecosystem and how it works. If you are interested in
+                  participating in the Centrifuge Network as an investor, asset
+                  originator, validator, or participator, you'll find more
+                  information in <strong>Use</strong>. For the most up-to-date
+                  technical documentation, check out <strong>Build</strong>.
                 </Text>
               </Box>
             </Box>
             <Box
-              direction="row"
+              direction={size === "large" ? "row" : "column"}
               justify="center"
-              gap="medium"
-              margin={{ vertical: "xxlarge" }}
+              gap={size === "large" ? "medium" : "84px"}
+              margin={{ vertical: "xlarge" }}
             >
-              {Object.values(INSTANCE_TYPES).map((value) => {
-                console.log(INSTANCES[value]);
-                return <InstanceNavButton {...INSTANCES[value]} />;
-              })}
+              {Object.values(INSTANCE_TYPES).map((value, i) => (
+                <InstanceNavButton key={i} {...INSTANCES[value]} />
+              ))}
             </Box>
             <ExternalLink href="https://centrifuge.io/careers/" target="_blank">
               <Text style={{ fontFamily: "Space Mono" }}>work with us</Text>

@@ -1,9 +1,7 @@
-import React from "react";
-import { Box, Text } from "grommet";
+import React, { useContext } from "react";
+import { Box, Text, ResponsiveContext } from "grommet";
 import { Previous, Next } from "grommet-icons";
 import { Link } from "gatsby";
-
-import { theme } from "../../theme";
 
 const AltText = ({ children, ...props }) => (
   <Text
@@ -20,8 +18,14 @@ const NodeNavigation = ({ prevNode, nextNode }) => {
   const prevIconColor = !!prevNode ? "black" : "dark-3";
   const nextIconColor = !!nextNode ? "black" : "dark-3";
 
+  const size = useContext(ResponsiveContext);
+
   return (
-    <Box direction="row" justify="between">
+    <Box
+      direction={size === "small" ? "column" : "row"}
+      justify="between"
+      gap="medium"
+    >
       <Box direction="row" gap="small" align="center">
         <Previous
           style={{
@@ -38,7 +42,12 @@ const NodeNavigation = ({ prevNode, nextNode }) => {
           )}
         </Box>
       </Box>
-      <Box direction="row" gap="small" align="center">
+      <Box
+        direction="row"
+        gap="small"
+        align="center"
+        alignSelf={size === "small" ? "end" : null}
+      >
         <Box align="end">
           <AltText>Next</AltText>
           {!!nextNode && (

@@ -124,15 +124,23 @@ const mdxGrommetMap = {
   a: Grommet.Anchor,
   img: (props) => {
     const styleProps = qs.parseUrl(props.src, { parseBooleans: true }).query;
-    return (
-      <Grommet.Image
-        {...props}
-        style={{
-          float: styleProps.float || "auto",
-          width: styleProps.width || "100%",
-        }}
-      />
-    );
+
+    if (styleProps.width)
+      return (
+        <Grommet.Image
+          {...props}
+          style={{
+            float: styleProps.float || "auto",
+            width: styleProps.width || "80%",
+          }}
+        />
+      );
+    else
+      return (
+        <Grommet.Box pad="large">
+          <Grommet.Image {...props} />
+        </Grommet.Box>
+      );
   },
   inlineCode: (props) => <Grommet.Text color="brand" as="code" {...props} />,
   code: (props) => (
