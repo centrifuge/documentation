@@ -4,7 +4,9 @@ order: 2
 title: Tinlake
 ---
 
-## Smart Contract Documentation
+> The documentation of Tinlake’s smart contract is currently being updated.
+
+<!-- ## Smart Contract Documentation
 
 ### Definition of system values
 
@@ -32,4 +34,4 @@ title: Tinlake
 
 ## The graph
 
-## RAD Rewards
+## RAD Rewards -->
