@@ -5,11 +5,268 @@ title: Understanding Tinlake
 contributors: <Dylan Dedi:dylan@centrifuge.io>, <Sounak Pradhan:sounak@abc.io>
 ---
 
-## Intro
+## Introduction
 
-## Revolving Pool / Epoch / Solver
+[Tinlake](https://tinlake.centrifuge.io/) is an open, smart-contract based marketplace of asset pools bringing together Asset Originators and Investors which seek to utilize the full potential of Decentralized Finance (DeFi). Ultimately, Tinlake will become a fully decentralized financing protocol that interoperates with different blockchains and plugs into a variety of funding source.
+
+Through Tinlake pools, businesses or "Asset Originators" can responsibly finance real-world assets, such as invoices, mortgages or streaming royalties through DeFi and access bankless liquidity. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and use these NFTs as collateral in their Tinlake pool to finance their assets.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_1f05da3e573b6e0b07b6ea716cb59dc7.png)
+
+These assets create a safe, stable return for DeFi investors and DeFi protocols who provide the liquidity and earn yield and CFG rewards. For every Tinlake pool, investors can invest in two different tokens: [TIN and DROP](https://medium.com/centrifuge/a-tale-of-two-tokens-introducing-tin-drop-our-two-investment-tokens-d4c7342c799a). TIN, known as the “risk token,” takes the risk of defaults first but also receives higher returns. DROP, known as the “yield token,” is protected against defaults by the TIN token and receives stable (but usually lower) returns. This is similar to Junior/Senior investment structures common in traditional finance.
+
+Every Asset Originator creates one pool for their assets. If you are interested in investing into a Tinlake pool, you can check out the current pools open on Tinlake [here]((https://tinlake.centrifuge.io/) and find an investment guide [here](link to investment guide section). All Tinlake pools have different risk/return profiles, so make sure you find the right one for your investment preferences (see [here](link to asses a pool section) how to asses a pool).
+
+Tinlake pools are set-up as "revolving" or openend-ended pools where investors can join and leave at any time and the provided capital can be continuously re-deployed by the Asset Originator unless it is redeemed by the investors.
+
+## Revolving pools - Continous liquidity
+
+### Intro
+
+Revolving pools allow investors to invest/redeem independently at any time. A decentralized solver mechanism matches investments and redemptions and ensures that certain preferences (e.g. DROP redeem seniority) are considered and the pool's risk metrics are intact. This ensures that Asset Originators have a constant source of liquidity while investors can flexibly invest and redeem.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_e72d74d08419a39437bf5bae5317f354.png)
+
+### Investing into Tinlake
+
+Investors can be whitelisted for either one (or both) of Tinlake's two tranches. To invest into TIN or DROP Investors lock their investment in DAI into the Tinlake pool at any time during an epoch. Investments and are redemptions are then executed at the end of an epoch, usually every 24 hours. A decentralized, automatic mechanism matches investments and redemptions making sure the pools risk metrics remain intact, e.g. the DROP tranche is always protected by a minimum of TIN investors who take the first loss.
+
+When the investments are executed the investors receive TIN or DROP token in exchange for the DAI locked. Transactions are executed at the current token prices reflecting the accrued interest and value according to the underlying [NAV model](link to valuation section) over time. DROP token acrrue interest at the DROP rate on the deployed capital. The TIN token additionally captures the spread betwee DROP rate and Financing Fee but also bears potential losses in the form of write-offs. To redeem TIN/DROP tokens Investors lock these tokens into Tinlake and after the execution of the order they can collect the corresponding amount in DAI based on the current token price. TIN and DROP tokens for investments and received DAI for redemptions can be collected at any time, independent of epochs. Until collection TIN and DROP tokens remain securely locked in the Tinlake smart contracts and already accrue interest and earn CFG awards.
+
+### Financing an asset
+
+The Asset Orginiator can use the capital provided by investors to finance assets. To do this, he locks an NFT representing a tokenized "Real-World Asset" into the set of smart contract as collateral. The NFT is minted based on a document created and shared through Centrifuge's P2P protocol. Financing fees and Principal/Maximum Financing amounts for these NFTs/tokenized assets are provided by an on-chain pricing scorecard and going forward determined by external service providers through "Pricing Oracles". Once the NFT is priced the Asset Originator can draw down the financing. Upon repayment of the financing, the NFT is unlocked and transferred back into the Asset Originator's wallet.
+
+## The Epoch - How investments and redemptions are executed
+
+### Overview
+
+A decentralized pool where investor can invest/redeem and AOs originate/repay repay at anytime needs a decentralized mechanism to coordinate investments, redemptions, originations and repayments. Welcome the `Epoch`.
+
+For Tinlake's Revolving Pools all investment inflows/outflows are locked over a defined period of time ("Epoch") and automatically executed at the and of this period following predetermined priorities and risk metrics. The Asset Originator can use the available liquidity reserve after the invest/redeem transactions have been executed to finance Asset Originations throught the next epoch. Repayments can also happen at any time throughout the epoch, but are collected in a seperated reserve and can only be used for financings in the next epoch to allow investors priority for their redemptions.
+
+To summarize: The following types of inflos/outflows of the asset side can happen during an Epoch by the Asset Originator:
+
+- Financing repayments
+- Asset Originations / Financing Drawdowns
+
+The following types of inflows/outflows on the investment side are locked during the epoch and exected at the end of the epoch:
+
+- DROP redemptions
+- TIN redemptions
+- DROP investments
+- TIN investments
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_a1131708d212d1636b73dbc4dc094bf2.png)
+
+### Length of an Epoch
+
+On the smart contract level, Tinlake epochs have a minimum length that the smart contracts will enforce. Thus an epoch cannot be closed before the minimum length has passed. An epoch does not have a maximum length. After the minimum length has passed the contracts can be called to close the current epoch. So if e.g. the minimum length of an epoch is set at 24h, an epoch will have to last at least 24h but can also last longer. This allows for a flexible set-up to have longer more flexible epochs at the start of a pool to ramp up funding or to allow for more effecient transaction costs e.g. in times of high gas prices or ensures that a pool can start slower at the beginning. A mature, liquid pool can have a service added that limits the epochs to a certain length by closing the epoch at a pre-defined interval. Once the epoch is closed the smart contracts start to process the current state of the pool and process all locked orders (see more details below).
+
+### The invest/redeem process
+
+Investors can supply more liquidity at any point in time during the epoch. The supplied Dai would be locked in the Tinlake contracts until the end of the epoch. The investor can cancel his lock as long as the current epoche is active. In that case, the locked DAI will be transferred back to his wallet. At the end of the epoch, all locked orders will be processed and executed at the current TIN/DROP prices considering the max reserve amount and min TIN risk buffer. After the epoch turn, investors can collect the executed orders in the UI. If part of the investment/redemption could not be executed, it will be rolled over into the next epoch, thus the DAI remain locked. This locked order can be cancelled at any time.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_2140edba6c574b9178bce08ef24e097a.png)
+
+The redeem process works similarly. If Existing TIN/DROP investors want to redeem (part of their) TIN/DROP tokens they can lock this Tokens into Tinlake at any point during the epoch. At the end of the epoch, all locked orders will be processed and executed at the current TIN/DROP prices considering the max reserve amount and min TIN risk buffer. After the epoch turn, investors can collect the DAI from the executed orders in the UI. If part of the investment/redemption could not be executed, it will be rolled over into the next epoch, thus these tokens remain locked. This locked order can be cancelled at any time.
+
+### The turn of the Epoch
+
+Once the minimum length of an epoch has passed anyone can call the contracts to "close" the epoch. Once the epoch is closed investor's can't unlock their orders anymore. All Orders locked after the close will be collected and processed. If an epoch close is called without any locked invest/redeem transactions the epoch number will be bumped but the process described below will not be started.
+
+At the Epoch turn, the contracts first process the current state of the pool:
+
+- Total Debt
+- NAV
+- Reserve
+- Senior Debt
+- Senior Balance
+- Senior Value
+- Junior Value
+- TIN/DROP Token prices
+- TIN risk buffer
+
+Then the contracts check whether all set orders can be executed with the capital available and without breaking the TIN risk buffer or the Max reserve restrictions. If this is the case all orders are immediately executed and the contracts process the new state of the pool. Please find a simple model that illustrates the processing of orders and calulation of the pool state [here](https://docs.google.com/spreadsheets/d/1mkIbWzhD7IXbnbYXKreTMYuaZJEzyTVqllhJnP4YdPs/edit#gid=161507348)
+
+If not all orders can be executed, e.g. because there is not enough capital available in the Reserve (plus new investments) to serve all redemption orders or executing all DROP investments would break the Min TIN risk buffer the Tinlake "Solver mechanism" would be initiated.
+
+### The Solver mechanism
+
+#### Why introduce a solver mechanism?
+
+If not all orders can be executed a mechanism is required to find the optimal solution to ensure as many transactions as possible are executed while adhering to certain restrictions such as the Max Reserve amount, min TIN risk buffer, DROP sovereignity etc. Finding the optimal solution for the four invest redeem transactions type of transactions (DROP redemptions, TIN redemptionsm, DROP investments, TIN investments) under a defined set of restrictions depicts a classic maximization problem that can be solved with linear programming.
+
+#### How it works
+
+Implementating linear programming in smart contracts is theoretically possible but in practice very complex and expensive in terms of gas fees paid. Tinlake smart contracts thus have a decentralized approach where anyone can run a solver and submit the solution for executed orders four invest/redeem transaction types via a simple contract call. The smart contracts check that the state resulting by this submission adheres to all restrictions described above. If this is the case, a 30min challenging period starts in which anyone can submit a superior solution. The superiority of solutions is determined by a "max weight function" multiplying the amount of orders executed with weights. The weights for this function can differ between pools but usually, e.g. DROP redemption would contain the highgest weight to ensure DROP senority.
+
+If a competing viable solution is submitted resulting in a higher "max function" a new 30min challenging period starts. If no superior solution is submitted anyone can call the "Epoch execute" function after the 30min challenging period to execute the pending transactions according to the accepted solution.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_31a6106286b18c78f8edce05d8f223f0.png)
+
+#### The solver optimization
+
+The linear programming of the Tinlake solver maximizes the execution of the four invest/redeem orders (all in DAI values)
+
+- TINInvestOrder
+- DROPInvestOrder
+- DROPRedeemOrder
+- TINRedeemOrder
+
+according to a max function that allocates a weight to each of the executed order types. Sample weights to ensure a waterfall-like priority focused on DROP seniority could e.g.
+
+- DROP redemptions: 100,000,000,000 [Ensure seniority]
+- TIN investments: 100,000,000 [Build up risk buffer]
+- DROP investments: 100,000
+- TIN redemptions: 100 [Ensure Min TIN risk buffer stability]
+
+The according sample max function could e.g. be
+
+$$
+Maxfunctionresult = DROP redemptions * 100,000,000,000 +  TIN investments * 100,000,000 + DROP investments * 100,000 + TIN redemptions * 100
+$$
+
+The restrictions for this optimization problem are:
+
+- Executed order needs to be smaller or equal to the submitted order [e.g. Total executed TIN invest <= Total locked TIN invest]
+- All executed orders need to be larger than or equal to zero [e.g. Total TIN invest > 0]
+- The Reserve is larger than zero and smaller smaller than the `max Reserve amount` after all transactions are executed [0 < Reserve < Maximum Reserve Amount]
+- The Tin ratio of the resulting state is larger than the MIN TIN ratio and smaller than the Max TIN ratio [Min TIN risk buffer < Current TIN risk buffer]
+
+### Senior Debt Rebalancing
+
+With every epoch that has executed invest/redeem transactions the relation between Senior and Junior Tranche changes. This also needs to be reflected in `Senior Debt` to ensure that interest accrued on Senior Debt is in line with the Junior/Senior relation and the Senior Tranche does not accrue too much or too little interest. To ensure this, Senior Debt is rebalanced in line with the relation between the `Senior Value = (Senior Debt + Senior Balance)` and the `Pool Value = (NAV + Reserve)`. This relation is called `Global Senior ratio`.
+
+$$
+Global Senior ratio = \frac{Senior Debt + Senior Balance}{NAV + Reserve}
+$$
+
+The global Senior Ratio is multiplied with the NAV to calculated the `Target Senior Debt` and the Senior Debt and Senior balanced are re-balanced to set the 'Senior Debt' equal to `Target Senior Debt`. Note that the `Senior value` remains unchanged. Please find a simple model that illustrates the re-balancing mechanism [here](https://docs.google.com/spreadsheets/d/1mkIbWzhD7IXbnbYXKreTMYuaZJEzyTVqllhJnP4YdPs/edit#gid=880740688)
+
+### Process Overview
+
+The following graphs summarizes the entire flow of the turn of an Epoch:
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_d6542d189d59e641b0a7a235be2d303d.png)
 
 ## Tinlake Terms
+
+### Asset side
+
+#### Total Debt
+
+Currently outstanding debt of the pool (~financed assets incl. accrued interest). Every financing accruess secondly compounded interest at the `Financing Fee`. `Total Debt` is the sum of all currently outstanding Debts per assets.
+
+#### NAV
+
+The `NAV` (Net asset value) reflects the present value of the outstanding portfolio of financings. It is basically the sum of present values of the risk-adjusted expected repayments of all outstanding financings. It is calulated through Tinlake's Pricing and Valuation Smart contract ("NAV feed") at every `Epoch` based on an on-chain a fair value valuation (“marked to model”). Valuation parameters are also provided by the document underlying the NFT, which is created and shared through Centrifuge's p2p Protocol. The NAV ultimately determines the tranches values and thus token prices at which investors invest and redeem at every epoch. Please find more details about Tinlake's valuation approch, including simplified examples [here](https://centrifuge.hackmd.io/PgKrCfcUT3Ot63d_YfeNYw).
+
+#### Reserve
+
+The `Reserve` is the current liquidity in the pool that is not deployed to finance assets ("~cash" in traditional finance). It is available for redemption by investors and asset orginations by the Asset Originator and limited by the "Max reserve amount".
+
+#### Senior Debt
+
+The share of `Total Debt` that accrues interest at the `DROP APR` for the DROP tranche. The "Senior Debt" is rebalanced at every epoch to reflect the share of DROP invested into the pool. Please find more information on the rebalancing mechanism below.
+
+#### Senior Balance
+
+Share of the DROP tranche that is currently not deployed in financings and thus does not accrue interest at the `DROP APR`.
+
+### Investment Side
+
+#### Senior Tranche
+
+The senior tranche holds all DROP investments. DROP, known as the “yield token,” is protected against defaults by the TIN token and receives stable (but usually lower) returns.
+
+#### Junior Tranche
+
+The junior tranche holds all TIN investments. TIN, known as the “risk token,” takes the risk of defaults first but also receives higher returns.
+
+#### Senior Value
+
+The Senior Value represents the value of the senior/DROP tranche. It is calculated as
+
+$$
+seniorValue = min(Senior Debt + Senior Balance, NAV + Reserve)
+$$
+
+If NAV + Reserve are smaller then the Senior Value or in other words the sum of senior Debt + Senior Balance , TIN's risk cusion would be worthless (e.g. taken all losses). Then the entire NAV and the currency left in Reserve belong to the senior tranche. The senior value is used to calculate the DROP tokenprice.
+
+#### Junior Value
+
+Junior Value denominates the current value of the junior/TIN tranche. It is mainly driven by the NAV and Reserve and calculated as:
+
+$$
+juniorValue = max(NAV + Reserve - Senior Value,0)
+$$
+
+The Junior value is used to calculate the TIN token price.
+
+#### Pool Value
+
+The Pool Value is the sum of Senior and Junior Value:
+
+$$
+Pool Value = Junior Value + Senior Value = NAV + reserve
+$$
+
+Note that it is equivalent to the sum of NAV and reserve.
+
+#### TIN/DROP Token Supply
+
+TIN/DROP Token Supply denote the amount of outstanding TIN and DROP tokens per pool.
+
+#### TIN/DROP Price
+
+The price per TIN/DROP token is calculated by:
+
+$$
+DROP Token Price=\frac{senior Value}{DROP Token Supply}
+$$
+
+and
+
+$$
+TIN Token Price =\frac{juniorAssetValue}{TINTokenSupply}
+$$
+
+### Interest rates
+
+#### Financing Fee
+
+This is the rate at which the Debt of an indiviual Financings accrues interest. It is expressed as an APR and compounds interest every second. Different assets can have different Financing Rates depending on their individual `Risk Score`.
+The Financing Fee per risk score is stored in a `Risk Scorecard` in a smart contract. A pricing oracle determines the risk score and value of every NFT locked into Tinlake based on the underlying document and NFT shared/minted via the Centrifuge p2p Protocol. The `Financing Fee` per Financing is determined automatically based on the set `Risk score` of the underlying NFT. Please find more information how pricing based ona Scorecard works [here](TODO link blogpost).
+
+#### DROP APR
+
+This is the rate at which the `Senior Debt` accrues interest per second. Note, that this is only applied on deployed Senior tranche capital but not on the `Senior Reserve`. The actual DROP return may thus differ from the DROP APR.
+
+#### TIN return
+
+The `Junior Tranche` does not have a pre-defined fixed or variable interest rate. TIN tokens capture the increasing value of the portfolio and the spread between `Financing rates` and `DROP APRs`.
+
+#### Pool risk metrics and restrictions
+
+##### Current TIN risk buffer
+
+The `Current tin risk buffer` describes the extend of TIN protection for the DROP tranche. It is calulated as
+
+$$
+Current TIN risk buffer = \frac{Junior Value}{Junior Value + Senior Value} = \frac{Junior Value}{Pool Value}
+$$
+
+The higher the `Current TIN Ratio` the higher the TIN risk protection for DROP.
+
+##### Min TIN risk buffer
+
+The Min TIN risk buffer is the lower limit of the `Current TIN risk buffer`. It ensures that DROP investors are protected by a certain amount of TIN invested in the pool at any time.
+If the `Current TIN risk buffer` is below the Min TIN risk buffer DROP Investments, TIN Redemptions and Asset Originations are not possible any more until the the min TIN risk buffer is restored e.g. through further TIN investments. Correspondingly no DROP Investments or TIN redemptions would be accepted that would break the ratio.
+
+##### MAX Reserve amount
+
+A high reserve drags down the DROP and TIN returns as this capital is not generating interest income.This is why the AO can limit the amount of investments it is willing accept with the `Maximum reserve amount`. No investments will be accepted if the current `Reserve` is larger than the `Max reserve amount`. The `Max reserve amount` can be set and adjusted by the Asset Originator on a constant basis to manage the investments allowed into the pool based on their need for liquidity.
 
 ## DROP & TIN: The Two Tranches
 
@@ -245,3 +502,115 @@ This risk score can be mapped on a risk scorecard with assigned advance and inte
 Based on this scorecard, Laces would be assigned a risk rating of C and Lender could offer Laces financing with an advance rate of 80% and an interest rate/fee of 7.00% against the invoice as collateral. The Asset Originator would advance $786 (80% advance less $14 interest at 7% interest) and collect \$800 in 90 days from Laces.
 
 ## Asset Valuation
+
+### Intro
+
+Asset Valuation is the process of determining the current worth of an asset or portfolio by assigning a monetary value. The value of a portfolio of assets is often also expressed as the net asset value (NAV).
+
+A NAV is usually required when a portfolio is sold or when investors want to join/exit an existing investment pool. Then the portfolio value ultimately determines the investment/redemption price. Note that for these purposes the portfolio value may be different to the book value or accounting value of a portfolio.
+
+Determining the value of illiquid assets is notoriously difficult because – by definition – there isn’t a liquid secondary market to determine the value, unlike many stocks, bonds or most fungible tokens. For illiquid asset portfolios the valuation methodology is thus often based on a fair value valuation utilizing a financial model ("marked to model"). This often comes down to valuing the present value of future cash flows expected to receive based on these financings - the so-called discounted cash flow (“DCF”) method.
+
+### Tinlake's approach - Fair value DCF
+
+#### Step-by-step overview
+
+Tinlake's valuation methodology is also based on a fair value valuation ("marked to model") utilizing a discounted cash flow model. The approach can be summarized as follows:
+
+1. **Derive Expected Cash flows**
+   For every outstanding financing of an asset, the expected cash flow is calculated. The current implementation allows to calculate the Expected Repayment of simple bullet loan structures which are common in particular in invoice financing and trade finance. The `Expected Cash Flow` is calculated based on (i) the expected repayment dates and (ii) the expected repayment amounts.
+   (i) The expected repayment date is derived on contractual obligations associated with the financing, e.g. the due date of the underlying invoice. This is provided through an Oracle based on the documents underlying the NFT minted on Centrifuge's P2P Protocol.
+   (ii) The expected repayment amount is projected based on the outstanding Tinlake financing by applying the financing fee on the current debt until the repayment date.
+
+2. **Risk-adjust expected cas flows**
+   The expected Cash Flow is risk-adjusted for credit risk by the `Expected loss`. Every financing is allocated a risk class that has a `Probability of Default (PD)` and `Loss Given Default (LGD)` assigned to it. The `Expected Loss` is calculated as `Expected loss = Expected Cash Flow * PD * LGD` and substracted from the expected repayment amount to adjust for credit risk. Note that PDs are often communicated per anno and may need to be adjusted to the term of the underlying asset.
+
+3. **Discount risk-adjusted expected cash flows**
+   The risk-adjusted expected cash-flows are discounted with an appropriate discount rate (this depends on asset class and pool) to derive the present value of a financing. The discount rate usually reflects the rate
+   of return an investor could earn in the marketplace on an investment of comparable size, tenor and risk. Note, that the discount rate is the same for every financing of a pool.
+   The standard formula to calculate the PV of a cash flow is
+   ![](https://storage.googleapis.com/centrifuge-hackmd/upload_23522fcbae53f0c3e27105f15d6627a2.png =200x)
+   with `r = discount rate` and `t = period of cash flows`. As we deail with intra-year cash flows, the formula becomes
+   ![](https://storage.googleapis.com/centrifuge-hackmd/upload_6f6b9d6dc235d6ee8fba6bb59b3a447e.png =200x)
+   with `n = number of discounting periods per year` e.g. 360 days for a financial year.
+
+4. **Calculate NAV**
+   Adding up the present values of the risk-adjusted expected cash flows for all financings in the pool leads to the (portfolio) NAV. The NAV plus the liquidity currently in the Reserve of the Pool gives the Pool Value.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_04e5a3f8f16cd4c86ad87f7043369b80.png)
+
+#### Write-offs
+
+Tinlake allows for a flexible treatment of write-offs. If a financing is overdue the expected repayment amount can be (partially) reduced by defined percentages after a defined number of days following pre-determined criteria (e.g. a grace period and collection period).
+
+#### Operational costs
+
+Average loan maintainance/running costs (such as legal, SPV, servicing) could be substracted from the PV. At the moment these are set to zero in Tinlake's NAV calculation as operating costs are currently borne by the SPV of the issuer.
+
+### Sample calculations
+
+#### Simple example for one financing
+
+**General Assumptions:**
+Today = 31.03.2020
+Discount rate `r` = 5.00%
+Days per year: 360
+Seconds per year: 31536000
+
+**Financing parameters:**
+Financing date = 01.01.2020
+Financing amount = 100 DAI
+Financing fee = 10% APR
+Expected repayment date = 30.06.2020
+Expected loan duration = 180 days
+(Annual) PD = 4%
+LGD = 50%
+
+**Calculations**
+
+1. Calculate the expected cash flow on the 30.06.2020
+
+Remember the textbook compounding formula is
+
+$$
+Expected CF = P * (1 + \frac{r}{n})^{(n*t)}
+$$
+
+where
+P = Principal in DAI [=100]
+r = Interest rate (decimal [0.1])
+t = Time --> Loan duration i years
+n = Number of times interest is compounded per unit `t`
+
+Applying this to our financing assuming compounding per second gives
+P = 100 DAI
+r = 0.1
+t = loan duration in years = 180/360 days = 0.5
+n = 31536000 seconds per year
+
+$$
+Expected CF = 100 DAI * (1 + \frac{0.1}{31536000})^{(31536000*\frac{180}{365})} = 105.13 DAI
+$$
+
+2. Adjust the expected cash flow for default risk:
+
+The Expected Loss with the risk parameters given is
+
+$$
+Expected Loss = 105.13 DAI * (0.04/180*360) * 0.5 = 1.05 DAI
+$$
+
+Note that the PD is adjusted to reflect the term of the asset. This is substracted from the Expected CF to calculate the risk-adjusted expected CF: 105.13 DAI - 1.05 DAI ~ 104 DAI
+
+3. Discount the risk adjusted expected Cash Flow
+   Assuming that today is the 31.03.2020 we first calulate the remaining time till the expected cash flow (30.06.2020) which is 90 days. Applying the discounting formula above with
+   r = 0.05
+   t = 90 / 360 = 0.25 = loan duration in years
+   n = 31536000 seconds per year
+   gives:
+
+$$
+PV = \frac{104 DAI}{(1 + \frac{0.05}{31536000})^{0.25*31536000}} = 101.5 DAI
+$$
+
+4. NAV
