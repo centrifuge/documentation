@@ -192,6 +192,8 @@ export const query = graphql`
 
           }
         }
+      }
+    }
   }
 `;
 
