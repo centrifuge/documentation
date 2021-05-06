@@ -18,7 +18,7 @@ const INSTANCE_TYPES = Object.freeze({
   LEARN: "learn",
   USE: "use",
   BUILD: "build",
-});hm,well thye
+});
 
 const INSTANCES = Object.freeze({
   [INSTANCE_TYPES.LEARN]: {
