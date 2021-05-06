@@ -2,7 +2,7 @@
 id: p2p-protocol
 order: 5
 title: How the P2P Network works
-contributors: <Dylan Dedi:dylan@centrifuge.io>
+contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
 
 ## Introduction

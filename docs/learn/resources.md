@@ -2,7 +2,7 @@
 id: resources
 order: 7
 title: More Resources
-contributors: <Dylan Dedi:dylan@centrifuge.io>, <Sounak Pradhan:sounak@abc.io>
+contributors: <Dylan Dedi:dylan@centrifuge.io>
 ---
 
 ### Where else can I learn about Centrifuge?

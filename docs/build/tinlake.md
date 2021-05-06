@@ -2,6 +2,7 @@
 id: tinlake
 order: 2
 title: Tinlake
+contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
 
 > The documentation of Tinlake’s smart contract is currently being updated.

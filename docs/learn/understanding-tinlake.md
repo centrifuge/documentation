@@ -2,7 +2,7 @@
 id: understanding-tinlake
 order: 3
 title: Understanding Tinlake
-contributors: <Dylan Dedi:dylan@centrifuge.io>, <Sounak Pradhan:sounak@abc.io>
+contributors: <Dylan Dedi:dylan@centrifuge.io>
 ---
 
 ## Introduction
@@ -13,9 +13,9 @@ Through Tinlake pools, businesses or "Asset Originators" can responsibly finance
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_1f05da3e573b6e0b07b6ea716cb59dc7.png)
 
-These assets create a safe, stable return for DeFi investors and DeFi protocols who provide the liquidity and earn yield and CFG rewards. For every Tinlake pool, investors can invest in two different tokens: [TIN and DROP](https://medium.com/centrifuge/a-tale-of-two-tokens-introducing-tin-drop-our-two-investment-tokens-d4c7342c799a). TIN, known as the “risk token,” takes the risk of defaults first but also receives higher returns. DROP, known as the “yield token,” is protected against defaults by the TIN token and receives stable (but usually lower) returns. This is similar to Junior/Senior investment structures common in traditional finance.
+These assets create a safe, stable return for DeFi investors and DeFi protocols who provide the liquidity and earn yield and CFG rewards. For every Tinlake pool, investors can invest in two different tokens: [TIN and DROP](#drop--tin-the-two-tranches). TIN, known as the “risk token,” takes the risk of defaults first but also receives higher returns. DROP, known as the “yield token,” is protected against defaults by the TIN token and receives stable (but usually lower) returns. This is similar to Junior/Senior investment structures common in traditional finance.
 
-Every Asset Originator creates one pool for their assets. If you are interested in investing into a Tinlake pool, you can check out the current pools open on Tinlake [here]((https://tinlake.centrifuge.io/) and find an investment guide [here](link to investment guide section). All Tinlake pools have different risk/return profiles, so make sure you find the right one for your investment preferences (see [here](link to asses a pool section) how to asses a pool).
+Every Asset Originator creates one pool for their assets. If you are interested in investing into a Tinlake pool, you can check out the current pools open on Tinlake [here](https://tinlake.centrifuge.io/) and find an investment guide [here](link to investment guide section). All Tinlake pools have different risk/return profiles, so make sure you find the right one for your investment preferences (see [here](link to asses a pool section) how to asses a pool).
 
 Tinlake pools are set-up as "revolving" or openend-ended pools where investors can join and leave at any time and the provided capital can be continuously re-deployed by the Asset Originator unless it is redeemed by the investors.
 

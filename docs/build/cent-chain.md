@@ -2,6 +2,7 @@
 id: cent-chain
 order: 1
 title: Centrifuge Chain
+contributors: <Cassidy Daly:cassidy@centrifuge.io>, <Dennis Wellmann:dennis@centrifuge.io>
 redirect_from:
   - /build/
 ---

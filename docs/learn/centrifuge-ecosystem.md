@@ -2,7 +2,7 @@
 id: centrifuge-ecosystem
 order: 2
 title: Centrifuge Ecosystem
-contributors: <Dylan Dedi:dylan@centrifuge.io>, <Sounak Pradhan:sounak@abc.io>
+contributors: <Dylan Dedi:dylan@centrifuge.io>, <Dennis Wellmann:dennis@centrifuge.io>
 ---
 
 ## Our Tech Stack

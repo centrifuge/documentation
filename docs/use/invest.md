@@ -1,7 +1,10 @@
 ---
 id: invest
-order: 2
+order: 1
 title: Invest in Tinlake
+contributors: <Dennis Wellmann:dennis@centrifuge.io>
+redirect_from:
+  - /use/
 ---
 
 ## Assess a pool

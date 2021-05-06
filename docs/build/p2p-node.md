@@ -2,6 +2,7 @@
 id: p2p-node
 order: 3
 title: P2P Node
+contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
 
 ## Introduction

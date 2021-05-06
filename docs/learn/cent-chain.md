@@ -2,7 +2,7 @@
 id: cent-chain
 order: 4
 title: Deep Dive into our Cent chain
-contributors: <Dylan Dedi:dylan@centrifuge.io>, <Sounak Pradhan:sounak@abc.io>
+contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Cassidy Daly:cassidy@centrifuge.io>
 ---
 
 ## Intro

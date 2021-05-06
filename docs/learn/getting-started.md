@@ -2,6 +2,7 @@
 id: getting-started
 order: 1
 title: Getting Started
+contributors: <Dylan Dedi:dylan@centrifuge.io>
 redirect_from:
   - /learn/
 ---
