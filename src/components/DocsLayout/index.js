@@ -1,42 +1,20 @@
-import React from "react";
-import {graphql} from "gatsby";
-import {Anchor, Box, Grid, Heading, ResponsiveContext} from "grommet";
+import React, { useMemo, useContext } from "react";
+import { graphql } from "gatsby";
+import { Box, Heading, Text, ResponsiveContext } from "grommet";
 
 import Layout from "../Layout";
-import TableOfContents from "../TableOfContents";
-import Sidebar from "../Sidebar";
-import DocsContent from "../DocsContent";
-import {theme} from "../../theme";
-import {AxisTheme} from "@centrifuge/axis-theme/";
-import styled from "styled-components";
+import { theme } from "../../theme";
+import { AxisTheme } from "@centrifuge/axis-theme/";
 import SEO from "../SEO";
 
 // Import KaTex styles to render Math functions
 import 'katex/dist/katex.css'
 
-const EditPage = ({file}) => {
-  const GITHUB_BASE =
-    "https://github.com/centrifuge/documentation/tree/develop/docs";
-  const githubLink = `${GITHUB_BASE}/${file}`;
 
-  return (
-    <Box margin={{top: "large"}}>
-      <Anchor
-        style={{fontSize: '12px', opacity: '0.8'}}
-        href={githubLink}>
-        Edit this page on GitHub
-      </Anchor>
-    </Box>
-  );
-};
-
-const SidebarContainer = styled(Box)`
-  ${props => props.size === 'small' && `
-    border: none;
-    z-index: 1;
-    top: 65px;
-  `}
-`
+import EditPage from "./EditPage";
+import Contributors from "./Contributors";
+import NodeNavigation from "./NodeNavigation";
+import DocsContent from "../DocsContent";
 
 const DocsLayout = ({data}) => {
 
@@ -120,6 +98,64 @@ const DocsLayout = ({data}) => {
     </ResponsiveContext.Consumer>
   </AxisTheme>)
 
+  const getNthNode = (n) => {
+    let filtered = allMdx.edges.filter(
+      (edge) => edge.node.frontmatter.order === n
+    );
+    if (filtered.length !== 1) return null;
+    else return filtered[0].node;
+  };
+
+  const prevNode = useMemo(() => getNthNode(mdx.frontmatter.order - 1), [data]);
+  const nextNode = useMemo(() => getNthNode(mdx.frontmatter.order + 1), [data]);
+
+  return (
+    <AxisTheme theme={theme}>
+      <ResponsiveContext.Consumer>
+        {(size) => {
+          return (
+            <Layout hideFooter size={size}>
+              <SEO title={mdx.frontmatter.title} />
+              <Box width="100%" gap="medium" pad={{ bottom: "large" }}>
+                <Box>
+                  <Text
+                    size="large"
+                    style={{
+                      fontFamily: "Space Mono",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {mdx.fields.instanceName}
+                  </Text>
+                  <Heading level={1} margin={{ vertical: "0" }}>
+                    {mdx.frontmatter.title}
+                  </Heading>
+                  <Box
+                    direction={size === "small" ? "column" : "row"}
+                    gap="medium"
+                  >
+                    <EditPage file={mdx.fields.file} />
+                    {!!mdx.frontmatter?.contributors && (
+                      <Box direction="row" gap="medium">
+                        {size !== "small" && <Box border={{ side: "right" }} />}
+                        <Contributors
+                          contributors={mdx.frontmatter.contributors}
+                        />
+                      </Box>
+                    )}
+                  </Box>
+                </Box>
+                <DocsContent mdx={mdx} />
+                <Box>
+                  <NodeNavigation prevNode={prevNode} nextNode={nextNode} />
+                </Box>
+              </Box>
+            </Layout>
+          );
+        }}
+      </ResponsiveContext.Consumer>
+    </AxisTheme>
+  );
 };
 
 export const query = graphql`
@@ -132,26 +168,28 @@ export const query = graphql`
       }
       frontmatter {
         title
+        order
+        contributors
       }
       code {
         body
       }
       tableOfContents
     }
-    allMdx(filter: { fields: { title: { ne: "404" }, instanceName:{eq: $instanceName} } }) {
-          group(field: fields___category) {
-            fieldValue
-            edges {
-              node {
-                frontmatter {
-                  order
-                }
-                fields {
-                  title
-                  slug
-                }
-              }
-            }
+    allMdx(
+      filter: {
+        fields: { title: { ne: "404" }, instanceName: { eq: $instanceName } }
+      }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            order
+          }
+          fields {
+            title
+            slug
+
           }
         }
   }

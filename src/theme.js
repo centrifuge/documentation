@@ -3,7 +3,7 @@ import {deepMerge} from "grommet/utils/object";
 import {css} from "styled-components";
 
 export const theme = deepMerge(axisThemeConfig, {
-  maxContentWidth: '1920px',
+  maxContentWidth: '1024px',
   global: {
     breakpoints: {
       small: {
