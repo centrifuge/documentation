@@ -1,6 +1,6 @@
 import React, { useMemo, useContext } from "react";
 import { graphql } from "gatsby";
-import { Box, Heading, Text, ResponsiveContext } from "grommet";
+import { Grid, Box, Heading, Text, ResponsiveContext } from "grommet";
 
 import Layout from "../Layout";
 import { theme } from "../../theme";
