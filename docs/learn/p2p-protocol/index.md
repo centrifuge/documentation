@@ -11,7 +11,7 @@ The Centrifuge peer-to-peer (P2P) network provides a secure method to create, ex
 
 The components of the P2P network are implemented on libp2p. Centrifuge Chain is used for (i) maintaining identities in a similar format to the ERC725 standard, (ii) anchoring state commitments and (iii) minting NFTs from off-chain documents. These NFTs can be bridged to Ethereum to be locked as collateral into Tinlake to finace these assets.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_dfd8d8b67c8f6507b946c7473dc702c7.png)
+![](./images/p2p_network_overview.png)
 
 ## Centrifuge Node
 
@@ -33,12 +33,14 @@ A Centrifuge identity has the following credentials:
 
 A document is a structured set of fields with specific field types representing a financial asset. The network supports any document types as long as the formats are agreed upon (via a schema) and shared between selected collaborators. Documents are exchanged encrypted, and are only accessible for parties involved in this private data exchange. Collaborators can be added and removed from a document. Different collaborators can update a document and publish new versions within the set of nodes with access.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_81ec42645c03abeabe14b15adf24780f.png)
+![](./images/p2p_network.png)
 
 Every Centrifuge node can create a document and share it with others. The transport of a document happens privately over secure channels in the P2P network. Every document collaborator keeps a local copy of a document in their storage. An update of a document can be triggered by multiple collaborators and is not restricted to the initial document creator. Whenever a change is made, a calculated merkle root of a document is committed on chain. A new version is only accepted by others if the document root hash exists in the AnchorRepository and the set of mandatory document fields in the new version satisfy protocol-specific requirements.
 
 A smart contract called AnchorRepository is used for carbon dating state updates ensure that the update is made known to all collaborators. A document anchor is the root hash of the Merkle tree of the document. The tree is constructed by adding all fields of a document together with the collected digital signatures from all collaborators (an identity as defined above) as leaves in the tree.
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_c536a5a48472227b3f073ce9be060dac.png)
+
+![](./images/merkle_tree.png)
+
 Publishing this anchor achieves that even if a party is censored on the P2P network, it can find out about the update by checking the Centrifuge chain. A third party can easily verify the correctness of a received document on-chain and off-chain by reconstructing the Merkle root from the document based on the well-known document structure for the respective document type. Structuring the document as a Merkle tree allows creation of proofs only revealing individual fields of the document as opposed to revealing the entire document when making a statement about it.
 
 ## Minting an NFT
@@ -51,7 +53,7 @@ Centrifuge NFTs are minted on Centrifuge Chain and bridged to Ethereum. They are
 
 We use Merkle proofs that verify the original ownership and document authenticity of an off-chain document, combined with an on-chain document registry that allows the NFT contract to verify the authenticity of a request to mint a specific token. By using precise proofs, we can supply privacy preserving proofs that certain fields are present in the NFT to be minted, without revealing the exact value of these fields. Leaves are created by hashing and encoding the property, value, and salts of the data fields which we want to prove,
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_9dbcbd4a0443c9e3446c07968ad47cfb.png)
+![](./images/nft_minting_checks.png)
 
 The document representing the asset thus receives all of the benefits of standard on-chain NFTs, while an off-chain location holds the verifiable private data. At any point, the current holder of an NFT can gain access to the off-chain document by creating a signature that proves ownership of the private key of the address that owns the NFT. This approach introduces decentralized access control schemes where an NFT ownership change can lead to off-chain access revocation. Typically the metadata and the detailed information of an NFT is publicly readable on Ethereum.
 

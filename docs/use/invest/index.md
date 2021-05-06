@@ -27,7 +27,7 @@ It’s a lot of information at first, so we put together this step by step list 
 
 We gotta start in the most obvious place: tinlake.centrifuge.io. The top banner shows you the total value for all pools but for our purposes, we are only looking at the list of pools which currently (mid January 2021) are:
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_05e1b1caa27c1f4e6ab68739650b7f1d.png)
+![](./images/choosing_pools.png)
 
 Each one of these is a pool run by an Asset Originator. This dashboard currently shows you a list of seven pools. You might notice that some of them have that little yellow label ”oversubscribed;” in the screenshot above these are amongst others Harbor Trade Credit, ConsolFreight and Paperchain. That yellow label means that they are currently not open for additional investments. When these asset originators drop more assets to be financed the pool will open back up and the label will disappear.
 
@@ -41,18 +41,18 @@ The DROP APR is the fixed nominal interest rate DROP investors receive. This rat
 
 Based on the asset type, let’s say you are most interested in real estate bridge loans. You understand the asset and feel more comfortable with a 5% DROP APR, given your trust in real estate. The Pool Overview tab will be your first resource that helps you check out the Asset Originator. Let’s start below, where you’ll find a short introduction to the Asset Originator and the asset type.
 In the header you'll find the most important metrics for this pool: Asset type, Asset maturity, DROP APR and Pool Value.
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_e586f194b4b9e5c841feadd71ba496dd.png)
+![](./images/pool_info.png)
 
 The asset maturity tells you how liquid your investment may be. The maturity date of every financing lets you know when the asset originator is obliged to pay back the loan. Upon repayment investors will always be able to redeem before an Asset Originator can use the funds for new financings again. Thus you can see the average maturity as a “soft lockup” period. The reason it is “soft” is because you technically still can withdraw funds from the pool reserve, if the pool reserve has money to draw or other investors want to invest into the pool.
 
 Under Asset Originator Details you find information about the Asset Originator and links to more resources.
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_f263e139c3089583004301f7cf51f0ef.png)
+![](./images/asset_originator_details.png)
 
 ### Discourse: Learn More about the Asset Originator
 
 If you want to dig deeper into the Asset Originator you’ll find more information about the company spinning a pool in the Centrifuge Discourse. There is a link at the end of the description, clicking that link will send you to the New Silver’s community intro.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_366312c7a70dc2cbbd69c25e051db71d.png)
+![](./images/new_silver_intro.png)
 
 This is a human-friendly page that answers more about the company, organization, asset details, and disclosures. A list of all the community intros can be found here.
 At the beginning of the community intro, you’ll find the pool summary (above it’s NS Series 2). This is a detailed description of the actual pool. On both the community intro and pool summary, you are free to ask questions/express concerns directly to the asset originator. Here’s a list of all previous and current pool summaries.
@@ -62,7 +62,7 @@ Asset Maturity Date
 
 If you want to take a look at the past and current financings of the pool, change to the “Asset” tab, which will give you a list of the asset originator’s history with Tinlake as well as the graph of the development of asset value and reserve. For all assets in the list, a status of "NFT locked" (so the NFT is locked as collateral but not financed yet) “Ongoing” or “Completed” (fully repaid) will be listed.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_444152f3034604bca10353a16a8efbbc.png)
+![](./images/pool_financings.png)
 
 Note: it’s good to also be aware that we have just recently launched Tinlake. Many of these pools are still building up their asset history. ConsolFreight, whose invoice sizes are much smaller, is a good example showing a solid reputation history.
 
@@ -74,7 +74,7 @@ You may also notice the “Max: 1” under the Pool Reserve. The maximum Reserve
 
 Once you are happy with the Asset Originator, let’s look at the state of the pool at the bottom of the Overview page. Lots of numbers happening here. But if it’s your first time, here are the most important things you need to know to better understand how the pool is doing:
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_9d8a36f7dbe1e50c1cf4591e2f0e4434.png)
+![](./images/pool_state.png)
 
 ### Pool Value, Asset Value, and “Cash drag”
 
@@ -104,7 +104,7 @@ This obviously contradicts the idea of decentralized and open finance and the Ce
 
 To adhere to the regulatory requirements, Tinlake has integrated Securitize.io and Docusign for an automated KYC and SubDoc signing process.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_86cb5e5412f982e415fa5245258560b1.png)
+![](./images/onboarding_guide.png)
 
 After you have connected the ETH account you want to use for the investment into a Tinlake pool, there are three main steps to complete the onboarding (see further below for a more detailed step-by-step guide):
 

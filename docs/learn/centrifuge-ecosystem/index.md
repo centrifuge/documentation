@@ -7,7 +7,7 @@ contributors: <Dylan Dedi:dylan@centrifuge.io>, <Dennis Wellmann:dennis@centrifu
 
 ## Our Tech Stack
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_97fee2b240526bdc58d21e94b8ed61ba.png)
+![](./images/centrifuge_tech_stack.png)
 
 ### Tinlake
 
@@ -47,7 +47,7 @@ As the utility of Centrifuge grows, the Centrifuge token will capture the growin
 
 Centrifuge Chain bridges the Ethereum and Polkadot ecosystems - bringing DeFi liquidity from both to finance real-world assets on Tinlake.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_72394c0efdb9b3a89c451e0b7803554d.png)
+![](./images/centrifuge_ecosystem.png)
 
 This gives Centrifuge an edge on accessing two of the biggest ecosystems in crypto: one for DeFi liquidity today (ETH) and one for speed and a growing ecosystem (DOT).
 

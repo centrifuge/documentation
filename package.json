@@ -54,7 +54,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",

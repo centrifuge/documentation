@@ -11,7 +11,7 @@ contributors: <Dylan Dedi:dylan@centrifuge.io>
 
 Through Tinlake pools, businesses or "Asset Originators" can responsibly finance real-world assets, such as invoices, mortgages or streaming royalties through DeFi and access bankless liquidity. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and use these NFTs as collateral in their Tinlake pool to finance their assets.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_1f05da3e573b6e0b07b6ea716cb59dc7.png)
+![](./images/tinlake.png)
 
 These assets create a safe, stable return for DeFi investors and DeFi protocols who provide the liquidity and earn yield and CFG rewards. For every Tinlake pool, investors can invest in two different tokens: [TIN and DROP](#drop--tin-the-two-tranches). TIN, known as the “risk token,” takes the risk of defaults first but also receives higher returns. DROP, known as the “yield token,” is protected against defaults by the TIN token and receives stable (but usually lower) returns. This is similar to Junior/Senior investment structures common in traditional finance.
 
@@ -25,7 +25,7 @@ Tinlake pools are set-up as "revolving" or openend-ended pools where investors c
 
 Revolving pools allow investors to invest/redeem independently at any time. A decentralized solver mechanism matches investments and redemptions and ensures that certain preferences (e.g. DROP redeem seniority) are considered and the pool's risk metrics are intact. This ensures that Asset Originators have a constant source of liquidity while investors can flexibly invest and redeem.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_e72d74d08419a39437bf5bae5317f354.png)
+![](./images/revolving_pools.png)
 
 ### Investing into Tinlake
 
@@ -57,7 +57,7 @@ The following types of inflows/outflows on the investment side are locked during
 - DROP investments
 - TIN investments
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_a1131708d212d1636b73dbc4dc094bf2.png)
+![](./images/inflows_outflows.png)
 
 ### Length of an Epoch
 
@@ -67,7 +67,7 @@ On the smart contract level, Tinlake epochs have a minimum length that the smart
 
 Investors can supply more liquidity at any point in time during the epoch. The supplied Dai would be locked in the Tinlake contracts until the end of the epoch. The investor can cancel his lock as long as the current epoche is active. In that case, the locked DAI will be transferred back to his wallet. At the end of the epoch, all locked orders will be processed and executed at the current TIN/DROP prices considering the max reserve amount and min TIN risk buffer. After the epoch turn, investors can collect the executed orders in the UI. If part of the investment/redemption could not be executed, it will be rolled over into the next epoch, thus the DAI remain locked. This locked order can be cancelled at any time.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_2140edba6c574b9178bce08ef24e097a.png)
+![](./images/invest_redeem_process.png)
 
 The redeem process works similarly. If Existing TIN/DROP investors want to redeem (part of their) TIN/DROP tokens they can lock this Tokens into Tinlake at any point during the epoch. At the end of the epoch, all locked orders will be processed and executed at the current TIN/DROP prices considering the max reserve amount and min TIN risk buffer. After the epoch turn, investors can collect the DAI from the executed orders in the UI. If part of the investment/redemption could not be executed, it will be rolled over into the next epoch, thus these tokens remain locked. This locked order can be cancelled at any time.
 
@@ -103,7 +103,7 @@ Implementating linear programming in smart contracts is theoretically possible b
 
 If a competing viable solution is submitted resulting in a higher "max function" a new 30min challenging period starts. If no superior solution is submitted anyone can call the "Epoch execute" function after the 30min challenging period to execute the pending transactions according to the accepted solution.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_31a6106286b18c78f8edce05d8f223f0.png)
+![](./images/solver_mechanism.png)
 
 #### The solver optimization
 
@@ -148,7 +148,7 @@ The global Senior Ratio is multiplied with the NAV to calculated the `Target Sen
 
 The following graphs summarizes the entire flow of the turn of an Epoch:
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_d6542d189d59e641b0a7a235be2d303d.png)
+![](./images/solver_mechanism_process_overview.png)
 
 ## Tinlake Terms
 
@@ -529,15 +529,19 @@ Tinlake's valuation methodology is also based on a fair value valuation ("marked
    The risk-adjusted expected cash-flows are discounted with an appropriate discount rate (this depends on asset class and pool) to derive the present value of a financing. The discount rate usually reflects the rate
    of return an investor could earn in the marketplace on an investment of comparable size, tenor and risk. Note, that the discount rate is the same for every financing of a pool.
    The standard formula to calculate the PV of a cash flow is
-   ![](https://storage.googleapis.com/centrifuge-hackmd/upload_23522fcbae53f0c3e27105f15d6627a2.png =200x)
+   
+   ![](./images/equation_1.png#height=40px)
+   
    with `r = discount rate` and `t = period of cash flows`. As we deail with intra-year cash flows, the formula becomes
-   ![](https://storage.googleapis.com/centrifuge-hackmd/upload_6f6b9d6dc235d6ee8fba6bb59b3a447e.png =200x)
+   
+   ![](./images/equation_2.png#height=40px)
+   
    with `n = number of discounting periods per year` e.g. 360 days for a financial year.
 
 4. **Calculate NAV**
    Adding up the present values of the risk-adjusted expected cash flows for all financings in the pool leads to the (portfolio) NAV. The NAV plus the liquidity currently in the Reserve of the Pool gives the Pool Value.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_04e5a3f8f16cd4c86ad87f7043369b80.png)
+![](./images/calculate_NAV.png)
 
 #### Write-offs
 
