@@ -70,7 +70,6 @@ const ExternalLink = styled.a`
     props.theme.global.colors.black};
 `;
 
-
 const InstanceNavButton = ({ uri, color, title, avatar }) => {
   const [isHovered, setIsHovered] = useState(false);
 
