@@ -1,73 +1,124 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import {Box} from "grommet";
+import { Box, Button, Image, Layer } from "grommet";
+import { Menu } from "grommet-icons";
+import { Link } from "gatsby";
 
-import styled from "styled-components";
+import "./styles.css";
+import "@fontsource/space-mono";
 
-import Nav from "../Nav";
-import {theme} from "../../theme";
-import {FooterMenu, JoinSlack} from "../Footer";
+import docs_wordmark from "../../images/docs_wordmark.svg";
 
+import { theme } from "../../theme";
+import Search from "../Search";
+import SideNav from "../SideNav";
+import SocialFooter from "../SocialFooter";
 
-const Header = styled.header`
-  width: 100%;
-  display:flex;
-  align-items: center;
-  top: 0;
-  position: sticky;
-  flex-direction: column;
-  z-index: 10;
-`
-
-const Layout = ({children, gap, size}) => {
-
+const Layout = ({ children, hideFooter, fullWidth, size }) => {
   let sectionProps = {
-    fill: 'horizontal',
-    pad: {horizontal: 'medium'},
-    style: {
-      maxWidth: theme.maxContentWidth
-    }
-  }
+    fill: "horizontal",
+    pad: {
+      horizontal:
+        size === "large" ? "120px" : size === "medium" ? "48px" : "24px",
+      vertical: size === "small" ? "12px" : "0",
+    },
+    margin: size !== "small" ? { bottom: "medium" } : {},
+    style: fullWidth
+      ? {}
+      : {
+          maxWidth: theme.maxContentWidth,
+        },
+  };
+
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   return (
-
-    <>
-      <Header>
-        <Box
-          align={"center"}
-          background={'white'}
-          fill={true}
-          border={{side: 'bottom', color: 'light-4'}}
-        >
-          <Nav {...sectionProps} size={size}/>
+    <Box direction="row" style={{ minHeight: "100vh" }}>
+      {size !== "small" && (
+        <Box direction="row" flex="grow">
+          <Box width={size === "large" ? "360px" : "240px"}>
+            {/* side nav */}
+            <SideNav size={size} />
+          </Box>
+          <Box
+            fill="vertical"
+            width="8px"
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(216, 216, 216, 0) 0%, #D8D8D8 100%)",
+            }}
+          />
         </Box>
-      </Header>
-      <Box align={'center'}>
-        <Box {...sectionProps}>
+      )}
+      <Box width="100%">
+        {/* header */}
+        {size === "small" ? (
+          <>
+            <Box
+              direction="row"
+              fill="horizontal"
+              justify="between"
+              align="center"
+              pad={{ horizontal: "medium", vertical: "medium" }}
+            >
+              <Link to="/">
+                <Image src={docs_wordmark} height="32px" />
+              </Link>
+              <Button
+                icon={<Menu />}
+                style={{
+                  padding: "0",
+                }}
+                onClick={() => {
+                  setIsNavbarOpen(true);
+                }}
+              />
+            </Box>
+            {isNavbarOpen && (
+              <Layer full>
+                <Box height="100vh" overflow="auto">
+                  <Box flex="grow">
+                    <SideNav
+                      onClose={() => {
+                        setIsNavbarOpen(false);
+                      }}
+                      size={size}
+                    />
+                  </Box>
+                </Box>
+              </Layer>
+            )}
+          </>
+        ) : (
+          <Box
+            direction="row"
+            fill="horizontal"
+            justify="end"
+            pad={{ horizontal: "medium", vertical: "medium" }}
+          >
+            <Box>
+              <Search open={true} />
+            </Box>
+          </Box>
+        )}
+        {/* content */}
+        <Box align="center" {...sectionProps} flex="grow">
           {children}
         </Box>
+        {/* footer */}
+        {!hideFooter && <SocialFooter />}
       </Box>
-
-      <Box as="footer">
-        <Box background={'brand'} align={'center'}>
-          <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, vertical: 'large'}}>
-            <JoinSlack/>
-          </Box>
-        </Box>
-        <Box background={'black'} align={'center'}>
-          <Box {...sectionProps} align={'center'} pad={{...sectionProps.pad, vertical: 'large'}}>
-            <FooterMenu size={size} gap={gap}/>
-          </Box>
-        </Box>
-      </Box>
-    </>
-
+    </Box>
   );
-
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+};
+
+Layout.defaultProps = {
+  hideFooter: false,
+  fullWidth: false,
 };
 
 export default Layout;
