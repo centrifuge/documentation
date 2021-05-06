@@ -29,7 +29,7 @@ It’s an entirely new economy being built without borders, banks, or government
 
 ## NFTs - the link to traditional finance
 
-Unlike fungible tokens, such as bitcoin, ethereum, or dot, NFTs such as XYZ, YXZ or ZYX are non-fungible (“unique”). Centrifuge’s privacy-enabled NFTs are tokenized representations of individual assets, keeping some of the assets attributes private on a p2p protocol, while the Centrifuge Chain - a public, decentralized ledger - tracks the asset ownership. This structure allows us to create something unique in DeFi.
+Unlike fungible tokens, such as bitcoin, ethereum, or dot, NFTs are non-fungible (“unique”). Centrifuge’s privacy-enabled NFTs are tokenized representations of individual assets, keeping some of the assets attributes private on a p2p protocol, while the Centrifuge Chain - a public, decentralized ledger - tracks the asset ownership. This structure allows us to create something unique in DeFi.
 
 Centrifuge uses NFTs as a digital representation of real-world assets, such as an invoice or a mortgage so they can be used as collateral in Tinlake. This process of minting NFTs from real-world assets is traditional finance’s ticket to accessing DeFi liquidity and will have real world implications:
 

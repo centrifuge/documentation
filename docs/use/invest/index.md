@@ -86,8 +86,6 @@ The two cards to the right show you the current value of each of the two tranche
 
 ## Onboarding Guide
 
-> The documentation of Tinlake’s smart contract is currently being updated to the current version 3.
-
 ### Introduction
 
 Tinlake pools are backed by real-world assets such as invoices, residential real-estate loans or trade receivables. Financing those assets on Tinlake requires a legal structure that give the investors a legal claim on the assets. To ensure this recourse, each Asset Originator sets up a legal structure commonly used in the traditional financial system - a “special purpose vehicle” ("SPV"). The collateral for the individual assets are assigned to this legal entity to ensure investors have a legal claim to the underlying assets and the assets are held independently ("banktruptcy remote") from the Asset Originator.
