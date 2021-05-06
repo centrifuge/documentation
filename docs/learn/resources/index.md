@@ -14,7 +14,6 @@ contributors: <Dylan Dedi:dylan@centrifuge.io>
 #### Further Reading
 
 - [Sizing up a pool](https://medium.com/centrifuge/investing-in-your-first-tinlake-pool-how-to-dyor-5b79cf88861c)
-- [TIN/DROP](https://medium.com/centrifuge/a-tale-of-two-tokens-introducing-tin-drop-our-two-investment-tokens-d4c7342c799a)
 - [Tinlake v3](https://medium.com/centrifuge/tinlake-v3-growing-defi-usability-to-the-real-world-4d6acce869d8)
 - [Originating assets on Centrifuge Chain](https://medium.com/centrifuge/why-originate-real-world-assets-on-centrifuge-chain-cedd705fcca1)
 - [Pricing real-world assets](https://medium.com/centrifuge/tinlake-pricing-and-valuation-series-part-1-how-to-price-real-world-assets-cf6655132bef)
