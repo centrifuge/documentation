@@ -18,7 +18,7 @@ const INSTANCE_TYPES = Object.freeze({
   LEARN: "learn",
   USE: "use",
   BUILD: "build",
-});hm,well thye
+});
 
 const INSTANCES = Object.freeze({
   [INSTANCE_TYPES.LEARN]: {
@@ -69,7 +69,6 @@ const ExternalLink = styled.a`
     (!!props.color && props.theme.global.colors[props.color]) ||
     props.theme.global.colors.black};
 `;
-
 
 const InstanceNavButton = ({ uri, color, title, avatar }) => {
   const [isHovered, setIsHovered] = useState(false);

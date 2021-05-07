@@ -1,6 +1,6 @@
 import React, { useMemo, useContext } from "react";
 import { graphql } from "gatsby";
-import { Box, Heading, Text, ResponsiveContext } from "grommet";
+import { Grid, Box, Heading, Text, ResponsiveContext } from "grommet";
 
 import Layout from "../Layout";
 import { theme } from "../../theme";
@@ -8,95 +8,15 @@ import { AxisTheme } from "@centrifuge/axis-theme/";
 import SEO from "../SEO";
 
 // Import KaTex styles to render Math functions
-import 'katex/dist/katex.css'
-
+import "katex/dist/katex.css";
 
 import EditPage from "./EditPage";
 import Contributors from "./Contributors";
 import NodeNavigation from "./NodeNavigation";
 import DocsContent from "../DocsContent";
 
-const DocsLayout = ({data}) => {
-
-  const {mdx, allMdx} = data;
-
-  return (<AxisTheme theme={theme}>
-    <ResponsiveContext.Consumer>
-      {size => {
-
-        let gap = '32px'
-        let areas;
-        let columns = [
-          'minmax(182px,320px)',
-          'minmax(700px,1fr)',
-          'minmax(236px,320px)',
-        ];
-        let rows = ['auto']
-
-        switch (size) {
-          // Desktop
-          case "large":
-          default:
-            areas = [
-
-              {name: "sidebar", start: [0, 0], end: [0, 0]},
-              {name: "main", start: [1, 0], end: [1, 0]},
-              {name: "toc", start: [2, 0], end: [2, 0]},
-
-            ];
-            break;
-          // Tablet
-          case "medium":
-            columns = [
-              'minmax(182px,280px)',
-              'minmax(600px,1fr)',
-            ];
-            areas = [
-              {name: "sidebar", start: [0, 0], end: [0, 0]},
-              {name: "main", start: [1, 0], end: [1, 0]},
-
-            ];
-            break;
-          // Mobile
-          case "small":
-            columns = ["1fr"];
-            rows = ['auto', 'auto'];
-            areas = [
-              {name: "sidebar", start: [0, 0], end: [0, 0]},
-              {name: "main", start: [0, 1], end: [0, 1]},
-            ];
-        }
-        return (
-          <Layout size={size} gap={gap}>
-            <SEO title={mdx.frontmatter.title}/>
-            <Grid style={{gridGap: gap}} columns={columns} rows={rows} areas={areas}>
-              <SidebarContainer
-                border={{side: 'right', color: 'light-4'}}
-                gridArea="sidebar" background={'white'}
-                pad={{bottom: 'large'}} size={size}>
-                <Sidebar size={size} allMdx={allMdx}/>
-              </SidebarContainer>
-
-              <Box gridArea="main" as="main" pad={{bottom: 'large'}}>
-                <Heading level={1} lined>
-                  {mdx.frontmatter.title}
-                </Heading>
-
-                <DocsContent mdx={mdx}/>
-
-                <EditPage file={mdx.fields.file}/>
-              </Box>
-
-              {size === "large" && (<Box pad={{bottom: 'large', top: 'medium'}} gridArea="toc" as="aside">
-                <TableOfContents content={mdx.tableOfContents}/>
-              </Box>)}
-
-            </Grid>
-          </Layout>
-        )
-      }}
-    </ResponsiveContext.Consumer>
-  </AxisTheme>)
+const DocsLayout = ({ data }) => {
+  const { mdx, allMdx } = data;
 
   const getNthNode = (n) => {
     let filtered = allMdx.edges.filter(
@@ -189,9 +109,10 @@ export const query = graphql`
           fields {
             title
             slug
-
           }
         }
+      }
+    }
   }
 `;
 

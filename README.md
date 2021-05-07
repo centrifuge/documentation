@@ -4,7 +4,7 @@
 
 This is a Gatsby site.
 
-The develop branch is continuously deployed to a preview site. [View dev site](http://dev.docs.centrifuge.io/)
+The develop branch is continuously deployed to a preview site. [View dev site](http://develop.developer.centrifuge.io/)
 
 The develop branch is merged to production weekly (unless we need to do a release sooner than that).
 
@@ -14,11 +14,11 @@ The master branch is continuously deployed to production.)
 
 Centrifuge is an open, decentralized operating system which provides a method to create, exchange, and use the data that is used in the financial supply chain. It creates transparent and shareable relationships between interacting companies.
 
-This project documents the procedure to setup a Centrifuge Node. For the step by step procedure, see [Docs](https://docs.centrifuge.io/).
+This project documents the procedure to setup a Centrifuge Node. For the step by step procedure, see [Docs](https://developer.centrifuge.io/).
 
 For information on the Centrifuge code, see our other repos.
 
-Please read the our [Code of Conduct](https://docs.centrifuge.io/cent-node/further-reading/contributing/).
+To become a part of the Centrifuge community, read the [Code of Conduct](https://developer.centrifuge.io/cent-node/further-reading/contributing/) and join [Slack](https://centrifuge.io/slack/).
 
 ## Contributing
 
@@ -26,13 +26,6 @@ Please read the our [Code of Conduct](https://docs.centrifuge.io/cent-node/furth
 
 **Submit all pull requests to the develop branch**
 
-### Running a docker container with node
-
-```
-    docker run --volume=`pwd`:/app -i -t -p 127.0.0.1:8000:8000 node /bin/bash
-    npm install
-    npm run develop
-```
 ## Development
 
 ### Images
