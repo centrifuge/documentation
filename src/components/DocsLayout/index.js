@@ -14,7 +14,6 @@ import EditPage from "./EditPage";
 import Contributors from "./Contributors";
 import NodeNavigation from "./NodeNavigation";
 import DocsContent from "../DocsContent";
-import SidebarContainer from "../SidebarContainer";
 
 const DocsLayout = ({ data }) => {
   const { mdx, allMdx } = data;
