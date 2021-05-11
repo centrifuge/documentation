@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AxisTheme } from "@centrifuge/axis-theme";
 import styled from "styled-components";
 import { theme } from "../theme";
@@ -110,47 +110,47 @@ const InstanceNavButton = ({ uri, color, title, avatar }) => {
   );
 };
 
-const HomePage = () => (
-  <AxisTheme theme={theme}>
-    <ResponsiveContext.Consumer>
-      {(size) => {
-        return (
-          <Layout size={size} hideFooter fullWidth>
-            <SEO title="Centrifuge documentation" />
-            <Box direction="row" gap="large" justify="between">
-              <Box>
-                <Text style={{ fontFamily: "Space Mono" }}>Intro</Text>
-              </Box>
-              <Box width="70%">
-                <Text>
-                  Welcome to the Centrifuge documentation. If you are new, head
-                  to the <strong>Learn</strong> section to understand our
-                  ecosystem and how it works. If you are interested in
-                  participating in the Centrifuge Network as an investor, asset
-                  originator, validator, or participator, you'll find more
-                  information in <strong>Use</strong>. For the most up-to-date
-                  technical documentation, check out <strong>Build</strong>.
-                </Text>
-              </Box>
-            </Box>
-            <Box
-              direction={size === "large" ? "row" : "column"}
-              justify="center"
-              gap={size === "large" ? "medium" : "84px"}
-              margin={{ vertical: "xlarge" }}
-            >
-              {Object.values(INSTANCE_TYPES).map((value, i) => (
-                <InstanceNavButton key={i} {...INSTANCES[value]} />
-              ))}
-            </Box>
-            <ExternalLink href="https://centrifuge.io/careers/" target="_blank">
-              <Text style={{ fontFamily: "Space Mono" }}>work with us</Text>
-            </ExternalLink>
-          </Layout>
-        );
-      }}
-    </ResponsiveContext.Consumer>
-  </AxisTheme>
-);
+const HomePage = () => {
+  const size = useContext(ResponsiveContext);
 
-export default HomePage;
+  return (
+      <Layout size={size} hideFooter fullWidth>
+        <SEO title="Centrifuge documentation" />
+        <Box direction="row" gap="large" justify="between">
+          <Box>
+            <Text style={{ fontFamily: "Space Mono" }}>Intro</Text>
+          </Box>
+          <Box width="70%">
+            <Text>
+              Welcome to the Centrifuge documentation. If you are new, head to
+              the <strong>Learn</strong> section to understand our ecosystem and
+              how it works. If you are interested in participating in the
+              Centrifuge Network as an investor, asset originator, validator, or
+              participator, you'll find more information in <strong>Use</strong>
+              . For the most up-to-date technical documentation, check out{" "}
+              <strong>Build</strong>.
+            </Text>
+          </Box>
+        </Box>
+        <Box
+          direction={size === "large" ? "row" : "column"}
+          justify="center"
+          gap={size === "large" ? "medium" : "84px"}
+          margin={{ vertical: "xlarge" }}
+        >
+          {Object.values(INSTANCE_TYPES).map((value, i) => (
+            <InstanceNavButton key={i} {...INSTANCES[value]} />
+          ))}
+        </Box>
+        <ExternalLink href="https://centrifuge.io/careers/" target="_blank">
+          <Text style={{ fontFamily: "Space Mono" }}>work with us</Text>
+        </ExternalLink>
+      </Layout>
+  );
+};
+
+export default () => {
+  return <AxisTheme theme={theme}>
+    <HomePage />
+  </AxisTheme>
+};

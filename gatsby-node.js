@@ -19,7 +19,7 @@ exports.onCreateNode = (args) => {
     createNodeField({
       name: `file`,
       node,
-      value: `${instanceName}${value.slice(0, -1)}.md`
+      value: `${instanceName}${value.slice(0, -1)}/index.md`
     });
 
     createNodeField({
