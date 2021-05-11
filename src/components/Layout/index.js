@@ -13,6 +13,17 @@ import { theme } from "../../theme";
 import Search from "../Search";
 import SideNav from "../SideNav";
 import SocialFooter from "../SocialFooter";
+import styled from "styled-components";
+
+const StyledButton = styled(Button)`
+  background: #2762ff;
+  border-color: #2762ff;
+
+  :hover {
+    background: #000;
+    border-color: #000;
+  }
+`;
 
 const Layout = ({ children, hideFooter, fullWidth, size }) => {
   let sectionProps = {
@@ -34,7 +45,7 @@ const Layout = ({ children, hideFooter, fullWidth, size }) => {
 
   return (
     <Box direction="row" style={{ minHeight: "100vh" }}>
-      {size !== "small" && (
+      {size === "large" && (
         <Box direction="row" flex="grow">
           <Box width={size === "large" ? "360px" : "240px"}>
             {/* side nav */}
@@ -52,7 +63,7 @@ const Layout = ({ children, hideFooter, fullWidth, size }) => {
       )}
       <Box width="100%">
         {/* header */}
-        {size === "small" ? (
+        {size !== "large" ? (
           <>
             <Box
               direction="row"
@@ -96,7 +107,8 @@ const Layout = ({ children, hideFooter, fullWidth, size }) => {
             justify="end"
             pad={{ horizontal: "medium", vertical: "medium" }}
           >
-            <Box>
+            <Box direction="row" gap="medium">
+              <StyledButton primary label="FAQ" href="/faq" />
               <Search open={true} />
             </Box>
           </Box>

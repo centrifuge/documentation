@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from "react";
+import React, { useMemo, useEffect } from "react";
 import { graphql } from "gatsby";
 import { Grid, Box, Heading, Text, ResponsiveContext } from "grommet";
 
@@ -14,7 +14,6 @@ import EditPage from "./EditPage";
 import Contributors from "./Contributors";
 import NodeNavigation from "./NodeNavigation";
 import DocsContent from "../DocsContent";
-import SidebarContainer from "../SidebarContainer";
 
 const DocsLayout = ({ data }) => {
   const { mdx, allMdx } = data;
