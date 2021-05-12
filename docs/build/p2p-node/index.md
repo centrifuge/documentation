@@ -81,10 +81,6 @@ In order to interact with our Centrifuge Chain, you can either start your own no
 - amber: `wss://fullnode.amber.centrifuge.io`
 - flint: `wss://fullnode.flint.centrifuge.io`
 
-### Postman
-
-To be able to manage documents on Centrifuge the user will have to make API calls. You can browser our Postman collection to look at a few examples. Create an account here: https://www.getpostman.com/ and import the [Centrifuge collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42).
-
 ## Creating a geth Account
 
 ### Install Go Ethereum
@@ -349,20 +345,13 @@ $ curl -X GET "http://localhost:8082/ping" -H "accept: application/json"
 
 It will return (e.g. Kovan - Amber):
 
-`{"version":"0.0.6+master","network":"amber"}`
+`{"version":"...","network":"amber"}`
 
 ---
 
-If you use Postman, make sure you have imported the most recent [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42). Then simply ping the node under the menu item _ping_ by clicking _Send_ (do not forget to enter your Centrifuge ID in **Header** > **authorization**).
-
-![Ping](./images/ping.png)
-![Ping_Selection](./images/ping-selection.png)
-
-If your node is running you will get the status "200 OK" and the additional information about what network you are running on (e.g. amber - Kovan).
-
 ## REST API Example Uses
 
-Once the Centrifuge node is up and running you are able to start submitting invoices and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-7.api-docs.io/2.0.0) documentation for a complete list of endpoints.
+Once the Centrifuge node is up and running you are able to start submitting documents and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-7.api-docs.io/2.0.0) documentation for a complete list of endpoints.
 
 ### Authentication Headers
 
@@ -371,120 +360,6 @@ The Centrifuge node is capable of maintaining multiple accounts. Accounts are us
 | Header             | Value                                                  |
 | ------------------ | ------------------------------------------------------ |
 | **authorization:** | hex encoded identity of the account, e.g. 0xafe241...) |
-
-### Usage Examples
-
-In the section below we show how you can interact with the API through Postman (see [Recommended tools](/cent-node/getting-started/tools). If you use Postman, can import the [Centrifuge Postman Collection](https://www.getpostman.com/collections/828cc6af5bc56642ba42). Make sure you have imported the most recent version if you've used previous versions of the collection.
-
-#### Before you start
-
-Confirm that your Centrifuge Node is up und running, for example with a PING (See section [Post install verification](/cent-node/getting-started/ping)). If it is not running, run the Centrifuge Node using the `config.yaml` file you created:
-
-```bash
-$ export CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
-$ export CENT_ETHEREUM_ACCOUNTS_MAIN_PASSWORD=<YOUR_PASSWORD>
-$ export CENT_CENTCHAIN_ACCOUNT_SECRET=<YOUR_CENTCHAIN_SECRET>
-$ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
-```
-
-where `PATH-TO-CONFIG-DIR` is your location of the `config.yaml`.
-
-Open the Postman Desktop App and select the calls you want to make.
-
-Please find examples for exchanging invoices, minting NFTs, and the creation of other document types below:
-
-#### Create an invoice
-
-To create an invoice use the POST call under the menu item _invoice_. Always make sure to add your Centrifuge ID under **Header** > **authorization**. Then go to **Body** and fill in the document template accordingly. Press send to create the invoice.
-
-**Header:**
-![CreateInvoiceHeader](./images/invoice-header.png)
-
-**Body:**
-![CreateInvoiceBody](./images/invoice-body.png)
-
-Creating an invoice automatically generates a document ID for the said invoice. This is required for the recipient to receive the invoice or if you want to update an invoice.
-
-#### Receive an invoice
-
-The recipient is able to look up the specific invoice by calling GET under the menu item _invoice_. The recipient will need the document ID and add it to the call, e.g: `http://localhost:8082/v1/invoices/<Add DocumentID>`. Then press send. The invoice details will be shown in the **Body** below.
-
-![ReceiveInvoice](./images/receive-invoice.png)
-
-#### Update an invoice
-
-Use the PUT command under the menu item _invoice_ to update an invoice. Add the document ID to the call as explained above. Then press send and update accordingly.
-
-![Update Invoice](./images/update-invoice.png)
-
-#### Mint an NFTs
-
-To mint a business NFT, use the POST command under the menu item _token_. First, add your Centrifuge ID under **Header** > **authorization**. Then, select **Body** and fill in the document template. Keep in mind that you want to use a deposit address where you are able to move the NFT later on.
-
-![Mint Invoice](./images/mint-invoice.png)
-
-#### Verify Job Done
-
-After each job, you receive an output that contains a job ID. You can use this job ID to check whether the job was successful. Go to the menu item _jobs_ in your Postman Centrifuge collection and call GET. Do not forget to add your Centrifuge ID as authorization value and state the job ID in the GET call.
-
-![Job Status](./images/job-status.png)
-
-#### Create a funding agreement
-
-![Create Funding](./images/create-funding.png)
-You can create (POST) a funding agreement for an invoice document which specifies certain terms of the agreement. These terms can also be updated by calling the corresponding update funding agreement endpoint.
-Please note that you must indicate in the path variables the document identifier of the invoice for which the funding agreement is applicable.
-
-#### Sign a funding agreement
-
-![Sign Funding](./images/sign-funding.png)
-
-You can also sign this funding agreement by using the POST command. Note that you need the agreement identifier as well as the document identifier. Calling this endpoint will add your signature to the signature array associated with each funding agreement.
-
-![Signature](./images/signature.png)
-
-This signature contains a number of values which can be useful.
-
-- Identity indicates the Centrifuge identity of the signer.
-
-- Signed version indicates the version of the document which has been signed.
-
-- Outdated signature indicates whether or not this signature references a document which has been updated since the signing.
-
-- Valid indicates the cryptographic validity of the signature itself.
-
-#### Retrieve a funding agreement
-
-![Get Funding](./images/get-funding.png)
-
-Either one of the parties on the funding agreement can look up the created funding agreement by submitting a GET request to the endpoint.
-Please note that you will need the identifier of the funding agreement to fetch a specific agreement.
-
-![Get Funding List](./images/get-funding-list.png)
-
-Alternatively, you can submit a GET request to the `/v1/documents/{document_id}/funding_agreements` endpoint and this will fetch you a list of all funding agreements associated with the document.
-
-#### Create a transfer detail
-
-![Create Transfer](./images/create-transfer.png)
-
-You can create a transfer detail recording certain information about a transfer associated with an invoice document by submitting a POST request to the endpoint. This could potentially be associated with a funding agreement attached to the invoice.
-Please note that to create a transfer detail, you will need also need the identifier of the document to which it is attached.
-
-#### Update a transfer detail
-
-![Update Transfer](./images/update-transfer.png)
-You can update a transfer detail to ie: change the status of a transfer from `open` to `settled` by submitting a PUT request.
-Please note that you will need the identifier of the transfer detail in addition to the document identifier.
-
-#### Retrieve a transfer detail
-
-![Get Transfer](./images/get-transfer.png)
-You can look up the created transfer detail by submitting a GET request to the endpoint.
-Please note that you will need the identifier of the transfer detail to fetch a specific one.
-
-![Get Transfer List](./images/get-transfer-list.png)
-Alternatively, you can submit a GET request to the `/v1/documents/{document_id}/transfer_details` endpoint and this will fetch you a list of all transfer details associated with the document.
 
 ## Network Configurations
 

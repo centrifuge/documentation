@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from "react";
+import React, { useMemo, useEffect } from "react";
 import { graphql } from "gatsby";
 import { Grid, Box, Heading, Text, ResponsiveContext } from "grommet";
 

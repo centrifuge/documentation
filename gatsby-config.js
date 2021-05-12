@@ -38,6 +38,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `faq`,
+        path: `${__dirname}/docs/faq`,
+      },
+    },
+    {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [".mdx", ".md"],
