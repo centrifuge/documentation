@@ -34,7 +34,7 @@ const NodeNavigation = ({ prevNode, nextNode }) => {
           }}
         />
         <Box>
-          <AltText>Prev.</AltText>
+          <AltText>Prev</AltText>
           {!!prevNode && (
             <Link to={prevNode.fields.slug}>
               <Text truncate>{prevNode.fields.title}</Text>
