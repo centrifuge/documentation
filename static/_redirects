@@ -1,21 +1,9 @@
-# redurect developer.centrifuge.io to docs.centrifuge.io
+# redirect developer.centrifuge.io to docs.centrifuge.io
 https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
 
 
-# old site to new site
-/cent-node/*    /learn/p2p-protocol
-/chain/*        /build/cent-chain
-
-/tinlake/overview                                   /learn/understanding-tinlake
-/tinlake/contracts                                  /build/tinlake
-/tinlake/tinlake-js                                 /build/tinlake
-/tinlake/further-information                        /build/tinlake
-/tinlake/further-information/offering-structure/    /build/tinlake/#offering-structure
-/tinlake/overview/pricing_rwa/                      /learn/understanding-tinlake/#asset-pricing
-/userguide/investing                                /use/invest
-/userguide/securitize                               /use/invest
-
-/cent-node/further-reading/testnets/ 
+# temp
+/cent-node/further-reading/testnets/ /build/p2p-node/
 /cent-node/getting-started/chain-account/  /build/p2p-node/#creating-a-centrifuge-chain-account
 /cent-node/further-reading/disclaimer/      /build/p2p-node/#disclaimer
 /cent-node/further-reading/protocol-limitations/ /build/p2p-node/#protocol-limitations
@@ -37,22 +25,30 @@ https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
 /chain/overview/testnets/             /build/cent-chain/#centrifuge-chain-test-networks
 /chain/overview/introduction/       /build/cent-chain/#introduction
 /tinlake/contracts/contracts/       /build/tinlake/#smart-contract-documentation
-/tinlake/contracts/deployments/
-/tinlake/contracts/patterns/
-/tinlake/contracts/proxyactions/
-/tinlake/further-information/interest/
-/tinlake/further-information/nft/
-/tinlake/further-information/liquidation/
+# temp
+/tinlake/contracts/deployments/     /build/tinlake/
+# temp
+/tinlake/contracts/patterns/        /build/tinlake/
+# temp
+/tinlake/contracts/proxyactions/    /build/tinlake/
+# temp
+/tinlake/further-information/interest/    /build/tinlake/
+# temp
+/tinlake/further-information/nft/       /build/tinlake/
+# temp
+/tinlake/further-information/liquidation/   /build/tinlake/
 /tinlake/further-information/offering-structure/          /build/tinlake/#offering-structure
 /tinlake/overview/introduction/                    /learn/understanding-tinlake/#introduction
 /tinlake/overview/pricing_rwa/            /learn/understanding-tinlake/#asset-pricing
 /tinlake/overview/tranches/             /learn/understanding-tinlake/#drop--tin-the-two-tranches
-/tinlake/tinlake-js/events/
-/tinlake/tinlake-js/overview/
+# temp
+/tinlake/tinlake-js/events/     /build/tinlake/
+# temp
+/tinlake/tinlake-js/overview/   /build/tinlake/
 /tinlake/userguide/securitize/     /use/invest/#onboarding-guide
 /tinlake/userguide/investing/     /use/invest/#investment-guide
 /nfts/overview/anatomy/           /build/nfts/#anatomy-of-an-nft
 /nfts/overview/introduction/      /build/nfts/#introduction
 /nfts/overview/verification/    /build/nfts/#verification-of-proof-fields
-/code-of-conduct/
-/centrifuge-os-node-api/
+# /code-of-conduct/
+# /centrifuge-os-node-api/
