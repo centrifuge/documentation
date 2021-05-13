@@ -1,6 +1,7 @@
 # redurect developer.centrifuge.io to docs.centrifuge.io
 https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
 
+
 # old site to new site
 /cent-node/*    /learn/p2p-protocol
 /chain/*        /build/cent-chain
@@ -9,6 +10,7 @@ https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
 /tinlake/contracts              /build/tinlake
 /tinlake/tinlake-js             /build/tinlake
 /tinlake/further-information    /build/tinlake
+/tinlake/further-information/offering-structure/     /build/tinlake-offering-structure
 
 /userguide/investing    /use/invest
 /userguide/securitize   /use/invest
