@@ -10,7 +10,6 @@ https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
 /tinlake/contracts              /build/tinlake
 /tinlake/tinlake-js             /build/tinlake
 /tinlake/further-information    /build/tinlake
-/tinlake/further-information/offering-structure/     /build/tinlake-offering-structure
-
+/tinlake/further-information/offering-structure/    /build/tinlake/#offering-structure
 /userguide/investing    /use/invest
 /userguide/securitize   /use/invest
