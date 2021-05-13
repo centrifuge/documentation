@@ -37,7 +37,7 @@ const DocsLayout = ({ data }) => {
             <Layout hideFooter size={size}>
               <SEO title={mdx.frontmatter.title} />
               <Box width="100%" gap="medium" pad={{ bottom: "large" }}>
-                <Box>
+                <Box gap="small">
                   <Text
                     size="large"
                     style={{
