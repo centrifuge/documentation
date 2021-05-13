@@ -28,8 +28,8 @@ There is also work to bring offering structures for other non-US jurisdictions. 
 #### What is an SPV?
 A Special Purpose Vehicle (SPV) is a separate legal entity. The SPV is a distinct company with its own assets and liabilities, as well as its own legal status. Usually, they are created for a specific objective, often to isolate financial risk. As it is a separate legal entity, if the parent company goes bankrupt, the special purpose vehicle can carry on. [Read more](https://corporatefinanceinstitute.com/resources/knowledge/strategy/special-purpose-vehicle-spv/)
 
-## Overview of a Transaction
-### Asset Finance Flow
+### Overview of a Transaction
+#### Asset Finance Flow
 
 ![Asset Finance Flow](./legal_origination_flow.svg)
 
@@ -48,7 +48,7 @@ The general flow of financing typically looks as follow:
 5. The Borrower pays back the financing amount plus the financing fee at the maturity date of the NFT. This either happens directly on-chain in DAI, or the Borrower does a USD bank transfer to SPV, the SPV exchanges USD for DAI and pays it back to the Tinlake pool. The full repayment of the NFT unlocks the NFT, which is then returned back to the Asset Originator where it can be burned.
 
 
-### Investors
+#### Investors
 Investors can join a pool and provide liquidity for assets to be financed. They go through the following process.
 
 1. Investors can either purchase DROP or TIN ERC20 tokens issued by a Tinlake pool. They need to go through a Know Your Customer and Anti-Money Laundering (KYC/AML) process. This process is handled by the Asset Originator on behalf of the SPV. Centrifuge [partners with Securitize](https://coinbench.com/centrifuge-partners-with-securitize/) to offer a compliant investor onboarding service and a US accredited investor status check to the SPVs issuing the tokens. Securitze is a SEC licensed transfer agent offering compliant investor onboarding services. Investors which passed KYC/AML and verified accredited investor status if required get a [Securitize iD](https://www.securitize.io/product/securitize-id), which allows them to subscribe for all Tinlake pools.
@@ -60,7 +60,7 @@ Investors can join a pool and provide liquidity for assets to be financed. They 
 
 
 
-## Legal Contract Templates
+### Legal Contract Templates
 Tinlake Pool uses the following templates to achieve the above described setup.
 
 * [Operating Agreement](https://docs.google.com/document/d/14I8x16nRvSVgtnV6EoahZQ9GGVrdvKNbIK7tAN5gBaY): describes the SPVs operation
