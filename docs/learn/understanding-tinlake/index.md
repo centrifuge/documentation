@@ -529,14 +529,23 @@ Tinlake's valuation methodology is also based on a fair value valuation ("marked
    The risk-adjusted expected cash-flows are discounted with an appropriate discount rate (this depends on asset class and pool) to derive the present value of a financing. The discount rate usually reflects the rate
    of return an investor could earn in the marketplace on an investment of comparable size, tenor and risk. Note, that the discount rate is the same for every financing of a pool.
    The standard formula to calculate the PV of a cash flow is
-   
-   ![](./images/equation_1.png#height=40px)
-   
-   with `r = discount rate` and `t = period of cash flows`. As we deail with intra-year cash flows, the formula becomes
-   
-   ![](./images/equation_2.png#height=40px)
-   
-   with `n = number of discounting periods per year` e.g. 360 days for a financial year.
+
+$$
+
+PV=\frac{CF}{(1+r)^t}
+
+$$
+
+   with `r = discount rate` and `t = period of cash flows`. As we deal with intra-year cash flows, the formula becomes
+
+$$
+
+PV=\frac{CF}{(1+\frac{r}{n})^{t*n}}
+
+$$
+
+
+   with $n$ being number of discounting periods per year (e.g. 360 days for a financial year).
 
 4. **Calculate NAV**
    Adding up the present values of the risk-adjusted expected cash flows for all financings in the pool leads to the (portfolio) NAV. The NAV plus the liquidity currently in the Reserve of the Pool gives the Pool Value.
