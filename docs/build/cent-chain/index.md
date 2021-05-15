@@ -463,7 +463,7 @@ Here's a quick guide to get started validating Centrifuge Chain Amber or Flint t
 
 7. You are ready to start validating! Change your status to validating by clicking "Validate": ![](./images/account-actions-2.png) ![](./images/status-validate.png)
 
-8. In the staking overview, you should now see your validator in the "Next Up" column: ![](./images/staking-overview.png) If validator slots are empty or if your validator has a higher stake bonded then an active validator, it will enter the validator set at the next era change (at most in 24 hours on Amber/Flint): ![](./images/next-up.png)
+8. In the staking overview, you should now see your validator in the "Next Up" column: ![](./images/staking-overview.png) If validator slots are empty or if your validator has a higher stake bonded than an active validator, it will enter the validator set at the next era change (at most in 24 hours on Amber/Flint): ![](./images/next-up.png)
 
 9. All done! If you want to stop validating, head back to "Account actions" and click "Stop Validating" ![](./images/stop-validating.png) You should now see that your validator is no longer selected for the next era (at most in 24 hours on Amber/Flint): ![](./images/not-selected.png) After the next era change, your validator should go back to idling and no longer show up in the Staking overview: ![](./images/idling.png)
 

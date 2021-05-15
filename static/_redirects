@@ -1,15 +1,54 @@
-# redurect developer.centrifuge.io to docs.centrifuge.io
+# redirect developer.centrifuge.io to docs.centrifuge.io
 https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
 
 
-# old site to new site
-/cent-node/*    /learn/p2p-protocol
-/chain/*        /build/cent-chain
-
-/tinlake/overview               /learn/understanding-tinlake
-/tinlake/contracts              /build/tinlake
-/tinlake/tinlake-js             /build/tinlake
-/tinlake/further-information    /build/tinlake
-/tinlake/further-information/offering-structure/    /build/tinlake/#offering-structure
-/userguide/investing    /use/invest
-/userguide/securitize   /use/invest
+# temp
+/cent-node/further-reading/testnets/ /build/p2p-node/
+/cent-node/getting-started/chain-account/  /build/p2p-node/#creating-a-centrifuge-chain-account
+/cent-node/further-reading/disclaimer/      /build/p2p-node/#disclaimer
+/cent-node/further-reading/protocol-limitations/ /build/p2p-node/#protocol-limitations
+/cent-node/getting-started/configuration/    /build/p2p-node/#centrifuge-configuration
+/cent-node/getting-started/geth-account/    /build/p2p-node/#creating-a-geth-account
+/cent-node/getting-started/install-cent-node/  /build/p2p-node/#installing-the-centrifuge-node
+/cent-node/getting-started/ping/    /build/p2p-node/#post-install-verification
+/cent-node/getting-started/tools/   /build/p2p-node/#recommended-tools
+/cent-node/overview/introduction/     /build/p2p-node/#introduction
+/cent-node/overview/protocol-architecture/    /build/p2p-node/#protocol-architecture
+/cent-node/usage/rest-api-examples/           /build/p2p-node/#rest-api-example-uses
+/chain/ethereum-bridge/about/                /build/cent-chain/#about-the-centrifuge-chain--ethereum-bridge
+/chain/ethereum-bridge/bridge-operations/   /build/cent-chain/#about-the-centrifuge-chain--ethereum-bridge
+/chain/further-resources/resources/         /build/cent-chain/#further-resources
+/chain/get-started/account/             /build/cent-chain/#create-an-account
+/chain/get-started/run-node/            /build/cent-chain/#run-node
+/chain/get-started/validate/            /build/cent-chain/#running-your-own-validator
+/chain/governance/about-governance/     /build/cent-chain/#centrifuge-chain-governance
+/chain/overview/testnets/             /build/cent-chain/#centrifuge-chain-test-networks
+/chain/overview/introduction/       /build/cent-chain/#introduction
+/tinlake/contracts/contracts/       /build/tinlake/#smart-contract-documentation
+# temp
+/tinlake/contracts/deployments/     /build/tinlake/
+# temp
+/tinlake/contracts/patterns/        /build/tinlake/
+# temp
+/tinlake/contracts/proxyactions/    /build/tinlake/
+# temp
+/tinlake/further-information/interest/    /build/tinlake/
+# temp
+/tinlake/further-information/nft/       /build/tinlake/
+# temp
+/tinlake/further-information/liquidation/   /build/tinlake/
+/tinlake/further-information/offering-structure/          /build/tinlake/#offering-structure
+/tinlake/overview/introduction/                    /learn/understanding-tinlake/#introduction
+/tinlake/overview/pricing_rwa/            /learn/understanding-tinlake/#asset-pricing
+/tinlake/overview/tranches/             /learn/understanding-tinlake/#drop--tin-the-two-tranches
+# temp
+/tinlake/tinlake-js/events/     /build/tinlake/
+# temp
+/tinlake/tinlake-js/overview/   /build/tinlake/
+/tinlake/userguide/securitize/     /use/invest/#onboarding-guide
+/tinlake/userguide/investing/     /use/invest/#investment-guide
+/nfts/overview/anatomy/           /build/nfts/#anatomy-of-an-nft
+/nfts/overview/introduction/      /build/nfts/#introduction
+/nfts/overview/verification/    /build/nfts/#verification-of-proof-fields
+# /code-of-conduct/
+# /centrifuge-os-node-api/
