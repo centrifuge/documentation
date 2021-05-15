@@ -138,7 +138,7 @@ const mdxGrommetMap = {
     else
       return (
         <Grommet.Box pad="large">
-          <Grommet.Image {...props} />
+          <Grommet.Image {...props} width="100%" />
         </Grommet.Box>
       );
   },

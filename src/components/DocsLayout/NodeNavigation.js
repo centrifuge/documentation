@@ -27,20 +27,22 @@ const NodeNavigation = ({ prevNode, nextNode }) => {
       gap="medium"
     >
       <Box direction="row" gap="small" align="center">
-        <Previous
-          style={{
-            color: prevIconColor,
-            stroke: prevIconColor,
-          }}
-        />
-        <Box>
-          <AltText>Prev</AltText>
-          {!!prevNode && (
-            <Link to={prevNode.fields.slug}>
-              <Text truncate>{prevNode.fields.title}</Text>
-            </Link>
-          )}
-        </Box>
+        {!!prevNode && (
+          <>
+            <Previous
+              style={{
+                color: prevIconColor,
+                stroke: prevIconColor,
+              }}
+            />
+            <Box>
+              <AltText>Prev</AltText>
+              <Link to={prevNode.fields.slug}>
+                <Text truncate>{prevNode.fields.title}</Text>
+              </Link>
+            </Box>
+          </>
+        )}
       </Box>
       <Box
         direction="row"
@@ -48,20 +50,22 @@ const NodeNavigation = ({ prevNode, nextNode }) => {
         align="center"
         alignSelf={size === "small" ? "end" : null}
       >
-        <Box align="end">
-          <AltText>Next</AltText>
-          {!!nextNode && (
-            <Link to={nextNode.fields.slug}>
-              <Text truncate>{nextNode.fields.title}</Text>
-            </Link>
-          )}
-        </Box>
-        <Next
-          style={{
-            color: nextIconColor,
-            stroke: nextIconColor,
-          }}
-        />
+        {!!nextNode && (
+          <>
+            <Box align="end">
+              <AltText>Next</AltText>
+              <Link to={nextNode.fields.slug}>
+                <Text truncate>{nextNode.fields.title}</Text>
+              </Link>
+            </Box>
+            <Next
+              style={{
+                color: nextIconColor,
+                stroke: nextIconColor,
+              }}
+            />
+          </>
+        )}
       </Box>
     </Box>
   );

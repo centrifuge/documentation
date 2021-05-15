@@ -14,7 +14,7 @@ const NodeTOC = ({ slug, title, order, tableOfContents, size }) => {
   return (
     <Box gap="xsmall">
       <InternalLink primary href={slug} label={title} ref={linkRef} />
-      {!!tableOfContents?.items && isActive && size !== "small" && (
+      {!!tableOfContents?.items && isActive && (
         <Box pad={{ left: "small" }}>
           {tableOfContents.items.map((heading, i) => (
             <InternalLink
