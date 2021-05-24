@@ -93,7 +93,7 @@ const SideNav = ({ onClose, size }) => {
       <Box gap="small" fill="horizontal">
         {instances.map((instance, i) => {
           return (
-            <Box gap="small" key={i}>
+            <Box gap="small" key={i} flex="grow">
               {i !== 0 && (
                 <Box
                   border={{ side: "top", size: "0.5px", color: "light-5" }}
