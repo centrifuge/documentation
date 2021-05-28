@@ -44,22 +44,32 @@ const Layout = ({ children, hideFooter, fullWidth, size }) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   return (
-    <Box direction="row" style={{ minHeight: "100vh" }}>
+    <Box direction="row" style={{ minHeight: "100vh", position: "relative" }}>
       {size === "large" && (
-        <Box direction="row" flex="grow">
-          <Box width={size === "large" ? "360px" : "240px"}>
+        <Box
+          direction="row"
+          flex="grow"
+          height="100vh"
+          style={{
+            position: "fixed",
+            top: 0,
+          }}
+        >
+          <Box width="360px" overflow="auto">
             {/* side nav */}
             <SideNav size={size} />
           </Box>
-          <Box
-            fill="vertical"
-            width="8px"
-            style={{
-              background:
-                "linear-gradient(90deg, rgba(216, 216, 216, 0) 0%, #D8D8D8 100%)",
-            }}
-          />
         </Box>
+      )}
+      {size === "large" && (
+        <Box
+          margin={{ left: "360px" }}
+          width="8px"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(216, 216, 216, 0) 0%, #D8D8D8 100%)",
+          }}
+        />
       )}
       <Box width="100%">
         {/* header */}

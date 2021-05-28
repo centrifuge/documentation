@@ -15,7 +15,7 @@ Through Tinlake pools, businesses or "Asset Originators" can responsibly finance
 
 These assets create a safe, stable return for DeFi investors and DeFi protocols who provide the liquidity and earn yield and CFG rewards. For every Tinlake pool, investors can invest in two different tokens: [TIN and DROP](#drop--tin-the-two-tranches). TIN, known as the “risk token,” takes the risk of defaults first but also receives higher returns. DROP, known as the “yield token,” is protected against defaults by the TIN token and receives stable (but usually lower) returns. This is similar to Junior/Senior investment structures common in traditional finance.
 
-Every Asset Originator creates one pool for their assets. If you are interested in investing into a Tinlake pool, you can check out the current pools open on Tinlake [here](https://tinlake.centrifuge.io/) and find an investment guide [here](link to investment guide section). All Tinlake pools have different risk/return profiles, so make sure you find the right one for your investment preferences (see [here](link to asses a pool section) how to asses a pool).
+Every Asset Originator creates one pool for their assets. If you are interested in investing into a Tinlake pool, you can check out the current pools open on Tinlake [here](https://tinlake.centrifuge.io/) and find an investment guide [here](/use/invest/#investment-guide). All Tinlake pools have different risk/return profiles, so make sure you find the right one for your investment preferences (see [here](/use/invest/#assess-a-pool) how to asses a pool).
 
 Tinlake pools are set-up as "revolving" or openend-ended pools where investors can join and leave at any time and the provided capital can be continuously re-deployed by the Asset Originator unless it is redeemed by the investors.
 
@@ -134,7 +134,7 @@ The restrictions for this optimization problem are:
 - The Reserve is larger than zero and smaller smaller than the `max Reserve amount` after all transactions are executed [0 < Reserve < Maximum Reserve Amount]
 - The Tin ratio of the resulting state is larger than the MIN TIN ratio and smaller than the Max TIN ratio [Min TIN risk buffer < Current TIN risk buffer]
 
-### Senior Debt Rebalancing
+### Senior Debt Rebalancing 
 
 With every epoch that has executed invest/redeem transactions the relation between Senior and Junior Tranche changes. This also needs to be reflected in `Senior Debt` to ensure that interest accrued on Senior Debt is in line with the Junior/Senior relation and the Senior Tranche does not accrue too much or too little interest. To ensure this, Senior Debt is rebalanced in line with the relation between the `Senior Value = (Senior Debt + Senior Balance)` and the `Pool Value = (NAV + Reserve)`. This relation is called `Senior Ratio`.
 
@@ -625,5 +625,3 @@ Note that the PD is adjusted to reflect the term of the asset. This is substract
 $$
 PV = \frac{104 DAI}{(1 + \frac{0.05}{31536000})^{0.25*31536000}} = 101.5 DAI
 $$
-
-4. NAV
