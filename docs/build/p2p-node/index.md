@@ -67,11 +67,12 @@ A document within the Centrifuge protocol is a structured set of fields with spe
 
 To get started quickly, we recommend using two services that will make your life easier:
 
-### Infura
+### Ethereum through Infura
 
-In order to interact with Ethereum and the Ethereum testnets you need to install the corresponding node. To get started quickly we recommend that you use Infura instead of hosting your own Ethereum node. Infura is a SaaS platform that provides API and developer tools for easy and secure access to Ethereum. In other words, it is core infrastructure that serves as a gateway to the blockchain.
+In order to interact with Ethereum and the Ethereum testnet kovan you need to install the corresponding node. To get started quickly we recommend that you use Infura instead of hosting your own Ethereum node. Infura is a SaaS platform that provides API and developer tools for easy and secure access to Ethereum. In other words, it is core infrastructure that serves as a gateway to the blockchain.
 
-Register and create an Infura account here: https://infura.io/. Create a new project.
+Register and create an Infura account here: https://infura.io/. Create a new project. 
+Fetch the appropriate network URL. For kovan, it would look like this `wss://kovan.infura.io/ws/v3/XXXXXXXXXX`
 
 ### Centrifuge Chain
 
@@ -115,18 +116,9 @@ $ geth account list
 
 You can now fund the newly generated Ethereum account with ETH to be able to make transactions.
 
-### Fund the account through faucets
+### Fund the account through Kovan faucet
 
-If you are operating on one of the Ethereum testnets you will need to fund the newly generated Ethereum account with dummy ETH. Each testnet has its specific dummy ETH source. Note that this is no real money.
-
-**Rinkeby**
-If you are deploying the Rinkeby testnet you can request dummy ETH via https://faucet.rinkeby.io/. Simply share your Ethereum address (manually add 0x as prefix to your Ethereum account) on social media (Twitter, Facebook or G+) and paste the link of the post on the faucet website to be able to request ETH. Check your funds via https://rinkeby.etherscan.io/.
-
-**Kovan**
-If you are using the Kovan testnet make the request via Gitter: https://gitter.im/kovan-testnet/faucet. You will be able to see whether the funds arrived via https://kovan.etherscan.io/.
-
-**Ropsten**
-If you opt for the Ropsten testnet visit https://faucet.ropsten.be/ and make a request. Track your balance on https://ropsten.etherscan.io/.
+If you are operating on Kovan testnet, then you can fund the newly generated Ethereum account with dummy ETH by making the request via Gitter: https://gitter.im/kovan-testnet/faucet. You will be able to see whether the funds arrived via https://kovan.etherscan.io/.
 
 ## Creating a Centrifuge Chain Account
 
@@ -170,23 +162,17 @@ $ subkey --sr25519 --network centrifuge generate
 $ subkey --sr25519 generate
 ```
 
-You can now fund the newly generated centrifuge chain account with RAD to be able to send transactions.
-
-### Fund the account through faucets
-
-**Amber/Flint:** https://faucets.blockxlabs.com/
-
-**Mainnet:** https://faucet.chain.centrifuge.io/
+You can now fund the newly generated centrifuge chain account with CFG by making a request in our discord `#dev` channel
 
 ## Installing the Centrifuge Node
 
-Before being able to transfer and anchor financial documents and mint NFTs you need to spin up a Centrifuge node your machine. This is a one time setup.
+Before being able to transfer and anchor financial documents and mint NFTs you need to spin up a Centrifuge node on your machine. This is a one time setup.
 
 ### Set-up Infura
 
 For this, we [recommend](/cent-node/getting-started/tools) [setting up](/cent-node/getting-started/geth-account) your own geth node.
 
-Otherwise, for convenience in getting started, you can use [Infura](https://infura.io). Once you have registered an account, you can create a new project and select the respective endpoint. It will give the user the option to select: Mainnet, Ropsten, Rinkeby or Kovan.
+Otherwise, for convenience in getting started, you can use [Infura](https://infura.io). Once you have registered an account, you can create a new project and select the respective endpoint. It will give the user the option to select: Mainnet, Kovan(testing).
 
 Find the correct Infura link for the different Ethereum testnets on your Infura dahsboard. Choose the correct endpoint and it will give you the option to copy to clipboard. You will need this link again later in the process.
 
