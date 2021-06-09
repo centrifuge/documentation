@@ -31,13 +31,6 @@ Some nodes on our testnets are reporting telemetry ot telemetry.polkadot.io. You
 - [Amber Network Telemetry](https://telemetry.polkadot.io/#list/Centrifuge%20Testnet%20Amber%20CC2)
 - [Flint Network Telemetry](https://telemetry.polkadot.io/#list/Centrifuge%20Testnet%20Flint%20CC3)
 
-## Bridge
-Centrifuge Chain supports the [ChainSafe Bridge Pallet](https://github.com/ChainSafe/chainbridge-substrate) which enables users to securely move assets between Centrifuge Chain and Ethereum. It is a bi-directional blockchain bridge to allow data and value transfer between both chains.
-The Centrifuge<>Ethereum Bridge currently has 6 whitelisted, trusted relayers to both networks that have been added through on-chain democracy referenda. The authorized set currently includes 2 Centrifuge relayers and 4 external relayers that are also validators on Centrifuge Chain: PureStake, ChorusOne, Staked.us, and Stake Capital.
-
-Read more about the bridge design in the [ChainBridge Specification](https://github.com/ChainSafe/ChainBridge/blob/master/docs/spec.md).
-The Centrifuge<>Ethereum bridge currently supports Substrate Native <> ERC20 token transfers.
-
 ## Governance
 Centrifuge Chain has a formalized governance system that is encoded on-chain utilizing the [Substrate democracy pallet](https://crates.io/crates/pallet-democracy). This enables on-chain voting mechanisms for binding and transparent governance by CFG token holders.
 
