@@ -1,7 +1,9 @@
+const siteUrl = process.env.URL || "http://localhost:8000";
+
 module.exports = {
   siteMetadata: {
     title: `Centrifuge Documentation`,
-    siteUrl: process.env.URL || "http://localhost:8000",
+    siteUrl,
     description: `Learn about Centrifuge`,
     author: `@centrifuge`,
   },
@@ -9,14 +11,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-robots-txt`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `code-of-conduct`,
-    //     path: `${__dirname}/docs/code-of-conduct.md`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        sitemap: `${siteUrl}/sitemap.xml`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
