@@ -99,4 +99,4 @@ Tinlake Pool uses the following templates to achieve the above described setup.
 
 ## The graph
 
-## RAD Rewards -->
+## CFG Rewards -->
