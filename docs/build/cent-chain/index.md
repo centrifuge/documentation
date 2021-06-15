@@ -43,7 +43,7 @@ A company, such as Paper Records, uses the Centrifuge P2P Network to sign and se
 
 ### Chain Architecture
 
-Centrifuge Chain uses its own native token - the Radial (RAD) token. It also incentivizes Validators and Nominators to participate through a block reward.
+Centrifuge Chain uses its own native token - the Centrifuge (CFG) token. It also incentivizes Validators and Nominators to participate through a block reward.
 
 Centrifuge Chain is built on [Parity Substrate](https://substrate.dev), and relies on staked Validators to come to consensus over 3 components to commit blocks to the blockchain:
 
@@ -51,13 +51,13 @@ Centrifuge Chain is built on [Parity Substrate](https://substrate.dev), and reli
 - GRANDPA - finality gadget
 - NPoS - Validator selection algorithm
 
-Any node can offer itself as a Validator candindate, but only a limited number will be selected. Only top Validators by stake are elected into the Validator Set. Validators can stake their own RAD and can be elected by staked Nominators.
+Any node can offer itself as a Validator candindate, but only a limited number will be selected. Only top Validators by stake are elected into the Validator Set. Validators can stake their own CFG and can be elected by staked Nominators.
 
 Validators must run a full node and directly particiate in block authorship, finality, and validity checks. They are able to choose a reward commission that is taken up-front from the reward before splitting the remainder with Nominators.
 
 Validators must stay online and available with very high up-time. They will be held responsible and incur slashing penalties for deliberate attacks, running modified software, severe bugs in the code, and unresponsiveness, to name just a few slashing conditions.
 
-For a deeper dive into the Radial token that powers Centrifuge Chain, read our **[Radial Token Summary](https://ir.centrifuge.io/static/rad-executive-summary-8e1bfe96bbae3981fe43e4bf1fbcec70.pdf)**.
+For a deeper dive into the Centrifuge token that powers Centrifuge Chain, read our **[Centrifuge Token Summary](https://centrifuge.io/cfg-token-summary)**.
 
 ## Centrifuge Chain Test Networks
 
@@ -165,9 +165,9 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
    - Delete the key from the app
    - Recover the key from your backed up phrase
    - Verify the address matches what you obtained above
-1) Send some test RAD to another address and use Parity Signer to sign this transaction
+1) Send some test CFG to another address and use Parity Signer to sign this transaction
 
-   - If you don't have any RAD, email faucet@centrifuge.foundation to request some RAD for this test
+   - If you don't have any CFG, email faucet@centrifuge.foundation to request some CFG for this test
    - Initiate a transfer on the Portal Website by selecting 'Transfer' in the left menu or on 'Send' from the Accounts page
    - Click 'Make Transfer'
    - Click 'Sign via QR'
@@ -206,7 +206,7 @@ To add a new identity:
 
 #### Mainnet
 
-If you need RAD to run a Validator or interact with Centrifuge Chain, email faucet@centrifuge.foundation.
+If you need CFG to run a Validator or interact with Centrifuge Chain, email faucet@centrifuge.foundation.
 
 #### Amber/Flint
 
