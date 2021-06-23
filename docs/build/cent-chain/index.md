@@ -210,11 +210,11 @@ If you need CFG to run a Validator or interact with Centrifuge Chain, email fauc
 
 #### Amber/Flint
 
-You can get the testnet tokens _Amber Radial (ARAD)_ or _Flint Radial (FRAD)_ from BlockXLabs' faucet:
+You can get the testnet tokens _Amber (ACFG)_ or _Flint (FRAD)_ from BlockXLabs' faucet:
 
 [BlockXLabs Faucet](https://faucets.blockxlabs.com/centrifuge)
 
-If you have a need for more ARAD or FRAD than what the faucet provides, we can send you more on a case by case basis. Please reach out to us at chain@centrifuge.io with a description of what you want to use the tokens for and your address so we can send you the appropriate amount.
+If you have a need for more ACFG or FRAD than what the faucet provides, we can send you more on a case by case basis. Please reach out to us at chain@centrifuge.io with a description of what you want to use the tokens for and your address so we can send you the appropriate amount.
 
 ## Further Resources
 

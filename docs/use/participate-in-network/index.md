@@ -1,6 +1,6 @@
 ---
 id: invest
-order: 3
+order: 4
 title: Participate in the Network
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
