@@ -77,8 +77,6 @@ You can take a more active role in the Centrifuge community through the followin
 
 - Invest in Tinlake
 - Originate Assets
-- Hold CFG
-- Become a validator
-- Get funded for a project
+- [Participate in governance](/use/chain-governance/)
 
 To learn more about how to get involved in these ways, head to our [Discord](https://discord.gg/yEzyUq5gxF).

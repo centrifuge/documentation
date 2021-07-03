@@ -5,6 +5,10 @@ title: Secure the Network
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
 
+## Staking
+
+Centrifuge Chain uses Nomiated Proof-of-Stake (NPoS) - in this system you can become a validator or nominator. Learn more in the [Polkadot Wiki on staking](https://wiki.polkadot.network/docs/en/learn-staking).
+
 ## Running your own Validator
 
 Here's a quick guide to get started validating Centrifuge Chain Amber or Flint testnets.
