@@ -7,14 +7,12 @@ redirect_from:
 - /use/
 ---
 
-## Setup Wallet
-
 DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind._
 
 
 A Centrifuge Chain address can be created through the [Centrifuge Portal](https://portal.chain.centrifuge.io/#/accounts), the [Polkadot browser extension](https://polkadot.js.org/extension/), or through [Parity Signer](https://www.parity.io/signer/).
 
-### Create an account/key pair using the Portal UI
+## Create an account/key pair using the Portal UI
 1. Open the Portal at https://portal.chain.centrifuge.io/#?rpc=wss://fullnode.centrifuge.io
 1. Create a new account for your user by navigating to "Accounts" and clicking "Add account".
 
@@ -24,7 +22,7 @@ A Centrifuge Chain address can be created through the [Centrifuge Portal](https:
 
 1. Done! You can now copy your address and send it to others to receive tokens. The address is the string starting with `4...` for Mainnet or `5...` for Amber or Flint under the name of your account, e. g. `5HKk5u...wp29Zd` in the following. You can copy it by clicking on the icon to the left of your account name: ![](./images/account-address.png)
 
-### Create an account using the Polkadot.js extension
+## Create an account using the Polkadot.js extension
 
 1. Download the extension [here](https://polkadot.js.org/extension/)
 1. Create a new account by clicking on "+" in the top right of the extension and selecting "Create new account"
@@ -34,18 +32,18 @@ A Centrifuge Chain address can be created through the [Centrifuge Portal](https:
 1. Make sure you save the downloaded JSON file in a safe place, and remember the password for this account
 1. Done! You can now copy your address and send it to others to receive tokens.
 
-### Create an account using the Parity Signer App
+## Create an account using the Parity Signer App
 
 This is an unofficial guide on how to use the Parity Signer App to create an account on Centrifuge Chain. Please consult the official Parity Signer documentation [here](https://github.com/paritytech/parity-signer).
 
-#### How to connect to Centrifuge Chain Mainnet
+### How to connect to Centrifuge Chain Mainnet
 
 1. Open the Portal Website on your computer at: https://portal.chain.centrifuge.io/
 2. In the top left, ensure that the Newtork is set to 'Centrifuge Mainnet'
 
 ![](./images/portal-website.png)
 
-#### How to Generate an Address Using Parity Signer
+### How to Generate an Address Using Parity Signer
 
 1. Buy an old or new device (ex. ipod touch, android phone, etc.)
    - **Important** only charge it with a battery bank or wall charger, **don’t plug it into a computer!!!** Use a charge only cable, not a data cable.
