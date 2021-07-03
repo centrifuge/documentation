@@ -12,7 +12,9 @@ DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permit
 
 A Centrifuge Chain address can be created through the [Centrifuge Portal](https://portal.chain.centrifuge.io/#/accounts), the [Polkadot browser extension](https://polkadot.js.org/extension/), or through [Parity Signer](https://www.parity.io/signer/).
 
-## Create an account/key pair using the Portal UI
+## Using the Portal UI
+**Of all options, this is the least secure and is not recommended.**
+
 1. Open the Portal at https://portal.chain.centrifuge.io/#?rpc=wss://fullnode.centrifuge.io
 1. Create a new account for your user by navigating to "Accounts" and clicking "Add account".
 
@@ -22,7 +24,7 @@ A Centrifuge Chain address can be created through the [Centrifuge Portal](https:
 
 1. Done! You can now copy your address and send it to others to receive tokens. The address is the string starting with `4...` for Mainnet or `5...` for Amber or Flint under the name of your account, e. g. `5HKk5u...wp29Zd` in the following. You can copy it by clicking on the icon to the left of your account name: ![](./images/account-address.png)
 
-## Create an account using the Polkadot.js extension
+## Using the Polkadot.js extension
 
 1. Download the extension [here](https://polkadot.js.org/extension/)
 1. Create a new account by clicking on "+" in the top right of the extension and selecting "Create new account"
@@ -46,44 +48,32 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 ### How to Generate an Address Using Parity Signer
 
 1. Buy an old or new device (ex. ipod touch, android phone, etc.)
-   - **Important** only charge it with a battery bank or wall charger, **don’t plug it into a computer!!!** Use a charge only cable, not a data cable.
+     - **Important** only charge it with a battery bank or wall charger, **don’t plug it into a computer!!!** Use a charge only cable, not a data cable.
 1. Set up a passcode and set it to wipe the device upon entering the code incorrectly too many times.
 1. Install the [Parity Signer App](https://www.parity.io/signer/) from below links:
-   - [Link for apple device](https://itunes.apple.com/us/app/parity-signer/id1218174838)
-   - [Link for android device](https://play.google.com/store/apps/details?id=io.parity.signer)
+     - [Link for apple device](https://itunes.apple.com/us/app/parity-signer/id1218174838)
+     - [Link for android device](https://play.google.com/store/apps/details?id=io.parity.signer)
 1. Never connect the the device to a computer, even to upgrade it.
 1. Turn off wifi & bluetooth (**NEVER TURN IT ON AGAIN!**)
 1. Create a key for Centrifuge Mainnet using the Parity Signer App
-
-   - Create your identity to get started
-
-   ![](./images/new-identity.png#width=400)
-
-   - Write down your 24 word Recovery Phrase (**THIS IS VERY IMPORTANT**)
-
-   ![](./images/recovery-phrase.png#width=400)
-
-   - Set your Identity PIN
-     - **You will use this PIN to sign all of your transactions using this device.**
-   - Create your first Keypair - select the Centrifuge Mainnet Network
-
-   ![](./images/create-keypair.png#width=400)
-
-1) Get your address by scanning the QR code on the Portal Website.
+     - Create your identity to get started
+     ![](./images/new-identity.png#width=400)
+     - Write down your 24 word Recovery Phrase (**THIS IS VERY IMPORTANT**)
+     ![](./images/recovery-phrase.png#width=400)
+     - Set your Identity PIN
+       - **You will use this PIN to sign all of your transactions using this device.**
+     - Create your first Keypair - select the Centrifuge Mainnet Network
+     ![](./images/create-keypair.png#width=400)
+1. Get your address by scanning the QR code on the Portal Website.
      - On your computer, navigate to https://portal.chain.centrifuge.io/
      - Make sure the network is set to 'Centrifuge Mainnet'
      - Click on Accounts
      - Click on 'Add via QR'
-
        ![](./images/add-via-qr.png#width=400)
-
      - Scan the QR code on your device for your Centrifuge Mainnet Public Address
-
        ![](./images/public-address-qr.png#width=400)
-
      - Your address for Centrifuge Mainnet should begin with a '4...'
-
-1) To manually check the above process:
+1. To manually check the above process:
      - Delete the key from the app
      - Recover the key from your backed up phrase
      - Verify the address matches what you obtained above
