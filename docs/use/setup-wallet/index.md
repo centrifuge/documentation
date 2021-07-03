@@ -70,45 +70,35 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
    ![](./images/create-keypair.png#width=400)
 
 1) Get your address by scanning the QR code on the Portal Website.
+     - On your computer, navigate to https://portal.chain.centrifuge.io/
+     - Make sure the network is set to 'Centrifuge Mainnet'
+     - Click on Accounts
+     - Click on 'Add via QR'
 
-   - On your computer, navigate to https://portal.chain.centrifuge.io/
-   - Make sure the network is set to 'Centrifuge Mainnet'
-   - Click on Accounts
-   - Click on 'Add via QR'
+       ![](./images/add-via-qr.png#width=400)
 
-     ![](./images/add-via-qr.png#width=400)
+     - Scan the QR code on your device for your Centrifuge Mainnet Public Address
 
-   - Scan the QR code on your device for your Centrifuge Mainnet Public Address
+       ![](./images/public-address-qr.png#width=400)
 
-     ![](./images/public-address-qr.png#width=400)
-
-   - Your address for Centrifuge Mainnet should begin with a '4...'
+     - Your address for Centrifuge Mainnet should begin with a '4...'
 
 1) To manually check the above process:
-   - Delete the key from the app
-   - Recover the key from your backed up phrase
-   - Verify the address matches what you obtained above
+     - Delete the key from the app
+     - Recover the key from your backed up phrase
+     - Verify the address matches what you obtained above
+
 1) Send some test CFG to another address and use Parity Signer to sign this transaction
-   - You will first need to send some CFG to this account
-   - Initiate a transfer on the Portal Website by selecting 'Transfer' in the left menu or on 'Send' from the Accounts page
-   - Click 'Make Transfer'
-   - Click 'Sign via QR'
-   - Using the Parity Signer App, scan the QR code in your browser with the App's QR Scanner from this account screen:
-     ![](./images/public-address-qr.png#width=400)
-   - In the app, confirm your signature of the transaction by entering your PIN
-   - Click 'Scan Signature QR' in the browser
-   - Sign the transaction
+     - You will first need to send some CFG to this account
+     - Initiate a transfer on the Portal Website by selecting 'Transfer' in the left menu or on 'Send' from the Accounts page
+     - Click 'Make Transfer'
+     - Click 'Sign via QR'
+     - Using the Parity Signer App, scan the QR code in your browser with the App's QR Scanner from this account screen (see above on how to get it).
+     - In the app, confirm your signature of the transaction by entering your PIN
+     - Click 'Scan Signature QR' in the browser
+     - Sign the transaction
 
 1) Backup your Recovery Phrase and keep it somewhere safe. Please do research on secure methods for storage and recovery.
-
-If you intend to stake your tokens towards validators on Centrifuge Chain, it is advised to generate another address (a "controller" address). You can generate that address by adding a new Identity and following steps 6 to 10 above, which gives you a new recovery phrase.
-
-To add a new identity:
-
-- Select the person icon on the top right
-- Select 'Add Identity'
-
-![](./images/add-identity.png#width=400)
 
 > **A note on app updates:**
 > If a new version of the app becomes available, please exercise the following caution.
@@ -117,7 +107,7 @@ To add a new identity:
 >
 > 1.  Hard reset the device and wipe everything
 > 2.  Re-install the new parity signer app
-> 3.  Turn off wifi & bluetooth (**NEVER TURN IT ON AGAIN**)
+> 3.  Turn off wifi & bluetooth and **NEVER TURN IT ON AGAIN**
 > 4.  Recover your key from seed phrase
 
 
