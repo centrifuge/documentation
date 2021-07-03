@@ -4,7 +4,6 @@ order: 4
 title: Centrifuge - Ethereum Bridge
 ---
 
-# Bridge Operations
 
 ## Install ChainBridge Client tool
 ```=bash
