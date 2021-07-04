@@ -115,7 +115,7 @@ const HomePage = () => {
 
   return (
       <Layout size={size} hideFooter fullWidth>
-        <SEO title="Centrifuge documentation" />
+        <SEO title="Centrifuge Documentation" />
         <Box direction="row" gap="large" justify="between">
           <Box>
             <Text style={{ fontFamily: "Space Mono" }}>Intro</Text>
