@@ -57,6 +57,9 @@ Validators must stay online and available with very high up-time. They will be h
 
 For a deeper dive into the Centrifuge token that powers Centrifuge Chain, read our **[Centrifuge Token Summary](https://centrifuge.io/cfg-token-summary)**.
 
+## Create an account
+**Need to create an account?** This section has moved. Read how to [Setup a wallet](/use/setup-wallet).
+
 ## Centrifuge Chain Test Networks
 
 Centrifuge has multiple testnets online that have been created to test and stabilize the interaction between Centrifuge’s components, but are unaudited and experimental for now. These testnets have no economic value on-chain.
