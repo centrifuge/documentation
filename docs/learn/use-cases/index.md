@@ -92,13 +92,19 @@ attract more investment which is deemed essential to achieve the set target.
 In terms of financial commitments in renewable energy, Solar PV and Onshore Wind contributed
 around 77% of total finance as per CSI analysis as shown in Figure 1.
 
+![Financial commitment in Renewable Energy by Technology](./images/Figure_1.png)
+
 While the renewable energy industry has established their footprints over more than a decade, its
 continuous demand and growth has seen private clients/developers investing more owing to several
 benefits from state/federal governments and utilities. Private investors finance in renewable energy
 sector was more than public during 2013-2018 period as identified in Figure 2.
 
+![Public and Private Investment in Renewable Energy Finance](./images/Figure_2.jpeg)
+
 The renewable energy projects are financed through different private investments sources as shown
 in Figure 3.
+
+![Private Investment in Renewable Energy by Investment Source](./images/Figure_3.png)
 
 #### Off-Grid Solar Renewable System
 
@@ -109,7 +115,11 @@ insurmountable task by 2030 through new financial instruments & approaches which
 quick, cost-efficient, and efficient solution. Figure 4 below shows the population served by off-grid
 renewable energy solutions globally.
 
+![Population served by Off-grid Renewable Energy Solutions](./images/Figure_4.png)
+
 The annual commitments to off-grid renewable energy is shown in Figure 5.
+
+![Annual Commitments to Off-grid Renewable Energy & Number of Transactions](./images/Figure_5.png)
 
 Investment in off-grid renewable system is dominated by private sector around 78%, followed by
 public sector which is around 20%. However, despite surge in renewable energy financing,
@@ -117,6 +127,10 @@ investment in such solutions represents a very small portion of overall energy f
 
 Financing from private and public to off grid renewable energy is shown Figure 6 while Figure 7
 shows annual financing based on investors.
+
+![Annual Commitments to Off-grid renewable energy by Public & Private Investments](./images/Figure_6.png)
+
+![Annual Commitments to Off-grid renewable energy by Public by Investor](./images/Figure_7.png)
 
 From the above, it can be concluded that the off-grid solar renewable sector has plenty of space to
 foster in future. With the advancement in technology in Solar PV, the overall cost of solar PV system
@@ -248,6 +262,8 @@ smartphone app enabling quick crypto adoption. This is help in ease of use of fi
 grid customers.
 - Integration with NEoT Off grid Africa, an investment platform established by Meridiam, EDF and
 Mitsubishi Corporation for supporting mini-off grid solar system portfolio.
+
+![](./images/Figure_8.png)
 
 ### Conclusion
 
