@@ -1,7 +1,7 @@
 ---
-id: cfg_bridge
-order: 2
-title: CFG<>wCFG Bridge
+id: cfg-bridge
+order: 3
+title: CFG <> wCFG Bridge
 contributors: <Lucas Vogelsang:lucas@centrifuge.io>
 ---
 
