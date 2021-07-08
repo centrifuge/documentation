@@ -1,10 +1,8 @@
 ---
-id: cfg_wallet
-order: 1
+id: setup-wallet
+order: 2
 title: Setup your CFG Wallet
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
-redirect_from:
-- /use/
 ---
 
 DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind._

@@ -1,6 +1,6 @@
 ---
 id: chain-governance
-order: 4
+order: 8
 title: Participate in Governance
 contributors: <Cassidy Daly:cassidy@centrifuge.io>
 ---
