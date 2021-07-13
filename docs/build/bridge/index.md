@@ -4,6 +4,18 @@ order: 4
 title: Centrifuge - Ethereum Bridge
 ---
 
+## Bridge Contract & Accounts
+### Token Supply
+The bridge supply can be audited by looking at the number of tokens stored in the bridge account: 4dpEcgqFor2TJw9uWSjx2JpjkNmTic2UjJAK1j9fRtcTUoRu as wellas the ERC20 token supply
+
+### Relayer Threshold
+You can submit an RPC call a to a full node and query `chainBridge.relayerThreshold`. This will give you the number of confirmations needed on the Centrifuge Chain to trigger a transfer.
+
+On Ethereum you can query the Chainbridge public method `_relayerThreshold()(uint8)`:
+
+```
+seth call 0xFe50BA7241b635Eda23a32875c383A34E8a3596c '_relayerThreshold()(uint8)'
+```
 
 ## Install ChainBridge Client tool
 ```=bash
