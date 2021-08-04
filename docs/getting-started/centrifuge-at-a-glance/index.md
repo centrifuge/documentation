@@ -1,13 +1,12 @@
 ---
 id: getting-started
 order: 1
-title: Getting Started
+title: Centrifuge at a Glance
 contributors: <Dylan Dedi:dylan@centrifuge.io>
 redirect_from:
-  - /learn/
+  - /getting-started
+  - /getting-started/
 ---
-
-## Centrifuge at a Glance
 
 **Centrifuge** is a network that provides access to fast, cheap capital for small businesses and stable yield for investors.
 

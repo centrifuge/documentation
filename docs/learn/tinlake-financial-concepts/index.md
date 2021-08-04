@@ -1,6 +1,6 @@
 ---
 id: tinlake-financial-concepts
-order: 9
+order: 2
 title: Tinlake Financial Concepts
 contributors: <Dylan Dedi:dylan@centrifuge.io>
 ---

@@ -1,6 +1,6 @@
 ---
 id: setup-wallet
-order: 2
+order: 5
 title: Setup your CFG Wallet
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---

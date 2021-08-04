@@ -1,7 +1,7 @@
 ---
 id: cent-chain
 order: 4
-title: Deep Dive into our Cent chain
+title: Introducing Centrifuge Chain
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Cassidy Daly:cassidy@centrifuge.io>
 ---
 

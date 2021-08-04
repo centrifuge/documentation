@@ -1,8 +1,11 @@
 ---
 id: assess-pool
-order: 4
+order: 1
 title: Assess a Pool
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
+redirect_from:
+  - /use
+  - /use/
 ---
 
 ## Introduction

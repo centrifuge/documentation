@@ -4,7 +4,8 @@ order: 1
 title: How Tinlake Works
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 redirect_from:
-  - /use/
+  - /learn
+  - /learn/
 ---
 
 ## The Epoch - How investments and redemptions are executed

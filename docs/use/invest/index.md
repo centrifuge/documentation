@@ -1,7 +1,7 @@
 ---
 id: invest
-order: 6
-title: Investment Guide
+order: 3
+title: Invest/Redeem
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
 
