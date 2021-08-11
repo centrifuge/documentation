@@ -1,6 +1,6 @@
 ---
 id: use-cases
-order: 5
+order: 6
 title: Tinlake Use Cases
 contributors: <Dylan Dedi:dylan@centrifuge.io>
 ---

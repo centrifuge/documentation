@@ -1,6 +1,6 @@
 ---
 id: resources
-order: 6
+order: 7
 title: More Resources
 contributors: <Dylan Dedi:dylan@centrifuge.io>
 ---
