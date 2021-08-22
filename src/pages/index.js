@@ -182,7 +182,7 @@ const HomePage = () => {
         </Box>
       </Box>
       <Box margin={{ vertical: "xlarge" }} gap="large">
-        <Box>
+        <Box align="center">
           <GettingStartedNavButton
             {...INSTANCES[INSTANCE_TYPES.GETTING_STARTED]}
           />
