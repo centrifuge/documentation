@@ -170,13 +170,14 @@ const HomePage = () => {
         </Box>
         <Box width="70%">
           <Text>
-            Welcome to the Centrifuge documentation. If you are new, head to the{" "}
-            <strong>Learn</strong> section to understand our ecosystem and how
-            it works. If you are interested in participating in the Centrifuge
-            Network as an investor, asset originator, validator, or
-            participator, you'll find more information in <strong>Use</strong>.
-            For the most up-to-date technical documentation, check out{" "}
-            <strong>Build</strong>.
+            Welcome to the Centrifuge documentation. If you are new, head to the
+            <strong>Getting started</strong> section to understand what
+            Centrifuge is about and get an overview of our ecosystem. Dive
+            deeper into how our products work in the <strong>Learn</strong>{" "}
+            section. As a user of our network, e.g. investor, asset originator,
+            nominator or validator you find advice and guides in{" "}
+            <strong>Use</strong>. For the most up-to-date technical
+            documentation, check out <strong>Build</strong>.
           </Text>
         </Box>
       </Box>
