@@ -1,6 +1,6 @@
 ---
 id: onboarding
-order: 5
+order: 2
 title: Onboarding Guide
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---

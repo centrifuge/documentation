@@ -1,6 +1,6 @@
 ---
 id: cfg-bridge
-order: 3
+order: 6
 title: CFG <> wCFG Bridge
 contributors: <Lucas Vogelsang:lucas@centrifuge.io>
 ---
