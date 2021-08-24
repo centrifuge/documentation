@@ -45,7 +45,7 @@ const DocsLayout = ({ data }) => {
                       textTransform: "capitalize",
                     }}
                   >
-                    {mdx.fields.instanceName}
+                    {mdx.fields.instanceName.split("-").join(" ")}
                   </Text>
                   <Heading level={1} margin={{ vertical: "0" }}>
                     {mdx.frontmatter.title}

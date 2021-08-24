@@ -4,6 +4,7 @@ import { Close } from "grommet-icons";
 import { graphql, useStaticQuery, Link } from "gatsby";
 
 import docs_wordmark from "../../images/docs_wordmark.svg";
+import getting_started_face from "../../images/faces/getting-started-small.svg";
 import learn_face from "../../images/faces/learn.svg";
 import use_face from "../../images/faces/use.svg";
 import build_face from "../../images/faces/build.svg";
@@ -34,6 +35,11 @@ const SideNav = ({ onClose, size }) => {
   `);
 
   let instances = [
+    {
+      name: "getting-started",
+      title: "Getting Started",
+      icon: getting_started_face,
+    },
     { name: "learn", title: "Learn", icon: learn_face },
     { name: "use", title: "Use", icon: use_face },
     { name: "build", title: "Build", icon: build_face },

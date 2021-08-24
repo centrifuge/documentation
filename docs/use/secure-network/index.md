@@ -1,5 +1,5 @@
 ---
-id: invest
+id: secure-network
 order: 7
 title: Secure the Network
 contributors: <Dennis Wellmann:dennis@centrifuge.io>

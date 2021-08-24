@@ -14,8 +14,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        sitemap: `${siteUrl}/sitemap.xml`
-      }
+        sitemap: `${siteUrl}/sitemap.xml`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `getting-started`,
+        path: `${__dirname}/docs/getting-started`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
