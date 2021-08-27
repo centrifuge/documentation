@@ -12,7 +12,7 @@ redirect_from:
 
 **Tinlake** is Centrifuge’s investment app that acts as an open marketplace of real-world asset pools. Investors can look through the pools provided by Asset Originators and invest in the ones that work for them.
 
-**Centrifuge Chain Centrifuge Chain is the home for real-world assets (RWA) on-chain.** It is a Proof-of-Stake blockchain built on [Substrate](https://www.parity.io/what-is-substrate/) that enables users to bring their assets on-chain as non-fungible tokens (NFTs). This is the starting point to unlock financing for any type of asset through DeFi. Centrifuge Chain is bridged to Ethereum, but uses its own native token - the Centrifuge (CFG) token.
+**Centrifuge Chain is the home for real-world assets (RWA) on-chain.** It is a Proof-of-Stake blockchain built on [Substrate](https://www.parity.io/what-is-substrate/) that enables users to bring their assets on-chain as non-fungible tokens (NFTs). This is the starting point to unlock financing for any type of asset through DeFi. Centrifuge Chain is bridged to Ethereum, but uses its own native token - the Centrifuge (CFG) token.
 
 **Centrifuge token (CFG)** is a crypto economic primitive and a native token that utilizes a nominated-Proof-of-Stake consensus algorithm to stake validators and provide incentives for Centrifuge adoption. CFG empowers holders to guide the development of Centrifuge through on-chain governance.
 
