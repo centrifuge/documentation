@@ -7,7 +7,7 @@ contributors: <Dylan Dedi:dylan@centrifuge.io>
 
 ## Overview
 
-[Tinlake](https://tinlake.centrifuge.io/) is an open, smart-contract based marketplace of asset pools bringing together Asset Originators and Investors which seek to utilize the full potential of Decentralized Finance (DeFi). Ultimately, Tinlake will become a fully decentralized financing protocol that interoperates with different blockchains and plugs into a variety of funding source.
+[Tinlake](https://tinlake.centrifuge.io/) is an open, smart-contract based marketplace of asset pools bringing together Asset Originators and Investors who seek to utilize the full potential of Decentralized Finance (DeFi). Ultimately, Tinlake will become a fully decentralized financing protocol that interoperates with different blockchains and plugs into a variety of funding sources.
 
 Through Tinlake pools, businesses or "Asset Originators" can responsibly finance real-world assets, such as invoices, mortgages or streaming royalties through DeFi and access bankless liquidity. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and use these NFTs as collateral in their Tinlake pool to finance their assets.
 
@@ -17,9 +17,9 @@ These assets create a safe, stable return for DeFi investors and DeFi protocols 
 
 Every Asset Originator creates one pool for their assets. If you are interested in investing into a Tinlake pool, you can check out the current pools open on Tinlake [here](https://tinlake.centrifuge.io/) and find an investment guide [here](/use/invest/#investment-guide). All Tinlake pools have different risk/return profiles, so make sure you find the right one for your investment preferences (see [here](/use/invest/#assess-a-pool) how to asses a pool).
 
-Tinlake pools are set-up as "revolving" or openend-ended pools where investors can join and leave at any time and the provided capital can be continuously re-deployed by the Asset Originator unless it is redeemed by the investors.
+Tinlake pools are set-up as "revolving" or open-ended pools where investors can join and leave at any time and the provided capital can be continuously re-deployed by the Asset Originator unless it is redeemed by the investors.
 
-## Revolving pools - Continous liquidity
+## Revolving pools - Continuous liquidity
 
 ### Intro
 
@@ -29,10 +29,10 @@ Revolving pools allow investors to invest/redeem independently at any time. A de
 
 ### Investing into Tinlake
 
-Investors can be whitelisted for either one (or both) of Tinlake's two tranches. To invest into TIN or DROP Investors lock their investment in DAI into the Tinlake pool at any time during an epoch. Investments and are redemptions are then executed at the end of an epoch, usually every 24 hours. A decentralized, automatic mechanism matches investments and redemptions making sure the pools risk metrics remain intact, e.g. the DROP tranche is always protected by a minimum of TIN investors who take the first loss.
+Investors can be whitelisted for either one (or both) of Tinlake's two tranches. To invest into TIN or DROP investors lock their investment in DAI into the Tinlake pool at any time during an epoch. Investments and redemptions are then executed at the end of an epoch, usually every 24 hours. A decentralized, automatic mechanism matches investments and redemptions making sure the pool's risk metrics remain intact, e.g. the DROP tranche is always protected by a minimum of TIN investors who take the loss first.
 
-When the investments are executed the investors receive TIN or DROP token in exchange for the DAI locked. Transactions are executed at the current token prices reflecting the accrued interest and value according to the underlying [NAV model](/use/tinlake-financial-concepts/#asset-valuation) over time. DROP token acrrue interest at the DROP rate on the deployed capital. The TIN token additionally captures the spread betwee DROP rate and Financing Fee but also bears potential losses in the form of write-offs. To redeem TIN/DROP tokens Investors lock these tokens into Tinlake and after the execution of the order they can collect the corresponding amount in DAI based on the current token price. TIN and DROP tokens for investments and received DAI for redemptions can be collected at any time, independent of epochs. Until collection TIN and DROP tokens remain securely locked in the Tinlake smart contracts and already accrue interest and earn CFG awards.
+When the investments are executed the investors receive TIN or DROP tokens in exchange for the DAI locked. Transactions are executed at the current token prices reflecting the accrued interest and value according to the underlying [NAV model](/use/tinlake-financial-concepts/#asset-valuation) over time. The DROP token accrues interest at the DROP rate on the deployed capital. The TIN token additionally captures the spread between DROP rate and financing fee but also bears potential losses in the form of write-offs. To redeem TIN/DROP tokens investors lock these tokens into Tinlake and after the execution of the order they can collect the corresponding amount in DAI based on the current token price. TIN and DROP tokens for investments and received DAI for redemptions can be collected at any time, independent of an epoch. Until collection TIN and DROP tokens remain securely locked in the Tinlake smart contracts and already accrue interest and earn CFG rewards.
 
 ### Financing an asset
 
-The Asset Orginiator can use the capital provided by investors to finance assets. To do this, he locks an NFT representing a tokenized "Real-World Asset" into the set of smart contract as collateral. The NFT is minted based on a document created and shared through Centrifuge's P2P protocol. Financing fees and Principal/Maximum Financing amounts for these NFTs/tokenized assets are provided by an on-chain pricing scorecard and going forward determined by external service providers through "Pricing Oracles". Once the NFT is priced the Asset Originator can draw down the financing. Upon repayment of the financing, the NFT is unlocked and transferred back into the Asset Originator's wallet.
+The Asset Originator can use the capital provided by investors to finance assets. To do this, he locks an NFT representing a tokenized "Real-World Asset" into the set of smart contract as collateral. The NFT is minted based on a document created and shared through Centrifuge's P2P protocol. Financing fees and Principal/Maximum Financing amounts for these NFTs/tokenized assets are provided by an on-chain pricing scorecard and going forward determined by external service providers through "Pricing Oracles". Once the NFT is priced the Asset Originator can draw down the financing. Upon repayment of the financing, the NFT is unlocked and transferred back into the Asset Originator's wallet.
