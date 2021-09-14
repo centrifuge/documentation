@@ -12,17 +12,17 @@ The master branch is continuously deployed to production.)
 
 ## About
 
-Centrifuge is an open, decentralized operating system which provides a method to create, exchange, and use the data that is used in the financial supply chain. It creates transparent and shareable relationships between interacting companies.
+Centrifuge is an open, decentralized operating system that provides a method to create, exchange, and use the data used in the financial supply chain. It creates transparent and shareable relationships between interacting companies.
 
-This project documents the procedure to setup a Centrifuge Node. For the step by step procedure, see [Docs](https://developer.centrifuge.io/).
+This project documents the procedure to set up a Centrifuge Node. For the step-by-step procedure, see [Docs](https://developer.centrifuge.io/).
 
 For information on the Centrifuge code, see our other repos.
 
-To become a part of the Centrifuge community, read the [Code of Conduct](https://developer.centrifuge.io/cent-node/further-reading/contributing/) and join [Slack](https://centrifuge.io/slack/).
+To become a part of the Centrifuge community, read the [Code of Conduct](https://developer.centrifuge.io/cent-node/further-reading/contributing/) and join [Discord](https://centrifuge.io/discord/).
 
 ## Contributing
 
-### _Please_, feel free to make any contributions you feel will make Centrifuge Documentation better.
+### _Please_, feel free to make any contributions you think will make Centrifuge Documentation better.
 
 **Submit all pull requests to the develop branch**
 
