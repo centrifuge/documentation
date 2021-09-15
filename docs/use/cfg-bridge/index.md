@@ -12,7 +12,7 @@ The bridge used by Centrifuge is a trusted relayer bridge. This means a set of r
 
 Want to run your own bridge? Head over to: [Running the bridge](/build/bridge/)
 ### Bridge Fees
-The CFG<>wCFG bridge relies on a set of relayers to submit transactions to Ethereum and Cent Chain about the events happening on the other chain. Because these transactions can be very costly at high gas prices the bridge must charge high enough fees that it will be able to pay for its fees even during times of very high gas prices. For this reason the fee to go from Centrifuge Chain to Ethereum is relatively high. In addition because Centrifuge Chain does not have any insight into gas prices on Ethereum there is no way to charge the actual gas spent. The bridge fees are constant and can be changed at any time by the council and are shown to you before you bridge any tokens. There are ways to improve the performance of this in future iterations (batching of transactions, signature aggregation etc.).
+The CFG<>wCFG bridge relies on a set of relayers to submit transactions to Ethereum and Centrifuge Chain about the events happening on the other chain. Because these transactions can be very costly at high gas prices the bridge must charge high enough fees that it will be able to pay for its fees even during times of very high gas prices. For this reason the fee to go from Centrifuge Chain to Ethereum is relatively high whereas to bridge tokens from Ethereum to Centrifuge chain is cheaper (only the gas fees in gwei on Ethereum have to be paid). In addition because Centrifuge Chain does not have any insight into gas prices on Ethereum there is no way to charge the actual gas spent. The bridge fees are constant and can be changed at any time by the council and are shown to you before you bridge any tokens. There are ways to improve the performance of this in future iterations (batching of transactions, signature aggregation etc.).
 
 
 ### How are CFG & wCFG different?
@@ -28,11 +28,11 @@ Using **wCFG** on Ethereum allows you:
 * Use it within Ethereum and hold it in your Ethereum wallet.
 
 ## Using the bridge
-A hosted bridge UI is available at https://bridge.centrifuge.io Navigate over there and you will be presented with two options: **Get CFG** to move ERC20 wCFG to Centrifuge Chain and **Get wCFG** to move native CFG to Ethereum. Select which one you would like to do and the UI will ask you to connect your wallet (either via Metamask for Ethereum or the Polkadot.js Browser Extension).
+A hosted bridge UI is available at https://bridge.centrifuge.io Navigate over there and you will be presented with two options: **Get CFG** to move ERC20 wCFG to Centrifuge Chain and **Get wCFG** to move native CFG to Ethereum. Select which way you would like to use the bridge and the UI will ask you to connect your wallet (either via Metamask for Ethereum or the Polkadot.js Browser Extension).
 
 ![Select direction](./images/bridge_select_direction.png)
 
-Enter the amount and destination address:
+Enter the amount you want to transfer (the bridge fee will be deducted automatically) and the destination address (make sure you use the right address format 0xxxx for Ethereum and 4xxx for Centrifuge chain!):
 
 ![Enter transfer details](./images/bridge_start_transfer.png)
 
@@ -40,6 +40,6 @@ Click on **Start Transfer** and then confirm the transfer:
 
 ![Confirm transfer](./images/bridge_confirm_transfer.png)
 
-The bridge relayers now submit your transfer request on chain and after enough confirmations have passed you will receive the tokens on your target chain.
+The bridge relayers now submit your transfer request on chain and after enough confirmations have passed you will receive the tokens on your target chain (an anverage transfer takes about 15 minutes, in case of higher traffic in both networks it can take a little bit longer).
 
 ![Pending transfer](./images/bridge_in_transit.png)
