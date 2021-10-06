@@ -67,7 +67,7 @@ Average loan maintainance/running costs (such as legal, SPV, servicing) could be
 ### Simple example for one financing
 
 **General Assumptions:**
-Today = 31.03.2020
+Today = 01.01.2020
 Discount rate `r` = 5.00%
 Days per year: 360
 Seconds per year: 31536000
