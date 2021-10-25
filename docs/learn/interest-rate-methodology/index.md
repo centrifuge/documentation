@@ -59,7 +59,7 @@ $$
 ### Calculate Debt
 
 $$
-D = P * rate^t
+D = P * rate^n
 $$
 
 The debt can be calculated by multipling the principial $P$ with $rate$ to the power of $n$. The variable $n$ represents the time passed in seconds since the loan has been borrowed.
