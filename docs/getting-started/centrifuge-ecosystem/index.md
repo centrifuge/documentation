@@ -41,6 +41,8 @@ Centrifuge also empowers its holders with governance. Centrifuge Chain uses Subs
 
 As the utility of Centrifuge grows, the Centrifuge token will capture the growing value provided to users of the network through each of its utilities. This value is primarily captured in the use of CFG for transaction fees, and additionally through its importance in Governance of the network. The token will also serve as a store-of-value through the implementation of the insurance DAO in which CFG will be staked.
 
+This is an example edit.
+
 ## Integrations/Composability
 
 ### The ETH/DOT Relationship
