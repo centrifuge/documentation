@@ -93,4 +93,4 @@ Continuing the example from above with an 5.00% annual interest rate (APR):
 
 We use fixed precision decimals for any monetary amounts. Interest Rates are typically of type `ray` with 27 digits precision and amounts are of type `wad` which has 18 digits precision.
 
-This is usually explicitally mentioned in throught the codebase.
+This is usually explicitly mentioned throughout the codebase.
