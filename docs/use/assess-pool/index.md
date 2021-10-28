@@ -17,7 +17,7 @@ This section walks you through the process as an investor before the first inves
 It’s a lot of information at first, so we put together this step by step list you can use to help you make a decision about which pool you feel best investing in:
 
 - Choosing a pool: Select the pool based on pool value, asset type, and DROP APR that you are most comfortable with.
-- Asset Originator: check the Discourse community intro and pool summary, and any other information you find on the web about the company/asset. Check the list of assets financed on Tinlake to see their reputation on Tinlake.
+- Asset Originator: check the Discourse community intro and pool summary, and any other information you find on the web about the company/asset. Check the list of assets financed on Tinlake to see their track record on Tinlake.
 - Asset Type: Do I understand what assets I will finance and the risk of this asset type?
 - Risk: Am I comfortable with the TIN buffer protecting my DROP?
 - Yield: How does the Cash drag look in relation to the average asset size?
