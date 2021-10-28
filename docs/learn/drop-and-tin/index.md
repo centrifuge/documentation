@@ -55,7 +55,7 @@ The senior tranche would be protected against any losses of their investment and
 
 The Drop token’s return is defined by a fee function. Unless modified, the default implementation has a fixed interest per pool compounding per second. The interest is only charged on the deployed capital. The Tin token only gets a return on their investment if the Drop token holders have all been fully redeemed. Therefore, Tin token holders do not have a guaranteed fee or return but measure their return by what the Drop token contract leaves in the system.
 
-An overview of how to calculate interest rates for Tinlake contracts can be found [here](#interest-rate-methodology).
+An overview of how to calculate interest rates for Tinlake contracts can be found [here](https://docs.centrifuge.io/learn/interest-rate-methodology/).
 
 ### Minimum Tranche Ratio
 
