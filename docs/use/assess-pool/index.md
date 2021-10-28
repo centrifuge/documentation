@@ -63,7 +63,7 @@ If you want to take a look at the past and current financings of the pool, chang
 
 ![](./images/pool_financings.png)
 
-Note: it’s good to also be aware that we have just recently launched Tinlake. Many of these pools are still building up their asset history. ConsolFreight, whose invoice sizes are much smaller, is a good example showing a solid reputation history.
+Note: it’s good to also be aware that we have just recently launched Tinlake. Many of these pools are still building up their asset history. ConsolFreight, whose invoice sizes are much smaller, is a good example showing a solid track record.
 
 ## Maximum Pool Reserve
 
