@@ -23,7 +23,7 @@ It’s a lot of information at first, so we put together this step by step list 
 - Yield: How does the Cash drag look in relation to the average asset size?
 
 ## For starters: Choosing pools
-
+### Tinlake Pool Dashboard
 We gotta start in the most obvious place: tinlake.centrifuge.io. The top banner shows you the total value for all pools but for our purposes, we are only looking at the list of pools which currently (mid January 2021) are:
 
 ![](./images/choosing_pools.png)
@@ -35,6 +35,8 @@ Under the Asset Originator, you’ll find the asset type. For New Silver, it’s
 The Pool Value tells you the current volume of financed assets and how big the pool currently is.
 
 The DROP APR is the fixed nominal interest rate DROP investors receive. This rate is applied to the outstanding financing amount of the pool and tells you how much profit you should expect for your invested DAI. The interest in Tinlake (as most DeFi protocols) is accrued every second, so you earn yield every moment you are invested. That means if you invest 10k DAI into a fully deployed Tinlake pool with a 10% DROP APR you will have 11.05k at the end of the year (equal to a 10.52% APY). The effective DROP yield may be slightly lower than the DROP APR due to the pool’s “cash drag” (see below). Also, when you invest, you also receive CFG Rewards on top 🤑.
+
+The investment capacity tells you how much investment capacity there currently is for DROP investment. This capacity considers the capacity set by the asset originator and currently locked investments. Note that this may change with investments/redemptions locked before the epoch is closed. If a pool is "oversubscribed"  there currently is no room for additional DROP investments, e.g. to minimize cash drag. 
 
 ## Check out Asset Originator and Asset Type
 
@@ -57,7 +59,7 @@ This is a human-friendly page that answers more about the company, organization,
 At the beginning of the community intro, you’ll find the pool summary (above it’s NS Series 2). This is a detailed description of the actual pool. On both the community intro and pool summary, you are free to ask questions/express concerns directly to the asset originator. Here’s a list of all previous and current pool summaries.
 Asset Maturity Date
 
-## Gauging Reputation
+## Gauging origination history
 
 If you want to take a look at the past and current financings of the pool, change to the “Asset” tab, which will give you a list of the asset originator’s history with Tinlake as well as the graph of the development of asset value and reserve. For all assets in the list, a status of "NFT locked" (so the NFT is locked as collateral but not financed yet) “Ongoing” or “Completed” (fully repaid) will be listed.
 
@@ -65,21 +67,34 @@ If you want to take a look at the past and current financings of the pool, chang
 
 Note: it’s good to also be aware that we have just recently launched Tinlake. Many of these pools are still building up their asset history. ConsolFreight, whose invoice sizes are much smaller, is a good example showing a solid track record.
 
-## Maximum Pool Reserve
+## Sizing up the Pool by the Numbers: Risk and Return
+### Intro
+One general rule of thumb in finance (both TradFi and DeFi) is that risks and returns are related — higher potential returns usually equate to higher risks. Investors demand higher returns to be compensated for taking on higher risk. The main question when making investment decisions is whether the (expected) return of an investment is worth taking on the (expected) financial risk associated with it. Investing into Tinlake pools will give you attractive and stable yields, as well as CFG rewards as returns, but as with any other investment, using Tinlake comes with risks. 
 
-You may also notice the “Max: 1” under the Pool Reserve. The maximum Reserve can be set by the Asset Originator and signal its financing needs. Subtracting the Max pool reserve by the current pool reserve will let you know how much you can invest in a pool. If the current Reserve is higher than the maximum Reserve set by the Asset Originator the pool is “oversubscribed.” So for New Silver, the pool is currently "oversubscribed", thus no further funding through investments is required.
+### Earning yield
+Let’s start with the returns. As a DROP investor, you will earn a stable return on your investment. Every pool has a fixed DROP rate (APR — “Annual Percentage Rate”) that earns you interest. The APR is compounded every second thus your effective yield (APY — “Annual Percentage Yield”) will usually be slightly higher due to the compounding. For example, an APR of 10% translates into an APY of ~10.50% with secondly compounding (please find more information on the differences between APR and APY here).You find both, DROP APR and APY of a pool e.g. on the pools investment page.
 
-## Sizing up the Pool by the Numbers: Risk and Yield
+Note that the DROP APR is applied on financed assets only and excess liquidity in the pool’s reserve does not earn interest. Therefore keep an eye out on how Issuers manage their liquidity. A high reserve ratio decreases your effective yield. If a pool with an APY of 10.50% has a current reserve of 20% of the pool value you earn an effective yield of roughly 10.50% * (1–20%) = 8.40%. You can find the average DROP APY over the last 30 days for every pool on TInlake’s Dashboard and at the top of every pool’s overview page.
 
-Once you are happy with the Asset Originator, let’s look at the state of the pool at the bottom of the Overview page. Lots of numbers happening here. But if it’s your first time, here are the most important things you need to know to better understand how the pool is doing:
+Returns for TIN investor returns will usually be higher but also more volatile. On top of earning the full interest income of the pool on their investment they also receive the spread between financing fees the Issuers pay and the DROP rate on the DROP share of the pool. In return for these higher fees, they take defaults first. For example, if an Issuer fails to repay their financing for an asset within the pool this default will first reduce the TIN portion of the pool before impacting the DROP. TIN is currently only open for professional investors with a long-term investment horizon. Interested investors can contact the pool’s issuers directly for TIN investments.
 
-![](./images/pool_state.png)
+### Farming rewards
+On top of the interest accrued you can also farm rewards with Tinlake investments through Centrifuge’s native token CFG. CFG holders power the Centrifuge protocol by staking towards Validators to help secure Centrifuge Chain, as well as participating in on-chain governance for future chain upgrades. At the time of writing, for every day you are invested into a Tinlake pool you earn 8 CFG tokens per each 10k DAI investment. You can start claiming these rewards after a minimum holding period of 30 days (note that currently, most Tinlake pool issuers require a minimum investment amount of 5k DAI per pool). On the Dashboard the farming rewards are also displayed as an annualized reward rate based on the current CFG token price. Note that these are rewards from the Centrifuge protocol for providing liquidity to the ecosystem independent from the pool, it’s issuers, their asset originators, or any Centrifuge entity.
 
-## Pool Value, Asset Value, and “Cash drag”
+### Credit/Default risk
+Credit or default risk is the most common risk associated with an investment. It is defined as the possibility of a loss resulting from a borrower’s (or in Tinlake’s case an Issuer’s) failure to repay a loan. In Tinlake’s case, this may happen if an outstanding financing is not repaid by an Issuer because an underlying asset, e.g. an invoice, was not repaid.
+As a DROP investor you have several layers of protection against defaults. First, many Issuers only finance up to a certain percentage of the value of the underlying assets to protect themselves against default. ConsolFreight (CF4) for example only advances 50–90% of the invoice amount depending on the counterparty. The second layer of protection for DROP investors is the minimum TIN risk buffer. This buffer is a predetermined TIN percentage of the pool, which further insulates DROP investors through the first loss mechanism described above. Issuers also need to invest into TIN themselves to grow the pool and thus have “skin in the game”. If there is a default in a pool, the outstanding financing will be written off and the Issuer will take any first losses themselves, incentivizing them to undertake quality underwriting. Lastly, in case of a default, often a large part or the entire outstanding amount can be recovered through liquidating the collateral, e.g. in the case of New Silver, the underlying real estate. Note that until now, there haven’t been any defaults in any Tinlake pools.
 
-The left side gives you a summary of the pool’s asset portfolio. It shows you how many financings currently are active as well as the current maturity and value of these assets. The card also tells you how much liquidity is in the pool’s “Reserve”. The Pool Reserve and Asset Value add up to the Pool Value. The pool reserve is idle money: that means its money not being used to finance an asset. It’s normally more healthy to see this number relatively low compared to the Average Loan Size because investors don’t earn yield on the reserve — only on outstanding investments. Thus, a persistently high pool reserve may drag down your effective yield (“cash drag”). Temporarily, a Reserve may be relatively high. So for example, New Silver’s assets are quite big. Each real estate loan is around 190k. That means they will need at least 190k in the pool Reserve to finance the next asset.
+### Liquidity risk
+Liquidity is how easily an investment can be converted to cash. In Tinlake this refers to how quickly you can redeem your investment if you want or need to. This depends on how much liquidity currently is in the reserve. If enough liquidity is in the reserve and you lock your DROP/TIN token for redemption they should be executed at the next epoch (usually daily). Repayments from Issuers and investments from other investors also increase the reserve to serve redemptions. This means, the maturity of the underlying assets can be seen as a “soft lock”. In case no one else wants to invest, this is the longest period your investment may be locked before you can redeem.
+You can find the expected range of maturities and the current average maturity for every pool on the “Pool Overview” page.
 
-## TIN and DROP and the Minimum TIN Risk buffer
+### Interest rate risk
+Interest rate risk denotes the risk that changes in the underlying interest rates impact your investment. In the case of Tinlake, this mainly relates to changes in the financing fees (which impact TIN returns) and DROP rate. The financing fees and DROP rate are fixed but they can be changed with a notice period of several weeks by the Issuer. In this case the Issuer amends the pool’s legal documents and informs the pool investors of a pending change to the DROP rate. This gives investors the time to redeem if they do not want to remain invested at the new conditions. Note that this rarely happens and usually in line with market conditions.
 
-The two cards to the right show you the current value of each of the two tranches (note, that both values add up to the “Pool Value” of the asset side). The value of these two tranches define the “Current TIN risk buffer”, calculated as TIN value / Pool Value, which you find between the tranche cards. This metric lets DROP investors know how protected they are through TIN. In this pool, the minimum is 15%, meaning DROP holders are protected even if 15% of the loans default. TIN holders (the higher risk) will take that loss instead. The ratio shows currently that it’s at 28%, meaning that percentage has risen. This number can fluctuate but the pool will never allow it to go below 15%. Note: If you need a refresher on how our TIN + DROP system works, head [here](link to two tranches section).
+### Exchange rate risk
+Exchange-rate risk arises from the change in price of one currency in relation to another. This is not inherent to Tinlake but is still a risk you should be aware of in DeFi as well. Tinlake pools are (so far) predominantly denominated in DAI, which is pegged to the USD ~1:1. If the peg breaks the value of your investment in USD terms may change. If you are an investor usually holding funds in a different currency than USD, e.g. EUR or GBP, you take on additional exchange risk between DAI & USD and these currencies.
+
+### Smart Contract risk
+Among many innovations and the potential to build a new, open, decentralized financial system DeFi has also introduced a new kind of risk to the financial world: Smart contract risk. Smart contracts may contain bugs that may lead to loss of funds or may be exploited. To minimize this risk, Tinlake’s smart contracts have been audited twice now and are undergoing a third audit at the time of writing. Please find the audit reports here.
 
