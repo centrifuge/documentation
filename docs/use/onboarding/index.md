@@ -1,7 +1,7 @@
 ## Introduction
 Investing in Tinlake pools requires onboarding as an investor and to each specific pool. Submitting your information for KYC and signing a document with the pool's issuer takes 15-30 minutes. You will be ready to invest within 24 hours.
 
-![Steps to onboard as investor and onboard to pool](https://storage.googleapis.com/centrifuge-hackmd/upload_bcd7c09d23d692e7e6e30aaee8f6a505.png)
+![Steps to onboard as investor and onboard to pool](./images/Onboarding overview.png)
 
 **Onboard as investor**: Onboarding as an investor is a one-time step to verify your profile for KYC ("Know your customer") through the Securitize service. Once onboarded as an investor you are eligible to invest in any Tinlake pool.
 
@@ -29,33 +29,33 @@ Start the onboarding on the Tinlake Dashboard to become a KYC-verified investor 
 ### 1. Connect wallet
 Connect the Ethereum address you want to use.
 
-![Onboard to token: connect wallet](https://storage.googleapis.com/centrifuge-hackmd/upload_d9eb9cd4b84e2b8be4ce9646872393be.png)
+![Onboard to pool as new investor: connect wallet](./images/onboardInvestor-connectWallet.png)
 
 ***Good to know**: Don’t worry if you can’t finish the process in one go – you can always leave by clicking Close and resume later where you’ve left off before.*
 
 ### 2. Create and Link Securitize account
 Consent to sharing your personal information with [Securitize](https://securitize.io/). Click `Link Securitize account` to link the connected Ethereum address to your Securitize profile.
 
-![Onboard to token: Link Securitize account](https://storage.googleapis.com/centrifuge-hackmd/upload_456bf78964b281a02952021ab8ce8dfd.png)
+![Onboard to pool as new investor: link Securitize account](./onboardInvestor-linkSecuritize.png)
 
 ### 3. Verify KYC
 Complete your profile on Securitize by entering personal information, including passport image, tax number, and a proof of address document.
 
-![Onboard to token: Verify KYC](https://storage.googleapis.com/centrifuge-hackmd/upload_dba8014fd85f9137b8f74a3b5627a2db.png)
+![Onboard to pool as new investor: verify KYC](./images/onboardInvestor-verifyKyc.png)
 
 An email notification will inform you that the KYC has been reviewed.
 
 ### 4. Sign Subscription agreement
 Sign the subscription agreement for the token in [DocuSign](https://www.docusign.com/). After signing, the subscription agreement needs to be countersigned by the Issuer.
 
-![Onboard to token: Sign Subscription agreement](https://storage.googleapis.com/centrifuge-hackmd/upload_63d18b7b5e8d9156d0a9ae621fde9d74.png)
+![Onboard to pool as new investor: sign subscription agreement](./images/onboardInvestor-signSubscription.png)
 
 ***Form W-8BEN**: Non-US citizens or entities are asked to complete [form W-8BEN](https://www.irs.gov/forms-pubs/about-form-w-8-ben). Refer to [Instructions for Form W-8BEN](https://www.irs.gov/pub/irs-pdf/iw8ben.pdf) (Individuals) and [United States Income Tax Treaties - A to Z](https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z).*
 
 ### End
 Success! Once the subscription document has been countersigned by the issuer, the token is ready for investment. Click `Invest` to start investing.
 
-![Onboarding to token completed](https://storage.googleapis.com/centrifuge-hackmd/upload_e9f10cd2a2453e9731e6173f325f743f.png)
+![Onboard to pool as new investor: Invest in token](./images/onboardInvestor-investInToken.png)
 
 ## Onboarding to a pool as an existing investor
 Onboarding to a pool as a verified investor requires signing specific subscription agreement documents. Browse the pools on the [Tinlake dashboard](tinlake.centrifgeu.io) to choose where to invest. Once you have selected a pool, click `Invest` to start the onboarding. 
@@ -65,24 +65,24 @@ Onboarding to a pool as a verified investor requires signing specific subscripti
 ### 1. Connect wallet
 Connect the Ethereum address you want to use.
 
-![Onboard to token: Connect wallet](https://storage.googleapis.com/centrifuge-hackmd/upload_d9eb9cd4b84e2b8be4ce9646872393be.png)
+![Onboard to token: Connect wallet](./images/onboardToken-connectWallet.png)
 
 ### 2. Link Securitize account
 Consent to share your personal information with Securitize. Click `Link Securitize account` to link the connected Ethereum address to your Securitize profile.
 
-![Onboard to token: Link Securitize account](https://storage.googleapis.com/centrifuge-hackmd/upload_456bf78964b281a02952021ab8ce8dfd.png)
+![Onboard to token: Link Securitize account](./images/onboardToken-linkSecuritize.png)
 
 ### 3. Sign Subscription agreement
-Sign the subscription agreement for the token. After signing, the subscription agreement needs to be countersigned by the Issuer.
+Sign the Subscription agreement for the token. After signing, the Subscription agreement needs to be countersigned by the Issuer.
 
-![Onboard to token: Sign subscription agreement](https://storage.googleapis.com/centrifuge-hackmd/upload_63d18b7b5e8d9156d0a9ae621fde9d74.png)
+![Onboard to token: Sign subscription agreement](./images/onboardToken-signSubscription.png)
 
 ***Form W-8BEN**: Non-US citizens or entities are asked to complete [form W-8BEN](https://www.irs.gov/forms-pubs/about-form-w-8-ben). Refer to [Instructions for Form W-8BEN](https://www.irs.gov/pub/irs-pdf/iw8ben.pdf) (Individuals) and [United States Income Tax Treaties - A to Z](https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z) to learn more.*
 
 ### End
 Once the subscription document has been countersigned by the issuer, the token is ready for investment. Click `Invest` to start investing!
 
-![Onboarding to token complete](https://storage.googleapis.com/centrifuge-hackmd/upload_e9f10cd2a2453e9731e6173f325f743f.png)
+![Onboarding to token complete](./images/onboardToken-investInToken.png)
 
 ## After onboarding
 This section includes important information on getting started after onboarding.
