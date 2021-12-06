@@ -1,3 +1,10 @@
+---
+id: onboarding
+order: 2
+title: Onboarding Guide
+contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Nico Dreher:nico@centrifuge.io>
+---
+
 ## Introduction
 Investing in Tinlake pools requires onboarding as an investor and to each specific pool. Submitting your information for KYC and signing a document with the pool's issuer takes 15-30 minutes. You will be ready to invest within 24 hours.
 
