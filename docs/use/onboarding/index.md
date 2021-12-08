@@ -8,27 +8,27 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Nico Dreher:nico@centrifu
 ## Introduction
 Investing in Tinlake pools requires onboarding as an investor and to each specific pool. Submitting your information for KYC and signing a document with the pool's issuer takes 15-30 minutes. You will be ready to invest within 24 hours.
 
-![Steps to onboard as investor and onboard to pool](./images/Onboarding overview.png)
+![Steps to onboard as investor and onboard to pool](./images/Onboarding_overview.png)
 
 **Onboard as investor**: Onboarding as an investor is a one-time step to verify your profile for KYC ("Know your customer") through the Securitize service. Once onboarded as an investor you are eligible to invest in any Tinlake pool.
 
 **Onboard to pool**: Onboarding to a pool requires signing a subscription agreement with the pool issuer. Once the agreement has been signed by both parties, you are automatically whitelisted for investment.
 
 ### Requirements
-**Onboarding as an investor** requires:
+Onboarding as an investor requires:
 - Ethereum wallet, e.g. Metamask
 - A passport or government-issued photo ID
 - Your tax number
 - Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months)
 
-**Onboarding to a pool** requires:
+Onboarding to a pool requires:
 - Ethereum wallet
 - A verified KYC in Securitize (i.e. a completed onboarding as an investor)
 - A minimum investment amount of 5,000 DAI
 
 #### Further requirements
-- **US investors** need to be "Acreddited investors" to invest in Tinlake pools. *See section [Onboarding as US investor](#Onboarding-as-an-US-investor)*
--  Due to US sanctions, investors from **certain countries are excluded** from investing. *See section [Countries excluded from investing](#Countries-excluded-from-investing)*
+- **US investors** need to be "Acreddited investors" to invest in Tinlake pools. *See section [Onboarding as US investor](#onboarding-as-an-us-investor)*
+-  Due to US sanctions, investors from **certain countries are excluded** from investing. *See section [Excluded countries](#onboarding-as-an-us-investor)*
 
 ## Onboard to pool as new investor
 Start the onboarding on the Tinlake Dashboard to become a KYC-verified investor before onboarding to a pool later. Once you have selected a pool, clicking `Invest` on the pool's detail page starts the process to onboard as an investor and onboard to the pool in one go. 
@@ -38,7 +38,7 @@ Connect the Ethereum address you want to use.
 
 ![Onboard to pool as new investor: connect wallet](./images/onboardInvestor-connectWallet.png)
 
-***Good to know**: Don’t worry if you can’t finish the process in one go – you can always leave by clicking Close and resume later where you’ve left off before.*
+**Good to know**: Don’t worry if you can’t finish the process in one go – you can always leave by clicking Close and resume later where you’ve left off before.*
 
 ### 2. Create and Link Securitize account
 Consent to sharing your personal information with [Securitize](https://securitize.io/). Click `Link Securitize account` to link the connected Ethereum address to your Securitize profile.
@@ -57,7 +57,7 @@ Sign the subscription agreement for the token in [DocuSign](https://www.docusign
 
 ![Onboard to pool as new investor: sign subscription agreement](./images/onboardInvestor-signSubscription.png)
 
-***Form W-8BEN**: Non-US citizens or entities are asked to complete [form W-8BEN](https://www.irs.gov/forms-pubs/about-form-w-8-ben). Refer to [Instructions for Form W-8BEN](https://www.irs.gov/pub/irs-pdf/iw8ben.pdf) (Individuals) and [United States Income Tax Treaties - A to Z](https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z).*
+**Form W-8BEN**: Non-US citizens or entities are asked to complete [form W-8BEN](https://www.irs.gov/forms-pubs/about-form-w-8-ben). Refer to [Instructions for Form W-8BEN](https://www.irs.gov/pub/irs-pdf/iw8ben.pdf) (Individuals) and [United States Income Tax Treaties - A to Z](https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z).*
 
 ### End
 Success! Once the subscription document has been countersigned by the issuer, the token is ready for investment. Click `Invest` to start investing.
@@ -67,7 +67,7 @@ Success! Once the subscription document has been countersigned by the issuer, th
 ## Onboarding to a pool as an existing investor
 Onboarding to a pool as a verified investor requires signing specific subscription agreement documents. Browse the pools on the [Tinlake dashboard](tinlake.centrifgeu.io) to choose where to invest. Once you have selected a pool, click `Invest` to start the onboarding. 
 
-***Choosing the right pool**: If you're unsure whether a pool fits your risk profile, check out this [blog post](https://medium.com/centrifuge/investing-in-your-first-tinlake-pool-how-to-dyor-5b79cf88861c).*
+**Choosing the right pool**: If you're unsure whether a pool fits your risk profile, check out this [blog post](https://medium.com/centrifuge/investing-in-your-first-tinlake-pool-how-to-dyor-5b79cf88861c).*
 
 ### 1. Connect wallet
 Connect the Ethereum address you want to use.
@@ -84,7 +84,7 @@ Sign the Subscription agreement for the token. After signing, the Subscription a
 
 ![Onboard to token: Sign subscription agreement](./images/onboardToken-signSubscription.png)
 
-***Form W-8BEN**: Non-US citizens or entities are asked to complete [form W-8BEN](https://www.irs.gov/forms-pubs/about-form-w-8-ben). Refer to [Instructions for Form W-8BEN](https://www.irs.gov/pub/irs-pdf/iw8ben.pdf) (Individuals) and [United States Income Tax Treaties - A to Z](https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z) to learn more.*
+**Form W-8BEN**: Non-US citizens or entities are asked to complete [form W-8BEN](https://www.irs.gov/forms-pubs/about-form-w-8-ben). Refer to [Instructions for Form W-8BEN](https://www.irs.gov/pub/irs-pdf/iw8ben.pdf) (Individuals) and [United States Income Tax Treaties - A to Z](https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z) to learn more.*
 
 ### End
 Once the subscription document has been countersigned by the issuer, the token is ready for investment. Click `Invest` to start investing!
@@ -97,7 +97,7 @@ This section includes important information on getting started after onboarding.
 ### Earn CFG rewards
 Earning CFG rewards requires a CFG wallet – link your Centrifuge Chain address to your Ethereum account once you have made your first investment. Note that rewards can be claimed after a minimum holding period of 30 days.
 
-***Setting up a CFG wallet**: Refer to the [documentation](https://docs.centrifuge.io/use/setup-wallet/)*
+**Setting up a CFG wallet**: Refer to the [documentation](https://docs.centrifuge.io/use/setup-wallet/)*
 
 ## FAQ
 A compilation of frequently asked questions
@@ -128,7 +128,7 @@ This legal set-up leads to certain restrictions. For example, there is a minimum
 This contradicts the idea of decentralized and open finance and the Centrifuge team is working hard to allow more people to invest within the legal framework given by regulators.
 
 ## Resources
-Further information about:
+This section covers further information about:
 * Onboarding as an US investor
 * Onboarding as an entity
 * Excluded countries
