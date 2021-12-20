@@ -13,9 +13,7 @@ redirect_from:
 A Tinlake pool is an open, smart-contract based financing platform that brings together businesses or "Asset Originators" and Investors through Decentralized Finance (DeFi). With a Tinlake pool, Asset Originators can finance real-world assets, such as invoices, mortgages or streaming royalties on-chain via the investment of crypto investors and Defi protocols. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and use these NFTs as collateral in their Tinlake pool.
 
 ### Revolving pool
-Tinlake pools are set-up as "Revolving pools". Revolving pools allow investors to lock investments and redemptions at any point in time. A decentralized [solver mechanism](TODO  link to epoch section] matches investments and redemptions with the liquidity in the pool and ensures that certain risk metrics remain intact. This ensures that Asset Originators have a constant source of liquidity while investors can flexibly invest and redeem.
-
-![](./images/revolving_pools.png)
+Tinlake pools are set-up as "Revolving pools". Revolving pools allow investors to lock investments and redemptions at any point in time. A decentralized solver mechanism matches investments and redemptions with the liquidity in the pool and ensures that certain risk metrics remain intact. This ensures that Asset Originators have a constant source of liquidity while investors can flexibly invest and redeem.
 
 ## Entities involved in Tinlake pools
 ### Issuer
