@@ -1,3 +1,10 @@
+---
+id: chain-governance
+order: 8
+title: "Participate in Governance"
+contributors: <Cassidy Daly:cassidy@centrifuge.io>, <Kate Beecroft:kate@centrifuge.io>
+---
+
 # Centrifuge Governance
 Governance in Centrifuge refers to both the on-chain voting and off-chain coordination used to govern (both Centrifuge and Altair). Governance refers to any activity taken to propose changes to the protocol or ecosystem. These include but are not limited to; the Centrifuge chain, CFG token reward rates, runtime upgrades, integrations, chain parameters, transactions fees, and governance parameters.
 
@@ -52,7 +59,8 @@ Any CFG holder can become elected to the council or AIR holder to the Altair Cou
 
 For more information on the process of becoming a councillor and on voting for councillors on Centrifuge and Altair see the Polkadot governance documentation (https://wiki.polkadot.network/docs/learn-governance)
 
-## How the bond occurs towards election
+
+## How the bond occurs towards election for candidates 
 
 A Centrifuge Chain Council candidate submits their candidacy with 1000 CFG bond and an Altair candidate 500 AIR (The bond will be reserved for the duration of your candidacy and membership).
 
@@ -64,7 +72,21 @@ When the term is about to be changed, which is every 7 days for Centrifuge and e
 
 Token holders can change their votes anytime and the change will be reflected in the next term.
 
-## Prosopsing Referenda and Voting
+## Altair Council Voting
+
+#### How much AIR can I bond (to vote) with? 
+As much as you want 
+
+#### Will I get this bond back? 
+Yes
+
+#### Can I vote with staked tokens?
+Yes you can vote with staked tokens. It’s important though not to vote with your full balance. because otherwise you can’t put for the unlock transaction
+
+#### How long should I bond in order for it to get counted?
+You can vote with as many tokens as you want, and they will simply be bonded and unbonded after you choose. The bonding period is 0 so you can unlock anytime, however, however when you unbond it no longer impacts the voting outcome.
+
+## Proposing Referenda and Voting
 
 ### Referenda
 On-chain referenda are like proposals that any token holder can submit to be voted on. Referenda are made by either the Council or the public. Every launch period (7 days), a proposal is tabled for voting from either the Council or the public, prioritising the one that did not get tabled in the previous period. As a result, the Council controls 50% of the legislative agenda and the public the other 50%.
@@ -153,7 +175,7 @@ Referenda can be found onchain under Governance -> Democracy -> Referenda. Voter
 
 The vote needed to pass is generally adaptive to the voter turnout (this is referred to as adaptive quorum biasing). Depending on which entity proposed the proposal and whether all council members voted yes, there are three different scenarios. We can use the following table for reference.
 
-<img width="639" alt="Gov proposing entity" src="https://user-images.githubusercontent.com/84034484/146755270-4917724a-b210-457f-a8eb-cb06e03a8970.png">
+![](https://user-images.githubusercontent.com/84034484/146755270-4917724a-b210-457f-a8eb-cb06e03a8970.png)
 
 Votes are weighed based on 2 criteria:
 
@@ -176,7 +198,7 @@ In simple terms the flow is as follows - off chain consultation > proposal of re
 
 Centrifuge uses an on-chain governance model with off-chain consultation, which means that first there must be a discussion off-chain (on the Centrifuge Forum, see below), and then the initiator can turn their initiative into a proposal (on-chain) to be voted on by the Chain Council.
 
-<img width="694" alt="Governance process" src="https://user-images.githubusercontent.com/84034484/146743045-065d3331-5d4c-414c-8f35-d2037bb17ea8.png">
+![](https://user-images.githubusercontent.com/84034484/147225175-1613197c-20a7-41f7-85eb-b8b9c9c5c9aa.png)
 
 The Governance Process steps are explained in more detail below:
 
