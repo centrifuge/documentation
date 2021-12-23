@@ -3,7 +3,7 @@ Governance in Centrifuge refers to both the on-chain voting and off-chain coordi
 
 To make significant changes to the network, active token holders and the council must go through both the off-chain and on-chain governance process. No matter whether the proposal is made by the public (token holders) or by the council, the final step is a referendum that enables all holders (their influence weighted by stake) to make the decision.
 
-Centrifuge governance is based on the Polkadot model which is explained in full here. Basically it attempts to mitigate two key problems in blockchain governance: many proposals (or proposal spam) and low voter turnout. 
+Centrifuge governance is based on the Polkadot model which is explained in full [here](https://polkadot.network/blog/a-walkthrough-of-polkadots-governance/) Basically it attempts to mitigate two key problems in blockchain governance: many proposals (or proposal spam) and low voter turnout. 
 
 This functions like democracy as we know it with one-person having one vote and ‘winning’ referenda requiring a majority-of-votes. However, actors can increase the impact of their votes by holding and staking more tokens.
 
@@ -13,12 +13,8 @@ The governance of the Altair Network uses the AIR token largely functions the sa
 
 ## Who can participate in governance and what can they do?
 
-Community member (ie anyone who considers themselves part of the Centrifuge community):
-- Start a discussion, indicate preference in polls, and comment on any proposal on the Centrifuge governance forum. 
-
-CFG holders:
 Community members (ie anyone who considers themselves part of the Centrifuge community):
-- Start a discussion
+- Start a discussion in the forum
 - Indicate preference in polls
 - Comment on any proposal on the Centrifuge governance forum. 
 
@@ -40,9 +36,9 @@ Council Members or Councilors:
 
 ## The Council and Council Elections
 
-The council should referenda beneficial to the Centrifuge Network, based on member's expertise and experience in developing, maintaining and using Centrifuge. The council serves to represent the interest of all Centrifuge stakeholders, be they actively participating token holders or not.
+The council should propose referenda beneficial to the Centrifuge Network. Councillors should be elected based on their expertise and experience in developing, maintaining and using Centrifuge. The council serves to represent the interest of all Centrifuge stakeholders, be they actively participating token holders or not.
 
-The Centrifuge Chain Council comprises a body of 7 elected members and Altair council 9 members who have the ability to vote on certain things directly and they can propose motions that token holders vote on. 
+The Centrifuge Chain Council comprises a body of 7 elected members and Altair 9 elected members who have the ability to vote on certain things directly and they can propose referenda that token holders vote on. 
 
 Council members have the ability to veto incoming proposals. After a cool-down period of 7 days, however, these proposals can be re-submitted, and the council member that vetoed the proposal cannot veto this proposal again. If a council members vetos,  after a cool-down period of 7 days, however, these proposals can be re-submitted, and the council member that vetoed the proposal cannot veto this proposal again.
 
@@ -60,11 +56,32 @@ If you are not elected this bond will be forfeit (burnt)
 
 Token holders can vote for candidates (current members as well as new candidates)
 
-When the term is about to be changed, which is every 7 days for Centrifuge and every 10 for Altair, votes are counted and top 7 or 9 candidates will be elected as new council members until next term.
+When the term is about to be changed, which is every 7 days for Centrifuge and Altair, votes are counted and top 7 or 9 candidates respectively will be elected as new council members until next term.
 
 Token holders can change their votes anytime and the change will be reflected in the next term.
 
-## Prosopsing Referenda and Voting
+### Electing the Altair Council 
+#### How much AIR can I bond (to vote) with? 
+As much as you want 
+
+#### Will I get this bond back? 
+Yes. You can vote with as many tokens as you want, and they simply become bonded and unbonded
+
+### Can I vote with staked tokens?
+Yes you can vote with staked tokens
+
+It’s important though not to vote with your full balance. because otherwise you can’t put for the unlock transaction
+
+### How long should I bond in order for it to get counted?
+There is no defined bonding period for the voting, it is up to you how long you decide to bond your tokens to back the candidate(s). When staking is enabled, you can also continue to vote with staked tokens.  The bonding period is 0 so you can unlock anytime, however, when you unbond it no longer impacts the voting outcome.
+
+You can unbond at any time if you wish to transfer your tokens, once transfers are enabled. We encourage community members to continute voting as long as possible however, as these terms for the council are renewed each wee
+
+### How often do we elect councillors?
+There is a new election term every week (7 days). So any runners up with higher votes become ‘councilors’ and councillors who have less votes move down into ‘candidates’. 
+
+
+## Proposing Referenda and Voting
 
 ### Referenda
 On-chain referenda are like proposals that any token holder can submit to be voted on. Referenda are made by either the Council or the public. Every launch period (7 days), a proposal is tabled for voting from either the Council or the public, prioritising the one that did not get tabled in the previous period. As a result, the Council controls 50% of the legislative agenda and the public the other 50%.
