@@ -1,3 +1,10 @@
+---
+id: chain-governance
+order: 8
+title: Participate in Governance
+contributors: <Cassidy Daly:cassidy@centrifuge.io>
+---
+
 # Centrifuge Governance
 Governance in Centrifuge refers to both the on-chain voting and off-chain coordination used to govern (both Centrifuge and Altair). Governance refers to any activity taken to propose changes to the protocol or ecosystem. These include but are not limited to; the Centrifuge chain, CFG token reward rates, runtime upgrades, integrations, chain parameters, transactions fees, and governance parameters.
 
