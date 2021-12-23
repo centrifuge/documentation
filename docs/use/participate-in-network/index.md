@@ -175,7 +175,7 @@ Referenda can be found onchain under Governance -> Democracy -> Referenda. Voter
 
 The vote needed to pass is generally adaptive to the voter turnout (this is referred to as adaptive quorum biasing). Depending on which entity proposed the proposal and whether all council members voted yes, there are three different scenarios. We can use the following table for reference.
 
-<img width="639" alt="Gov proposing entity" src="https://user-images.githubusercontent.com/84034484/146755270-4917724a-b210-457f-a8eb-cb06e03a8970.png">
+![](https://user-images.githubusercontent.com/84034484/146755270-4917724a-b210-457f-a8eb-cb06e03a8970.png)
 
 Votes are weighed based on 2 criteria:
 
@@ -198,7 +198,7 @@ In simple terms the flow is as follows - off chain consultation > proposal of re
 
 Centrifuge uses an on-chain governance model with off-chain consultation, which means that first there must be a discussion off-chain (on the Centrifuge Forum, see below), and then the initiator can turn their initiative into a proposal (on-chain) to be voted on by the Chain Council.
 
-<img width="1263" alt="Governance onboarding" src="https://user-images.githubusercontent.com/84034484/147225175-1613197c-20a7-41f7-85eb-b8b9c9c5c9aa.png">
+![](https://user-images.githubusercontent.com/84034484/147225175-1613197c-20a7-41f7-85eb-b8b9c9c5c9aa.png)
 
 The Governance Process steps are explained in more detail below:
 
