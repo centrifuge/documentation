@@ -68,14 +68,15 @@ As much as you want
 Yes. You can vote with as many tokens as you want, and they simply become bonded and unbonded
 
 ### Can I vote with staked tokens?
-Yes you can vote with staked tokens
+Yes, when staking is enabled, you can also continue to vote with staked tokens.
 
 It’s important though not to vote with your full balance. because otherwise you can’t put for the unlock transaction
 
 ### How long should I bond in order for it to get counted?
-There is no defined bonding period for the voting, it is up to you how long you decide to bond your tokens to back the candidate(s). When staking is enabled, you can also continue to vote with staked tokens.  The bonding period is 0 so you can unlock anytime, however, when you unbond it no longer impacts the voting outcome.
+There is no defined bonding period for the voting, it is up to you how long you decide to bond your tokens to back the candidate(s). The bonding period is 0 so you can unlock anytime, however, when you unbond it no longer impacts the voting outcome.
 
-You can unbond at any time if you wish to transfer your tokens, once transfers are enabled. We encourage community members to continute voting as long as possible however, as these terms for the council are renewed each wee
+You can unbond at any time if you wish to transfer your tokens, once transfers are enabled. We encourage community members to continute voting as long as possible however, as these terms for the council are renewed each week. 
+
 
 ### How often do we elect councillors?
 There is a new election term every week (7 days). So any runners up with higher votes become ‘councilors’ and councillors who have less votes move down into ‘candidates’. 
@@ -170,7 +171,6 @@ Referenda can be found onchain under Governance -> Democracy -> Referenda. Voter
 
 The vote needed to pass is generally adaptive to the voter turnout (this is referred to as adaptive quorum biasing). Depending on which entity proposed the proposal and whether all council members voted yes, there are three different scenarios. We can use the following table for reference.
 
-<img width="639" alt="Gov proposing entity" src="https://user-images.githubusercontent.com/84034484/146755270-4917724a-b210-457f-a8eb-cb06e03a8970.png">
 
 Votes are weighed based on 2 criteria:
 
@@ -193,7 +193,6 @@ In simple terms the flow is as follows - off chain consultation > proposal of re
 
 Centrifuge uses an on-chain governance model with off-chain consultation, which means that first there must be a discussion off-chain (on the Centrifuge Forum, see below), and then the initiator can turn their initiative into a proposal (on-chain) to be voted on by the Chain Council.
 
-<img width="694" alt="Governance process" src="https://user-images.githubusercontent.com/84034484/146743045-065d3331-5d4c-414c-8f35-d2037bb17ea8.png">
 
 The Governance Process steps are explained in more detail below:
 
@@ -227,4 +226,4 @@ Once your proposal has been selected for referendum, publicize that the vote is 
 
 Refer to this [Polkadot webinar on governance](https://www.crowdcast.io/e/governance-on-polkadot) for more information.
 
-For further reading see the “Do’s and Don’t of blockchain participation from Vlad Zamfir from [‘How to Participate in Blockchain Governance in Good Faith (and with Good Manners)](https://medium.com/@Vlad_Zamfir/how-to-participate-in-blockchain-governance-in-good-faith-and-with-good-manners-bd4e16846434)
+For further reading see the "Do's and Don't of blockchain participation from Vlad Zamfir from [How to Participate in Blockchain Governance in Good Faith (and with Good Manners)](https://medium.com/@Vlad_Zamfir/how-to-participate-in-blockchain-governance-in-good-faith-and-with-good-manners-bd4e16846434)
