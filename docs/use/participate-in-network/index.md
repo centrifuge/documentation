@@ -154,13 +154,13 @@ Read more about stake-based voting schemes built with the Polkadot Governance me
 ### Time lock voting
 Time-lock voting is implemented in order to ensure that some minimal economic buy-in to the result is needed and to dissuade vote selling. It is possible to vote without locking at all, for a heavy discount (90%) on the voting weight of the tokens. To use the full weight of the tokens, they must be locked for the entire enactment delay period beyond the end of the referendum.
 
-For public referenda, the positive turnout bias requires a heavy supermajority of aye votes to carry at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries. We call this a “positive” turnout bias because the required margin of ayes increases as turnout increases. Based on the voting result, the proposal will be approved and autonomously enact
+For public referenda, the positive turnout bias requires a heavy supermajority of aye votes to carry at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries. We call this a “positive” turnout bias because the required margin of ayes increases as turnout increases. Based on the voting result, the proposal will be approved and autonomously enact:
 
-> - Holders can check the end of their lock period by querying the chain state with `democracy.locks(AccountId)` which returns the block number that the lock is active until
-> - Once the lock period has passed, any holder can call `democracy.unlock(addr)` to unlock the tokens
-> 
+- Holders can check the end of their lock period by querying the chain state with `democracy.locks(AccountId)` which returns the block number that the lock is active until
+- Once the lock period has passed, any holder can call `democracy.unlock(addr)` to unlock the tokens
+ 
 ### Conviction
-When someone votes on a referendum via Democracy, they can choose the conviction of their vote. The lock period is based on the level of conviction you want to associate with this vote
+When someone votes on a referendum via Democracy, they can choose the conviction of their vote. The lock period is based on the level of conviction you want to associate with this vote.
 
 For example:
 
@@ -168,9 +168,7 @@ For example:
 - If you want to vote Aye/Nay with 100 CFG with 1x conviction, then 1 * 100 = 100 CFG is the vote value with 8 day lockup of 100 CFG
 - If you want to vote Aye/nay with 100 CFG with 2x conviction, then 2 * 100 = 200 CFG is the vote value with 2 * 8 day lockup of 100 CFG
 
-Please select the appropriate conviction when voting on the referendum
-
-Referenda can be found onchain under Governance -> Democracy -> Referenda. Voters can vote with higher conviction to have their vote count.
+Please select the appropriate conviction when voting on the referendum. Referenda can be found onchain under Governance -> Democracy -> Referenda. Voters can vote with higher conviction to have their vote count.
 
 #### How do votes succeed?
 
@@ -199,7 +197,7 @@ What do we govern as a community and what are the relevant processes for each?
 
 ### What is the process for getting a proposal passed? 
 
-In simple terms the flow is as follows: `0ff chain consultation > Proposal of referenda > Voting > Enactment`
+In simple terms the flow is as follows: Off chain consultation > Proposal of referenda > Voting > Enactment
 
 Centrifuge uses an on-chain governance model with off-chain consultation, which means that first there must be a discussion off-chain (on the Centrifuge Forum, see below), and then the initiator can turn their initiative into a proposal (on-chain) to be voted on by the Chain Council.
 
