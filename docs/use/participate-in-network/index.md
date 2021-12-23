@@ -1,3 +1,11 @@
+"Participate in Governance"
+---
+id: chain-governance
+order: 8
+title: Participate in Governance
+contributors: <Kate@Centrifuge.io Cassidy Daly:cassidy@centrifuge.io>
+---
+
 # Centrifuge Governance
 Governance in Centrifuge refers to both the on-chain voting and off-chain coordination used to govern (both Centrifuge and Altair). Governance refers to any activity taken to propose changes to the protocol or ecosystem. These include but are not limited to; the Centrifuge chain, CFG token reward rates, runtime upgrades, integrations, chain parameters, transactions fees, and governance parameters.
 
@@ -51,6 +59,23 @@ Proposals that do not pass a majority within the council do not make it to a pub
 Any CFG holder can become elected to the council or AIR holder to the Altair Council. 
 
 For more information on the process of becoming a councillor and on voting for councillors on Centrifuge and Altair see the Polkadot governance documentation (https://wiki.polkadot.network/docs/learn-governance)
+
+## Voting in Altair Council Elections
+
+### How much AIR can I bond (to vote) with? 
+As much as you want 
+
+### Will I get this bond back? 
+Yes
+
+### Can I vote with staked tokens?
+Yes you can vote with staked tokens. It’s important though not to vote with your full balance. because otherwise you can’t put for the unlock transaction
+
+### How long should I bond in order for it to get counted?
+You can vote with as many tokens as you want, and they will simply be bonded and unbonded as you choose. The bonding period is 0 so you can unbond anytime, however, when you unbond your vote no longer impacts the voting outcome.
+
+### How often do we elect councillors?
+There is a new election term every week. So any runners up with higher votes become ‘councilors’ and councillors who have less votes move down into ‘candidates’. 
 
 ## How the bond occurs towards election
 
