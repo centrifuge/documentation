@@ -1,9 +1,16 @@
+---
+id: chain-governance
+order: 8
+title: "Participate in Governance"
+contributors: <Cassidy Daly:cassidy@centrifuge.io>, <Kate Beecroft:kate@centrifuge.io>
+---
+
 # Centrifuge Governance
 Governance in Centrifuge refers to both the on-chain voting and off-chain coordination used to govern (both Centrifuge and Altair). Governance refers to any activity taken to propose changes to the protocol or ecosystem. These include but are not limited to; the Centrifuge chain, CFG token reward rates, runtime upgrades, integrations, chain parameters, transactions fees, and governance parameters.
 
 To make significant changes to the network, active token holders and the council must go through both the off-chain and on-chain governance process. No matter whether the proposal is made by the public (token holders) or by the council, the final step is a referendum that enables all holders (their influence weighted by stake) to make the decision.
 
-Centrifuge governance is based on the Polkadot model which is explained in full here. Basically it attempts to mitigate two key problems in blockchain governance: many proposals (or proposal spam) and low voter turnout. 
+Centrifuge governance is based on the Polkadot model which is explained in full [here](https://polkadot.network/blog/a-walkthrough-of-polkadots-governance/) Basically it attempts to mitigate two key problems in blockchain governance: many proposals (or proposal spam) and low voter turnout. 
 
 This functions like democracy as we know it with one-person having one vote and ‘winning’ referenda requiring a majority-of-votes. However, actors can increase the impact of their votes by holding and staking more tokens.
 
@@ -13,12 +20,8 @@ The governance of the Altair Network uses the AIR token largely functions the sa
 
 ## Who can participate in governance and what can they do?
 
-Community member (ie anyone who considers themselves part of the Centrifuge community):
-- Start a discussion, indicate preference in polls, and comment on any proposal on the Centrifuge governance forum. 
-
-CFG holders:
 Community members (ie anyone who considers themselves part of the Centrifuge community):
-- Start a discussion
+- Start a discussion in the forum
 - Indicate preference in polls
 - Comment on any proposal on the Centrifuge governance forum. 
 
@@ -40,9 +43,9 @@ Council Members or Councilors:
 
 ## The Council and Council Elections
 
-The council should referenda beneficial to the Centrifuge Network, based on member's expertise and experience in developing, maintaining and using Centrifuge. The council serves to represent the interest of all Centrifuge stakeholders, be they actively participating token holders or not.
+The council should propose referenda beneficial to the Centrifuge Network. Councillors should be elected based on their expertise and experience in developing, maintaining and using Centrifuge. The council serves to represent the interest of all Centrifuge stakeholders, be they actively participating token holders or not.
 
-The Centrifuge Chain Council comprises a body of 7 elected members and Altair council 9 members who have the ability to vote on certain things directly and they can propose motions that token holders vote on. 
+The Centrifuge Chain Council comprises a body of 7 elected members and Altair 9 elected members who have the ability to vote on certain things directly and they can propose referenda that token holders vote on. 
 
 Council members have the ability to veto incoming proposals. After a cool-down period of 7 days, however, these proposals can be re-submitted, and the council member that vetoed the proposal cannot veto this proposal again. If a council members vetos,  after a cool-down period of 7 days, however, these proposals can be re-submitted, and the council member that vetoed the proposal cannot veto this proposal again.
 
@@ -60,11 +63,32 @@ If you are not elected this bond will be forfeit (burnt)
 
 Token holders can vote for candidates (current members as well as new candidates)
 
-When the term is about to be changed, which is every 7 days for Centrifuge and every 10 for Altair, votes are counted and top 7 or 9 candidates will be elected as new council members until next term.
+When the term is about to be changed, which is every 7 days for Centrifuge and Altair, votes are counted and top 7 or 9 candidates respectively will be elected as new council members until next term.
 
 Token holders can change their votes anytime and the change will be reflected in the next term.
 
-## Prosopsing Referenda and Voting
+### Electing the Altair Council 
+#### How much AIR can I bond (to vote) with? 
+As much as you want 
+
+#### Will I get this bond back? 
+Yes. You can vote with as many tokens as you want, and they simply become bonded and unbonded
+
+### Can I vote with staked tokens?
+Yes, when staking is enabled, you can also continue to vote with staked tokens.
+
+It’s important though not to vote with your full balance. because otherwise you can’t put for the unlock transaction
+
+### How long should I bond in order for it to get counted?
+There is no defined bonding period for the voting, it is up to you how long you decide to bond your tokens to back the candidate(s). The bonding period is 0 so you can unlock anytime, however, when you unbond it no longer impacts the voting outcome.
+
+You can unbond at any time if you wish to transfer your tokens, once transfers are enabled. We encourage community members to continute voting as long as possible however, as these terms for the council are renewed each week. 
+
+
+### How often do we elect councillors?
+There is a new election term every week (7 days). So any runners up with higher votes become ‘councilors’ and councillors who have less votes move down into ‘candidates’. 
+
+## Proposing Referenda and Voting
 
 ### Referenda
 On-chain referenda are like proposals that any token holder can submit to be voted on. Referenda are made by either the Council or the public. Every launch period (7 days), a proposal is tabled for voting from either the Council or the public, prioritising the one that did not get tabled in the previous period. As a result, the Council controls 50% of the legislative agenda and the public the other 50%.
@@ -130,13 +154,13 @@ Read more about stake-based voting schemes built with the Polkadot Governance me
 ### Time lock voting
 Time-lock voting is implemented in order to ensure that some minimal economic buy-in to the result is needed and to dissuade vote selling. It is possible to vote without locking at all, for a heavy discount (90%) on the voting weight of the tokens. To use the full weight of the tokens, they must be locked for the entire enactment delay period beyond the end of the referendum.
 
-For public referenda, the positive turnout bias requires a heavy supermajority of aye votes to carry at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries. We call this a “positive” turnout bias because the required margin of ayes increases as turnout increases. Based on the voting result, the proposal will be approved and autonomously enact
+For public referenda, the positive turnout bias requires a heavy supermajority of aye votes to carry at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries. We call this a “positive” turnout bias because the required margin of ayes increases as turnout increases. Based on the voting result, the proposal will be approved and autonomously enact:
 
-> - Holders can check the end of their lock period by querying the chain state with `democracy.locks(AccountId)` which returns the block number that the lock is active until
-> - Once the lock period has passed, any holder can call `democracy.unlock(addr)` to unlock the tokens
-> 
+- Holders can check the end of their lock period by querying the chain state with `democracy.locks(AccountId)` which returns the block number that the lock is active until
+- Once the lock period has passed, any holder can call `democracy.unlock(addr)` to unlock the tokens
+ 
 ### Conviction
-When someone votes on a referendum via Democracy, they can choose the conviction of their vote. The lock period is based on the level of conviction you want to associate with this vote
+When someone votes on a referendum via Democracy, they can choose the conviction of their vote. The lock period is based on the level of conviction you want to associate with this vote.
 
 For example:
 
@@ -144,16 +168,17 @@ For example:
 - If you want to vote Aye/Nay with 100 CFG with 1x conviction, then 1 * 100 = 100 CFG is the vote value with 8 day lockup of 100 CFG
 - If you want to vote Aye/nay with 100 CFG with 2x conviction, then 2 * 100 = 200 CFG is the vote value with 2 * 8 day lockup of 100 CFG
 
-Please select the appropriate conviction when voting on the referendum
-
-Referenda can be found onchain under Governance -> Democracy -> Referenda. Voters can vote with higher conviction to have their vote count.
-
+Please select the appropriate conviction when voting on the referendum. Referenda can be found onchain under Governance -> Democracy -> Referenda. Voters can vote with higher conviction to have their vote count.
 
 #### How do votes succeed?
 
 The vote needed to pass is generally adaptive to the voter turnout (this is referred to as adaptive quorum biasing). Depending on which entity proposed the proposal and whether all council members voted yes, there are three different scenarios. We can use the following table for reference.
 
-<img width="639" alt="Gov proposing entity" src="https://user-images.githubusercontent.com/84034484/146755270-4917724a-b210-457f-a8eb-cb06e03a8970.png">
+| Proposing entity| Metric | Effect |
+| -------- | -------- | -------- |
+| Public | Super-Majority Approve | Positive Turnout Bias: Proposal requires a supermajority of aye votes (the lower the turnout, the higher the required aye majority) |
+| Council (Complete agreement) | Super-Majority Against | Negative Turnout Bias: Proposal requires a supermajority of nay votes (the lower the turnout, the higher the required nay votes) |
+| Council (Majority agreement) | Simple Majority | Proposal just needs more aye votes than nay |
 
 Votes are weighed based on 2 criteria:
 
@@ -172,11 +197,11 @@ What do we govern as a community and what are the relevant processes for each?
 
 ### What is the process for getting a proposal passed? 
 
-In simple terms the flow is as follows - off chain consultation > proposal of referenda > voting > enactment
+In simple terms the flow is as follows: Off chain consultation > Proposal of referenda > Voting > Enactment
 
 Centrifuge uses an on-chain governance model with off-chain consultation, which means that first there must be a discussion off-chain (on the Centrifuge Forum, see below), and then the initiator can turn their initiative into a proposal (on-chain) to be voted on by the Chain Council.
 
-<img width="694" alt="Governance process" src="https://user-images.githubusercontent.com/84034484/146743045-065d3331-5d4c-414c-8f35-d2037bb17ea8.png">
+![Governance process](https://user-images.githubusercontent.com/84034484/147225175-1613197c-20a7-41f7-85eb-b8b9c9c5c9aa.png)
 
 The Governance Process steps are explained in more detail below:
 
@@ -210,4 +235,4 @@ Once your proposal has been selected for referendum, publicize that the vote is 
 
 Refer to this [Polkadot webinar on governance](https://www.crowdcast.io/e/governance-on-polkadot) for more information.
 
-For further reading see the “Do’s and Don’t of blockchain participation from Vlad Zamfir from [‘How to Participate in Blockchain Governance in Good Faith (and with Good Manners)](https://medium.com/@Vlad_Zamfir/how-to-participate-in-blockchain-governance-in-good-faith-and-with-good-manners-bd4e16846434)
+For further reading see the "Do's and Don't of blockchain participation from Vlad Zamfir from [How to Participate in Blockchain Governance in Good Faith (and with Good Manners)](https://medium.com/@Vlad_Zamfir/how-to-participate-in-blockchain-governance-in-good-faith-and-with-good-manners-bd4e16846434)
