@@ -51,9 +51,7 @@ For many use cases, there is a need to keep data related to the asset private. C
 
 Centrifuge NFTs are minted on Centrifuge Chain and bridged to Ethereum. They are compatible with ERC-721 and thus can leverage all infrastructure compatible with ERC-721 NFTs.
 
-We use Merkle proofs that verify the original ownership and document authenticity of an off-chain document, combined with an on-chain document registry that allows the NFT contract to verify the authenticity of a request to mint a specific token. By using precise proofs, we can supply privacy preserving proofs that certain fields are present in the NFT to be minted, without revealing the exact value of these fields. Leaves are created by hashing and encoding the property, value, and salts of the data fields which we want to prove,
-
-![](./images/nft_minting_checks.png)
+We use Merkle proofs that verify the original ownership and document authenticity of an off-chain document, combined with an on-chain document registry that allows the NFT contract to verify the authenticity of a request to mint a specific token. By using precise proofs, we can supply privacy preserving proofs that certain fields are present in the NFT to be minted, without revealing the exact value of these fields. Leaves are created by hashing and encoding the property, value, and salts of the data fields which we want to prove.
 
 The document representing the asset thus receives all of the benefits of standard on-chain NFTs, while an off-chain location holds the verifiable private data. At any point, the current holder of an NFT can gain access to the off-chain document by creating a signature that proves ownership of the private key of the address that owns the NFT. This approach introduces decentralized access control schemes where an NFT ownership change can lead to off-chain access revocation. Typically the metadata and the detailed information of an NFT is publicly readable on Ethereum.
 
