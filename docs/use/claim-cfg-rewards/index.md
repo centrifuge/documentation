@@ -79,6 +79,18 @@ Once the Polkadot extension has been installed and an account exists, the Centri
 
 ***Note**: Make sure to select the right account — after clicking `Link account`, the account can no longer be changed.*
 
+Click `Link account` to link the account, then confirm the transaction in your Ethereum wallet.
+
+![Link Centrifuge account](../images/link_account.png)
+
+Loading the claimable rewards takes a few minutes. Reload the page if it does not automatically update.
+
+![Linking account](../images/linking_account.png)
+
+Once the account has been successfully linked, a confirmation message displaying the selected address is presented.
+
+![Linked account](../images/account_linked.png)
+
 #### Selected account does not match the extension's account
 If the address of the selected account in Tinlake is not identical to the one in the extension, the extension uses a different display format. View the tooltip `Unexpected/wrong addresses?` to learn more. 
 
@@ -93,18 +105,6 @@ Both account addresses are shown in the Centrifuge Chain format.
 ![Identical address formats in Tinlake and extension](../images/identical_address_format.png)
 
 ***Note**: Find more information about Polkadot address formats in this [forum post](https://gov.centrifuge.io/t/accounts-and-wallet-addresses-in-polkadot-js/3341).*
-
-Click `Link account` to link the account, then confirm the transaction in your Ethereum wallet.
-
-![Link Centrifuge account](../images/link_account.png)
-
-Loading the claimable rewards takes a few minutes. Reload the page if it does not automatically update.
-
-![Linking account](../images/linking_account.png)
-
-Once the account has been successfully linked, a confirmation message displaying the selected address is presented.
-
-![Linked account](../images/account_linked.png)
 
 ### 4. Claim CFG
 Success! Now that the CentChain account has been linked, you can claim rewards. Before claiming the first time, investments require a minimum holding period of 30 days.
