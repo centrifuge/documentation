@@ -4,9 +4,6 @@ order: 5
 title: Claim CFG rewards
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Nico Dreher:nico@centrifuge.io>
 ---
-
-# Claiming CFG Rewards
-
 ## Introduction
 This step-by-step guide to claiming Centrifuge tokens (CFG) as a reward for Tinlake investments leads investors through creating the required setup and then claiming the first reward.
 
