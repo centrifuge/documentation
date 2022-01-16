@@ -1,6 +1,6 @@
 ---
 id: bridge
-order: 5
+order: 6
 title: Centrifuge - Ethereum Bridge
 ---
 
