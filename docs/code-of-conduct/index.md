@@ -1,6 +1,4 @@
 ---
-id: coc
-order: 8
 title: Code of Conduct
 ---
 Creating a new system for the global financial supply chain is only possible through the collaboration of a global ecosystem and community of companies, groups, organizations, and individuals. 

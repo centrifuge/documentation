@@ -1,19 +1,15 @@
-import React, { useContext, useState } from "react";
 import { AxisTheme } from "@centrifuge/axis-theme";
-import styled from "styled-components";
-import { theme } from "../theme";
-import { Box, Grid, Image, ResponsiveContext, Text, Button } from "grommet";
 import { Link as GatsbyLink } from "gatsby";
-
-import helloWordImage from "../images/hello_world-42.svg";
-import SEO from "../components/SEO";
+import { Box, Grid, Image, ResponsiveContext, Text } from "grommet";
+import React, { useContext, useState } from "react";
+import styled from "styled-components";
 import Layout from "../components/Layout";
-import Products from "../components/Home/products";
-
-import learn_face from "../images/faces/learn.svg";
-import use_face from "../images/faces/use.svg";
+import SEO from "../components/SEO";
 import build_face from "../images/faces/build.svg";
 import getting_started_face from "../images/faces/getting-started.svg";
+import learn_face from "../images/faces/learn.svg";
+import use_face from "../images/faces/use.svg";
+import { theme } from "../theme";
 
 const INSTANCE_TYPES = Object.freeze({
   LEARN: "learn",
@@ -50,10 +46,9 @@ const INSTANCES = Object.freeze({
 });
 
 const Link = styled(GatsbyLink)`
-  text-decoration: none;
+  text-decoration: ${(props) => (props.underline ? "underline" : "none")};
 
   :hover {
-    text-decoration: none;
     color: ${(props) =>
       (!!props.color && props.theme.global.colors[props.color]) ||
       props.theme.global.colors.black};
@@ -199,9 +194,17 @@ const HomePage = () => {
             ))}
         </Box>
       </Box>
-      <ExternalLink href="https://centrifuge.io/careers/" target="_blank">
-        <Text style={{ fontFamily: "Space Mono" }}>work with us</Text>
-      </ExternalLink>
+      <Box css={{ fontFamily: "Space Mono" }} direction="row">
+        <Link to="/code-of-conduct" underline>
+          <Text fontFamily="Space Mono">code of conduct</Text>
+        </Link>
+        <Box pad={{ horizontal: "small" }}>
+          <Text fontFamily="Space Mono">|</Text>
+        </Box>
+        <ExternalLink href="https://centrifuge.io/careers/" target="_blank">
+          <Text fontFamily="Space Mono">work with us</Text>
+        </ExternalLink>
+      </Box>
     </Layout>
   );
 };
