@@ -110,7 +110,7 @@ This is a tutorial on how to use your [Ledger device](https://www.ledger.com) to
 ### What You’ll Need
 * Your [initialized](https://support.ledger.com/hc/en-us/articles/360000613793) Ledger device
 * The latest firmware version [installed](https://support.ledger.com/hc/en-us/articles/360002731113?docs=true)
-* Ledger Live [installed](https://support.ledger.com/hc/en-us/articles/360006395553)
+* Ledger Live [installed](https://support.ledger.com/hc/en-us/articles/4404389606417-Download-and-install-Ledger-Live)
 * A supported browser (Chrome, Safari, or Firefox)
 
 ### Install the Centrifuge App
