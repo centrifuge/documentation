@@ -102,3 +102,74 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 - **Remember to write down your secret phrase & STORE IT SAFELY!**
   Follow a secure protocol to save and store your private keys. Please do some research and choose a secure method that will work best for you.
 
+## How to Use your Ledger with Centrifuge
+This is a tutorial on how to use your [Ledger device](https://www.ledger.com) to manage your Centrifuge (CFG) tokens on Centrifuge Chain. The Ledger device is a hardware wallet made specifically for managing crypto assets, making it one of the most secure ways to manage your crypto assets. [Parity Signer](https://github.com/paritytech/parity-signer), described above, is an alternate hardware wallet; however, unlike the Ledger, it uses a device that is not specifically designed to manage crypto assets. Read more about other ways to create your account on Centrifuge above.
+
+*DISCLAIMER: Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind.*
+
+### What You’ll Need
+* Your [initialized](https://support.ledger.com/hc/en-us/articles/360000613793) Ledger device
+* The latest firmware version [installed](https://support.ledger.com/hc/en-us/articles/360002731113?docs=true)
+* Ledger Live [installed](https://support.ledger.com/hc/en-us/articles/4404389606417-Download-and-install-Ledger-Live)
+* A supported browser (Chrome, Safari, or Firefox)
+
+### Install the Centrifuge App
+1. Open the Manager in Ledger Live
+2. Connect and unlock your Ledger device
+3. If asked, allow the manager on your device 
+4. Find Centrifuge in the app catalog
+5. Click the Install button of the app
+6. An installation window appears
+7. Your device will display “Processing”
+8. The app installation is confirmed
+
+### Use Ledger device with Centrifuge Chain Portal
+#### How to use your Ledger Device with https://portal.chain.centrifuge.io 
+1. Connect and unlock your Ledger device.
+
+2. Open https://portal.chain.centrifuge.io. Navigate to Settings, and verify that “Attach Ledger via WebUSB” is selected under manage hardware connections.
+![](./images/ledger-docs-1.png)
+
+#### Add a Ledger account to the Centrifuge Portal
+3. Open the Centrifuge app on your ledger device. Take note of the identifier displayed on the screen, then press the left button to open the app. “Centrifuge Ready” displays on the screen.
+
+4. Navigate to Accounts on the portal, then select “Add via Ledger.” Type in an account name, as well as an account type and index (optional). Then click Save.
+![](./images/ledger-docs-2.png)
+
+#### How to receive CFG
+5. Verify that the address is the same across your ledger and the Cent Chain Portal. This is the address where you can receive CFG. To view your address on the portal, click on the name of the account you saved. A sidebar will appear on the right of the screen displaying your address.
+![](./images/ledger-docs-3.png)
+
+To view your address on the device, click on the menu to the right of the account on the portal, and select “show address on hardware device”
+![](./images/ledger-docs-4.png)
+
+Verify that both addresses match.
+![](./images/ledger-docs-5.png)
+
+6. Use this address to receive CFG.
+
+### How to view your account balance
+View your account balance directly on the [portal](https://portal.chain.centrifuge.io) or by looking up the account using [Subscan](https://centrifuge.subscan.io). The portal provides basic information on the account, and for more information on your account, balance, and transfer history, you can use the Centrifuge [block explorer](https://centrifuge.subscan.io) by Subscan.
+
+**Note**
+The Centrifuge Ledger app supports all transaction types except for the following:
+Large batch transactions
+
+### Send Centrifuge tokens (CFG) using your Ledger device
+1. Navigate to Accounts in the [portal](https://portal.chain.centrifuge.io). Select *send* to the right of the account you wish to send CFG from. 
+![](./images/ledger-docs-6.png)
+
+2. Input the recipient address and amount, then click Make Transfer, then click Sign and Submit.
+![](./images/ledger-docs-7.png)
+
+3. On your Ledger device, press the right button to verify the destination address and amount. Important: verify transaction details on your Ledger device before you approve the transaction.
+![](./images/ledger-docs-8.png)
+
+4. Select APPROVE or REJECT by pressing down both buttons on your Ledger device. 
+![](./images/ledger-docs-9.png)
+
+5. Verify the transaction on the portal in the upper right corner. View the transaction by navigating to Network > Explorer, under recent events.
+![](./images/ledger-docs-10.png)
+
+#### Support
+If you encounter any issue with your Ledger device, please join our [Discord](http://centrifuge.io/discord) and drop us a line.
