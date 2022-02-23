@@ -196,13 +196,11 @@ const HomePage = () => {
       </Box>
       <Box css={{ fontFamily: "Space Mono" }} direction="row">
         <Link to="/code-of-conduct" underline>
-          <Text fontFamily="Space Mono">code of conduct</Text>
+          code of conduct
         </Link>
-        <Box pad={{ horizontal: "small" }}>
-          <Text fontFamily="Space Mono">|</Text>
-        </Box>
+        <Box pad={{ horizontal: "small" }}>|</Box>
         <ExternalLink href="https://centrifuge.io/careers/" target="_blank">
-          <Text fontFamily="Space Mono">work with us</Text>
+          work with us
         </ExternalLink>
       </Box>
     </Layout>
