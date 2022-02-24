@@ -1,4 +1,5 @@
 import React, { useMemo, useEffect } from "react";
+import * as path from "path";
 import { graphql } from "gatsby";
 import { Grid, Box, Heading, Text, ResponsiveContext } from "grommet";
 
@@ -28,6 +29,10 @@ const DocsLayout = ({ data }) => {
 
   const prevNode = useMemo(() => getNthNode(mdx.frontmatter.order - 1), [data]);
   const nextNode = useMemo(() => getNthNode(mdx.frontmatter.order + 1), [data]);
+  const isTopLevel = useMemo(() => {
+    const { file, instanceName } = mdx.fields;
+    return path.dirname(file) === instanceName;
+  }, [mdx.fields.file, mdx.fields.instanceName]);
 
   return (
     <AxisTheme theme={theme}>
@@ -38,15 +43,20 @@ const DocsLayout = ({ data }) => {
               <SEO title={mdx.frontmatter.title} />
               <Box width="100%" gap="medium" pad={{ bottom: "large" }}>
                 <Box gap="small">
-                  <Text
-                    size="large"
-                    style={{
-                      fontFamily: "Space Mono",
-                      textTransform: "capitalize",
-                    }}
-                  >
-                    {mdx.fields.instanceName.split("-").join(" ")}
-                  </Text>
+                  {
+                    // skip rendering category for top-level nodes
+                    !isTopLevel && (
+                      <Text
+                        size="large"
+                        style={{
+                          fontFamily: "Space Mono",
+                          textTransform: "capitalize",
+                        }}
+                      >
+                        {mdx.fields.instanceName.split("-").join(" ")}
+                      </Text>
+                    )
+                  }
                   <Heading level={1} margin={{ vertical: "0" }}>
                     {mdx.frontmatter.title}
                   </Heading>
