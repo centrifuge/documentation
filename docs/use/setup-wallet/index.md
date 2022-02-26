@@ -123,11 +123,11 @@ This is a tutorial on how to use your [Ledger device](https://www.ledger.com) to
 7. Your device will display “Processing”
 8. The app installation is confirmed
 
-### Use Ledger device with Centrifuge Chain Portal
-#### How to use your Ledger Device with https://portal.chain.centrifuge.io 
+### Use Ledger device using Polkadot Portal
+#### How to use your Ledger Device with https://polkadot.js.org/apps/?rpc=wss://fullnode.centrifuge.io
 1. Connect and unlock your Ledger device.
 
-2. Open https://portal.chain.centrifuge.io. Navigate to Settings, and verify that “Attach Ledger via WebUSB” is selected under manage hardware connections.
+2. Open https://polkadot.js.org/apps/?rpc=wss://fullnode.centrifuge.io. Navigate to Settings, and verify that “Attach Ledger via WebUSB” is selected under manage hardware connections.
 ![](./images/ledger-docs-1.png)
 
 #### Add a Ledger account to the Centrifuge Portal
@@ -149,14 +149,14 @@ Verify that both addresses match.
 6. Use this address to receive CFG.
 
 ### How to view your account balance
-View your account balance directly on the [portal](https://portal.chain.centrifuge.io) or by looking up the account using [Subscan](https://centrifuge.subscan.io). The portal provides basic information on the account, and for more information on your account, balance, and transfer history, you can use the Centrifuge [block explorer](https://centrifuge.subscan.io) by Subscan.
+View your account balance directly on the [portal](https://polkadot.js.org/apps/?rpc=wss://fullnode.centrifuge.io) or by looking up the account using [Subscan](https://centrifuge.subscan.io). The portal provides basic information on the account, and for more information on your account, balance, and transfer history, you can use the Centrifuge [block explorer](https://centrifuge.subscan.io) by Subscan.
 
 **Note**
 The Centrifuge Ledger app supports all transaction types except for the following:
 Large batch transactions
 
 ### Send Centrifuge tokens (CFG) using your Ledger device
-1. Navigate to Accounts in the [portal](https://portal.chain.centrifuge.io). Select *send* to the right of the account you wish to send CFG from. 
+1. Navigate to Accounts in the [portal](https://polkadot.js.org/apps/?rpc=wss://fullnode.centrifuge.io). Select *send* to the right of the account you wish to send CFG from. 
 ![](./images/ledger-docs-6.png)
 
 2. Input the recipient address and amount, then click Make Transfer, then click Sign and Submit.
@@ -170,6 +170,9 @@ Large batch transactions
 
 5. Verify the transaction on the portal in the upper right corner. View the transaction by navigating to Network > Explorer, under recent events.
 ![](./images/ledger-docs-10.png)
+
+### Use Ledger device with Centrifuge Chain Portal
+In case you want to use your Ledger device in the Centrifuge [portal](https://portal.chain.centrifuge.io) you will have to add the device through the PolkadotJS [Extension](https://polkadot.js.org/extension).
 
 #### Support
 If you encounter any issue with your Ledger device, please join our [Discord](http://centrifuge.io/discord) and drop us a line.
