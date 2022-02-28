@@ -20,6 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `code-of-conduct`,
+        path: `${__dirname}/docs/code-of-conduct`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `getting-started`,
         path: `${__dirname}/docs/getting-started`,
       },
