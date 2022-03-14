@@ -164,7 +164,7 @@ You need to be connected with Tinlake with the borrower ETH account that holds t
 
 This will open the Lock NFT page in your Tinlake pool and prefill token registry and token ID from the Gateway document.
 
-An alternative how to access the assets of your pool: 
+An alternative how to access the assets of your pool:
 
 - Go to your Tinlake pool
 - Click on the Asset tab
@@ -188,6 +188,15 @@ An alternative how to access the assets of your pool:
 - Click 'set max' for the repay amount 
 - Click on `Repay` (the button will become active, once you input an amount >0)
 - Confirm the transaction with Metamask/ Ledger
+
+## On-ramps and Off-ramps
+
+The easiest and cheapest way to off/on-ramp (USD > USDC > DAI) is 
+1) Create a Circle or Coinbase account which allows you to exchange USD <> USDC free of charge
+2) Go to https://1inch.exchange/ and http://paraswap.io/ and  https://cowswap.exchange/#/swap to exchange USDC <> DAI
+
+Both are integrating the Maker PSM (https://cryptobriefing.com/1inch-exchange-drops-costs-swapping-dai-usdc-stablecoins/) and looking for the cheapest source of liquidity. 
+
 
 
 
