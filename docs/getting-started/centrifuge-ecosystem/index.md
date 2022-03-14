@@ -28,9 +28,9 @@ In order to secure a parachain slot, **Centrifuge will host a Crowd Loan from DO
 
 The p2p protocol provides a method to create, exchange and verify asset data and is used for private, off-chain data exchange. Asset originators can selectively share asset details with service providers who can assess the data and contribute pricing and underwriting information to the document. The data origin can be verified using cryptographic signatures. The components of the p2p protocol are a collection of Ethereum smart contracts and a peer to peer (p2p) network implemented on libp2p. Ethereum smart contracts are used for
 
-1.  maintaining identities in a similar format to the ERC725 standard,
+1.  Maintaining identities in a similar format to the ERC725 standard
 2.  Anchoring state commitments
-3.  Minting NFTs from off chain Centrifuge documents.
+3.  Minting NFTs from off chain Centrifuge documents
 
 The Centrifuge Node provides a simple API interface to interact with the peer to peer network as well as the Ethereum smart contracts.
 

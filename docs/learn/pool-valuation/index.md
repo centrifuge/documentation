@@ -2,7 +2,7 @@
 id: pool-valuation
 order: 4
 title: Pool Valuation (NAV)
-contributors: <Dylan Dedi:dylan@centrifuge.io>
+contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
 
 ## Intro
@@ -19,12 +19,12 @@ Determining the value of illiquid assets is notoriously difficult because – by
 
 Tinlake's valuation methodology is also based on a fair value valuation ("marked to model") utilizing a discounted cash flow model. The approach can be summarized as follows:
 
-1. **Derive Expected Cash flows**
+1. **Derive expected cash flows**
    For every outstanding financing of an asset, the expected cash flow is calculated. The current implementation allows to calculate the Expected Repayment of simple bullet loan structures which are common in particular in invoice financing and trade finance. The `Expected Cash Flow` is calculated based on (i) the expected repayment dates and (ii) the expected repayment amounts.
    (i) The expected repayment date is derived on contractual obligations associated with the financing, e.g. the due date of the underlying invoice. This is provided through an Oracle based on the documents underlying the NFT minted on Centrifuge's P2P Protocol.
    (ii) The expected repayment amount is projected based on the outstanding Tinlake financing by applying the financing fee on the current debt until the repayment date.
 
-2. **Risk-adjust expected cas flows**
+2. **Risk-adjust expected cash flows**
    The expected Cash Flow is risk-adjusted for credit risk by the `Expected loss`. Every financing is allocated a risk class that has a `Probability of Default (PD)` and `Loss Given Default (LGD)` assigned to it. The `Expected Loss` is calculated as `Expected loss = Expected Cash Flow * PD * LGD` and substracted from the expected repayment amount to adjust for credit risk. Note that PDs are often communicated per anno and may need to be adjusted to the term of the underlying asset.
 
 3. **Discount risk-adjusted expected cash flows**
@@ -66,42 +66,43 @@ Average loan maintainance/running costs (such as legal, SPV, servicing) could be
 
 ### Simple example for one financing
 
-**General Assumptions:**
-Today = 01.01.2020
-Discount rate `r` = 5.00%
-Days per year: 360
-Seconds per year: 31536000
-
-**Financing parameters:**
-Financing date = 01.01.2020
-Financing amount = 100 DAI
-Financing fee = 10% APR
-Expected repayment date = 30.06.2020
+**Financing Parameters:**
+Financing date = 01.01.2020, 
+Financing amount (P) = 100 DAI, 
+Financing fee (i) = 10% APR, 
+Expected repayment date = 29.06.2020, 
 Expected loan duration = 180 days
-(Annual) PD = 4%
-LGD = 50%
+
+**Valuation assumptions**
+Discount rate (r) = 5.00%, 
+(Annual) PD = 4.00%, 
+LGD = 50.00%
+
+**General Assumptions:**
+Days per year: 360, 
+Seconds per year: 31104000
 
 **Calculations**
 
-1. Calculate the expected cash flow on the 30.06.2020
+1. Calculate the cash flow expected on the 30.06.2020
 
 Remember the textbook compounding formula is
 
 $$
-Expected CF = P * (1 + \frac{r}{n})^{(n*t)}
+Expected CF = P * (1 + \frac{i}{n})^{(n*t)}
 $$
 
 where
-P = Principal in DAI [=100]
-r = Interest rate (decimal [0.1])
-t = Time --> Loan duration i years
-n = Number of times interest is compounded per unit `t`
+P = Principal in DAI [=100], 
+i = Interest rate (decimal [0.1]), 
+t = Time --> Loan duration in years,
+n = Number of times interest is compounded per unit `t`, 
 
 Applying this to our financing assuming compounding per second gives
-P = 100 DAI
-r = 0.1
-t = loan duration in years = 180/360 days = 0.5
-n = 31536000 seconds per year
+P = 100 DAI, 
+i = 0.1, 
+t = loan duration in years = 180/360 days = 0.5, 
+n = 31104000 seconds per year
 
 $$
 Expected CF = 100 DAI * (1 + \frac{0.1}{31536000})^{(31536000*\frac{180}{365})} = 105.13 DAI
@@ -112,18 +113,27 @@ $$
 The Expected Loss with the risk parameters given is
 
 $$
-Expected Loss = 105.13 DAI * (0.04/180*360) * 0.5 = 1.05 DAI
+Annual Expected Loss = 105.13 DAI * 0.04 * 0.5 = 2.10 DAI
 $$
 
-Note that the PD is adjusted to reflect the term of the asset. This is substracted from the Expected CF to calculate the risk-adjusted expected CF: 105.13 DAI - 1.05 DAI ~ 104 DAI
+as the PD expresses the annual probability of default we further adjust the expected loss for the term of the asset (assuming a uniform distribution of defaults):
+
+$$
+adjusted Expected Loss = 105.13 DAI * (0.04/180*360) * 0.5 = 1.05 DAI
+$$
+
+This is substracted from the Expected CF to calculate the risk-adjusted expected CF: 105.13 DAI - 1.05 DAI ~ 104 DAI
 
 3. Discount the risk adjusted expected Cash Flow
-   Assuming that today is the 31.03.2020 we first calulate the remaining time till the expected cash flow (30.06.2020) which is 90 days. Applying the discounting formula above with
-   r = 0.05
-   t = 90 / 360 = 0.25 = loan duration in years
-   n = 31536000 seconds per year
-   gives:
+Assuming that today is the 31.03.2020 we first calulate the remaining time till the expected cash flow (29.06.2020) which is 90 days. Applying the discounting formula above with
+
+r = 0.05,
+t = 90 / 360 = 0.25 = loan duration in years,
+n = 31104000 seconds per year,
+gives:
 
 $$
-PV = \frac{104 DAI}{(1 + \frac{0.05}{31536000})^{0.25*31536000}} = 101.5 DAI
+PV = \frac{104 DAI}{(1 + \frac{0.05}{31536000})^{0.25*31536000}} = 102.78 DAI
 $$
+
+Please also find the underlying calculations as well as other examples [here](https://docs.google.com/spreadsheets/d/1O124ru0MsdKLsOjRRUqlb4zAoIC5RNgNfQpxbAv1wNw/edit#gid=1005868729).

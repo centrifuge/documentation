@@ -1,7 +1,7 @@
 ---
 id: onboarding
 order: 2
-title: Onboarding Guide
+title: Investor Onboarding Guide
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Nico Dreher:nico@centrifuge.io>
 ---
 
