@@ -1,7 +1,7 @@
 ---
-id: <Guide: How to use NFT Playground>
-order: <9>
-title: <Guide: How to use NFT Playground>
+id: Guide: How to use NFT Playground
+order: 9
+title: Guide: How to use NFT Playground
 ---
   # **Guide: How to use NFT Playground**
 
