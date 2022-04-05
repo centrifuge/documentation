@@ -2,7 +2,6 @@
 id: nft-playground
 order: 4
 title: How to use NFT Playground
-contributors: <Solomon Ajewole: solomon@centrifuge.io>
 ---
 
 ## Intro to NFT playground
