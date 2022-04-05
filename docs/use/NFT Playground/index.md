@@ -90,7 +90,6 @@ Once the transaction is confirmed on-chain, your NFT should no longer be listed 
 
 ## Transferring an NFT to another wallet
 
-
 1)	Navigate to the NFT detail page of the one you would like to send, and click on ‘Transfer’
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_5d177d8059c0da983acfa455a980b317.png)
 2)	Copy and paste the recipients Altair wallet address
@@ -110,4 +109,4 @@ Once the transaction is confirmed on-chain, your NFT should have transferred to 
 
 4.	Sign the transaction on Polkadot JS wallet
 
-Once the transaction is confirmed on-chain, the NFT should be transferred to your wallet, and the owner’s wallet address displayed should be your own
+Once the transaction is confirmed on-chain, the NFT should be transferred to your wallet, and the owner’s wallet address displayed should be your own.
