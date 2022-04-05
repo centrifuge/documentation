@@ -1,14 +1,20 @@
 ---
-id: Guide: How to use NFT Playground
-order: 9
-title: Guide: How to use NFT Playground
+id: nft-playground
+order: 4
+title: How to use NFT Playground
+contributors: <Solomon Ajewole: solomon@centrifuge.io>
 ---
-  # **Guide: How to use NFT Playground**
 
-# Connecting to the app
+## Intro to NFT playground
 
-Before starting, you will need to have  some Altair tokens in your Polkadot JS wallet for the transaction fees on the Altair blockchain. However, NFT Playground does not charge any additonal fees.
+NFT Playground is a protocol that allows you to view, mint, list, buy and transfer NFT collections.  This is an application built for the community, and it will be a pilot for NFTs on Altair. Ultimately,  this will enable the tokenisation on real world assets to be financed Centrifuge.
 
+
+## Prerequisite
+
+Before starting, you will need to have some AIR tokens in your Polkadot wallet for the transaction fees on the Altair blockchain. NFT Playground does not charge any additonal fees.
+
+## Connecting to the app
 First, go to https://app.altair.network/ and navigate the top right– click on 'Connect'. 
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_b15a427cbed854f60feb9725d98ba077.png)
@@ -19,9 +25,7 @@ The Polkadot JS Wallet will appear, prompting you to authorise NFT playground wi
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_25fc9d2d483f92398abde3c84f990589.png)
 
 
----
-
-# Creating a Collection
+## Creating a Collection
 To mint an NFT, you will first have to create a collection for it to live in. To create a collection:
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_e70667a95130ca7e13fa10a2dee9d7de.png)
@@ -45,10 +49,7 @@ To mint an NFT, you will first have to create a collection for it to live in. To
 Your collection should appear upon completion. Now you just have to add some NFTs to it – which is the minting process.
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_546dc0ee9e88b037d13c844279309a59.png)
 
-
----
-
-# Minting an NFT 
+## Minting an NFT 
 
 1)	Navigate to your collection and select 'Mint NFT'
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_9ef2f0dbd4335cbc454a7175d6eb8d8b.png)
@@ -63,11 +64,7 @@ Your collection should appear upon completion. Now you just have to add some NFT
 Once your NFT has been minted it will be displayed on screen
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_b6b6669572ed94ee410aaf590b960429.png)
 
-
----
-
-# Listing an NFT for sale
-
+## Listing an NFT for sale
 
 1)	Navigate to the NFT detail page of the one you would like to list and, click on ‘Sell’
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_d31786ce5a6015bad0a7781bccd3caba.png)
@@ -80,10 +77,7 @@ Once the transaction is confirmed on the chain, you should see the purchase pric
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_74045c9a7e5b3e243d720474d7e1e169.png)
 
 
----
- 
- 
-# Removing an NFT listing
+## Removing an NFT listing
  
 1.	Navigate to the NFT detail page of the one you would like to delist, and click on ‘Remove listing’
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_9ec4501e750dc2f89c97262daddc547f.png)
@@ -95,10 +89,7 @@ Once the transaction is confirmed on the chain, you should see the purchase pric
 
 Once the transaction is confirmed on-chain, your NFT should no longer be listed for sale, and there should be no purchase price displayed.
 
-
----
-
-# Transferring an NFT to another wallet
+## Transferring an NFT to another wallet
 
  
 1)	Navigate to the NFT detail page of the one you would like to send, and click on ‘Transfer’
@@ -110,12 +101,10 @@ Once the transaction is confirmed on-chain, your NFT should no longer be listed 
 
 Once the transaction is confirmed on-chain, your NFT should have transferred to the recipient's wallet, and the owner’s wallet address displayed will reflect this.
 
----
-
-# Buying an NFT
+## Buying an NFT
 1.	Browse and select an NFT that has a price listed in AIR
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_bbd062049a77161479ae9af88606d9aa.png)
-2.	Enter the NFT detail page of the one you would like to buy and click on ‘Buy’ on the dashboard
+2.	Enter the NFT detail page of the one you would like to buy and click on ‘Buy NFT’ on the dashboard
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_5812a95a9758f7c6d929535425acddb2.png)
 3.	Click on ‘Buy’
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_b96405c387d0351b05b28d163f290d06.png)
