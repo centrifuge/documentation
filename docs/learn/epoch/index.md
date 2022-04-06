@@ -59,6 +59,18 @@ If not all orders can be executed, e.g. because there is not enough capital avai
 
 ## The Solver mechanism
 
+### How an epoch is currently displayed 
+These are the different states of an epoch.  
+
+| Status | Case | Consequence |
+| -------- | -------- | -------- |
+| Ongoing | Minimum epoch duration (24h) has not completed  | Minimum duration is passed (Investors can invest, redeem) |
+| Minimum duration passed | No orders locked | Epoch will not close |
+| Minimum duration passed | Locked orders can be executed | Epoch closes automatically at 10AM CET |
+| Minimum duration passed | Locked orders can only be partially executed | Epoch needs to be closed manually |
+| Minimum duration passed | Locked orders cannot be executed | Epoch needs to be closed manually |
+| Computing orders | The epoch is being executed | New epoch is started |
+
 ### Why introduce a solver mechanism?
 
 If not all orders can be executed a mechanism is required to find the optimal solution to ensure as many transactions as possible are executed while adhering to certain restrictions such as the Max Reserve amount, min TIN risk buffer, DROP sovereignity etc. Finding the optimal solution for the four invest redeem transactions type of transactions (DROP redemptions, TIN redemptions, DROP investments, TIN investments) under a defined set of restrictions depicts a classic maximization problem that can be solved with linear programming.
