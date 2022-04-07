@@ -151,7 +151,7 @@ Mainnet:
     --node-key=NODE_KEY_HERE
     --chain=centrifuge
     --parachain-id=2031
-    --bootnodes=/ip4/10.40.2.106/tcp/30333/p2p/12D3KooWJKFcDXQyjxgxRzaf9gjqPdd9C3MBGStiJdG83GBSU5VZ
+    --bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc
     --port=30333
     --rpc-port=9933
     --ws-port=9944
