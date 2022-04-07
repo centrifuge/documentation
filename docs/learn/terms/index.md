@@ -101,7 +101,7 @@ The DROP APR is the rate at which the `DROP token` accrues interest, per second.
 To provide a good approximation of the current DROP return considering the impact of compounding and "cash drag" Tinlake also display's the current annualized DROP yield over the last 30 days. It is calculated as 
 
 $$
-30d DROP yield = \frac{{DROP token price}_{t}}{{DROP token price}_{t-30}}*\frac{365}{30}
+30d DROP yield = (\frac{{DROP token price}_{t}}{{DROP token price}_{t-30}}-1)*\frac{365}{30}
 $$
 
 where `t` denotes today and `365` is the number of days per year.
@@ -113,7 +113,7 @@ The `junior tranche` does not have a predefined fixed or variable interest rate.
 TIN returns are displayed as annualized yields of the last 90 days to provide a good approximation of the current TIN returns. It is calculated as 
 
 $$
-90d TIN yield = \frac{{TIN token price}_{t}}{{TIN token price}_{t-90}}*\frac{365}{90}
+90d TIN yield = (\frac{{TIN token price}_{t}}{{TIN token price}_{t-90}}-1)*\frac{365}{90}
 $$
 
 where `t` denotes today and `365` is the number of days per year.
