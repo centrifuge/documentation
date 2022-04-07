@@ -5,11 +5,7 @@ title: Contribute to the Network
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
 
-## Staking
-
-Centrifuge Chain is a parachain in the Polkadot ecosystem.
-
-## Run Node
+## Running a Full Node
 
 ### Requirements
 
@@ -129,7 +125,7 @@ docker run -it centrifugeio/centrifuge-chain:parachain-20220303141305-681f4a6 \
    ```
 
 6. Add the WASM target: `rustup target add wasm32-unknown-unknown --toolchain $RUST_TOOLCHAIN`
-7. Clone centrifuge-chain: `git clone -b v2.0.0-rc6.0 git@github.com:centrifuge/centrifuge-chain.git`
+7. Clone centrifuge-chain: `git clone -b v0.10.4-rc1 git@github.com:centrifuge/centrifuge-chain.git`
 8. Change directory: `cd centrifuge-chain`
 9. Optional - run the tests: `cargo test --all`
 10. Build Centrifuge Chain: `cargo build --release`
@@ -145,7 +141,7 @@ Below are the commands to start a node. `{name}` is the name that will show up i
 Mainnet:
 
 ```
-centrifuge-chain
+./target/release/centrifuge-chain
     --unsafe-ws-external
     --unsafe-rpc-external
     --rpc-cors=all
