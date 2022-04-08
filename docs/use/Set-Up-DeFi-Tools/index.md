@@ -4,7 +4,7 @@ order: 12
 title: Set up DeFi tools
 ---
 
-## Setting up MetaMask
+## Setting up a MetaMask browser wallet
 ### What is MetaMask?
 MetaMask is a browser extension that allows you to use Ethereum protocols or dApps (decentralized Apps) such as Tinlake. The extension holds your private keys and serves as a wallet for ETH and ERC20 tokens, such as DAI, TIN, or DROP. Connect MetaMask to the dApp and confirm your transactions to transfer and receive tokens.
 
@@ -15,21 +15,22 @@ MetaMask is a browser extension that allows you to use Ethereum protocols or dAp
 4. Follow the steps there to add the extension to your browser.
 5. After setting up your wallet, Metamask should pop-up as a Fox icon ![](https://storage.googleapis.com/centrifuge-hackmd/upload_7dd07df8a7fc7d1b29743ec9535dbba7.png) in your browser bar.
 
-### How to use MetaMask with Tinlake
+### Connect MetaMask with Tinlake
 - Connect your account.
 - Click on the Connect button in the top right corner.
 - Choose the MetaMask wallet in the popup.
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_7ce191ec0d5455f0228b8e9779c54719.png)
 
 ## Set up a Ledger hardware wallet
-### How to use MetaMask with a hardware wallet, e.g. Ledger?
-A hardware wallet stores the user's private keys in a secure hardware device. To use an address/wallet stored on a hard ware wallet a user needs to be in physical posession of this hardware wallet. Popolar hardware wallets are e.g [Ledger](https://www.ledger.com/) or [Trezor](https://trezor.io/).
+### What is a hardware wallet?
+A hardware wallet stores the user's private keys in a secure hardware device. To use an address stored in a hardware wallet a user needs to be in physical possession of the device. A popular hardware wallet are [Ledger](https://www.ledger.com/).
 
-#### Set up the Ledger
-Download the [Ledger Live App](https://www.ledger.com/ledger-live/) and follow the steps in the App also described [here]( https://support.ledger.com/hc/en-us/articles/360018784134) to set up you Ledger.
+### Setting up a Ledger device
+Download the [Ledger Live](https://www.ledger.com/ledger-live/) and follow the steps in the app described [here](https://support.ledger.com/hc/en-us/articles/360018784134).
 
 ### Install Ethereum app on Ledger device
-1. Open the Manager in Ledger Live.
+Set up first Ledger Ethereum (ETH) account. See more [here](https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-).
+1. Open the "Manager" in Ledger Live.
 2. Connect and unlock your device.
 3. If asked, allow the manager on your device.
 4. Find Ethereum in the app catalog.
@@ -38,13 +39,11 @@ Download the [Ledger Live App](https://www.ledger.com/ledger-live/) and follow t
     - Your device will display `Processing...`
     - The app installation is confirmed
 
-See also [Install Ethereum App on your Ledger](https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-).
-
 ### Configure Ethereum app 
 
-1. Open the Ethereum App Settings.
-2. Change Contract Data to `Yes`.
-3. [OPTIONAL] For older versions of Ledger, make sure Browser Support is set to `Yes`. Newer Ledger Versions are supporting it by default. 
+1. Open the app *Settings*.
+2. Change *Contract Data* to `Yes`.
+3. [OPTIONAL] For older versions of Ledger, make sure *Browser Support* is set to `Yes`. Newer Ledger Versions are supporting it by default. 
 
 ### Connect hardware wallet in MetaMask
 1. Open MetaMask by clicking on the fox icon.
