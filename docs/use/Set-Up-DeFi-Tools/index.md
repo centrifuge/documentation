@@ -13,7 +13,7 @@ MetaMask is a browser extension that allows you to use Ethereum Protocols or `dA
 2. Choose the browser you want to use.
 3. You will be directed to corresponding web store.
 4. Follow the steps there to add the extension to your browser.
-5. After setting up your wallet, Metamask should pop-up as a Fox icon ![](https://storage.googleapis.com/centrifuge-hackmd/upload_7dd07df8a7fc7d1b29743ec9535dbba7.png =20x) in your browser bar.
+5. After setting up your wallet, Metamask should pop-up as a Fox icon ![](https://storage.googleapis.com/centrifuge-hackmd/upload_7dd07df8a7fc7d1b29743ec9535dbba7.png) in your browser bar.
 
 ### How to use Metamask with Tinlake
 - Connect your account.
@@ -57,6 +57,6 @@ See also [Install Ethereum App on your Ledger](https://support.ledger.com/hc/en-
 ### Confirm transactions with your hardware wallet (Ledger/Trezor)
 When your Metamask account is connected to your hardware wallet then you need to confirm each transaction with the ledger. 
 
-- Connect ledger with your computer.
-- Issue the transaction.
-- Confirm transaction with hardware wallet.
+1. Connect ledger with your computer.
+2. Issue the transaction.
+3. Confirm transaction with hardware wallet.
