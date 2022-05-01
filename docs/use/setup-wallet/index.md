@@ -55,13 +55,15 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 1. Turn off wifi & bluetooth (**NEVER TURN IT ON AGAIN!**)
 1. Create a key for Centrifuge Mainnet using the Parity Signer App
      - Create your identity to get started
-     ![](./images/new-identity.png#width=400)
+
+       ![](./images/new-identity.png#width=400)
      - Write down your 24 word Recovery Phrase (**THIS IS VERY IMPORTANT**)
-     ![](./images/recovery-phrase.png#width=400)
+
+       ![](./images/recovery-phrase.png#width=400)
      - Set your Identity PIN
        - **You will use this PIN to sign all of your transactions using this device.**
      - Create your first Keypair - select the Centrifuge Mainnet Network
-     ![](./images/create-keypair.png#width=400)
+       ![](./images/create-keypair.png#width=400)
 1. Get your address by scanning the QR code on the Portal Website.
      - On your computer, navigate to https://portal.chain.centrifuge.io/
      - Make sure the network is set to 'Centrifuge Mainnet'
@@ -105,8 +107,6 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 ## How to Use your Ledger with Centrifuge
 This is a tutorial on how to use your [Ledger device](https://www.ledger.com) to manage your Centrifuge (CFG) tokens on Centrifuge Chain. The Ledger device is a hardware wallet made specifically for managing crypto assets, making it one of the most secure ways to manage your crypto assets. [Parity Signer](https://github.com/paritytech/parity-signer), described above, is an alternate hardware wallet; however, unlike the Ledger, it uses a device that is not specifically designed to manage crypto assets. Read more about other ways to create your account on Centrifuge above.
 
-*DISCLAIMER: Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind.*
-
 ### What You’ll Need
 * Your [initialized](https://support.ledger.com/hc/en-us/articles/360000613793) Ledger device
 * The latest firmware version [installed](https://support.ledger.com/hc/en-us/articles/360002731113?docs=true)
@@ -124,6 +124,8 @@ This is a tutorial on how to use your [Ledger device](https://www.ledger.com) to
 8. The app installation is confirmed
 
 ### Use Ledger device using Polkadot Portal
+**Note: The Ledger App is currently out of date and can not be used for signing transactions.**
+
 #### How to use your Ledger Device with https://polkadot.js.org/apps/?rpc=wss://fullnode.centrifuge.io
 1. Connect and unlock your Ledger device.
 
@@ -152,8 +154,7 @@ Verify that both addresses match.
 View your account balance directly on the [portal](https://polkadot.js.org/apps/?rpc=wss://fullnode.centrifuge.io) or by looking up the account using [Subscan](https://centrifuge.subscan.io). The portal provides basic information on the account, and for more information on your account, balance, and transfer history, you can use the Centrifuge [block explorer](https://centrifuge.subscan.io) by Subscan.
 
 **Note**
-The Centrifuge Ledger app supports all transaction types except for the following:
-Large batch transactions
+The Centrifuge Ledger app does not support all transactions. 
 
 ### Send Centrifuge tokens (CFG) using your Ledger device
 1. Navigate to Accounts in the [portal](https://polkadot.js.org/apps/?rpc=wss://fullnode.centrifuge.io). Select *send* to the right of the account you wish to send CFG from. 
@@ -174,5 +175,8 @@ Large batch transactions
 ### Use Ledger device with Centrifuge Chain Portal
 In case you want to use your Ledger device in the Centrifuge [portal](https://portal.chain.centrifuge.io) you will have to add the device through the PolkadotJS [Extension](https://polkadot.js.org/extension).
 
-#### Support
-If you encounter any issue with your Ledger device, please join our [Discord](http://centrifuge.io/discord) and drop us a line.
+## Third Party Custodians
+The following custodians offer custody of CFG or wCFG (ERC20 on Ethereum).
+* Bitcoin Suisse Vault (native CFG)
+* Coinbase Custody (ERC20 only
+* BitGo (ERC20 only)
