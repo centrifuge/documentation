@@ -58,7 +58,7 @@ Investors can join a pool and provide liquidity for assets to be financed. They 
 ## Legal Contract Templates
 Tinlake Pool uses the following templates to achieve the above described setup.
 
-* [Operating Agreement](https://docs.google.com/document/d/14I8x16nRvSVgtnV6EoahZQ9GGVrdvKNbIK7tAN5gBaY): describes the SPVs operation
+* [Operating Agreement](https://docs.google.com/document/d/1KutVN5otIXHFFcEZnvJ3s65u3ns9axmM/edit): describes the SPVs operation
 * [DROP Subscription Document](https://drive.google.com/file/d/1GhTrd6x1OS8KzR9NErFngSZAT737tRLj): The subscription agreement outlines the general structure, risks, terms and conditions of a DROP investment.
 * [TIN Subscription Document](https://drive.google.com/file/d/1hXS1jrHSedJwFlV7u2pYPIcv89DYUpk0): The subscription agreement outlines the general structure, risks, terms and conditions of a TIN investment.
 * Incorporation Documents: Used to incorporate the Series-LLC (coming soon)
