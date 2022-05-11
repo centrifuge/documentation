@@ -13,7 +13,7 @@ MetaMask is a browser extension that allows you to use Ethereum protocols or dAp
 2. Choose the browser you want to use.
 3. You will be directed to corresponding web store.
 4. Follow the steps there to add the extension to your browser.
-5. After setting up your wallet, Metamask should pop-up as a Fox icon ![](https://storage.googleapis.com/centrifuge-hackmd/upload_7dd07df8a7fc7d1b29743ec9535dbba7.png) in your browser bar.
+5. After setting up your wallet, Metamask should pop-up as a fox icon in your browser bar.
 
 ### Connect MetaMask with Tinlake
 - Connect your account.
