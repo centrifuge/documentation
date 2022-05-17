@@ -4,11 +4,7 @@
 
 This is a Gatsby site.
 
-The develop branch is continuously deployed to a preview site. [View dev site](http://develop.developer.centrifuge.io/)
-
-The develop branch is merged to production weekly (unless we need to do a release sooner than that).
-
-The master branch is continuously deployed to production.)
+The develop branch is continuously deployed to a preview site. [View dev site](http://develop.centrifuge.io/) The main branch is continuously deployed to production.
 
 ## About
 
