@@ -7,7 +7,7 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Martin Quensel:martin@cen
 
 ## Smart Contract Documentation
 
-> The documentation of Tinlake’s smart contract is currently being updated. Please come back soon.
+> The documentation of Tinlake’s smart contract is currently being updated. Please come back soon!
 
 <!-- # Smart Contract Documentation
 
