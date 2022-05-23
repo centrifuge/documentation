@@ -53,7 +53,7 @@ Under `Current epoch` you can see how much time and investment capacity is left 
 
 ## Investment flow summary
 
-Tinlake's investment's and redemptions are executed in (usually daily ) epochs. During the epoch you can lock your investment or redemption order. You can cancel your locked order at any time throughout the epoch. At the end of the epoch all locked orders automatically executed at best effort considering investment/redemption supply and demand and the pools risk metrics. You can collect your TIN/DROP (in case of an investment) or DAI (in case of an redemption) token at any time following the start of the new epoch. If your order is only partially executed you can collect the executed order. The unfullfilled part of the order remains locked for investment/redemption but can this lock can be cancelled at any time.
+Tinlake's investments and redemptions are executed in (usually daily) epochs. During an epoch you can lock your investment or redemption order. You can cancel your locked order at any time throughout an epoch. At the end of an epoch all locked orders automatically execute at best effort considering investment/redemption supply and demand and the pool's risk metrics. You can collect your TIN/DROP tokens (in the case of an investment) or DAI (in the case of a redemption) at any time following the start of the next epoch. If your order is only partially executed you can collect that portion of your order. The unfulfilled part of the order remains locked for investment/redemption pending execution. As with your initial order, this lock can be cancelled at any time.
 
 ![](./images/investment_flow.png#width=600px)
 
