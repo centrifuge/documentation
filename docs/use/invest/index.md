@@ -16,8 +16,8 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>
 
 ### Technical requirements
 
-- A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply approporiate security measures when setting up your web3 wallet(see also below).
-- _**If you use a Ledger, please make sure to activate `Contract data` in the settings of the Ethereum app and to update to the latest firmware.**_
+- A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend that you use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply approporiate security measures when setting up your web3 wallet (see also below).
+- _**If you use a Ledger, please make sure to enable "Blind Signing" in the settings of the Ethereum app and to update to the latest firmware.**_
 - You need use the Ethereum address you have specified in the Subscription Agreement through your web3 wallet
 - The "Ethereum Address of the Subscriber" needs to hold the DAI you want to invest
 
