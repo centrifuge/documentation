@@ -49,7 +49,7 @@ Below you find the current epoch state to your left and the TIN/DROP invest and 
 
 ![](./images/epoch_details.png)
 
-Under `Current epoch` you can see how much time and investment capacity is left in the current epoch. You can lock your investment/redemption at any time during an epoch. After the minimum epoch duration has passed, the epoch can be closed and all locked orders will be executed following a best effort approach. The table under `Total locked orders` shows you how many TIN/DROP investment and redemption order are locked for the current epoch.
+Under `Current epoch` you can see how much time and investment capacity is left in the current epoch. You can lock your investment/redemption at any time during an epoch. After the minimum epoch duration has passed, the epoch can be closed and all locked orders will be executed following a best effort approach. The table under `Total locked orders` shows how many TIN/DROP investment and redemption orders are locked for the current epoch.
 
 ## Investment flow summary
 
