@@ -8,7 +8,7 @@ title: Originating Assets
 
 ## Mint NFT in Gateway
 ### What is the Gateway
-[Centrifuge Gateway](https://gateway.centrifuge.io/) is the GUI of a Centrifuge Node that allows to securely create and exchange customised documents representing real-world as part of the Centrifuge P2P-protocol and mint NFTs based on these documents.
+[Centrifuge Gateway](https://gateway.centrifuge.io/) is the GUI of a Centrifuge Node that allows to securely create and exchange customised documents representing real-world assets as part of the Centrifuge P2P-protocol and mint NFTs based on these documents.
 
 ### Register for Gateway [One time set-up]
 As an asset originator you should have received an invitation email to your email addresss. Click on the `Activate` button in the email. Enter the email shared with the Centrifuge team and choose a safe password according to the required criteria. The 2fa code upon registering is not sent at the moment. So after registering, just login again as normal to receive 2fa code per email. 
@@ -16,12 +16,12 @@ As an asset originator you should have received an invitation email to your emai
 ### Login to Gateway
 * Go to https://gateway.centrifuge.io/
 * Login with your email address and password
-* You should receive a 2fa security code to your email to complete the login 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_de80606d6d02f11356486a2ef36d0a3c.png =200x)
+* You should receive a 2FA security code to your email to complete the login 
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_de80606d6d02f11356486a2ef36d0a3c.png)
 
 ### Create Document
-- Click on Document tab
-- Click on Create Document
+- Click on `Documents tab`
+- Click on `Create Document`
 - Select your schema
 - Your document fields appear
 - Fill in Document details
@@ -51,10 +51,10 @@ You can also open the [Gateway node contract](https://etherscan.io/address/0x3ba
 - You need to be connected with Tinlake with the borrower ETH account that holds the NFT.
 
 ### Lock the NFT
-- Open the document in Gateway and click on "Open loan" next to the NFT data
+- Open the document in Gateway and click on `Open loan` next to the NFT data
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_39148b732f72e28584e878186005ec9f.png)
 
-This will open the Lock NFT page in your Tinlake pool and prefill token registry and token ID from the Gateway document.
+This will open the Lock NFT page in your Tinlake pool, and prefill the token registry and the token ID from the Gateway document.
 
 An alternative how to access the assets of your pool:
 
@@ -77,6 +77,6 @@ An alternative how to access the assets of your pool:
 ### Repay the asset
 - Go back to the asset list on the Assets tab in Tinlake
 - Click on the asset to open the asset details
-- Click 'set max' for the repay amount 
+- Click `Set Max` for the repay amount 
 - Click on `Repay` (the button will become active, once you input an amount >0)
-- Confirm the transaction with Metamask/ Ledger
+- Confirm the transaction with your wallet
