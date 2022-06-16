@@ -16,9 +16,9 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>
 
 ### Technical requirements
 
-- A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply approporiate security measures when setting up your web3 wallet(see also below).
-- _**If you use a Ledger, please make sure to activate `Contract data` in the settings of the Ethereum app and to update to the latest firmware.**_
-- You need use the Ethereum address you have specified in the Subscription Agreement through your web3 wallet
+- A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply approporiate security measures when setting up your web3 wallet (see also below).
+- _**If you use a Ledger, please make sure to enable "Blind Signing" in the settings of the Ethereum app and to update to the latest firmware.**_ (It's recommended to disable blind signing after use.)
+- You need to use the Ethereum address you have specified in the Subscription Agreement through your web3 wallet
 - The "Ethereum Address of the Subscriber" needs to hold the DAI you want to invest
 
 ### Display DAI and TIN/DROP in Metamsk
@@ -49,7 +49,7 @@ Below you find the current epoch state to your left and the TIN/DROP invest and 
 
 ![](./images/epoch_details.png)
 
-Under `Current epoch` you can see how much time and investment capacity is left in the current epoch. You can lock your investment/redemption at any time during an epoch. After the minimum epoch duration has passed, the epoch can be closed and all locked orders will be executed following a best effort approach. The table under `Total locked orders` shows you how many TIN/DROP investment and redemption order are locked for the current epoch.
+Under `Current epoch` you can see how much time and investment capacity is left in the current epoch. You can lock your investment/redemption at any time during an epoch. After the minimum epoch duration has passed, the epoch can be closed and all locked orders will be executed following a best effort approach. The table under `Total locked orders` shows how many TIN/DROP investment and redemption orders are locked for the current epoch.
 
 ## Investment flow summary
 
@@ -90,8 +90,8 @@ To lock your TIN/DROP investment:
 ![](./images/drop_modal_invest.png#width=400px)
 
 - This will open Metamask to confirm the transaction
-  - If you are using Metamask without a hardware wallet there will one transaction to confirm
-  - If you are using a hardware wallet there will be two transactions to confirm at your first transaction (First `Token Approval` then the `Invest Order`). For all your folling investments there will only be one confirmation in Metamask
+  - If you are using Metamask without a hardware wallet there will be only one transaction to confirm
+  - If you are using a hardware wallet you will be prompted to confirm two transactions the first time that you make an investment: the `Token Approval` then the `Invest Order`. For all your following investments, only one confirmation will be required
 - Your sucessfully locked order will be displayed in the component
 
 ![](./images/drop_modal_order.png#width=400px)
