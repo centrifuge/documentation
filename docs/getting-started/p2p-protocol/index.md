@@ -57,7 +57,7 @@ The document representing the asset thus receives all of the benefits of standar
 
 ## Resources
 
-- [P2P Node](https://developer.centrifuge.io/cent-node/) and [NFT](https://developer.centrifuge.io/nfts/overview/introduction/) DevDocs
+- [P2P Node](https://docs.centrifuge.io/build/p2p-node/) and [NFT](https://developer.centrifuge.io/nfts/overview/introduction/) DevDocs
 - [Protocol White Paper](https://staticw.centrifuge.io/assets/centrifuge_os_protocol_paper.pdf)
 - [Precise Proofs blog post](https://medium.com/centrifuge/introducing-precise-proofs-create-validate-field-level-merkle-proofs-a31af9220df0)
 - [NFT White Paper](https://github.com/centrifuge/paper-privacy-enabled-nfts/releases/download/v1.01/paper-privacy-enabled-nfts.pdf)
