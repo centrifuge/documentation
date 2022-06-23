@@ -45,8 +45,20 @@ There are three steps to close an epoch **where not all orders can be fully exec
 
 ## Liquidity On-ramps and Off-ramps
 
-The easiest and cheapest way to off/on-ramp (USD > USDC > DAI) is 
-1) Create a Circle or Coinbase account which allows you to exchange USD <> USDC free of charge.
-2) Go to https://1inch.exchange/ or http://paraswap.io/ or https://cowswap.exchange/#/swap to exchange USDC <> DAI.
+The easiest and cheapest way to off/on-ramp is to exchange DAI directly in EUR or USD pairs.  
 
-Both are integrating the Maker PSM (https://cryptobriefing.com/1inch-exchange-drops-costs-swapping-dai-usdc-stablecoins/) and looking for the cheapest source of liquidity.
+**USD/DAI Pairs:**
+
+Coinbase: https://pro.coinbase.com/trade/DAI-USD
+
+Kraken: https://trade.kraken.com/charts/KRAKEN:DAI-USD
+
+FTX: https://ftx.com/trade/DAI/USD
+
+
+**EUR/DAI Pairs:**
+
+Kraken: https://trade.kraken.com/charts/KRAKEN:DAI-EUR
+
+Alternatively, DAI can be exchanged for the stablecoins USDC or USDT, on any major exchange.
+
