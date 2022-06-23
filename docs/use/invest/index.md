@@ -113,7 +113,7 @@ You can cancel your locked invest order at any time during the epoch. To cancel 
 
 ### Epoch close and order execution
 
-When the epoch is closed all locked orders will be executed by the smart contracts at best effort considering the pools risk metrics. E.g. if the current TIN risk buffer is already close to the Minimum TIN risk buffer no further DROP investments may be accepted until further TIN investments are provided. If the amount of locked orders exceed the epoch's `Maximum Investment Capacity` set by the Asset Originator, locked orders can only be partially executed pro rata.
+When the epoch is closed all locked orders will be executed by the smart contracts at best effort considering the pool's risk metrics. E.g. if the current TIN risk buffer is already close to the Minimum TIN risk buffer, no further DROP investments may be accepted until further TIN investments are provided. If the amount of locked orders exceeds the epoch's `Maximum Investment Capacity` set by the Asset Originator, locked orders can be only partially executed pro rata.
 
 ### Collect your executed investment
 
