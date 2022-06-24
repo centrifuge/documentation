@@ -2,13 +2,6 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a7118d58-bd34-4f3d-97bd-00b8dc1ad2bd/deploy-status)](https://app.netlify.com/sites/centrifuge-documentation/deploys)
 
-This is a Gatsby site.
-
-The develop branch is continuously deployed to a preview site. [View dev site](http://develop.developer.centrifuge.io/)
-
-The develop branch is merged to production weekly (unless we need to do a release sooner than that).
-
-The master branch is continuously deployed to production.)
 
 ## About
 
@@ -25,6 +18,9 @@ To become a part of the Centrifuge community, read the [Code of Conduct](https:/
 ### _Please_, feel free to make any contributions you think will make Centrifuge Documentation better.
 
 **Submit all pull requests to the develop branch**
+
+The develop branch is continuously deployed to a preview site. [View dev site](http://dev.docs.cntrfg.com/). You can submit a pull request to the repository to get a deploy preview built.
+
 
 ## Development
 
