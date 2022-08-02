@@ -79,8 +79,7 @@ Fetch the appropriate network URL. For kovan, it would look like this `wss://kov
 In order to interact with our Centrifuge Chain, you can either start your own node and sync with the network or use one of the public full nodes that Centrifuge provides:
 
 - mainnet: `wss://fullnode.centrifuge.io`
-- amber: `wss://fullnode.amber.centrifuge.io`
-- flint: `wss://fullnode.flint.centrifuge.io`
+- catalyst: `wss://fullnode.catalyst.cntrfg.com`
 
 ## Creating a geth Account
 
@@ -217,13 +216,9 @@ If you want to switch between testnets and mainnet, adjust the following accordi
 
 **Networks:**
 
-- **Kovan - Flint**
+- **Kovan - Catalyst**
 
-Use network `-n flint`
-
-- **Kovan - Amber**
-
-Use network `-n amber`
+Use network `-n catalyst`
 
 - **Mainnet**
 
@@ -329,9 +324,9 @@ To make sure that your Centrifuge node setup was successful and is running prope
 $ curl -X GET "http://localhost:8082/ping" -H "accept: application/json"
 ```
 
-It will return (e.g. Kovan - Amber):
+It will return (e.g. Kovan - Catalyst):
 
-`{"version":"...","network":"amber"}`
+`{"version":"...","network":"catalyst"}`
 
 ---
 
@@ -351,26 +346,7 @@ The Centrifuge node is capable of maintaining multiple accounts. Accounts are us
 
 Besides the mainnet, Centrifuge has support for Kovan testnet in Ethereum. The network configuration for the different testnets is also part of the [code base](https://github.com/centrifuge/go-centrifuge/blob/master/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed. Please find the most important information summarized below.
 
-### Flint  -  Kovan
-
-This network is a testnet that operates over a Proof-of-Authority Ethereum network (Kovan) and a Proof-of-Stake in the Centrifuge Chain.
-
-- Client: parity
-- Purpose: Testnet
-- Bootstrap Nodes:
-
-```
-/ip4/35.242.230.116/tcp/38202/ipfs/12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z
-```
-
-```
-/ip4/35.234.72.127/tcp/38202/ipfs/12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x
-```
-
-- Deployed Smart Contracts:
-  - identityFactory: "0x1362EcBf8679243E24fA0EC425d2e10A08223c7D"
-
-### Amber  -  Kovan
+### Catalyst  -  Kovan
 
 This network is a testnet that operates over a Proof-of-Authority Ethereum network (Kovan) and a Proof-of-Stake in the Centrifuge Chain.
 
