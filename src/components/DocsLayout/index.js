@@ -68,7 +68,7 @@ const DocsLayout = ({ data }) => {
                     <Box
                       direction={size === "small" ? "column" : "row"}
                       gap="medium"
-                      margin={{ top: '24px', bottom: '24px' }}
+                      margin={{ top: '36px', bottom: '24px' }}
                     >
                       <EditPage file={mdx.fields.file} />
                       {!!mdx.frontmatter?.contributors && (
