@@ -25,20 +25,10 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const Layout = ({ children, hideFooter, fullWidth, size }) => {
+const Layout = ({ children, hideFooter, size }) => {
   let sectionProps = {
     fill: "horizontal",
-    pad: {
-      horizontal:
-        size === "large" ? "120px" : size === "medium" ? "48px" : "24px",
-      vertical: size === "small" ? "12px" : "0",
-    },
-    margin: size !== "small" ? { bottom: "medium" } : {},
-    style: fullWidth
-      ? {}
-      : {
-          maxWidth: theme.maxContentWidth,
-        },
+    margin: size !== "small" ? { bottom: "medium" } : {}
   };
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -66,14 +56,14 @@ const Layout = ({ children, hideFooter, fullWidth, size }) => {
           margin={{ left: "360px" }}
           width="8px"
           style={{
-            background:
-              "linear-gradient(90deg, rgba(216, 216, 216, 0) 0%, #D8D8D8 100%)",
+            borderRight:
+              "1px solid #EEE",
           }}
         />
       )}
-      <Box width="100%">
+      <Box width="100%" >
         {/* header */}
-        {size !== "large" ? (
+        {size !== "large" && (
           <>
             <Box
               direction="row"
@@ -110,18 +100,6 @@ const Layout = ({ children, hideFooter, fullWidth, size }) => {
               </Layer>
             )}
           </>
-        ) : (
-          <Box
-            direction="row"
-            fill="horizontal"
-            justify="end"
-            pad={{ horizontal: "medium", vertical: "medium" }}
-          >
-            <Box direction="row" gap="medium">
-              <StyledButton primary label="FAQ" href="/faq" />
-              <Search open={true} />
-            </Box>
-          </Box>
         )}
         {/* content */}
         <Box align="center" {...sectionProps} flex="grow">

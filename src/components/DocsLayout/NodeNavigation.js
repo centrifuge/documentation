@@ -7,7 +7,7 @@ const AltText = ({ children, ...props }) => (
   <Text
     size="xsmall"
     color="dark-3"
-    style={{ fontFamily: "Space Mono" }}
+    style={{ fontFamily: "Inter" }}
     {...props}
   >
     {children}

@@ -43,15 +43,15 @@ export const theme = deepMerge(axisThemeConfig, {
     extend: props => css`
            max-width: 100%; 
            ${props.level === 1 && `
-               font-size: 40px;
+               font-size: 24px;
            `}
            ${props.level === 2 && `
                border-bottom: 1px solid ${axisThemeConfig.global.colors.border};
-               font-size:24px;
-               padding-bottom: 32px;
+               font-size: 18px;
+               padding-bottom: 16px;
            `}
            ${props.level === 3 && `
-               font-size:20px;
+               font-size: 14px;
            `}
         `
   }

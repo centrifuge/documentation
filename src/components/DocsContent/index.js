@@ -29,6 +29,10 @@ const Heading = styled(Grommet.Heading)`
   padding-bottom: 0;
 `;
 
+const Paragraph = styled(Grommet.Paragraph)`
+  font-family: Inter;
+`;
+
 const Hash = styled.a.attrs({
   "aria-hidden": "true",
 })`
@@ -61,7 +65,11 @@ const Hash = styled.a.attrs({
 `;
 
 const mdxGrommetMap = {
-  p: Grommet.Paragraph,
+  p: (props) => (
+    <Paragraph>
+      {props.children}
+    </Paragraph>
+  ),
   h1: (props) => (
     <Heading level={1}>
       <Anchor id={props.id} />

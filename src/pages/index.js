@@ -105,7 +105,7 @@ const InstanceNavButton = ({ uri, color, title, avatar }) => {
             }}
           />
         )}
-        <Text style={{ fontFamily: "Space Mono" }} size="32px">
+        <Text style={{ fontFamily: "Inter" }} size="32px">
           {title}
         </Text>
       </Box>
@@ -145,7 +145,7 @@ const GettingStartedNavButton = ({ uri, color, title, avatar }) => {
             }}
           />
         )}
-        <Text style={{ fontFamily: "Space Mono" }} size="24px">
+        <Text style={{ fontFamily: "Inter" }} size="24px">
           {title}
         </Text>
       </Box>
@@ -161,7 +161,7 @@ const HomePage = () => {
       <SEO title="Centrifuge Documentation" />
       <Box direction="row" gap="large" justify="between">
         <Box>
-          <Text style={{ fontFamily: "Space Mono" }}>Intro</Text>
+          <Text style={{ fontFamily: "Inter" }}>Intro</Text>
         </Box>
         <Box width="70%">
           <Text>
@@ -194,7 +194,7 @@ const HomePage = () => {
             ))}
         </Box>
       </Box>
-      <Box css={{ fontFamily: "Space Mono" }} direction="row">
+      <Box css={{ fontFamily: "Inter" }} direction="row">
         <Link to="/code-of-conduct" underline>
           code of conduct
         </Link>

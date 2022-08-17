@@ -20,6 +20,7 @@ const Link = styled(GatsbyLink)`
 
   &.activeLink {
     color: ${props => props.theme.global.colors.brand};
+    background: rgb(240, 244, 255);
   }
 `;
 

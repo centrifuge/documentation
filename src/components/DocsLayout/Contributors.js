@@ -31,7 +31,7 @@ const Contributors = ({ contributors }) => {
   return (
     !!contributors && (
       <Box direction="row" gap="small">
-        <Text style={{ fontFamily: "Space Mono" }}>Contributors</Text>
+        <Text style={{ fontFamily: "Inter" }}>Contributors</Text>
         {contributorsList.map((contributor, i) => (
           <Contributor key={i} {...contributor} avatar={avatars[i % 4]} />
         ))}

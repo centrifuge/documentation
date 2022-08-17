@@ -28,7 +28,7 @@ const InternalLink = ({ href, label, primary, size, altFont }, ref) => {
 
   let textProps = {};
   if (primary) textProps.weight = 500;
-  if (altFont) textProps.style = { fontFamily: "Space Mono" };
+  if (altFont) textProps.style = { fontFamily: "Inter" };
 
   useImperativeHandle(ref, () => ({
     isActive: linkRef.current

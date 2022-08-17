@@ -9,7 +9,7 @@ const EditPage = ({ file }) => {
   return (
     <Box>
       <Anchor href={githubLink} target="_blank">
-        <Text style={{ fontFamily: "Space Mono" }}>Edit this page</Text>
+        <Text style={{ fontFamily: "Inter" }}>Edit this page</Text>
       </Anchor>
     </Box>
   );
