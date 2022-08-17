@@ -159,7 +159,7 @@ const HomePage = () => {
   return (
     <Layout size={size} hideFooter fullWidth>
       <SEO title="Centrifuge Documentation" />
-      <Box direction="row" gap="large" justify="between">
+      <Box style={{ maxWidth: '1024px', marginTop: '80px' }} direction="row" gap="large" justify="between">
         <Box>
           <Text style={{ fontFamily: "Inter" }}>Intro</Text>
         </Box>
