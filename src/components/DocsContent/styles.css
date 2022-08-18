@@ -1,3 +1,7 @@
 .gatsby-resp-image-background-image {
     display: none !important;
 }
+
+p {
+    line-height: 24px;
+}

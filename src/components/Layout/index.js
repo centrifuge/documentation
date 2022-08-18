@@ -5,7 +5,7 @@ import { Menu } from "grommet-icons";
 import { Link } from "gatsby";
 
 import "./styles.css";
-import "@fontsource/inter";
+import "@fontsource/inter/variable-full.css";
 
 import docs_wordmark from "../../images/docs_wordmark.svg";
 
