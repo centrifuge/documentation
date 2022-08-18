@@ -16,7 +16,6 @@ const Link = styled(GatsbyLink)`
     (!!props.color && props.theme.global.colors[props.color]) ||
     props.theme.global.colors.black};
 
-  font-size: 14px;
   line-height: 1.375;
   padding: ${(props) => props.size === 'large' ? '4px 0' : '3px 16px'};
   border-radius: 16px;

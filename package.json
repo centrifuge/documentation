@@ -6,7 +6,7 @@
   "dependencies": {
     "@centrifuge/axis-nav-bar": "^0.3.2-develop.47",
     "@centrifuge/axis-theme": "0.3.1",
-    "@fontsource/space-mono": "^4.2.2",
+    "@fontsource/inter": "4.5.12",
     "@mdx-js/mdx": "^0.16.8",
     "@mdx-js/tag": "^0.16.8",
     "docsearch.js": "^2.6.2",

@@ -30,7 +30,7 @@ const Heading = styled(Grommet.Heading)`
 `;
 
 const Paragraph = styled(Grommet.Paragraph)`
-  font-family: Inter;
+  font-family: Inter, sans-serif;
 `;
 
 const Hash = styled.a.attrs({

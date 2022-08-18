@@ -2,6 +2,8 @@ import {axisThemeConfig} from "@centrifuge/axis-theme";
 import {deepMerge} from "grommet/utils/object";
 import {css} from "styled-components";
 
+const ffStack = 'Inter, sans-serif'
+
 export const theme = deepMerge(axisThemeConfig, {
   maxContentWidth: '1024px',
   global: {
@@ -9,6 +11,9 @@ export const theme = deepMerge(axisThemeConfig, {
       small: {
         value: 871,
       }
+    },
+    font: {
+      family: ffStack
     }
   },
   table: {
@@ -39,9 +44,16 @@ export const theme = deepMerge(axisThemeConfig, {
       // extend: undefined,
     },
   },
+  button: {
+    extend: props => css`
+      font-family: ${ffStack};
+    `
+  },
   heading: {
     extend: props => css`
-           max-width: 100%; 
+           max-width: 100%;
+           font-family: ${ffStack};
+
            ${props.level === 1 && `
                font-size: 24px;
            `}
