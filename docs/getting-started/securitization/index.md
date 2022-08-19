@@ -10,7 +10,7 @@ Thus, after an asset is tokenized using the Private Data layer and an NFT is min
 
 Together, this creates on-chain, asset level transparency: an investor can see at a glance what assets (NFTs) a pool contains, what has been borrowed against and repaid, what is overdue, and so on. This creates an immutable, transparent track record of financial transactions that can be publicly verified for decades to come. Compare this to the current state of traditional finance, where historical financial data is hidden and locked in private, siloed databases unavailable to the public, and financial analysis is done based on shared, trusted spreadsheets. 
 
-![](./images/tokenization.png#width=30%;)
+![](./images/pooling.png#width=25%;)
 
 ## Revolving pools
 In traditional finance, many securitizations are static: a group of investors provides capital to the issuer, the issuer finances debt, and then repays interest and principal of the assets over time as they mature. At the end, the investors get their capital back plus the yield. Instead of being a good deal for investors, this situation creates unnecessary overhead, because they have to re-invest after the pools mature. This has complications for the integration of these instruments into the DeFi ecosystem, as protocols and other parties will have to re-integrate with new pools constantly.
@@ -34,7 +34,7 @@ The NAV also needs to account for defaults of assets: if the borrower fails to r
 ## Tranching
 Investors often want different kinds of risk exposure and yield on the same asset class. In the traditional finance world, one way to achieve this is by introducing a tiered investment structure or in other words, different tranches. This means that investors can invest in the same group of assets through different classes of debt with different risk/return profiles. An example is shown below.
 
-![](./images/tranching.png#width=50%;)
+![](./images/tranching.png#width=40%;)
 
 At its most common form, a pool could have a junior and senior tranche, with the junior tranche tracking the first loss position and receiving the excess yield, while the senior position receives a lower, fixed yield, but is protected from losses by junior. A key advantage of this structure is that it allows the issuer of the pool to invest in the junior tranche and thus take a first loss position in the pool, ensuring skin in the game. Another example includes a three tranche structure, where a super senior lender such as MakerDAO invests in the most senior tranche, other investors invest in a mezzanine tranche, and the pool issuer invests in the junior tranche.
 

@@ -5,12 +5,15 @@ title: Integrated with DeFi
 ---
 
 ## Connectors
-Investors aren’t just users with wallets but also DeFi (decentralized finance) lending protocols, stablecoins or even DEXs. These users are distributed across many different chains. The easier we can make it for both users and protocols to invest in Centrifuge assets, the more liquidity can be accessed by issuers on Centrifuge.
+Currently, most DeFi (decentralized finance) applications are limited to their respective blockchain ecosystem. Bridges between chains exist but using them is cumbersome and expensive with the need to set-up different tools and swap several tokens.
 
-To facilitate this, Centrifuge will build Connectors: smart contracts that live on any other chain and interact with the Centrifuge Chain over existing bridges, allowing investors to interact from these chains without ever touching the Centrifuge Chain.
+Centrifuge Protocol provides Connectors, that allows for direct integration with any general purpose EVM blockchain. Connectors work in both directions allowing investors to transfer permissioned tokens between chains as well as getting the pricing information on pools needed for investment and redemption transactions. By creating a standard layer that builds on top of generic bridges we can minimize the effort required to integrate a new EVM based chain.
 
 ![](./images/connectors.png#width=30%;)
 
 ## Liquidity integrations
-Using Connectors as the bridging technology, integrations are used to enable protocols to invest in real world assets. Stablecoin protocols such as MakerDAO can invest directly into the pools that they want, money markets can be created to provide portfolio diversification to individual investors, and  secondary markets for the tokens could be created in the future.
+Using Connectors as the bridging technology, integrations are used to enable protocols to invest in real world assets. Stablecoin protocols such as MakerDAO can invest directly into the pools that they want, money markets can be created to provide portfolio diversification to individual investors, and  secondary markets for the tokens could be created in the future. This allows issuers to get the best liquidity without having to target integrating all these DeFi sources of liquidity and new end user markets themselves
 
+While the Centrifuge Protocol is built on Substrate and Polkadot, interacting with the Centrifuge Protocol is going to be possible from multiple chains creating a true multi-chain ecosystem. 
+
+![](./images/ecosystem.png#width=40%;)
