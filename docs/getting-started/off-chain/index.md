@@ -4,9 +4,7 @@ order: 6
 title: Linking on-chain to off-chain
 ---
 
-## Legal structure
 The legal setup for each pool is designed to mirror the protocol structure and the real-world relationships between the parties. The templates are based on legal structures used for asset-backed securitizations for many decades, and are structured to ensure that investors in the pool have protection by ensuring recourse to the RWA used as collateral in the pool.
-
 
 Each pool has a legal entity tied to it, a special purpose vehicle (SPV). The SPV keeps the pool issuer’s business separate from the financing activity in the pool and ensures the assets in the pool are bankruptcy remote from the issuer and borrowers. An Operating Agreement defines the operations of the SPV. To tokenize assets, the legal ownership of the assets is transferred to the SPV. 
 

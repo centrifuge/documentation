@@ -4,7 +4,6 @@ order: 5
 title: Integrated with DeFi
 ---
 
-## Connectors
 Currently, most DeFi (decentralized finance) applications are limited to their respective blockchain ecosystem. Bridges between chains exist but using them is cumbersome and expensive with the need to set-up different tools and swap several tokens.
 
 Centrifuge Protocol provides Connectors, that allows for direct integration with any general purpose EVM blockchain. Connectors work in both directions allowing investors to transfer permissioned tokens between chains as well as getting the pricing information on pools needed for investment and redemption transactions. By creating a standard layer that builds on top of generic bridges we can minimize the effort required to integrate a new EVM based chain.
