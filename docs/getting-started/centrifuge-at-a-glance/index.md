@@ -15,8 +15,6 @@ If the rules of the financing process are coded into a blockchain, the reliance 
 
 Centrifuge experimented with multiple versions of the previous iteration of the Centrifuge Protocol, called Tinlake, on Ethereum. It started with the first version in 2019, adding static pooling and simple tranching support in early 2020, launching the revolving pools late 2020, and integrating the first pool with the MakerDAO protocol in mid 2021. The lessons learned from these iterations have been used to develop the first version of the full fledged Centrifuge Protocol.
 
-This document aims to give the reader a precise and comprehensive overview of the Protocol’s technical and legal infrastructure to finance real-world assets on-chain transparently and efficiently.
-
 ## Overview of the Protocol
 The Centrifuge Protocol includes all the features needed to safely finance real world assets on a blockchain, from governance of the protocol, tokenization, securitization, up to liquidity integrations,  all built on each other. 
 
@@ -24,4 +22,4 @@ The Centrifuge Protocol includes all the features needed to safely finance real 
 
 The foundation of the Protocol is Centrifuge Chain, a layer-1 blockchain for real world assets, running as a parachain in the Polkadot ecosystem. The native token of Centrifuge Chain, CFG,  is used as an on-chain governance mechanism that empowers CFG holders to guide the development of the Centrifuge Protocol. Real-world assets are tokenized as NFTs (Non-Fungible Tokens) to create an on-chain representation, and are linked to off-chain data held privately. The assets are pooled together and securitized by the issuer. To bring liquidity to these assets, Connectors will be used to bridge to other blockchains, and liquidity integrations with DeFi protocols such as Maker, Aave, and more are already set up across the ecosystem.
 
-In the next sections, we will dive into these six key features of the Centrifuge Protocol.
+In the next sections, we will dive into these five key features of the Centrifuge Protocol.

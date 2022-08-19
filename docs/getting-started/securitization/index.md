@@ -4,7 +4,6 @@ order: 3
 title: Securitization
 ---
 
-## Pooling assets
 To efficiently finance credit, liquid instruments create efficient markets. By nature, real world assets are often illiquid. A way to solve this is by pooling multiple assets together, and allowing investors to provide financing for this pool instead of each asset individually. This is called a securitization. This technique has been used successfully for many years in the traditional financial markets.
 
 Thus, after an asset is tokenized using the Private Data layer and an NFT is minted on-chain, this NFT is used as a representation of the off-chain collateral for a loan within an investment pool, as visualized below. The loan is priced and liquidity from the pool is borrowed against this loan. Over time, debt is repaid either partially for interest repayments or fully for the principal repayment at maturity.
