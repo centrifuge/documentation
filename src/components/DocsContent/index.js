@@ -31,6 +31,8 @@ const Heading = styled(Grommet.Heading)`
 
 const Paragraph = styled(Grommet.Paragraph)`
   font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 1.7em;
 `;
 
 const Hash = styled.a.attrs({
