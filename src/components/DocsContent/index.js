@@ -35,6 +35,12 @@ const Paragraph = styled(Grommet.Paragraph)`
   line-height: 1.7em;
 `;
 
+const Text = styled(Grommet.Text)`
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 1.7em;
+`;
+
 const Hash = styled.a.attrs({
   "aria-hidden": "true",
 })`
@@ -128,7 +134,7 @@ const mdxGrommetMap = {
   th: (props) => (
     <Grommet.TableCell scope="col">{props.children}</Grommet.TableCell>
   ),
-  li: (props) => <Grommet.Text {...props} as="li" />,
+  li: (props) => <Text {...props} as="li" />,
   ul: (props) => <ListBase {...props} as="ul" />,
   ol: (props) => <ListBase {...props} as="ol" />,
   a: Grommet.Anchor,
