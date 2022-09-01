@@ -31,7 +31,7 @@ Tinlake pools allow direct integration with DeFi protocols as a source of liquid
 ## Tinlake's investment tokens
 ### Tinlake pools two tranches
 Investors usually have different risk preferences. Some investors feel comfortable with bearing higher risks if they expect higher returns. Many other investors are content with relatively stable returns knowing they are at less risk of losing part or all of their investment.
-This is why Tinlake pools come with two different tranches, a senior token with a stable return ("DROP") and a more volatile junior token ("TIN").  DROP tokens offer a stable return protected against defaults by a TIN buffer. You can find out more details about the TIN & DROP tokens [here](TODO Link to two tranches section).
+This is why Tinlake pools come with two different tranches, a senior token with a stable return ("DROP") and a more volatile junior token ("TIN").  DROP tokens offer a stable return protected against defaults by a TIN buffer. You can find out more details about the TIN & DROP tokens [here](/learn/drop-and-tin/).
 
 ### Senior token (DROP)
 The senior token, DROP, known as the “yield token,” is protected against defaults by the TIN token and receives stable (but usually lower) returns. The DROP return is mainly determined by the DROP rate (APR) that is applied to assets financed by the issuer.
