@@ -16,8 +16,4 @@ The advantages of a blockchain custom built for RWA include:
 To experiment with new features and act as an incentivized testnet, Altair is the canary network of Centrifuge Chain. New features will be released first on Altair, to test these with real value and thus increase confidence in the reliability and security of the protocol features released on Centrifuge Chain.
 
 ## Governed by CFG holders
-Centrifuge Chain has a formalized governance system that is encoded on-chain utilizing the Substrate democracy pallet. This enables on-chain voting mechanisms for binding and transparent governance by CFG token holders. Beyond the use of the Centrifuge token (CFG) for governance of the blockchain, it also has additional utility through:
-- *Transaction fees*: Fees for transactions submitted to Centrifuge Chain are paid in CFG.
-- *Origination fees*: With pools, borrowers will pay protocol fees that will go into the on-chain treasury.
-- *Staking to launch pools*: As new pools go live, token holders will be able to indicate trustworthy pools by staking to them.
-- *Rewards to incentivize users of the Protocol*: The Protocol can offer incentives not just to liquidity providers, but also to other actors such as underwriters and service providers.
+Centrifuge Chain has a formalized governance system that is encoded on-chain utilizing the Substrate democracy pallet. This enables on-chain voting mechanisms for binding and transparent governance by CFG token holders. Beyond the use of the Centrifuge token (CFG) for governance of the blockchain, CFG is also used to pay transaction fees.
