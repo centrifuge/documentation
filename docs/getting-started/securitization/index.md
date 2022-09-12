@@ -1,7 +1,7 @@
 ---
 id: securitization
 order: 3
-title: Securitization
+title: On-chain Securitization
 ---
 
 To efficiently finance credit, liquid instruments create efficient markets. By nature, real world assets are often illiquid. A way to solve this is by pooling multiple assets together, and allowing investors to provide financing for this pool instead of each asset individually. This is called a securitization. This technique has been used successfully for many years in the traditional financial markets.
