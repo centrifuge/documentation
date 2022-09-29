@@ -26,7 +26,7 @@ Onboarding to a pool requires:
 - A verified KYC in Securitize (i.e. a completed onboarding as an investor)
 - A minimum investment amount of 5,000 DAI
 
-**Good to know**: Don’t worry if you can’t finish the process in one go – you can always leave by clicking `Close and resume later where you’ve left off before.
+**Good to know**: Don’t worry if you can’t finish the process in one go – you can always leave by clicking `Close` and resume later where you’ve left off before.
 
 #### Further requirements
 - **US investors** need to be *Acreddited investors* to invest in Tinlake pools. *See section [Onboarding as US investor](#onboarding-as-an-us-investor)*
