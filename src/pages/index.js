@@ -166,7 +166,7 @@ const HomePage = () => {
         <Box width="70%">
           <Text>
             Welcome to the Centrifuge documentation. If you are new, head to the
-             <strong>Getting Started</strong> section to understand what
+            {" "}<strong>Getting Started</strong> section to understand what
             Centrifuge is about and to get an overview of our ecosystem. Dive
             deeper into how our products work in the <strong>Learn</strong>{" "}
             section. As a user of our network, e.g. investor, issuer,
