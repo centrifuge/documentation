@@ -4,10 +4,10 @@ order: 4
 title: Built on Centrifuge Chain
 ---
 
-The Centrifuge Protocol is built on Centrifuge Chain, a layer-1 blockchain custom built for Real World Assets, using the Substrate framework. Key advantages of Substrate include shared security through the Polkadot network, built-in on-chain governance and on-chain forkless upgrades, and trustless bridging with other parachains. These enable Centrifuge to focus on building Centrifuge Chain into the go-to place for bringing real world assets on-chain.
+## Built on Centrifuge Chain
+The Centrifuge Protocol is built on Centrifuge Chain, a layer-1 blockchain custom built for Real World Assets, using the [Substrate framework](https://substrate.io/). Key advantages of Substrate include shared security through the Polkadot network, built-in on-chain governance and on-chain forkless upgrades, and trustless bridging with other parachains. These enable Centrifuge to focus on building Centrifuge Chain into the go-to place for bringing real world assets on-chain.
 
 The advantages of a blockchain custom built for RWA include:
-
 1. Lower transaction costs and increased scalability, as the functionality is natively built into the runtime logic of the blockchain, which enables optimization for dedicated transactions and use cases.
 2. The flexibility to develop features that are not possible within a general-purpose smart-contract blockchain such as Ethereum.
 3. Dedicated blockspace for real-world asset transactions: if there's a hugely popular NFT drop tomorrow on Ethereum, this won't block borrowers from repaying or investors from redeeming.

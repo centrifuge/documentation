@@ -4,6 +4,7 @@ order: 5
 title: Integrated with DeFi
 ---
 
+## Integrated with DeFi
 Currently, most DeFi (decentralized finance) applications are limited to their respective blockchain ecosystem. Bridges between chains exist but using them is cumbersome and expensive with the need to set-up different tools and swap several tokens.
 
 One possible idea is that Centrifuge Protocol can provide Connectors that allow for direct integration with any general purpose EVM blockchain. By creating a standard layer that builds on top of generic bridges this minimizes the effort required to integrate a new EVM based chain.
