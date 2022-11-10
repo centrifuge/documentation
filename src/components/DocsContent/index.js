@@ -29,6 +29,18 @@ const Heading = styled(Grommet.Heading)`
   padding-bottom: 0;
 `;
 
+const Paragraph = styled(Grommet.Paragraph)`
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 1.7em;
+`;
+
+const Text = styled(Grommet.Text)`
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  line-height: 1.7em;
+`;
+
 const Hash = styled.a.attrs({
   "aria-hidden": "true",
 })`
@@ -61,7 +73,11 @@ const Hash = styled.a.attrs({
 `;
 
 const mdxGrommetMap = {
-  p: Grommet.Paragraph,
+  p: (props) => (
+    <Paragraph>
+      {props.children}
+    </Paragraph>
+  ),
   h1: (props) => (
     <Heading level={1}>
       <Anchor id={props.id} />
@@ -118,7 +134,7 @@ const mdxGrommetMap = {
   th: (props) => (
     <Grommet.TableCell scope="col">{props.children}</Grommet.TableCell>
   ),
-  li: (props) => <Grommet.Text {...props} as="li" />,
+  li: (props) => <Text {...props} as="li" />,
   ul: (props) => <ListBase {...props} as="ul" />,
   ol: (props) => <ListBase {...props} as="ol" />,
   a: Grommet.Anchor,
