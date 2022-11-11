@@ -42,42 +42,48 @@ const DocsLayout = ({ data }) => {
             <Layout hideFooter size={size}>
               <SEO title={mdx.frontmatter.title} />
               <Box width="100%" gap="medium" pad={{ bottom: "large" }}>
-                <Box gap="small">
+                <Box gap="0">
+                  <Box style={{ borderBottom: '1px solid #EEE' }} {...{pad: { horizontal: size === "large" ? "60px" : size === "medium" ? "48px" : "24px", vertical: size === "small" ? "12px" : "24px", }, }}>
                   {
                     // skip rendering category for top-level nodes
                     !isTopLevel && (
                       <Text
                         size="large"
                         style={{
-                          fontFamily: "Space Mono",
+                          fontFamily: "Inter",
                           textTransform: "capitalize",
+                          fontSize: '13px'
                         }}
                       >
                         {mdx.fields.instanceName.split("-").join(" ")}
                       </Text>
                     )
                   }
-                  <Heading level={1} margin={{ vertical: "0" }}>
-                    {mdx.frontmatter.title}
-                  </Heading>
-                  <Box
-                    direction={size === "small" ? "column" : "row"}
-                    gap="medium"
-                  >
-                    <EditPage file={mdx.fields.file} />
-                    {!!mdx.frontmatter?.contributors && (
-                      <Box direction="row" gap="medium">
-                        {size !== "small" && <Box border={{ side: "right" }} />}
-                        <Contributors
-                          contributors={mdx.frontmatter.contributors}
-                        />
-                      </Box>
-                    )}
+                    <Heading level={1} margin={{ top: '0', bottom: '0' }} style={{ lineHeight: '32px'}}>
+                      {mdx.frontmatter.title}
+                    </Heading>
                   </Box>
-                </Box>
-                <DocsContent mdx={mdx} />
-                <Box>
-                  <NodeNavigation prevNode={prevNode} nextNode={nextNode} />
+                  <Box style={{ maxWidth: '1024px', marginTop: '24px' }} {...{pad: { horizontal: size === "large" ? "60px" : size === "medium" ? "48px" : "24px", vertical: size === "small" ? "12px" : "0" }}}>
+                    <DocsContent mdx={mdx} />
+                    <Box
+                      direction={size === "small" ? "column" : "row"}
+                      gap="medium"
+                      margin={{ top: '36px', bottom: '24px' }}
+                    >
+                      <EditPage file={mdx.fields.file} />
+                      {!!mdx.frontmatter?.contributors && (
+                        <Box direction="row" gap="medium">
+                          {size !== "small" && <Box border={{ side: "right" }} />}
+                          <Contributors
+                            contributors={mdx.frontmatter.contributors}
+                          />
+                        </Box>
+                      )}
+                    </Box>
+                    <Box>
+                      <NodeNavigation prevNode={prevNode} nextNode={nextNode} />
+                    </Box>
+                  </Box>
                 </Box>
               </Box>
             </Layout>

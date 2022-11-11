@@ -105,7 +105,7 @@ const InstanceNavButton = ({ uri, color, title, avatar }) => {
             }}
           />
         )}
-        <Text style={{ fontFamily: "Space Mono" }} size="32px">
+        <Text style={{ fontFamily: "Inter" }} size="32px">
           {title}
         </Text>
       </Box>
@@ -145,7 +145,7 @@ const GettingStartedNavButton = ({ uri, color, title, avatar }) => {
             }}
           />
         )}
-        <Text style={{ fontFamily: "Space Mono" }} size="24px">
+        <Text style={{ fontFamily: "Inter" }} size="24px">
           {title}
         </Text>
       </Box>
@@ -159,18 +159,18 @@ const HomePage = () => {
   return (
     <Layout size={size} hideFooter fullWidth>
       <SEO title="Centrifuge Documentation" />
-      <Box direction="row" gap="large" justify="between">
+      <Box style={{ maxWidth: '1024px', marginTop: '80px' }} direction="row" gap="large" justify="between">
         <Box>
-          <Text style={{ fontFamily: "Space Mono" }}>Intro</Text>
+          <Text style={{ fontFamily: "Inter" }}>Intro</Text>
         </Box>
         <Box width="70%">
           <Text>
             Welcome to the Centrifuge documentation. If you are new, head to the
-            <strong>Getting started</strong> section to understand what
-            Centrifuge is about and get an overview of our ecosystem. Dive
+            {" "}<strong>Getting Started</strong> section to understand what
+            Centrifuge is about and to get an overview of our ecosystem. Dive
             deeper into how our products work in the <strong>Learn</strong>{" "}
-            section. As a user of our network, e.g. investor, asset originator,
-            nominator or validator you find advice and guides in{" "}
+            section. As a user of our network, e.g. investor, issuer,
+            or governance participant, you will find advice and guides in{" "}
             <strong>Use</strong>. For the most up-to-date technical
             documentation, check out <strong>Build</strong>.
           </Text>
@@ -194,7 +194,7 @@ const HomePage = () => {
             ))}
         </Box>
       </Box>
-      <Box css={{ fontFamily: "Space Mono" }} direction="row">
+      <Box css={{ fontFamily: "Inter" }} direction="row">
         <Link to="/code-of-conduct" underline>
           code of conduct
         </Link>
