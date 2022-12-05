@@ -37,8 +37,6 @@ Centrifuge and all its components are Beta Software. There will be substantial c
 
 The components of the Centrifuge protocol are a collection of Ethereum smart contracts, Substrate Pallets and a peer to peer (P2P) network implemented on libp2p. Ethereum smart contracts are used for (i) maintaining identities in a similar format to the ERC725 standard and (ii) minting NFTs from off chain Centrifuge documents. Substrate Pallets are used for anchoring state commitments. The peer to peer network is used for private, off-chain transactions and business document exchange.
 
-For detailed information of the Centrifuge Protocol, its first implementation and limitations, read the [Centrifuge Protocol Yellowpaper](https://github.com/centrifuge/protocol/releases)
-
 ![Centrifuge architecture](./images/architecture.png)
 
 ### Centrifuge Nodes
@@ -47,7 +45,7 @@ The Centrifuge Node provides a simple API interface to interact with the peer to
 
 ### Centrifuge Identities
 
-A Centrifuge Identity (CentrifugeID) is a unique ID assigned to a participant of Centrifuge in a network. Centrifuge identities smart contracts on Ethereum. It keeps track of the different cryptographic keys in use and enforces that this data can only be modified by the creator and/or a delegate chosen by the creator.
+A Centrifuge Identity (CentrifugeID) is a unique ID assigned to a participant of Centrifuge in a network. Centrifuge identities are smart contracts on Ethereum. It keeps track of the different cryptographic keys in use and enforces that this data can only be modified by the creator and/or a delegate chosen by the creator.
 
 An identity has the following credentials:
 
@@ -69,14 +67,14 @@ To get started quickly, we recommend using two services that will make your life
 
 ### Ethereum through Infura
 
-In order to interact with Ethereum and the Ethereum testnet kovan you need to install the corresponding node. To get started quickly we recommend that you use Infura instead of hosting your own Ethereum node. Infura is a SaaS platform that provides API and developer tools for easy and secure access to Ethereum. In other words, it is core infrastructure that serves as a gateway to the blockchain.
+In order to interact with Ethereum and the Ethereum testnet Kovan, you need to install the corresponding node. To get started quickly, we recommend that you use Infura instead of hosting your own Ethereum node. Infura is a SaaS platform that provides API and developer tools for easy and secure access to Ethereum. In other words, it is core infrastructure that serves as a gateway to the blockchain.
 
 Register and create an Infura account here: https://infura.io/. Create a new project. 
-Fetch the appropriate network URL. For kovan, it would look like this `wss://kovan.infura.io/ws/v3/XXXXXXXXXX`
+Fetch the appropriate network URL. For Kovan, it would look like this `wss://kovan.infura.io/ws/v3/XXXXXXXXXX`
 
 ### Centrifuge Chain
 
-In order to interact with our Centrifuge Chain, you can either start your own node and sync with the network or use one of the public full nodes that Centrifuge provides:
+In order to interact with Centrifuge Chain, you can either start your own node and sync with the network or use one of the public full nodes that Centrifuge provides:
 
 - mainnet: `wss://fullnode.centrifuge.io`
 - catalyst: `wss://fullnode.catalyst.cntrfg.com`
@@ -85,7 +83,7 @@ In order to interact with our Centrifuge Chain, you can either start your own no
 
 ### Install Go Ethereum
 
-Before you can create a new go-ethereum (`Geth`) account you have to install a stable version of Go Ethereum. How to install it depends on your operating system. Follow the latest instructions [here](https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum).
+Before you can create a new go-ethereum (`Geth`) account you have to install a stable version of Go Ethereum. How to install it depends on your operating system. Follow the latest instructions [here](https://geth.ethereum.org/docs/install-and-build/installing-geth).
 
 ### Create a new account
 
@@ -123,12 +121,12 @@ If you are operating on Kovan testnet, then you can fund the newly generated Eth
 
 ### Install Parity Substrate Subkey
 
-Before you can create a new centrifuge chain account you have to install a version of Parity Substrate Subkey [here](https://github.com/paritytech/substrate/tree/v2.0.0-alpha.3/bin/utils/subkey).
+Before you can create a new Centrifuge Chain account, you have to install a version of Parity Substrate Subkey [here](https://github.com/paritytech/substrate/tree/v2.0.0-alpha.3/bin/utils/subkey).
 To install, we recommend you can follow:
 
 #### Build native binary
 
-Download and install rust nightly version:
+Download and install Rust nightly version:
 
 ```bash
 rustup update nightly-2020-02-27
@@ -161,11 +159,11 @@ $ subkey --sr25519 --network centrifuge generate
 $ subkey --sr25519 generate
 ```
 
-You can now fund the newly generated centrifuge chain account with CFG by making a request in our discord `#dev` channel
+You can now fund the newly generated Centrifuge Chain account with CFG by making a request in our discord `#dev` channel
 
 ## Installing the Centrifuge Node
 
-Before being able to transfer and anchor financial documents and mint NFTs you need to spin up a Centrifuge node on your machine. This is a one time setup.
+Before being able to transfer and anchor financial documents and mint NFTs, you need to spin up a Centrifuge node on your machine. This is a one time setup.
 
 ### Set-up Infura
 
@@ -173,7 +171,7 @@ For this, we [recommend](/cent-node/getting-started/tools) [setting up](/cent-no
 
 Otherwise, for convenience in getting started, you can use [Infura](https://infura.io). Once you have registered an account, you can create a new project and select the respective endpoint. It will give the user the option to select: Mainnet, Kovan(testing).
 
-Find the correct Infura link for the different Ethereum testnets on your Infura dahsboard. Choose the correct endpoint and it will give you the option to copy to clipboard. You will need this link again later in the process.
+Find the correct Infura link for the different Ethereum testnets on your Infura dashboard. Choose the correct endpoint and it will give you the option to copy to clipboard. You will need this link again later in the process.
 
 ![](./images/infura.jpg)
 
@@ -181,7 +179,7 @@ Find the correct Infura link for the different Ethereum testnets on your Infura 
 
 Once you are set up, follow these steps to install the Centrifuge node:
 
-1. Download and install the latest [centrifuge binary](https://github.com/centrifuge/go-centrifuge/releases). <!-- update link-->
+1. Download and install the latest [Centrifuge binary](https://github.com/centrifuge/go-centrifuge/releases). <!-- update link-->
 
 If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
 
@@ -226,13 +224,13 @@ Use network `-n mainnet`
 
 ---
 
-**If you like to run the centrifuge node with your own ethereum or centrifuge chain node please replace the infura urls with your own `Geth` and `centrifuge-chain` Node-URL.**
+**If you like to run the Centrifuge node with your own Ethereum or Centrifuge Ehain nod,e please replace the Infura urls with your own `Geth` and `centrifuge-chain` Node-URL.**
 
 ---
 
 ### Look up your Centrifuge ID
 
-A participant of the Centrifuge P2P network will be identified by an identity (Centrifuge ID) within the network. The createconfig command automatically creates an identity and the key pairs.
+A participant of the Centrifuge P2P network will be identified by an identity (Centrifuge ID) within the network. The `createconfig` command automatically creates an identity and the key pairs.
 
 To look up your Centrifuge ID via Terminal use:
 
@@ -367,7 +365,7 @@ This network is a testnet that operates over a Proof-of-Authority Ethereum netwo
 
 ### Mainnet
 
-This network is the production network that operates over the main Proof-of-Work Ethereum network (Mainnet) and a Proof-of-Stake in the Centrifuge Chain.
+This network is the production network that operates over the main Proof-of-Stake Ethereum network (Mainnet) and a Proof-of-Stake in the Centrifuge Chain.
 
 - Client: geth | parity
 - Purpose: Mainnet
@@ -388,7 +386,7 @@ This network is the production network that operates over the main Proof-of-Work
 
 ### Centrifuge is provided "As Is"
 
-The "Software", which includes but is not limited to the source code of components of Centrifuge, related repositories, client implementations, user interfaces, compiled or deployed binaries and smart contracts all of its components, libraries, supporting services (including, but not limited to, build pipelines, tests, deployments, "boot nodes", code samples, intergrations) is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement.
+The "Software", which includes but is not limited to the source code of components of Centrifuge, related repositories, client implementations, user interfaces, compiled or deployed binaries and smart contracts all of its components, libraries, supporting services (including, but not limited to, build pipelines, tests, deployments, "boot nodes", code samples, integrations) is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement.
 
 In no event shall the authors, maintainers, operators or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the Software or the use or other dealings in the Software.
 

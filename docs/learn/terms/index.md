@@ -10,10 +10,10 @@ redirect_from:
 
 ## What are Tinlake pools?
 ### Tinlake Pool
-A Tinlake pool is an open, smart-contract-based financing platform that brings together businesses or "Asset Originators" and Investors through Decentralized Finance (DeFi). With a Tinlake pool, Asset Originators can finance real-world assets, such as invoices, mortgages, or streaming royalties on-chain via the investment of crypto investors and Defi protocols. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and using these NFTs as collateral in their Tinlake pool.
+A Tinlake pool is an open, smart-contract-based financing platform that brings together businesses or "Asset Originators" and Investors through Decentralized Finance (DeFi). With a Tinlake pool, Asset Originators can finance real-world assets, such as invoices, mortgages, or streaming royalties on-chain via the investment of crypto investors and DeFi protocols. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and using these NFTs as collateral in their Tinlake pool.
 
 ### Revolving pool
-Tinlake pools are set up as "Revolving pools". Revolving pools allow investors to lock investments and redemptions at any point in time. A decentralized solver mechanism matches investments and redemptions with the liquidity in the pool and ensures that certain risk metrics remain intact. This ensures that Asset Originators have a constant source of liquidity while investors can flexibly invest and redeem.
+Tinlake pools are set up as "revolving pools". Revolving pools allow investors to lock investments and redemptions at any point in time. A decentralized solver mechanism matches investments and redemptions with the liquidity in the pool and ensures that certain risk metrics remain intact. This ensures that Asset Originators have a constant source of liquidity while investors can flexibly invest and redeem.
 
 ## Entities involved in Tinlake pools
 ### Issuer
@@ -26,7 +26,7 @@ The Asset Originator originates real-world assets and pledges these to the Issue
 Tinlake investors provide the liquidity that issuers use to finance assets and in return earn yield and CFG rewards. For every Tinlake pool, investors can invest in two different tokens, TIN and DROP,  similar to Junior/Senior investment structures common in traditional finance [see below].
 
 ### DeFi protocols
-Tinlake pools allow direct integration with DeFi protocols as a source of liquidity. Currently, several pools are directly integrated with a Maker vault. Centrifuge is currently also working on an integration with Aave.
+Tinlake pools allow direct integration with DeFi protocols as a source of liquidity. Currently, several pools are directly integrated with a Maker vault; several pools are also integrated with the [RWA Market on Aave](https://rwamarket.io/).
 
 ## Tinlake's investment tokens
 ### Tinlake pools two tranches
@@ -45,7 +45,7 @@ In return for taking the first-loss risk, the TIN returns are usually significan
 An asset in Tinlake is a real-world asset such as invoices, mortgages, or streaming royalties that have a stable value and/or payment stream so it can be used as collateral to borrow against. It is pledged to the legal issuer of the pool. 
 
 ### NFT
-An NFT on the Tinlake patform is a tokenized representation of a real-world asset. Centrifuge's NFTs on Ethereum follow the ERC-721 standard. Centrifuge NFTs can be locked into Tinlake pools as collateral by the Issuer to draw down financing.
+An NFT on the Tinlake platform is a tokenized representation of a real-world asset. Centrifuge's NFTs on Ethereum follow the ERC-721 standard. Centrifuge NFTs can be locked into Tinlake pools as collateral by the Issuer to draw down financing.
 
 ### Financing
 After locking an NFT as collateral into their Tinlake pool, an issuer can draw down financing up to the value of the NFT from Tinlake. Every financing accrues interest at the financing fee. To close the financing, the entire outstanding amount including accrued interest needs to be repaid. The issuer can only unlock the collateral NFT after full repayment.

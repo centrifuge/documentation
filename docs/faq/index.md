@@ -74,26 +74,8 @@ Our Asset Originators have only opened TIN to a small number of investors who ha
 
 ### How do I earn CFG tokens?
 
-You can currently earn CFG by investing in a pool on Tinlake or running a validator node. Learn more on our [Centrifuge Token](https://centrifuge.io/cfg) page.
+You can currently earn CFG by investing in a pool. Learn more on our [Centrifuge Token](https://centrifuge.io/cfg) page.
 
 ### Where can I find details about CFG tokenomics including circulating/total supply?
 
 Details regarding the CFG token can be found in our[ token summary](https://centrifuge.io/cfg_token_summary.pdf).
-
-## Centrifuge Chain
-
-### What does Centrifuge Chain run on?
-
-Centrifuge Chain is a Proof-of-Stake blockchain built on Parity Substrate with a bridge to Ethereum. [Learn more about Centrifuge Chain here](https://centrifuge.io/products/chain/).
-
-### How do I create a Centrifuge chain address?
-
-A Centrifuge Chain address can be created through the[ Centrifuge Portal](https://portal.chain.centrifuge.io/#/accounts), the[ Polkadot browser extension](https://polkadot.js.org/extension/), or through[ Parity Signer](https://www.parity.io/signer/). [This community post on obtaining a Centrifuge Chain address](https://gov.centrifuge.io/t/how-to-obtain-a-centrifuge-address/545) provides helpful steps for using these tools.
-
-### Can I stake my CFG? How?
-
-You can stake your CFG by nominating a validator through the[ Centrifuge Portal](https://portal.chain.centrifuge.io/#/staking). [This guide for Polkadot validator nomination](https://wiki.polkadot.network/docs/en/maintain-guides-how-to-nominate-polkadot) demonstrates a process similar to that of Centrifuge Chain.
-
-### How do I run my own validator?
-
-Refer to our [developer documentation](https://developer.centrifuge.io/chain/get-started/validate/) to get started with running a validator node. To become a validator, your node will require enough nominations to replace a validator in the next era.

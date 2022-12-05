@@ -9,7 +9,7 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>
 
 A decentralized pool where investors can invest/redeem and AOs originate/repay at any time needs a decentralized mechanism to coordinate investments, redemptions, originations and repayments. Welcome the `Epoch`.
 
-For Tinlake's Revolving Pools all investment inflows/outflows are locked over a defined period of time ("Epoch") and automatically executed at the and of this period following predetermined priorities and risk metrics. The Asset Originator can use the available liquidity reserve after the invest/redeem transactions have been executed to finance Asset Originations through to the next epoch. Repayments can also happen at any time throughout the epoch, but are collected in a separate reserve and can be used only for financings in the next epoch to allow investors priority for their redemptions.
+For Tinlake's Revolving Pools, all investment inflows/outflows are locked over a defined period of time ("Epoch") and automatically executed at the and of this period following predetermined priorities and risk metrics. The Asset Originator can use the available liquidity reserve after the invest/redeem transactions have been executed to finance asset originations through to the next epoch. Repayments can also happen at any time throughout the epoch, but are collected in a separate reserve and can be used only for financings in the next epoch to allow investors priority for their redemptions.
 
 To summarize: The following types of inflows/outflows on the asset side can happen during an epoch by the Asset Originator:
 
@@ -35,7 +35,7 @@ Investors can supply more liquidity at any point during an epoch. The supplied D
 
 ![](./images/invest_redeem_process.png)
 
-The redeem process works similarly. If existing TIN/DROP investors want to redeem (part of their) TIN/DROP tokens they can lock these Tokens into Tinlake at any point during the epoch. At the end of the epoch, all locked orders will be processed and executed at the current TIN/DROP prices considering the max reserve amount and min TIN risk buffer. After the epoch turn, investors can collect the DAI from the executed orders in the UI. If part of the investment/redemption could not be executed, it will be rolled over into the next epoch and these tokens remain locked. This locked order can be cancelled at any time.
+The redeem process works similarly. If existing TIN/DROP investors want to redeem (part of their) TIN/DROP tokens they can lock these tokens into Tinlake at any point during the epoch. At the end of the epoch, all locked orders will be processed and executed at the current TIN/DROP prices considering the max reserve amount and min TIN risk buffer. After the epoch turn, investors can collect the DAI from the executed orders in the UI. If part of the investment/redemption could not be executed, it will be rolled over into the next epoch and these tokens remain locked. This locked order can be cancelled at any time.
 
 ## The turn of the Epoch
 
@@ -53,7 +53,7 @@ At the epoch turn, the contracts first process the current state of the pool:
 - TIN/DROP Token prices
 - TIN risk buffer
 
-Then the contracts check whether all set orders can be executed with the capital available and without breaking the TIN risk buffer or the Max reserve restrictions. If this is the case all orders are immediately executed and the contracts process the new state of the pool. You can find a simple model that illustrates the processing of orders and calulation of the pool state [here](https://docs.google.com/spreadsheets/d/1mkIbWzhD7IXbnbYXKreTMYuaZJEzyTVqllhJnP4YdPs/edit#gid=161507348)
+Then the contracts check whether all set orders can be executed with the capital available and without breaking the TIN risk buffer or the Max reserve restrictions. If this is the case all orders are immediately executed and the contracts process the new state of the pool. You can find a simple model that illustrates the processing of orders and calculation of the pool state [here](https://docs.google.com/spreadsheets/d/1mkIbWzhD7IXbnbYXKreTMYuaZJEzyTVqllhJnP4YdPs/edit#gid=161507348)
 
 If not all orders can be executed, e.g. because there is not enough capital available in the Reserve (plus new investments) to serve all redemption orders or executing all DROP investments would break the Min TIN risk buffer the Tinlake "Solver mechanism" would be initiated.
 
@@ -73,7 +73,7 @@ These are the different states of an epoch.
 
 ### Why introduce a solver mechanism?
 
-If not all orders can be executed a mechanism is required to find the optimal solution to ensure as many transactions as possible are executed while adhering to certain restrictions such as the Max Reserve amount, min TIN risk buffer, DROP sovereignity etc. Finding the optimal solution for the four invest redeem transactions type of transactions (DROP redemptions, TIN redemptions, DROP investments, TIN investments) under a defined set of restrictions depicts a classic maximization problem that can be solved with linear programming.
+If not all orders can be executed a mechanism is required to find the optimal solution to ensure as many transactions as possible are executed while adhering to certain restrictions such as the Max Reserve amount, min TIN risk buffer, DROP sovereignty etc. Finding the optimal solution for the four invest redeem transactions type of transactions (DROP redemptions, TIN redemptions, DROP investments, TIN investments) under a defined set of restrictions depicts a classic maximization problem that can be solved with linear programming.
 
 ### How it works
 
@@ -85,21 +85,21 @@ If a competing viable solution is submitted resulting in a higher "max function"
 
 ### The solver optimization
 
-The linear programming of the Tinlake solver maximizes the execution of the four invest/redeem orders (all in DAI values)
+The linear programming of the Tinlake solver maximizes the execution of the four invest/redeem orders (all in DAI values)…
 
 - TINInvestOrder
 - DROPInvestOrder
 - DROPRedeemOrder
 - TINRedeemOrder
 
-according to a max function that allocates a weight to each of the executed order types. Sample weights to ensure a waterfall-like priority focused on DROP seniority could e.g.
+…according to a max function that allocates a weight to each of the executed order types. Sample weights to ensure a waterfall-like priority focused on DROP seniority could e.g.
 
 - DROP redemptions: 100,000,000,000 [Ensure seniority]
 - TIN investments: 100,000,000 [Build up risk buffer]
 - DROP investments: 100,000
 - TIN redemptions: 100 [Ensure Min TIN risk buffer stability]
 
-The according sample max function could e.g. be
+The according sample max function could e.g. be:
 
 $$
 Maxfunctionresult = DROP redemptions * 100,000,000,000 +  TIN investments * 100,000,000 + DROP investments * 100,000 + TIN redemptions * 100
