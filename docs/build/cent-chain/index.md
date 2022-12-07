@@ -38,8 +38,8 @@ While there are downsides to building a single purpose chain, the advantages for
 
 ### Substrate/Polkadot Resources
 
-- [Kusama Documentation](https://guide.kusama.network/en/latest/try/validate)
+- [Kusama Documentation](https://guide.kusama.network/docs/kusama-getting-started)
 - [W3F Guide](https://github.com/w3f/polkadot-secure-validator) on Production Grade Setups for Validators on Substrate chains
 - [Guides by Certus One](https://kb.certus.one/) (Cosmos Validator)
 - [Architecture Deep Dive by Chorus](https://gdoc.pub/doc/e/2PACX-1vQXb1kd0zqYT8K4B4XYb-lrlfRIuPDXsgiTjj94gDOjw3ezEUAtjvxR8yfbKJypmioKeGRrhkLCtZog)
-- [Polkadot Wiki](https://wiki.polkadot.network/docs/) (also covering Substrate relevant features)
+- [Polkadot Wiki](https://wiki.polkadot.network/docs/getting-started) (also covering Substrate relevant features)
