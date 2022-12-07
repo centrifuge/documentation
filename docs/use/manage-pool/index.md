@@ -53,12 +53,9 @@ Coinbase: https://pro.coinbase.com/trade/DAI-USD
 
 Kraken: https://trade.kraken.com/charts/KRAKEN:DAI-USD
 
-FTX: https://ftx.com/trade/DAI/USD
-
-
 **EUR/DAI Pairs:**
 
 Kraken: https://trade.kraken.com/charts/KRAKEN:DAI-EUR
 
-Alternatively, DAI can be exchanged for the stablecoins USDC or USDT, on any major exchange.
+Alternatively, DAI can be exchanged for the stablecoins USDC or USDT, on any decentralized exchange.
 
