@@ -94,10 +94,10 @@ The linear programming of the Tinlake solver maximizes the execution of the four
 
 according to a max function that allocates a weight to each of the executed order types. Sample weights to ensure a waterfall-like priority focused on DROP seniority could e.g.
 
-- DROP redemptions: 100,000,000,000 [Ensure seniority]
-- TIN investments: 100,000,000 [Build up risk buffer]
-- DROP investments: 100,000
-- TIN redemptions: 100 [Ensure Min TIN risk buffer stability]
+- DROP redemptions: 1,000,000 [Ensure seniority]
+- TIN investments: 10,000 [Build up risk buffer]
+- DROP investments: 1,000
+- TIN redemptions: 100,000 [Ensure Min TIN risk buffer stability]
 
 The according sample max function could e.g. be
 
