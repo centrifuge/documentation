@@ -10,6 +10,8 @@ DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permit
 
 A Centrifuge Chain address can be created through [Polkadot.js website](hhttps://polkadot.js.org/apps/#/explorer), the [Polkadot.js browser extension](https://polkadot.js.org/extension/), or through [Parity Signer](https://www.parity.io/signer/).
 
+**Note that Ledger currently does not support Centrifuge Chain (CFG)**
+
 ## Using the Polkadot.js website
 **Of all options, this is the least secure and is not recommended.**
 
@@ -101,80 +103,8 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 > 3.  Turn off wifi & bluetooth and **NEVER TURN IT ON AGAIN**
 > 4.  Recover your key from seed phrase
 
-
 - **Remember to write down your secret phrase & STORE IT SAFELY!**
   Follow a secure protocol to save and store your private keys. Please do some research and choose a secure method that will work best for you.
-
-## How to Use your Ledger with Centrifuge
-This is a tutorial on how to use your [Ledger device](https://www.ledger.com) to manage your Centrifuge (CFG) tokens on Centrifuge Chain. The Ledger device is a hardware wallet made specifically for managing crypto assets, making it one of the most secure ways to manage your crypto assets. [Parity Signer](https://github.com/paritytech/parity-signer), described above, is an alternate hardware wallet; however, unlike the Ledger, it uses a device that is not specifically designed to manage crypto assets. Read more about other ways to create your account on Centrifuge above.
-
-### What You’ll Need
-* Your [initialized](https://support.ledger.com/hc/en-us/articles/360000613793) Ledger device
-* The latest firmware version [installed](https://support.ledger.com/hc/en-us/articles/360002731113?docs=true)
-* Ledger Live [installed](https://support.ledger.com/hc/en-us/articles/4404389606417-Download-and-install-Ledger-Live)
-* A supported browser (Chrome, Safari, or Firefox)
-
-### Install the Centrifuge App
-1. Open the Manager in Ledger Live
-2. Connect and unlock your Ledger device
-3. If asked, allow the manager on your device 
-4. Find Centrifuge in the app catalog
-5. Click the Install button of the app
-6. An installation window appears
-7. Your device will display “Processing”
-8. The app installation is confirmed
-
-### Use Ledger device using the Polkadot.js website
-**Note: The Ledger App is currently out of date and can not be used for signing transactions.**
-
-#### How to use your Ledger Device with https://polkadot.js.org/apps/?rpc=wss://fullnode.centrifuge.io
-1. Connect and unlock your Ledger device.
-
-2. Open https://polkadot.js.org/apps/?rpc=wss://fullnode.centrifuge.io. Navigate to Settings, and verify that “Attach Ledger via WebUSB” is selected under manage hardware connections.
-![](./images/ledger-docs-1.png)
-
-#### Add a Ledger account to the Polkadot.js website
-3. Open the Centrifuge app on your Ledger device. Take note of the identifier displayed on the screen, then press the left button to open the app. “Centrifuge Ready” displays on the screen.
-
-4. Navigate to Accounts on [Polkadot.js](https://polkadot.js.org/apps/#/explorer), then select “Add via Ledger.” Type in an account name, as well as an account type and index (optional). Then click Save.
-![](./images/ledger-docs-2.png)
-
-#### How to receive CFG
-5. Verify that the address is the same across your Ledger and Polkadot.js. This is the address where you can receive CFG. To view your address on Polkadot.js, click on the name of the account you saved. A sidebar will appear on the right of the screen displaying your address.
-![](./images/ledger-docs-3.png)
-
-To view your address on the device, click on the menu to the right of the account on Polkadot.js, and select “show address on hardware device”
-![](./images/ledger-docs-4.png)
-
-Verify that both addresses match.
-![](./images/ledger-docs-5.png)
-
-6. Use this address to receive CFG.
-
-### How to view your account balance
-View your account balance directly on the [Polkadot.js](https://polkadot.js.org/apps/#/explorer) or by looking up the account using [Subscan](https://centrifuge.subscan.io). Polkadot.js provides basic information on the account, and for more information on your account, balance, and transfer history, you can use the Centrifuge [block explorer](https://centrifuge.subscan.io) by Subscan.
-
-**Note**
-The Centrifuge Ledger app does not support all transactions. 
-
-### Send Centrifuge tokens (CFG) using your Ledger device
-1. Navigate to Accounts in [Polkadot.js]](https://polkadot.js.org/apps/#/explorer). Select *send* to the right of the account you wish to send CFG from. 
-![](./images/ledger-docs-6.png)
-
-2. Input the recipient address and amount, then click Make Transfer, then click Sign and Submit.
-![](./images/ledger-docs-7.png)
-
-3. On your Ledger device, press the right button to verify the destination address and amount. Important: verify transaction details on your Ledger device before you approve the transaction.
-![](./images/ledger-docs-8.png)
-
-4. Select APPROVE or REJECT by pressing down both buttons on your Ledger device. 
-![](./images/ledger-docs-9.png)
-
-5. Verify the transaction on Polkadot.js in the upper right corner. View the transaction by navigating to Network > Explorer, under recent events.
-![](./images/ledger-docs-10.png)
-
-### Use Ledger device via Polkadot.js
-In case you want to use your Ledger device in the Centrifuge [Polkadot.js website](https://polkadot.js.org/apps/#/explorer) you will have to add the device through the PolkadotJS [Extension](https://polkadot.js.org/extension).
 
 ## Third Party Custodians
 The following custodians offer custody of CFG or wCFG (ERC20 on Ethereum).
