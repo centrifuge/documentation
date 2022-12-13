@@ -58,30 +58,27 @@ For more information on the process of becoming a councillor and on voting for c
 
 A Centrifuge Chain Council candidate submits their candidacy with 1000 CFG bond and an Altair candidate 500 AIR (The bond will be reserved for the duration of your candidacy and membership).
 
-If you are not elected this bond will be forfeit (burnt)
+If you are not elected this bond will be forfeit (burnt).
 
-Token holders can vote for candidates (current members as well as new candidates)
+Token holders can vote for candidates (current members as well as new candidates).
 
 When the term is about to be changed, which is every 7 days for Centrifuge and Altair, votes are counted and top 7 or 9 candidates respectively will be elected as new council members until next term.
 
 Token holders can change their votes anytime and the change will be reflected in the next term.
 
-### Electing the Altair Council 
-#### How much AIR can I bond (to vote) with? 
-As much as you want 
+### Electing the Altair / Centrifuge Council 
+#### How much AIR or CFG can I bond (to vote) with? 
+As much as you want.
 
 #### Will I get this bond back? 
-Yes. You can vote with as many tokens as you want, and they simply become bonded and unbonded
+Yes. You can vote with as many tokens as you want, and they simply become bonded and unbonded.
 
-### Can I vote with staked tokens?
-Yes, when staking is enabled, you can also continue to vote with staked tokens.
-
-It’s important though not to vote with your full balance. because otherwise you can’t put for the unlock transaction
+It’s important though not to vote with your full balance. because otherwise you can’t pay the fee for the unlock transaction
 
 ### How long should I bond in order for it to get counted?
-There is no defined bonding period for the voting, it is up to you how long you decide to bond your tokens to back the candidate(s). The bonding period is 0 so you can unlock anytime, however, when you unbond it no longer impacts the voting outcome.
+There is no defined bonding period for the voting. It is up to you how long you decide to bond your tokens to back the candidate(s). The bonding period is 0, so you can unlock anytime, however, when you unbond, you no longer impact the voting outcome.
 
-You can unbond at any time if you wish to transfer your tokens, once transfers are enabled. We encourage community members to continute voting as long as possible however, as these terms for the council are renewed each week. 
+You can unbond at any time if you wish to transfer your tokens. We encourage community members to continue voting as long as possible however, as these terms for the council are renewed each week. 
 
 
 ### How often do we elect councillors?
@@ -108,7 +105,7 @@ Token holders vote on referenda proposed by the community with their tokens and 
 
 ### How can I propose a referendum?
 
-Public referenda can be proposed by any token holder by bonding 500 CFG or AIR (you can use vested CFG or AIR but not staked), once the proposal has been made, the tokens are locked until the proposal has been bonded. The proposal with the highest bond gets elected to be voted on next. 
+Public referenda can be proposed by any token holder by bonding 500 CFG or AIR (you can use vested CFG or AIR). Once the proposal has been made, the tokens are locked until the proposal has been bonded. The proposal with the highest bond gets elected to be voted on next. 
 
 In order to go ahead, public referenda proposed by token holders must be seconded by supporting token holders, ie. if someone agrees with the proposal, they may deposit the same amount of tokens to support it — this action is called seconding. 
 
@@ -155,17 +152,17 @@ Time-lock voting is implemented in order to ensure that some minimal economic bu
 
 For public referenda, the positive turnout bias requires a heavy supermajority of aye votes to carry at low turnouts, but as turnout increases towards 100%, it becomes a simple majority-carries. We call this a “positive” turnout bias because the required margin of ayes increases as turnout increases. Based on the voting result, the proposal will be approved and autonomously enact:
 
-- Holders can check the end of their lock period by querying the chain state with `democracy.locks(AccountId)` which returns the block number that the lock is active until
-- Once the lock period has passed, any holder can call `democracy.unlock(addr)` to unlock the tokens
+- Holders can check the end of their lock period by querying the chain state with `democracy.locks(AccountId)` which returns the block number that the lock is active until.
+- Once the lock period has passed, any holder can call `democracy.unlock(addr)` to unlock the tokens.
  
 ### Conviction
 When someone votes on a referendum via Democracy, they can choose the conviction of their vote. The lock period is based on the level of conviction you want to associate with this vote.
 
 For example:
 
-- If you want to vote Aye/Nay with 100 CFG with 0.1x conviction, then 0.1*100 = 10 CFG is the vote value with no lock on CFG
-- If you want to vote Aye/Nay with 100 CFG with 1x conviction, then 1 * 100 = 100 CFG is the vote value with 8 day lockup of 100 CFG
-- If you want to vote Aye/nay with 100 CFG with 2x conviction, then 2 * 100 = 200 CFG is the vote value with 2 * 8 day lockup of 100 CFG
+- If you want to vote Aye/Nay with 100 CFG with 0.1x conviction, then 0.1*100 = 10 CFG is the vote value with no lock on CFG.
+- If you want to vote Aye/Nay with 100 CFG with 1x conviction, then 1 * 100 = 100 CFG is the vote value with 8 day lockup of 100 CFG.
+- If you want to vote Aye/nay with 100 CFG with 2x conviction, then 2 * 100 = 200 CFG is the vote value with 2 * 8 day lockup of 100 CFG.
 
 Please select the appropriate conviction when voting on the referendum. Referenda can be found onchain under Governance -> Democracy -> Referenda. Voters can vote with higher conviction to have their vote count.
 
@@ -196,7 +193,7 @@ What do we govern as a community and what are the relevant processes for each?
 
 ### What is the process for getting a proposal passed? 
 
-In simple terms the flow is as follows: Off chain consultation > Proposal of referenda > Voting > Enactment
+In simple terms the flow is as follows: Off-chain consultation > Proposal of referenda > Voting > Enactment
 
 Centrifuge uses an on-chain governance model with off-chain consultation, which means that first there must be a discussion off-chain (on the Centrifuge Forum, see below), and then the initiator can turn their initiative into a proposal (on-chain) to be voted on by the Chain Council.
 
@@ -207,7 +204,7 @@ The Governance Process steps are explained in more detail below:
 ### Step One: Temperature Check
 _(On the Forum)_
 
-In the Centrifuge Forum under the Governance section. Use the subcategories in the Governance category to correctly tag your proposal. Making an Temperature Check involves outlining the topic of discussion, your proposed way forward, and giving enough detail for people to start discussing. After you have made your Temperature Check, post it in relevant channels including discord to attract relevant users. After at least 3 days of discussion, move to step 2. 
+In the Centrifuge Forum under the Governance section. Use the subcategories in the Governance category to correctly tag your proposal. Making an Temperature Check involves outlining the topic of discussion, your proposed way forward, and giving enough detail for people to start discussing. After you have made your Temperature Check, post it in relevant channels, including Discord, to attract relevant users. After at least 3 days of discussion, move to step 2. 
 
 
 ### Step Two: Proposal 
@@ -220,9 +217,9 @@ For any recurring votes, ensure the time of the next proposal is clear for all s
 ### Step Three: Submit Proposal 
 _(On chain)_
 
-Based on the outcome of your poll proposal, either submit your proposal to the Centrifuge Chain Council or Alrair Council using the relevant governance channels on discord, for them to consider or you can submit the proposal directly.
+Based on the outcome of your poll proposal, either submit your proposal to the Centrifuge Chain Council or Altair Council using the relevant governance channels on discord, for them to consider or you can submit the proposal directly.
 
-Once vote is approved then forward approved proposal to governance channel on discord for onchain voting
+Once the vote is approved, then forward the approved proposal to the governance channel on Discord for onchain voting.
 
 ### Step Four: Publicize Your Proposal
 _(On chain)_
@@ -234,4 +231,4 @@ Once your proposal has been selected for referendum, publicize that the vote is 
 
 Refer to this [Polkadot webinar on governance](https://www.crowdcast.io/e/governance-on-polkadot) for more information.
 
-For further reading see the "Do's and Don't of blockchain participation from Vlad Zamfir from [How to Participate in Blockchain Governance in Good Faith (and with Good Manners)](https://medium.com/@Vlad_Zamfir/how-to-participate-in-blockchain-governance-in-good-faith-and-with-good-manners-bd4e16846434)
+For further reading, see the "Do's and Don't of blockchain participation from Vlad Zamfir from [How to Participate in Blockchain Governance in Good Faith (and with Good Manners)](https://medium.com/@Vlad_Zamfir/how-to-participate-in-blockchain-governance-in-good-faith-and-with-good-manners-bd4e16846434)

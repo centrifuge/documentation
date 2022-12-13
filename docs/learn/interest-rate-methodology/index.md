@@ -62,7 +62,7 @@ $$
 D = P * rate^n
 $$
 
-The debt can be calculated by multipling the principial $P$ with $rate$ to the power of $n$. The variable $n$ represents the time passed in seconds since the loan has been borrowed.
+The debt can be calculated by multiplying the principal $P$ with $rate$ to the power of $n$. The variable $n$ represents the time passed in seconds since the loan has been borrowed.
 
 Continuing the example from above for annual interest:
 
@@ -73,7 +73,7 @@ $$
 
 ## Using an annual percentage rate (APR) in Tinlake
 
-The Tinlake User Interface uses an annual percentage rate (APR) as input. Tinlake transforms this annually compounded rate $\mathtt{A}$ into the equivalent rate used for compounding per seconds $rate$. This is achieved by solving the equation:
+The Tinlake user interface uses an annual percentage rate (APR) as input. Tinlake transforms this annually compounded rate $\mathtt{A}$ into the equivalent rate used for compounding per seconds $rate$. This is achieved by solving the equation:
 
 $$
 \mathtt{A} = (1 + \frac{rate}{\mathtt{y}})^\mathtt{y}
@@ -85,7 +85,7 @@ $$
 r = \mathtt{y} \cdot (\mathtt{A}^{\frac{1}{\mathtt{y}}}-1)
 $$
 
-Using the calculated $r$ compounding every second leads to the same amount of debt like using $\mathtt{A}$ compounding annually over the course of a year. Thus, the calculated `rate` can be used to achive an interest per year (APR) behaviour with the compounding per second implementation in Tinlake.
+Using the calculated $r$ compounding every second leads to the same amount of debt like using $\mathtt{A}$ compounding annually over the course of a year. Thus, the calculated `rate` can be used to achieve an interest per year (APR) behavior with the compounding per second implementation in Tinlake.
 
 Continuing the example from above with an 5.00% annual interest rate (APR):
 

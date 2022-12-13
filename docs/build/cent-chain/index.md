@@ -22,7 +22,7 @@ The Centrifuge stack consists of a peer-to-peer messaging protocol to store and 
 
 Substrate allows us to easily tap into the [Polkadot](https://polkadot.network) ecosystem and to connect with other blockchains that support the standard, which in turn increases interoperability.
 
-We envision a larger ecosystem of many, connected blockchains- where Dapps on Ethereum could use data from other chains, value could move freely, and Centrifuge Chain can [enable off-chain assets to access financing](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1) through DeFi.
+We envision a larger ecosystem of many, connected blockchains- where Dapps on Ethereum can use data from other chains, value can move freely, and Centrifuge Chain can [enable off-chain assets to access financing](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1) through DeFi.
 
 #### Centrifuge Chain Efficiencies
 
@@ -38,8 +38,8 @@ While there are downsides to building a single purpose chain, the advantages for
 
 ### Substrate/Polkadot Resources
 
-- [Kusama Documentation](https://guide.kusama.network/en/latest/try/validate)
+- [Kusama Documentation](https://guide.kusama.network/docs/kusama-getting-started)
 - [W3F Guide](https://github.com/w3f/polkadot-secure-validator) on Production Grade Setups for Validators on Substrate chains
 - [Guides by Certus One](https://kb.certus.one/) (Cosmos Validator)
 - [Architecture Deep Dive by Chorus](https://gdoc.pub/doc/e/2PACX-1vQXb1kd0zqYT8K4B4XYb-lrlfRIuPDXsgiTjj94gDOjw3ezEUAtjvxR8yfbKJypmioKeGRrhkLCtZog)
-- [Polkadot Wiki](https://wiki.polkadot.network/docs/) (also covering Substrate relevant features)
+- [Polkadot Wiki](https://wiki.polkadot.network/docs/getting-started) (also covering Substrate relevant features)

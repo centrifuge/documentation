@@ -6,12 +6,12 @@ title: Centrifuge - Ethereum Bridge
 
 ## Bridge Contract & Accounts
 ### Token Supply
-The bridge supply can be audited by looking at the number of tokens stored in the bridge account: 4dpEcgqFor2TJw9uWSjx2JpjkNmTic2UjJAK1j9fRtcTUoRu as wellas the ERC20 token supply
+The bridge supply can be audited by looking at the number of tokens stored in the bridge account: 4dpEcgqFor2TJw9uWSjx2JpjkNmTic2UjJAK1j9fRtcTUoRu as well as the ERC20 token supply.
 
 ### Relayer Threshold
 You can submit an RPC call a to a full node and query `chainBridge.relayerThreshold`. This will give you the number of confirmations needed on the Centrifuge Chain to trigger a transfer.
 
-On Ethereum you can query the Chainbridge public method `_relayerThreshold()(uint8)`:
+On Ethereum, you can query the Chainbridge public method `_relayerThreshold()(uint8)`:
 
 ```
 seth call 0xFe50BA7241b635Eda23a32875c383A34E8a3596c '_relayerThreshold()(uint8)'
@@ -35,15 +35,15 @@ GIT_COMMIT=$CB_SOL_COMMIT make install
 ## Script Dependencies
 
 ### Install subkey [Optional]
-In the bash snippet below we use `subkey` to convert the SS58 address into its public key representation, required by the deposit operation
+In the bash snippet below, we use `subkey` to convert the SS58 address into its public key representation, required by the deposit operation.
 
 Follow instructions here: https://github.com/paritytech/substrate/tree/master/bin/utils/subkey
 
-or run the docker image: https://hub.docker.com/r/parity/subkey
+Or run the docker image: https://hub.docker.com/r/parity/subkey
 
 ### Install Jq [Optional]
-In the bash snippet below we use `jq` to parse a JSON output, you can omit that and paste the address manually.
-Otherwise follow instructions here to install in your distribution: https://stedolan.github.io/jq/
+In the bash snippet below we use `jq` to parse a JSON output. You can choose to omit that and paste the address manually.
+Otherwise, follow instructions here to install in your distribution: https://stedolan.github.io/jq/.
 
 ## Set environment variables
 **Please reach out to us on [Slack](https://centrifuge.io/slack) or [Telegram](https://t.me/centrifuge_chat) for contract addresses.**
@@ -74,14 +74,14 @@ export ETH_GAS_PRICE=40000000000
 ```
 
 ## Substrate Native to ERC20 Ethereum
-In the substrate UI select the `Extrinsics` tab, and call `palletBridge.transferNative` with these parameters:
-- Amount: `1000000000000000000` 1 RAD
+In the substrate UI, select the `Extrinsics` tab and call `palletBridge.transferNative` with these parameters:
+- Amount: `1000000000000000000` 1 CFG
 - Recipient: `YOUR_ETH_TARGET_ACCOUNT`
 - Dest Id: `0`
 
-Depending on environment and network state, might take some time.
+Depending on environment and network state, this may take some time.
 
-You can query the recipients balance on ethereum:
+You can query the recipients balance on Ethereum:
 ```=bash
 cb-sol-cli --url $ETH_RPC_URL  erc20 balance --address YOUR_ETH_TARGET_ACCOUNT --erc20Address $ERC20_ADDRESS
 ```
