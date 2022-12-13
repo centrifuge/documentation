@@ -27,10 +27,10 @@ with
 | $t$          | Time -> Loan duration in years (decimal)     |                            
 | $n$          | Compounding frequency (Number of times interest is compounded per unit `t` ) (integer)|
 
-To confirm, applying the numbers above (i = 0.06, t = 1.00, n = 12) gives
+To confirm, applying the numbers above (`i = 0.06, t = 1.00, n = 12`) gives
 
 $$
-100 * (1 + \frac{0,06}{12})^{(1*12)} = $106.1678.
+100 * (1 + \frac{0,06}{12})^{(1*12)} = 106.1678.
 $$
 
 The same concept and formula can be applied to any compounding frequency. With secondly compounding (n = 365 * 24 * 60 * 60 = 31536000 seconds per year) the same interest rate would provide you with
@@ -66,9 +66,9 @@ $$
 D = P \cdot rate^{t}
 $$
 
-with t reflecting the time period **in seconds** for the on-chain implementation. 
+with $t$ reflecting the time period **in seconds** for the on-chain implementation. 
 
-Continuing the simple example from above with P = $100 and i = 0.06, the $rate$ variable can be calculated as
+Continuing the simple example from above with `P = $100 and i = 0.06`, the `rate` variable can be calculated as
 
 $$
 rate  = 1 + \frac{0.06}{31536000} = 1.00000000190259. 
