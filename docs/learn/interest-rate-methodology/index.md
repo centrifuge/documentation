@@ -90,9 +90,9 @@ $$
 
 Please find a simple calculator for both standard compounding formulas and the on-chain implementation [here](https://docs.google.com/spreadsheets/d/1Q4UMWtyRwhITqOvJtNd7N2IwKZsT0ihEASOFdWKSJVM/edit#gid=0).
 
-### Etherum on-chain number format
-Tinlake uses fixed precision decimals for monetary amounts. Interest Rates usually have 27 digits precision and amounts 18 digits precision.
-To illustrate, the 1.00000000190259 $rate$ variable representing a 6.00% APR from the example above would be `1000000001902587519025875190` on-chain. The debt of $106.1837 would be `106183700000000000000`.
+### On-chain number format
+The Centrifuge protocol uses fixed precision decimals for monetary amounts. Interest Rates usually have 27 digits precision and amounts 18 digits precision.
+To illustrate, the 1.00000000190259 `rate` variable representing a 6.00% APR from the example above would be `1000000001902587519025875190` on-chain. The debt of $106.1837 would be `106183700000000000000`.
 
 ### Tinlake interest implementation
 On Tinlake, the implementation can be found in [github.com/centrifuge/tinlake-math](https://github.com/centrifuge/tinlake-math).
