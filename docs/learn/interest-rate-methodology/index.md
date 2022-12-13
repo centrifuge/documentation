@@ -30,13 +30,13 @@ with
 To confirm, applying the numbers above (i = 0.06, t = 1.00, n = 12) gives
 
 $$
-$100 * (1 + \frac{0,06}{12})^{(1*12)} = $106.1678.
+100 * (1 + \frac{0,06}{12})^{(1*12)} = $106.1678.
 $$
 
 The same concept and formula can be applied to any compounding frequency. With secondly compounding (n = 365 * 24 * 60 * 60 = 31536000 seconds per year) the same interest rate would provide you with
 
 $$
-$100 * (1 + \frac{0.06}{31536000})^{(1*31536000)} = $106.1837.
+100 * (1 + \frac{0.06}{31536000})^{(1*31536000)} = 106.1837.
 $$
 
 ### APR vs APY
@@ -77,7 +77,7 @@ $$
 Assuming the Debt to be outstanding over the course of a year (so t = 31536000), the Debt at the end of the year amounts to:
 
 $$
-D = $100 \cdot 1.0000000015854900^{31536000} = $106.1837
+D = 100 \cdot 1.0000000015854900^{31536000} = 106.1837
 $$
 
 which is equal to the result for secondly compounding given by the standard formula from the example above.
@@ -85,7 +85,7 @@ which is equal to the result for secondly compounding given by the standard form
 If, e.g. the Debt after half a year needs to be calculated, t would be be $(t = \mathtt{y} / 2 = 15768000)$ resulting in a Debt of:
 
 $$
-D = $100 \cdot 1.0000000015854900^{15768000} = $103.0455.
+D = 100 \cdot 1.0000000015854900^{15768000} = 103.0455.
 $$
 
 Please find a simple calculator for both standard compounding formulas and the on-chain implementation [here](https://docs.google.com/spreadsheets/d/1Q4UMWtyRwhITqOvJtNd7N2IwKZsT0ihEASOFdWKSJVM/edit#gid=0).
