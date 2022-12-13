@@ -9,17 +9,16 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>
 
 ### Legal requirements
 
-- Onboarding incl. KYC through [Securitize.io](https://centrifuge.invest.securitize.io/#/login) has been succesfully completed
-- Legal documentation (`Subscription Agreement`) for the pool you want to invest in has been signed in Securitize.io
+- Onboarding incl. KYC through [Securitize.io](https://centrifuge.invest.securitize.io/#/login) has been successfully completed
+- Legal documentation (`Subscription Agreement`) for the pool you want to invest in has been signed.
 
 ![](./images/onboarding_flow.png#width=600px)
 
 ### Technical requirements
 
-- A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply approporiate security measures when setting up your web3 wallet (see also below).
+- A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply appropriate security measures when setting up your web3 wallet (see also below).
 - _**If you use a Ledger, please make sure to enable "Blind Signing" in the settings of the Ethereum app and to update to the latest firmware.**_ (It's recommended to disable blind signing after use.)
-- You need to use the Ethereum address you have specified in the Subscription Agreement through your web3 wallet
-- The "Ethereum Address of the Subscriber" needs to hold the DAI you want to invest
+- You need to use the Ethereum address you have completed KYC with.
 
 ### Display DAI and TIN/DROP in Metamsk
 
@@ -41,11 +40,11 @@ Please make sure that your Ethereum address is funded with the investment amount
 ## The investment interface
 
 The investment will be made through the Tinlake UI available at [tinlake.centrifuge.io](https://tinlake.centrifuge.io/). Select the pool you want to invest in and connect your web3 wallet.
-At the top of the page you find the most important pool information, such as the current Pool and Tranche values ([more on Tranches](../../overview/tranches/) and other on Tinlake terminology.)
+At the top of the page you will find the most important pool information, such as the current Pool and Tranche values ([more on Tranches](../../overview/tranches/) and other on Tinlake terminology.)
 
 ![](./images/pool_overview.png)
 
-Below you find the current epoch state to your left and the TIN/DROP invest and redeem components to your right:
+Below you'll find the current epoch state to your left and the TIN/DROP invest and redeem components to your right:
 
 ![](./images/epoch_details.png)
 
@@ -75,11 +74,11 @@ You find the TIN/DROP investment and redemption components on the investment pag
 
 ![](./images/drop_modal.png#width=400px)
 
-When you are connected with your whitelisted address after succesfully going through KYC and signing the Subsription Agreement on Securitize, your component will give you the Option to Invest and Redeem
+When you are connected with your whitelisted address after successfully going through KYC and signing the pool's subscription agreement, Tinlake will give you the Option to Invest and Redeem.
 
 ![](./images/drop_modal_whitelisted.png#width=400px)
 
-Before you start investing, you may want to `Add TIN/DROP token to your wallet` by simply clicking on the link at the bottom of the component.
+Before you start investing, you may want to `Add TIN/DROP token to your wallet` by simply clicking on the link to do so..
 
 To lock your TIN/DROP investment:
 
@@ -90,9 +89,9 @@ To lock your TIN/DROP investment:
 ![](./images/drop_modal_invest.png#width=400px)
 
 - This will open Metamask to confirm the transaction
-  - If you are using Metamask without a hardware wallet there will be only one transaction to confirm
-  - If you are using a hardware wallet you will be prompted to confirm two transactions the first time that you make an investment: the `Token Approval` then the `Invest Order`. For all your following investments, only one confirmation will be required
-- Your sucessfully locked order will be displayed in the component
+  - If you are using Metamask without a hardware wallet, then there will be only one transaction to confirm
+  - If you are using a hardware wallet, you will be prompted to confirm two transactions the first time that you make an investment: the `Token Approval` then the `Invest Order`. For all your following investments, only one confirmation will be required
+- Your successfully locked order will be displayed in the component
 
 ![](./images/drop_modal_order.png#width=400px)
 
@@ -109,19 +108,19 @@ You can cancel your locked invest order at any time during the epoch. To cancel 
 
 ![](./images/drop_modal_cancel.png#width=400px)
 
-- This will open Metamask where you need to confirm the cancel transaction
+- This will open Metamask where you need to confirm the cancel transaction.
 
 ### Epoch close and order execution
 
-When the epoch is closed all locked orders will be executed by the smart contracts at best effort considering the pool's risk metrics. E.g. if the current TIN risk buffer is already close to the Minimum TIN risk buffer, no further DROP investments may be accepted until further TIN investments are provided. If the amount of locked orders exceeds the epoch's `Maximum Investment Capacity` set by the Asset Originator, locked orders can be only partially executed pro rata.
+When the epoch is closed, all locked orders will be executed by the smart contracts at best effort considering the pool's risk metrics. E.g. if the current TIN risk buffer is already close to the Minimum TIN risk buffer, no further DROP investments may be accepted until further TIN investments are provided. If the amount of locked orders exceeds the epoch's `Maximum Investment Capacity` set by the asset originator, locked orders can be only partially executed pro rata.
 
 ### Collect your executed investment
 
-After all orders are executed your fullfilled TIN/DROP order will be ready for collection:
+After all orders are executed, your fulfilled TIN/DROP order will be ready for collection:
 
 ![](./images/drop_modal_collect.png#width=400px)
 
-To collect your TIN/DROP token simply
+To collect your TIN/DROP token simply:
 
 - Click on the `Collect button`
   The TIN/DROP token will be transferred to your wallet.
@@ -129,7 +128,7 @@ To collect your TIN/DROP token simply
 ![](./images/drop_modal_balance.png#width=400px)
 
 The TIN/DROP token will continue to collect yield reflected in the token price. You can redeem these TIN/DROP at any time (see below).
-Note that the token immediatelly start to accrue interest also if you do not collect them immediately. However, you will need to collect these tokens before you can redeem them or make another investment.
+Note that the token immediately starts to accrue interest if you do not collect them immediately. However, you will need to collect these tokens before you can redeem them or make another investment. However, CFG rewards will not accrue on TIN/DROP locked for redemption.
 
 ## Investment Disclaimer
 Nothing contained in this website is to be construed as a solicitation or offer, or recommendation, to buy or sell any interest in any note or other security, or to engage in any other transaction, and the content herein does not constitute, and should not be considered to constitute, an offer of securities. No statement herein made constitutes an offer to sell or a solicitation of an offer to buy a note or other security. All information on this Web page is provided and maintained by the issuers of the respective Tinlake pools. The issuers have full responsibility. Please contact the respective issuer in case of any inquiries. Centrifuge and its affiliates are not liable nor responsible for the information provided hereby.

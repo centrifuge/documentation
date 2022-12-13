@@ -22,7 +22,7 @@ The Centrifuge stack consists of a peer-to-peer messaging protocol to store and 
 
 Substrate allows us to easily tap into the [Polkadot](https://polkadot.network) ecosystem and to connect with other blockchains that support the standard, which in turn increases interoperability.
 
-We envision a larger ecosystem of many, connected blockchains- where Dapps on Ethereum could use data from other chains, value could move freely, and Centrifuge Chain can [enable off-chain assets to access financing](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1) through DeFi.
+We envision a larger ecosystem of many, connected blockchains- where Dapps on Ethereum can use data from other chains, value can move freely, and Centrifuge Chain can [enable off-chain assets to access financing](https://medium.com/centrifuge/centrifuge-chain-the-gateway-for-real-world-assets-to-the-blockchain-multiverse-41dd5597ecf1) through DeFi.
 
 #### Centrifuge Chain Efficiencies
 

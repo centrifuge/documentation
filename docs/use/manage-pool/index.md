@@ -10,12 +10,12 @@ This section guides asset originators in managing their pools.
 
 ### How to manage pool's liquidity
 The investment capacity on Tinlake's dashboard indicates how much external investment the pool is looking for. The investment capacity is set in DAI.  
-Each pool can adjust the amount in the Pool's Management tab. In the Management tab is split into different areas. One area is Pool Liquidity and one is Liquidity Management. With the help of the Pool Liquidity box the asset originator can access the DAI amount available for originations, investment and redemption orders and repaid amounts that will be available in the next epoch. 
+Each pool can adjust the amount in the pool's Management tab. The Management tab is split into different areas. One area is Pool Liquidity and one is Liquidity Management. With the help of the Pool Liquidity box, the asset originator can access the DAI amount available for originations, investment and redemption orders as well as repaid amounts that will be available in the next epoch. 
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_25ce67a91abf36f2d96cfec437307393.png)
 
 
-In the Liquidity Management box the asset originator can update the maximum reserve based on their needs. The difference between max. reserve and the available liquidity is the displayed investment capacity.
+In the Liquidity Management box, the asset originator can update the maximum reserve based on their needs. The difference between max. reserve and the available liquidity is the displayed investment capacity.
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_60f92106f1ea7ea322328eccd2603d3e.png)
 

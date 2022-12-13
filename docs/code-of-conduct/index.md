@@ -1,7 +1,8 @@
 ---
 title: Code of Conduct
 ---
-Creating a new system for the global financial supply chain is only possible through the collaboration of a global ecosystem and community of companies, groups, organizations, and individuals. 
+Creating new financial infrastructure for global credit is only possible through the collaboration of a global ecosystem and community of companies, groups, organizations, and individuals. 
+
 We want to come together to exchange ideas and build Centrifuge as an inclusive, welcoming, and safe community of collaborators, operators, investors, and users. Harmful or discriminating behavior by anyone will not be tolerated.
 
 Community members should be judged by their actions, not criteria such as age, race, nationality, sex, sexual orientation, gender, gender identity or expression, disability, physical appearance, religion (or lack thereof), degrees, geographic location, or position.
@@ -25,16 +26,13 @@ Contributions to the codebase, network, systems, online or offline materials, ev
 
 ### Bugs & Vulnerabilities
 
-Creating a new system for the global financial supply chain is only possible through the collaboration of a global ecosystem and community of companies, groups, organizations, and individuals. 
-We want to come together to exchange ideas and build Centrifuge as an inclusive, welcoming, and safe community of collaborators, operators, investors, and users. Harmful or discriminating behavior by anyone will not be tolerated.
-
-Community members should be judged by their actions, not criteria such as age, race, nationality, sex, sexual orientation, gender, gender identity or expression, disability, physical appearance, religion (or lack thereof), degrees, geographic location, or position.
+Please refer to our [page on security](https://centrifuge.io/security/)! 
 
 ### Unacceptable Behavior
 
-Unacceptable behaviors include: intimidating, harassing, abusive, discriminatory, derogatory or demeaning speech or actions by any participant in our community online, at all related events and in one-on-one communications carried out in the context of community business. 
+Unacceptable behaviors include: intimidating, harassing, abusive, discriminatory, derogatory or demeaning speech or actions by any participant in our community online, at all related events, and in one-on-one communications carried out in the context of community business. 
 
-Harassment includes: harmful or prejudicial verbal or written comments related to gender, sexual orientation, race, religion (or lack thereof), level of ability; inappropriate use of nudity and/or sexual images (including presentation slides); inappropriate depictions of violence (including presentation slides); deliberate intimidation or stalking; harassing photography or recording; sustained disruption of talks or other events; inappropriate physical contact, and unwelcomed sexual attention.
+Harassment includes: harmful or prejudicial verbal or written comments related to gender, sexual orientation, race, religion (or lack thereof), level of ability; inappropriate use of nudity and/or sexual images (including presentation slides); inappropriate depictions of violence (including presentation slides); deliberate intimidation or stalking; harassing photography or recording; sustained disruption of talks or other events; inappropriate physical contact, and unwelcome sexual attention.
 
 If you are subject to or witness unacceptable behavior, or have any other concerns, please notify a community organizer as soon as possible.
 
@@ -51,5 +49,4 @@ If a community member engages in unacceptable behavior, the community organizers
 - [Berlin Code of Conduct](http://berlincodeofconduct.org/)
 - [CCC Hacker Ethics](https://www.ccc.de/en/hackerethics)
 - [Hacker One Disclosure Guidelines](https://www.hackerone.com/disclosure-guidelines)
-- [Steven Levy’s Hacker Ethic](https://en.wikipedia.org/wiki/Hacker_ethic)
-
+- [Steven Levy’s Hacker Ethic](https://en.wikipedia.org/wiki/Hackers:_Heroes_of_the_Computer_Revolution)

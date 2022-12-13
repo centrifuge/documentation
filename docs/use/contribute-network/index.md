@@ -18,12 +18,12 @@ Below we describe two ways of running our chain node:
    This is the recommended way to experiment with your own node. It will get you started within 5 minutes. Since docker is running pre-build containers, this setup minimizes the steps required to get started and isolates any potential issues.
 
 2. **Bare Metal**
-   Running a bare metal setup requires you to compile centrifuge chain from source, which can take between a 10 minutes up to 4 hours, depending on your specs. For a production grade setup, we do recommend to run a bare metal validators for 2 reasons: a) It minimizes the tools involved, which increases security, b) The performance is slightly supperior.
+   Running a bare metal setup requires you to compile Centrifuge Chain from source, which can take between a 10 minutes up to 4 hours, depending on your specs. For a production grade setup, we do recommend to run a bare metal validators for 2 reasons: a) It minimizes the tools involved, which increases security, b) The performance is slightly superior.
 
 ### Run your node in a Docker Container
 
-1. Ensure you have [docker](https://docs.docker.com/install/) as well as [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) installed. Use `subkey` version `v2.0.0`.
-2. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. For mainnet keys use network flag: `subkey generate -n centrifuge`
+1. Ensure you have [Docker](https://docs.docker.com/install/) as well as [Subkey](https://github.com/substrate-developer-hub/substrate-developer-hub.github.io/blob/source/docs/knowledgebase/integrate/subkey.md) installed. Use `Subkey` version `v2.0.0`.
+2. Generate a new key pair with Subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. For mainnet keys use network flag: `subkey generate -n centrifuge`
 3. Start your node by running the following, where {name} is the name that will show up in Polkadot Telemetry and {node-key} is the private key you just generated (without the `0x` prefix). Note that we do expose RPC and WS ports here for simplicity – these ports should not be exposed in a production grade setup.
 
 a) Catalyst testnet:
@@ -129,14 +129,14 @@ docker run -it centrifugeio/centrifuge-chain:parachain-20220303141305-681f4a6 \
 8. Change directory: `cd centrifuge-chain`
 9. Optional - run the tests: `cargo test --all`
 10. Build Centrifuge Chain: `cargo build --release`
-11. Ensure you have [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) installed (can be on another machine).
-12. Generate a new key pair with subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place.
+11. Ensure you have [Subkey](https://github.com/substrate-developer-hub/substrate-developer-hub.github.io/blob/source/docs/knowledgebase/integrate/subkey.md) installed (can be on another machine).
+12. Generate a new key pair with Subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place.
 
 The node is now built and available in `target/release/centrifuge-chain`.
 
 #### Executing the binary
 
-Below are the commands to start a node. `{name}` is the name that will show up in [Polkadot Telemetry](https://telemetry.polkadot.io) and `{node-key}` is the private key (`Secret seed` in the output of subkey) you just generated (without the 0x prefix).
+Below are the commands to start a node. `{name}` is the name that will show up in [Polkadot Telemetry](https://telemetry.polkadot.io) and `{node-key}` is the private key (`Secret seed` in the output of Subkey) you just generated (without the 0x prefix).
 
 Mainnet:
 

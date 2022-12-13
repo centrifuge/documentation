@@ -29,7 +29,7 @@ Onboarding to a pool requires:
 **Good to know**: Don’t worry if you can’t finish the process in one go – you can always leave by clicking `Close` and resume later where you’ve left off before.
 
 #### Further requirements
-- **US investors** need to be *Acreddited investors* to invest in Tinlake pools. *See section [Onboarding as US investor](#onboarding-as-an-us-investor)*
+- **US investors** need to be *accredited investors* to invest in Tinlake pools. *See section [Onboarding as US investor](#onboarding-as-an-us-investor)*
 -  Due to US sanctions, investors from **certain countries are excluded** from investing. *See section [Excluded countries](#onboarding-as-an-us-investor)*
 
 ## Onboard to pool as new investor
@@ -113,13 +113,13 @@ To complete KYC, Securitize will ask you to provide:
 - Proof of address, e.g. a utility bill, phone bill or council tax bill, not older than 3 months
 
 ##### How long does KYC take?
-Securitize's automated KYC process is usally conducted within 1-2h. If a manual review is required it may take 24h-48h.
+Securitize's automated KYC process is usually conducted within 1–2 hours. If a manual review is required it may take 24–48 hours.
 
 ##### What happens with my data?
 All investors must consent to share their personal data, such as name, address and country of residents with Securitize, Centrifuge and the pool's issuer. This data will be disclosed to Securitize during the onboarding process. Securitize may share this data with the pool's issuer and Centrifuge. *For more information see the [Data Sharing Policy](#Data-sharing-policy) below.
 
 ##### Why do I need onboarding and KYC to invest in Tinlake pools?
-Tinlake pools are backed by real-world assets such as invoices, residential real-estate loans or trade receivables. Financing those assets on Tinlake requires a legal structure that give the investors a legal claim on the assets. To ensure this recourse, each Asset Originator sets up a legal structure commonly used in the traditional financial system - a “special purpose vehicle” ("SPV"). The collateral for the individual assets are assigned to this legal entity to ensure investors have a legal claim to the underlying assets and the assets are held independently ("banktruptcy remote") from the Asset Originator. 
+Tinlake pools are backed by real-world assets such as invoices, residential real-estate loans or trade receivables. Financing those assets on Tinlake requires a legal structure that give the investors a legal claim on the assets. To ensure this recourse, each Asset Originator sets up a legal structure commonly used in the traditional financial system - a “special purpose vehicle” ("SPV"). The collateral for the individual assets are assigned to this legal entity to ensure investors have a legal claim to the underlying assets and the assets are held independently ("bankruptcy remote") from the Asset Originator. 
 
 With an underlying legal structure, investments in Tinlake Pool's are private placements from a regulatory perspective. This comes with certain regulatory requirements For example, behind many Tinlake pools are SPVs incorporated in Delaware. Private placements from these SPVs are conducted under `Reg D` or `Reg S` of the [`US Securities Act of 1933`](https://www.govinfo.gov/content/pkg/COMPS-1884/pdf/COMPS-1884.pdf) which means US investors must be accredited and all investors must clear standard KYC ("Know Your Customer") checks. All investors must sign a subscription agreement ("SubDoc") with the pools "Issuer", the legal SPV entity behind the pool.
 
@@ -148,7 +148,7 @@ The regulations for accredited investors vary from between jurisdictions but req
 - Be a general partner, executive officer, or director for the company that is issuing the unregistered securities or
 - Be a registered brokers and investment advisor
 
-Please find more information on [Investopedia](https://www.investopedia.com/terms/a/accreditedinvestor.asp) and [Investready](https://support.investready.com/help/verification-requirements-on-investready).
+Please find more information on [Investopedia](https://www.investopedia.com/terms/a/accreditedinvestor.asp).
 
 #### What information do I need to provide as accredited investor?
 
