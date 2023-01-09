@@ -2,7 +2,7 @@
 id: p2p-node
 order: 3
 title: Centrifuge POD (P2P Node)
-contributors: <Cosmin Damian:cosmin@centrifuge.io>
+contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
 ---
 
 ## Introduction
@@ -13,7 +13,7 @@ The Centrifuge P2P network is built to support a new generation of applications 
 
 The Centrifuge P2P node provides a method to create, exchange, and use the data that exists in the financial supply chain. It creates transparent and shareable relationships between interacting companies. Data owners can selectively share the information with their business partners or other users of the network. Centrifuge provides a censorship resistant way to verify the authenticity of data that is transacted through and stored in it. This creates the foundation for data ownership, privacy, and transparency throughout the financial supply chain and also allows third parties to offer additional services, such as instant and decentralized financing of invoices and orders, trade credit insurance and financing supply chains multiple levels deep.
 
-The underlying Centrifuge protocol has a two layered approach. It is built on Substrate which allows businesses to transact freely on a single verifiable source of truth. The public blockchain is used for business identities, committing document status and minting business NFTs. In addition, a peer to peer network enables private, off-chain transactions and is used to send business documents back and forth.
+The underlying Centrifuge protocol has a two layered approach. It is built on Substrate which allows businesses to transact freely on a single verifiable source of truth. The public blockchain is used for business identities, committing document status and minting business NFTs. In addition, a peer to peer network enables the exchange of business documents in a private and verifiable way.
 
 ### Substrate
 
@@ -29,13 +29,13 @@ Centrifuge and all its components are Beta Software. There will be substantial c
 
 ### Centrifuge Protocol
 
-The components of the Centrifuge protocol are a collection Substrate Pallets and a peer to peer (P2P) network implemented on [libp2p](https://libp2p.io/). Substrate Pallets are used for maintaining identities, minting NFTs from off chain Centrifuge documents, and anchoring state commitments. The peer to peer network is used for private, off-chain transactions and business document exchange.
+The components of the Centrifuge protocol are a collection Substrate Pallets and a peer to peer (P2P) network implemented on [libp2p](https://libp2p.io/). Substrate Pallets are used for maintaining identities, minting NFTs from off-chain Centrifuge documents, and anchoring state commitments.
 
 ![Centrifuge architecture](./images/architecture.png)
 
 ### Centrifuge PODs
 
-The Centrifuge POD provides a simple API interface to interact with the p2p network and the Substrate Pallets. The POD operates on a “service bus” principal where plugins and outside systems can subscribe to messages about specific objects (e.g., a procurement application can subscribe to changes of order objects). The POD abstracts the events that occur on the public blockchain and P2P Layer and translates them into messages on this internal bus for other applications to consume. The POD also offers the connectivity to Substrate for applications that build on top of the network.
+The Centrifuge POD provides a simple API interface to interact with the p2p network and the Centrifuge Chain. The POD operates on a “service bus” principal where plugins and outside systems can subscribe to messages about specific objects (e.g., a procurement application can subscribe to changes of order objects). The POD abstracts the events that occur on the public blockchain and P2P Layer and translates them into messages on this internal bus for other applications to consume. The POD also offers the connectivity to Centrifuge Chain for applications that build on top of the network.
 
 ### Centrifuge Identities
 
@@ -51,7 +51,7 @@ The unique identifier of a participant in the Centrifuge protocol is equivalent 
 
 ### Documents within the protocol
 
-A document within the Centrifuge protocol is a structured set of fields with specific types. The protocol supports any document types as long as the formats are agreed upon and shared between the participants, e.g. a document can be an invoice or a purchase order with agreed upon fields and line items. The structure of the document becomes important for reaching consensus by attaching signatures to the document state, as well as creating specific attestations about a document at a later point in time. Documents are exchanged encrypted, and are only accessible for parties involved in this private data exchange. Collaborators can be added and removed from a document. Different collaborators can update a document and publish new versions within the set of nodes with access.
+A document within the Centrifuge protocol is a structured set of fields with specific types. The protocol supports any document types as long as the formats are agreed upon and shared between the participants. E.g.: A document can be an invoice or a purchase order with agreed upon fields and line items. The structure of the document becomes important for reaching consensus by attaching signatures to the document state, as well as creating specific attestations about a document at a later point in time. Documents are exchanged encrypted, and are only accessible for parties involved in this private data exchange. Collaborators can be added and removed from a document. Different collaborators can update a document and publish new versions within the set of nodes with access.
 
 ### Centrifuge Chain
 
@@ -158,37 +158,21 @@ Besides `mainnet`, Centrifuge has support for the `catalyst` test network. The n
 
 Use network `-n catalyst`.
 
-This network is a testnet that operates over a Proof-of-Stake in the Centrifuge Chain.
+This network is a test network running a version of the Centrifuge Chain modified for testing.
 
 - Client: parity
 - Purpose: Testnet
-- Bootstrap Nodes:
-
-```
-/ip4/35.242.230.116/tcp/38202/ipfs/12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z
-```
-
-```
-/ip4/35.234.72.127/tcp/38202/ipfs/12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x
-```
+- Bootstrap Nodes - ask our team in the DAO Slack channel.
 
 ##### Mainnet
 
 Use network `-n mainnet`.
 
-This network is the production network that operates over the main Proof-of-Stake in the Centrifuge Chain.
+This network is the production network, the Centrifuge Chain.
 
 - Client: parity
 - Purpose: Mainnet
-- Bootstrap Nodes:
-
-```
-/ip4/35.198.122.117/tcp/38202/ipfs/12D3KooWAg3EcAtrYVCxwz6k6sT9iZSRztz9D7yUzpBPREFzrUoV
-```
-
-```
-/ip4/35.242.221.111/tcp/38202/ipfs/ 12D3KooWKGwixXenuXAVqkJKmnHSAJDjzf7eGMo6troigZxm7A5R
-```
+- Bootstrap Nodes - ask our team in the DAO Slack channel.
 
 #### Changing the default configuration
 
@@ -244,7 +228,7 @@ an overview of all the endpoints available for handling accounts.
 
 ---
 
-An account is the POD representation of the user that is performing various operations. This identity of this account
+An account is the POD representation of the user that is performing various operations. The identity of this account
 is used when storing documents and performing any action related to the document handling process such as - starting long-running
 tasks for committing or minting documents, or sending the document via the p2p layer.
 
