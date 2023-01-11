@@ -32,7 +32,7 @@
     "gatsby-remark-images": "^3.1.32",
     "gatsby-remark-mathjax": "^1.0.0",
     "gatsby-source-filesystem": "^2.0.20",
-    "gatsby-transformer-remark": "^2.6.21",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.1.13",
     "grommet": "^2.7.4",
     "grommet-icons": "^4.2.0",
