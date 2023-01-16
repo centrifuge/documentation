@@ -150,9 +150,7 @@ $ centrifuge createconfig \\
 
 #### Network Configurations
 
-[//]: # (TODO: Update POD link)
-
-Besides `mainnet`, Centrifuge has support for the `catalyst` test network. The network configuration for the different testnets is also part of the [code base](https://github.com/centrifuge/go-centrifuge/blob/master/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed. Please find the most important information summarized below:
+Besides `mainnet`, Centrifuge has support for the `catalyst` test network. The network configuration for the different test networks is also part of the [code base](https://github.com/centrifuge/go-centrifuge/blob/main/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed. Please find the most important information summarized below:
 
 ##### Catalyst
 
@@ -176,9 +174,7 @@ This network is the production network, the Centrifuge Chain.
 
 #### Changing the default configuration
 
-[//]: # (TODO: Update POD link)
-
-The default configuration with all available options is accessible [here](https://github.com/centrifuge/go-centrifuge/blob/develop/build/configs/default_config.yaml). You may adjust certain configurations according to your requirements.
+The default configuration with all available options is accessible [here](https://github.com/centrifuge/go-centrifuge/blob/main/build/configs/default_config.yaml). You may adjust certain configurations according to your requirements.
 
 - Configure node under NAT
 
@@ -222,8 +218,7 @@ It will return (e.g. Catalyst):
 
 ## Accounts
 
-[//]: # (TODO: Update the swagger link to the latest version.)
-The `Accounts` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/2.1.0#/Accounts) provides
+The `Accounts` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Accounts) provides
 an overview of all the endpoints available for handling accounts.
 
 ---
@@ -271,9 +266,7 @@ The data stored for each account has the following JSON format:
 
 ### Account Creation
 
-[//]: # (TODO: Update the swagger link to the latest version.)
-
-An account can be created by calling the [account creation endpoint](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/2.1.0#/Accounts/generate_account_v2) with a valid admin token (see [token usage](#usage)),
+An account can be created by calling the [account creation endpoint](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Accounts/generate_account_v2) with a valid admin token (see [token usage](#usage)),
 and providing the required information - `identity`, `precommit_enabled`, `webhook_url`.
 
 The successful response for the account creation operation will contain the fields mentioned above in [account data](#account-data).
@@ -289,7 +282,111 @@ The successful response for the account creation operation will contain the fiel
 2. Add the POD operator account ID as a `PodOperation` proxy to the `identity`.
 
    This can be done by submitting the `addProxy` extrinsic of the `Proxy` pallet.
+ 
 
+Example script using our [Go Substrate RPC Client](https://github.com/centrifuge/go-substrate-rpc-client):
+
+```
+func bootstrapAccount(
+	api *gsrpc.SubstrateAPI,
+	rv *types.RuntimeVersion,
+	genesisHash types.Hash,
+	meta *types.Metadata,
+	accountInfo types.AccountInfo,
+	krp signature.KeyringPair,
+) error {
+	addProxyCall, err := types.NewCall(
+		meta,
+		"Proxy.add_proxy",
+		delegateAccountID,
+		10,              // PodOperation
+		types.NewU32(0), // Delay
+	)
+
+	if err != nil {
+		return fmt.Errorf("couldn't create addProxy call: %w", err)
+	}
+
+	discoveryKeyHash := types.NewHash(discoveryKeyBytes)
+	documentSigningKeyHash := types.NewHash(documentSigningKeyBytes)
+
+	type AddKey struct {
+		Key     types.Hash
+		Purpose uint8
+		KeyType uint8
+	}
+
+	addKeysCall, err := types.NewCall(
+		meta,
+		"Keystore.add_keys",
+		[]*AddKey{
+			{
+				Key:     discoveryKeyHash,
+				Purpose: 0, // P2P Discovery
+				KeyType: 0, // ECDSA
+			},
+			{
+				Key:     documentSigningKeyHash,
+				Purpose: 1, // P2P Document Signing
+				KeyType: 0, // ECDSA
+			},
+		},
+	)
+
+	if err != nil {
+		return fmt.Errorf("couldn't create addKeys call: %w", err)
+	}
+
+	batchCall, err := types.NewCall(
+		meta,
+		"Utility.batch_all",
+		addProxyCall,
+		addKeysCall,
+	)
+
+	if err != nil {
+		return fmt.Errorf("couldn't create batch call: %w", err)
+	}
+
+	ext := types.NewExtrinsic(batchCall)
+
+	opts := types.SignatureOptions{
+		BlockHash:          genesisHash, // using genesis since we're using immortal era
+		Era:                types.ExtrinsicEra{IsMortalEra: false},
+		GenesisHash:        genesisHash,
+		Nonce:              types.NewUCompactFromUInt(uint64(accountInfo.Nonce)),
+		SpecVersion:        rv.SpecVersion,
+		Tip:                types.NewUCompactFromUInt(0),
+		TransactionVersion: rv.TransactionVersion,
+	}
+
+	err = ext.Sign(krp, opts)
+
+	if err != nil {
+		return fmt.Errorf("couldn't sign extrinsic: %w", err)
+	}
+
+	sub, err := api.RPC.Author.SubmitAndWatchExtrinsic(ext)
+
+	if err != nil {
+		return fmt.Errorf("couldn't submit and watch extrinsic: %w", err)
+	}
+
+	defer sub.Unsubscribe()
+
+	select {
+	case st := <-sub.Chan():
+		switch {
+		case st.IsFinalized, st.IsInBlock, st.IsReady:
+			return nil
+		default:
+			return fmt.Errorf("extrinsic not successful - %v", st)
+		}
+	case err := <-sub.Err():
+		return fmt.Errorf("extrinsic error: %w", err)
+	}
+}
+```
 ### Identities
 
 Most of the operations performed by the POD rely on the presence of proxies that are used to:
@@ -430,14 +527,11 @@ The POD has 2 types of authentication mechanisms:
 
 ## REST API Example Uses
 
-[//]: # (TODO: Update the swagger link to the latest version.)
-Once the Centrifuge POD is up and running you are able to start submitting documents and tokenize these documents via the Rest API. Please refer to the [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/2.1.0) documentation for a complete list of endpoints. A short summary can be found below:
+Once the Centrifuge POD is up and running you are able to start submitting documents and tokenize these documents via the Rest API. Please refer to the [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0) documentation for a complete list of endpoints. A short summary can be found below:
 
 ### NFTs
 
-[//]: # (TODO: Update the swagger link to the latest version.)
-
-The `NFTs` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/2.1.0#/NFTs) provides
+The `NFTs` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/NFTs) provides
 an overview of all the endpoints available for handling document NFTs.
 
 The NFT endpoint provides basic functionality for minting NFTs for a document and retrieving NFT specific information
@@ -479,9 +573,7 @@ When minting NFTs, additional information is stored on-chain and on IPFS, as fol
 
 ### Documents
 
-[//]: # (TODO: Update the swagger link to the latest version.)
-
-The `Documents` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/2.1.0#/Documents) provides
+The `Documents` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Documents) provides
 an overview of all the endpoints available for handling documents.
 
 The main purpose of the POD is to serve as a handler for documents that contain private off-chain data, as described above.
@@ -490,9 +582,7 @@ The main purpose of the POD is to serve as a handler for documents that contain 
 
 ### Jobs
 
-[//]: # (TODO: Update the swagger link to the latest version.)
-
-The `Jobs` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/2.1.0#/Jobs) provides
+The `Jobs` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Jobs) provides
 an overview of all the endpoints available for retrieving job details.
 
 ---
@@ -503,9 +593,7 @@ A job is a long-running operation that is triggered by the POD when performing a
 
 ### Webhooks
 
-[//]: # (TODO: Update the swagger link to the latest version.)
-
-The `Webhook` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/2.1.0#/Webhook) provides
+The `Webhook` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Webhook) provides
 an overview the notification message that is sent by the POD for document or job events.
 
 ---
