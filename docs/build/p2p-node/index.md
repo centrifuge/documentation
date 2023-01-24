@@ -64,29 +64,8 @@ In order to interact with Centrifuge Chain, you can either start your own node a
 
 ### Install Parity Substrate Subkey
 
-Before you can create a new Centrifuge Chain account, you have to install a version of Parity Substrate Subkey [here](https://github.com/paritytech/substrate/tree/v2.0.0-alpha.3/bin/utils/subkey).
-To install, we recommend you can follow:
-
-#### Build native binary
-
-Download and install Rust nightly version:
-
-```bash
-rustup update nightly-2020-02-27
-rustup toolchain install nightly-2020-02-27
-rustup default nightly-2020-02-27
-rustup target add wasm32-unknown-unknown --toolchain nightly-2020-02-27
-```
-
-Checkout https://github.com/paritytech/substrate/tree/v2.0.0-alpha.3
-
-```bash
-cargo build --release
-```
-
-#### Use docker version
-
-`parity/subkey:2.0.0-alpha.3`
+Before you can create a new Centrifuge Chain account, you have to install the latest version of Parity Substrate [Subkey](https://github.com/paritytech/substrate/tree/master/bin/utils/subkey).
+To install, we recommend you follow the instructions found [here](https://docs.substrate.io/reference/command-line-tools/subkey/). Alternatively, you can use the docker image - `parity/subkey:latest`.
 
 ### Create a new account
 
