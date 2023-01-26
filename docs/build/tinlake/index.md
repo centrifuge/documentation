@@ -566,26 +566,23 @@ The collateral NFTs are locked in the Shelf contract.
   function issue(address registry_, uint token_) external note returns (uint) 
 ```
 
-<!-- TODO: Rewrite-->
-Issues a new loan in Tinlake. It requires the ownership of an nft. First step in the loan process, everyone could add an NFT. If no NFT value has been provided in the NAV feed contract. The maximum borrow amount would be zero.
-
-It combines a collateral NFT with a loan ID.
-
+This is the first step in the loan process. It issues (or creates) a new loan in Tinlake. Issuing a new loan requires the ownership of a collateral NFT that will be locked in the next step of the loan creation process. It combines a collateral NFT with a loan ID.
 
 **lock**
 ```javascript
     function lock(uint loan) external owner(loan) note 
 ```
-Locks the collateral NFT in the shelf. Requires an issued loan and the ownership of the loan NFT and the collateral NFT.
+Locks the collateral NFT in the shelf. This requires the ID of an issued loan, and the ownership of both the corresponding loan NFT and the collateral NFT.
 
 **borrow**
 ```javascript
   function borrow(uint loan, uint currencyAmount) external owner(loan) 
 ```
-- Starts the borrow process of a loan.
-- Informs the system of the requested currencyAmount
-- The method can only be called if the NFT is locked
-- A max ceiling needs to be defined by an oracle in the NFT feed
+This starts the borrow process of a loan. The method can only be called if the collateral NFT is locked. 
+
+Calling borrow informs the system of the requested currencyAmount. This requires a `max ceiling` (~max borrow amount) for the collateral NFT to be defined by an oracle in the NAV feed. 
+
+If no max ceiling has been provided in the NAV feed contract, the maximum borrow amount would be zero.
 
 **withdraw**
 ```javascript
@@ -684,10 +681,7 @@ function collect(uint loan, address buyer) external auth
 - After a price has been set, a buyer can buy the loan
 - The collateral nft is transferred to the buyer
 
-<!-- TODO: Check to make sure this renders properly in our docs-->
-:::info
 The collector functionality is part of Tinlake, but it is not in active usage.
-:::
 
 ### NAV Feed contract
 The main purpose of the NAV feed is to maintain the priced values of collateral NFTs and to calculate the NAV.
@@ -777,8 +771,6 @@ $$
 FV = P*i^{m-now}*ER
 $$
 
-<!-- TODO: be sure this renders properly in docs-->
-:::info
 **Example**:
 
 Alice wants to borrow 100 DAI for 2 years with 5% interest per year. The probability of default **over two years** is 1% and loss given default is 20%.
@@ -788,7 +780,6 @@ ExpectedReturnFactor: 1 - 0.002 = 0.998
 FV = 100 DAI * 1.05^(2023-2021) * 0.998 = 100 * 1.05^2 * 0.998 = 110.0295 DAI
 
 Note: For illustration, time and interest is in years instead of seconds. 
-:::
 
 #### Present Value of a Loan
 ```
@@ -807,8 +798,6 @@ $$
 
 It is important to note that the present value of the loans is depending on the block.timestamp in Solidity.
 
-<!-- TODO: check renderin-->
-:::info
 **Example**:
 
 Alice loan has a future value of 110.0295 DAI.
@@ -820,8 +809,6 @@ In the year 2022 the present value would be:
 p = 110.0295/(1.03^(2023-2022)) = 106.82 DAI
 
 Note: For illustration time and interest is in year instead of seconds. 
-:::
-
 
 #### Total Discounting
 The total discounting is the sum over all present values of the loans before the **maturity date**.
@@ -857,11 +844,7 @@ $$
 \text{overdueLoans} = \sum_{i=1}^{loans}  FV_{i}
 $$
 
-<!-- TODO check rendering for all latex formulas with && / for-->
-$$
-\text{For all loans where (maturityDate < now && isWrittenOff(i) == false) }
-$$
-
+For all loans where `(maturityDate < now && isWrittenOff(i) == false)`
 
 ###  Write-offs
 If loan is not repaid after the maturity date, it will be moved into a write-group.
@@ -885,9 +868,8 @@ $$
 \text{totalWriteOffs} = \sum_{i=1}^{loans}  \text{debt}_{i} * \text{wf}_{i}
 $$
 
-$$
-\text{For all loans where (maturityDate < now && isWrittenOff(i) == true) }
-$$
+
+For all loans where `(maturityDate < now && isWrittenOff(i) == true)`
 
 The debt will still continue to accrue interest.
 
@@ -998,9 +980,9 @@ We can define `errTotalDiscount` as the following
 $$
 \text{errTotalDiscount} = \sum_{i=1}^{loans} FV * d^{now-m}
 $$
-$$
-\text{For all loans where (maturityDate < now && maturityDate > lastUpdate) }
-$$
+
+For all loans where `maturityDate < now and maturityDate > lastUpdate`.
+
 
 ### Total Discounting Formula
 
@@ -1164,14 +1146,14 @@ $$
 #### Max DROP Ratio Constraint
 
 $$
-\frac{\text{SeniorAsset}_{e+1}}{NAV_{e+1} + Reserve_{e+1}} <= \text{DROP_RATIO}_{max}
+\frac{\text{SeniorAsset}_{e+1}}{NAV_{e+1} + Reserve_{e+1}} <= \text{DROP Ratio}_{max}
 $$
 
 
 #### Min DROP Ratio Constraint
 
 $$
-\frac{\text{SeniorAsset}_{e+1}}{NAV_{e+1} + Reserve_{e+1}} >= \text{DROP_RATIO}_{min}
+\frac{\text{SeniorAsset}_{e+1}}{NAV_{e+1} + Reserve_{e+1}} >= \text{DROP Ratio}_{min}
 $$
 
 
@@ -1196,16 +1178,16 @@ DROP redeemOrder: 15 DAI
 #### Max Order Constraint
 This is a helper constraint. A submitted solution is not allowed to be higher than the total orders.
 $$
-\text{DROP}_{invest} <= \text{DROP_ORDER}_{invest}
+\text{DROP}_{invest} <= \text{DROP Order}_{invest}
 $$
 $$
-\text{TIN}_{invest} <= \text{TIN_ORDER}_{invest}
+\text{TIN}_{invest} <= \text{TIN Order}_{invest}
 $$
 $$
-\text{TIN}_{redeem} <= \text{TIN_ORDER}_{redeem}
+\text{TIN}_{redeem} <= \text{TIN Order}_{redeem}
 $$
 $$
-\text{DROP}_{redeem} <= \text{DROP_ORDER}_{redeem}
+\text{DROP}_{redeem} <= \text{DROP Order}_{redeem}
 $$
 
 #### Positive Constraint
@@ -1236,26 +1218,26 @@ The decision function in the Tinlake contracts uses different weights to achieve
 **Weights**
 
 $$
-w_{\text{drop_redeem}} = 1.000.000
+\text{DROP}_{redeem} = 1.000.000
 $$
 
 $$
-w_{\text{tin_redeem}} = 100.000
+\text{TIN}_{redeem} = 100.000
 $$
 
 $$
-w_{\text{tin_supply}} = 10.000
+\text{TIN}_{supply} = 10.000
 $$
 
 $$
-w_{\text{drop_supply}} = 1.000
+\text{DROP}_{supply} = 1.000
 $$
 
 
 **Max Function**
 
 $$
-\max  w_{\text{drop_redeem}}*  \text{DROP}_{redeem} + w_{\text{tin_redeem}} * \text{TIN}_{redeem} +  w_{\text{tin_supply}} * \text{TIN}_{supply} + w_{\text{drop_supply}} * \text{DROP}_{supply}
+\max  \text{DROP}_{redeem} *  \text{DROP}_{redeem} + \text{TIN}_{redeem} * \text{TIN}_{redeem} +  \text{TIN}_{supply} * \text{TIN}_{supply} + \text{DROP}_{supply} * \text{DROP}_{supply}
 $$
 
 
