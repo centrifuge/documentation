@@ -1,7 +1,7 @@
 ---
 id: tinlake
 order: 2
-title: Tinlake Smart Contract Documentation
+title: Tinlake Smart Contracts
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Devin Black:devin@centrifuge.io>
 ---
 
