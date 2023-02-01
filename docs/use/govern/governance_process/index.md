@@ -66,7 +66,7 @@ If a proposal fails to pass an OpenSquare Snapshot, the cooling-off period is 15
 
 The cooling-off period is important in order to take the feedback from the Community into account and make the necessary changes to the submitted proposal, and re-submit the RFC.
 
-![](./images/cooloff.jpg)
+![](./images/cooloff.jpg#width=40%;)
 
 
 ## Proposal Types (CPs)
