@@ -4,7 +4,14 @@ On-chain voting takes place on the blockchain and you need CFG tokens to vote in
 
 ## How to vote in a referendum
 
+The easiest way to vote is to navigate to [Subsquare](https://centrifuge.subsquare.io/democracy/referenda) and find the referendum you want to vote in.
 
+![](./images/VoteReferendum.png)
+
+1. Vote **Nay** or **Aye**
+2. Select **voting balance** (up to the amount available)
+3. Select **conviction** (lock up period displayed right below)
+4. **Confirm** and sign the transaction
 
 ### Voting with conviction
 
@@ -20,8 +27,6 @@ To unlock your tokens after voting, you have to do it manually after the lock ha
 
 You can see how many tokens you have locked in governance, by going to the [Accounts section](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/accounts) of the portal and click on the arrow down next to your wallet. To unlock the expired ones, simply click on the three dots, select *Clear expired democracy locks* and sign the transaction.
 
-![](./images/UnlockTokens.png)
-
 ## How to vote in a referendum with Proxy
 
 If you already have set up a [Proxy wallet](../governance_proxy_and_delegation/index.md), you can also vote in on-chain referenda on SubSquare. Log in with your Proxy (hot) wallet, navigate to [settings](https://centrifuge.subsquare.io/setting/proxy) and specify your proxied (cold) wallet. 
@@ -30,7 +35,7 @@ If you already have set up a [Proxy wallet](../governance_proxy_and_delegation/i
 
 1. Paste the address of the cold wallet (i.e. the wallet that created the Proxy)
 
-To vote in a referendum, navigate to [SubSquare](https://centrifuge.subsquare.io/democracy/referenda), find the referendum you want to vote on and click *vote*.
+To vote in a referendum, navigate to [SubSquare](https://centrifuge.subsquare.io/democracy/referenda), find the referendum you want to vote on and click *Vote*.
 
 ![](./images/ProxyReferendum.png)
 

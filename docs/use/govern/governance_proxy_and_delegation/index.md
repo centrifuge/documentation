@@ -63,6 +63,10 @@ The easiest way to start delegating your tokens is to navigate to [SubSquare](ht
 
 Whenever 2. votes in an on-chain referendum it will automatically also vote with the amount and conviction specified.
 
+```
+If you try to delegate tokens to a wallet that already has voted, the transaction will fail.
+```
+
 You should now be able to see your delegation on Subsquare. To remove a delegation, simply click on the *X* and sign the transaction.
 
 ![](./images/Undelegate.png)
