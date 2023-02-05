@@ -1,6 +1,6 @@
 # Governance Proxy and Delegation
 
-
+There are two ways you can delegate your voting power to someone else; 
 
 ## How to create a Governance Proxy
 The first step is to [create a hot wallet](https://docs.centrifuge.io/use/setup-wallet/), using the Polkadot.js browser extension. This will be your Governance Proxy.
