@@ -1,5 +1,7 @@
 # On-chain voting
 
+On-chain voting takes place on the blockchain and you need CFG tokens to vote in referenda. All proposals are posted in [this section](https://gov.centrifuge.io/c/cfg-governance/chain-governance/18) of the Forum and in the posts you will find all information you need about the proposals (what it is about, where to vote etc).
+
 ## How to vote in a referendum
 
 
@@ -12,20 +14,17 @@ If you don’t choose any conviction, the system will select the 0.1X by default
 
 ![](./images/LockingPeriod.png)
 
-### Unlocking tokens locked in Governance
+### Unlocking tokens locked in governance
 
 To to unlock your tokens after voting, you have to do it manually after the lock has expired.
 
-You can see how many tokens you have locked in referenda, by going to the [Accounts section](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/accounts) of the portal and click on the arrow down next to your wallet. To unlock the expired ones, simply click on the three dots, select “Clear expired democracy locks” and sign the transaction.
+You can see how many tokens you have locked in governance, by going to the [Accounts section](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/accounts) of the portal and click on the arrow down next to your wallet. To unlock the expired ones, simply click on the three dots, select “Clear expired democracy locks” and sign the transaction.
 
 ![](./images/UnlockTokens.png)
 
+## How to vote in a referendum with Proxy
 
-
-
-### How to vote in a referendum with Proxy
-
-If you already have set up your Proxy wallet (using the description above), you can also vote in on-chain referenda on SubSquare. Log in with your Proxy (hot) wallet, navigate to [settings](https://centrifuge.subsquare.io/setting/proxy) and specify your proxied (cold) wallet. 
+If you already have set up a [Proxy wallet](../governance_proxy_and_delegation/index.md), you can also vote in on-chain referenda on SubSquare. Log in with your Proxy (hot) wallet, navigate to [settings](https://centrifuge.subsquare.io/setting/proxy) and specify your proxied (cold) wallet. 
 
 ![](./images/DefineProxy.png)
 
@@ -35,11 +34,11 @@ To vote in a referendum, navigate to [SubSquare](https://centrifuge.subsquare.io
 
 ![](./images/ProxyReferendum.png)
 
-1. The Proxy (hot) wallet
-2. The Proxied (cold) wallet and the available balance for voting
-3. Select voting balance (up to the amount available shown above)
-4. Select conviction (lock up period displayed right below)
-5. Vote Nay or Aye
+1. The **Proxy** (hot) wallet
+2. The **Proxied** (cold) wallet and the available balance for voting
+3. Select **voting balance** (up to the amount available)
+4. Select **conviction** (lock up period displayed right below)
+5. Vote **Nay** or **Aye**
 
 Sign the transaction and your vote should be registered.
 

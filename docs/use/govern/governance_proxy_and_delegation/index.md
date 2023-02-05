@@ -1,11 +1,24 @@
 # Governance Proxy and Delegation
 
-There are two ways you can delegate your voting power to someone else; 
+There are two ways you can delegate your voting power to another wallet; creating a *Governance Proxy* or using *Delegation*.
+
+A *Governance Proxy* is a wallet that can perform governance related tasks on-chain on behalf of another wallet. It is possible to create [different types of proxies](https://wiki.polkadot.network/docs/learn-proxies), but a Governance Proxy specifically only allows for transactions related to governance (i.e. it cannot transfer tokens).
+
+*Delegation* of tokens is another way of transferring your voting power to another wallet, while maintaining full custody of your tokens. This is very convenient if:
+
+* you want to keep your tokens in a cold wallet and still participate in Governance
+* you don't have time to vote but still want to let someone else vote with your tokens actively in Governance
+* you don't have enough background knowledge about the proposals and want to delegate your voting power to someone who does
+
+If wallet A delegates tokens to wallet B, then every time wallet B votes in a referendum, it automatically votes with the predetermined amount and conviction from wallet A. 
+
+Note that OpenSquare Snapshots do not support delegation - only Governance Proxies.
 
 ## How to create a Governance Proxy
-The first step is to [create a hot wallet](https://docs.centrifuge.io/use/setup-wallet/), using the Polkadot.js browser extension. This will be your Governance Proxy.
 
-If your tokens are in a cold wallet (e.g. Parity Signer), you need to import it to the Polkadot.js portal first, using the browser extension. You can find simple instructions on how to do that for Parity Signer [here](https://support.polkadot.network/support/solutions/articles/65000182010-how-to-add-a-parity-signer-account-on-polkadot-js-ui) (use the section *How to add your account through the Polkadot extension*). This way you make your cold wallet hot temporarily while you set up your Governance proxy - make sure to remove it again when you're finished so it remains cold.
+The first step is to [create a hot wallet](https://docs.centrifuge.io/use/setup-wallet/). You can do that using the [Polkadot.js browser extension](https://polkadot.js.org/extension/). This will be your Governance Proxy.
+
+If your tokens are in a cold wallet (e.g. Parity Signer), you need to import it to the Polkadot.js portal first, using the browser extension. You can find simple instructions on how to do that for Parity Signer [here](https://support.polkadot.network/support/solutions/articles/65000182010-how-to-add-a-parity-signer-account-on-polkadot-js-ui) (use the section *How to add your account through the Polkadot extension*). This way you make your cold wallet hot temporarily while you set up your Governance proxy - make sure to remove it again if you want it to remain cold.
 
 Make sure they are both visible on *Centrifuge* (not Centrifuge Chain which is the old standalone chain) in the Polkadot.js browser extension.
 
@@ -15,7 +28,7 @@ You should now be able to see both your hot and cold wallet addresses in the Pol
 
 ![](./images/Accounts.png)
 
-You also need to transfer a small amount of tokens to your proxy to cover transaction fees - 1 CFG should be more than enough.
+You also need to transfer a small amount of tokens to your proxy to cover transaction fees; a couple of CFG should be more than enough.
 
 Click on the three dots next to your **cold wallet** and select *"Add proxy"*. 
 
@@ -31,15 +44,11 @@ Your Governance Proxy is now set up and ready to be used. If you want to keep yo
 
 ![](./images/Forget.png)
 
-## Delegation of tokens
+To remove a proxy, go to the [Accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/accounts) section of the portal, find the wallet that created the proxy (use same steps as above to import it again if needed), click on the three dots next to it, select *Manage proxies* and then *Clear all* in the window that opens.
 
-Delegation of tokens is another way of transferring your voting power to another wallet, while maintaining full custody of your tokens. This is very convenient for all **on-chain voting**, i.e. referenda, if:
+![](./images/ClearProxy.png)
 
-* you want to keep your tokens in a cold wallet and still participate in Governance
-* you don't have time to vote but still want to let someone else vote with your tokens actively in Governance
-* you don't have enough background knowledge about the proposals and want to delegate your voting power to someone who does
-
-If wallet A delegates tokens to wallet B, then every time wallet B votes in a referendum, it automatically votes with the delegated tokens from wallet A.
+## How to delegate
 
 The easiest way to start delegating your tokens is to navigate to [SubSquare](https://centrifuge.subsquare.io/democracy/referenda), log in with the **wallet you want to delegate from**, and click on *+ My Delegate*.
 
@@ -47,9 +56,13 @@ The easiest way to start delegating your tokens is to navigate to [SubSquare](ht
 
 ![](./images/Delegate.png)
 
-1. The wallet you are delegating from
-2. Select the wallet you are delegating to (select from the list or paste the CFG address)
-3. Select the amount
-4. Select the conviction
+1. The wallet you are **delegating from**
+2. Select the wallet you are **delegating to** (select from the list or paste the CFG address)
+3. Select the **amount**
+4. Select the **conviction**
 
 Whenever 2. votes in an on-chain referendum it will automatically also vote with the amount and conviction specified.
+
+You should now be able to see your delegation on Subsquare. To remove a delegation, simply click on the *X* and sign the transaction.
+
+![](./images/Undelegate.png)

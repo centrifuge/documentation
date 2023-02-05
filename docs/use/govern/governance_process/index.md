@@ -24,15 +24,15 @@ Some proposals may require longer time for discussion than others, but the minim
 
 In the templates for each proposal type, there is a description of what the RFC should contain (e.g. title, content etc.) in the Forum post. All RFCs must be posted in the Centrifuge [Request for Comments section](https://gov.centrifuge.io/c/cfg-governance/request-for-comments/37) of the Forum.
 
-## Centrifuge Proposal Repository (PR)
+## Centrifuge Proposal Repository
 
-All proposals must be submitted to the [Centrifuge Proposals Repository](https://github.com/centrifuge/cps) on Github which is used to log all proposals. The discussion (RFC) takes place on the Forum, and if there are any changes made to the proposal, it must happen via the PR during the RFC phase, i.e. before the proposal proceeds to an OpenSquare Snapshot. This is to ensure that a proposal is not changed during a snapshot vote or after it has ended.
+All proposals must be submitted to the [Centrifuge Proposals Repository](https://github.com/centrifuge/cps) on Github which is used to log all proposals. The discussion (RFC) takes place on the Forum, and if there are any changes made to the proposal, it must happen via the repository during the RFC phase, i.e. before the proposal proceeds to an OpenSquare Snapshot. This is to ensure that a proposal is not changed during a snapshot vote or after it has ended.
 
-A proposal is only deemed valid, if it has been submitted to the PR.
+A proposal is only deemed valid, if it has been submitted to the repository.
 
 After a proposal has been submitted, a pull request number (XXXX) will automatically be assigned - this number will be used to index the proposal and in the title of the Proposal post.
 
-## OpenSquare Snapshot (OS)
+## OpenSquare Snapshot 
 
 OpenSquare Snapshots have replaced our Forum polls and is always the next step in the off-chain governance after an RFC (except for CP-2, CP-3 and CP-3.1, that do not require it). Once there has been adequate discussion of a proposal (after a minimum of 7 days) - and the proposal has been submitted to the Proposal Repository - an OpenSquare Snapshot vote must be created on [OpenSquare](https://voting.opensquare.io/space/centrifuge).
 
