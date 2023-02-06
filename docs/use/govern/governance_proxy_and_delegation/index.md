@@ -12,7 +12,7 @@ A *Governance Proxy* is a wallet that can perform governance related tasks on-ch
 
 If wallet A delegates tokens to wallet B, then every time wallet B votes in a referendum, it automatically votes with the predetermined amount and conviction from wallet A. 
 
-Note that OpenSquare Snapshots do not support delegation - only Governance Proxies.
+Note that OpenSquare Snapshots do not support delegation - but you can vote with proxies.
 
 ## How to create a Governance Proxy
 
