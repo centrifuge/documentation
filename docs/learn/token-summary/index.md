@@ -2,7 +2,7 @@
 id: token-summary
 order: 7
 title: CFG Token Summary
-contributors: <Cassidy Daly:cassidy@centrifuge.foundation>, <Lucas Vogelsang:lucas@centrifuge.foundation>,
+contributors: <Cassidy Daly:cassidy@centrifuge.foundation>, <Lucas Vogelsang:lucas@centrifuge.foundation>
 ---
 
 # Centrifuge Token Executive Summary 
