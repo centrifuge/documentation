@@ -41,7 +41,7 @@ The initial CFG Generation Event was executed by the Centrifuge Network Foundati
 
 A snapshot of CFG Distribution shortly after genesis, at a supply of 425M:
 
-![](./images/token_distribution.png#width=40%)
+![](./images/token_distribution.png#width=60%)
 
 ### Token distribution mechanisms
 Centrifuge Chain will leverage rewards, distributed in CFG, to incentivize early participation of network participants as well as to fund the continued development of Centrifuge. These rewards create an additional incentive on top of fees for entities to perform critical network functions. The network benefits from incentivizing early participation by creating a reliable and distributed network of agents early on. In addition, the burning mechanism will allow the chain to maintain a stable supply of the token over time. 
