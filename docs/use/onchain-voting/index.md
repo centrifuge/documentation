@@ -1,4 +1,11 @@
-# On-chain voting
+---
+id: on-chain-voting
+order: 8
+title: On-chain Voting
+contributors: <Orhan Klardashti:klardashti@gmail.com>
+---
+
+## On-chain Voting
 
 On-chain voting takes place on the blockchain and you need CFG tokens to vote in referenda. All proposals are posted in [this section](https://gov.centrifuge.io/c/cfg-governance/chain-governance/18) of the Forum and in the post you will find all information you need about the proposal (what it is about, where to vote etc).
 

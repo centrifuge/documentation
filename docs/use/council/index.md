@@ -1,4 +1,11 @@
-# Council
+---
+id: council
+order: 10
+title: The Centrifuge Council
+contributors: <Orhan Klardashti:klardashti@gmail.com>
+---
+
+## The Centrifuge Council
 
 The Centrifuge council currently consists of 9 councillors (this number can be changed by governance) who are elected by the CFG token holders. The council serves to represent the interest of all Centrifuge stakeholders, be they actively participating token holders or not. Some of the tasks of the council are to:
 

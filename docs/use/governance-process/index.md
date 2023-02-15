@@ -1,4 +1,11 @@
-# Governance Process
+---
+id: governance-process
+order: 6
+title: Governance Process
+contributors: <Orhan Klardashti:klardashti@gmail.com>
+---
+
+## Governance Process
 
 Governance is one of the key pillars of the Centrifuge DAO and the Centrifuge protocol is governed by CFG token holders and all proposals must go through a Governance process.
 
