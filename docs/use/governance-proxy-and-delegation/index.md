@@ -5,7 +5,7 @@ title: Governance Proxy and Delegation
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 ---
 
-## Governance Proxy and Delegation
+## Introduction
 
 There are two ways you can delegate your voting power to another wallet: creating a *Governance Proxy* or using *Delegation*.
 

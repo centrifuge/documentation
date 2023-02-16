@@ -5,13 +5,13 @@ title: On-chain Voting
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 ---
 
-## On-chain Voting
+## Introduction
 
 On-chain voting takes place on the blockchain and requires CFG tokens to vote in referenda. All proposals are posted in [this section](https://gov.centrifuge.io/c/cfg-governance/chain-governance/18) of the Forum. Here you will find all information you need about a proposal (what it is about, where to vote etc).
 
 ## How to vote in a referendum
 
-The easiest way to vote is to navigate to [Subsquare](https://centrifuge.subsquare.io/democracy/referenda) and find the referendum you want to vote in.
+The easiest way to vote is to navigate to [SubSquare](https://centrifuge.subsquare.io/democracy/referenda) and find the referendum you want to vote in.
 
 ![](./images/VoteReferendum.png)
 

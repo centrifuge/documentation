@@ -1,20 +1,20 @@
 ---
 id: governance-process
 order: 6
-title: Centrifuge's Governance Process
+title: Governance Process
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 ---
 
-## Governance Process
+## Governance Process Summary
 
 Governance is one of the key pillars of the Centrifuge DAO. The Centrifuge protocol is governed by CFG token holders, and all proposals must go through a governance process.
 
-In general, our governance process can be divided into two parts; *off-chain* and *on-chain governance*.
+In general, our governance process can be divided into two parts; **off-chain** and **on-chain governance**.
 
-*Off-chain Governance:*
-This is the first part of the process. It takes place on our [Forum] (as a Request for Comments) (https://gov.centrifuge.io/) and [OpenSquare](https://voting.opensquare.io/space/centrifuge). The purpose of this is to get input from the Community on a proposal and gather support, before moving the proposal on-chain (if necessary — not all proposals need to be submitted on-chain in order to pass).
+### Off-chain Governance
+This is the first part of the process. It takes place on our [Forum](as a Request for Comments) (https://gov.centrifuge.io/) and [OpenSquare](https://voting.opensquare.io/space/centrifuge). The purpose of this is to get input from the Community on a proposal and gather support, before moving the proposal on-chain (if necessary — not all proposals need to be submitted on-chain in order to pass).
 
-*On-chain Governance:*
+### On-chain Governance
 This refers to the part of the process that takes places on the blockchain. First a proposal is created on-chain (which can be done by either the public or the Council), and this is generally followed by an on-chain referendum where all token holders can vote aye or nay.
 
 Some of these proposal types have different governance processes, but they all start with a post on the Forum; furthermore, all CPs (Centrifuge Proposals) must be submitted to the [Centrifuge Proposals Repository](https://github.com/centrifuge/cps) on Github.
@@ -52,7 +52,7 @@ The outcome of the OpenSquare Snapshot should also be announced in this same pos
 
 ## Proposal Post
 
-Once a proposal has moved on from the RFC (and changes made if necessary), had its PR submitted to the proposal repostiroy, and the OpenSquare Snapshot has been created, a [roposal post must be created. The purpose of this post is to notify the Community that the proposal is now final and ready to proceed.
+Once a proposal has moved on from the RFC (and changes made if necessary), had its PR submitted to the proposal repository, and the OpenSquare Snapshot has been created, a proposal post must be created. The purpose of this post is to notify the Community that the proposal is now final and ready to proceed.
 
 The title of this post will be CPXXXX (YY): [same title as RFC], where XXXX is the pull request number from Github and YY is the abbreviation for the proposal type, e.g. (MRF).
 
@@ -90,5 +90,5 @@ We have defined the following proposal types (CPs) and assigned them each with a
 |[CP-3](https://github.com/centrifuge/cps/blob/main/cps/CP3/CP3.md)|Runtime Upgrades|Proposals for Runtime Upgrades|
 |[CP-3.1](https://github.com/centrifuge/cps/blob/main/cps/CP3/CP3.md)|Emergency Proposals|Emergency proposals in case of hacks, exploits, attacks, or network halt|
 |[CP-4](https://github.com/centrifuge/cps/blob/main/cps/CP4/CP4.md)|General Improvements|Any proposal type, that does not fit under any of the other CPs|
-|[CP-5](../CP5/CP5.md)|Centrifuge Pool Onboarding Proposal (POP)|Onboarding new pools on Centrifuge Chain|
+|[CP-5](https://github.com/centrifuge/cps/blob/main/cps/CP5/cp5.md)|Centrifuge Pool Onboarding Proposal (POP)|Onboarding new pools on Centrifuge Chain|
 
