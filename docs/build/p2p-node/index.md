@@ -1,25 +1,19 @@
 ---
 id: p2p-node
 order: 3
-title: P2P Node
-contributors: <Dennis Wellmann:dennis@centrifuge.io>
+title: Centrifuge POD (P2P Node)
+contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
 ---
 
 ## Introduction
 
-### Centrifuge P2P Node
+### Centrifuge POD (P2P Node)
 
 The Centrifuge P2P network is built to support a new generation of applications for the financial supply chain. Centrifuge provides users with the ability to remove intermediaries and create financial business documents as Non-Fungible Tokens (NFTs) that have long-term verifiability, are censorship resistant, and are stored and processed in a decentralized fashion.
 
 The Centrifuge P2P node provides a method to create, exchange, and use the data that exists in the financial supply chain. It creates transparent and shareable relationships between interacting companies. Data owners can selectively share the information with their business partners or other users of the network. Centrifuge provides a censorship resistant way to verify the authenticity of data that is transacted through and stored in it. This creates the foundation for data ownership, privacy, and transparency throughout the financial supply chain and also allows third parties to offer additional services, such as instant and decentralized financing of invoices and orders, trade credit insurance and financing supply chains multiple levels deep.
 
-The underlying Centrifuge protocol has a two layered approach. It is built on Ethereum & Substrate which allows businesses to transact freely on a single verifiable source of truth. The public blockchains are used for business identities, committing document status and minting business NFTs. In addition, a peer to peer network enables private, off-chain transactions and is used to send business documents back and forth.
-
-### Ethereum
-
-Ethereum is a decentralized platform that runs smart contracts. Functionality deployed on Ethereum acts as the primary and trusted entry point and anchor for the other Centrifuge components. The censorship resistance and decentralized nature of the platform provides trustless lookups for users. Ethereum allows users to publish identity and document information through our Centrifuge Smart Contracts without relying on any third party. Furthermore, Ethereum’s architecture provides a well-tested system for the issuance of tokens to incentivize honest participation within the OS, issuance of tokens directly related to business documents, as well as decentralized governance layers of the OS at large.
-
-For more information, see the [Ethereum Project](https://www.ethereum.org/).
+The underlying Centrifuge protocol has a two layered approach. It is built on Substrate which allows businesses to transact freely on a single verifiable source of truth. The public blockchain is used for business identities, committing document status and minting business NFTs. In addition, a peer to peer network enables the exchange of business documents in a private and verifiable way.
 
 ### Substrate
 
@@ -35,17 +29,17 @@ Centrifuge and all its components are Beta Software. There will be substantial c
 
 ### Centrifuge Protocol
 
-The components of the Centrifuge protocol are a collection of Ethereum smart contracts, Substrate Pallets and a peer to peer (P2P) network implemented on libp2p. Ethereum smart contracts are used for (i) maintaining identities in a similar format to the ERC725 standard and (ii) minting NFTs from off chain Centrifuge documents. Substrate Pallets are used for anchoring state commitments. The peer to peer network is used for private, off-chain transactions and business document exchange.
+The components of the Centrifuge protocol are a collection Substrate Pallets and a peer to peer (P2P) network implemented on [libp2p](https://libp2p.io/). Substrate Pallets are used for maintaining identities, minting NFTs from off-chain Centrifuge documents, and anchoring state commitments.
 
 ![Centrifuge architecture](./images/architecture.png)
 
-### Centrifuge Nodes
+### Centrifuge PODs
 
-The Centrifuge Node provides a simple API interface to interact with the peer to peer network as well as the Ethereum smart contracts and Substrate Pallets. The Node operates on a “service bus” principal where plugins and outside systems can subscribe to messages about specific objects (e.g., a procurement application can subscribe to changes of order objects). The P2P Node abstracts the events that occur on the public blockchains and P2P Layer and translates them into messages on this internal bus for other applications to consume. The Node also offers the connectivity to Ethereum and Substrate for applications that build on top of the network.
+The Centrifuge POD provides a simple API interface to interact with the p2p network and the Centrifuge Chain. The POD operates on a “service bus” principal where plugins and outside systems can subscribe to messages about specific objects (e.g., a procurement application can subscribe to changes of order objects). The POD abstracts the events that occur on the public blockchain and P2P Layer and translates them into messages on this internal bus for other applications to consume. The POD also offers the connectivity to Centrifuge Chain for applications that build on top of the network.
 
 ### Centrifuge Identities
 
-A Centrifuge Identity (CentrifugeID) is a unique ID assigned to a participant of Centrifuge in a network. Centrifuge identities are smart contracts on Ethereum. It keeps track of the different cryptographic keys in use and enforces that this data can only be modified by the creator and/or a delegate chosen by the creator.
+A Centrifuge Identity (CentrifugeID) is a unique ID assigned to a participant of Centrifuge in a network. It keeps track of the different cryptographic keys in use and enforces that this data can only be modified by the creator and/or a delegate chosen by the creator.
 
 An identity has the following credentials:
 
@@ -53,24 +47,11 @@ An identity has the following credentials:
 
 - Signing Keys: Documents in Centrifuge are signed with signing keys. These signatures are a part of the Merkle root that is anchored on the public chain and verifiable at a later time.
 
-- Ethereum Accounts: When interacting with a smart contract on Ethereum, an account needs to be linked to the identity to act on its behalf. The linked Ethereum accounts are the accounts that are allowed to interact with DApps utilizing Centrifuge.
-
-The unique identifier of a participant in the Centrifuge protocol is equivalent to the Ethereum address of his/her identity contract. Centrifuge is adopting the DID-compatible ERC725v1 Ethereum standard for self sovereign identities. More information can be found [here](https://w3c-ccg.github.io/did-spec/).
+The unique identifier of a participant in the Centrifuge protocol is equivalent to the Centrifuge Chain account ID.
 
 ### Documents within the protocol
 
-A document within the Centrifuge protocol is a structured set of fields with specific types. The protocol supports any document types as long as the formats are agreed upon and shared between the participants, e.g. a document can be an invoice or a purchase order with agreed upon fields and line items. The structure of the document becomes important for reaching consensus by attaching signatures to the document state, as well as creating specific attestations about a document at a later point in time. Documents are exchanged encrypted, and are only accessible for parties involved in this private data exchange. Collaborators can be added and removed from a document. Different collaborators can update a document and publish new versions within the set of nodes with access. A smart contract called AnchorRepository is used for carbon dating state updates and serves as a bulletin board to ensure that the update is made known to all collaborators.
-
-## Recommended Tools
-
-To get started quickly, we recommend using two services that will make your life easier:
-
-### Ethereum through Infura
-
-In order to interact with Ethereum and the Ethereum testnet Kovan, you need to install the corresponding node. To get started quickly, we recommend that you use Infura instead of hosting your own Ethereum node. Infura is a SaaS platform that provides API and developer tools for easy and secure access to Ethereum. In other words, it is core infrastructure that serves as a gateway to the blockchain.
-
-Register and create an Infura account here: https://infura.io/. Create a new project. 
-Fetch the appropriate network URL. For Kovan, it would look like this `wss://kovan.infura.io/ws/v3/XXXXXXXXXX`
+A document within the Centrifuge protocol is a structured set of fields with specific types. The protocol supports any document types as long as the formats are agreed upon and shared between the participants. E.g.: A document can be an invoice or a purchase order with agreed upon fields and line items. The structure of the document becomes important for reaching consensus by attaching signatures to the document state, as well as creating specific attestations about a document at a later point in time. Documents are exchanged encrypted, and are only accessible for parties involved in this private data exchange. Collaborators can be added and removed from a document. Different collaborators can update a document and publish new versions within the set of nodes with access.
 
 ### Centrifuge Chain
 
@@ -79,71 +60,12 @@ In order to interact with Centrifuge Chain, you can either start your own node a
 - mainnet: `wss://fullnode.centrifuge.io`
 - catalyst: `wss://fullnode.catalyst.cntrfg.com`
 
-## Creating a geth Account
-
-### Install Go Ethereum
-
-Before you can create a new go-ethereum (`Geth`) account you have to install a stable version of Go Ethereum. How to install it depends on your operating system. Follow the latest instructions [here](https://geth.ethereum.org/docs/install-and-build/installing-geth).
-
-### Create a new account
-
-Once you have installed the latest Version of Go Ethereum, create a new `Geth` account by:
-
-```bash
-$ geth account new
-```
-
-Your new account is locked with a passphrase. Please choose a passphrase and repeat it.
-
-```bash
-Passphrase:
-Repeat Passphrase:
-Address: {168bc315a2ee09042d83d7c5811b533620531f67}
-```
-
-NOTE: You will not be able to access the account if you lose your `passphrase`. Make sure to store it in a safe place. There is **no "Forgot my password"** option available here.
-
-Creating a new `geth` account generates a keyfile stored at `~/.ethereum/keystore`. For MacOS, this keyfile will be generated at ~/Library/Ethereum/keystore/.
-
-Locally generated Ethereum accounts can be looked up at any point in time via:
-
-```bash
-$ geth account list
-```
-
-You can now fund the newly generated Ethereum account with ETH to be able to make transactions.
-
-### Fund the account through Kovan faucet
-
-If you are operating on Kovan testnet, then you can fund the newly generated Ethereum account with dummy ETH by making the request via Gitter: https://gitter.im/kovan-testnet/faucet. You will be able to see whether the funds arrived via https://kovan.etherscan.io/.
-
 ## Creating a Centrifuge Chain Account
 
 ### Install Parity Substrate Subkey
 
-Before you can create a new Centrifuge Chain account, you have to install a version of Parity Substrate Subkey [here](https://github.com/paritytech/substrate/tree/v2.0.0-alpha.3/bin/utils/subkey).
-To install, we recommend you can follow:
-
-#### Build native binary
-
-Download and install Rust nightly version:
-
-```bash
-rustup update nightly-2020-02-27
-rustup toolchain install nightly-2020-02-27
-rustup default nightly-2020-02-27
-rustup target add wasm32-unknown-unknown --toolchain nightly-2020-02-27
-```
-
-Checkout https://github.com/paritytech/substrate/tree/v2.0.0-alpha.3
-
-```bash
-cargo build --release
-```
-
-#### Use docker version
-
-`parity/subkey:2.0.0-alpha.3`
+Before you can create a new Centrifuge Chain account, you have to install the latest version of Parity Substrate [Subkey](https://github.com/paritytech/substrate/tree/master/bin/utils/subkey).
+To install, we recommend you follow the instructions found [here](https://docs.substrate.io/reference/command-line-tools/subkey/). Alternatively, you can use the docker image - `parity/subkey:latest`.
 
 ### Create a new account
 
@@ -161,23 +83,13 @@ $ subkey --sr25519 generate
 
 You can now fund the newly generated Centrifuge Chain account with CFG by making a request in our discord `#dev` channel
 
-## Installing the Centrifuge Node
+## POD Bootstrap
 
-Before being able to transfer and anchor financial documents and mint NFTs, you need to spin up a Centrifuge node on your machine. This is a one time setup.
+### Installation
 
-### Set-up Infura
+Before being able to transfer and anchor financial documents and mint NFTs, you need to spin up a Centrifuge POD on your machine and [create an account](#account-creation).
 
-For this, we [recommend](/cent-node/getting-started/tools) [setting up](/cent-node/getting-started/geth-account) your own geth node.
-
-Otherwise, for convenience in getting started, you can use [Infura](https://infura.io). Once you have registered an account, you can create a new project and select the respective endpoint. It will give the user the option to select: Mainnet, Kovan(testing).
-
-Find the correct Infura link for the different Ethereum testnets on your Infura dashboard. Choose the correct endpoint and it will give you the option to copy to clipboard. You will need this link again later in the process.
-
-![](./images/infura.jpg)
-
-### Installing the Centrifuge Node
-
-Once you are set up, follow these steps to install the Centrifuge node:
+Follow these steps to install the Centrifuge POD:
 
 1. Download and install the latest [Centrifuge binary](https://github.com/centrifuge/go-centrifuge/releases). <!-- update link-->
 
@@ -185,87 +97,63 @@ If you want to build the node from source, follow the description in the [source
 
 2. Add the Centrifuge binary to the `$PATH` or modify the command invocation to point to the correct library.
 
-3. Run `centrifuge createconfig` as seen in the example below. This command automatically creates an identity and the required key pairs. It then generates the `config.yaml` file required to run the node.
+### Configuration
 
-**NOTE:** The provided Ethereum account in the `keystore/<KEY-FILE>` needs to have ETH to execute the `centrifuge createconfig` command.
+Run `centrifuge createconfig` as seen in the example below. This command automatically creates an identity and the required key pairs. It then generates the `config.yaml` file required to run the node.
 
 ```bash
 $ centrifuge createconfig \\
 -n mainnet \\
 -t <DEFINE_CONFIG_DIR_NAME> \\
--z ~/.ethereum/keystore/<KEY-FILE> \\
--e <infura or your own geth url> \\
 -a 8082 -p 38204 \\
 --centchainurl <your centchain endpoint> \\
---centchainaddr <your ss58 address> \\
---centchainid  <your public id> \\
---centchainsecret <your secret>
+--ipfsPinningServiceName pinata \\
+--ipfsPinningServiceURL <pinata endpoint> \\
+--ipfsPinningServiceAuth <your pinata auth token> \\
+--podOperatorSecretSeed <secret seed for POD operator> \\
+--podAdminSecretSeed <secret seed for POD admin> \\
 ```
 
-Replace the `<KEY-FILE>` with the key file you obtained when creating the Ethereum account and `<DEFINE_CONFIG_DIR_NAME>` with the location where you want the `config.yaml` file to be stored. Note that the target direction -t should be specified with an absolute path. Manually add `https://` to the Infura link (see above).
+**NOTE**:
 
-The password for the provided `keystore/<KEY-FILE>` file is asked once the `createconfig` command is run. If the password is not set, just press `enter`.
+- **The generated `config.yaml` includes sensitive information regarding the accounts used to authenticate and sign transactions. Make sure to store it in a secure environment.**
 
-**NOTE**: The generated `config.yaml` includes information about your Ethereum private key. Make sure to store it in a secure environment.
 
-### Set up your Centrifuge Node config.yaml for the corresponding testnet or mainnet
+- `podOperatorSecretSeed` - if this is omitted a new secret seed will be generated by the node, please see [POD operator](#pod-operator) for more information regarding this account.
 
-If you want to switch between testnets and mainnet, adjust the following accordingly and add the corresponding Infura link (see above). Manually add `https://` to the Infura link.
 
-**Networks:**
+- `podAdminSecretSeed` - if this is omitted a new secret seed will be generated by the node, please see [POD admin](#pod-admin) and [token usage](#usage) for more information regarding this account.
 
-- **Kovan - Catalyst**
 
-Use network `-n catalyst`
+- For more information regarding IPFS pinning, please see [IPFS](#ipfs).
 
-- **Mainnet**
+#### Network Configurations
 
-Use network `-n mainnet`
+Besides `mainnet`, Centrifuge has support for the `catalyst` test network. The network configuration for the different test networks is also part of the [code base](https://github.com/centrifuge/go-centrifuge/blob/main/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed. Please find the most important information summarized below:
 
----
+##### Catalyst
 
-**If you like to run the Centrifuge node with your own Ethereum or Centrifuge Ehain nod,e please replace the Infura urls with your own `Geth` and `centrifuge-chain` Node-URL.**
+Use network `-n catalyst`.
 
----
+This network is a test network running a version of the Centrifuge Chain modified for testing.
 
-### Look up your Centrifuge ID
+- Client: parity
+- Purpose: Testnet
+- Bootstrap Nodes - ask our team in the DAO Slack channel.
 
-A participant of the Centrifuge P2P network will be identified by an identity (Centrifuge ID) within the network. The `createconfig` command automatically creates an identity and the key pairs.
+##### Mainnet
 
-To look up your Centrifuge ID via Terminal use:
+Use network `-n mainnet`.
 
-```bash
-$ cat /<PATH-TO-CONFIG-DIR>/config.yaml | grep -i 'identityid' | awk '{print $2}'
-```
+This network is the production network, the Centrifuge Chain.
 
-### Running the Centrifuge node after creating the config.yaml
+- Client: parity
+- Purpose: Mainnet
+- Bootstrap Nodes - ask our team in the DAO Slack channel.
 
-Before running your Centrifuge Node, you need to add your Ethereum key and password as environment variables. The following bash commands show how to set the variables based on the default ethereum key location in macOS for a sample key.
+#### Changing the default configuration
 
-<!-- `CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$HOME/Library/Ethereum/keystore/UTC--2019-0UTC--2019-mm-dd` -->
-
-```bash
-CENT_ETHEREUM_ACCOUNTS_MAIN_KEY=$(cat $HOME/Library/Ethereum/keystore/UTC--2019-04-15T14-43-41.293727000Z--75aecbd0aa7f34207132d686d2a9e470fba2e6e4)
-CENT_CENTCHAIN_ACCOUNT_SECRET=<YOUR_CENTCHAIN_SECRET>
-```
-
-```bash
-CENT_ETHEREUM_ACCOUNTS_MAIN_PASSWORD=<YOUR_PASSWORD>
-```
-
-Afterwards, you can run the Centrifuge Node using the `config.yaml` file you created:
-
-```bash
-$ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
-```
-
-Replace the `PATH-TO-CONFIG-DIR` with the location of the `config.yaml` file.
-
-## Centrifuge Configuration
-
-### Changing the default configuration
-
-The default configuration with all available options is accessible [here](https://github.com/centrifuge/go-centrifuge/blob/develop/build/configs/default_config.yaml). You may adjust certain configurations according to your requirements.
+The default configuration with all available options is accessible [here](https://github.com/centrifuge/go-centrifuge/blob/main/build/configs/default_config.yaml). You may adjust certain configurations according to your requirements.
 
 - Configure node under NAT
 
@@ -276,111 +164,418 @@ The default configuration with all available options is accessible [here](https:
     externalIP: "100.111.112.113"
   ```
 
-- Configure notification webhook (for incoming data from other peers)
-
-  To receive an event when a new document has been shared with your node, add your WebHook endpoint in the config.yaml file:
-
-  ```yaml
-  notifications:
-    endpoint: "http://localhost:8080/endpoint/"
-  ```
-
-  For more information, see the [Notification Payload](https://centrifuge-os-node-api-4.api-docs.io/0.0.6/models/notification-message).
-
-- Ethereum max gas price
-
-  To adjust the maximum gas price (in wei) you are willing to pay per transaction:
-
-  ```yaml
-  ethereum:
-    maxGasPrice: "xx000000000"
-  ```
-
-  Note: 20 Gwei would be "20000000000".
-
-- Disable Pre-commit
-
-  The pre-commit option configures the node to acquire a lock on the anchor that should be anchored next before asking other peers to sign the message. This setting is enabled by default. We do not recommend disabling it. Only do so if you know what you are doing.
-
-  ```yaml
-  anchoring:
-    precommit: false
-  ```
-
-### Open ports for incoming P2P connections
+#### Open ports for incoming P2P connections
 
 To accept the incoming P2P connections, you will need to open two ports for incoming TCP connections.
 
 - P2P Port: open ingress/egress. This port will be configured under `p2p` `port` in your config.
 - API Port: restrict at will, only you or your upstream systems should need to talk to it. This port will be configured as `nodeport` in your config.
 
-## Post Install Verification
+### Running the Centrifuge POD after creating the configuration
 
-To make sure that your Centrifuge node setup was successful and is running properly you can ping your node.
+You can run the Centrifuge POD using the `config.yaml` file you created:
+
+```bash
+$ centrifuge run -c /<PATH-TO-CONFIG-DIR>/config.yaml
+```
+
+Replace the `PATH-TO-CONFIG-DIR` with the location of the `config.yaml` file.
+
+### Post Install Verification
+
+To make sure that your Centrifuge POD setup was successful and is running properly you can ping your node.
 
 ```bash
 $ curl -X GET "http://localhost:8082/ping" -H "accept: application/json"
 ```
 
-It will return (e.g. Kovan - Catalyst):
+It will return (e.g. Catalyst):
 
 `{"version":"...","network":"catalyst"}`
 
 ---
 
+## Accounts
+
+The `Accounts` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Accounts) provides
+an overview of all the endpoints available for handling accounts.
+
+---
+
+An account is the POD representation of the user that is performing various operations. The identity of this account
+is used when storing documents and performing any action related to the document handling process such as - starting long-running
+tasks for committing or minting documents, or sending the document via the p2p layer.
+
+### Account Data
+
+The data stored for each account has the following JSON format:
+
+```json
+{
+  "data": [
+    {
+      "identity": "string",
+      "document_signing_public_key": [
+        0
+      ],
+      "p2p_public_signing_key": [
+        0
+      ],
+      "pod_operator_account_id": [
+        0
+      ],
+      "precommit_enabled": true,
+      "webhook_url": "string"
+    }
+  ]
+}
+```
+
+`identity` - hex encoded Centrifuge Chain account ID. This is the identity used for performing the operations described above.
+
+`document_signing_public_key` - read-only - public key that is used for signing documents, this is generated for each account that is created on the POD.
+
+`p2p_public_signing_key` - read-only - public key that is used for interactions on the P2P layer, this is generated during POD [configuration](#configuration).
+
+`pod_operator_account_id` - read-only - the [POD operator](#pod-operator) account ID.
+
+`precommit_enabled` - flag that enables anchoring the document prior to requesting the signatures from all collaborators.
+
+`webhook_url` - URL of the [webhook](#webhooks) that is used for sending updates regarding documents or jobs.
+
+### Account Creation
+
+An account can be created by calling the [account creation endpoint](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Accounts/generate_account_v2) with a valid admin token (see [token usage](#usage)),
+and providing the required information - `identity`, `precommit_enabled`, `webhook_url`.
+
+The successful response for the account creation operation will contain the fields mentioned above in [account data](#account-data).
+
+### Account Boostrap
+
+**NOTE** - The following steps are required to ensure that the POD can use a newly created account.
+
+1. Store the `document_signing_public_key` and `p2p_public_signing_key` in the `Keystore` storage of Centrifuge Chain.
+
+   This can be done by submitting the `addKeys` extrinsic of the `Keystore` pallet.
+
+2. Add the POD operator account ID as a `PodOperation` proxy to the `identity`.
+
+   This can be done by submitting the `addProxy` extrinsic of the `Proxy` pallet.
+ 
+
+Example script using our [Go Substrate RPC Client](https://github.com/centrifuge/go-substrate-rpc-client):
+
+```
+func bootstrapAccount(
+	api *gsrpc.SubstrateAPI,
+	rv *types.RuntimeVersion,
+	genesisHash types.Hash,
+	meta *types.Metadata,
+	accountInfo types.AccountInfo,
+	krp signature.KeyringPair,
+) error {
+	addProxyCall, err := types.NewCall(
+		meta,
+		"Proxy.add_proxy",
+		delegateAccountID,
+		10,              // PodOperation
+		types.NewU32(0), // Delay
+	)
+
+	if err != nil {
+		return fmt.Errorf("couldn't create addProxy call: %w", err)
+	}
+
+	discoveryKeyHash := types.NewHash(discoveryKeyBytes)
+	documentSigningKeyHash := types.NewHash(documentSigningKeyBytes)
+
+	type AddKey struct {
+		Key     types.Hash
+		Purpose uint8
+		KeyType uint8
+	}
+
+	addKeysCall, err := types.NewCall(
+		meta,
+		"Keystore.add_keys",
+		[]*AddKey{
+			{
+				Key:     discoveryKeyHash,
+				Purpose: 0, // P2P Discovery
+				KeyType: 0, // ECDSA
+			},
+			{
+				Key:     documentSigningKeyHash,
+				Purpose: 1, // P2P Document Signing
+				KeyType: 0, // ECDSA
+			},
+		},
+	)
+
+	if err != nil {
+		return fmt.Errorf("couldn't create addKeys call: %w", err)
+	}
+
+	batchCall, err := types.NewCall(
+		meta,
+		"Utility.batch_all",
+		addProxyCall,
+		addKeysCall,
+	)
+
+	if err != nil {
+		return fmt.Errorf("couldn't create batch call: %w", err)
+	}
+
+	ext := types.NewExtrinsic(batchCall)
+
+	opts := types.SignatureOptions{
+		BlockHash:          genesisHash, // using genesis since we're using immortal era
+		Era:                types.ExtrinsicEra{IsMortalEra: false},
+		GenesisHash:        genesisHash,
+		Nonce:              types.NewUCompactFromUInt(uint64(accountInfo.Nonce)),
+		SpecVersion:        rv.SpecVersion,
+		Tip:                types.NewUCompactFromUInt(0),
+		TransactionVersion: rv.TransactionVersion,
+	}
+
+	err = ext.Sign(krp, opts)
+
+	if err != nil {
+		return fmt.Errorf("couldn't sign extrinsic: %w", err)
+	}
+
+	sub, err := api.RPC.Author.SubmitAndWatchExtrinsic(ext)
+
+	if err != nil {
+		return fmt.Errorf("couldn't submit and watch extrinsic: %w", err)
+	}
+
+	defer sub.Unsubscribe()
+
+	select {
+	case st := <-sub.Chan():
+		switch {
+		case st.IsFinalized, st.IsInBlock, st.IsReady:
+			return nil
+		default:
+			return fmt.Errorf("extrinsic not successful - %v", st)
+		}
+	case err := <-sub.Err():
+		return fmt.Errorf("extrinsic error: %w", err)
+	}
+}
+```
+### Identities
+
+Most of the operations performed by the POD rely on the presence of proxies that are used to:
+- sign JSON Web3 Tokens used for [authentication](#authentication).
+- sign extrinsics that are performed on behalf of the identity, see [POD operator](#pod-operator).
+
+#### POD-specific Accounts
+
+##### POD Admin
+
+The POD admin is an account that is stored on the POD, and its sole purpose is to authorize access for some account related endpoints such as
+account generation, accounts listing, and account details retrieval.
+This is required since not every user should have the rights to perform the mentioned actions.
+
+##### POD Operator
+
+The POD operator is an account that is stored on the POD, and it is used for submitting extrinsics on behalf of the provided identity.
+This is required since an identity can be an anonymous proxy, which is unable to sign any extrinsics.
+
+Given the purpose of this account, it is expected that it's properly funded in order to cover for the transaction fees.
+
+---
+
+## Authentication
+
+Authentication is performed using the JSON Web3 Tokens described [here](https://github.com/hamidra/jw3t).
+
+### Authentication Header
+
+The Centrifuge POD is capable of maintaining multiple accounts. Accounts are used to track of the different users that might be using a single instance of a Centrifuge POD. We use an HTTP header for specifying a JSON Web3 Token that holds information regarding the identity to be used and its delegate.
+
+| Header             | Value               |
+| ------------------ |---------------------|
+| **authorization:** | Bearer <jw3t_token> |
+
+### Token
+
+The format of the JW3 token that we use is:
+
+`base_64_encoded_json_header.base_64_encoded_json_payload.base_64_encoded_signature`
+
+Where the un-encoded parts are as follows:
+
+Header:
+
+```json
+{
+  "algorithm": "sr25519", 
+  "token_type": "JW3T", 
+  "address_type": "ss58"
+}
+```
+
+---
+
+Payload:
+
+```json
+{
+  "address": "delegate_address",
+  "on_behalf_of": "delegator_address",
+  "proxy_type": "proxy_type",
+  "expires_at": "1663070957",
+  "issued_at": "1662984557",
+  "not_before": "1662984557"
+}
+```
+
+`address` - SS58 address of the proxy delegate (see [usage](#usage) for more info).
+
+`on_behalf_of` - SS58 address of the proxy delegator (see [usage](#usage) for more info).
+
+`proxy_type` - one of the allowed proxy types (see [usage](#usage) for more info):
+
+- `PodAdmin` - defined in the POD.
+- `Any` - defined in the Centrifuge Chain.
+- `PodOperation` - defined in the Centrifuge Chain.
+- `PodAuth` - defined in the Centrifuge Chain.
+
+`expires_at` - token expiration time.
+
+`issued_at` - token creation time.
+
+`not_before` - token activation time.
+
+---
+
+Signature - the `Schnorrkel/Ristretto x25519` signature generated for `json_header.json_payload`.
+
+---
+
+### Usage
+
+The POD has 2 types of authentication mechanisms:
+
+1. On-chain proxies - this is the most commonly used mechanism, and it is used to authenticate any on-chain proxies of the identity.
+
+   In this case, the `address`, `on_behalf_of` and `proxy_type` should contain the information as found on-chain.
+
+   Example:
+
+   `Alice` - identity.
+
+   `Bob` - proxy of `Alice` with type `PodAuth`.
+
+   Token payload:
+
+   ```json
+   {
+     "address": "ss58_address_of_bob",
+     "on_behalf_of": "ss58_address_of_alice",
+     "proxy_type": "PodAuth",
+     "expires_at": "1663070957",
+     "issued_at": "1662984557",
+     "not_before": "1662984557"
+   }
+   ```
+
+2. POD admin - this is used when performing authentication for restricted endpoints.
+
+   In this case, the `address` and `on_behalf_of` fields should be equal and contain the SS58 address of the POD admin, and
+   the `proxy_type` should be `PodAdmin`.
+
+   Example:
+
+   ```json
+   {
+     "address": "pod_admin_ss58_address",
+     "on_behalf_of": "pod_admin_ss58_address",
+     "proxy_type": "PodAdmin",
+     "expires_at": "1663070957",
+     "issued_at": "1662984557",
+     "not_before": "1662984557"
+   }
+   ```
+
+---
+
 ## REST API Example Uses
 
-Once the Centrifuge node is up and running you are able to start submitting documents and tokenize these documents via the Rest API. Please refer to the [Node API](https://centrifuge-os-node-api-7.api-docs.io/2.0.0) documentation for a complete list of endpoints.
+Once the Centrifuge POD is up and running you are able to start submitting documents and tokenize these documents via the Rest API. Please refer to the [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0) documentation for a complete list of endpoints. A short summary can be found below:
 
-### Authentication Headers
+### NFTs
 
-The Centrifuge node is capable of maintaining multiple accounts. Accounts are used to track of the different users that might be using a single instance of a Centrifuge node. We use an http header for specifying which account to use for a given request.
+The `NFTs` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/NFTs) provides
+an overview of all the endpoints available for handling document NFTs.
 
-| Header             | Value                                                  |
-| ------------------ | ------------------------------------------------------ |
-| **authorization:** | hex encoded identity of the account, e.g. 0xafe241...) |
+The NFT endpoint provides basic functionality for minting NFTs for a document and retrieving NFT specific information
+such as attributes, metadata, and owner.
 
-## Network Configurations
+#### IPFS
 
-Besides the mainnet, Centrifuge has support for Kovan testnet in Ethereum. The network configuration for the different testnets is also part of the [code base](https://github.com/centrifuge/go-centrifuge/blob/master/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed. Please find the most important information summarized below.
+When minting NFTs, additional information is stored on-chain and on IPFS, as follows:
 
-### Catalyst  -  Kovan
+- document fields that are specified in the minting request are saved on IPFS under the following format:
 
-This network is a testnet that operates over a Proof-of-Authority Ethereum network (Kovan) and a Proof-of-Stake in the Centrifuge Chain.
+  ```json
+  {
+    "name": "ipfs_name",
+    "description": "ipfs_description",
+    "image": "ipfs_image",
+    "properties": {
+      "AssetIdentifier": "0x25680a49ff1b6368f7e243130ff957f9523b917c8c83d79aab97c0ef99fd3b15",
+      "AssetValue": "100",
+      "MaturityDate": "2022-10-13T11:07:28.128752151Z",
+      "Originator": "0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d",
+      "result": "0x0000000000000000000000000000000100000000000000000000000000000064"
+    }
+  }
+  ```
 
-- Client: parity
-- Purpose: Testnet
-- Bootstrap Nodes:
+  **NOTE** - at the moment, the only IPFS pinning service that is supported is [pinata](https://www.pinata.cloud/).
 
-```
-/ip4/35.242.230.116/tcp/38202/ipfs/12D3KooWSbxbKCbZh9JVtsQyVGdTPra4RpSA4tbvs6an11jwGA2z
-```
 
-```
-/ip4/35.234.72.127/tcp/38202/ipfs/12D3KooWQm2cSmrEiaSMV4gUv7WGhpgRwo8woFSsHhZGbGi3aA8x
-```
+- the IPFS hash of the above mentioned fields is set as metadata to the NFT on chain, in the following format - `/ipfs/QmfN7u6hMRHxL83Jboa4bHgme4PJmcS4eQFnkrXye5ctAM`
 
-- Deployed Smart Contracts:
-  - identityFactory: "0x1362EcBf8679243E24fA0EC425d2e10A08223c7D"
 
-### Mainnet
+- the document ID and document version are set as attributes to the NFT on chain.
 
-This network is the production network that operates over the main Proof-of-Stake Ethereum network (Mainnet) and a Proof-of-Stake in the Centrifuge Chain.
 
-- Client: geth | parity
-- Purpose: Mainnet
-- Bootstrap Nodes:
+**NOTE** - All the above information can be found on chain by querying the related storages of the `Uniques` pallet.
 
-```
-/ip4/35.198.122.117/tcp/38202/ipfs/12D3KooWAg3EcAtrYVCxwz6k6sT9iZSRztz9D7yUzpBPREFzrUoV
-```
+---
 
-```
-/ip4/35.242.221.111/tcp/38202/ipfs/ 12D3KooWKGwixXenuXAVqkJKmnHSAJDjzf7eGMo6troigZxm7A5R
-```
+### Documents
 
-- Deployed Smart Contracts:
-  - IdentityFactory: `0xAF456c16386a64fd4F4b69af13a86Df0B562Aa00`
+The `Documents` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Documents) provides
+an overview of all the endpoints available for handling documents.
+
+The main purpose of the POD is to serve as a handler for documents that contain private off-chain data, as described above.
+
+---
+
+### Jobs
+
+The `Jobs` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Jobs) provides
+an overview of all the endpoints available for retrieving job details.
+
+---
+
+The jobs endpoint returns detailed information for a job.
+
+A job is a long-running operation that is triggered by the POD when performing actions related to documents and/or NFTs.
+
+### Webhooks
+
+The `Webhook` section of our [swagger API docs](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Webhook) provides
+an overview the notification message that is sent by the POD for document or job events.
+
+---
 
 ## Disclaimer
 
@@ -400,11 +595,11 @@ Following is a list of important limitations and not yet implemented features of
 
 ### The Meaning of a Signature
 
-When two Centrifuge nodes exchange documents with each other, they automatically attach signatures to the transferred documents after validation of the data payload and signatures/keys. A Centrifuge node validates the structural integrity of a received document as well as the validity of previous signatures compared to the public keys of the corresponding Centrifuge ID of the counterparty. A Centrifuge itself does not validate if the document data makes sense from a business point of view.
+When two Centrifuge POD exchange documents with each other, they automatically attach signatures to the transferred documents after validation of the data payload and signatures/keys. A Centrifuge POD validates the structural integrity of a received document as well as the validity of previous signatures compared to the public keys of the corresponding Centrifuge ID of the counterparty. A Centrifuge POD itself does not validate if the document data makes sense from a business point of view.
 
-A Centrifuge node is a technical client to Centrifuge. This client exchanges and signs data in well-known formats. It does not validate document data authenticity.
+A Centrifuge POD is a technical client to Centrifuge. This client exchanges and signs data in well-known formats. It does not validate document data authenticity.
 
-Data authenticity and correctness are always validated by the upstream system. E.g. the accounting system interacting with a Centrifuge node.
+Data authenticity and correctness are always validated by the upstream system. E.g. the accounting system interacting with a Centrifuge POD.
 
 A signature of a collaborator on a Centrifuge document signifies the technical receipt and validation of a message. It does not signify the agreement that a document itself is valid, e.g. if an invoice amount is matching the underlying purchase order.
 
