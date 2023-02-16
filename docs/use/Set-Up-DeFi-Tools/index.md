@@ -1,6 +1,6 @@
 ---
 id: set-up-defi-tools
-order: 12
+order: 13
 title: Set up DeFi tools
 ---
 

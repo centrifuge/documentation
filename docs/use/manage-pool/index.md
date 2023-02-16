@@ -1,6 +1,6 @@
 ---
 id: manage-a-pool
-order: 11
+order: 14
 title: Manage a Pool
 ---
 
