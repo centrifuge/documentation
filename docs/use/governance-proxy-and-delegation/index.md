@@ -7,19 +7,19 @@ contributors: <Orhan Klardashti:klardashti@gmail.com>
 
 ## Governance Proxy and Delegation
 
-There are two ways you can delegate your voting power to another wallet; creating a *Governance Proxy* or using *Delegation*.
+There are two ways you can delegate your voting power to another wallet: creating a *Governance Proxy* or using *Delegation*.
 
 A *Governance Proxy* is a wallet that can perform governance related tasks on-chain on behalf of another wallet. It is possible to create [different types of proxies](https://wiki.polkadot.network/docs/learn-proxies), but a Governance Proxy specifically only allows for transactions related to governance (i.e. it cannot transfer tokens).
 
 *Delegation* of tokens is another way of transferring your voting power to another wallet, while maintaining full custody of your tokens. This is very convenient if:
 
-* you want to keep your tokens in a cold wallet and still participate in Governance
-* you don't have time to vote but still want to let someone else vote with your tokens actively in Governance
-* you don't have enough background knowledge about the proposals and want to delegate your voting power to someone who does
+* You want to keep your tokens in a cold wallet and still participate in Governance
+* You don't have time to vote but still want to let someone else vote with your tokens actively in Governance
+* You don't have enough background knowledge about the proposals and want to delegate your voting power to someone who does
 
 If wallet A delegates tokens to wallet B, then every time wallet B votes in a referendum, it automatically votes with the predetermined amount and conviction from wallet A. 
 
-Note that OpenSquare Snapshots do not support delegation - but you can vote with proxies.
+Note that OpenSquare Snapshots do not support delegation, but you can vote with proxies.
 
 ## How to create a Governance Proxy
 

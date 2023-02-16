@@ -7,25 +7,25 @@ contributors: <Orhan Klardashti:klardashti@gmail.com>
 
 ## The Centrifuge Council
 
-The Centrifuge council currently consists of 9 councillors (this number can be changed by governance) who are elected by the CFG token holders. The council serves to represent the interest of all Centrifuge stakeholders, be they actively participating token holders or not. Some of the tasks of the council are to:
+The Centrifuge council currently consists of 9 councilors (this number can be changed by governance) who are elected by the CFG token holders. The council serves to represent the interest of all Centrifuge stakeholders, be they actively participating token holders or not. Some of the tasks of the council are to:
 
-* propose referenda to the benefit of the network
-* veto proposals that are harmful to the network
-* vote on Treasury proposals
+* Propose referenda to the benefit of the network
+* Veto proposals that are harmful to the network
+* Vote on Treasury proposals
 
-Any CFG token holder can both submit their candidacy to the council and vote on councillors.
+Any CFG token holder can both submit their candidacy to the council and vote on councilors.
 
 The Centrifuge council have rolling elections, which means that every 7 days the votes are counted, and the candidates with the highest amount of votes (in terms of CFG) from *candidates*, *runners up* and *members* will be given a seat in the council.
 
 ## How to submit a candidacy to the council
 
-Before you can submit your candidacy to the Centrifuge council, you need to create an **on-chain identity** for the account you will use for your candidacy. You do that by going to [Accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/accounts) in the portal and click on the three dots next to the account you want create an on-chain identity for, and select *Set on-chain identity*.
+Before you can submit your candidacy to the Centrifuge council, you need to create an **on-chain identity** for the account you will use for your candidacy. You do so by going to [Accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/accounts) in the Polkadot.js web app, then click on the three dots next to the account you want create an on-chain identity for, and select *Set on-chain identity*.
 
 ![](./images/SetIdentity.png)
 
-The name you choose will be displayed instead of your wallet address.You can also add additional information, like email, website, Twitter handle etc. The only obligatory field to fill out is *display name* - all the others are optional. Once you have added the information you want, you simply click *Set identity*. When you create an on-chain identity, an amount of 100 CFG is reserved (locked). This amount will be unlocked again, once you remove your on-chain identity.
+The name you choose will be displayed instead of your wallet address.You can also add additional information, like email, website, Twitter handle, etc. The only obligatory field to fill out is *display name* - all the others are optional. Once you have added the information you want, you simply click *Set identity*. When you create an on-chain identity, an amount of 100 CFG is reserved (locked). This amount will be unlocked again once you remove your on-chain identity.
 
-The next step is to submit your candidacy on-chain. To do that, navigate to the [Council section](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/council) of the portal and click on *Submit candidacy*.
+The next step is to submit your candidacy on-chain. To do that, navigate to the [Council section](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/council) of the Polkadot.js web app and click on *Submit candidacy*.
 
 ![](./images/SubmitCandidacy.png)
 
