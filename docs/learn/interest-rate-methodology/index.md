@@ -30,19 +30,19 @@ with
 Applying the numbers from the example above with this formula (i = 0.06, t = 1.00, n = 12) gives
 
 $$
-$100 * (1 + \frac{0,06}{12})^{(1*12)} = $106.1678.
+100 * (1 + \frac{0,06}{12})^{(1*12)} = 106.1678.
 $$
 
 The same concept and formula can be applied to any compounding frequency. With secondly compounding (with n = 365 days * 24 hours * 60 minutes * 60 seconds = 31536000 seconds per year) the same 6.00% interest rate compounded every second would provide you with:
 
 $$
-$100 * (1 + \frac{0.06}{31536000})^{(1*31536000)} = $106.1837.
+100 * (1 + \frac{0.06}{31536000})^{(1*31536000)} = 106.1837.
 $$
 
 As you can see, the higher the compounding frequency, the higher the effect of compounding compared to annual interest rates.
 
 ### APR vs APY
-To fully understand Centrifuge Protocol interest rates and yields it is also important to understand the difference between an `Annual Percentage Rate (APR)` and `Annual Percentage Yield` (APY). The main difference is that an APY takes into account compounded interest, while the APR does not. Thus, for annual compounding APR and APY are equal. For higher compounding frequencies such as monthly or daily compounding an APY is higher than the annual APR. If you think of the example above, the APR is 6.00%. Your APY for monthly compounding is 6.1678%. The APY for secondly compounding 6.1837%. So the higher the compounding frequency the higher the equivalent APY.
+To fully understand Centrifuge Protocol interest rates and yields it is also important to understand the difference between an `Annual Percentage Rate (APR)` and `Annual Percentage Yield (APY)`. The main difference is that an APY takes into account compounded interest, while the APR does not. Thus, for annual compounding APR and APY are equal. For higher compounding frequencies such as monthly or daily compounding an APY is higher than the annual APR. If you think of the example above, the APR is 6.00%. Your APY for monthly compounding is 6.1678%. The APY for secondly compounding 6.1837%. So the higher the compounding frequency the higher the equivalent APY.
 
 In the Centrifuge Protocol the input rate usually is an APR. E.g., if you look up at the financing fee of an asset on-chain, the number you’d find would be an APR. Since this APR is applied every second the effective yield stemming from the interest accrued can be approximated best with an APY compounded secondly. Thus also in the Centrifuge App, most input rates will expect an APR, while the displayed interest rates and yields will commonly be APYs.
 
@@ -70,7 +70,7 @@ $$
 
 with t reflecting the time period **in seconds** for the on-chain implementation. 
 
-Continuing the simple example from above with P = $100 and i = 0.06, the $rate$ variable can be calculated as
+Continuing the simple example from above with P = 100 and i = 0.06, the $rate$ variable can be calculated as
 
 $$
 rate  = 1 + \frac{0.06}{31536000} = 1.00000000190259. 
@@ -79,13 +79,13 @@ $$
 Assuming the Debt to be outstanding over the course of a year (so t = 31536000), the Debt at the end of the year amounts to:
 
 $$
-D = $100 \cdot 1.0000000015854900^{31536000} = $106.1837
+D = 100 \cdot 1.0000000015854900^{31536000} = 106.1837
 $$
 
-which is equal to the result for secondly compounding given by the standard formula from the example above. If, e.g. the Debt after half a year needs to be calculated, t would be be $(t = \mathtt{y} / 2 = 15768000)$ resulting in a Debt of:
+which is equal to the result for secondly compounding given by the standard formula from the example above. If, e.g. the Debt after half a year needs to be calculated, t would be $(t = \mathtt{y} / 2 = 15768000)$ resulting in a Debt of:
 
 $$
-D = $100 \cdot 1.0000000015854900^{15768000} = $103.0455.
+D = 100 \cdot 1.0000000015854900^{15768000} = 103.0455.
 $$
 
 Please find a simple calculator for both standard compounding formulas and the on-chain implementation [here](https://docs.google.com/spreadsheets/d/1Q4UMWtyRwhITqOvJtNd7N2IwKZsT0ihEASOFdWKSJVM/edit#gid=0).
