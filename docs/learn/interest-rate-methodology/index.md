@@ -88,9 +88,7 @@ $$
 D = 100 \cdot 1.0000000015854900^{15768000} = 103.0455.
 $$
 
-Please find a simple calculator for both standard compounding formulas and the on-chain implementation [here](https://docs.google.com/spreadsheets/d/1Q4UMWtyRwhITqOvJtNd7N2IwKZsT0ihEASOFdWKSJVM/edit#gid=0).
+Please find a simple calculator for both standard compounding formulas and the on-chain implementation [here](https://docs.google.com/spreadsheets/d/1Q4UMWtyRwhITqOvJtNd7N2IwKZsT0ihEASOFdWKSJVM/edit#gid=0). The code for the Ethereum pools implementation can be found in [github.com/centrifuge/tinlake-math](https://github.com/centrifuge/tinlake-math).
 
-### Etherum on-chain number format
-Ethereum uses fixed precision decimals for monetary amounts. Interest Rates usually have 27 digits precision and amounts 18 digits precision.
-To illustrate, the 1.00000000190259 $rate$ variable representing a 6.00% APR from the example above would be `1000000001902587519025875190` on-chain. The debt of $106.1837 would be `106183700000000000000`. The Ethereum pools implementation can be found in [github.com/centrifuge/tinlake-math](https://github.com/centrifuge/tinlake-math).
-
+### On-chain number format
+Centrifuge-Protocol uses fixed precision decimals for monetary amounts on-chain. Interest Rates usually have 27 digits precision and amounts 18 digits precision. To illustrate, the 1.00000000190259 $rate$ variable representing a 6.00% APR from the example above would be `1000000001902587519025875190` on-chain. The debt of $106.1837 would be `106183700000000000000`. 
