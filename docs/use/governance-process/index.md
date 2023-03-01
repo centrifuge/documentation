@@ -12,7 +12,7 @@ Governance is one of the key pillars of the Centrifuge DAO. The Centrifuge proto
 In general, our governance process can be divided into two parts; **off-chain** and **on-chain governance**.
 
 ### Off-chain Governance
-This is the first part of the process. It takes place on our [Forum](as a Request for Comments) (https://gov.centrifuge.io/) and [OpenSquare](https://voting.opensquare.io/space/centrifuge). The purpose of this is to get input from the Community on a proposal and gather support, before moving the proposal on-chain (if necessary — not all proposals need to be submitted on-chain in order to pass).
+This is the first part of the process. It takes place on our [Forum](https://gov.centrifuge.io/)(as a Request for Comments) and [OpenSquare](https://voting.opensquare.io/space/centrifuge). The purpose of this is to get input from the Community on a proposal and gather support, before moving the proposal on-chain (if necessary — not all proposals need to be submitted on-chain in order to pass).
 
 ### On-chain Governance
 This refers to the part of the process that takes places on the blockchain. First a proposal is created on-chain (which can be done by either the public or the Council), and this is generally followed by an on-chain referendum where all token holders can vote aye or nay.
