@@ -1,96 +1,98 @@
 ---
 id: interest-rate-methodology
-order: 5
+order: 4
 title: Interest Rate Methodology
-contributors: <Dylan Dedi:dylan@centrifuge.io>
+contributors: <Dennis:dennis@k-f.co>
 ---
 
-Tinlake uses an interest rate mechanism that is typically implemented as compounding per second. The implementation can be found in [github.com/centrifuge/tinlake-math](https://github.com/centrifuge/tinlake-math).
+## Introduction
+The standard within the Centrifuge Protocol is to compound and calculate interest every second.
+Transactions on the Centrifuge Protocol are being calculated and executed continuously at any day and time. This requires an equivalent interest rate mechanism that is able to provide the correct amount of interest at any point in time.
 
-Below we show abstract examples of how this is calculated:
+## Financial Background
+This section gives a general introduction into interest compounding and the difference between APYs and APRs. If you are already familiar with these concepts, you can skip this section and start reading how these concepts are implemented on-chain below. 
+
+### How does compounding interest work?
+Interest can be compounded at different frequencies. Most common are annual, monthly and daily frequencies. Annual compounding is simple. Imagine you invest $100 and earn 6.00% interest compounded annually. Then you receive $6.00 calculated as `$100 * 6.00% = $6.00 ` at the end of one year.
+
+Now assume you get 6.00% interest on your $100 — but you compound monthly. That means at the end of the first month, you apply the monthly interest rate calculated as `6.00%/12=0.50%` to receive interest of $0.50. This leaves you with $100.50 at the end of the first month. At the end of the second month, you do the same, but as you also consider the previously earned interest you now get slightly more: `$100.50 * 0.5% = $0.5025`. If you continue to do this for 12 months you end up with $106.1678 at the end of the year. That's slightly more than with annual compounding despite the same interest rate of 6.00% - the "power of compounding". 
+
+Note that you can calculate the total interest accrued by repeating the above monthly calculation 12 times or - much easier -  apply the general interest rate formula:
+
+$$
+Debt = Principal * (1 + \frac{i}{n})^{(n*t)},
+$$
+
+with 
 
 | Variable     | Description                                                                                                                   |
 | ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| $P$          | Principal                                                                                                                     |
-| $D$          | Debt                                                                                                                          |
-| $rate$       | interest rate per second                                                                                                      |
-| $n$          | the number of times the interest is compounded, compounding is once per second, so "n" is seconds past since last calculation |
-| $\mathtt{R}$ | Nominal interest rate (5% would be 0.05)                                                                                      |
-| $\mathtt{A}$ | Annual Percentage Rate (APR)                                                                                                  |
-| $\mathtt{y}$ | constant, seconds in a year: $3600 \cdot 24 \cdot 365 = 31536000$                                                             |
+| $i$          | Interest rate defined as APR (decimal)         |                                                                                                         
+| $t$          | Time -> Loan duration in years (decimal)     |                            
+| $n$          | Compounding frequency (Number of times interest is compounded per unit `t` ) (integer)|
 
-The basic formula is:
+Applying the numbers from the example above with this formula (i = 0.06, t = 1.00, n = 12) gives:
 
 $$
-D = P \cdot rate^{n}
+100 * (1 + \frac{0,06}{12})^{(1*12)} = 106.1678.
 $$
 
-Debt equals to Principal (or the previous debt amount) times rate to the power of seconds since last calculation.
-
-## Example: Interest rate compounding per second
+The same concept and formula can be applied to any compounding frequency. With secondly compounding (with n = 365 days * 24 hours * 60 minutes * 60 seconds = 31536000 seconds per year) the same 6.00% interest rate compounded every second would provide you with:
 
 $$
-P = 100 \newline
-r = 0.05 \newline
-n = 3600 \cdot 24 \cdot 365 = 31536000 \newline
+100 * (1 + \frac{0.06}{31536000})^{(1*31536000)} = 106.1837.
 $$
 
-Using the formula above, the Debt $D$ after half a year
-$(n = \mathtt{y} / 2 = 15768000)$ would result in $D = 102.5315$.
+As you can see, the higher the compounding frequency, the higher the effect of compounding compared to annual interest rates.
 
-After one year ($n = \mathtt{y}$) the $D$ would be $105.1271$.
+### APR vs APY
+To fully understand Centrifuge Protocol interest rates and yields, it is also important to understand the difference between an `Annual Percentage Rate (APR)` and `Annual Percentage Yield (APY)`. The main difference is that an APY takes into account compounded interest, while the APR does not. Thus, for annual compounding, APR and APY are equal. For higher compounding frequencies such as monthly or daily compounding, an APY is higher than the annual APR. If you think of the example above, the APR is 6.00%. Your APY for monthly compounding is 6.1678%. The APY for secondly compounding 6.1837%. The higher the compounding frequency, the higher the equivalent APY.
 
-Thus a 5.00% interest rate compounded every second is equivalent to an annually compounded rate of 5.127%.
+In the Centrifuge Protocol, the input rate usually is an APR. E.g., if you look up at the financing fee of an asset on-chain, the number you’d find would be an APR. Since this APR is applied every second, the effective yield stemming from the interest accrued can be approximated best with an APY compounded secondly. Thus also in the Centrifuge App, most input rates will expect an APR, while the displayed interest rates and yields will commonly be APYs.
 
-The annual percentage rate $\mathtt{A}$ could also be calculated directly from the percentage rate $\mathtt{R}$ (using $n = \mathtt{y} = 31536000$):
-
-$$
-\mathtt{A} = (1 + \frac{\mathtt{R}}{\mathtt{y}})^\mathtt{y} = 1.05127
-$$
-
-### Rate per Second
-
-To calculate the Debt, we initialize an interest rate in Tinlake with a variable called `ratePerSecond` or $rate$. The ratePerSecond represents the interest accrued per second in Tinlake.
+## On-chain implementation
+### Formula applied
+The implementation on-chain is slightly different to the standard compounding formula above, albeit with identical results.
+To calculate the `Debt` at any point in time, a variable called `ratePerSecond` or `rate` is introduced. This is calculated as
 
 $$
-rate = 1 + \frac{\mathtt{R}}{\mathtt{y}}
+rate = 1 + \frac{\mathtt{i}}{\mathtt{y}}
 $$
 
-### Calculate Debt
+with 
+
+| Variable     | Description |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| $i$          | Input interest rate defined as APR   |
+| $y$          | Constant, reflecting the compounding frequency (for Centrifuge Protocol, seconds in a year: 31536000360) |
+
+The Debt $D$ at any point in time based on Principal $P$ for time $t$ (in seconds) can then be calculated as:
 
 $$
-D = P * rate^n
+D = P \cdot rate^{t}
 $$
 
-The debt can be calculated by multiplying the principal $P$ with $rate$ to the power of $n$. The variable $n$ represents the time passed in seconds since the loan has been borrowed.
+with t reflecting the time period **in seconds** for the on-chain implementation. 
 
-Continuing the example from above for annual interest:
-
-$$
-rate  = 1 + \frac{0.05}{31536000} = 1.0000000015854900 \newline
-D = 100 \cdot 1.0000000015854900^{31536000} = 105.1271
-$$
-
-## Using an annual percentage rate (APR) in Tinlake
-
-The Tinlake user interface uses an annual percentage rate (APR) as input. Tinlake transforms this annually compounded rate $\mathtt{A}$ into the equivalent rate used for compounding per seconds $rate$. This is achieved by solving the equation:
+Continuing the simple example from above with P = 100 and i = 0.06, the $rate$ variable can be calculated as:
 
 $$
-\mathtt{A} = (1 + \frac{rate}{\mathtt{y}})^\mathtt{y}
+rate  = 1 + \frac{0.06}{31536000} = 1.00000000190259. 
 $$
 
-for $r$:
+Assuming the Debt to be outstanding over the course of a year (so t = 31536000), the Debt at the end of the year amounts to:
 
 $$
-r = \mathtt{y} \cdot (\mathtt{A}^{\frac{1}{\mathtt{y}}}-1)
+D = 100 \cdot 1.0000000015854900^{31536000} = 106.1837
 $$
 
-Using the calculated $r$ compounding every second leads to the same amount of debt like using $\mathtt{A}$ compounding annually over the course of a year. Thus, the calculated `rate` can be used to achieve an interest per year (APR) behavior with the compounding per second implementation in Tinlake.
+which is equal to the result for secondly compounding given by the standard formula from the example above. If, e.g. the Debt after half a year needs to be calculated, t would be $(t = \mathtt{y} / 2 = 15768000)$ resulting in a Debt of:
 
-Continuing the example from above with an 5.00% annual interest rate (APR):
+$$
+D = 100 \cdot 1.0000000015854900^{15768000} = 103.0455.
+$$
 
-## Decimal Precision
+Please find a simple calculator for both standard compounding formulas and the on-chain implementation [here](https://docs.google.com/spreadsheets/d/1Q4UMWtyRwhITqOvJtNd7N2IwKZsT0ihEASOFdWKSJVM/edit#gid=0). The code for the Ethereum pools implementation can be found in [github.com/centrifuge/tinlake-math](https://github.com/centrifuge/tinlake-math).
 
-We use fixed precision decimals for any monetary amounts. Interest Rates are typically of type `ray` with 27 digits precision and amounts are of type `wad` which has 18 digits precision.
-
-This is usually explicitly mentioned throughout the codebase.
+### On-chain number format
+Centrifuge-Protocol uses fixed precision decimals for monetary amounts on-chain. Interest Rates usually have 27 digits precision and amounts 18 digits precision. To illustrate, the 1.00000000190259 $rate$ variable representing a 6.00% APR from the example above would be `1000000001902587519025875190` on-chain. The debt of $106.1837 would be `106183700000000000000`. 
