@@ -51,7 +51,7 @@ Your Governance Proxy is now set up and ready to be used. If you want to keep yo
 
 ![](./images/Forget.png)
 
-To remove a proxy, go to the [Accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/accounts) section of the portal, find the wallet that created the proxy (use same steps as above to import it again if needed), click on the three dots next to it, select *Manage proxies* and then *Clear all* in the window that opens.
+To remove a proxy, go to the [Accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/accounts) section of the portal, find the wallet that created the proxy (use same steps as above to import it again if needed), click on the three dots next to it, select *Manage proxies*, click on the *X* next to the proxy you want to remove, click *Submit* and sign the transaction.
 
 ![](./images/ClearProxy.png)
 
@@ -61,7 +61,7 @@ The easiest way to start delegating your tokens is to navigate to [SubSquare](ht
 
 ![](./images/MyDelegate.png)
 
-![](./images/Delegate.png)
+![](./images/Delegate.png#width=40%;)
 
 1. The wallet you are **delegating from**
 2. Select the wallet you are **delegating to** (select from the list or paste the CFG address)

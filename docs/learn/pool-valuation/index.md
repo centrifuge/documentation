@@ -1,6 +1,6 @@
 ---
 id: pool-valuation
-order: 4
+order: 3
 title: Pool Valuation (NAV)
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---

@@ -1,6 +1,6 @@
 ---
 id: terms
-order: 1
+order: 6
 title: Understanding Tinlake's Key Terms
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 redirect_from:
