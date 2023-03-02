@@ -1,6 +1,6 @@
 ---
 id: drop-and-tin
-order: 3
+order: 1
 title: "DROP & TIN: Tinlake's Two Tranches"
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
