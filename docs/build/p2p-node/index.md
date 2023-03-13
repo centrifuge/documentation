@@ -91,9 +91,9 @@ Before being able to transfer and anchor financial documents and mint NFTs, you 
 
 Follow these steps to install the Centrifuge POD:
 
-1. Download and install the latest [Centrifuge binary](https://github.com/centrifuge/go-centrifuge/releases). <!-- update link-->
+1. Download and install the latest [Centrifuge POD binary](https://github.com/centrifuge/pod/releases).
 
-If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/go-centrifuge/blob/develop/README.md).
+If you want to build the node from source, follow the description in the [source code](https://github.com/centrifuge/pod/blob/main/README.md).
 
 2. Add the Centrifuge binary to the `$PATH` or modify the command invocation to point to the correct library.
 
@@ -129,7 +129,7 @@ $ centrifuge createconfig \\
 
 #### Network Configurations
 
-Besides `mainnet`, Centrifuge has support for the `catalyst` test network. The network configuration for the different test networks is also part of the [code base](https://github.com/centrifuge/go-centrifuge/blob/main/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed. Please find the most important information summarized below:
+Besides `mainnet`, Centrifuge has support for the `catalyst` test network. The network configuration for the different test networks is also part of the [code base](https://github.com/centrifuge/pod/blob/main/build/configs/default_config.yaml). This enables the client user to run on top of them with minimum configuration needed. Please find the most important information summarized below:
 
 ##### Catalyst
 
@@ -153,7 +153,7 @@ This network is the production network, the Centrifuge Chain.
 
 #### Changing the default configuration
 
-The default configuration with all available options is accessible [here](https://github.com/centrifuge/go-centrifuge/blob/main/build/configs/default_config.yaml). You may adjust certain configurations according to your requirements.
+The default configuration with all available options is accessible [here](https://github.com/centrifuge/pod/blob/main/build/configs/default_config.yaml). You may adjust certain configurations according to your requirements.
 
 - Configure node under NAT
 
