@@ -199,7 +199,7 @@ const HomePage = () => {
           code of conduct
         </Link>
         <Box pad={{ horizontal: "small" }}>|</Box>
-        <ExternalLink href="https://centrifuge.io/careers/" target="_blank">
+        <ExternalLink href="https://centrifuge.io/about/#careers" target="_blank">
           work with us
         </ExternalLink>
       </Box>
