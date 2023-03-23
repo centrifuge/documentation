@@ -231,7 +231,7 @@ The data stored for each account has the following JSON format:
 }
 ```
 
-`identity` - hex encoded Centrifuge Chain account ID. This is the identity used for performing the operations described above.
+`identity` - hex encoded Centrifuge Chain account ID. This is the identity used for performing the operations described above. 
 
 `document_signing_public_key` - read-only - public key that is used for signing documents, this is generated for each account that is created on the POD.
 
@@ -247,6 +247,8 @@ The data stored for each account has the following JSON format:
 
 An account can be created by calling the [account creation endpoint](https://app.swaggerhub.com/apis/centrifuge.io/cent-node/3.0.0#/Accounts/generate_account_v2) with a valid admin token (see [token usage](#usage)),
 and providing the required information - `identity`, `precommit_enabled`, `webhook_url`.
+
+**IMPORTANT** - the `identity` must be a valid account on the Centrifuge Chain meaning that it **MUST** hold funds or have some proxies (which is the case for a pure/anonymous proxy).
 
 The successful response for the account creation operation will contain the fields mentioned above in [account data](#account-data).
 
