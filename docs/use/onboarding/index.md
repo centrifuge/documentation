@@ -6,28 +6,28 @@ contributors: <Anna Mehrländer:anna@k-f.co>, <Dennis Wellmann:dennis@k-f.co>
 ---
 
 ## Introduction
-Investing in Centrifuge requires onboarding as an investor and to each specific pool. Submitting personal information for KYC and signing a subscription document with the pool's issuer takes 5-7 minutes or 1-2 days when the country of citizenship or country of incorporation is not supported by the automated onboarding. 
+Investing in Centrifuge requires onboarding as an investor to each specific pool. Submitting personal information for KYC and signing a subscription document with the pool's issuer usually takes 5-7 minutes, but it can take 1-2 days when the country of citizenship or country of incorporation is not supported by the automated onboarding. 
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_e761fb43f51f747d2613521dedcd1f2f.png)
 
-**Onboard as investor:** Onboarding as an investor is a one-time step to verify  personal information for KYC ("Know your customer") through the Centrifuge onboarding flow powered by [Shufti Pro](https://shuftipro.com/). Once an investor is onboarded t are eligible to invest in any open pool.
+**Onboard as investor:** Onboarding as an investor is a one-time step to verify personal information for KYC ("Know your customer") through the Centrifuge onboarding flow powered by [Shufti Pro](https://shuftipro.com/). Once an investor is onboarded, they are eligible to invest in any open pool.
 
-**Onboard to a pool:** Onboarding to a pool requires signing a subscription agreement with the pool issuer. Once the agreement has been signed by both parties, and the issuer approved the investment request, the investor can place an investment into the pool. 
+**Onboard to a pool:** Onboarding to a pool requires signing a subscription agreement with the pool issuer. Once the agreement has been signed by both parties, and the issuer approves the investment request, the investor can place an investment into the pool. 
 
 ## Requirements
 
 ### Onboarding as an individual requires:
 
-* Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet
-* Centrifuge Chain wallet e.g. Talisman, SubWallet or Polkadot.js
+* Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet (for Ethereum-based pools)
+* Centrifuge Chain wallet e.g. Talisman, SubWallet or Polkadot.js (For Centrifuge-based pools)
 * Valid email address
 * A passport or government-issued photo ID
 * Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months)
 * Completed Form W-8BEN (individuals based outside US), Form W9 (U.S. citizen or U.S. person & US entity)
 
 ### Onboarding as an entity requires:
-* Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet
-* Centrifuge wallet e.g. Talisman, SubWallet or Polkadot.js
+* Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet (for Ethereum-based pools)
+* Centrifuge wallet e.g. Talisman, SubWallet or Polkadot.js (For Centrifuge-based pools)
 * Valid email address
 * Legal entity name, Country of incorporation, Registration number
 * Proof of address of the entity (for manual onboarding)
@@ -90,14 +90,14 @@ Enter a valid email address and personal data to complete the onboarding process
 **4. Confirm email address and upload tax information**
 
 Confirm email address by clicking the verification link in the email. Depending on the location of the signer one of the following documents will be required:
-* W-8BEN - individuals based outside US
-* W9 - U.S. citizen or U.S. person & US entity
+* W-8BEN - individuals based outside US.
+* W9 - U.S. citizen or U.S. person & US entity.
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_33bc1067a8b9cd4b331ac09482908878.png)
 
 **5. Identity is verified**
 
-The global onboarding process is now completed. Not it's time to browse the open pools for investment.
+The global onboarding process is now completed. Now it's time to browse the open pools for investment.
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_50137da100b963c808d261b06be45f37.png)
 
@@ -121,7 +121,7 @@ Since your identity is already verified and tax information is uploaded, the nex
 
 **3. Onboarding almost complete.**
 
-Your documents and profile have been sent to the issuer for approval. You will receive an email once the issuer approved your documents and countersigned the agreement. 
+Your documents and profile have been sent to the issuer for approval. You will receive an email once the issuer has approved your documents and countersigned the agreement. 
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_eaf58e6ecffe4458d427d01360a8e299.png)
 
@@ -164,7 +164,7 @@ Add the names of any individuals who own or control more than than 25% of the co
 
 **6. Authorized signer verification**
 
-Add the information of the authorized signer (person who controls the wallet) to complete verification. The verification of the authorized signer is powered by Shufti Pro. This step is identical with the individual signer verification.
+Add the information of the authorized signer (person who controls the wallet) to complete verification. The verification of the authorized signer is powered by Shufti Pro. This step is identical to individual signer verification.
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_c66628182ceae1e57d6c676fbda1e816.png)
 
@@ -184,7 +184,7 @@ Depending on the location of the entity one of the following documents will be r
 
 **8. Entity and authorized signer is verified**
 
-The global onboarding process is now completed. If the entity is not incorporated in one of the  [countries on this list](https://api.shuftipro.com/api/docs/#jurisdiction-codes), you need to wait for manual approval by the service provider Shufti Pro. This might take 1-2 days. You will receive an email when your verification was successful or declined.
+The global onboarding process is now completed. If the entity is not incorporated in one of the [countries on this list](https://api.shuftipro.com/api/docs/#jurisdiction-codes), you need to wait for manual approval by the service provider Shufti Pro. This might take 1-2 days. You will receive an email when your verification was successful or declined.
 
 ## Onboarding to pool as an entity 
 
@@ -260,15 +260,27 @@ Unfortunately, due to US sanctions, investors located in or a resident of the fo
 
 ### Data sharing policy
 
-The investor onboarding and due diligence process, also known as KYC (Know Your Customer) will be performed by Securitize. Investors will disclose their personal data to Securitize. Your Securitize I.D. enables you (the investor) to direct Securitize to disclose your personal data to issuers you are choosing. Investors located in the European Economic Area (“EEA”) or the United Kingdom should be aware that these disclosures may involve transfers to countries that do not provide the same level of protection for personal data as their home countries. Please note that this Data Transfer Consent Form should be read in conjunction with Securitize's GLBA Privacy Notice and (for EEA and UK residents) our GDPR Privacy Notice. Any defined terms not defined herein take their meaning from those notices or the Securitize Platform Terms of Service.
+**Consent to data transfer**
+Shufti Pro Limited enables Investors to disclose their personal data to issuers of such Investors' choosing. Investors located in the European Economic Area ("EEA") or the United Kingdom should be aware that these disclosures may involve transfers to countries that do not provide the same level of protection for personal data as their home countries. Please note that this Data Transfer Consent Form should be read in conjunction with our GLBA Privacy Notice and (for EEA and UK residents) our GDPR Privacy Notice. Any defined terms not defined herein take their meaning from those notices or the Shufti Pro Terms and Conditions. The below information contains key details regarding these transfers:
 
-Securitize will access and transfer your personal data to the issuer you identify. That issuer may be located in the United States or in other jurisdictions outside the EEA or the United Kingdom. What type of data will be disclosed? Securitize will disclose your personal data stored in your “Securitize I.D.” for the purpose set forth above. That information includes each category of personal data identified in the GLBA Notice or GDPR Notice, as applicable.
+**Controllers' Identities**
+Shufti Pro Limited and its wholly-owned subsidiaries ("Shufti Pro") and the issuer(s) to which you authorize the transfer.
 
-Securitize only facilitates the initial disclosure to the issuers that you have affirmatively selected. Should you no longer want to communicate with a particular issuer after consenting to the disclosure discussed herein, or if you wish that issuer to delete the personal data it has been provided pursuant to this consent, please contact that issuer directly.
+**Purpose of Transfer**
+Shufti Pro will access and transfer your personal data to the issuer(s) you identify. One or more issuer may be located in the United States or in other jurisdictions outside the EEA or the United Kingdom.
 
-By consenting to this disclosure via Securitize I.D., your information will be transferred to the country in which the particular issuers you have selected is located. According to EEA regulations, the United States does not provide an “adequate” level of protection for purposes of data protection, and no alternative safeguards are in place for this particular transfer. Further, the issuer you have selected may be located in the United States or in another country that does not provide such adequate levels of protection or safeguards. As such, your information may be at risk of unauthorized or unwanted access. Please note, however, that Securitize takes the security of your information seriously and implements organizational and technical measures to ensure a level of security for your personal data appropriate to these risks. Content of Issuer Website. Securitize is not responsible for the content of the issuer’s website and makes no representations, assurances or endorsements regarding the content of such website, the issuer, the issuer’s operations and business activities, or any offering of securities which the issuer may make. All content on such issuer’s website is created at its sole discretion.
+**What type of data will be disclosed?**
+Shufti Pro will disclose your personal data stored in your account for the purpose set forth above. That information includes each category of personal data identified in the GLBA Notice or GDPR Notice, as applicable.
 
-You acknowledge you have read and consent to the transfer of your personal data as set forth herein. You may decline to consent to this transfer, in which case Securitize will not be able to carry out your direction to disclose your personal information to your selected issuer.
+**Withdrawal of Consent**
+Shufti Pro only facilitates the initial disclosure to the issuers that you have affirmatively selected. Should you no longer want to communicate with a particular issuer after consenting to the disclosure discussed herein, or if you wish that issuer to delete the personal data it has been provided pursuant to this consent, please contact that issuer directly.
+
+**Risks of Data Transfer**
+By consenting to this disclosure, your information will be transferred to the country in which the particular issuers you have selected are located. ***According to EEA regulations, the United States does not provide an "adequate" level of protection for purposes of data protection, and no alternative safeguards are in place for this particular transfer. Further, the issuer you have selected may be located in the United States or in another country that does not provide such adequate levels of protection or safeguards. As such, your information may be at risk of unauthorized or unwanted access.
+***Please note, however, that Shufti Pro takes the security of your information seriously and implements organizational and technical measures to ensure a level of security for your personal data appropriate to these risks.
+
+**Your Consent**
+By consenting to the data transfer, you acknowledge you have read and consent to the transfer of your personal data as set forth herein. You may decline to consent to this transfer, in which case Shufti Pro will not be able to carry out your direction to disclose your personal information to your selected issuer.
 
 ### Terms and conditions
 
