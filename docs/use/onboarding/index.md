@@ -2,181 +2,261 @@
 id: onboarding
 order: 2
 title: Investor Onboarding Guide
-contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Nico Dreher:nico@centrifuge.io>
+contributors: <Anna Mehrländer:anna@k-f.co>, <Dennis Wellmann:dennis@k-f.co>
 ---
 
 ## Introduction
-Investing in Tinlake pools requires onboarding as an investor and to each specific pool. Submitting your information for KYC and signing a document with the pool's issuer takes 15-30 minutes. You will be ready to invest within 24 hours.
+Investing in Centrifuge requires onboarding as an investor and to each specific pool. Submitting personal information for KYC and signing a subscription document with the pool's issuer takes 5-7 minutes or 1-2 days when the country of citizenship or country of incorporation is not supported by the automated onboarding. 
 
-![Steps to onboard as investor and onboard to pool](./images/onboarding_overview.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_e761fb43f51f747d2613521dedcd1f2f.png)
 
-**Onboard as investor**: Onboarding as an investor is a one-time step to verify your profile for KYC ("Know your customer") through the Securitize service. Once onboarded as an investor you are eligible to invest in any Tinlake pool.
+**Onboard as investor:** Onboarding as an investor is a one-time step to verify  personal information for KYC ("Know your customer") through the Centrifuge onboarding flow powered by [Shufti Pro](https://shuftipro.com/). Once an investor is onboarded t are eligible to invest in any open pool.
 
-**Onboard to pool**: Onboarding to a pool requires signing a subscription agreement with the pool issuer. Once the agreement has been signed by both parties, you are automatically whitelisted for investment.
+**Onboard to a pool:** Onboarding to a pool requires signing a subscription agreement with the pool issuer. Once the agreement has been signed by both parties, and the issuer approved the investment request, the investor can place an investment into the pool. 
 
-### Requirements
-Onboarding as an investor requires:
-- Ethereum wallet, e.g. Metamask
-- A passport or government-issued photo ID
-- Your tax number
-- Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months)
+## Requirements
 
-Onboarding to a pool requires:
-- Ethereum wallet
-- A verified KYC in Securitize (i.e. a completed onboarding as an investor)
-- A minimum investment amount of 5,000 DAI
+### Onboarding as an individual requires:
 
-**Good to know**: Don’t worry if you can’t finish the process in one go – you can always leave by clicking `Close` and resume later where you’ve left off before.
+* Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet
+* Centrifuge Chain wallet e.g. Talisman, SubWallet or Polkadot.js
+* Valid email address
+* A passport or government-issued photo ID
+* Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months)
+* Completed Form W-8BEN (individuals based outside US), Form W9 (U.S. citizen or U.S. person & US entity)
 
-#### Further requirements
-- **US investors** need to be *accredited investors* to invest in Tinlake pools. *See section [Onboarding as US investor](#onboarding-as-an-us-investor)*
--  Due to US sanctions, investors from **certain countries are excluded** from investing. *See section [Excluded countries](#onboarding-as-an-us-investor)*
+### Onboarding as an entity requires:
+* Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet
+* Centrifuge wallet e.g. Talisman, SubWallet or Polkadot.js
+* Valid email address
+* Legal entity name, Country of incorporation, Registration number
+* Proof of address of the entity (for manual onboarding)
+* Signed and Dated Ownership Structure (for manual onboarding)
+* Names, date of birth, country of citizenship and country of residency of ultimate beneficial owners
+* A passport or government-issued photo ID of the authorized signer
+* Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months) of the authorized signer
+* Completed Form W-8BEN-E (businesses based outside the US) or Form W9 (U.S. citizen or U.S. person & US entity)
 
-## Onboard to pool as new investor
-Start the onboarding on the Tinlake Dashboard to become a KYC-verified investor before onboarding to a pool later. Once you have selected a pool, clicking `Invest` on the pool's detail page starts the process to onboard as an investor and onboard to the pool in one go. 
 
-### 1. Connect wallet
-Connect the Ethereum address you want to use.
+### Onboarding to a pool requires:
 
-![Onboard to pool as new investor: connect wallet](./images/onboardInvestor-connectWallet.png)
+* Ethereum or Centrifuge wallet
+* A verified KYC (i.e. a completed onboarding as an investor)
 
-### 2. Create and Link Securitize account
-Consent to sharing your personal information with [Securitize](https://securitize.io/). Click `Link Securitize account` to link the connected Ethereum address to your Securitize profile.
+Good to know: Don’t worry if you can’t finish the process in one go – you can always leave the onboarding flow and continue later where you’ve left off before.
 
-![Onboard to pool as new investor: link Securitize account](./images/onboardInvestor-linkSecuritize.png)
+### Further requirements
+* US investors need to be accredited investors to invest in pools. See section [Onboarding as US investor](https://)
+* Due to US sanctions, investors from certain countries are excluded from investing. See section [Excluded countries](https://).
 
-### 3. Verify KYC
-Complete your profile on Securitize by entering personal information, including passport image, tax number, and a proof of address document.
+## Onboarding as an individual  
 
-An email notification will inform you that the KYC has been reviewed.
+Start the onboarding flow to become a KYC-verified investor before onboarding to a pool later. Once you have connected your wallet, click `Verify identity` in the wallet dropdown and start the onboarding flow.
 
-![Onboard to pool as new investor: verify KYC](./images/onboardInvestor-verifyKyc.png)
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_043f3858737771cdd0d6109e3f4fe4a0.png)
 
-### 4. Sign Subscription agreement
-Sign the subscription agreement for the token in [DocuSign](https://www.docusign.com/). After signing, the subscription agreement needs to be countersigned by the Issuer.
 
-**Form W-8BEN**: Non-US citizens or entities are asked to complete [form W-8BEN](https://www.irs.gov/forms-pubs/about-form-w-8-ben). Refer to [Instructions for Form W-8BEN](https://www.irs.gov/pub/irs-pdf/iw8ben.pdf) (Individuals) and [United States Income Tax Treaties - A to Z](https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z).
+**1. Connect and link wallet**
 
-![Onboard to pool as new investor: sign subscription agreement](./images/onboardInvestor-signSubscription.png)
+Connect the Ethereum or Centrifuge address you want to use depending on the pool and sign the transaction. 
 
-### End
-Success! Once the subscription document has been countersigned by the issuer, the token is ready for investment. Click `Invest` to start investing.
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_b6d557bf9a221553fabb30b14761dc9f.png)
 
-![Onboard to pool as new investor: Invest in token](./images/onboardInvestor-investInToken.png)
+**2. Select investor type**
 
-## Onboarding to a pool as an existing investor
-Onboarding to a pool as a verified investor requires signing specific subscription agreement documents. Browse the pools on the [Tinlake dashboard](tinlake.centrifgeu.io) to choose where to invest. Once you have selected a pool, click `Invest` to start the onboarding. 
+Choose to onboard as an individual. 
 
-**Choosing the right pool**: If you're unsure whether a pool fits your risk profile, check out this [blog post](https://medium.com/centrifuge/investing-in-your-first-tinlake-pool-how-to-dyor-5b79cf88861c).
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_375dbe26d76a146e94d56aafc6dfeb6d.png)
 
-### 1. Connect wallet
-Connect the Ethereum address you want to use.
+**3. Signer verification**
 
-![Onboard to token: Connect wallet](./images/onboardToken-connectWallet.png)
+Enter a valid email address and personal data to complete the onboarding process. The verification of the signer is powered by Shufti Pro.
 
-### 2. Link Securitize account
-Consent to share your personal information with Securitize. Click `Link Securitize account` to link the connected Ethereum address to your Securitize profile.
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_cb2b2da9ceabbc0ab951b79d14c78bf0.png)
 
-![Onboard to token: Link Securitize account](./images/onboardToken-linkSecuritize.png)
+**3.1 Upload ID**
 
-### 3. Sign Subscription agreement
-Sign the Subscription agreement for the token. After signing, the Subscription agreement needs to be countersigned by the Issuer.
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_7ecdb0943b4b746f44d302b1a70919d4.png)
 
-**Form W-8BEN**: Non-US citizens or entities are asked to complete [form W-8BEN](https://www.irs.gov/forms-pubs/about-form-w-8-ben). Refer to [Instructions for Form W-8BEN](https://www.irs.gov/pub/irs-pdf/iw8ben.pdf) (Individuals) and [United States Income Tax Treaties - A to Z](https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z) to learn more.
 
-![Onboard to token: Sign subscription agreement](./images/onboardToken-signSubscription.png)
+**3.2 Upload Proof of address and confirm address**
 
-### End
-Once the subscription document has been countersigned by the issuer, the token is ready for investment. Click `Invest` to start investing!
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_d1bf26e2dcc6d770005016ebda30d730.png)
 
-![Onboarding to token complete](./images/onboardToken-investInToken.png)
+**3.3 Face verification**
 
-## After onboarding
-This section includes important information on getting started after onboarding.
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_0b61c090c8215de04e65b4a6f2cadfd3.png)
 
-### Earn CFG rewards
-Earning CFG rewards requires a CFG wallet – link your Centrifuge Chain address to your Ethereum account once you have made your first investment. Note that rewards can be claimed after a minimum holding period of 30 days.
+**4. Confirm email address and upload tax information**
 
-**Setting up a CFG wallet**: Refer to the [documentation](https://docs.centrifuge.io/use/setup-wallet/)
+Confirm email address by clicking the verification link in the email. Depending on the location of the signer one of the following documents will be required:
+* W-8BEN - individuals based outside US
+* W9 - U.S. citizen or U.S. person & US entity
 
-## FAQ
-A compilation of frequently asked questions
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_33bc1067a8b9cd4b331ac09482908878.png)
 
-##### What is the minimum investment amount?
-The minimum investment amount is determined by the pools issuer. It currently is \$5.000 for all Tinlake pools.
+**5. Identity is verified**
 
-##### What documents/information do I need to provide for KYC?
-To complete KYC, Securitize will ask you to provide:
+The global onboarding process is now completed. Not it's time to browse the open pools for investment.
 
-- Passport or government issued photo ID
-- [Optionally] A selfie with this government issued photo ID
-- Proof of address, e.g. a utility bill, phone bill or council tax bill, not older than 3 months
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_50137da100b963c808d261b06be45f37.png)
 
-##### How long does KYC take?
-Securitize's automated KYC process is usually conducted within 1–2 hours. If a manual review is required it may take 24–48 hours.
+## Onboarding to pool as an individual 
 
-##### What happens with my data?
-All investors must consent to share their personal data, such as name, address and country of residents with Securitize, Centrifuge and the pool's issuer. This data will be disclosed to Securitize during the onboarding process. Securitize may share this data with the pool's issuer and Centrifuge. *For more information see the [Data Sharing Policy](#Data-sharing-policy) below.
+Once you have selected a pool, click `Onboard to [token name]` on the pool's detail page to start the process to onboard as an investor to a specific tranche.
 
-##### Why do I need onboarding and KYC to invest in Tinlake pools?
-Tinlake pools are backed by real-world assets such as invoices, residential real-estate loans or trade receivables. Financing those assets on Tinlake requires a legal structure that give the investors a legal claim on the assets. To ensure this recourse, each Asset Originator sets up a legal structure commonly used in the traditional financial system - a “special purpose vehicle” ("SPV"). The collateral for the individual assets are assigned to this legal entity to ensure investors have a legal claim to the underlying assets and the assets are held independently ("bankruptcy remote") from the Asset Originator. 
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_d8ccfd10fb3cef68e34eb6e8b18585dc.png)
 
-With an underlying legal structure, investments in Tinlake Pool's are private placements from a regulatory perspective. This comes with certain regulatory requirements For example, behind many Tinlake pools are SPVs incorporated in Delaware. Private placements from these SPVs are conducted under `Reg D` or `Reg S` of the [`US Securities Act of 1933`](https://www.govinfo.gov/content/pkg/COMPS-1884/pdf/COMPS-1884.pdf) which means US investors must be accredited and all investors must clear standard KYC ("Know Your Customer") checks. All investors must sign a subscription agreement ("SubDoc") with the pools "Issuer", the legal SPV entity behind the pool.
+**1. Connect wallet**
 
-This legal set-up leads to certain restrictions. For example, there is a minimum investment amount per pool, US investors have to be `Accredited Investors` and, unfortunately, investors from certain countries may be excluded due to sanctions or missing tax treaties.
+If the wallet is disconnected, reconnect and continue where you left off. Connect to an Ethereum or Centrifuge address depending which chain is supported by the pool.
 
-This contradicts the idea of decentralized and open finance and the Centrifuge team is working hard to allow more people to invest within the legal framework given by regulators.
+**2. Sign subscription agreement with issuer**
 
-## Investment disclaimer
+Since your identity is already verified and tax information is uploaded, the next step is the on-chain signature of the subscription agreement. Make sure to have some ETH in your wallet to sign the transaction.
 
-Nothing contained in this website is to be construed as a solicitation or offer, or recommendation, to buy or sell any interest in any note or other security, or to engage in any other transaction, and the content herein does not constitute, and should not be considered to constitute, an offer of securities. No statement herein made constitutes an offer to sell or a solicitation of an offer to buy a note or other security. All information on this Web page is provided and maintained by the issuers of the respective pools. The issuers have full responsibility. Please contact the respective issuer in case of any inquiries. Centrifuge and its affiliates are not liable nor responsible for the information provided hereby.
+*Read the subscription agreement and click the box below to automatically e-sign the subscription agreement. You don't need to download and sign manually.*
 
-Before investing in any of the pools, please check the issuer's offering materials and subscription documents including the Executive Summary to understand the terms, conditions, and investment risks of each pool. The issuer provides investment risk factors which are important to understand when you consider whether to invest in a pool. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other content before making any decisions based on such information or other content.
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_958db3979e44d89da6dfbb669c20473d.png)
+
+**3. Onboarding almost complete.**
+
+Your documents and profile have been sent to the issuer for approval. You will receive an email once the issuer approved your documents and countersigned the agreement. 
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_eaf58e6ecffe4458d427d01360a8e299.png)
+
+After the issuer approves the investment request, the investor receives an email and can now invest into the pool.
+
+
+## Onboarding as an entity
+
+The first two steps are identical to the steps shown in the individual onboarding flow. 
+
+**1. Connect and link wallet**
+
+Connect the Ethereum or Centrifuge address you want to use depending on the pool and sign the transaction. 
+
+**2. Select investor type**
+
+Choose to onboard as an entity. 
+
+**3. Provide information about your business**
+
+Enter a valid email address that you can access, legal entity name, country of incorporation and the registration number. If the entity is incorporated in one of the  [countries on this list](https://api.shuftipro.com/api/docs/#jurisdiction-codes) you can skip to step 4. The verification of the entity is powered by Shufti Pro.  
+
+**3.1 Upload Entity's Proof of Address**
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_b2725e4afc51b15a1056e5c0053502cc.png)
+
+**3.2 Upload Signed and Dated Ownership Structure**
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_cfff4ff58ad893a0b0d429f2623fd2f7.png)
+
+**4. Confirm email address**
+
+Confirm email address by clicking the verification link in the email. 
+
+**5. Confirm ultimate beneficial owners**
+
+Add the names of any individuals who own or control more than than 25% of the company. If no person does, please add the largest shareholder.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_7afcd495d32da37565747555bc4b7cf6.png)
+
+**6. Authorized signer verification**
+
+Add the information of the authorized signer (person who controls the wallet) to complete verification. The verification of the authorized signer is powered by Shufti Pro. This step is identical with the individual signer verification.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_c66628182ceae1e57d6c676fbda1e816.png)
+
+**6.1 Upload ID of authorized signer**
+**6.2 Upload Proof of Address of authorized signer**
+**6.3 Face verification of authorized signer**
+
+**7. Upload tax information** 
+
+Depending on the location of the entity one of the following documents will be required:
+
+[W-8BEN](https://www.irs.gov/pub/irs-pdf/fw8ben.pdf) - individuals based outside US
+[W-8BEN-E](https://www.irs.gov/pub/irs-pdf/fw8bene.pdf) - businesses based outside the US
+[W9](https://www.irs.gov/pub/irs-pdf/fw9.pdf) - U.S. citizen or U.S. person & US entity
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_473fa643d5883a053bc3b921a484ddf7.png)
+
+**8. Entity and authorized signer is verified**
+
+The global onboarding process is now completed. If the entity is not incorporated in one of the  [countries on this list](https://api.shuftipro.com/api/docs/#jurisdiction-codes), you need to wait for manual approval by the service provider Shufti Pro. This might take 1-2 days. You will receive an email when your verification was successful or declined.
+
+## Onboarding to pool as an entity 
+
+Once you have selected a pool, connect and click `Onboard to [token name]` on the pool's detail page to start the process to onboard as an investor to a specific tranche.
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_d8ccfd10fb3cef68e34eb6e8b18585dc.png)
+
+**1. Connect wallet**
+
+If the wallet is disconnected, reconnect and continue where you left off. Connect to an Ethereum or Centrifuge address depending which chain is supported by the pool.
+
+**2. Sign subscription agreement with issuer**
+
+Since your entity is already verified and tax information is uploaded, the next step is the on-chain signature of the subscription agreement. Make sure to have some ETH in your wallet to sign the transaction.
+
+*Read the subscription agreement and click the box below to automatically e-sign the subscription agreement. You don't need to download and sign manually.*
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_958db3979e44d89da6dfbb669c20473d.png)
+
+**3. Onboarding almost complete.**
+
+Your documents and profile have been sent to the issuer for approval. You will receive an email once the issuer approved your documents and countersigned the agreement. 
+
+![](https://storage.googleapis.com/centrifuge-hackmd/upload_eaf58e6ecffe4458d427d01360a8e299.png)
+
+After the issuer approves the investment request, you will receive an email and can now invest into the pool.
 
 ## Resources
+
 This section covers further information about:
-* Onboarding as an US investor
-* Onboarding as an entity
+* Onboarding as an US investor / Accredited Investor
 * Excluded countries
 * Data sharing policy
 * Terms and conditions
+* Investment disclaimer
 
 ### Onboarding as an US investor
-To invest in Tinlake as an US investor you need to be an "Accredited Investor".
+
+To invest in Centrifuge as an US investor you need to be an "Accredited Investor".
 
 #### What is an "Accredited Investor"?
-An accredited investor is an individual or a business entity that is allowed to trade securities that may not be registered with financial authorities such as the SEC. They are entitled to this privileged access by satisfying certain requirements regarding their income, net worth, asset size, governance status or professional experience. In the U.S, the definition of an accredited investor is put forth by [SEC in Rule 501 of Regulation D](https://www.ecfr.gov/cgi-bin/retrieveECFR?gp=&SID=8edfd12967d69c024485029d968ee737&r=SECTION&n=17y3.0.1.1.12.0.46.176).
+An accredited investor is an individual or a business entity that is allowed to trade securities that may not be registered with financial authorities such as the SEC. They are entitled to this privileged access by satisfying certain requirements regarding their income, net worth, asset size, governance status or professional experience. In the U.S, the definition of an accredited investor is put forth by [SEC in Rule 501 of Regulation D](https://www.ecfr.gov/current/title-17/chapter-II/part-230/subject-group-ECFR6e651a4c86c0174/section-230.501).
 
 The regulations for accredited investors vary from between jurisdictions but require that a person:
 
-- Must have a certain annual income [currently $200,000 ($300,000 for joint income) in the US] or
-- Must have a certain net worth [currently $1 million in the US] or
+- Any natural person whose individual net worth, or joint net worth with that person's spouse or spousal equivalent, exceeds $1,000,000;
+- Any natural person who had an individual income in excess of $200,000 in each of the two most recent years or joint income with that person's spouse or spousal equivalent in excess of $300,000 in each of those years and has a reasonable expectation of reaching the same income level in the current year; 
 - Be a general partner, executive officer, or director for the company that is issuing the unregistered securities or
 - Be a registered brokers and investment advisor
 
-Please find more information on [Investopedia](https://www.investopedia.com/terms/a/accreditedinvestor.asp).
-
 #### What information do I need to provide as accredited investor?
 
-If you are an US investor you further need to provide documentation to prove you are an `Accredited Investor`. These documents can be, e.g.:
+If you are an US investor you further need to provide documentation to prove you are an `Accredited Investor`. You will need to complete a questionnaire as part of the onboarding flow.
 
-- IRS documents such as 1040s, W2s, 1099s, or K1s as proof of income
-- Documents proving a net worth of at least \$1MM USD excluding the primary residence value not older than 90 days
-- Third party letters signed by a licensed CPA, attorney, broker-dealer or registered investment advisor
+## Excluded countries
+Unfortunately, due to US sanctions, investors located in or a resident of the following countries are currently blocked from investing in Centrifuge:
 
-Please find more details of required and accepted documents in Securitize.
-
-### Excluded countries
-Unfortunately, due to US sanctions, investors located in or a resident of the following countries are currently blocked from investing in Tinlake pools:
-* Afghanistan
 * Cuba
 * Iran
-* Iraq
 * North Korea
-* South Sudan
-* Sudan
 * Syria
-* Ukraine
+* Belarus
+* Congo, Democratic Republic of
+* Iraq
+* Libya
+* Nicaragua
+* Russia
+* Ukraine 
+* Somalia
+* Sudan
+* Venezuela
+* Zimbabwe
 
 ### Data sharing policy
 
@@ -211,3 +291,9 @@ Certain statements herein constitute forward-looking statements. When used herei
 Prospective investors are not to construe this information as investment, legal, tax, regulatory, financial, accounting or other advice, and this information is not intended to provide the sole basis for any evaluation of this investment. Prior to acquiring an interest, a prospective investor should consult with its own legal, investment, tax, accounting, and other advisors to determine the potential benefits, burdens, and other consequences of such investment. By proceeding to view the materials to which this website gives access, you agree that you will not transmit or otherwise send any information to which this website gives access to any person in any jurisdiction in which the distribution of such information is restricted, or in which the offer or invitation to purchase tokens proposed to be issued by is not authorized, or to whom such offer or invitation may be unlawful.
 
 If you are located in, or are a resident of, a country in which the cross-border marketing of securities is restricted, you are confirming that you are requesting this information without having been being solicited or approached, directly or indirectly, by the issuer or any issuer's affiliate or issuer's partner or other person acting as agent or otherwise on behalf of the issuer.
+
+### Investment disclaimer
+
+Nothing contained in this website is to be construed as a solicitation or offer, or recommendation, to buy or sell any interest in any note or other security, or to engage in any other transaction, and the content herein does not constitute, and should not be considered to constitute, an offer of securities. No statement herein made constitutes an offer to sell or a solicitation of an offer to buy a note or other security. All information on this Web page is provided and maintained by the issuers of the respective pools. The issuers have full responsibility. Please contact the respective issuer in case of any inquiries. Centrifuge and its affiliates are not liable nor responsible for the information provided hereby.
+
+Before investing in any of the pools, please check the issuer's offering materials and subscription documents including the Executive Summary to understand the terms, conditions, and investment risks of each pool. The issuer provides investment risk factors which are important to understand when you consider whether to invest in a pool. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other content before making any decisions based on such information or other content.
