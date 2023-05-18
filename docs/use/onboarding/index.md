@@ -46,8 +46,8 @@ Investing in Centrifuge requires onboarding as an investor to each specific pool
 Good to know: Don’t worry if you can’t finish the process in one go – you can always leave the onboarding flow and continue later where you’ve left off before.
 
 ### Further requirements
-* US investors need to be accredited investors to invest in pools. See section [Onboarding as US investor](https://)
-* Due to US sanctions, investors from certain countries are excluded from investing. See section [Excluded countries](https://).
+* US investors need to be accredited investors to invest in pools. See section **Onboarding as US investor** below.
+* Due to US sanctions, investors from certain countries are excluded from investing. See section **Excluded Countries** below.
 
 ## Onboarding as an individual  
 
