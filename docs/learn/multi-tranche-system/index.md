@@ -1,19 +1,19 @@
 ---
-id: drop-and-tin
+id: multi-tranche-system
 order: 1
-title: "DROP & TIN: Tinlake's Two Tranches"
-contributors: <Dennis Wellmann:dennis@centrifuge.io>
+title: "Senior & Junior: Centrifuges's Tranches"
+contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 ---
 
 ## Introduction
 
-Investors often want different kinds of risk exposure and yield on the same asset class. In the traditional finance world, one way to achieve this is by using structured finance products and introducing a tiered investment structure, or in other words, different tranches. This means that investors can invest in the same asset through different classes of shares with different risk/return profiles. Tinlake implements this functionality by offering the option to issue two tokens, the Tin and Drop tokens, which behave very similarly to how tranches work in the traditional finance world. Note, that Tinlake can also be deployed with just one token (Tin).
+Investors often want different kinds of risk exposure and yield on the same asset class. In the traditional finance world, one way to achieve this is by using structured finance products and introducing a tiered investment structure, or in other words, different tranches. This means that investors can invest in the same asset through different classes of shares with different risk/return profiles. Centrifuge implements this functionality by allowing the pool Issuer to set Tokens for their Tranches. At its simplest form this can include a single Junior token in a pool with 1 tranche, for a pool with 2 tranches a Junior and Senior Token, or in a more complex scenario a Junior, Mezzanine and Senior tokens. These tranche tokens behave very similarly to how tranches work in the traditional finance world. 
 
-## Two-tiered structures in finance: Tinlake's DROP and TIN
+## Two-tiered structures in finance: Centrifuge's Senior and Junior token tranches
 
-While there can be several different tranches in structured finance products, Tinlake's default implementation is a common two-tiered structure, with two different tranches. In finance, this is usually called an A/B tranche or junior/senior tranche structure. In this case, the first class of shares (A/Senior class) usually has a rather stable but lower return than the second class (B/Junior class). In exchange, the junior class usually has higher, but also more variable returns, as it protects the senior class from losses (e.g. from defaulted assets).
+While there can be several different tranches in structured finance products, Centrifuge's default implementation is a common two-tiered structure, with two different tranches. In finance, this is usually called an A/B tranche or junior/senior tranche structure. In this case, the first class of shares (A/Senior class) usually has a rather stable but lower return than the second class (B/Junior class). In exchange, the junior class usually has higher, but also more variable returns, as it protects the senior class from losses (e.g. from defaulted assets).
 
-Tinlake’s two tokens behave very similarly to how tranches work in a common two-tiered structure. The Tin token can be seen as the junior tranche and token holders that own these tokens take second priority to the Drop token holders when money flows from borrowers back to investors, but depending on the performance of the pool also have the potential to generate a much higher return on their token value than Drop token holders.
+Centrifuge’s two tokens behave very similarly to how tranches work in a common two-tiered structure. The Junior token can be seen as the junior tranche and token holders that own these tokens take second priority to the Senior token holders when money flows from borrowers back to investors, but depending on the performance of the pool also have the potential to generate a much higher return on their token value than Senior token holders.
 
 ## Allocation of Proceeds ("Waterfall")
 
@@ -27,7 +27,7 @@ A simple waterfall could be, for example, that the senior tranche receives their
 
 ## A Simplified example
 
-To illustrate how the DROP and TIN tokens work in more detail, let’s look at a hypothetical $1M fund investing in SME invoices targeting an average annual interest rate of 9%. When setting up a structured fund, part of the paperwork is to define how many shares are being issued in each class. For example, the issuer could say they will sell 20% of the $1M investment in a junior tranche and 80% in a senior tranche. Let’s assume the senior tranche is guaranteed a fixed return of 5%. The junior tranche has a variable return depending on the success of the investment. Now let’s look at a few different scenarios to explain how this structure affects the risk and return of the different investment classes.
+To illustrate how the Senior and Junior tokens work in more detail, let’s look at a hypothetical $1M fund investing in SME invoices targeting an average annual interest rate of 9%. When setting up a structured fund, part of the paperwork is to define how many shares are being issued in each class. For example, the issuer could say they will sell 20% of the $1M investment in a junior tranche and 80% in a senior tranche. Let’s assume the senior tranche is guaranteed a fixed return of 5%. The junior tranche has a variable return depending on the success of the investment. Now let’s look at a few different scenarios to explain how this structure affects the risk and return of the different investment classes.
 
 ![Base Case](./images/tranche_base_case.svg#margin=10px;width=250px;float=left;)
 
@@ -51,10 +51,10 @@ The senior tranche would be protected against any losses of their investment and
 
 ## Interest Rate Model
 
-The Drop token’s return is defined by a fee function. Unless modified, the default implementation has a fixed interest per pool compounding per second. The interest is only charged on the deployed capital. The Tin token only gets a return on their investment if the Drop token holders have all been fully redeemed. Therefore, Tin token holders do not have a guaranteed fee or return but measure their return by what the Drop token contract leaves in the system.
+The Senior token’s return is defined by a fee function. Unless modified, the default implementation has a fixed interest per pool compounding per second. The interest is only charged on the deployed capital. The Junior token only gets a return on their investment if the Senior token holders have all been fully redeemed. Therefore, Junior token holders do not have a guaranteed fee or return but measure their return by what the Senior token contract leaves in the system.
 
-An overview of how to calculate interest rates for Tinlake contracts can be found [here](/learn/interest-rate-methodology/).
+An overview of how to calculate interest rates for Centrifuge contracts can be found [here](/learn/interest-rate-methodology/).
 
 ## Minimum Tranche Ratio
 
-A Drop purchaser taking the senior tranche would want to have a guarantee that there is at least a minimum percentage of Tin in the pool to make sure that they are protected against a certain amount of losses. Setting this variable guarantees them a certain risk profile. When deploying a pool this variable is set upon initialization and enforced by the contracts. When the minimum ratio is broken, investments and the issuance of additional Drop token is stopped until the minimum ratio is restored.
+A Senior purchaser taking the senior tranche would want to have a guarantee that there is at least a minimum percentage of Junior tokens in the pool to make sure that they are protected against a certain amount of losses. Setting this variable guarantees them a certain risk profile. When deploying a pool this variable is set upon initialization and enforced by the contracts. When the minimum ratio is broken, investments and the issuance of additional Senior token is stopped until the minimum ratio is restored.
