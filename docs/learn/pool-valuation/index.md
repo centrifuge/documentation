@@ -13,16 +13,16 @@ A NAV is usually required when a portfolio is sold or when investors want to joi
 
 Determining the value of illiquid assets is notoriously difficult because – by definition – there isn’t a liquid secondary market to determine the value, unlike many stocks, bonds or most fungible tokens. For illiquid asset portfolios the valuation methodology is thus often based on a fair value valuation utilizing a financial model ("marked to model"). This often comes down to valuing the present value of future cash flows expected to receive based on these financings - the so-called discounted cash flow (“DCF”) method.
 
-## Tinlake's approach - Fair value DCF
+## Centrifuge's approach - Fair value DCF
 
 ### Step-by-step overview
 
-Tinlake's valuation methodology is also based on a fair value valuation ("marked to model") utilizing a discounted cash flow model. The approach can be summarized as follows:
+Centrifuge's valuation methodology is also based on a fair value valuation ("marked to model") utilizing a discounted cash flow model. The approach can be summarized as follows:
 
 1. **Derive expected cash flows**
    For every outstanding financing of an asset, the expected cash flow is calculated. The current implementation allows to calculate the Expected Repayment of simple bullet loan structures which are common in particular in invoice financing and trade finance. The `Expected Cash Flow` is calculated based on (i) the expected repayment dates and (ii) the expected repayment amounts.
    (i) The expected repayment date is derived on contractual obligations associated with the financing, e.g. the due date of the underlying invoice. This is provided through an Oracle based on the documents underlying the NFT minted on Centrifuge's P2P Protocol.
-   (ii) The expected repayment amount is projected based on the outstanding Tinlake financing by applying the financing fee on the current debt until the repayment date.
+   (ii) The expected repayment amount is projected based on the outstanding Centrifuge financing by applying the financing fee on the current debt until the repayment date.
 
 2. **Risk-adjust expected cash flows**
    The expected Cash Flow is risk-adjusted for credit risk by the `Expected loss`. Every financing is allocated a risk class that has a `Probability of Default (PD)` and `Loss Given Default (LGD)` assigned to it. The `Expected Loss` is calculated as `Expected loss = Expected Cash Flow * PD * LGD` and subtracted from the expected repayment amount to adjust for credit risk. Note that PDs are often communicated per anno and may need to be adjusted to the term of the underlying asset.
@@ -56,11 +56,11 @@ with $n$ being number of discounting periods per year (e.g. 360 days for a finan
 
 ### Write-offs
 
-Tinlake allows for a flexible treatment of write-offs. If a financing is overdue the expected repayment amount can be (partially) reduced by defined percentages after a defined number of days following pre-determined criteria (e.g. a grace period and collection period).
+Centrifuge allows for a flexible treatment of write-offs. If a financing is overdue the expected repayment amount can be (partially) reduced by defined percentages after a defined number of days following pre-determined criteria (e.g. a grace period and collection period).
 
 ### Operational costs
 
-Average loan maintenance/running costs (such as legal, SPV, servicing) could be subtracted from the PV. At the moment these are set to zero in Tinlake's NAV calculation as operating costs are currently borne by the SPV of the issuer.
+Average loan maintenance/running costs (such as legal, SPV, servicing) could be subtracted from the PV. At the moment these are set to zero in Centrifuge's NAV calculation as operating costs are currently borne by the SPV of the issuer.
 
 ## Sample calculations
 
