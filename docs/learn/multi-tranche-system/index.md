@@ -1,60 +1,49 @@
 ---
 id: multi-tranche-system
-order: 1
-title: "Senior & Junior: Centrifuges's Tranches"
+order: 2
+title: "Pools with multiple tranches"
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 ---
 
-## Introduction
+## Introduction to tiered investment structures
+### Why introduce several tranches?
+Introducing different investment tranches enables customization of the risk-return profile of asset pools for various types of investors. In a standard investment vehicle, investors typically share equal risk and return on investments, proportionate to their share of investment in the pool ("pro rata"). However, a tiered investment structure with predefined tranches allows investors to be exposed to different types of returns, risks, and maturities based on the same asset pool. While there is no theoretical limit to the number of tranches, the most commonly used structures consist of 2-5 tranches stacked from top to bottom. 
 
-Investors often want different kinds of risk exposure and yield on the same asset class. In the traditional finance world, one way to achieve this is by using structured finance products and introducing a tiered investment structure, or in other words, different tranches. This means that investors can invest in the same asset through different classes of shares with different risk/return profiles. Centrifuge implements this functionality by allowing the pool Issuer to set Tokens for their Tranches. At its simplest form this can include a single Junior token in a pool with 1 tranche, for a pool with 2 tranches a Junior and Senior Token, or in a more complex scenario a Junior, Mezzanine and Senior tokens. These tranche tokens behave very similarly to how tranches work in the traditional finance world. 
-
-## Two-tiered structures in finance: Centrifuge's Senior and Junior token tranches
-
-While there can be several different tranches in structured finance products, Centrifuge's default implementation is a common two-tiered structure, with two different tranches. In finance, this is usually called an A/B tranche or junior/senior tranche structure. In this case, the first class of shares (A/Senior class) usually has a rather stable but lower return than the second class (B/Junior class). In exchange, the junior class usually has higher, but also more variable returns, as it protects the senior class from losses (e.g. from defaulted assets).
-
-Centrifuge’s two tokens behave very similarly to how tranches work in a common two-tiered structure. The Junior token can be seen as the junior tranche and token holders that own these tokens take second priority to the Senior token holders when money flows from borrowers back to investors, but depending on the performance of the pool also have the potential to generate a much higher return on their token value than Senior token holders.
-
-## Allocation of Proceeds ("Waterfall")
+### The waterfall
+The top tranche is commonly referred to as the senior tranche, the bottom tranche as the junior tranche, and any tranches in between as different forms of mezzanine tranches. The senior tranche is the most secure as it receives proceeds from the asset pool first and is protected against defaults by the tranches below. Consequently, the senior tranche usually offers a lower, often stable or fixed return. The remaining proceeds after serving the senior tranche are further allocated to the subordinated tranches below based on their defined return profiles. The junior tranche receives the remaining proceeds after all other tranches have been served. Hence, the higher the proceeds remaining in the waterfall, the higher the variable returns for the junior tranche. In the event of a default, the junior tranche absorbs the losses first (hence its designation as the "first loss piece"), while more senior investors remain protected against these losses. Only when the junior tranche is fully depleted do more senior investors start bearing losses from defaults. The returns of the junior tranche before losses are usually relatively high to compensate for the risk of facing losses from defaults. The allocation of proceeds from the top and risks from the bottom among the different tranches is commonly known as "the waterfall."
 
 ![Waterfall](./images/loan_waterfall.svg#float=left;margin=20px;width=300px;)
 
-In a standard investment vehicle, investors share the risk and return of the investments pro rata, meaning they share it corresponding to their investment volume. In a tiered investment structure, investors do not share all risks and returns pro rata. Therefore, it somehow needs to be defined how the proceeds are allocated between the different tranches. This is called the waterfall.
+### The subordination ratio
+To ensure that senior and mezzanine investors are consistently protected against defaults to a predetermined degree, each tranche (except the junior tranche) carries a "subordination ratio." This ratio determines the percentage of the asset pool that must be covered by subordinated tranches below in the stacked waterfall. 
+For example, in a three-tranche structure, a subordination ratio of 20% for the senior tranche means that the senior tranche should always be protected by a combined mezzanine and junior tranche, accounting for at least 20% of the total asset pool. If the subordination ratio for the mezzanine tranche is 10%, it needs to be protected by at least 10% of the junior tranche. If these ratios are not maintained in a revolving pool, measures such as additional investments provided by junior investors or even selling assets must be taken to restore them. 
 
-Most waterfalls usually follow the principle that proceeds are distributed from top (senior tranche) to bottom (junior tranche). This implicitly means, that losses/defaults are allocated from bottom to top, meaning they are borne by the junior tranche that protects the senior tranche. Therefore, the junior tranche is also sometimes referred to as a _first loss piece_.
+### Implicit leverage of the junior tranche
+While the junior tranche bears the risk of first-loss defaults to protect the tranches above, it also typically benefits from higher variable returns. This is partly driven by capturing excess returns greater than the fixed rates of the tranches above. 
+Let's assume a pool of $100 yields a total return on its portfolio of 10% or $10. It is structured with a $50 senior tranche with a fixed return of 4% (earning $2), a $30 mezzanine tranche with a fixed return of 5% (earning $1.5), and a $20 junior tranche with variable returns. This leaves a 1% return for the junior tranche. However, note that the junior tranche also receives the excess returns from the tranches above. Therefore, its total income on the outstanding $20 tranche is the remaining $6.5 not captured by the other tranches, resulting in a significant return on investment of $6.5/$20 = 32.5%.
 
-A simple waterfall could be, for example, that the senior tranche receives their investment back first and also their (fixed) returns. The remaining proceeds are then allocated to the junior tranche. The higher the proceeds left in the waterfall for the junior tranche are, the higher the return. However there are many different configurations. Another setup could be that the senior tranche receives their investment back first, then the junior tranche receives their investment back, then the senior tranche receives their (fixed) return and the remaining proceeds go the junior tranche.
+## On-chain implementation
+### Scalable tranche configuration
+The Centrifuge Protocol allows for flexible configuration of multiple tranches within a pool. Upon creation, a pool can be set up with one to five tranches. Each tranche above the junior tranche carries a defined fixed return (expressed as %APR on deployed assets), a position in the waterfall, and a subordination ratio. The junior tranche, by definition, sits at the bottom of the waterfall without a subordination ratio or predefined fixed returns.
 
-## A Simplified example
+### Cash drag across tranches
+A pool only accrues interest on the deployed capital or financed assets, while liquidity in the reserve does not earn any interest. This situation can result in what is known as "cash drag." 
+For example, consider a pool of $100 with a portfolio of assets worth $80 and a reserve of $20. If the portfolio of assets yields 10%, the pool will generate a total return of 8% because the 20% cash portion of undeployed capital reduces the overall return. 
+In Centrifuge's revolving pools, the cash drag is equally distributed across the tranches. So, if the above pool has three tranches yielding fixed returns of 2%, 3%, and 15%, respectively, the effective returns would be 20% lower, resulting in 1.8%, 2.4%, and 12.0%.
 
-To illustrate how the Senior and Junior tokens work in more detail, let’s look at a hypothetical $1M fund investing in SME invoices targeting an average annual interest rate of 9%. When setting up a structured fund, part of the paperwork is to define how many shares are being issued in each class. For example, the issuer could say they will sell 20% of the $1M investment in a junior tranche and 80% in a senior tranche. Let’s assume the senior tranche is guaranteed a fixed return of 5%. The junior tranche has a variable return depending on the success of the investment. Now let’s look at a few different scenarios to explain how this structure affects the risk and return of the different investment classes.
+### Breach of subordination ratios
+Every tranche above the junior tranche carries a fixed subordination ratio to ensure that the tranche is protected by a certain buffer of tranches below at any given time. If a subordination ratio is breached, the pool is partially "frozen," allowing only transactions that would improve the ratio until it is restored. In such a scenario, the following transactions would be blocked:
+- Financing of new assets by the issuer
+- Further investments into the breached tranche and the tranches above it
+- Redemptions of the tranches below the breached tranche
 
-![Base Case](./images/tranche_base_case.svg#margin=10px;width=250px;float=left;)
+The following transactions would still be allowed:
+- Repayments of assets
+- Investments in the tranches below the breached tranche
+- Redemptions of the senior tranche
 
-### Base case scenario
+### Handling of defaults
+As long as a junior tranche exists, write-downs and write-offs resulting from defaults in the asset portfolio will be borne by the junior tranche. This would reduce the value of the junior tranche and, consequently, the token price, resulting in reduced junior returns or even losses for the junior tranche. As long as all subordination ratios remain intact, the pool continues to function normally, albeit with affected junior returns.
 
-Assume that the money to return to investors is $1.09M based on the 9% interest rate ($1M in principal and $90k in interest). During the lifetime of the fund, any repayments are first used to repay the share of the senior investors along with the 5% interest accrued on their investment (5% of $800k = $40k). Once all outstanding senior debt and interest has been paid off, the waterfall pays out the remaining proceeds to the junior investors. That means that if there are no losses, the junior investors will be paid $50k on a $200k investment. This is equivalent to a 25% return.
-
-<div style="clear:both;"></div>
-
-![Junior Loss](./images/tranche_junior_loss.svg#margin=10px;width=250px;float=left;)
-
-### Partial Loss for the Junior Tranche
-
-Let’s assume again that out of the $1M lent, $1.09M were due incl. accrued interest. However, there is a 6% default rate resulting in a total loss of $60k of the portfolio. For simplicity, we further assume that interest is impacted similarly, so the total interest paid from the portfolio is $84.6k. The senior tranche is not impacted and still returns 5% of $800k equal to $40k. The junior investors take the first loss and their net value drops to $140k. The junior tranche still receives the remaining interest payments of $44.6k from the waterfall. Thus, overall the junior tranche has an ending net value of \$188.6k equal to a loss of 7.7%.
-
-<div style="clear:both;"></div>
-
-### Losses for Senior Tranche
-
-The senior tranche would be protected against any losses of their investment and their guaranteed fixed return as long as potential defaults do not exceed the volume of the junior tranche. This would be the case up to a default rate of 22.9% under the above assumptions. With a default rate of 22.9% the loss of the portfolio is $229k leaving a total of $771k of the loan portfolio being paid back. The total interest still paid from the portfolio is $69k. Thus, the senior tranche is not impacted, receiving $840k ($771k + $69k) and still returns 5%. The junior tranche takes the first loss again and their net value drops to \$0k. For defaults higher than 22.9% the senior tranche would also start to accrue losses, first on their expected return, and then on their initial investment.
-
-## Interest Rate Model
-
-The Senior token’s return is defined by a fee function. Unless modified, the default implementation has a fixed interest per pool compounding per second. The interest is only charged on the deployed capital. The Junior token only gets a return on their investment if the Senior token holders have all been fully redeemed. Therefore, Junior token holders do not have a guaranteed fee or return but measure their return by what the Senior token contract leaves in the system.
-
-An overview of how to calculate interest rates for Centrifuge contracts can be found [here](/learn/interest-rate-methodology/).
-
-## Minimum Tranche Ratio
-
-A Senior purchaser taking the senior tranche would want to have a guarantee that there is at least a minimum percentage of Junior tokens in the pool to make sure that they are protected against a certain amount of losses. Setting this variable guarantees them a certain risk profile. When deploying a pool this variable is set upon initialization and enforced by the contracts. When the minimum ratio is broken, investments and the issuance of additional Senior token is stopped until the minimum ratio is restored.
+### Two-tiered structure for Ethereum pools: DROP and TIN
+It is important to note that for existing pools on Ethereum created before the launch of the new app in May 2023, the standard implementation consists of a two-tiered structure, with the senior tranche referred to as DROP and the junior tranche referred to as TIN. Each pool also has a defined "Drop Subordination" or "Minimum TIN ratio."
