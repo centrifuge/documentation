@@ -75,6 +75,8 @@ $$
 Pool Value = Portfolio Value + Reserve
 $$
 
+![Valuation](./images/calculate_NAV.png#width=50%;)
+
 ### Simple numerical example
 This example describes calculating the present value of a one cash-flow
 
