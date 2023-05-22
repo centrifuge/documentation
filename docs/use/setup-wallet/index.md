@@ -1,17 +1,27 @@
 ---
 id: setup-wallet
 order: 5
-title: Connect your wallet 
+title: Connect and set up your wallet 
 contributors: <Dennis Wellmann:dennis@k-f.co, Anna Mehrländer: anna@k-f.co>
 ---
-## Introduction 
 
-When using Centrifuge you can choose between deployed pools on Centrifuge Chain and pools on Ethereum. You can connect to both chains via our wallet component. 
+## Connect your wallet 
 
-## Connect to Ethereum (ETH)
-### Setting up a MetaMask browser wallet
+When using Centrifuge you can choose between deployed pools on Centrifuge Chain and pools on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge)
+
+![](./images/wallet-component1.png#width=60%;)
+
+In the second step select the wallet of your choice. On Centrifuge the system currently supports [Talisman](https://www.talisman.xyz/), [Subwallet](https://chrome.google.com/webstore/detail/subwallet-polkadot-extens/onhogfjeacnfoofkfgppdlbmlmnplgbn) and [Polkadot.js](https://polkadot.js.org/extension/).
+
+![](./images/wallet-component-cf.png#width=60%;)
+
+On Ethereum, the system supports [Metamask](https://metamask.io/download.html), [Coinbase Wallet](https://www.coinbase.com/wallet) and multiple other wallets through [Wallet Connect](https://walletconnect.com/).
+
+![](./images/wallet-component-eth.png#width=60%;)
+
+## Set up Ethereum wallet (Metamask)
 ### What is MetaMask?
-MetaMask is a browser extension that allows you to use Ethereum protocols or dApps (decentralized Apps) such as Tinlake. The extension holds your private keys and serves as a wallet for ETH and ERC20 tokens, such as DAI, senior token of pool, or junior token of poll. Connect MetaMask to the app and confirm your transactions to transfer and receive tokens.
+MetaMask is a browser extension that allows you to use Ethereum protocols or dApps (decentralized Apps) such as Tinlake. The extension holds your private keys and serves as a wallet for ETH and ERC20 tokens, such as DAI, senior token of pool, or junior token of pool. Connect MetaMask to the app and confirm your transactions to transfer and receive tokens.
 
 ### How to install MetaMask in your browser
 1. Go to https://metamask.io/download.html.
@@ -26,9 +36,9 @@ MetaMask is a browser extension that allows you to use Ethereum protocols or dAp
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_51288122dc7669aff3b8765228a7c945.png)
 
-## Set up a Ledger hardware wallet
+## Set up a hardware wallet for Ethereum (Ledger)
 ### What is a hardware wallet?
-A hardware wallet stores the user's private keys in a secure hardware device. To use an address stored in a hardware wallet a user needs to be in physical possession of the device. A popular hardware wallet are [Ledger](https://www.ledger.com/).
+A hardware wallet stores the user's private keys in a secure hardware device. To use an address stored in a hardware wallet a user needs to be in physical possession of the device. A popular hardware wallet is [Ledger](https://www.ledger.com/).
 
 ### Setting up a Ledger device
 Download the [Ledger Live](https://www.ledger.com/ledger-live/) and follow the steps in the app described [here](https://support.ledger.com/hc/en-us/articles/360018784134).
@@ -70,7 +80,15 @@ A Centrifuge Chain address can be created through [Polkadot.js website](hhttps:/
 
 **Note that Ledger hardware wallets currently do not support Centrifuge Chain (CFG)**
 
-## Using the Polkadot.js website
+## Set up polkadot.js wallet
+### Overview
+You can create a CFG account in any wallet that supports Polkadot. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see this [article](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). Possible options are:
+
+- Polkadot-JS UI
+- Polkadot browser extension 
+- Parity Signer, recently updated to Polkadot Vault
+
+### Using Polkadot-JS UI
 **Of all options, this is the least secure and is not recommended.**
 
 1. Open Polkadot.js[https://polkadot.js.org/apps/#/explorer]
@@ -83,7 +101,7 @@ A Centrifuge Chain address can be created through [Polkadot.js website](hhttps:/
 
 5. Done! You can now copy your address and send it to others to receive tokens. The address is the string starting with `4...` (for Centrifuge Mainnet). You can copy it by clicking on the icon to the left of your account name: ![](./images/account-address.png)
 
-## Using the Polkadot.js extension
+### Using the Polkadot.js extension
 
 1. Download the extension [here](https://polkadot.js.org/extension/)
 1. Create a new account by clicking on "+" in the top right of the extension and selecting "Create new account"
@@ -93,18 +111,18 @@ A Centrifuge Chain address can be created through [Polkadot.js website](hhttps:/
 1. Make sure you save the downloaded JSON file in a safe place, and remember the password for this account
 1. Done! You can now copy your address and send it to others to receive tokens.
 
-## Create an account using the Parity Signer App
+### Create an account using the Parity Signer App
 
 This is an unofficial guide on how to use the Parity Signer App to create an account on Centrifuge Chain. Please consult the official Parity Signer documentation [here](https://github.com/paritytech/parity-signer).
 
-### Connect to Centrifuge Chain Mainnet
+#### Connect to Centrifuge Chain Mainnet
 
 1. Open the [Polkadot.js website](https://polkadot.js.org/apps/#/explorer) on your computer.
 2. In the top left, ensure that the network is set to Centrifuge.
 
 ![](./images/portal-website.png)
 
-### How to Generate an Address Using Parity Signer
+#### How to Generate an Address Using Parity Signer
 
 1. Buy an old or new device (ex. iPod touch, Android phone, etc.)
      - **Important:** only charge it with a battery bank or wall charger, **don’t plug it into a computer!!!** Use a charge only cable, not a data cable.
@@ -164,7 +182,7 @@ This is an unofficial guide on how to use the Parity Signer App to create an acc
 - **Remember to write down your secret phrase & STORE IT SAFELY!**
   Follow a secure protocol to save and store your private keys. Please do some research and choose a secure method that will work best for you.
 
-## Third Party Custodians
+### Third Party Custodians
 The following custodians offer custody of CFG or wCFG (ERC20 on Ethereum).
 * Bitcoin Suisse Vault (native CFG)
 * Coinbase Custody (ERC20 only
