@@ -1,6 +1,6 @@
 ---
 id: legal-offering
-order: 5
+order: 6
 title: Legal Offering Structure
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Martin Quensel:martin@centrifuge.io>, <Jay:jay@centrifuge.io>
 ---
