@@ -25,11 +25,11 @@ $$
 
 with 
 
-| Variable     | Description                                                                                                                   |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| $i$          | Interest rate defined as APR (decimal)         |                                                                                                         
-| $t$          | Time -> Loan duration in years (decimal)     |                            
-| $n$          | Compounding frequency (Number of times interest is compounded per unit `t` ) (integer)|
+| Variable | Description                                                                            |
+| -------- | -------------------------------------------------------------------------------------- |
+| $i$      | Interest rate defined as APR (decimal)                                                 |
+| $t$      | Time -> Loan duration in years (decimal)                                               |
+| $n$      | Compounding frequency (Number of times interest is compounded per unit `t` ) (integer) |
 
 Applying the numbers from the example above with this formula (i = 0.06, t = 1.00, n = 12) gives:
 
@@ -61,10 +61,10 @@ $$
 
 with 
 
-| Variable     | Description |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| $i$          | Input interest rate defined as APR   |
-| $y$          | Constant, reflecting the compounding frequency (for Centrifuge Protocol, seconds in a year: 31536000360) |
+| Variable | Description                                                                                              |
+| -------- | -------------------------------------------------------------------------------------------------------- |
+| $i$      | Input interest rate defined as APR                                                                       |
+| $y$      | Constant, reflecting the compounding frequency (for Centrifuge Protocol, seconds in a year: 31536000360) |
 
 The Debt $D$ at any point in time based on Principal $P$ for time $t$ (in seconds) can then be calculated as:
 
