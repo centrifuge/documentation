@@ -95,7 +95,7 @@ The pool can become open for investments again through a decrease of the reserve
 The Financing Fee is the rate at which the outstanding amount of an individual asset financing accrues interest. It is expressed as an "APR" (Annual Percentage Rate) and compounds interest every second. For example, a financing fee of 8.00% compounding interest over seconds through the course of one year leads to an APY ("Annual Percentage Yield") of 8.xx%. Find more information on the difference between APR and APY and interest methodology [here](/learn/interest-rate-methodology/). Different assets can have different financing fees depending on their `Risk Score`.
 
 ### Senior token APR
-The Senior token APR is the rate at which the `Senior token` accrues interest, per second. Note, that this is only applied to deployed capital, thus liquidity in the reserve does not generate yield for the Senior token. The actual Senior token return may therefore differ from the Senior Token APR due to compounding and cash drag.
+The Senior token APR is the rate at which the `Senior token` accrues interest per second. Note, that this is only applied to deployed capital, thus liquidity in the reserve does not generate yield for the Senior token. The actual Senior token return may therefore differ from the Senior Token APR due to compounding and cash drag.
 
 ### 30d token yield
 To provide a good approximation of the current token return considering the impact of compounding and "cash drag" Centrifuge also display's the current annualized token yield over the last 30 days. It is calculated as 
