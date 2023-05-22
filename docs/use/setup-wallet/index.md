@@ -2,7 +2,7 @@
 id: setup-wallet
 order: 5
 title: Connect and set up your wallet 
-contributors: <Dennis Wellmann:dennis@k-f.co, Anna Mehrländer: anna@k-f.co>
+contributors: <Dennis Wellmann:dennis@k-f.co, Anna Mehrländer:anna@k-f.co>
 ---
 
 ## Connect your wallet 
