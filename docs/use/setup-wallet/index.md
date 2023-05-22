@@ -73,7 +73,7 @@ When your MetaMask account is connected to the hardware wallet you need to confi
 
 **Note that Ledger hardware wallets currently do not support Centrifuge Chain (CFG)**
 
-## Set up polkadot.js wallet
+## Set up polkadot.js account
 ### Overview
 You can create a CFG account in any wallet that supports Polkadot. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see this [article](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). Possible options are:
 
@@ -104,18 +104,9 @@ You can create a CFG account in any wallet that supports Polkadot. For detailed 
 1. Make sure you save the downloaded JSON file in a safe place, and remember the password for this account
 1. Done! You can now copy your address and send it to others to receive tokens.
 
-### Create an account using the Parity Signer App
+### Using the Parity Signer App
 
 This is an unofficial guide on how to use the Parity Signer App to create an account on Centrifuge Chain. Please consult the official Parity Signer documentation [here](https://github.com/paritytech/parity-signer).
-
-#### Connect to Centrifuge Chain Mainnet
-
-1. Open the [Polkadot.js website](https://polkadot.js.org/apps/#/explorer) on your computer.
-2. In the top left, ensure that the network is set to Centrifuge.
-
-![](./images/portal-website.png)
-
-#### How to Generate an Address Using Parity Signer
 
 1. Buy an old or new device (ex. iPod touch, Android phone, etc.)
      - **Important:** only charge it with a battery bank or wall charger, **don’t plug it into a computer!!!** Use a charge only cable, not a data cable.
