@@ -5,9 +5,9 @@ title: Claim CFG rewards
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Nico Dreher:nico@centrifuge.io>
 ---
 ## Introduction
-This step-by-step guide to claiming Centrifuge tokens (CFG) as a reward for Tinlake investments leads investors through creating the required setup and then claiming the first reward.
+This step-by-step guide to claiming Centrifuge tokens (CFG) as a reward for investments into Centrifuge pools leads investors through creating the required setup and then claiming the first and subsequent reward. Note that currently rewards can only be claimed for Ethereum-based pools through the [Rewards page](https://tinlake.centrifuge.io/rewards).
 
-CFG rewards are earned on Ethereum based on Tinlake investments and are claimed on the Centrifuge Chain which is based on Polkadot. To claim rewards, the Tinlake investment account needs to be linked to a Centrifuge Chain account holding CFG.
+CFG rewards are earned on Ethereum-based on Tinlake investments and are claimed on the Centrifuge Chain which is based on Polkadot. To claim rewards, the Tinlake investment account needs to be linked to a Centrifuge Chain account holding CFG
 
 CFG rewards are earned from the first day of investment and cannot be claimed before a minimum holding period of **30 days**. The investor's rewards are found on the [Rewards page](https://tinlake.centrifuge.io/rewards). Note that rewards may follow a declining curve since the reward rate is subject to governance. Previous governance proposals can be found in the [Forum](https://gov.centrifuge.io/c/governance/35).
 
