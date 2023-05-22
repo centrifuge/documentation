@@ -19,7 +19,7 @@ To summarize: The following types of inflows/outflows on the asset side can happ
 The following types of inflows/outflows on the investment side are locked during the epoch and executed at the end of the epoch:
 
 - Tranche token investments
-- Tranceh token redemptions
+- Tranche token redemptions
 
 ## Length of an Epoch
 
@@ -46,9 +46,10 @@ At the epoch turn, the contracts first process the current state of the pool:
 - Token prices
 - Subordination ratios
 
-Then the contracts check whether all set orders can be executed with the capital available and without breaking the subordination ratios or the Max reserve restrictions. If this is the case all orders are immediately executed and the contracts process the new state of the pool. You can find a simple model that illustrates the processing of orders and calculation of the pool state [here](https://docs.google.com/spreadsheets/d/1mkIbWzhD7IXbnbYXKreTMYuaZJEzyTVqllhJnP4YdPs/edit#gid=161507348)
+Then the contracts check whether all set orders can be executed with the capital available and without breaking the subordination ratios or the maximum reserve restrictions. If this is the case all orders are immediately executed and the contracts process the new state of the pool. You can find a simple model that illustrates the processing of orders and calculation of the pool state [here](https://docs.google.com/spreadsheets/d/1mkIbWzhD7IXbnbYXKreTMYuaZJEzyTVqllhJnP4YdPs/edit#gid=161507348)
 
-If not all orders can be executed, e.g. because there is not enough capital available in the Reserve (plus new investments) to serve all redemption orders or executing all senior investments would break the subordination ratios the Centrifuge "Solver mechanism" would be initiated.
+If not all orders can be executed, e.g. because there is not enough capital available in the Reserve (plus new investments) to serve all redemption orders or executing all senior investments would break the 
+ratios the Centrifuge "Solver mechanism" would be initiated.
 
 ## The Solver mechanism
 
