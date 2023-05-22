@@ -1,7 +1,7 @@
 ---
 id: terms
 order: 1
-title: Introductin to Pools on Centrifuge
+title: Introduction to Pools on Centrifuge
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 redirect_from:
   - /learn
