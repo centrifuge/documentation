@@ -7,7 +7,7 @@ contributors: <Dennis Wellmann:dennis@k-f.co>, <Anna Mehrlaender:anna@k-f.co>
 
 ## Connect your wallet 
 
-When using Centrifuge you can choose between deployed pools on Centrifuge Chain and pools on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge)
+When using Centrifuge you can choose between pools deployed on Centrifuge Chain and on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge)
 
 ![](./images/wallet-component1.png#width=40%;)
 
@@ -76,20 +76,38 @@ When your MetaMask account is connected to the hardware wallet you need to confi
 ## Set up a CFG wallet
 
 ### Overview
-You can create a CFG account in any wallet that supports Polkadot. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see this [article](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). This tutorial will cover:
+You can create a CFG account in any wallet that supports Polkadot. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see [the documentation from Polkadot](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). The tutorial below will cover how to set up wallets using:
 
-- Talisman
-- Polkadot.js browser extension 
-- Parity Signer (now called Polkadot Vault)
+- [Talisman](https://app.talisman.xyz/portfolio)
+- [Polkadot.js browser extension](https://polkadot.js.org/extension/) 
+- [Parity Signer](https://signer.parity.io/) (now called Polkadot Vault)
 
 ### Using Talisman
-Talisman is a wallet that supports Substrate (Polkadot) and Ethereum accounts. The Talisman wallet browser extension is available on Google Chrome, Brave, and Firefox, and a corresponding asset dashboard is accessible at [app.talisman.xyz](https://app.talisman.xyz/portfolio)
+Talisman is a wallet that supports Substrate (Polkadot) and Ethereum accounts. The Talisman wallet browser extension is available on Google Chrome, Brave, and Firefox, and a corresponding asset dashboard is accessible at [app.talisman.xyz](https://app.talisman.xyz/portfolio).
+
+To set up Talisman:
 
 1. Download the extension [here](https://chrome.google.com/webstore/detail/talisman-polkadot-wallet/fijngjgcjhjmmpcmkeiomlglpeiijkld/related) and install it
 2. Create a wallet using the instructions from Talisman [here](https://docs.talisman.xyz/talisman/navigating-the-paraverse/account-management/create-a-talisman-wallet)
 3. Back up your wallet using the the instructions from Talisman [here](https://docs.talisman.xyz/talisman/navigating-the-paraverse/account-management/back-up-your-secret-phrase) (**THIS IS VERY IMPORTANT**)
 
-To see your CFG wallet address, click on "Receive" under your account and select CFG (Centrifuge) from the list.
+You can create or import an account in Talisman by click on `More options` and `Add account`. This will open a browser tab that allows you to create a new account or add existing accounts via Recovery Phrase, JSON or from your Ledger.
+
+![](./images/Talisman_Newaccount.png#width=60%;)
+
+If you want to create a new account, click on `New Account` and `Polkadot`. 
+
+![](./images/Talisman_Newaccount_Create.png#width=60%;)
+
+Input a name and Talisman will create the account for you. Note, that by default Talisman will display your Polkadot and Kusama balances.
+
+ ![](./images/Talisman_Created.png#width=60%;)
+
+To find the CFG adress of your account, click on `Copy Address` and search for Centrifuge. Once the balance of your centrifuge address is larger than zero, it will automatically be displayed in your account list as well.
+
+ ![](./images/Talisman_FindCFG.png#width=60%;)
+
+Finally, to see an overview of your CFG accounts, click on "Receive" under your account and select CFG (Centrifuge) from the list.
 
 ![](./images/talisman-wallet.png#width=400)
 
@@ -114,72 +132,27 @@ You can always recover your account in either of two ways:
 * Importing the account by using your seed phrase
 * Importing your account by using the JSON file + the password to your account
 
-### Using the Parity Signer App
+### Using the Parity Vault App
+The Polkadot `Vault` (formerly Parity `Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). 
 
-This is an unofficial guide on how to use the Parity Signer App to create an account on Centrifuge Chain. Please consult the official Parity Signer documentation [here](https://github.com/paritytech/parity-signer).
+To set-up a Centrifuge account using the Parity Vault, download the app from https://signer.parity.io/ and follow the instructions in the [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html). When you create an account, make sure to create keys for the `Centrifuge Mainnet Network`. 
+ ![](./images/create-keypair.png#width=400)
 
-1. Buy an old or new device (ex. iPod touch, Android phone, etc.)
-     - **Important:** only charge it with a battery bank or wall charger, **don’t plug it into a computer!!!** Use a charge only cable, not a data cable.
-2. Set up a passcode and set it to wipe the device upon entering the code incorrectly too many times.
-3. Install the [Parity Signer App](https://www.parity.io/signer/) from below links:
-     - [Link for Apple device](https://itunes.apple.com/us/app/parity-signer/id1218174838)
-     - [Link for Android device](https://play.google.com/store/apps/details?id=io.parity.signer)
-4. Never connect the the device to a computer, even to upgrade it.
-5. Turn off WiFi & Bluetooth (**NEVER TURN IT ON AGAIN!**)
-6. Create a key for Centrifuge Mainnet using the Parity Signer App
-     - Create your identity to get started
+You can look up your Centrifuge address by scanning the QR code on the Polkadot.js website.
+- On your computer, navigate to https://polkadot.js.org/apps/#/explorer
+- Make sure the network is set to Centrifuge.
+- Click on Accounts
+- Click on 'Add via QR'
+- Scan the QR code on your device for your Centrifuge Mainnet Public Address
+- Your address for Centrifuge Mainnet should begin with a '4...'
 
-       ![](./images/new-identity.png#width=400)
-     - Write down your 24 word Recovery Phrase (**THIS IS VERY IMPORTANT**)
+If you want to sign transactions with your account you will first need to send some CFG to this account. You can then initiate a transfer on the [Polkadot.js UI] by selecting 'Transfer' in the left menu or on 'Send' from the Accounts page and sign the transaction with your Vault via QR code.
 
-       ![](./images/recovery-phrase.png#width=400)
-     - Set your Identity PIN
-       - **You will use this PIN to sign all of your transactions using this device.**
-     - Create your first Keypair - select the Centrifuge Mainnet Network
-       ![](./images/create-keypair.png#width=400)
-7. Get your address by scanning the QR code on the Polkadot.js website.
-     - On your computer, navigate to https://polkadot.js.org/apps/#/explorer
-     - Make sure the network is set to Centrifuge.
-     - Click on Accounts
-     - Click on 'Add via QR'
-       ![](./images/add-via-qr.png#width=400)
-     - Scan the QR code on your device for your Centrifuge Mainnet Public Address
-       ![](./images/public-address-qr.png#width=400)
-     - Your address for Centrifuge Mainnet should begin with a '4...'
-1. To manually check the above process:
-     - Delete the key from the app
-     - Recover the key from your backed up phrase
-     - Verify the address matches what you obtained above
-
-1) Send some test CFG to another address and use Parity Signer to sign this transaction
-     - You will first need to send some CFG to this account
-     - Initiate a transfer on the Polkadot.js website by selecting 'Transfer' in the left menu or on 'Send' from the Accounts page
-     - Click 'Make Transfer'
-     - Click 'Sign via QR'
-     - Using the Parity Signer App, scan the QR code in your browser with the App's QR Scanner from this account screen (see above on how to get it).
-     - In the app, confirm your signature of the transaction by entering your PIN
-     - Click 'Scan Signature QR' in the browser
-     - Sign the transaction
-
-1) Backup your Recovery Phrase and keep it somewhere safe. Please do research on secure methods for storage and recovery.
-
-> **A note on app updates:**
-> If a new version of the app becomes available, please exercise the following caution.
-> Ideally, replace the device or do not update the app.
-> If an update is necessary:
->
-> 1.  Hard reset the device and wipe everything
-> 2.  Re-install the new parity signer app
-> 3.  Turn off wifi & bluetooth and **NEVER TURN IT ON AGAIN**
-> 4.  Recover your key from seed phrase
-
-- **Remember to write down your secret phrase & STORE IT SAFELY!**
-  Follow a secure protocol to save and store your private keys. Please do some research and choose a secure method that will work best for you.
-
-### Third Party Custodians
-The following custodians offer custody of CFG or wCFG (ERC20 on Ethereum).
-* Bitcoin Suisse Vault (native CFG)
-* Coinbase Custody (ERC20 only
-* BitGo (ERC20 only)
+Some best practices using the Parity vault securly include:
+- Use the phone only as a cold storage solution with the Vault app (You can use or buy an old phone and wipe it)
+- After setting up the app turn off WiFi & Bluetooth and never turn it on again (to airgap the phone)
+- Only charge your phone with a battery bank or wall charger. Use a charge only cable, not a data cable.
+- Never connect the the device to a computer
+- Backup your Recovery Phrase and keep it somewhere safe. Please do research on secure methods for storage and recovery.
 
 DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind._
