@@ -73,36 +73,46 @@ When your MetaMask account is connected to the hardware wallet you need to confi
 
 **Note that Ledger hardware wallets currently do not support Centrifuge Chain (CFG)**
 
-## Set up polkadot.js account
+## Set up a CFG wallet
+
 ### Overview
-You can create a CFG account in any wallet that supports Polkadot. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see this [article](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). Possible options are:
+You can create a CFG account in any wallet that supports Polkadot. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see this [article](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). This tutorial will cover:
 
-- Polkadot-JS UI
-- Polkadot browser extension 
-- Parity Signer, recently updated to Polkadot Vault
+- Talisman
+- Polkadot.js browser extension 
+- Parity Signer (now called Polkadot Vault)
 
-### Using Polkadot-JS UI
-**Of all options, this is the least secure and is not recommended.**
+### Using Talisman
+Talisman is a wallet that supports Substrate (Polkadot) and Ethereum accounts. The Talisman wallet browser extension is available on Google Chrome, Brave, and Firefox, and a corresponding asset dashboard is accessible at [app.talisman.xyz](https://app.talisman.xyz/portfolio)
 
-1. Open Polkadot.js[https://polkadot.js.org/apps/#/explorer]
-2. Click the dropdown at the top left and select Centrifuge (listed under "Polkadot & Parachains")
-3. Create a new account for your user by navigating to "Accounts" and clicking "Add account".
+1. Download the extension [here](https://chrome.google.com/webstore/detail/talisman-polkadot-wallet/fijngjgcjhjmmpcmkeiomlglpeiijkld/related) and install it
+2. Create a wallet using the instructions from Talisman [here](https://docs.talisman.xyz/talisman/navigating-the-paraverse/account-management/create-a-talisman-wallet)
+3. Back up your wallet using the the instructions from Talisman [here](https://docs.talisman.xyz/talisman/navigating-the-paraverse/account-management/back-up-your-secret-phrase) (**THIS IS VERY IMPORTANT**)
 
-   Fill in the form, e. g. for Peter Parker: ![](./images/create-account.png)
+To see your CFG wallet address, click on "Receive" under your account and select CFG (Centrifuge) from the list.
 
-4. Click "Save" and then "Create and backup account". Make sure you save the downloaded JSON file in a safe place.
-
-5. Done! You can now copy your address and send it to others to receive tokens. The address is the string starting with `4...` (for Centrifuge Mainnet). You can copy it by clicking on the icon to the left of your account name: ![](./images/account-address.png)
+![](./images/talisman-wallet.png#width=400)
 
 ### Using the Polkadot.js extension
 
-1. Download the extension [here](https://polkadot.js.org/extension/)
-1. Create a new account by clicking on "+" in the top right of the extension and selecting "Create new account"
-1. Save your recovery phrase in a safe place before you continue (**THIS IS VERY IMPORTANT**)
-1. Set a name and password for this account
-1. Once created, backup the account by selecting the 3 dots to the right of the account name and clicking "Export Account"
-1. Make sure you save the downloaded JSON file in a safe place, and remember the password for this account
-1. Done! You can now copy your address and send it to others to receive tokens.
+Polkadot.js browser extension allows you to manage your accounts (rename, change network, export etc.). The browser extension is available on Google Chrome and Firefox, and you can use [Polkadot.js Apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fcentrifuge-parachain.api.onfinality.io%2Fpublic-ws#/accounts) to see your balance, transfer tokens, participate in governance etc.
+
+1. Download the extension [here](https://polkadot.js.org/extension/) and install it
+2. Create a new account by clicking on "+" in the top right of the extension and selecting "Create new account"
+3. Save your recovery phrase in a safe place before you continue (**THIS IS VERY IMPORTANT**)
+4. Set NETWORK to "Centrifuge Chain" and give your account a name and password
+
+![](./images/set-up-polkadotjs.png#width=400)
+
+5. Once created, backup the account by selecting the 3 dots to the right of the account name and clicking "Export Account"
+6. Make sure you save the downloaded JSON file in a safe place, and remember the password for this account
+
+![](./images/export-account-json.png#width=400)
+
+You can always recover your account in either of two ways:
+
+* Importing the account by using your seed phrase
+* Importing your account by using the JSON file + the password to your account
 
 ### Using the Parity Signer App
 
