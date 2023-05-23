@@ -136,9 +136,9 @@ You can always recover your account in either of two ways:
 The Polkadot `Vault` (formerly Parity `Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). 
 
 To set-up a Centrifuge account using the Parity Vault, download the app from https://signer.parity.io/ and follow the instructions in the [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html). When you create an account, make sure to create keys for the `Centrifuge Mainnet Network`. 
- ![](./images/create-keypair.png#width=400)
+ ![](./images/create-keypair.png#width=40%;)
 
-You can look up your Centrifuge address by scanning the QR code on the Polkadot.js website.
+You can look up your Centrifuge address by scanning the QR code on the Polkadot.js UI.
 - On your computer, navigate to https://polkadot.js.org/apps/#/explorer
 - Make sure the network is set to Centrifuge.
 - Click on Accounts
@@ -146,7 +146,7 @@ You can look up your Centrifuge address by scanning the QR code on the Polkadot.
 - Scan the QR code on your device for your Centrifuge Mainnet Public Address
 - Your address for Centrifuge Mainnet should begin with a '4...'
 
-If you want to sign transactions with your account you will first need to send some CFG to this account. You can then initiate a transfer on the [Polkadot.js UI] by selecting 'Transfer' in the left menu or on 'Send' from the Accounts page and sign the transaction with your Vault via QR code.
+If you want to sign transactions with your account you will first need to send some CFG to this account. You can then initiate a transfer on the [Polkadot.js UI](https://polkadot.js.org/apps/#/explorer) by selecting 'Transfer' in the left menu or on 'Send' from the Accounts page and sign the transaction with your Vault via QR code.
 
 Some best practices using the Parity vault securly include:
 - Use the phone only as a cold storage solution with the Vault app (You can use or buy an old phone and wipe it)
