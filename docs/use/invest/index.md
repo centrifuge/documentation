@@ -1,138 +1,138 @@
 ---
 id: invest
 order: 3
-title: Invest/Redeem
-contributors: <Dennis Wellmann:dennis@centrifuge.io>
+title: Investing into and Redeeming from a pool
+contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@k-f.co>
 ---
 
 ## Investment requirements
 
 ### Legal requirements
+- KYC/KYB has been successfully completed
+    - Find more information how to onboard [here](/use/onboarding/)
+    - Note that there are some [Countries with restricted access](https://docs.centrifuge.io/use/onboarding/#excluded-countries) and *US individual investors must be accredited investors*
+- Signed Token `Subscription Agreement`
 
-- Onboarding incl. KYC through [Securitize.io](https://centrifuge.invest.securitize.io/#/login) has been successfully completed
-- Legal documentation (`Subscription Agreement`) for the pool you want to invest in has been signed.
-
-![](./images/onboarding_flow.png#width=600px)
 
 ### Technical requirements
 
-- A web browser with a web3 wallet. Tinlake supports Ledger, [Metamask](https://metamask.io) and [Portis](https://www.portis.io/) at the moment. If you have not installed a web3 wallet yet, we recommend to use Metamask. This guide will also focus on using Tinlake with Metamask as a [Browser plugin](https://metamask.io/download.html). Please apply appropriate security measures when setting up your web3 wallet (see also below).
-- _**If you use a Ledger, please make sure to enable "Blind Signing" in the settings of the Ethereum app and to update to the latest firmware.**_ (It's recommended to disable blind signing after use.)
-- You need to use the Ethereum address you have completed KYC with.
+- A web browser with a web3 wallet. Centrifuge supports the following wallets:
 
-### Display DAI and TIN/DROP in Metamsk
+- Polkadot/Centrifuge Wallets:
+    - [Polkadot{.js}](https://polkadot.js.org/extension/)
+    - [Talisman - Polkadot Wallet](https://chrome.google.com/webstore/detail/talisman-polkadot-wallet/fijngjgcjhjmmpcmkeiomlglpeiijkld)
+    - [SubWallet](https://chrome.google.com/webstore/detail/subwallet-polkadot-extens/onhogfjeacnfoofkfgppdlbmlmnplgbn)
+- Ethereum:
+    - [Ledger](https://www.ledger.com/) (Note, _if using a Ledger Device, please enable "Blind Signing" in the Ethereum app settings and ensure the device has been updated to the latest firmware. It's recommended to disable blind signing after each use._)
+    - [Metamask](https://metamask.io/download.html)
+    - [Wallet Connect](https://walletconnect.com/)
 
-By default, Metamask only displays your ETH balance under `Assets`. Other tokens need to be added to be displayed. To display the DAI and DROP balances in Metamask, you need to add both tokens to Metamask.
-For DROP and TIN this can be done through Tinlake UI. Just click on `Add DROP/TIN to your wallet` in the respective investment component (see below) and confirm in Metamask.
-If you haven't added DAI yet, in Metamask:
 
-- Click on `Assets` tab
-- Scroll down, click on `Add token`
-- Look for `DAI` in the search field
-- Mark `Dai Stablecoin (DAI)`
-- Scroll down and click on `Next`
-- Add `DAI` with a click on the `Add tokens` button
+If you are setting up a wallet for the first time please apply appropriate security measures when setting up your web3 wallet. Find more information how to set up a web3 wallet [here](/use/setup-wallet/).
 
-## Fund your Ethereum address
+When attempting to invest, ensure you are connected with the wallet address you connected with during the initial KYC process to invest in a pool. If you encounter an issue please confirm KYC has been completed and that the correct wallet is selected. If issue remains please contact support@centrifuge.io.
 
-Please make sure that your Ethereum address is funded with the investment amount in DAI and sufficient ETH to pay for the transactions. There are [several centralized and decentralized exchanges](https://cointelegraph.com/ethereum-for-beginners/how-to-buy-ethereum), such as [Coinbase](https://www.coinbase.com/) or [Uniswap](https://uniswap.org/) where you can buy and/or trade ETH and DAI against USD and other tokens.
 
-## The investment interface
+### Fund Investment address
 
-The investment will be made through the Tinlake UI available at [tinlake.centrifuge.io](https://tinlake.centrifuge.io/). Select the pool you want to invest in and connect your web3 wallet.
-At the top of the page you will find the most important pool information, such as the current Pool and Tranche values ([more on Tranches](../../overview/tranches/) and other on Tinlake terminology.)
-
-![](./images/pool_overview.png)
-
-Below you'll find the current epoch state to your left and the TIN/DROP invest and redeem components to your right:
-
-![](./images/epoch_details.png)
-
-Under `Current epoch` you can see how much time and investment capacity is left in the current epoch. You can lock your investment/redemption at any time during an epoch. After the minimum epoch duration has passed, the epoch can be closed and all locked orders will be executed following a best effort approach. The table under `Total locked orders` shows how many TIN/DROP investment and redemption orders are locked for the current epoch.
+Before you invest, please make sure that your KYCed investment address is funded with both the investment amount in the stablecoin of the selected pool and sufficient native chain currency (such as ETH or CFG) to pay for the transaction fees. There are [several centralized and decentralized exchanges](https://cointelegraph.com/ethereum-for-beginners/how-to-buy-ethereum), such as [Coinbase](https://www.coinbase.com/) or [Uniswap](https://uniswap.org/) where you can buy and/or trade ETH and Stablecoins against USD and other tokens.
 
 ## Investment flow summary
 
-Tinlake's investments and redemptions are executed in (usually daily) epochs. During an epoch you can lock your investment or redemption order. You can cancel your locked order at any time in the course of an epoch. At the end of an epoch all locked orders automatically execute at best effort considering investment/redemption supply and demand and the pool's risk metrics. You can collect your TIN/DROP tokens (in the case of an investment) or DAI (in the case of a redemption) at any time following the start of the next epoch. If your order only partially executes you can collect that portion of your order. The unfulfilled part of the order remains locked for investment/redemption pending execution. As with your initial order, this lock can be cancelled at any time.
+Investments and redemptions on Centrifuge are executed in epochs. During an epoch you can lock your investment or redemption order. You can also cancel your locked order during an epoch period. At the end of an epoch all locked orders automatically executed at best effort considering investment/redemption supply and demand and the pool's risk metrics such as minim tranche risk buffers. 
 
-![](./images/investment_flow.png#width=600px)
+Once an investment is executed, the  tranche tokens (in the case of an investment) or stable coin (in the case of a redemption) at any time following the start of the next epoch. If your order only partially executes you can collect that portion of your order. The unfulfilled part of the order remains locked for investment/redemption pending execution. As with your initial order, this lock can be canceled at any time.
 
 ## Step-by-step investment guide
 
-### Connect to Tinlake pool
+### Navigate to app.centrifuge.io/pools
+### Connect your wallet 
+To start
+1. Connect your investment wallet to the app by clicking "Connect" in the top right corner (if you do not see a "Connect Button", try to either expand your screen or look on the bottom of the page). Please ensure the connected wallet is the same wallet used during the KYC process.
 
-- Go to the [Tinlake URL](https://tinlake.centrifuge.io/) in your browser
-- Click on the pool you want to invest in in the list of pools or visit it directly with the provided pool URL. You will see the pool details.
-- Select the Ethereum address used for investing in Metamask. Make sure you also select the `Main Ethereum Network` as network.
-- Click on the `Connect` button in the top right corner to connect your Ethereum address for the use with Tinlake. Confirm that you want to connect with your Metamask wallet.
-- You should now see your address at the top right
-  ![](https://storage.googleapis.com/centrifuge-hackmd/upload_676dff1fce8625342cb4eefa1be49b70.png)
-- Click on the `Investments` tab.
+![](./images/pool_overview.png#width=600px)
 
-### Lock your investment
 
-You find the TIN/DROP investment and redemption components on the investment page of the pool.
+1. When connecting your wallet you can choose from various networks such as **Centrifuge** and **Ethereum**. First Choose the Network you would like to transact on. Please note, that you should choose the network that matches the network of the Pool you would like to invest in is in. You can find the network in the bottom corner of the pool logo.
 
-![](./images/drop_modal.png#width=400px)
+![](./images/Connect_Wallet.png#width=600px)
 
-When you are connected with your whitelisted address after successfully going through KYC and signing the pool's subscription agreement, Tinlake will give you the Option to Invest and Redeem.
+2. Once you have chosen your network, then choose the Wallet Provider you have your wallet in. 
 
-![](./images/drop_modal_whitelisted.png#width=400px)
+For the Centrifuge Network, you can choose from Talisman, Subwallet or Polkadot{.js}. 
 
-Before you start investing, you may want to `Add TIN/DROP token to your wallet` by simply clicking on the link to do so..
+For Ethereum, can choose from MetaMask, Coinbase Wallet, or Connect through Wallet Connect.
 
-To lock your TIN/DROP investment:
+1. From the wallet list, select the wallet you KYC'd with during onboarding and ensure funds are deposited for investment and ready to be deployed. 
 
-- Click on the `Invest` button
-- Input the amount in DAI you want to invest (Note, that the Tinlake Minimum Investment amount is 10,000 DAI)
-- Click on `Lock DAI`
+### How to change wallets
+If you need to change wallets follow the steps below. Please note, that in order to invest you must invest with a wallet that has been whitelisted for the desired pool. Note, if using MetaMask to invest in an Ethereum Pool you must change your wallet in the MetaMask Browser Extension.
 
-![](./images/drop_modal_invest.png#width=400px)
+1. Navigate to the Wallet button in the top right corner of the page and select it. It will open a drop down with a button labeled "Switch Account". Select this and change your wallet. If you need to change network select Back in the top corner of the change wallet box. 
 
-- This will open Metamask to confirm the transaction
-  - If you are using Metamask without a hardware wallet, then there will be only one transaction to confirm
-  - If you are using a hardware wallet, you will be prompted to confirm two transactions the first time that you make an investment: the `Token Approval` then the `Invest Order`. For all your following investments, only one confirmation will be required
-- Your successfully locked order will be displayed in the component
+If using MetaMask and you wish to switch wallets, you can change your connected address within the MetaMask app browser extension.
 
-![](./images/drop_modal_order.png#width=400px)
+![](./images/switch_wallet.png#width=600px)
 
-- Your investment amount in DAI will be transferred from your wallet and locked in the Tinlake contracts
+2. Select Desired wallet from the list and begin Transacting. 
 
-**Note that locked DAI are not invested in Tinlake yet and thus do not accrue interest. Your order will be automatically executed at best effort at the close of the epoch.**
+### Invest into the pool
 
-### Cancel your locked investment
+Once you have connected your wallet, ensure that your Verification Status says "Completed", this represents your KYC status [Learn more about KYC](https://).
 
-You can cancel your locked invest order at any time during the epoch. To cancel a locked order:
+You can view your status in your wallet in the top right corner. In order to invest the Verification Status should be **Complete**. If the status says **Verify Identity**, you still need to complete the KYC process. 
 
-- Click on the `Cancel Order` button
-- Confirm that you want to cancel
+![](./images/kyc_status.png#width=600px)
 
-![](./images/drop_modal_cancel.png#width=400px)
+Once you are verified and completed pool onboarding by signing the subscription agreement, uploading tax documents, and for US investors certifying investor Accreditation status  ([Learn more about onboarding](https://)), you can begin investing in the pool.
 
-- This will open Metamask where you need to confirm the cancel transaction.
+1. Select the Pool you would like to invest in.
+2. From the drop down menu Choose the Pool tranche you want to or have already completed onboarding for. When onboarding you will need to confirm KYC, sign the pools Subscription agreement, and provide Tax documentation. ![](./images/select_tranche.png#width=600px) 
 
-### Epoch close and order execution
+3. Enter the Amount you would like to invest. Please note each pool may have a minimum Investment amount, in the example pool seen above, the minimum is 10,000 aUSD. Beneath this number, you can also see your wallet's balance of the stablecoin. 
 
-When the epoch is closed, all locked orders will be executed by the smart contracts at best effort considering the pool's risk metrics. E.g. if the current TIN risk buffer is already close to the Minimum TIN risk buffer, no further DROP investments may be accepted until further TIN investments are provided. If the amount of locked orders exceeds the epoch's `Maximum Investment Capacity` set by the asset originator, locked orders can be only partially executed pro rata.
+You can also click the MAX button to invest your entire Available Balance. 
+4. Once you enter the amount, Click "Invest" and sign the On-chain transaction. Note, once you have clicked "Invest" your order is locked but not Executed into the pool. You must wait for the epoch to conclude before your Pending investment is executed. [Learn more about Epochs and Pending orders Here](https://).
 
-### Collect your executed investment
+### Changing Locked Investments/Redemptions
+After you lock an investment or redemption order, if you would like to change your order follow the steps below: 
+1. To change a Locked Order that has not executed to pool (See below for how to check investment status, click "Change Order".![](./images/change_order.png#width=600px) 
 
-After all orders are executed, your fulfilled TIN/DROP order will be ready for collection:
+2. Enter the new amount you would like to invest into the pool and select "Change Order" and sign the on-chain transaction to relock your order. Note, you still must wait for the pending order to be executed at the end of an epoch before your investment is active. 
 
-![](./images/drop_modal_collect.png#width=400px)
+![](./images/change_order_value.png#width=600px)
 
-To collect your TIN/DROP token simply:
 
-- Click on the `Collect button`
-  The TIN/DROP token will be transferred to your wallet.
 
-![](./images/drop_modal_balance.png#width=400px)
+### How to check investment/redemption status
+1. You can check the status of your Pending Order by navigating to "Liquidity" tab of the pool and seeing the remaining Time on the Epoch for Orders to Execute
 
-The TIN/DROP token will continue to collect yield reflected in the token price. You can redeem these TIN/DROP at any time (see below).
-Note that the token immediately starts to accrue interest if you do not collect them immediately. However, you will need to collect these tokens before you can redeem them or make another investment. However, CFG rewards will not accrue on TIN/DROP locked for redemption.
+![](./images/check_status.png#width=600px)
+
+2. Scroll down to the bottom of the page to view Order Overview. You can learn more about how orders are processed [here](https://docs.centrifuge.io/learn/epoch/).
+
+
+
+### Canceling a locked investment/redemption
+1. To cancel your Pending Investment or Redemption Order, simply select "Cancel" and sign the transaction.
+![](./images/change_order.png#width=600px) 
+
+
+### Redeeming from a pool
+1. To initiate a Redemption from the pool, navigate to the pool investment tab and select "Redeem".
+![](./images/redeem.png#width=600px) 
+
+2. Then Enter the amount you would like to Redeem, click "Redeem" and sign the transaction.
+![](./images/redeem_value.png#width=600px) 
+
+3. Once your redemption has been fulfilled you will see "Redemption successful".
+
+
 
 ## Investment Disclaimer
-Nothing contained in this website is to be construed as a solicitation or offer, or recommendation, to buy or sell any interest in any note or other security, or to engage in any other transaction, and the content herein does not constitute, and should not be considered to constitute, an offer of securities. No statement herein made constitutes an offer to sell or a solicitation of an offer to buy a note or other security. All information on this Web page is provided and maintained by the issuers of the respective Tinlake pools. The issuers have full responsibility. Please contact the respective issuer in case of any inquiries. Centrifuge and its affiliates are not liable nor responsible for the information provided hereby.
+Nothing contained in this website is to be construed as a solicitation or offer, or recommendation, to buy or sell any interest in any note or other security, or to engage in any other transaction, and the content herein does not constitute, and should not be considered to constitute, an offer of securities. No statement herein made constitutes an offer to sell or a solicitation of an offer to buy a note or other security. All information on this Web page is provided and maintained by the issuers of the respective Centrifuge pools. The issuers have full responsibility. Please contact the respective issuer in case of any inquiries. Centrifuge and its affiliates are not liable nor responsible for the information provided hereby.
 
-Before investing in any of the Tinlake pools, please check the issuer's offering materials and subscription documents including the Executive Summary to understand the terms, conditions, and investment risks of each pool. The issuer provides investment risk factors which are important to understand when you consider whether to invest in a pool. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other content before making any decisions based on such information or other content.
+Before investing in any of the Centrifuge pools, please check the issuer's offering materials and subscription documents including the Executive Summary to understand the terms, conditions, and investment risks of each pool. The issuer provides investment risk factors which are important to understand when you consider whether to invest in a pool. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other content before making any decisions based on such information or other content.
 
-The Tinlake protocol is rewarding every Tinlake investment daily in CFG token, the Centrifuge Chain's native token. Note that these are rewards from the protocol for providing liquidity to the ecosystem independent from the pool, it's issuers, their asset originators, or any Centrifuge entity. There is no guarantee that an investor will receive those rewards.
+The Centrifuge protocol is rewarding every Centrifuge investment daily in CFG token, the Centrifuge Chain's native token. Note that these are rewards from the protocol for providing liquidity to the ecosystem independent from the pool, it's issuers, their asset originators, or any Centrifuge entity. There is no guarantee that an investor will receive those rewards.
+
