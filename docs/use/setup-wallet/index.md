@@ -103,11 +103,11 @@ Input a name and Talisman will create the account for you. Note, that by default
 
  ![](./images/Talisman_Created.png#width=60%;)
 
-To find the CFG adress of your account, click on `Copy Address` and search for Centrifuge. Once the balance of your centrifuge address is larger than zero, it will automatically be displayed in your account list as well.
+To find the CFG address of your account, click on `Copy Address` and search for Centrifuge. Once the balance of your centrifuge address is larger than zero, it will automatically be displayed in your account list as well.
 
  ![](./images/Talisman_FindCFG.png#width=60%;)
 
-Finally, to see an overview of your CFG accounts, click on "Receive" under your account and select CFG (Centrifuge) from the list.
+Finally, to see an overview of your CFG accounts, click on "Receive" under your account. To see your native wallet address on Centrifuge Chain select CFG (Centrifuge) from the list.
 
 ![](./images/talisman-wallet.png#width=400)
 
@@ -132,10 +132,10 @@ You can always recover your account in either of two ways:
 * Importing the account by using your seed phrase
 * Importing your account by using the JSON file + the password to your account
 
-### Using the Parity Vault App
+### Using the Polkadot Vault App
 The Polkadot `Vault` (formerly Parity `Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). 
 
-To set-up a Centrifuge account using the Parity Vault, download the app from https://signer.parity.io/ and follow the instructions in the [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html). When you create an account, make sure to create keys for the `Centrifuge Mainnet Network`. 
+To set up a Centrifuge account using the Parity Vault, download the app from https://signer.parity.io/ and follow the instructions in the [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html). When you create an account, make sure to create keys for the `Centrifuge Mainnet Network`. 
  ![](./images/create-keypair.png#width=40%;)
 
 You can look up your Centrifuge address by scanning the QR code on the Polkadot.js UI.
