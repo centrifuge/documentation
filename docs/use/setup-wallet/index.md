@@ -80,7 +80,7 @@ You can create a CFG account in any wallet that supports Polkadot. For detailed 
 
 - [Talisman](https://app.talisman.xyz/portfolio)
 - [Polkadot.js browser extension](https://polkadot.js.org/extension/) 
-- [Parity Vault](https://signer.parity.io/) (formerly called Polkadot Signer)
+- [Polkadot Vault](https://signer.parity.io/) (formerly called Parity Signer)
 
 ### Using Talisman
 Talisman is a wallet that supports Substrate (Polkadot) and Ethereum accounts. The Talisman wallet browser extension is available on Google Chrome, Brave, and Firefox, and a corresponding asset dashboard is accessible at [app.talisman.xyz](https://app.talisman.xyz/portfolio).
