@@ -44,8 +44,8 @@ Once an investment is executed, the  tranche tokens (in the case of an investmen
 
 ## Step-by-step investment guide
 
-## Navigate to app.centrifuge.io/pools
-## Connect your wallet 
+### Navigate to [app.centrifuge.io/pools](app.centrifuge.io/pools)
+### Connect your wallet 
 - Connect your investment wallet to the app by clicking "Connect" in the top right corner (if you do not see a "Connect Button", try to either expand your screen or look on the bottom of the page). Please ensure the connected wallet is the same wallet used during the KYC process.
 
 ![](./images/pool_overview.png#width=600px)
@@ -63,7 +63,7 @@ Once an investment is executed, the  tranche tokens (in the case of an investmen
 
 - From the wallet list, select the wallet you KYC'd with during onboarding and ensure funds are deposited for investment and ready to be deployed. 
 
-## How to change wallets
+### How to change wallets
 If you need to change wallets follow the steps below. Please note, that in order to invest you must invest with a wallet that has been whitelisted for the desired pool. Note, if using MetaMask to invest in an Ethereum Pool you must change your wallet in the MetaMask Browser Extension.
 - Navigate to the Wallet button in the top right corner of the page and select it. It will open a drop down with a button labeled "Switch Account". Select this and change your wallet. If you need to change network select Back in the top corner of the change wallet box. 
 - If using MetaMask and you wish to switch wallets, you can change your connected address within the MetaMask app browser extension.
@@ -71,7 +71,7 @@ If you need to change wallets follow the steps below. Please note, that in order
 
 ![](./images/switch_wallet.png#width=600px)
 
-## Invest into the pool
+### Invest into the pool
 
 Once you have connected your wallet, ensure that your Verification Status says "Completed", this represents your KYC status.
 
@@ -87,7 +87,7 @@ Once you are verified and completed pool onboarding by signing the subscription 
 - You can also click the MAX button to invest your entire Available Balance. 
 - Once you enter the amount, Click "Invest" and sign the On-chain transaction. Note, once you have clicked "Invest" your order is locked but not Executed into the pool. You must wait for the epoch to conclude before your Pending investment is executed. [Learn more about Epochs and Pending orders Here](https://).
 
-## Changing Locked Investments/Redemptions
+### Changing Locked Investments/Redemptions
 - After you lock an investment or redemption order, if you would like to change your order follow the steps below: 
 - To change a Locked Order that has not executed to pool (See below for how to check investment status, click "Change Order".![](./images/change_order.png#width=600px) 
 - Enter the new amount you would like to invest into the pool and select "Change Order" and sign the on-chain transaction to relock your order. Note, you still must wait for the pending order to be executed at the end of an epoch before your investment is active. 
@@ -96,7 +96,7 @@ Once you are verified and completed pool onboarding by signing the subscription 
 
 
 
-## How to check investment/redemption status
+### How to check investment/redemption status
 - You can check the status of your Pending Order by navigating to "Liquidity" tab of the pool and seeing the remaining time on the epoch for orders to execute.
 
 ![](./images/check_status.png#width=600px)
@@ -105,12 +105,12 @@ Once you are verified and completed pool onboarding by signing the subscription 
 
 
 
-## Canceling a locked investment/redemption
+### Canceling a locked investment/redemption
 - To cancel your Pending Investment or Redemption Order, simply select "Cancel" and sign the transaction.
 ![](./images/change_order.png#width=600px) 
 
 
-## Redeeming from a pool
+### Redeeming from a pool
 - To initiate a redemption from the pool, navigate to the pool investment tab and select "Redeem".
 ![](./images/redeem.png#width=600px) 
 - Then enter the amount you would like to redeem, click "Redeem" and sign the transaction.
