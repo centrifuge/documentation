@@ -48,7 +48,7 @@ Once an investment is executed, the  tranche tokens (in the case of an investmen
 ### Connect your wallet 
 - Connect your investment wallet to the app by clicking "Connect" in the top right corner (if you do not see a "Connect Button", try to either expand your screen or look on the bottom of the page). Please ensure the connected wallet is the same wallet used during the KYC process.
 
-![](./images/pool_overview.png#width=600px)
+![](./images/Pool_Overview.png#width=600px)
 
 
 - When connecting your wallet you can choose from various networks such as **Centrifuge** and **Ethereum**. First choose the network you would like to transact on. Please note, that you should choose the network that matches the network of the Pool you would like to invest in is in. You can find the network in the bottom corner of the pool logo.
