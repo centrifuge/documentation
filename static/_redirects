@@ -25,6 +25,7 @@ https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
 /chain/overview/testnets/             /build/cent-chain/#centrifuge-chain-test-networks
 /chain/overview/introduction/       /build/cent-chain/#introduction
 /tinlake/contracts/contracts/       /build/tinlake/#smart-contract-documentation
+/learn/drop-and-tin/       /learn/terms/#centrifuges-tranche-tokens  
 # temp
 /tinlake/contracts/deployments/     /build/tinlake/
 # temp
