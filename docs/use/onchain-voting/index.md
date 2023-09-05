@@ -20,6 +20,8 @@ The easiest way to vote is to navigate to [SubSquare](https://centrifuge.subsqua
 3. Select **conviction** (lock up period displayed right below)
 4. **Confirm** and sign the transaction
 
+Always leave some CFG in your wallet when voting to be able to pay transaction fees (1 CFG should be more than enough).
+
 ### Voting with conviction
 
 Voting with conviction is a unique and powerful feature of the Polkadot ecosystem that allows an individual to increase their voting power. You can vote with up to 6X the amount of your tokens by locking them up for a longer period of time.
