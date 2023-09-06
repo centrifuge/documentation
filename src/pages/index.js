@@ -50,8 +50,8 @@ const Link = styled(GatsbyLink)`
 
   :hover {
     color: ${(props) =>
-      (!!props.color && props.theme.global.colors[props.color]) ||
-      props.theme.global.colors.black};
+    (!!props.color && props.theme.global.colors[props.color]) ||
+    props.theme.global.colors.black};
   }
 
   font-weight: 500;
@@ -63,8 +63,8 @@ const Link = styled(GatsbyLink)`
 const ExternalLink = styled.a`
   :hover {
     color: ${(props) =>
-      (!!props.color && props.theme.global.colors[props.color]) ||
-      props.theme.global.colors.black};
+    (!!props.color && props.theme.global.colors[props.color]) ||
+    props.theme.global.colors.black};
   }
 
   font-weight: 500;
@@ -199,7 +199,7 @@ const HomePage = () => {
           code of conduct
         </Link>
         <Box pad={{ horizontal: "small" }}>|</Box>
-        <ExternalLink href="https://centrifuge.io/about/#careers" target="_blank">
+        <ExternalLink href="https://centrifuge.io/contributors#careers" target="_blank">
           work with us
         </ExternalLink>
       </Box>

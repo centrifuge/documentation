@@ -3,6 +3,10 @@ id: setup-wallet
 order: 1
 title: Connect and set up your wallet
 contributors: <Dennis Wellmann:dennis@k-f.co>, <Anna Mehrlaender:anna@k-f.co>, <Orhan:klardashti@gmail.com>
+redirect_from:
+  - /use
+  - /use/
+---
 ---
 ## Connect your wallet 
 
