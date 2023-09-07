@@ -80,7 +80,7 @@ The issuer can limit the liquidity they are willing to  accept with the `maximum
 ### Liquidity available
 The `Liquidity available` for redemptions is determined by the liquidity in the Reserve. For pools directly integrated with a Maker vault the Reserve is usually zero as liquidity for originations, and redemptions can be minted directly into the pool's reserve from the Maker vault. 
 
-### Tanche investment capacity
+### Tranche investment capacity
 The tranche investment capacity indicates how much capacity is left for additional investments. This capacity can be limited by the `max reserve` set by the pool's issuer and the tranche subordination ratios.
 
 ### Oversubscribed pools

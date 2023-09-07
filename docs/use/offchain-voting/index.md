@@ -9,7 +9,7 @@ contributors: <Orhan Klardashti:klardashti@gmail.com>
 
 Off-chain voting takes place on [OpenSquare](https://voting.opensquare.io/space/centrifuge), and you vote with your CFG tokens. This works a bit differently than when you vote in an on-chain referendum in the sense that you are not actually locking your CFG tokens or making any transaction on the blockchain (hence no fees related to it). You can look at OpenSquare Snapshots as *off-chain voting, using on-chain data*.
 
-When you vote on OpenSquare, you don't need to specify any amount or conviction - you just select your option (typically Yes or No), and you will vote with the balance you had when the snapshot was taken.
+When you vote on OpenSquare, you don't need to specify any amount or conviction - you just select your option (typically Yes, No or Abstain), and you will vote with the balance you had when the snapshot was taken.
 
 ## How to create an OpenSquare Snapshot
 
@@ -33,7 +33,7 @@ Press *Publish* and the OpenSquare snapshot is created.
 
 To vote in an OpenSquare Snapshot, navigate to [OpenSquare](https://voting.opensquare.io/space/centrifuge), **log in with your wallet**, and find the snapshot you want to vote in.
 
-Select what you want to vote (Yes/No), click *Vote*, sign, and your vote is registered.
+Select what you want to vote (Yes/No/Abstain), click *Vote*, sign, and your vote is registered.
 
 ![](./images/YesNo.png)
 

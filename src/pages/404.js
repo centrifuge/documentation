@@ -10,7 +10,7 @@ const NotFoundPage = () => (
   <AxisTheme theme={theme}>
     <ResponsiveContext.Consumer>
       {size => {
-        return <Layout size={size}>
+        return <Layout size={size} hideFooter>
           <SEO title="Something went wrong"/>
           <Box
             fill
@@ -30,7 +30,7 @@ const NotFoundPage = () => (
             <Button
               margin={{top: "small"}}
               primary
-              href="/overview/introduction/"
+              href="/"
               label="Back home"
             />
           </Box>
