@@ -81,4 +81,5 @@ The role of the Committee is to try and resolve conflict in the way that best se
 |Ash (Discord Moderator)|@ash|@Ash|@fishscale#4561|
 |Yaroslav (Discord Moderator)|@yaroslav|@Yarosl6|@Yaroslav#3010|
 
-The Code of Conduct is part of the Founding Documents that Centrifuge DAO approved. You can find Founding Documents of the Centrifuge DAO [here](https://github.com/centrifuge/cps/blob/main/cps/CP29/CP29.md)
+------------------------------------------------------------
+The Code of Conduct is part of the Founding Documents that Centrifuge DAO approved. You can find Founding Documents of the Centrifuge DAO [here](https://github.com/centrifuge/cps/blob/main/cps/CP29/CP29.md).
