@@ -83,13 +83,13 @@ $$
 Assuming the Debt to be outstanding over the course of a year (so t = 31536000), the Debt at the end of the year amounts to:
 
 $$
-D = 100 \cdot 1.0000000015854900^{31536000} = 106.1837
+D = 100 \cdot 1.00000000190259^{31536000} = 106.1837
 $$
 
 which is equal to the result for secondly compounding given by the standard formula from the example above. If, e.g. the Debt after half a year needs to be calculated, t would be $(t = \mathtt{y} / 2 = 15768000)$ resulting in a Debt of:
 
 $$
-D = 100 \cdot 1.0000000015854900^{15768000} = 103.0455.
+D = 100 \cdot 1.00000000190259^{15768000} = 103.0455.
 $$
 
 Please find a simple calculator for both standard compounding formulas and the on-chain implementation [here](https://docs.google.com/spreadsheets/d/1Q4UMWtyRwhITqOvJtNd7N2IwKZsT0ihEASOFdWKSJVM/edit#gid=0). The code for the Ethereum pools implementation can be found in [github.com/centrifuge/tinlake-math](https://github.com/centrifuge/tinlake-math).
