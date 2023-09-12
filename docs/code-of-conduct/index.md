@@ -1,6 +1,10 @@
+---
+title: Code of Conduct
+---
+
 # Code of Conduct
 
-Common to any group trying to do something big and complex, conflicts can occur.  We are designing this Code of Conduct to avoid harm to our community and its culture, and to minimize distractions from our shared mission. To be a superbly functioning DAO it’s necessary for members to go beyond our own idea of ​​'right' behavior and agree to a shared set of standards defined in a Code of Conduct (CoC).
+Common to any group trying to do something big and complex, conflicts can occur.  We are designing this Code of Conduct to avoid harm to our community and its culture and to minimize distractions from our shared mission. To be a superbly functioning DAO, it’s necessary for members to go beyond our own idea of ​​'right' behavior and agree to a shared set of standards defined in a Code of Conduct (CoC).
 
 Our Code of Conduct is designed to: 
 * Encourage respect, professionalism and mutual understanding. 
@@ -50,7 +54,7 @@ Make the effort to put things in the right place, so that we can spend more time
 * Don't derail topics in order to push attention to a different topic. 
 
 ### Reporting
-If You See a Problem, Flag It. Any member of the DAO or any member outside the DAO can report the violation of the CoC (including an ongoing conflict between parties) to the Governance and Coordination Group (GCG) and Forum and Discord Moderators (henceforth known as 'Moderators') . The Moderators are contactable via Forum, Discord or Slack. For handles of moderators see Appendix 2. 
+If you see a problem, flat it. Any member of the DAO or any member outside the DAO can report the violation of the CoC (including an ongoing conflict between parties) to the Governance and Coordination Group (GCG) and Forum and Discord Moderators (henceforth known as 'Moderators'). The Moderators are contactable via Forum, Discord or Slack. For handles of moderators see the Appendix. 
 
 All reports will be reviewed and investigated and will result in the response deemed necessary and appropriate to the circumstances on the basis of CoC. Moderators will maintain confidentiality with regard to the reporter of an incident.
 
@@ -60,18 +64,16 @@ Moderators have the mandate and responsibility to remove comments or other contr
 Moderators have also the right to issue warnings to members of the DAO if they violate the Code or to suspend temporarily or permanently offboard any members for other behaviors based on this CoC and the steps of Violation listed below.
 
 ### Warnings and Offboardings
-Moderators have the right to issue an offboarding or a warning when a violation occurs depending on their understanding. Multiple warnings can lead to an offboarding.
+Moderators have the right to issue a warning or offboarding when a violation occurs depending on their understanding. Multiple warnings can lead to an offboarding.
 
-### Conflict Resolution
-See Appendix 2 for the process of Conflict Resolution.
+## Conflict Resolution Process
+If there is an ongoing conflict between members or groups, either party — or any party who observes this conflict — can request to the Moderators that mediation occur. 
 
-## Appendix 2: Conflict Resolution Process
-If there is an ongoing conflict between members or groups, either party, or any party who observes this conflict, can request to the Moderators that mediation occur. 
+If mediation cannot be done by Moderators, the Moderators should propose a Conflict Resolution Committee, consisting of 3 DAO members (objective and independent of the parties involved). One or more of these people must have experience in conflict resolution or mediation. The Centrifuge DAO has access to a network of mediators at [greaterthan.works](https://www.greaterthan.works/) who should be involved in any committee. Some of whom are also DAO members.
 
-If mediation cannot be done by Moderators, the Moderators should propose a Conflict Resolution Committee, consisting of 3 DAO members (objective and independent of the parties involved). One or more of these people must have experience in conflict resolution or mediation, the Centrifuge DAO has access to a network of mediators at [greaterthan.works](https://www.greaterthan.works/) who should be involved in any committee, some of whom are also DAO members.
+The role of the Committee is to try and resolve conflict in the way that best serves the parties involved and ultimately the principles and mission of the DAO. It is a temporary committee established solely for the purpose of resolving any conflicts or disputes between the parties in the DAO. If or after the specific conflict is resolved, the Conflict Resolution Committee dissolves.
 
-The role of the Committee is to try and resolve conflict in the way that best serves the parties involved and ultimately the principles and mission of the DAO.  It is a temporary committee established solely for the purpose of resolving any conflicts or disputes between the parties in the DAO. If or after the specific conflict is resolved, the Conflict Resolution Committee dissolves.
-
+## Appendix: GCG and Moderator Contact Information
 |Moderator|Slack|Forum|Discord|
 | --- | --- | --- | --- |
 |Orhan (GCG)|@Orhan|@rhano|@Rhano | CFG#6808|
