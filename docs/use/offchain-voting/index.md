@@ -1,6 +1,6 @@
 ---
 id: off-chain-voting
-order: 7
+order: 8
 title: Off-chain Voting
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 ---
