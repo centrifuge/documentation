@@ -27,7 +27,7 @@ RFC: (POP) Jay's Properties
 ```
 Please use the template below for the content of the post and also read the guidance prior to a POP submission.
 
-POP template: https://github.com/centrifuge/cps/blob/main/cps/CP5/Appendices/proposal-guidance.md
+POP template: https://github.com/centrifuge/cps/blob/main/cps/CP5/Appendices/proposal-template.md
 
 POP guidance: https://github.com/centrifuge/cps/blob/main/cps/CP5/Appendices/proposal-guidance.md
 
