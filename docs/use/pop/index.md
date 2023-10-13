@@ -126,7 +126,7 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 <details>
  <summary>How do I submit my POP to Github before moving to a vote?</summary>
 
-* This is rather technical, for the time being, please contact the Centrifuge Governance & Coordination Group ([@ImdioR](https://gov.centrifuge.io/u/imdior) and [@Rhano](https://gov.centrifuge.io/u/rhano)).
+* This is rather technical, for the time being, please contact the Centrifuge Governance & Coordination Group ([@ImdioR](https://gov.centrifuge.io/u/imdior) or [@Rhano](https://gov.centrifuge.io/u/rhano)).
 </details>
 
 <details>

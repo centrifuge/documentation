@@ -30,6 +30,8 @@ If you don’t choose any conviction, the system will select the 0.1X by default
 
 ![](./images/LockingPeriod.png)
 
+Note that if the outcome of a referendum is the opposite of what you voted, your tokens will not be locked. E.g. if you vote Nay on a referendum and it passes (and vice versa), then your tokens will not be locked.
+
 ### Unlocking tokens locked in governance
 
 To unlock your tokens after voting, you have to do it manually after the lock has expired.
