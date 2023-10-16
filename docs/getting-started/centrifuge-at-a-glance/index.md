@@ -25,6 +25,6 @@ The Centrifuge Protocol includes all the features needed to finance real world a
 
 ![](./images/CentrifugeProtocol.svg#width=60%;)
 
-The foundation of the Protocol is Centrifuge Chain, a layer-1 blockchain purpose-built for financing real world assets. The native token of Centrifuge Chain, CFG, is used as an on-chain governance mechanism that empowers CFG holders to manage the development of the Centrifuge Protocol. Real-world assets are tokenized as NFTs (Non-Fungible Tokens) to create an on-chain representation, and are linked to detailed off-chain data. The assets are pooled together and securitized by the issuer. Liquidity pools could be used to bridge to other blockchains. Integrations with DeFi protocols such as Maker, Aave, and more are already set up across the ecosystem.
+The foundation of the Protocol is Centrifuge Chain, a layer-1 blockchain purpose-built for financing real world assets. The native token of Centrifuge Chain, CFG, is used as an on-chain governance mechanism that empowers CFG holders to manage the development of the Centrifuge Protocol. Real-world assets are tokenized as NFTs (Non-Fungible Tokens) to create an on-chain representation, and are linked to detailed off-chain data. The assets are pooled together and securitized by the issuer. Liquidity pools could be used to invest from other blockchains. Integrations with DeFi protocols such as Maker, Aave, and more are already set up across the ecosystem.
 
 In the next sections, we will dive into these key features of the Centrifuge Protocol.
