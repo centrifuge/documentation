@@ -2,7 +2,7 @@
 id: pop
 order: 7
 title: POP
-contributors: <Orhan Klardashti:klardashti@gmail.com>
+contributors: "Orhan Klardashti <klardashti@gmail.com>"
 ---
 
 ## What is the POP?
