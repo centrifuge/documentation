@@ -1,6 +1,6 @@
 ---
 id: on-chain-voting
-order: 8
+order: 9
 title: On-chain Voting
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 ---
@@ -29,6 +29,8 @@ Voting with conviction is a unique and powerful feature of the Polkadot ecosyste
 If you don’t choose any conviction, the system will select the 0.1X by default. This means that you only vote with 10% of your tokens, but the tokens you use to vote with will be unlocked as soon as the referendum vote ends.
 
 ![](./images/LockingPeriod.png)
+
+Note that if the outcome of a referendum is the opposite of what you voted, your tokens will not be locked. E.g. if you vote Nay on a referendum and it passes (and vice versa), then your tokens will not be locked.
 
 ### Unlocking tokens locked in governance
 
