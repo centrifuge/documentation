@@ -49,17 +49,11 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 
 - For an on-chain vote, the applicant must submit their POP to Github. The Governance & Coordination Group (@ImdioR or @Rhano) can help facilitate the GitHub submission if needed.
 
-- An on-chain proposal is then initiated directly from the Centrifuge App and the referendum vote will appear on SubSquare for all CFG token holders to vote on (Minimum of 7 days). If it passes the vote, the pool will be live on the Centrifuge app.
+- An on-chain proposal is then initiated directly from the Centrifuge App and the referendum vote will appear on SubSquare for all CFG token holders to vote on (duration of 7 days). If it passes the vote, the pool will be live on the Centrifuge app (after an enactment period of 8 days from when the vote passes).
 
 ![](./images/popv3.png#width=65%;)
 
 ## FAQ
-
-<details>
- <summary>What is Centrifuge?</summary>
-
-* Centrifuge is a decentralized protocol that allows users to create and manage tokenized assets on the Centrifuge blockchain.
-</details>
 
 <details>
  <summary>What is a pool on Centrifuge?</summary>
@@ -100,7 +94,7 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 <details>
  <summary>Are there any fees associated with launching a pool on Centrifuge?</summary>
 
-* Fees for launching and managing a pool include on-chain transaction fees in the form of CFG, to initiative the pool creation vote process you must have 1,000 CFG for the deposit and protocol fees of 0.40% of the valuation of all loans in the pool per year. If you choose to utilize the built in KYC partner there are also costs for onboarding investors. 
+* Fees for launching and managing a pool include on-chain transaction fees in the form of CFG, to initiate the pool creation vote process you must have 1,100 CFG for the deposit and additional CFG for any related transaction fees. 
 </details>
 
 <details>
@@ -120,7 +114,7 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 
  * An on-chain vote is the last step in the POP before a pool can launch. To vote in an on-chain vote, CFG tokens are required and all tokens can (and are encouraged) to vote. If the vote passes, the pool will launch automatically on Centrifuge Chain with the selected parameters when it was created. You can read more about how on-chain voting works [here](https://docs.centrifuge.io/use/onchain-voting/).
 
-* To initiate the on-chain vote, the submitter must pay the pool creation transaction fee (in CFG), and hold 1,000 CFG to place as a deposit.
+* To initiate the on-chain vote, the submitter must pay the pool creation transaction fee (in CFG), and hold 1,100 CFG to place as a deposit.
 </details>
 
 <details>
@@ -132,7 +126,7 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 <details>
  <summary>How long does the POP process take to launch a pool on average?</summary>
 
-* The POP process typically spans from 1.5 to 3 months, starting from the submission of the POP to the launch of the pool. The minimum duration of the process of 1.5 Months after POP submission consists of a two-week community review/comment period of the POP, followed by a two-week assessment by the Centrifuge Credit Group, and concluding with an on-chain vote lasting two weeks to create the pool, if passed.
+* The POP process typically spans from 2 weeks to 3 months, starting from the submission of the POP until the on-chain vote ends. 
 
 * It's important to note that the overall timeline can vary widely based on multiple factors, including but not limited to, the duration of community dialogue, the time taken by the Centrifuge Credit Group to complete their assessment, the responsiveness of the POP applicant to inquiries from interested parties, and the time needed by the applicant to secure funds for pool launch.
 </details>
