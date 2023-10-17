@@ -20,11 +20,11 @@ Below you can see how to fill out the information.
 ![](./images/CreateSnap.png)
 
 1. **Title** of the proposal 
-2. **Short description** of the proposal including links to GitHub and the RFC
-3. Write the **options** (typically Yes and No)
+2. **Short description** of the proposal including links to GitHub and the forum post
+3. Write the **options** (typically Yes, No and Abstain)
 4. Keep it on **Single choice voting** (only one option can be voted on)
 5. Select the **duration** of the OpenSquare snapshot
-6. The **time of the snapshot** (do not change - by default this will be the time the snapshot was created)
+6. The **time of the snapshot** (do not change - by default this will be the time/block height the snapshot was created)
 
 Press *Publish* and the OpenSquare snapshot is created.
 
