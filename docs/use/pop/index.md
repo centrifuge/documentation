@@ -48,15 +48,15 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 
 - To prepare to launch the pool, the POP must go to a vote.
 
-- For an on-chain vote, the applicant must submit their POP to Github. The Governance & Coordination Group (@ImdioR or @Rhano) can help facilitate the GitHub submission if needed.
+- For an onchain vote, the applicant must submit their POP to Github. The Governance & Coordination Group (@ImdioR or @Rhano) can help facilitate the GitHub submission if needed.
 
-- An on-chain proposal is then initiated directly from the [Centrifuge App](https://app.centrifuge.io/) and the referendum vote will appear on [Subsquare](https://centrifuge.subsquare.io/democracy/referenda) for all CFG token holders to vote on (duration of 7 days). If it passes the vote, the pool will be live on the Centrifuge App (after an enactment period of 8 days from when the vote passes).
+- An onchain proposal is then initiated directly from the [Centrifuge App](https://app.centrifuge.io/) and the referendum vote will appear on [Subsquare](https://centrifuge.subsquare.io/democracy/referenda) for all CFG token holders to vote on (duration of 7 days). If it passes the vote, the pool will be live on the Centrifuge App (after an enactment period of 8 days from when the vote passes).
 
 ## FAQ
 
 **What is a pool on Centrifuge?**
 
-A Centrifuge pool is an open, smart-contract-based financing platform that brings together businesses and investors through Decentralized Finance (DeFi). With a Centrifuge pool, issuers can finance real world assets, such as invoices, mortgages, or streaming royalties on-chain via the investment of crypto investors and DeFi protocols. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and using these NFTs as collateral in their Centrifuge pool.
+A Centrifuge pool is an open, smart-contract-based financing platform that brings together businesses and investors through Decentralized Finance (DeFi). With a Centrifuge pool, issuers can finance real-world assets, such as invoices, mortgages, or streaming royalties onchain via the investment of crypto investors and DeFi protocols. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and using these NFTs as collateral in their Centrifuge pool.
 
 **How can I launch a pool on Centrifuge?**
 
@@ -68,11 +68,11 @@ Launching a pool on Centrifuge can provide various benefits, such the ability to
 
 **What types of assets can be included in a Centrifuge pool?**
 
-Centrifuge supports the tokenization of real world assets, such as invoices, real estate, royalties, and more. The types of assets that can be included in a pool depend on the asset class the POP submitted to the community.
+Centrifuge supports the tokenization of real-world assets, such as invoices, real estate, royalties, and more. The types of assets that can be included in a pool depend on the asset class the POP submitted to the community.
 
 **How does liquidity work in a Centrifuge pool?**
 
-Liquidity in a Centrifuge pool is provided by users who lock stablecoins into the pool in return for pool tokens. The stablecoins can then be used by the Issuer to finance real world assets.
+Liquidity in a Centrifuge pool is provided by users who lock stablecoins into the pool in return for pool tokens. The stablecoins can then be used by the Issuer to finance real-world assets.
 
 **What is a Revolving Pool?**
 
@@ -80,7 +80,7 @@ Usually, Centrifuge pools are set up as "revolving pools". Revolving pools allow
 
 **Are there any fees associated with launching a pool on Centrifuge?**
 
-Fees for launching and managing a pool include on-chain transaction fees in the form of CFG, to initiate the pool creation vote process you must have 1,100 CFG for the deposit and additional CFG for any related transaction fees. 
+Fees for launching and managing a pool include onchain transaction fees in the form of CFG, to initiate the pool creation vote process you must have 1,100 CFG for the deposit and additional CFG for any related transaction fees. 
 
 **What is the Centrifuge Credit Group?**
 
@@ -88,13 +88,13 @@ The Centrifuge Credit Group refers to a designated group of individuals who are 
 
 **Whom should I speak with to create a pool?**
 
-For best results it is key to engage directly with the community on the forum, they will decide if your pool launches via an on-chain vote.
+For best results it is key to engage directly with the community on the forum, they will decide if your pool launches via an onchain vote.
 
-**What is an on-chain vote?**
+**What is an onchain vote?**
 
-An on-chain vote is the last step in the POP before a pool can launch. To vote in an on-chain vote, CFG tokens are required and all tokens can (and are encouraged) to vote. If the vote passes, the pool will launch automatically on Centrifuge Chain with the selected parameters when it was created. You can read more about how on-chain voting works [here](https://docs.centrifuge.io/use/onchain-voting/).
+An onchain vote is the last step in the POP before a pool can launch. To vote in an onchain vote, CFG tokens are required and all tokens can (and are encouraged) to vote. If the vote passes, the pool will launch automatically on Centrifuge Chain with the selected parameters when it was created. You can read more about how onchain voting works [here](https://docs.centrifuge.io/use/onchain-voting/).
 
-To initiate the on-chain vote, the submitter must pay the pool creation transaction fee (in CFG), and hold 1,100 CFG to place as a deposit.
+To initiate the onchain vote, the submitter must pay the pool creation transaction fee (in CFG), and hold 1,100 CFG to place as a deposit.
 
 **How do I submit my POP to Github before moving to a vote?**
 
@@ -102,7 +102,7 @@ This is rather technical, for the time being, please contact the Centrifuge Gove
 
 **How long does the POP process take to launch a pool on average?**
 
-The POP process typically spans from 2 weeks to 3 months, starting from the submission of the POP until the on-chain vote ends. 
+The POP process typically spans from 2 weeks to 3 months, starting from the submission of the POP until the onchain vote ends. 
 
 It's important to note that the overall timeline can vary widely based on multiple factors, including but not limited to, the duration of community dialogue, the time taken by the Centrifuge Credit Group to complete their assessment, the responsiveness of the POP applicant to inquiries from interested parties, and the time needed by the applicant to secure funds for pool launch.
 
