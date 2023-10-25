@@ -35,7 +35,6 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 
 ## What are the steps of the process?
 ![](./images/popv3.png#width=65%;)
-
 ### 1. Propose Pool
 
 - Submit POP to the community governance forum for a Request For Comment (RFC) period.
