@@ -15,7 +15,7 @@ The POP is intended to both simplify the process, as well as curate the quality 
 
 ## How to submit a POP?
 
-POPs must be submitted in the [Centrifuge Governance > Proposals](https://gov.centrifuge.io/c/cfg-governance/chain-governance/18) sub-category on our forum. Make sure to include the tags `cp5`, `rfc` and  `pop-submission` and create your own tag with the proposed pool name (e.g. `jays-properties`). 
+POPs must be submitted in the [Centrifuge Governance > Proposals](https://gov.centrifuge.io/c/cfg-governance/chain-governance/18) sub-category on the Centrifuge governance forum. Make sure to include the tags `cp5`, `rfc` and  `pop-submission` and create your own tag with the proposed pool name (e.g. `jays-properties`). 
 
 The title of the post should be:
 ```
@@ -34,6 +34,7 @@ POP guidance: https://github.com/centrifuge/cps/blob/main/cps/CP5/Appendices/pro
 You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop-submission).
 
 ## What are the steps of the process?
+![](./images/popv3.png#width=65%;)
 
 ### 1. Propose Pool
 
@@ -41,7 +42,7 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 
 - Allow for a minimum of 7 days for discussion with the community and the Centrifuge Credit Group, who may volunteer to do an analysis of the proposed pool at their own discretion and share it with the community. Credit Group participation is not guaranteed.
 
-- The Applicant can host a Pool Party if they would like to engage with community and allow the community to ask questions.
+- The applicant can host a Pool Party if they would like to engage with community and allow the community to ask questions.
 
 ### 2. Launch
 
@@ -49,15 +50,13 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 
 - For an on-chain vote, the applicant must submit their POP to Github. The Governance & Coordination Group (@ImdioR or @Rhano) can help facilitate the GitHub submission if needed.
 
-- An on-chain proposal is then initiated directly from the Centrifuge App and the referendum vote will appear on SubSquare for all CFG token holders to vote on (duration of 7 days). If it passes the vote, the pool will be live on the Centrifuge app (after an enactment period of 8 days from when the vote passes).
-
-![](./images/popv3.png#width=65%;)
+- An on-chain proposal is then initiated directly from the [Centrifuge App](https://app.centrifuge.io/) and the referendum vote will appear on [Subsquare](https://centrifuge.subsquare.io/democracy/referenda) for all CFG token holders to vote on (duration of 7 days). If it passes the vote, the pool will be live on the Centrifuge App (after an enactment period of 8 days from when the vote passes).
 
 ## FAQ
 
 **What is a pool on Centrifuge?**
 
-A Centrifuge pool is an open, smart-contract-based financing platform that brings together businesses and investors through Decentralized Finance (DeFi). With a Centrifuge pool, issuers can finance real-world assets, such as invoices, mortgages, or streaming royalties on-chain via the investment of crypto investors and DeFi protocols. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and using these NFTs as collateral in their Centrifuge pool.
+A Centrifuge pool is an open, smart-contract-based financing platform that brings together businesses and investors through Decentralized Finance (DeFi). With a Centrifuge pool, issuers can finance real world assets, such as invoices, mortgages, or streaming royalties on-chain via the investment of crypto investors and DeFi protocols. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”) and using these NFTs as collateral in their Centrifuge pool.
 
 **How can I launch a pool on Centrifuge?**
 
@@ -69,11 +68,11 @@ Launching a pool on Centrifuge can provide various benefits, such the ability to
 
 **What types of assets can be included in a Centrifuge pool?**
 
-Centrifuge supports the tokenization of real-world assets, such as invoices, real estate, royalties, and more. The types of assets that can be included in a pool depend on the asset class the POP submitted to the community.
+Centrifuge supports the tokenization of real world assets, such as invoices, real estate, royalties, and more. The types of assets that can be included in a pool depend on the asset class the POP submitted to the community.
 
 **How does liquidity work in a Centrifuge pool?**
 
-Liquidity in a Centrifuge pool is provided by users who lock stablecoins into the pool in return for pool tokens. The stablecoins can then be used by the issuer to finance real world Assets.
+Liquidity in a Centrifuge pool is provided by users who lock stablecoins into the pool in return for pool tokens. The stablecoins can then be used by the Issuer to finance real world assets.
 
 **What is a Revolving Pool?**
 
@@ -85,7 +84,7 @@ Fees for launching and managing a pool include on-chain transaction fees in the 
 
 **What is the Centrifuge Credit Group?**
 
-The Centrifuge Credit Group refers to a designated group of individuals who are responsible for assessing the creditworthiness and risk profile of the assets within a Centrifuge pool. Their role is to evaluate the quality, reliability, and value of the potential issuer and proposed underlying assets to ensure that they meet the necessary standards for inclusion on the protocol. The Credit Group helps to make non-binding recommendations on the risk parameters, collateral requirements, and overall viability of the assets, which aids in maintaining the integrity and stability of the Centrifuge ecosystem. Their assessment is a crucial part of the decision-making process when it comes to accepting issuers/assets. Ultimately, their assessment is for the benefit of the community but is not investment advice or any other warranty. They are here to help the DAO to grow.
+The Centrifuge Credit Group refers to a designated group of individuals who are responsible for assessing the creditworthiness and risk profile of the assets within a Centrifuge pool. Their role is to evaluate the quality, reliability, and value of the potential Issuer and proposed underlying assets to ensure that they meet the necessary standards for inclusion on the protocol. The Credit Group helps to make non-binding recommendations on the risk parameters, collateral requirements, and overall viability of the assets, which aids in maintaining the integrity and stability of the Centrifuge ecosystem. Their assessment is a crucial part of the decision-making process when it comes to accepting Issuers and their assets. Ultimately, their assessment is for the benefit of the community but is not investment advice or any other warranty. They are here to help the DAO to grow.
 
 **Whom should I speak with to create a pool?**
 
