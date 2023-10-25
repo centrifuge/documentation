@@ -2,7 +2,7 @@
 id: pop
 order: 7
 title: POP
-contributors: <Orhan Klardashti :klardashti@gmail.com>
+contributors: <Orhan Klardashti :klardashti@gmail.com>, <Jay :jay@k-f.co>
 ---
 
 ## What is the POP?
@@ -99,7 +99,7 @@ To initiate the on-chain vote, the submitter must pay the pool creation transact
 
 **How do I submit my POP to Github before moving to a vote?**
 
-This is rather technical, for the time being, please contact the Centrifuge Governance & Coordination Group ([@ImdioR](https://gov.centrifuge.io/u/imdior) or [@Rhano](https://gov.centrifuge.io/u/rhano)).
+This is rather technical, for the time being, please contact the Centrifuge Governance & Coordination Group.
 
 **How long does the POP process take to launch a pool on average?**
 
