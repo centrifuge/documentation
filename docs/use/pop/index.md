@@ -54,4 +54,4 @@ You can view all submitted POPs to date [here](https://gov.centrifuge.io/tag/pop
 ### Contact for support questions 
 If you have any questions related to the process please contact the bizdev support email (bizdev@centrifuge.io) with the subject POP - Assistance.
 
-If you want to understand what Centrifuge pools are and how they work (tranche tokens, entities involved, epochs etc.), please navigate to [this section](https://docs.centrifuge.io/learn/terms/) of the documentation.
+If you want to understand what Centrifuge pools are and how they work, please navigate to [this section](https://docs.centrifuge.io/learn/terms/) of the documentation.
