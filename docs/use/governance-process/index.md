@@ -104,15 +104,15 @@ These are the components in our CP Framework:
 
 |Component|Name|Short description|
 | --- | --- | --- |
-|[CP1](../CP1/CP1.md)|Request for Mandate |Seeking mandate as a group/individual within the Centrifuge DAO to enact a project/work stream|
-|[CP1.1](../CP1/CP1.md)|Changing Facilitator|Changing the facilitator of a mandated group|
-|[CP1.2](../CP1/CP1.md)|Removal of Mandate|Removal of a group’s mandate to enact a project/work stream (CP-1)|
-|[CP2](../CP2/CP2.md)|Request for Funding|Asking for funding from the Treasury|
-|[CP3](../CP3/CP3.md)|Runtime Upgrades|Proposals for Runtime Upgrades|
-|[CP3.1](../CP3/CP3.md)|Emergency Proposals|Emergency proposals in case of hacks, exploits, attacks, or network halt|
-|[CP4](../CP4/CP4.md)|General Improvements|Any proposal type, that does not fit under any of the other CPs|
-|[CP5](../CP5/CP5.md)|Centrifuge Pool Onboarding Proposal (POP)|Onboarding new pools on Centrifuge Chain|
-|[CP32](../CP32.md)|Roadmap Proposals|Create a Roadmap Proposal to replace the previous one|
+|[CP1](https://github.com/centrifuge/cps/blob/main/cps/CP1/CP1.md)|Request for Mandate |Seeking mandate as a group/individual within the Centrifuge DAO to enact a project/work stream|
+|[CP1.1](https://github.com/centrifuge/cps/blob/main/cps/CP1/CP1.md#cp11-changing-facilitator)|Changing Facilitator|Changing the facilitator of a mandated group|
+|[CP1.2](https://github.com/centrifuge/cps/blob/main/cps/CP1/CP1.md#cp12-removal-of-mandate)|Removal of Mandate|Removal of a group’s mandate to enact a project/work stream (CP-1)|
+|[CP2](https://github.com/centrifuge/cps/blob/main/cps/CP2/CP2.md)|Request for Funding|Asking for funding from the Treasury|
+|[CP3](https://github.com/centrifuge/cps/blob/main/cps/CP3/CP3.md)|Runtime Upgrades|Proposals for Runtime Upgrades|
+|[CP3.1](https://github.com/centrifuge/cps/blob/main/cps/CP3/CP3.md#cp31-emergency-proposals)|Emergency Proposals|Emergency proposals in case of hacks, exploits, attacks, or network halt|
+|[CP4](https://github.com/centrifuge/cps/blob/main/cps/CP4/CP4.md)|General Improvements|Any proposal type, that does not fit under any of the other CPs|
+|[CP5](https://github.com/centrifuge/cps/blob/main/cps/CP5/CP5.md)|Centrifuge Pool Onboarding Proposal (POP)|Onboarding new pools on Centrifuge Chain|
+|[CP32](https://github.com/centrifuge/cps/blob/main/cps/CP32.md)|Roadmap Proposals|Create a Roadmap Proposal to replace the previous one|
 
 Components can have different governance processes, but what they all  have in common is that they start with a post on the Forum and all CPs must be submitted to the [Centrifuge Proposals Repository](https://github.com/centrifuge/cps) on Github. Click on the link for a component above to see its correct process and template.
 
