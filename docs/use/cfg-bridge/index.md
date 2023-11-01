@@ -1,6 +1,6 @@
 ---
 id: cfg-bridge
-order: 12
+order: 13
 title: CFG <> wCFG Bridge
 contributors: <Lucas Vogelsang:lucas@centrifuge.io>
 ---
@@ -19,7 +19,6 @@ The CFG<>wCFG bridge relies on a set of relayers to submit transactions to Ether
 Each wCFG is backed by one CFG locked up in the bridge account on Centrifuge Chain when moved over to Ethereum. You can move between Ethereum and Centrifuge at any time without any restrictions.
 
 Using **CFG** on Centrifuge Chain allows you to:
-* Stake and earn staking rewards
 * Participate in governance
 * Pay for fees on Centrifuge Chain
 

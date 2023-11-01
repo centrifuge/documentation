@@ -1,6 +1,6 @@
 ---
 id: council
-order: 10
+order: 11
 title: The Centrifuge Council
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 ---

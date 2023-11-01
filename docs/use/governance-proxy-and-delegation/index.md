@@ -1,6 +1,6 @@
 ---
 id: governance-proxy-and-delegation
-order: 9
+order: 10
 title: Governance Proxy and Delegation
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 ---

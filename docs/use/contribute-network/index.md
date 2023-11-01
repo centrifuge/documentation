@@ -1,6 +1,6 @@
 ---
 id: contribute-network
-order: 11
+order: 12
 title: Contribute to the Network
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---
