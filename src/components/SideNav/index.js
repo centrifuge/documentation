@@ -76,7 +76,7 @@ const SideNav = ({ onClose, size }) => {
       align="start"
       gap="medium"
     >
-      {size === "small" ? (
+      {size === "small" && (
         <Box direction="row" fill="horizontal" justify="between" align="center">
           <Link to="/">
             <Image src={docs_wordmark} height="32px" />
@@ -91,10 +91,6 @@ const SideNav = ({ onClose, size }) => {
             />
           )}
         </Box>
-      ) : (
-        <Link to="/">
-          <Image src={docs_wordmark} height="32px" />
-        </Link>
       )}
       <Box gap="medium" fill="horizontal">
         {instances.map((instance, i) => {

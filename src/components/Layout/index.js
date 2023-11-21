@@ -34,7 +34,26 @@ const Layout = ({ children, hideFooter, size }) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   return (
-    <Box direction="row" style={{ minHeight: "100vh", position: "relative" }}>
+    <>
+    <Box direction="row" style={{ position: 'fixed', background: '#fff', zIndex: 1000, height: "64px", width: '100%', paddingLeft: '20px', paddingTop: '20px', borderBottom: "1px solid #EEE" }}>
+      {size === "large" && (
+        <>
+          <Link to="/" style={{ marginRight: "32px"}}>
+            <Image src={docs_wordmark} height="32px" />
+          </Link>
+          <Box style={{ fontSize: '15px', marginRight: '32px', color: 'rgb(18, 83, 255)'}}>
+            <Link to="/getting-started" style={{ textDecoration: 'none'}}>Getting started</Link>
+          </Box>
+          <Box style={{ fontSize: '15px', marginRight: '32px', cursor: 'pointer'}}>
+            <Link to="/user-documentation" style={{ textDecoration: 'none', color: '#000'}}>User documentation</Link>
+          </Box>
+          <Box style={{ fontSize: '15px', marginRight: '32px', cursor: 'pointer'}}>
+            <Link to="/developer-documentation" style={{ textDecoration: 'none', color: '#000'}}>Developer documentation</Link>
+          </Box>
+        </>
+      )}
+    </Box>
+    <Box direction="row" style={{ minHeight: "100vh", position: "relative"}}>
       {size === "large" && (
         <Box
           direction="row"
@@ -42,7 +61,7 @@ const Layout = ({ children, hideFooter, size }) => {
           height="100vh"
           style={{
             position: "fixed",
-            top: 0,
+            top: '64px',
           }}
         >
           <Box width="360px" overflow="auto">
@@ -102,13 +121,14 @@ const Layout = ({ children, hideFooter, size }) => {
           </>
         )}
         {/* content */}
-        <Box align="center" {...sectionProps} flex="grow">
+        <Box align="center" {...sectionProps} flex="grow" style={{ marginTop: '64px'}}>
           {children}
         </Box>
         {/* footer */}
         {!hideFooter && <SocialFooter />}
       </Box>
     </Box>
+    </>
   );
 };
 
