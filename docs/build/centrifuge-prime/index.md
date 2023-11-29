@@ -5,12 +5,13 @@ title: Centrifuge Prime - Guides
 contributors: <NunoAlexandre:nuno@k-f.co>
 ---
 
+
 # Centrifuge Prime Guides
 
-- [💸 Investing into a Liquidity Pool](#Investing-into-a-liquidity-pool)
+- [Investing into a Liquidity Pool](#Investing-into-a-liquidity-pool)
+ 
 
-
-## Investing into a Liquidity Pool
+## Investing into a Liquidity Pool
 
 This guide will teach you how to find the correct liquidity pool instance to invest in, how to invest and get the respective tranche tokens in return, and how the whole system flows behind the scenes.
 
@@ -66,4 +67,3 @@ You will need to intereact with that contract on `Step 2.` below.
 Behind the scenes, this is what takes place on steps 2 and 3:
 
 ![Centrifuge Prime Investment Flow](./images/investment-flow.png)
-
