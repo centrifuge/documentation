@@ -4,26 +4,15 @@ order: 2
 title: Centrifuge Prime - Guides
 contributors: <NunoAlexandre:nuno@k-f.co>
 ---
-
-
-# Centrifuge Prime Guides
-
-- [Investing into a Liquidity Pool](#Investing-into-a-liquidity-pool)
- 
-
-## Investing into a Liquidity Pool
+# Investing into a Liquidity Pool
 
 This guide will teach you how to find the correct liquidity pool instance to invest in, how to invest and get the respective tranche tokens in return, and how the whole system flows behind the scenes.
 
-1. [Resources](#Resources)
-2. [Steps](#Steps)
-3. [Overview](#Overview)
-
-### Resources
+## Resources
 
 - `LiquidityPools` [repository](https://github.com/centrifuge/liquidity-pools)
 
-#### Deployed Contracts
+### Deployed Contracts
 
 Pick the `PoolManager` instance deployed on the network you want to invest from.
 You will need to intereact with that contract on `Step 2.` below.
@@ -31,7 +20,7 @@ You will need to intereact with that contract on `Step 2.` below.
 - **Ethereum**
     - `PoolManager` - `0x78E9e622A57f70F1E0Ec652A4931E4e278e58142`
 
-### Steps
+## Steps
 
 1. ERC20 Approval
     The user should call the ERC20 approval on the investment currency (e.g. USDC on Ethereum) to allow the Liquidity Pools contract to manage those funds for them
@@ -62,7 +51,7 @@ You will need to intereact with that contract on `Step 2.` below.
 
 <br/>
 
-### Overview
+## Overview
 
 Behind the scenes, this is what takes place on steps 2 and 3:
 
