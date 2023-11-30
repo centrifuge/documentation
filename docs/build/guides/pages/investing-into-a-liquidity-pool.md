@@ -51,4 +51,4 @@ You will need it on the `Step 2.` below.
 
 Behind the scenes, this is what takes place on steps 2 and 3:
 
-![Liquidity Pools - Investment Flow](./images/lp-investment-flow.png)
+![Liquidity Pools - Investment Flow](docs/build/guides/pages/images/lp-investment-flow.png)

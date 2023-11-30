@@ -7,4 +7,4 @@ contributors: <NunoAlexandre:nuno@k-f.co>
 
 # Guides
 
-- [Investing into a Liquidity Pool](#investing-into-a-liquidity-pool)
+- [Investing into a Liquidity Pool](docs/build/guides/pages/investing-into-a-liquidity-pool.md)
