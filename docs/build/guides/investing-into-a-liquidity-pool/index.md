@@ -38,6 +38,7 @@ You will need it on the `Step 2.` below.
     When the next epoch is executed on Centrifuge, liquidity pools can proceed with tranche token payouts in case their orders got fulfilled (step 3).
     
 4. Receive the tranche tokens
+
     **`LiquidityPool.function deposit(uint256 y, address receiver)`**
     
     Once the order from step 2 is fulfilled, the user can claim their tranche tokens equivalent to `y` by calling the `deposit(y, receiver)`.
