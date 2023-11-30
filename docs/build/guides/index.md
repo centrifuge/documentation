@@ -24,13 +24,15 @@ You will need them on the `Step 2.` below.
 
     The user should call the ERC20 approval on the investment currency (e.g. USDC on Ethereum) to allow the Liquidity Pools contract to manage those funds for them
     
-2. Pick the correct Liquidity Pool instance
+2. Pick the correct `LiquidityPool`` instance
     
     With the appropriate `PoolManager` contract instance, call the following:
 
     **`PoolManager.getLiquidityPool(poolId, trancheId, currency)`**
 
-    **NOTE**: The `currency` param should be the `USDC` token address in the respective network.
+    **NOTES**: 
+        - The `currency` param should be the `USDC` token address in the respective network.
+        - The `LiquidityPool` offers an interface based on [EIP-7540](https://eips.ethereum.org/EIPS/eip-7540), an extension of [EIP-4626](https://eips.ethereum.org/EIPS/eip-4626)
     
 3. Invest into a LiquidityPool
 
