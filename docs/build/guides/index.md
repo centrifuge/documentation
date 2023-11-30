@@ -30,9 +30,10 @@ You will need them on the `Step 2.` below.
 
     **`PoolManager.getLiquidityPool(poolId, trancheId, currency)`**
 
-    **NOTES**: 
-        - The `currency` param should be the `USDC` token address in the respective network.
-        - The `LiquidityPool` offers an interface based on [EIP-7540](https://eips.ethereum.org/EIPS/eip-7540), an extension of [EIP-4626](https://eips.ethereum.org/EIPS/eip-4626)
+    **NOTES**:
+    
+    - The `currency` param should be the `USDC` token address in the respective network.
+    - The `LiquidityPool` offers an interface based on [EIP-7540](https://eips.ethereum.org/EIPS/eip-7540), an extension of [EIP-4626](https://eips.ethereum.org/EIPS/eip-4626)
     
 3. Invest into a LiquidityPool
 
