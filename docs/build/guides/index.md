@@ -50,9 +50,7 @@ You will need them on the `Step 2.` below.
 
     Once the order from step 2 is fulfilled, the user can claim their tranche tokens equivalent to `y` by calling:
 
-    ```
-    **LiquidityPool.mint(uint256 y, address receiver)**
-    ```
+    **`LiquidityPool.mint(uint256 y, address receiver)`**
     
     **NOTE**: `y` needs to be ≤ `maxDeposit`. The user can find that amount by calling **`LiquidityPool.maxDeposit`**.
 
