@@ -1,21 +1,17 @@
 ---
-id: centrifuge-prime-guides
+id: investing-into-a-liquidity-pool
 order: 2
-title: Centrifuge Prime - Guides
+title: Investing into a Liquidity Pool
 contributors: <NunoAlexandre:nuno@k-f.co>
 ---
 # Investing into a Liquidity Pool
 
 This guide will teach you how to find the correct liquidity pool instance to invest in, how to invest and get the respective tranche tokens in return, and how the whole system flows behind the scenes.
 
-## Resources
+## Deployed Contracts
 
-- `LiquidityPools` [repository](https://github.com/centrifuge/liquidity-pools)
-
-### Deployed Contracts
-
-Pick the `PoolManager` instance deployed on the network you want to invest from.
-You will need to intereact with that contract on `Step 2.` below.
+Pick the `PoolManager` deployed on the network you want to invest from.
+You will need it on the `Step 2.` below.
 
 - **Ethereum**
     - `PoolManager` - `0x78E9e622A57f70F1E0Ec652A4931E4e278e58142`
@@ -55,4 +51,4 @@ You will need to intereact with that contract on `Step 2.` below.
 
 Behind the scenes, this is what takes place on steps 2 and 3:
 
-![Centrifuge Prime Investment Flow](./images/investment-flow.png)
+![Liquidity Pools - Investment Flow](./images/lp-investment-flow.png)
