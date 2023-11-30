@@ -5,12 +5,6 @@ title: Guides
 contributors: <NunoAlexandre:nuno@k-f.co>
 ---
 
-# Guides
-
-- [Investing into a Liquidity Pool](#investing-into-a-liquidity-pool)
-
--- 
-
 # Investing into a Liquidity Pool
 
 This guide will teach you how to find the correct liquidity pool instance to invest in, how to invest and get the respective tranche tokens in return, and how the whole system flows behind the scenes.
