@@ -41,15 +41,13 @@ You will need them on the `Step 2.` below.
 
     **`LiquidityPool.requestDeposit(uint256 amount, address receiver)`**
     
-    Once submitted, the currency is locked on the escrow contract.
-
-    The `amount` gets locked as an investment request in the escrow account. 
+    Once submitted, the `amount` is locked on the escrow contract.
     
     Then, the pool issuer needs to fulfill this request. 
     
-    Once the investment request is fullfilled, yield starts to accrue immediately, and the user can claim their tranche tokens.
+    Once that's done, yield starts to accrue immediately and the user can claim their tranche tokens.
     
-4. Receive the tranche tokens
+4. Claim the tranche tokens
 
     Once the request from step 2 is fulfilled, the user can claim their tranche tokens equivalent to `y` by calling:
 
