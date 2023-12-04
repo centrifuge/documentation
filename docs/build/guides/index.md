@@ -45,9 +45,9 @@ You will need them on the `Step 2.` below.
 
     The `amount` gets locked as an investment request in the escrow account. 
     
-    Then, the pool issuer needs to fulfill this request because it starts earning yield. 
+    Then, the pool issuer needs to fulfill this request. 
     
-    Once the investment request is fullfilled, the user can claim their tranche tokens.
+    Once the investment request is fullfilled, yield starts to accrue immediately, and the user can claim their tranche tokens.
     
 4. Receive the tranche tokens
 
