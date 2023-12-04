@@ -24,7 +24,7 @@ You will need them on the `Step 2.` below.
 
     The user should call the ERC20 approval on the investment currency (e.g. USDC on Ethereum) to allow the Liquidity Pools contract to manage those funds for them
     
-2. Pick the correct `LiquidityPool`` instance
+2. Pick the correct `LiquidityPool` instance
     
     With the appropriate `PoolManager` contract instance, call the following:
 
