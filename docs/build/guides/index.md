@@ -41,17 +41,17 @@ You will need them on the `Step 2.` below.
 
     **`LiquidityPool.requestDeposit(uint256 amount, address receiver)`**
     
-    Liquidity pools have to request investments from Centrifuge before
-    tranche tokens can be minted. The deposit requests are added to the order book
-    on the Centrifuge chain. 
-    
     Once submitted, the currency is locked on the escrow contract.
+
+    The `amount` gets locked as an investment request in the escrow account. 
     
-    When the next epoch is executed on Centrifuge, liquidity pools can proceed with tranche token payouts in case their orders got fulfilled (step 3).
+    Then, the pool issuer needs to fulfill this request because it starts earning yield. 
+    
+    Once the investment request is fullfilled, the user can claim their tranche tokens.
     
 4. Receive the tranche tokens
 
-    Once the order from step 2 is fulfilled, the user can claim their tranche tokens equivalent to `y` by calling:
+    Once the request from step 2 is fulfilled, the user can claim their tranche tokens equivalent to `y` by calling:
 
     **`LiquidityPool.mint(uint256 y, address receiver)`**
     
