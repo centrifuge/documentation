@@ -49,7 +49,7 @@ You will need them on the `Step 2.` below.
     
 4. Claim the tranche tokens
 
-    Once the request from step 2 is fulfilled, the user can claim their tranche tokens equivalent to `y` by calling:
+    Once the request from step 3. is fulfilled, the user can claim their tranche tokens equivalent to `y` by calling:
 
     **`LiquidityPool.mint(uint256 y, address receiver)`**
     
