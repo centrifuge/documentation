@@ -1,11 +1,9 @@
 ---
-id: guides
+id: investing-into-a-liquidity-pool
 order: 2
-title: Guides
+title: Investing into a Liquidity Pool
 contributors: <NunoAlexandre:nuno@k-f.co>
 ---
-
-# Investing into a Liquidity Pool
 
 This guide will teach you how to find the correct liquidity pool instance to invest in, how to invest and get the respective tranche tokens in return, and how the whole system flows behind the scenes.
 

@@ -2,7 +2,28 @@
     display: none !important;
 }
 
-p, li {
+p,
+li {
     font-size: 16px;
     line-height: 1.7em;
+}
+
+callout {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    margin: 16px 0;
+    padding-right: 32px;
+}
+
+callout.warning {
+    background-color: rgb(255, 247, 237);
+    color: rgb(154, 52, 18);
+    border: 1px solid #ffedd5;
+}
+
+callout.error {
+    background-color: rgb(254, 226, 226);
+    color: rgb(185, 28, 28);
+    border: 1px solid #ffedd5;
 }

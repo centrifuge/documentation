@@ -5,6 +5,7 @@ import styled from "styled-components";
 import * as Grommet from "grommet";
 import qs from "query-string";
 
+import Callout from "../Callout";
 import CodeHighlighter from "../CodeHighlighter";
 
 import "./styles.css";
@@ -165,6 +166,13 @@ const mdxGrommetMap = {
       language={String(props.className).replace(/^language-/, "")}
     />
   ),
+  callout: (props) => (
+    <Callout
+      children={props.children.trim()}
+      type={props.type}
+      emoji={props.emoji}
+    />
+  )
 };
 
 const DocsContent = ({ mdx }) => {
