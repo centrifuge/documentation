@@ -15,7 +15,7 @@ This guide will teach you how to run a Centrifuge Chain full node.
     - minimum: 2+ cores CPU, 4GB+ RAM, 200GB+ free storage space
     - recommended: 4+ CPU cores, 16GB RAM, 1TB SSD or faster storage
 - Check out [Centrifuge Releases](https://github.com/centrifuge/centrifuge-chain/releases) to pick the latest production release
-- Install [Docker](https://www.docker.com/) OR [`rustup`](https://rustup.rs/)
+- Install [`Docker`](https://www.docker.com/) OR [`rustup`](https://rustup.rs/)
 
 ## Options
 1. Run with Docker
