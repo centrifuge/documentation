@@ -22,8 +22,8 @@ This guide will teach you how to run a Centrifuge Chain full node.
 
 ## 1. Run with Docker
 
-You can use the container published by Centrifuge on their [DockerHub repo](https://hub.docker.com/repository/docker/centrifugeio/centrifuge-chain/tags?page=1&ordering=last_updated)
-or be fully trustless by cloning the [cent-chain repository](https://github.com/centrifuge/centrifuge-chain/)
+You can use the container published by on the [DockerHub repo](https://hub.docker.com/repository/docker/centrifugeio/centrifuge-chain/tags?page=1&ordering=last_updated)
+or be fully trustless by cloning the [Centrifuge Chain repository](https://github.com/centrifuge/centrifuge-chain/)
 and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine),
 in the latter make sure to checkout the specific commit for the latest release before building.
 
@@ -31,12 +31,6 @@ To find the latest release go to the [Centrifuge repository](https://github.com/
 and look for the listed Docker Image.
 
 More images in the official [Docker Hub repository](https://hub.docker.com/repository/docker/centrifugeio/centrifuge-chain/tags?page=1&ordering=last_updated).
-
-### Latest Image Info
-Find below information on the latest and previous images that can be used with docker.
-
-* `v0.10.34`: `main-20231006174657-160318c7`
-* `latest (November 22, 2023)`: `main-20231006174657-160318c7`
 
 ### Create docker compose file
 
@@ -93,6 +87,7 @@ docker-compose pull --policy always && docker-compose up -d
 ```
 
 ## 2. Get or build binaries
+
 ### Prepare user and folder
 ```bash
 adduser centrifuge_service --system --no-create-home
@@ -269,7 +264,7 @@ INFO tokio-runtime-worker substrate: [Parachain] ⚙️  Syncing 469.4 bps, targ
 everything is working correctly. Once the chain is fully synced the errors logs will go away.
 
 ### Stalled Syncing
-If the chain stops syncing, mostly due to the unavailable blocks then please restart your node. The reason is in most cases that the p2p-view of your node is bad at the moment.
+If the chain stops syncing, mostly due to the unavailable blocks then please restart your node. The reason is in most cases that the p2p-view of your node is incorrect at the moment.
 Resulting in your node dropping the peers and being unable to further sync. A restart helps in theses cases.
 
 Example logs will look like the following:
