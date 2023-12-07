@@ -11,10 +11,11 @@ This guide will teach you how to run a Centrifuge Chain full node.
 ## Prerequisites
 
 - [Set up your Axelar validator](https://docs.axelar.dev/validator/setup/overview)
-- Minimum hardware requirements: 2+ cores CPU, 4GB+ RAM, 200GB+ free storage space.
-- Recommended hardware: 4+ CPU cores, 16GB RAM, 1TB SSD or faster storage.
-- Check out [Centrifuge Releases](https://github.com/centrifuge/centrifuge-chain/releases) to identify the one for mainnet.
-- Docker OR [`rustup` is installed](https://rustup.rs/)
+- Hardware requirements
+    - minimum: 2+ cores CPU, 4GB+ RAM, 200GB+ free storage space
+    - recommended: 4+ CPU cores, 16GB RAM, 1TB SSD or faster storage
+- Check out [Centrifuge Releases](https://github.com/centrifuge/centrifuge-chain/releases) to pick the latest production release
+- Install [Docker](https://www.docker.com/) OR [`rustup`](https://rustup.rs/)
 
 ## Options
 1. Run with Docker
@@ -22,21 +23,20 @@ This guide will teach you how to run a Centrifuge Chain full node.
 
 ## 1. Run with Docker
 
-You can use the container published by on the [DockerHub repo](https://hub.docker.com/repository/docker/centrifugeio/centrifuge-chain/tags?page=1&ordering=last_updated)
+You can use the container published on the [Centrifuge DockerHub repo](https://hub.docker.com/r/centrifugeio/centrifuge-chain/tags?page=1&ordering=last_updated)
 or be fully trustless by cloning the [Centrifuge Chain repository](https://github.com/centrifuge/centrifuge-chain/)
 and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine),
 in the latter make sure to checkout the specific commit for the latest release before building.
 
-To find the latest release go to the [Centrifuge repository](https://github.com/centrifuge/centrifuge-chain/releases),
-and look for the listed Docker Image.
+You can use the `latest` Docker tag or find the latest release manually in the [Centrifuge repository](https://github.com/centrifuge/centrifuge-chain/releases).
 
 More images in the official [Docker Hub repository](https://hub.docker.com/repository/docker/centrifugeio/centrifuge-chain/tags?page=1&ordering=last_updated).
 
 ### Create docker compose file
 
-Create a `docker-compose.yml` file with the following contents.
-Change the `ports` based on your network setup.
-Replace `/mnt/my_volume/data` with the volume and/or data folder you want to use.
+Create a `docker-compose.yml` file with the contents below, adjusting the following:
+    - Change the `ports` based on your network setup.
+    - Replace `/mnt/my_volume/data` with the volume and/or data folder you want to use.
 
 ```Dockerfile
 version: '3'
@@ -207,7 +207,7 @@ Expected output if node is synced is `{"jsonrpc":"2.0","result":false,"id":1}`
 
 ## Optional: Using a snapshot instead of synching from scratch
 * By downloading a snapshot from the Centrifuge Dev team:
-  - You get faster sync, your fullnode will be ready in within hours (time depends on how old the snapshot is)
+  - You get faster sync, your full node will be ready in within hours (time depends on how old the snapshot is)
   - You are trusting the Centrifuge's team snapshots and therefore is not as "trustless" or "decentralized" as synching from scratch
 
 Prerequisites:
