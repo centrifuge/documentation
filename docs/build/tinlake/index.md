@@ -1,6 +1,6 @@
 ---
 id: tinlake
-order: 2
+order: 3
 title: Ethereum Smart Contracts
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Devin Black:devin@centrifuge.io>
 ---

@@ -1,6 +1,6 @@
 ---
 id: how-to-run-a-full-node
-order: 3
+order: 2
 title: How to run a Centrifuge chain full node
 contributors: <NunoAlexandre:nuno@k-f.co>
 ---
