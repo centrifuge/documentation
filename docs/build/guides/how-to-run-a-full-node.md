@@ -217,8 +217,8 @@ Prerequisites:
 Step-by-step instructions:
 
 ```bash
-# List the available bundles (choose between mainnet or testnet-demo)
-gsutil ls gs://centrifuge-snapshots/{mainnet,testnet-demo}
+# List the available bundles
+gsutil ls gs://centrifuge-snapshots/mainnet
 
 # Download the bundle (~400GB)
 # If you try to pipe the download directly into lz4 and tar and the network fails you'll have to
