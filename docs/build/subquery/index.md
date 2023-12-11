@@ -5,6 +5,7 @@ title: SubQuery
 contributors: <NunoAlexandre:nuno@k-f.co>
 ---
 
+## Introduction
 The indexing and querying of Centrifuge Chain data is based on the [SubQuery](https://subquery.network/) framework. SubQuery is an open source blockchain data indexer for developers that provides fast, flexible, reliable, and decentralised APIs to power multi-chain apps.
 
 Chain data can be queried with a GraphQL api. To learn the basics of GraphQL, you can check out this [primer guide](https://medium.com/graphprotocol/graphql-will-power-the-decentralized-web-d7443a69c69a).
@@ -46,7 +47,8 @@ Provides historical data about the evolution of Pool over time. The dynamics of 
 
 Relationsips can be used in GraphQL queries to access and group data. As an example it is possible to list all the Tranches related to a Pool in a single Pool query. All relationships between the entities are listed in Figure 3 below.
 
-// TODO
+![](./images/figure2.png)
+*Figure 3: entities relationship*
 
 ### Querying data from SubQuery
 
