@@ -1,6 +1,6 @@
 ---
 id: nfts
-order: 4
+order: 8
 title: NFTs
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 ---

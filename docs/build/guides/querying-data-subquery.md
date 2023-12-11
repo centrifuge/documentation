@@ -11,12 +11,14 @@ You can follow the official GraphQL guide [here](https://graphql.org/learn/) to 
 - For an in-depth learning experience with practical tutorials, see How to GraphQL.
 - Check out the free online course, Exploring GraphQL: A Query Language for APIs.
 
+For more general documentation on the Centrifuge inetgration and usage of SubQuery, you can check [this page](/build/subquery).
+
 ## Endpoints
 
 | **Network** | **GraphQL Endpoint**|
 |------------|-------------------------------------------------------------------|
 | Dev        | https://api.subquery.network/sq/embrio-tech/centrifuge-subql      |
-| Centrifuge |  https://api.subquery.network/sq/centrifuge/pools                 |
+| Centrifuge | https://api.subquery.network/sq/centrifuge/pools                  |
 
 
 ## Sample Queries

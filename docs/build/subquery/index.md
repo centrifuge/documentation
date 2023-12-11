@@ -50,6 +50,6 @@ Relationsips can be used in GraphQL queries to access and group data. As an exam
 ![](./images/figure2.png)
 *Figure 3: entities relationship*
 
-### Querying data from SubQuery
+## Querying data from SubQuery
 
 To learn how to query Centrifuge Pool's data using SubQuery, you can check [this guide](/build/guides/querying-data-subquery).
