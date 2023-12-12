@@ -49,25 +49,22 @@ centrifuge:
     restart: on-failure
     ports:
     - "30333:30333"
-    - "9933:9933"
-    - "9944:9944"
+    - "9944:9933"
     volumes:
     # Mount your biggest drive
     - /mnt/my_volume/data:/data
     command:
     - "--port=30333"
     - "--rpc-port=9933"
-    - "--ws-port=9944"
-    - "--ws-external"
     - "--rpc-external"
     - "--rpc-cors=all"
     - "--chain=centrifuge"
     - "--parachain-id=2031"
     - "--base-path=/data"
-    - "--log=main,info"
+    - "--log=main,info,xcm=trace,xcm-executor=trace"
+    - "--database=rocksdb"
     - "--execution=wasm"
     - "--wasm-execution=compiled"
-    - "--ws-max-connections=5000"
     - "--bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF"
     - "--bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc"
     - "--bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p"
@@ -150,18 +147,16 @@ KillSignal=SIGHUP
 ExecStart=/var/lib/centrifuge-data/centrifuge-chain --bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF --bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc --bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p \
     --port=30333 \
     --rpc-port=9933 \
-    --ws-port=9944 \
-    --ws-external \
     --rpc-external \
     --rpc-cors=all \
     --chain=centrifuge \
     --parachain-id=2031 \
     --base-path=/var/lib/centrifuge-data \
-    --log=main,info \
+    --log="main,info,xcm=trace,xcm-executor=trace" \
+    --database=rocksdb \
     --execution=wasm \
     --wasm-execution=compiled \
-    --ws-max-connections=5000 \
-    --name=YOUR_NODE_NAME
+    --name=YOUR_NODE_NAME \
     -- \
     --chain=polkadot \
     --execution=wasm \
