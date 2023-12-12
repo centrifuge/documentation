@@ -23,51 +23,44 @@ This guide will teach you how to run a Centrifuge Chain full node.
 
 ## 1. Run with Docker
 
-You can use the container published on the [Centrifuge DockerHub repo](https://hub.docker.com/r/centrifugeio/centrifuge-chain/tags?page=1&ordering=last_updated)
+You can use the container published on the [Centrifuge Docker Hub repo](https://hub.docker.com/r/centrifugeio/centrifuge-chain)
 or be fully trustless by cloning the [Centrifuge Chain repository](https://github.com/centrifuge/centrifuge-chain/)
 and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine),
 in the latter make sure to checkout the specific commit for the latest release before building.
 
-You can use the `latest` Docker tag or find the latest release manually in the [Centrifuge repository](https://github.com/centrifuge/centrifuge-chain/releases).
-
-More images in the official [Docker Hub repository](https://hub.docker.com/repository/docker/centrifugeio/centrifuge-chain/tags?page=1&ordering=last_updated).
-
 ### Create docker compose file
 
 Create a `docker-compose.yml` file with the contents below, adjusting the following:
-    - Change the `ports` based on your network setup.
-    - Replace `/mnt/my_volume/data` with the volume and/or data folder you want to use.
+- Change the `ports` based on your network setup.
+- Replace `/mnt/my_volume/data` with the volume and/or data folder you want to use.
+- Optional: To run it as an archive node, add `"--pruning=archive"` before `---name`
 
 ```Dockerfile
 version: '3'
 services:
 centrifuge:
     container_name: centrifuge-chain
-    image: "centrifugeio/centrifuge-chain:[INSERT_LATEST_RELEASE_HERE]"
+    image: "centrifugeio/centrifuge-chain:[INSERT_RELEASE_HERE]"
     platform: "linux/amd64"
     restart: on-failure
     ports:
     - "30333:30333"
-    - "9933:9933"
-    - "9944:9944"
+    - "9944:9933"
     volumes:
     # Mount your biggest drive
     - /mnt/my_volume/data:/data
     command:
     - "--port=30333"
     - "--rpc-port=9933"
-    - "--ws-port=9944"
-    - "--ws-external"
     - "--rpc-external"
     - "--rpc-cors=all"
-    - "--pruning=archive"
     - "--chain=centrifuge"
     - "--parachain-id=2031"
     - "--base-path=/data"
-    - "--log=main,info"
+    - "--log=main,info,xcm=trace,xcm-executor=trace"
+    - "--database=rocksdb"
     - "--execution=wasm"
     - "--wasm-execution=compiled"
-    - "--ws-max-connections=5000"
     - "--bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF"
     - "--bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc"
     - "--bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p"
@@ -104,7 +97,7 @@ chown -R centrifuge_service /var/lib/centrifuge-data
 sudo apt-get install cmake pkg-config libssl-dev git clang libclang-dev protobuf-compiler
 git clone https://github.com/centrifuge/centrifuge-chain.git
 cd centrifuge-chain
-git checkout [INSERT_LATEST_RELEASE_HERE]
+git checkout [INSERT_RELEASE_HERE]
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ./scripts/install_toolchain.sh
 cargo build --release
@@ -112,10 +105,11 @@ cp ./target/release/centrifuge-chain /var/lib/centrifuge-data
 ```
 
 #### B. "Extract from a docker image"
-Use `latest` for testent, or a specific release tag for mainnet binaries. Keep in mind that the retrieved binary is build for Linux.
+
+Pick an appropriate mainnet image for mainnet binaries. Keep in mind that the retrieved binary is build for Linux.
    
 ```bash
-docker run --rm --name centrifuge-cp -d centrifugeio/centrifuge-chain:[INSERT_LATEST_RELEASE_HERE] --chain centrifuge
+docker run --rm --name centrifuge-cp -d centrifugeio/centrifuge-chain:[INSERT_RELEASE_HERE] --chain centrifuge
 docker cp centrifuge-cp:/usr/local/bin/centrifuge-chain /var/lib/centrifuge-data
 ```
 
@@ -124,10 +118,12 @@ docker cp centrifuge-cp:/usr/local/bin/centrifuge-chain /var/lib/centrifuge-data
 We are now ready to start the node, but to ensure it is running in the background and auto-restarts in case of a server failure, we will set up a service file using systemd.
 Change the `ports` based on your network setup.
 
-<callout emoji="📝">
-    Note: It is important to leave the `--bootnodes $ADDR` in one line as otherwise the arguments are not parsed correctly.
-          Making it impossible for the chain to find peers as no bootnodes will be present
-</callout>
+
+**Notes**
+- It is important to leave the `--bootnodes $ADDR` in one line as otherwise the arguments are not parsed correctly,
+    making it impossible for the chain to find peers as no bootnodes will be present.
+
+- To run it as an archive node, add `--pruning=archive \\` before `--name` below.
 
 
 ```bash
@@ -148,19 +144,16 @@ KillSignal=SIGHUP
 ExecStart=/var/lib/centrifuge-data/centrifuge-chain --bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF --bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc --bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p \
     --port=30333 \
     --rpc-port=9933 \
-    --ws-port=9944 \
-    --ws-external \
     --rpc-external \
     --rpc-cors=all \
-    --pruning=archive \
     --chain=centrifuge \
     --parachain-id=2031 \
     --base-path=/var/lib/centrifuge-data \
-    --log=main,info \
+    --log="main,info,xcm=trace,xcm-executor=trace" \
+    --database=rocksdb \
     --execution=wasm \
     --wasm-execution=compiled \
-    --ws-max-connections=5000 \
-    --name=YOUR_NODE_NAME
+    --name=YOUR_NODE_NAME \
     -- \
     --chain=polkadot \
     --execution=wasm \
@@ -203,35 +196,6 @@ localhost:9933
 ```
 
 Expected output if node is synced is `{"jsonrpc":"2.0","result":false,"id":1}`
-
-
-## Optional: Using a snapshot instead of synching from scratch
-* By downloading a snapshot from the Centrifuge Dev team:
-  - You get faster sync, your full node will be ready in within hours (time depends on how old the snapshot is)
-  - You are trusting the Centrifuge's team snapshots and therefore is not as "trustless" or "decentralized" as synching from scratch
-
-Prerequisites:
-- [Install Gcloud CLI](https://cloud.google.com/sdk/docs/install)
-- Install lz4. Ex: `sudo snap install lz4`
-
-Step-by-step instructions:
-
-```bash
-# List the available bundles
-gsutil ls gs://centrifuge-snapshots/mainnet
-
-# Download the bundle (~400GB)
-# If you try to pipe the download directly into lz4 and tar and the network fails you'll have to
-# start from scratch. We recommend downloading first to a file.
-gsutil cp gs://centrifuge-snapshots/mainnet/YYYY-MM-DD-snap.tar.lz4 $TMP_PATH/
-lz4 -d -c -q  $DATA_FOLDER_PATH/YYYY-MM-DD-snap.tar.lz4 | tar -xvf - -C $DATA_FOLDER_PATH
-```
-
-Inspect the `$DATA_FOLDER_PATH` it should contain a `chain` and a `relay-chain` directory, the parachain and relay chain
-DB data folders respectively. Use `$DATA_FOLDER_PATH` on your node config as `--base-path=$DATA_FOLDER_PATH` directly
-Remove the `chain` directory to sync ONLY the parachain from scratch but keep the relay DB (usually much bigger), this will remove a little bit of trust
-in the Centrifuge dev team by synching the parachain from scratch at least, which is what Axelar validators care about most in terms of data.
-
 
 ## Configure `vald`
 
