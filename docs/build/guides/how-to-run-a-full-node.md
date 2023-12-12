@@ -35,8 +35,9 @@ More images in the official [Docker Hub repository](https://hub.docker.com/repos
 ### Create docker compose file
 
 Create a `docker-compose.yml` file with the contents below, adjusting the following:
-    - Change the `ports` based on your network setup.
-    - Replace `/mnt/my_volume/data` with the volume and/or data folder you want to use.
+- Change the `ports` based on your network setup.
+- Replace `/mnt/my_volume/data` with the volume and/or data folder you want to use.
+- Optional: To run it as an archive node, add `"--pruning=archive"` before `---name`
 
 ```Dockerfile
 version: '3'
@@ -60,7 +61,6 @@ centrifuge:
     - "--ws-external"
     - "--rpc-external"
     - "--rpc-cors=all"
-    - "--pruning=archive"
     - "--chain=centrifuge"
     - "--parachain-id=2031"
     - "--base-path=/data"
@@ -124,10 +124,12 @@ docker cp centrifuge-cp:/usr/local/bin/centrifuge-chain /var/lib/centrifuge-data
 We are now ready to start the node, but to ensure it is running in the background and auto-restarts in case of a server failure, we will set up a service file using systemd.
 Change the `ports` based on your network setup.
 
-<callout emoji="📝">
-    Note: It is important to leave the `--bootnodes $ADDR` in one line as otherwise the arguments are not parsed correctly.
-          Making it impossible for the chain to find peers as no bootnodes will be present
-</callout>
+
+**Notes**
+- It is important to leave the `--bootnodes $ADDR` in one line as otherwise the arguments are not parsed correctly,
+    making it impossible for the chain to find peers as no bootnodes will be present.
+
+- To run it as an archive node, add `--pruning=archive \\` before `--name` below.
 
 
 ```bash
@@ -152,7 +154,6 @@ ExecStart=/var/lib/centrifuge-data/centrifuge-chain --bootnodes=/ip4/35.198.171.
     --ws-external \
     --rpc-external \
     --rpc-cors=all \
-    --pruning=archive \
     --chain=centrifuge \
     --parachain-id=2031 \
     --base-path=/var/lib/centrifuge-data \
