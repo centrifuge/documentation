@@ -34,22 +34,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `learn`,
-        path: `${__dirname}/docs/learn`,
+        name: `user-documentation`,
+        path: `${__dirname}/docs/user-documentation`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `use`,
-        path: `${__dirname}/docs/use`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `build`,
-        path: `${__dirname}/docs/build`,
+        name: `developer-documentation`,
+        path: `${__dirname}/docs/developer-documentation`,
       },
     },
     {

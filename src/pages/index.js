@@ -19,8 +19,8 @@ import { theme } from "../theme";
 
 const INSTANCE_TYPES = Object.freeze({
   GETTING_STARTED: "getting-started",
-  DEVELOPER_DOCS: "build",
-  USER_DOCS: "use",
+  DEVELOPER_DOCS: "developer-documentation",
+  USER_DOCS: "user-documentation",
 });
 
 const INSTANCES = Object.freeze({
@@ -169,14 +169,15 @@ const HomePage = () => {
             Welcome to Centrifuge documentation
           </Heading>
           <Paragraph>
-            Welcome to the Centrifuge documentation. If you are new, head to the{" "}
+            Welcome to the Centrifuge documentation. If you are new, or want to
+            dive deeper into how our products works head to the{" "}
             <strong>Getting Started</strong> section to understand what
-            Centrifuge is about and to get an overview of our ecosystem. Dive
-            deeper into how our products work in the <strong>Learn</strong>{" "}
-            section. As a user of our network, e.g. investor, issuer, or
-            governance participant, you will find advice and guides in{" "}
-            <strong>Use</strong>. For the most up-to-date technical
-            documentation, check out <strong>Build</strong>.
+            Centrifuge is about and to get an overview of our ecosystem. As a
+            user of our network, e.g. investor, issuer, or governance
+            participant, you will find advice and guides in{" "}
+            <strong>User Documentation</strong>. For the most up-to-date
+            technical documentation, check out{" "}
+            <strong>Developer Documentation</strong>.
           </Paragraph>
         </Box>
       </Box>
