@@ -73,7 +73,11 @@ const Layout = ({ children, hideFooter, size }) => {
             />
           </Box>
           <Box alignSelf="start" justify="center">
-            <a href="https://github.com/centrifuge">
+            <a
+              href="https://github.com/centrifuge"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image src={githubLogo} height="32px" />
             </a>
           </Box>
@@ -119,15 +123,26 @@ const Layout = ({ children, hideFooter, size }) => {
                 <Link to="/">
                   <Image src={docs_wordmark} height="32px" />
                 </Link>
-                <Button
-                  icon={<Menu />}
-                  style={{
-                    padding: "0",
-                  }}
-                  onClick={() => {
-                    setIsNavbarOpen(true);
-                  }}
-                />
+                <Box direction="row" gap="12px">
+                  <Box alignSelf="start" justify="center">
+                    <a
+                      href="https://github.com/centrifuge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image src={githubLogo} height="24px" />
+                    </a>
+                  </Box>
+                  <Button
+                    icon={<Menu />}
+                    style={{
+                      padding: "0",
+                    }}
+                    onClick={() => {
+                      setIsNavbarOpen(true);
+                    }}
+                  />
+                </Box>
               </Box>
               {isNavbarOpen && (
                 <Layer full>
