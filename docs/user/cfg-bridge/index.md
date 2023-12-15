@@ -11,7 +11,7 @@ The **CFG** token lives natively on Centrifuge Chain but can be bridged to Ether
 
 The bridge used by Centrifuge is a trusted relayer bridge. This means a set of relayers are trusted with relaying messages between Ethereum and Centrifuge chain. When assets are moved between the chains, these relayers pick up the message on Centrifuge Chain and trigger a transaction in Ethereum or vice versa. The bridge is built by [ChainSafe](https://chainsafe.io) in collaboration with Celo, Aragon and ETH Classic. [Read ChainSafe's announcement](https://medium.com/chainsafe-systems/chainsafe-building-chainbridge-49d51ff2e0a2) to learn more about the bridge.
 
-Want to run your own bridge? Head over to: [Running the bridge](/developer-documentation/bridge/)
+Want to run your own bridge? Head over to: [Running the bridge](/developer/bridge/)
 
 ### Bridge Fees
 

@@ -61,14 +61,14 @@ const Layout = ({ children, hideFooter, size }) => {
             />
             <InternalLink
               size="16px"
-              primary={currentPath === "user-documentation"}
-              href="/user-documentation"
+              primary={currentPath === "user"}
+              href="/user"
               label="User documentation"
             />
             <InternalLink
               size="16px"
-              primary={currentPath === "developer-documentation"}
-              href="/developer-documentation"
+              primary={currentPath === "developer"}
+              href="/developer"
               label="Developer documentation"
             />
           </Box>

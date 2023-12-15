@@ -19,8 +19,8 @@ import { theme } from "../theme";
 
 const INSTANCE_TYPES = Object.freeze({
   GETTING_STARTED: "getting-started",
-  DEVELOPER_DOCS: "developer-documentation",
-  USER_DOCS: "user-documentation",
+  DEVELOPER_DOCS: "developer",
+  USER_DOCS: "user",
 });
 
 const INSTANCES = Object.freeze({
@@ -32,13 +32,13 @@ const INSTANCES = Object.freeze({
   },
   [INSTANCE_TYPES.USER_DOCS]: {
     title: "User docs",
-    uri: "/user-documentation",
+    uri: "/user",
     color: "#2762FF",
     avatar: use_face,
   },
   [INSTANCE_TYPES.DEVELOPER_DOCS]: {
     title: "Developer docs",
-    uri: "/developer-documentation",
+    uri: "/developer",
     color: "#F44E72",
     avatar: build_face,
   },

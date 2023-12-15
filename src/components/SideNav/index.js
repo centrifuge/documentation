@@ -41,9 +41,9 @@ const SideNav = ({ onClose, size }) => {
       title: "Getting Started",
       icon: getting_started_face,
     },
-    { name: "user-documentation", title: "User documentation", icon: use_face },
+    { name: "user", title: "User documentation", icon: use_face },
     {
-      name: "developer-documentation",
+      name: "developer",
       title: "Developer documentation",
       icon: build_face,
     },
