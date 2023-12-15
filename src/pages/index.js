@@ -159,16 +159,29 @@ const HomePage = () => {
     <Layout size={size} hideFooter fullWidth>
       <SEO title="Centrifuge Documentation" />
       <Box
-        style={{ maxWidth: "1024px", marginTop: "40px" }}
+        style={{
+          maxWidth: "1024px",
+          marginTop: size === "small" ? "0px" : "40px",
+          paddingLeft: size === "small" ? "24px" : "60px",
+          paddingRight: size === "small" ? "24px" : "60px",
+        }}
+        width="100%"
         direction="row"
         gap="large"
-        justify="between"
+        justify="center"
+        align="center"
       >
-        <Box width="70%">
-          <Heading lined level={1}>
+        <Box width="70%" flex="grow">
+          <Heading lined level={size === "small" ? 2 : 1}>
             Welcome to Centrifuge documentation
           </Heading>
-          <Paragraph>
+          <Text
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "16px",
+              lineHeight: "1.7em",
+            }}
+          >
             Welcome to the Centrifuge documentation. If you are new, or want to
             dive deeper into how our products works head to the{" "}
             <strong>Getting Started</strong> section to understand what
@@ -178,11 +191,24 @@ const HomePage = () => {
             <strong>User Documentation</strong>. For the most up-to-date
             technical documentation, check out{" "}
             <strong>Developer Documentation</strong>.
-          </Paragraph>
+          </Text>
         </Box>
       </Box>
-      <Box style={{ maxWidth: "1024px" }} width="100%" align="flex-start">
-        <Box margin={{ vertical: "xlarge" }} gap="large" width="70%">
+      <Box
+        style={{
+          maxWidth: "1024px",
+          paddingLeft: size === "small" ? "24px" : "60px",
+          paddingRight: size === "small" ? "24px" : "60px",
+        }}
+        width="100%"
+        justify="center"
+        align="center"
+      >
+        <Box
+          margin={{ vertical: "xlarge" }}
+          gap={size === "large" ? "medium" : "60px"}
+          width={size === "large" ? "70%" : "100%"}
+        >
           <Box align="center">
             <GettingStartedNavButton
               {...INSTANCES[INSTANCE_TYPES.GETTING_STARTED]}
@@ -191,7 +217,9 @@ const HomePage = () => {
           <Box
             direction={size === "large" ? "row" : "column"}
             justify="center"
-            gap={size === "large" ? "medium" : "84px"}
+            gap={size === "large" ? "medium" : "60px"}
+            width="100%"
+            align="center"
           >
             {Object.values(INSTANCE_TYPES)
               .filter((value) => value !== INSTANCE_TYPES.GETTING_STARTED)

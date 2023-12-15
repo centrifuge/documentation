@@ -150,7 +150,9 @@ const Layout = ({ children, hideFooter, size }) => {
             align="center"
             {...sectionProps}
             flex="grow"
-            style={{ marginTop: "64px" }}
+            style={{
+              marginTop: size === "small" ? "16px" : "64px",
+            }}
           >
             {children}
           </Box>

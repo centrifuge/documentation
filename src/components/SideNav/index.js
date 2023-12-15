@@ -99,7 +99,10 @@ const SideNav = ({ onClose, size }) => {
       <Box gap="medium" fill="horizontal">
         {instances
           .filter((instance) => {
-            return instance?.name === location?.pathname?.split("/")[1];
+            return (
+              size === "small" ||
+              instance?.name === location?.pathname?.split("/")[1]
+            );
           })
           .map((instance, i) => {
             return (
