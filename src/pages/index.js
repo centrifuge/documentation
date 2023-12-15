@@ -162,8 +162,8 @@ const HomePage = () => {
         style={{
           maxWidth: "1024px",
           marginTop: size === "small" ? "0px" : "40px",
-          paddingLeft: size === "small" ? "24px" : "60px",
-          paddingRight: size === "small" ? "24px" : "60px",
+          paddingLeft: size === "small" ? "24px" : "0",
+          paddingRight: size === "small" ? "24px" : "0",
         }}
         width="100%"
         direction="row"
@@ -197,8 +197,8 @@ const HomePage = () => {
       <Box
         style={{
           maxWidth: "1024px",
-          paddingLeft: size === "small" ? "24px" : "60px",
-          paddingRight: size === "small" ? "24px" : "60px",
+          paddingLeft: size === "small" ? "24px" : "0",
+          paddingRight: size === "small" ? "24px" : "0",
         }}
         width="100%"
         justify="center"

@@ -38,7 +38,7 @@ const Layout = ({ children, hideFooter, size }) => {
             width: "100%",
             paddingLeft: "20px",
             paddingTop: "20px",
-            paddingRight: "100px",
+            paddingRight: "90px",
             borderBottom: "1px solid #EEE",
             fontSize: "15px",
             display: "flex",
@@ -78,7 +78,7 @@ const Layout = ({ children, hideFooter, size }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src={githubLogo} height="32px" />
+              <Image src={githubLogo} height="24px" />
             </a>
           </Box>
         </Nav>

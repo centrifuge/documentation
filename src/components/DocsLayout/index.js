@@ -43,37 +43,54 @@ const DocsLayout = ({ data }) => {
               <SEO title={mdx.frontmatter.title} />
               <Box width="100%" gap="medium" pad={{ bottom: "large" }}>
                 <Box gap="0">
-                  <Box style={{ borderBottom: '1px solid #EEE' }} {...{pad: { horizontal: size === "large" ? "60px" : size === "medium" ? "48px" : "24px", vertical: size === "small" ? "12px" : "24px", }, }}>
-                  {
-                    // skip rendering category for top-level nodes
-                    !isTopLevel && (
-                      <Text
-                        size="large"
-                        style={{
-                          fontFamily: "Inter",
-                          textTransform: "capitalize",
-                          fontSize: '13px'
-                        }}
-                      >
-                        {mdx.fields.instanceName.split("-").join(" ")}
-                      </Text>
-                    )
-                  }
-                    <Heading level={1} margin={{ top: '0', bottom: '0' }} style={{ lineHeight: '32px'}}>
+                  <Box
+                    style={{ borderBottom: "1px solid #EEE" }}
+                    {...{
+                      pad: {
+                        horizontal:
+                          size === "large"
+                            ? "60px"
+                            : size === "medium"
+                            ? "48px"
+                            : "24px",
+                        vertical: size === "small" ? "12px" : "24px",
+                      },
+                    }}
+                  >
+                    <Heading
+                      level={1}
+                      margin={{ top: "0", bottom: "0" }}
+                      style={{ lineHeight: "32px" }}
+                    >
                       {mdx.frontmatter.title}
                     </Heading>
                   </Box>
-                  <Box style={{ maxWidth: '1024px', marginTop: '24px' }} {...{pad: { horizontal: size === "large" ? "60px" : size === "medium" ? "48px" : "24px", vertical: size === "small" ? "12px" : "0" }}}>
+                  <Box
+                    style={{ maxWidth: "1024px", marginTop: "12px" }}
+                    {...{
+                      pad: {
+                        horizontal:
+                          size === "large"
+                            ? "60px"
+                            : size === "medium"
+                            ? "48px"
+                            : "24px",
+                        vertical: size === "small" ? "12px" : "0",
+                      },
+                    }}
+                  >
                     <DocsContent mdx={mdx} />
                     <Box
                       direction={size === "small" ? "column" : "row"}
                       gap="medium"
-                      margin={{ top: '36px', bottom: '24px' }}
+                      margin={{ top: "36px", bottom: "24px" }}
                     >
                       <EditPage file={mdx.fields.file} />
                       {!!mdx.frontmatter?.contributors && (
                         <Box direction="row" gap="medium">
-                          {size !== "small" && <Box border={{ side: "right" }} />}
+                          {size !== "small" && (
+                            <Box border={{ side: "right" }} />
+                          )}
                           <Contributors
                             contributors={mdx.frontmatter.contributors}
                           />
