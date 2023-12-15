@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { Box, Image, Button } from "grommet";
 import { Close } from "grommet-icons";
 import { graphql, useStaticQuery, Link } from "gatsby";
+import { useLocation } from "@reach/router";
 
 import docs_wordmark from "../../images/docs_wordmark.svg";
 import getting_started_face from "../../images/faces/getting-started-small.svg";
@@ -11,6 +12,7 @@ import build_face from "../../images/faces/build.svg";
 import InstanceTOC from "./InstanceTOC";
 
 const SideNav = ({ onClose, size }) => {
+  const location = useLocation();
   const data = useStaticQuery(graphql`
     query MyQuery {
       allMdx {
@@ -95,13 +97,17 @@ const SideNav = ({ onClose, size }) => {
         </Box>
       )}
       <Box gap="medium" fill="horizontal">
-        {instances.map((instance, i) => {
-          return (
-            <Box gap="small" key={i} flex="grow">
-              <InstanceTOC {...instance} size={size} />
-            </Box>
-          );
-        })}
+        {instances
+          .filter((instance) => {
+            return instance?.name === location?.pathname?.split("/")[1];
+          })
+          .map((instance, i) => {
+            return (
+              <Box gap="small" key={i} flex="grow">
+                <InstanceTOC {...instance} size={size} />
+              </Box>
+            );
+          })}
       </Box>
     </Box>
   );

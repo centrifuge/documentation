@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Box, Button, Image, Layer, Nav } from "grommet";
 import { Menu } from "grommet-icons";
 import { Link } from "gatsby";
+import { useLocation } from "@reach/router";
 
 import "./styles.css";
 import "@fontsource/inter/variable-full.css";
@@ -11,6 +12,7 @@ import docs_wordmark from "../../images/docs_wordmark.svg";
 
 import SideNav from "../SideNav";
 import SocialFooter from "../SocialFooter";
+import InternalLink from "../SideNav/InternalLink";
 
 const Layout = ({ children, hideFooter, size }) => {
   let sectionProps = {
@@ -19,6 +21,8 @@ const Layout = ({ children, hideFooter, size }) => {
   };
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname.split("/")[1];
 
   return (
     <>
@@ -40,21 +44,24 @@ const Layout = ({ children, hideFooter, size }) => {
           <Link to="/">
             <Image src={docs_wordmark} height="32px" />
           </Link>
-          <Link to="/getting-started" style={{ textDecoration: "none" }}>
-            Getting started
-          </Link>
-          <Link
-            to="/user-documentation"
-            style={{ textDecoration: "none", color: "#000" }}
-          >
-            User documentation
-          </Link>
-          <Link
-            to="/developer-documentation"
-            style={{ textDecoration: "none", color: "#000" }}
-          >
-            Developer documentation
-          </Link>
+          <InternalLink
+            size="16px"
+            primary={currentPath === "getting-started"}
+            href="/getting-started"
+            label="Getting started"
+          />
+          <InternalLink
+            size="16px"
+            primary={currentPath === "user-documentation"}
+            href="/user-documentation"
+            label="User documentation"
+          />
+          <InternalLink
+            size="16px"
+            primary={currentPath === "developer-documentation"}
+            href="/developer-documentation"
+            label="Developer documentation"
+          />
         </Nav>
       )}
       <Box direction="row" style={{ minHeight: "100vh", position: "relative" }}>
