@@ -17,12 +17,12 @@ const Link = styled(GatsbyLink)`
     props.theme.global.colors.black};
 
   line-height: 1.375;
-  padding: ${(props) => props.size === 'large' ? '4px 0' : '3px 16px'};
+  padding: ${(props) => (props.size === "large" ? "4px 0" : "4px 16px")};
   border-radius: 16px;
-  
+
   &.activeLink {
     color: ${(props) => props.theme.global.colors.brand};
-    background-color: #F0F4FF;
+    background-color: #f0f4ff;
   }
 `;
 

@@ -9,6 +9,7 @@ import "./styles.css";
 import "@fontsource/inter/variable-full.css";
 
 import docs_wordmark from "../../images/docs_wordmark.svg";
+import githubLogo from "../../images/github-logo.svg";
 
 import SideNav from "../SideNav";
 import SocialFooter from "../SocialFooter";
@@ -37,31 +38,45 @@ const Layout = ({ children, hideFooter, size }) => {
             width: "100%",
             paddingLeft: "20px",
             paddingTop: "20px",
+            paddingRight: "100px",
             borderBottom: "1px solid #EEE",
             fontSize: "15px",
+            display: "flex",
+            justifyContent: "space-between",
           }}
         >
-          <Link to="/">
-            <Image src={docs_wordmark} height="32px" />
-          </Link>
-          <InternalLink
-            size="16px"
-            primary={currentPath === "getting-started"}
-            href="/getting-started"
-            label="Getting started"
-          />
-          <InternalLink
-            size="16px"
-            primary={currentPath === "user-documentation"}
-            href="/user-documentation"
-            label="User documentation"
-          />
-          <InternalLink
-            size="16px"
-            primary={currentPath === "developer-documentation"}
-            href="/developer-documentation"
-            label="Developer documentation"
-          />
+          <Box
+            direction="row"
+            align="top"
+            style={{ display: "flex", flexDirection: "row" }}
+          >
+            <Link to="/" style={{ padding: "0 16px" }}>
+              <Image src={docs_wordmark} height="32px" />
+            </Link>
+            <InternalLink
+              size="16px"
+              primary={currentPath === "getting-started"}
+              href="/getting-started"
+              label="Getting started"
+            />
+            <InternalLink
+              size="16px"
+              primary={currentPath === "user-documentation"}
+              href="/user-documentation"
+              label="User documentation"
+            />
+            <InternalLink
+              size="16px"
+              primary={currentPath === "developer-documentation"}
+              href="/developer-documentation"
+              label="Developer documentation"
+            />
+          </Box>
+          <Box alignSelf="start" justify="center">
+            <a href="https://github.com/centrifuge">
+              <Image src={githubLogo} height="32px" />
+            </a>
+          </Box>
         </Nav>
       )}
       <Box direction="row" style={{ minHeight: "100vh", position: "relative" }}>
