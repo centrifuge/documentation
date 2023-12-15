@@ -29,10 +29,6 @@ const DocsLayout = ({ data }) => {
 
   const prevNode = useMemo(() => getNthNode(mdx.frontmatter.order - 1), [data]);
   const nextNode = useMemo(() => getNthNode(mdx.frontmatter.order + 1), [data]);
-  const isTopLevel = useMemo(() => {
-    const { file, instanceName } = mdx.fields;
-    return path.dirname(file) === instanceName;
-  }, [mdx.fields.file, mdx.fields.instanceName]);
 
   return (
     <AxisTheme theme={theme}>

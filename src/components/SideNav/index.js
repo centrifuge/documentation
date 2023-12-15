@@ -26,6 +26,7 @@ const SideNav = ({ onClose, size }) => {
               }
               frontmatter {
                 order
+                category
               }
               tableOfContents
             }
