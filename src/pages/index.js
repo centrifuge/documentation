@@ -1,13 +1,6 @@
 import { AxisTheme } from "@centrifuge/axis-theme";
 import { Link as GatsbyLink } from "gatsby";
-import {
-  Box,
-  Heading,
-  Image,
-  Paragraph,
-  ResponsiveContext,
-  Text,
-} from "grommet";
+import { Box, Heading, Image, ResponsiveContext, Text } from "grommet";
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";

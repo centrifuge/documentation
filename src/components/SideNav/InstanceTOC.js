@@ -4,34 +4,45 @@ import NodeTOC from "./NodeTOC";
 import InternalLink from "./InternalLink";
 
 const InstanceTOC = ({ nodes, size, title, name, icon }) => {
-  const subpages = nodes.filter((node) => {
-    return node.slug.split("/").filter(Boolean).length === 3;
-  });
-
+  const parentPages = [];
   const subpagesNodes = nodes
-    .filter((node) => {
-      // remove subpages from nodes
-      return node.slug.split("/").filter(Boolean).length === 2;
-    })
     .map((node) => {
-      // find pages that have subpages
-      const subpage = subpages.find(
-        (subpage) =>
-          node.slug.split("/").filter(Boolean)[1] ===
-          subpage.slug.split("/").filter(Boolean)[1]
-      );
-      if (subpage) {
-        // nest subpages into parents table of contents
-        const toc = node.tableOfContents?.items?.map((item) => {
-          if (item.title === subpage.category) {
-            item.items = subpage.tableOfContents.items;
-          }
-          return item;
-        });
-        node.tableOfContents.items = toc;
-        return node;
+      if (node.category) {
+        // store routes of parent pages if child page has a category
+        parentPages.push(
+          node.slug.split("/").filter(Boolean).splice(0, 2).join("/")
+        );
       }
       return node;
+    })
+    .map((node) => {
+      if (
+        // find parent page route that matches child page route
+        parentPages.includes(node.slug.split("/").filter(Boolean).join("/"))
+      ) {
+        // set isParent to true for so NodeTOC knows which parent has subpages to render
+        node.isParent = true;
+        // find the specific with the subpages
+        const child = nodes.find(
+          (page) =>
+            page.category &&
+            page.slug.split("/").filter(Boolean)[1] ===
+              node.slug.split("/").filter(Boolean)[1]
+        );
+        // append the subpages to the parent page's table of contents
+        node.tableOfContents.items.forEach((item) => {
+          if (item.title === child.category) {
+            item.items = child.tableOfContents.items;
+          } else {
+            item.items = [];
+          }
+        });
+      }
+      return node;
+    })
+    .filter((node) => {
+      // remove top level subpages from nodes
+      return !node?.category;
     });
 
   return (
