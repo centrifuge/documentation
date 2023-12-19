@@ -1,8 +1,9 @@
 ---
-id: guides
-order: 2
-title: Guides
+id: investing-into-a-liquidity-pool
+order: 0
+title: Investing into a Liquidity Pool
 contributors: <NunoAlexandre:nuno@k-f.co>
+category: Guides
 ---
 
 # Investing into a Liquidity Pool
