@@ -73,11 +73,7 @@ const Hash = styled.a.attrs({
 `;
 
 const mdxGrommetMap = {
-  p: (props) => (
-    <Paragraph>
-      {props.children}
-    </Paragraph>
-  ),
+  p: (props) => <Paragraph>{props.children}</Paragraph>,
   h1: (props) => (
     <Heading level={1}>
       <Anchor id={props.id} />
@@ -168,6 +164,7 @@ const mdxGrommetMap = {
 };
 
 const DocsContent = ({ mdx }) => {
+  //  console.log("🚀 ~ mdx:", mdx);
   return (
     <MDXProvider components={mdxGrommetMap}>
       <MDXRenderer>{mdx.code.body}</MDXRenderer>

@@ -26,7 +26,10 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const InternalLink = ({ href, label, primary, size, altFont }, ref) => {
+const InternalLink = (
+  { href, label, primary, size, altFont, partiallyActive = false },
+  ref
+) => {
   const linkRef = useRef();
 
   let props = { size, to: href };
@@ -44,10 +47,13 @@ const InternalLink = ({ href, label, primary, size, altFont }, ref) => {
   }));
 
   return (
-    <Link {...props} activeClassName="activeLink" ref={linkRef}>
-      <Text size={size} {...textProps}>
-        {label}
-      </Text>
+    <Link
+      {...props}
+      activeClassName="activeLink"
+      ref={linkRef}
+      partiallyActive={partiallyActive}
+    >
+      <Text>{label}</Text>
     </Link>
   );
 };

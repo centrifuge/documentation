@@ -13,7 +13,13 @@ const NodeTOC = ({ slug, title, tableOfContents, isParent }) => {
 
   return (
     <Box gap="xsmall">
-      <InternalLink primary href={slug} label={title} ref={linkRef} />
+      <InternalLink
+        primary
+        href={slug}
+        label={title}
+        ref={linkRef}
+        partiallyActive
+      />
       {!!tableOfContents?.items && isActive && (
         <Box pad={{ left: "small" }}>
           {tableOfContents.items.map((heading, i) => {
@@ -24,7 +30,7 @@ const NodeTOC = ({ slug, title, tableOfContents, isParent }) => {
                   href={`${slug}${heading.url}`}
                   label={heading.title}
                 />
-                {heading?.items?.map((subheading, i) => {
+                {heading?.items?.map((subheading) => {
                   if (isParent) {
                     return (
                       <Box style={{ paddingLeft: "16px" }}>

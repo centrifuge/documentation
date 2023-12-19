@@ -29,11 +29,12 @@ const InstanceTOC = ({ nodes, size, title, name, icon }) => {
             page.slug.split("/").filter(Boolean)[1] ===
               node.slug.split("/").filter(Boolean)[1]
         );
-        // append the subpages to the parent page's table of contents
         node.tableOfContents.items.forEach((item) => {
           if (item.title === child.category) {
+            // append the subpages to the parent page's table of contents
             item.items = child.tableOfContents.items;
           } else {
+            // clear the default items in the table of contents if there are no subpages
             item.items = [];
           }
         });
@@ -60,7 +61,7 @@ const InstanceTOC = ({ nodes, size, title, name, icon }) => {
         </Box>
       )}
       <Box gap="0">
-        {subpagesNodes.map((node, i) => {
+        {subpagesNodes?.map((node, i) => {
           return <NodeTOC key={i} {...node} size={size} />;
         })}
       </Box>
