@@ -14,6 +14,21 @@ DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permit
 ## EVM and Substrate Wallets
 Centrifuge supports both EVM and Substrate accounts. If you already have an Ethereum compatible wallet setup, the easiest way is to use this your existing Ethereum wallet. For expert users it might be helpful to use a Substrate compatible wallet such as Polkadot Vault. EVM wallets can be used to connect to any of the live networks while Substrate Wallets only work with Centrifuge chain.
 
+### Sending tokens between EVM & Substrate Wallets on Centrifuge Chain
+The Centrifuge App can be used to send and receive tokens. It will take care of the address conversion between Substrate and EVM addresses.
+
+#### Receiving CFG on an EVM Account
+To receive CFG from someone using a Substrate account, you will need to get your Substrate address. Go to the [App Portfolio](https://app.centrifuge.io/portfolio) and click on [recieve](https://app.centrifuge.io/portfolio?receive=CFG) next to your CFG Balance. The Substrate address is then shown to you in the sidebar:
+
+![](./images/receive_cfg.png)
+
+#### Sending CFG to any account
+To send CFG from your wallet to any other account (Substrate or EVM), you can use the app. Go to the [App Portfolio](https://app.centrifuge.io/portfolio) and click on [send](https://app.centrifuge.io/portfolio?send=CFG) next to your CFG Balance.
+
+![](./images/send_cfg.png)
+
+This will allow you to send to an address of either format.
+
 
 ## Connect your wallet
 When using Centrifuge you can choose between pools deployed on Centrifuge Chain and on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge):
@@ -28,7 +43,7 @@ On Ethereum, the system supports [MetaMask](https://metamask.io/download.html), 
 
 ![](./images/wallet-component-eth.png#width=40%;)
 
-## Set up Ethereum wallet with MetaMask
+### Set up Ethereum wallet with MetaMask
 Metamask is a popular browser extension allowing you to access EVM compatible blockchains. If you do not yet have MetaMask set up, head over to [MetaMask](https://metamask.io/download/) to download and install MetaMask.
 
 On the [Centrifuge App](https://app.centrifuge.io) to connect a MetaMask wallet:
@@ -37,18 +52,18 @@ On the [Centrifuge App](https://app.centrifuge.io) to connect a MetaMask wallet:
 
 ![](./images/choose_network.png)
 
-## Using Ledger with Centrifuge
+### Using Ledger with Centrifuge
 If you do not yet have your Ledger configured, read their [getting started guide](https://support.ledger.com/hc/en-us/articles/360015259693-Choose-your-Ledger-device?docs=true). You will also need to install the [Ethereum App](https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-) and [enable blind signing](https://support.ledger.com/hc/en-us/articles/4405481324433-Enable-blind-signing-in-the-Ethereum-ETH-app?docs=true). Make sure to [connect your ledger](https://support.ledger.com/hc/en-us/articles/4404366864657-Connect-your-Ledger-to-MetaMask) to Metamask.
 
-## Set up a Substrate wallet
-### Overview
+### Set up a Substrate wallet
+#### Overview
 You can create a Centrifuge account in any wallet that supports Polkadot/Substrate addresses. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see [the documentation from Polkadot](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). The tutorial below will cover how to set up wallets using:
 
 - [Talisman](https://app.talisman.xyz/portfolio)
 - [Polkadot.js browser extension](https://polkadot.js.org/extension/)
 - [Polkadot Vault](https://signer.parity.io/) (formerly called Parity Signer)
 
-## Using Talisman
+### Using Talisman
 Talisman is a wallet that supports Substrate (Polkadot) and Ethereum accounts. The Talisman wallet browser extension is available on Google Chrome, Brave, and Firefox, and a corresponding asset dashboard is accessible at [app.talisman.xyz](https://app.talisman.xyz/portfolio).
 
 To set up Talisman:
@@ -78,7 +93,6 @@ Finally, to see an overview of your CFG accounts, click on "Receive" under your 
 ![](./images/talisman-wallet.png#width=400)
 
 ## Using the Polkadot.js extension
-
 Polkadot.js browser extension allows you to manage your accounts. The browser extension is available on Google Chrome, Brave and Firefox, and you can use [Polkadot.js Apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fcentrifuge-parachain.api.onfinality.io%2Fpublic-ws#/accounts) to see your balance, transfer tokens, participate in governance etc.
 
 - Download the extension [here](https://polkadot.js.org/extension/) and install it.
