@@ -14,6 +14,8 @@ DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permit
 ## EVM and Substrate Wallets
 Centrifuge supports both EVM and Substrate accounts. If you already have an Ethereum compatible wallet setup, the easiest way is to use this your existing Ethereum wallet. For expert users it might be helpful to use a Substrate compatible wallet such as Polkadot Vault. EVM wallets can be used to connect to any of the live networks while Substrate Wallets only work with Centrifuge chain.
 
+A Centrifuge substrate address will begin with `4...`, an EVM address will begin with `0x...`.
+
 ### Sending tokens between EVM & Substrate Wallets on Centrifuge Chain
 The Centrifuge App can be used to send and receive tokens. It will take care of the address conversion between Substrate and EVM addresses.
 
@@ -115,26 +117,18 @@ You can always recover your account in either of two ways:
 * Importing the account by using your seed phrase
 * Importing your account by using the JSON file + the password to your account
 
-## Using the Polkadot Vault App
-The `Polkadot Vault` (formerly `Parity Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui).
+## Using the Polkadot Vault App (experts only)
+The [Polkadot Vault](https://signer.parity.io/ ) (formerly `Parity Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). Follow the instructions in their [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html) to setup the wallet.
 
-To set up a Centrifuge account using the `Parity Vault`, download the app from https://signer.parity.io/ and follow the instructions in the [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html). When you create an account, make sure to create keys for the `Centrifuge Mainnet Network`.
+The Centrifuge metadata portal can be found here: [centrifuge.github.io/metadata-portal](https://centrifuge.github.io/metadata-portal/#/centrifuge). First add the Centrifuge network and then load the metadata before creating a key (see Vault Documentation for more details).
+
+
  ![](./images/create-keypair.png#width=40%;)
 
+### Adding a Vault to the Polkadot.js UI
 You can look up your Centrifuge address by scanning the QR code on the Polkadot.js UI.
 - On your computer, navigate to https://polkadot.js.org/apps/#/explorer.
 - Make sure the network is set to Centrifuge.
 - Click on Accounts.
 - Click on 'Add via QR'.
 - Scan the QR code on your device for your Centrifuge Mainnet Public Address.
-- Your address for Centrifuge Mainnet should begin with a '4...'.
-
-If you want to sign transactions with your account you will first need to send some CFG to this account. You can then initiate a transfer on the [Polkadot.js UI](https://polkadot.js.org/apps/#/explorer) by selecting 'Transfer' in the left menu or on 'Send' from the Accounts page and sign the transaction with your Vault via QR code.
-
-Some best practices using the Parity vault securly include:
-- Use the phone only as a cold storage solution with the Vault app (You can use or buy an old phone and wipe it)
-- After setting up the app turn off WiFi & Bluetooth and never turn it on again (to airgap the phone)
-- Only charge your phone with a battery bank or wall charger. Use a charge only cable, not a data cable.
-- Never connect the the device to a computer
-- Backup your Recovery Phrase and keep it somewhere safe. Please do research on secure methods for storage and recovery.
-
