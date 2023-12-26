@@ -97,26 +97,6 @@ Finally, to see an overview of your CFG accounts, click on "Receive" under your 
 
 ![](./images/talisman-wallet.png#width=400)
 
-## Using the Polkadot.js extension
-Polkadot.js browser extension allows you to manage your accounts. The browser extension is available on Google Chrome, Brave and Firefox, and you can use [Polkadot.js Apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fcentrifuge-parachain.api.onfinality.io%2Fpublic-ws#/accounts) to see your balance, transfer tokens, participate in governance etc.
-
-- Download the extension [here](https://polkadot.js.org/extension/) and install it.
-- Create a new account by clicking on "+" in the top right of the extension and selecting "Create new account".
-- Save your recovery phrase in a safe place before you continue (**THIS IS VERY IMPORTANT**).
-- Set NETWORK to "Centrifuge Chain" and give your account a name and password.
-
-![](./images/set-up-polkadotjs.png#width=400)
-
-- Once created, backup the account by selecting the 3 dots to the right of the account name and clicking "Export Account"
-- Make sure you save the downloaded JSON file in a safe place, and remember the password for this account
-
-![](./images/export-account-json.png#width=400)
-
-You can always recover your account in either of two ways:
-
-* Importing the account by using your seed phrase
-* Importing your account by using the JSON file + the password to your account
-
 ## Using the Polkadot Vault App (experts only)
 The [Polkadot Vault](https://signer.parity.io/ ) (formerly `Parity Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). Follow the instructions in their [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html) to setup the wallet.
 
@@ -131,4 +111,9 @@ You can look up your Centrifuge address by scanning the QR code on the Polkadot.
 - Make sure the network is set to Centrifuge.
 - Click on Accounts.
 - Click on 'Add via QR'.
-- Scan the QR code on your device for your Centrifuge Mainnet Public Address.
+- Scan the QR code on your device for your Centrifuge Address.
+
+## Using the Polkadot.js extension
+*The Polkadot.js Extension is no longer maintained actively. We recommend migrating to [Nova Wallet](https://novawallet.io/) on mobile or [Talisman](http://talisman.xyz/) on your computer.
+
+[Wallets and Extensions for Substrate](https://wiki.polkadot.network/docs/wallets-and-extensions)
