@@ -7,7 +7,7 @@ redirect_from:
   - /use
   - /use/
 ---
----
+
 ## Connect your wallet 
 
 When using Centrifuge you can choose between pools deployed on Centrifuge Chain and on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge)
