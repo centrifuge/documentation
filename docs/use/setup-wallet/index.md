@@ -61,14 +61,16 @@ On the [Centrifuge App](https://app.centrifuge.io) to connect a MetaMask wallet:
 If you do not yet have your Ledger configured, read their [getting started guide](https://support.ledger.com/hc/en-us/articles/360015259693-Choose-your-Ledger-device?docs=true). You will also need to install the [Ethereum App](https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-) and [enable blind signing](https://support.ledger.com/hc/en-us/articles/4405481324433-Enable-blind-signing-in-the-Ethereum-ETH-app?docs=true). Make sure to [connect your ledger](https://support.ledger.com/hc/en-us/articles/4404366864657-Connect-your-Ledger-to-MetaMask) to Metamask.
 
 ### Set up a Substrate wallet
-#### Overview
 You can create a Centrifuge account in any wallet that supports Polkadot/Substrate addresses. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see [the documentation from Polkadot](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). The tutorial below will cover how to set up wallets using:
 
-- [Talisman](https://app.talisman.xyz/portfolio)
-- [Polkadot.js browser extension](https://polkadot.js.org/extension/)
-- [Polkadot Vault](https://signer.parity.io/) (formerly called Parity Signer)
+- [Talisman](https://talisman.xyz) for your browser
+- [Nova Wallet](https://novawallet.io/) for iOS and Android
+- [Polkadot.js Extension](https://wiki.polkadot.network/docs/polkadotjs#polkadot-js-extension) The Polkadot.js Extension is no longer maintained actively. We recommend using another wallet.
+- [Polkadot Vault](https://signer.parity.io/) (formerly called Parity Signer) for a secure offline wallet using an old airgapped mobile device
 
-### Using Talisman
+For a more comprehensive list head to the Polkadot Wiki: [Wallets and Extensions for Substrate](https://wiki.polkadot.network/docs/wallets-and-extensions)
+
+#### Using Talisman
 Talisman is a wallet that supports Substrate (Polkadot) and Ethereum accounts. The Talisman wallet browser extension is available on Google Chrome, Brave, and Firefox, and a corresponding asset dashboard is accessible at [app.talisman.xyz](https://app.talisman.xyz/portfolio).
 
 To set up Talisman:
@@ -97,15 +99,14 @@ Finally, to see an overview of your CFG accounts, click on "Receive" under your 
 
 ![](./images/talisman-wallet.png#width=400)
 
-## Using the Polkadot Vault App (experts only)
+#### Using the Polkadot Vault App (experts only)
 The [Polkadot Vault](https://signer.parity.io/ ) (formerly `Parity Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). Follow the instructions in their [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html) to setup the wallet.
 
 The Centrifuge metadata portal can be found here: [centrifuge.github.io/metadata-portal](https://centrifuge.github.io/metadata-portal/#/centrifuge). First add the Centrifuge network and then load the metadata before creating a key (see Vault Documentation for more details).
 
-
  ![](./images/create-keypair.png#width=40%;)
 
-### Adding a Vault to the Polkadot.js UI
+##### Adding a Vault to the Polkadot.js UI
 You can look up your Centrifuge address by scanning the QR code on the Polkadot.js UI.
 - On your computer, navigate to https://polkadot.js.org/apps/#/explorer.
 - Make sure the network is set to Centrifuge.
@@ -113,7 +114,3 @@ You can look up your Centrifuge address by scanning the QR code on the Polkadot.
 - Click on 'Add via QR'.
 - Scan the QR code on your device for your Centrifuge Address.
 
-## Using the Polkadot.js extension
-*The Polkadot.js Extension is no longer maintained actively. We recommend migrating to [Nova Wallet](https://novawallet.io/) on mobile or [Talisman](http://talisman.xyz/) on your computer.
-
-[Wallets and Extensions for Substrate](https://wiki.polkadot.network/docs/wallets-and-extensions)
