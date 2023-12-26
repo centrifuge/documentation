@@ -5,7 +5,7 @@ title: Epochs - How investments and redemptions are executed
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 ---
 
-## Overview 
+## Overview
 
 A decentralized pool where investors can invest/redeem and Asset Originators originate/repay at any time needs a decentralized mechanism to coordinate investments, redemptions, originations and repayments. Welcome the `Epoch`.
 
@@ -27,7 +27,7 @@ On the smart contract level, Centrifuge epochs have a minimum duration that the 
 
 ## The invest/redeem process
 
-Investors can supply more liquidity at any point during an epoch. The supplied liquidity will be locked in the pool contract until the end of the epoch. The investor can cancel his lock as long as the current epoch is still active. In that case, the locked liquidity will be transferred back to his wallet. At the end of the epoch, all locked orders will be processed and executed at the current token prices considering the max reserve amount and subordination ratios. After the epoch turn, investors can collect the executed orders in the UI. If parts of the investments/redemptions could not be executed, it will be rolled over into the next epoch; thus the corresponding liquidity remains locked. This locked order can be cancelled at any time.
+Investors can supply more liquidity at any point during an epoch. The supplied liquidity will be locked in the pool contract until the end of the epoch. The investor can cancel their lock as long as the current epoch is still active. In that case, the locked liquidity will be transferred back to their wallet. At the end of the epoch, all locked orders will be processed and executed at the current token prices considering the max reserve amount and subordination ratios. After the epoch turn, investors can collect the executed orders in the UI. If parts of the investments/redemptions could not be executed, it will be rolled over into the next epoch; thus the corresponding liquidity remains locked. This locked order can be cancelled at any time.
 
 The redeem process works similarly. If existing investors want to redeem (part of their) tokens they can lock these tokens into Centrifuge at any point during the epoch. At the end of the epoch, all locked orders will be processed and executed at the current respective token prices considering the max reserve amount and min Junior risk buffer. After the epoch turn, investors can collect the liquidity from the executed orders in the UI. If part of the investment/redemption could not be executed, it will be rolled over into the next epoch and these tokens remain locked. This locked order can be cancelled at any time.
 
@@ -48,13 +48,13 @@ At the epoch turn, the contracts first process the current state of the pool:
 
 Then the contracts check whether all set orders can be executed with the capital available and without breaking the subordination ratios or the maximum reserve restrictions. If this is the case all orders are immediately executed and the contracts process the new state of the pool. You can find a simple model that illustrates the processing of orders and calculation of the pool state [here](https://docs.google.com/spreadsheets/d/1mkIbWzhD7IXbnbYXKreTMYuaZJEzyTVqllhJnP4YdPs/edit#gid=161507348)
 
-If not all orders can be executed, e.g. because there is not enough capital available in the Reserve (plus new investments) to serve all redemption orders or executing all senior investments would break the 
+If not all orders can be executed, e.g. because there is not enough capital available in the Reserve (plus new investments) to serve all redemption orders or executing all senior investments would break the
 ratios the Centrifuge "Solver mechanism" would be initiated.
 
 ## The Solver mechanism
 
-### How an epoch is currently displayed 
-These are the different states of an epoch.  
+### How an epoch is currently displayed
+These are the different states of an epoch.
 
 | Status                  | Case                                           | Consequence                                               |
 | ----------------------- | ---------------------------------------------- | --------------------------------------------------------- |
