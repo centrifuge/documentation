@@ -15,7 +15,7 @@ DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permit
 Centrifuge supports both EVM and Substrate accounts. If you already have an Ethereum compatible wallet setup, the easiest way is to use this your existing Ethereum wallet. For expert users it might be helpful to use a Substrate compatible wallet such as Polkadot Vault. EVM wallets can be used to connect to any of the live networks while Substrate Wallets only work with Centrifuge chain.
 
 
-## Connect your wallet 
+## Connect your wallet
 When using Centrifuge you can choose between pools deployed on Centrifuge Chain and on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge):
 
 ![](./images/wallet-component1.png#width=40%;)
@@ -35,18 +35,17 @@ On the [Centrifuge App](https://app.centrifuge.io) to connect a MetaMask wallet:
 - Click on the Connect button in the top right corner.
 - Choose the MetaMask wallet in the wallet dialog.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_51288122dc7669aff3b8765228a7c945.png)
+![](./images/choose_network.png)
 
 ## Using Ledger with Centrifuge
 If you do not yet have your Ledger configured, read their [getting started guide](https://support.ledger.com/hc/en-us/articles/360015259693-Choose-your-Ledger-device?docs=true). You will also need to install the [Ethereum App](https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-) and [enable blind signing](https://support.ledger.com/hc/en-us/articles/4405481324433-Enable-blind-signing-in-the-Ethereum-ETH-app?docs=true). Make sure to [connect your ledger](https://support.ledger.com/hc/en-us/articles/4404366864657-Connect-your-Ledger-to-MetaMask) to Metamask.
 
 ## Set up a Substrate wallet
-
 ### Overview
 You can create a Centrifuge account in any wallet that supports Polkadot/Substrate addresses. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see [the documentation from Polkadot](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). The tutorial below will cover how to set up wallets using:
 
 - [Talisman](https://app.talisman.xyz/portfolio)
-- [Polkadot.js browser extension](https://polkadot.js.org/extension/) 
+- [Polkadot.js browser extension](https://polkadot.js.org/extension/)
 - [Polkadot Vault](https://signer.parity.io/) (formerly called Parity Signer)
 
 ## Using Talisman
@@ -62,7 +61,7 @@ You can create or import an account in Talisman by clicking on `More options` an
 
 ![](./images/Talisman_Newaccount.png#width=60%;)
 
-If you want to create a new account, click on `New Account` and `Polkadot`. 
+If you want to create a new account, click on `New Account` and `Polkadot`.
 
 ![](./images/Talisman_Newaccount_Create.png#width=60%;)
 
@@ -100,9 +99,9 @@ You can always recover your account in either of two ways:
 * Importing your account by using the JSON file + the password to your account
 
 ## Using the Polkadot Vault App
-The `Polkadot Vault` (formerly `Parity Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). 
+The `Polkadot Vault` (formerly `Parity Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui).
 
-To set up a Centrifuge account using the `Parity Vault`, download the app from https://signer.parity.io/ and follow the instructions in the [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html). When you create an account, make sure to create keys for the `Centrifuge Mainnet Network`. 
+To set up a Centrifuge account using the `Parity Vault`, download the app from https://signer.parity.io/ and follow the instructions in the [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html). When you create an account, make sure to create keys for the `Centrifuge Mainnet Network`.
  ![](./images/create-keypair.png#width=40%;)
 
 You can look up your Centrifuge address by scanning the QR code on the Polkadot.js UI.
