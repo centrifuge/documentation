@@ -7,10 +7,16 @@ redirect_from:
   - /use
   - /use/
 ---
----
-## Connect your wallet 
 
-When using Centrifuge you can choose between pools deployed on Centrifuge Chain and on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge)
+DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind._
+
+
+## EVM and Substrate Wallets
+Centrifuge supports both EVM and Substrate accounts. If you already have an Ethereum compatible wallet setup, the easiest way is to use this your existing Ethereum wallet. For expert users it might be helpful to use a Substrate compatible wallet such as Polkadot Vault. EVM wallets can be used to connect to any of the live networks while Substrate Wallets only work with Centrifuge chain.
+
+
+## Connect your wallet 
+When using Centrifuge you can choose between pools deployed on Centrifuge Chain and on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge):
 
 ![](./images/wallet-component1.png#width=40%;)
 
@@ -18,66 +24,26 @@ In the second step select the wallet of your choice. On Centrifuge the system cu
 
 ![](./images/wallet-component-cf.png#width=40%;)
 
-On Ethereum, the system supports [Metamask](https://metamask.io/download.html), [Coinbase Wallet](https://www.coinbase.com/wallet) and multiple other wallets through [Wallet Connect](https://walletconnect.com/).
+On Ethereum, the system supports [MetaMask](https://metamask.io/download.html), [Coinbase Wallet](https://www.coinbase.com/wallet) and multiple other wallets through [Wallet Connect](https://walletconnect.com/).
 
 ![](./images/wallet-component-eth.png#width=40%;)
 
-## Set up Ethereum wallet (Metamask)
-### What is MetaMask?
-MetaMask is a browser extension that allows you to use Ethereum protocols or dApps (decentralized Apps) such as Tinlake. The extension holds your private keys and serves as a wallet for ETH and ERC20 tokens, such as DAI, senior token of pool, or junior token of pool. Connect MetaMask to the app and confirm your transactions to transfer and receive tokens.
+## Set up Ethereum wallet with MetaMask
+Metamask is a popular browser extension allowing you to access EVM compatible blockchains. If you do not yet have MetaMask set up, head over to [MetaMask](https://metamask.io/download/) to download and install MetaMask.
 
-### How to install MetaMask in your browser
-- Go to https://metamask.io/download.html.
-- Choose the browser you want to use.
-- You will be directed to corresponding web store.
-- Follow the steps there to add the extension to your browser.
-- After setting up your wallet, Metamask should pop-up as a fox icon in your browser bar.
-
-### Connect MetaMask with Centrifuge
+On the [Centrifuge App](https://app.centrifuge.io) to connect a MetaMask wallet:
 - Click on the Connect button in the top right corner.
 - Choose the MetaMask wallet in the wallet dialog.
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_51288122dc7669aff3b8765228a7c945.png)
 
-## Set up a hardware wallet for Ethereum (Ledger)
-### What is a hardware wallet?
-A hardware wallet stores the user's private keys in a secure hardware device. To use an address stored in a hardware wallet a user needs to be in physical possession of the device. A popular hardware wallet is [Ledger](https://www.ledger.com/).
+## Using Ledger with Centrifuge
+If you do not yet have your Ledger configured, read their [getting started guide](https://support.ledger.com/hc/en-us/articles/360015259693-Choose-your-Ledger-device?docs=true). You will also need to install the [Ethereum App](https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-) and [enable blind signing](https://support.ledger.com/hc/en-us/articles/4405481324433-Enable-blind-signing-in-the-Ethereum-ETH-app?docs=true). Make sure to [connect your ledger](https://support.ledger.com/hc/en-us/articles/4404366864657-Connect-your-Ledger-to-MetaMask) to Metamask.
 
-### Setting up a Ledger device
-Download the [Ledger Live](https://www.ledger.com/ledger-live/) and follow the steps in the app described [here](https://support.ledger.com/hc/en-us/articles/360018784134).
-
-### Install Ethereum app on Ledger device
-Set up first Ledger Ethereum (ETH) account. See more [here](https://support.ledger.com/hc/en-us/articles/360009576554-Ethereum-ETH-).
-- Open the "Manager" in Ledger Live.
-- Connect and unlock your device.
-- If asked, allow the manager on your device.
-- Find Ethereum in the app catalog.
-- Click the Install button of the app.
-    - An installation window appears
-    - Your device will display `Processing...`
-    - The app installation is confirmed
-
-### Configure Ethereum app 
-
-- Open the app `Settings`.
-- Change `Contract Data` to `Yes`.
-- [OPTIONAL] For older versions of Ledger, make sure `Browser Support` is set to `Yes`. Newer Ledger Versions are supporting it by default. 
-
-### Connect hardware wallet in MetaMask
-- Open MetaMask by clicking on the fox icon.
-- Make sure to select the correct network (`Main Ethereum Network` or `Kovan Test Network`) at the top.
-- Click on the circle in the top right corner.
-- Click on `Connect Hardware Wallet`.
-- A new modal opens. Select `Ledger` and click `Connect`.
-- Select the address you would like to use. Ledger already offers several autogenerated addresses to choose from.
-
-### Confirm transactions with your hardware wallet (Ledger)
-When your MetaMask account is connected to the hardware wallet you need to confirm each transaction with Ledger.
-
-## Set up a Centrifuge (CFG) wallet
+## Set up a Substrate wallet
 
 ### Overview
-You can create a CFG account in any wallet that supports Polkadot. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see [the documentation from Polkadot](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). The tutorial below will cover how to set up wallets using:
+You can create a Centrifuge account in any wallet that supports Polkadot/Substrate addresses. For detailed information on how to set up Polkadot accounts using the different tools that Web3 Foundation/Parity developed and supports, please also see [the documentation from Polkadot](https://support.polkadot.network/support/solutions/articles/65000098878-how-to-create-a-dot-account). The tutorial below will cover how to set up wallets using:
 
 - [Talisman](https://app.talisman.xyz/portfolio)
 - [Polkadot.js browser extension](https://polkadot.js.org/extension/) 
@@ -156,4 +122,3 @@ Some best practices using the Parity vault securly include:
 - Never connect the the device to a computer
 - Backup your Recovery Phrase and keep it somewhere safe. Please do research on secure methods for storage and recovery.
 
-DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind._
