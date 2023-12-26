@@ -12,7 +12,7 @@ DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permit
 
 
 ## EVM and Substrate Wallets
-Centrifuge supports both EVM and Substrate accounts. If you already have an Ethereum compatible wallet setup, the easiest way is to use this your existing Ethereum wallet. For expert users it might be helpful to use a Substrate compatible wallet such as Polkadot Vault. EVM wallets can be used to connect to any of the live networks while Substrate Wallets only work with Centrifuge chain.
+Centrifuge supports both EVM and Substrate accounts. If you already have an Ethereum compatible wallet setup, the easiest way is to use your existing Ethereum wallet. For expert users it might be helpful to use a Substrate compatible wallet such as Polkadot Vault. EVM wallets can be used to connect to any of the live networks while Substrate Wallets only work with Centrifuge chain.
 
 A Centrifuge substrate address will begin with `4...`, an EVM address will begin with `0x...`.
 
@@ -20,7 +20,7 @@ A Centrifuge substrate address will begin with `4...`, an EVM address will begin
 The Centrifuge App can be used to send and receive tokens. It will take care of the address conversion between Substrate and EVM addresses.
 
 #### Receiving CFG on an EVM Account
-To receive CFG from someone using a Substrate account, you will need to get your Substrate address. Go to the [App Portfolio](https://app.centrifuge.io/portfolio) and click on [recieve](https://app.centrifuge.io/portfolio?receive=CFG) next to your CFG Balance. The Substrate address is then shown to you in the sidebar:
+To receive CFG from someone using a Substrate account, you will need to get your Substrate address. Go to the [App Portfolio](https://app.centrifuge.io/portfolio) and click on [receive](https://app.centrifuge.io/portfolio?receive=CFG) next to your CFG Balance. The Substrate address is then shown to you in the sidebar:
 
 ![](./images/receive_cfg.png)
 
