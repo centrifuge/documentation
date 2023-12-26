@@ -22,7 +22,10 @@ To receive CFG from someone using a Substrate account, you will need to get your
 
 ![](./images/receive_cfg.png)
 
-#### Sending CFG to any account
+#### Receiving CFG on a Substratre Account
+To receive CFG on a Substrate account, simply give the sender your address. The simplest way to send tokens is to go follow the section below (**Sending CFG to any Account**) or they can use their wallet's built in transfer function.
+
+#### Sending CFG to any Account
 To send CFG from your wallet to any other account (Substrate or EVM), you can use the app. Go to the [App Portfolio](https://app.centrifuge.io/portfolio) and click on [send](https://app.centrifuge.io/portfolio?send=CFG) next to your CFG Balance.
 
 ![](./images/send_cfg.png)
