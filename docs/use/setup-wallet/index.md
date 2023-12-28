@@ -24,7 +24,10 @@ To receive CFG from someone using a Substrate account, you will need to get your
 
 ![](./images/receive_cfg.png)
 
-#### Receiving CFG on a Substratre Account
+If you are receiving CFG from someone using an EVM account on an EVM account, they can simply use your EVM address and their wallet to send the tokens.
+
+
+#### Receiving CFG on a Substrate Account
 To receive CFG on a Substrate account, simply give the sender your address. The simplest way to send tokens is to go follow the section below (**Sending CFG to any Account**) or they can use their wallet's built in transfer function.
 
 #### Sending CFG to any Account
@@ -36,19 +39,18 @@ This will allow you to send to an address of either format.
 
 
 ## Connect your wallet
-When using Centrifuge you can choose between pools deployed on Centrifuge Chain and on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge):
-
-![](./images/wallet-component1.png#width=40%;)
+When using Centrifuge you can choose between pools deployed on Centrifuge Chain and on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge). 
 
 In the second step select the wallet of your choice. On Centrifuge the system currently supports [Talisman](https://www.talisman.xyz/), [Subwallet](https://chrome.google.com/webstore/detail/subwallet-polkadot-extens/onhogfjeacnfoofkfgppdlbmlmnplgbn) and [Polkadot.js](https://polkadot.js.org/extension/).
 
 ![](./images/wallet-component-cf.png#width=40%;)
 
-On Ethereum, the system supports [MetaMask](https://metamask.io/download.html), [Coinbase Wallet](https://www.coinbase.com/wallet) and multiple other wallets through [Wallet Connect](https://walletconnect.com/).
 
 ![](./images/wallet-component-eth.png#width=40%;)
 
-## Set up Ethereum wallet with MetaMask
+## Setting up an Ethereum wallet
+On Ethereum and other EVM compatible networks including Centrifuge chain, the system supports [MetaMask](https://metamask.io/download.html), [Coinbase Wallet](https://www.coinbase.com/wallet) and multiple other wallets through [Wallet Connect](https://walletconnect.com/).
+
 Metamask is a popular browser extension allowing you to access EVM compatible blockchains. If you do not yet have MetaMask set up, head over to [MetaMask](https://metamask.io/download/) to download and install MetaMask.
 
 On the [Centrifuge App](https://app.centrifuge.io) to connect a MetaMask wallet:
@@ -75,10 +77,8 @@ Talisman is a wallet that supports Substrate (Polkadot) and Ethereum accounts. T
 
 To set up Talisman:
 
-- Download the extension [here](https://chrome.google.com/webstore/detail/talisman-polkadot-wallet/fijngjgcjhjmmpcmkeiomlglpeiijkld/related) and install it.
+- Download the extension [here](https://www.talisman.xyz/wallet) and install it.
 - Create a wallet using the instructions from Talisman [here](https://docs.talisman.xyz/talisman/navigating-the-paraverse/account-management/create-a-talisman-wallet).
-- Back up your wallet using the the instructions from Talisman [here](https://docs.talisman.xyz/talisman/navigating-the-paraverse/account-management/back-up-your-secret-phrase) (**THIS IS VERY IMPORTANT**).
-
 You can create or import an account in Talisman by clicking on `More options` and `Add account`. This will open a browser tab that allows you to create a new account or add existing accounts via Recovery Phrase, JSON or from your Ledger.
 
 ![](./images/Talisman_Newaccount.png#width=60%;)
