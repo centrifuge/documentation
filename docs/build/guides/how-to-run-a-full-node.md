@@ -2,7 +2,7 @@
 id: how-to-run-a-full-node
 order: 2
 title: How to run a Centrifuge chain full node
-contributors: <NunoAlexandre:nuno@k-f.co>
+contributors: 
 ---
 
 
@@ -10,7 +10,6 @@ This guide will teach you how to run a Centrifuge Chain full node.
 
 ## Prerequisites
 
-- [Set up your Axelar validator](https://docs.axelar.dev/validator/setup/overview)
 - Hardware requirements
     - minimum: 2+ cores CPU, 4GB+ RAM, 200GB+ free storage space
     - recommended: 4+ CPU cores, 16GB RAM, 1TB SSD or faster storage
@@ -196,18 +195,6 @@ localhost:9933
 ```
 
 Expected output if node is synced is `{"jsonrpc":"2.0","result":false,"id":1}`
-
-## Configure `vald`
-
-In order for `vald` to connect to your local node, your `rpc_addr` should be exposed in
-vald's `config.toml`.
-
-```bash
-[[axelar_bridge_evm]]
-name = "centrifuge"
-rpc_addr = "http://IP:PORT"
-start-with-bridge = true
-```
 
 ## Troubleshooting
 ### Error logs during syncing
