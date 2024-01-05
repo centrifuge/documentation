@@ -1,12 +1,12 @@
 ---
-id: how-to-run-a-full-node
+id: how-to-run-a-centrifuge-node
 order: 2
-title: How to run a Centrifuge chain full node
+title: How to run a Centrifuge node
 contributors: 
 ---
 
 
-This guide will teach you how to run a Centrifuge Chain full node.
+This guide will teach you how to run a Centrifuge node.
 
 ## Prerequisites
 
