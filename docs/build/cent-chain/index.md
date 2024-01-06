@@ -18,7 +18,7 @@ The Centrifuge stack consists of a peer-to-peer messaging protocol to store and 
 
 ### Centrifuge Chain
 
-[Centrifuge Chain](https://github.com/centrifuge/centrifuge-chain) is the gateway for real-world assets to the Blockchain Multiverse. We built Centrifuge Chain on [Parity Substrate](https://substrate.dev) with an initial bridge to Ethereum. This allows us to move faster and use a consistent approach for certain features.
+[Centrifuge Chain](https://github.com/centrifuge/centrifuge-chain) is the gateway for real-world assets to the Blockchain Multiverse. We built Centrifuge Chain on [Parity Substrate](https://docs.substrate.io/) with an initial bridge to Ethereum. This allows us to move faster and use a consistent approach for certain features.
 
 Substrate allows us to easily tap into the [Polkadot](https://polkadot.network) ecosystem and to connect with other blockchains that support the standard, which in turn increases interoperability.
 

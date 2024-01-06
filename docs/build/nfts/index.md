@@ -7,7 +7,7 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>
 
 ## Introduction
 
-User-mintable NFTs are a critical part of the Centrifuge ecosystem. Minting an NFT from a Centrifuge [Document](https://developer.centrifuge.io/docs/overview/protocol-architecture/) allows a user to [draw loans](https://centrifuge.io/technology/tinlake/) against the NFT asset, or simply provides a way to easily transact in privacy-preserving way with a document asset. This flow can be seen in the image below:
+User-mintable NFTs are a critical part of the Centrifuge ecosystem. Minting an NFT from a Centrifuge [Document-Broken Link](https://developer.centrifuge.io/docs/overview/protocol-architecture/) allows a user to [draw loans-Broken Link](https://centrifuge.io/technology/tinlake/) against the NFT asset, or simply provides a way to easily transact in privacy-preserving way with a document asset. This flow can be seen in the image below:
 
 ![Centrifuge architecture](./images/mint-flow.jpeg)
 
@@ -39,7 +39,7 @@ proofs = new bytes32[][](5);
         ...
 ```
 
-The verification method can be found in our optimised [Merkle Verifier](https://github.com/centrifuge/privacy-enabled-erc721/blob/develop/src/merkle.sol) contract.
+The verification method can be found in our optimised [Merkle Verifier-Broken Link](https://github.com/centrifuge/privacy-enabled-erc721/blob/develop/src/merkle.sol/) contract.
 
 An example of an NFT with one proof which can be minted using methods from the precise-proofs library is as follows:
 
