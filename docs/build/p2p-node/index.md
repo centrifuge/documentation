@@ -23,7 +23,7 @@ For more information, see the [Parity Substrate Project](https://substrate.dev/)
 
 ### Centrifuge is Beta Software
 
-Centrifuge and all its components are Beta Software. There will be substantial changes in the future and backwards compatibility is not guaranteed. Please use with caution. See [Disclaimer-Broken Link](/centrifuge-node/further-reading/disclaimer). Also, please read the details about the [protocol and implementation limitations](https://docs.centrifuge.io/build/p2p-node/#protocol-limitations).
+Centrifuge and all its components are Beta Software. There will be substantial changes in the future and backwards compatibility is not guaranteed. Please use with caution. See [Disclaimer](https://docs.centrifuge.io/build/p2p-node/#disclaimer). Also, please read the details about the [protocol and implementation limitations](https://docs.centrifuge.io/build/p2p-node/#protocol-limitations).
 
 ## Protocol Architecture
 
