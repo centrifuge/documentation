@@ -39,7 +39,7 @@ proofs = new bytes32[][](5);
         ...
 ```
 
-The verification method can be found in our optimised [Merkle Verifier-Broken Link](https://github.com/centrifuge/privacy-enabled-erc721/blob/develop/src/merkle.sol/) contract.
+The verification method can be found in our optimised [Merkle Verifier](https://github.com/centrifuge/privacy-enabled-erc721) contract.
 
 An example of an NFT with one proof which can be minted using methods from the precise-proofs library is as follows:
 
