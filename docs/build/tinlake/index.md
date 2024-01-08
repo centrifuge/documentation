@@ -1369,10 +1369,7 @@ The clp-wasm library contains a C++ wrapper which makes sure the precision we ne
 
 The actual input and constraints are then defined in tinlake.js, our JS client library for Tinlake.
 
-The code for this can be found here:[Broken Link] https://github.com/centrifuge/apps/blob/main/tinlake.js/src/services/solver/solver.ts/. 
-
-We have also defined test cases in JSON format:[Broken Link] https://github.com/centrifuge/apps/tree/main/tinlake.js/src/services/solver/problems/.
-
+The code for this can be found [here](https://github.com/centrifuge/tinlake.js).
 
 ## Maker integration
 Some DROP tokens of specific Tinlake pools are accepted as collateral in Maker. In this case, a `Debt ceiling` is defined my Maker governance. In exchange for providing liquidity, DROP tokens are locked in a Maker vault as collateral. Some pools also include an additional over-collateralization as an additional protection. In a liquidation scenario, the overcollateralization would be paid by TIN token holders.
