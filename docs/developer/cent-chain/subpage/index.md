@@ -2,7 +2,6 @@
 order: 1
 title: Subpage
 contributors: <Cassidy Daly:cassidy@centrifuge.io>, <Dennis Wellmann:dennis@centrifuge.io>
-category: Introduction
 ---
 
 ## Subpage
