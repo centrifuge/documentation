@@ -7,7 +7,7 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>
 
 ## Introduction
 
-User-mintable NFTs are a critical part of the Centrifuge ecosystem. Minting an NFT from a Centrifuge [Document-Broken Link](https://developer.centrifuge.io/docs/overview/protocol-architecture/) allows a user to [draw loans-Broken Link](https://centrifuge.io/technology/tinlake/) against the NFT asset, or simply provides a way to easily transact in privacy-preserving way with a document asset. This flow can be seen in the image below:
+User-mintable NFTs are a critical part of the Centrifuge ecosystem. Minting an NFT from a Centrifuge [Document](https://docs.centrifuge.io/build/p2p-node/#documents-within-the-protocol) allows a user to [draw loans](https://docs.centrifuge.io/getting-started/securitization/#on-chain-securitization) against the NFT asset, or simply provides a way to easily transact in privacy-preserving way with a document asset. This flow can be seen in the image below:
 
 ![Centrifuge architecture](./images/mint-flow.jpeg)
 
