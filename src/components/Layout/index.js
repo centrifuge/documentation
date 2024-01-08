@@ -4,6 +4,7 @@ import { Box, Button, Image, Layer, Nav } from "grommet";
 import { Menu } from "grommet-icons";
 import { Link } from "gatsby";
 import { useLocation } from "@reach/router";
+import styled from "styled-components";
 
 import "./styles.css";
 import "@fontsource/inter/variable-full.css";
@@ -13,7 +14,16 @@ import githubLogo from "../../images/github-logo.svg";
 
 import SideNav from "../SideNav";
 import SocialFooter from "../SocialFooter";
-import InternalLink from "../SideNav/InternalLink";
+
+const TopNavLink = styled(Link)`
+  font-weight: 600;
+  color: ${(props) =>
+    props.isActive ? props.theme.global.colors.brand : "black"};
+  text-decoration: ${(props) =>
+    props.isActive ? props.theme.global.colors.brand : "black"};
+  border-bottom: ${(props) =>
+    props.isActive ? `2px solid ${props.theme.global.colors.brand}` : "black"};
+`;
 
 const Layout = ({ children, hideFooter, size }) => {
   let sectionProps = {
@@ -32,45 +42,67 @@ const Layout = ({ children, hideFooter, size }) => {
           direction="row"
           style={{
             position: "fixed",
-            background: "#fff",
+            background: "#f5f5f5",
             zIndex: 1000,
-            height: "64px",
+            height: "54px",
             width: "100%",
             paddingLeft: "20px",
-            paddingTop: "20px",
+            paddingTop: "8px",
             paddingRight: "90px",
             borderBottom: "1px solid #EEE",
             fontSize: "15px",
             display: "flex",
             justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
           <Box
-            direction="row"
-            align="top"
-            style={{ display: "flex", flexDirection: "row" }}
+            style={{
+              display: "flex",
+              flexDirection: "row",
+            }}
           >
-            <Link to="/" style={{ padding: "0 16px" }}>
-              <Image src={docs_wordmark} height="32px" />
-            </Link>
-            <InternalLink
-              size="16px"
-              primary={currentPath === "getting-started"}
-              href="/getting-started"
-              label="Getting started"
-            />
-            <InternalLink
-              size="16px"
-              primary={currentPath === "user"}
-              href="/user"
-              label="User documentation"
-            />
-            <InternalLink
-              size="16px"
-              primary={currentPath === "developer"}
-              href="/developer"
-              label="Developer documentation"
-            />
+            <Box pad={{ left: "medium", bottom: "-2px" }}>
+              <Link to="/">
+                <Image src={docs_wordmark} height="32px" />
+              </Link>
+            </Box>
+            <Box
+              style={{
+                position: "absolute",
+                marginLeft: "300px",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "top",
+                height: "100%",
+                maxHeight: "42px",
+                paddingTop: "6px",
+              }}
+              direction="row"
+              gap="medium"
+            >
+              <TopNavLink
+                to="/getting-started"
+                label="Getting started"
+                isActive={currentPath === "getting-started"}
+              >
+                Getting started
+              </TopNavLink>
+              <TopNavLink
+                isActive={currentPath === "user"}
+                to="/user"
+                label="User documentation"
+              >
+                User documentation
+              </TopNavLink>
+              <TopNavLink
+                isActive={currentPath === "developer"}
+                to="/developer"
+                label="Developer documentation"
+              >
+                Developer documentation
+              </TopNavLink>
+            </Box>
           </Box>
           <Box alignSelf="start" justify="center">
             <a
@@ -94,7 +126,7 @@ const Layout = ({ children, hideFooter, size }) => {
               top: "64px",
             }}
           >
-            <Box width="360px" overflow="auto">
+            <Box width="306px" overflow="auto">
               {/* side nav */}
               <SideNav size={size} />
             </Box>
@@ -102,7 +134,7 @@ const Layout = ({ children, hideFooter, size }) => {
         )}
         {size === "large" && (
           <Box
-            margin={{ left: "354px" }}
+            margin={{ left: "300px" }}
             width="8px"
             style={{
               borderRight: "1px solid #EEE",
