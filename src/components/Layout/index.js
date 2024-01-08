@@ -102,7 +102,7 @@ const Layout = ({ children, hideFooter, size }) => {
         )}
         {size === "large" && (
           <Box
-            margin={{ left: "360px" }}
+            margin={{ left: "354px" }}
             width="8px"
             style={{
               borderRight: "1px solid #EEE",

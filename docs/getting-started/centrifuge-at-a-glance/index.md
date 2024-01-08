@@ -5,7 +5,6 @@ title: Centrifuge at a Glance
 redirect_from:
   - /getting-started
   - /getting-started/
-  - /
 ---
 
 ## Summary

@@ -164,7 +164,6 @@ const mdxGrommetMap = {
 };
 
 const DocsContent = ({ mdx }) => {
-  //  console.log("🚀 ~ mdx:", mdx);
   return (
     <MDXProvider components={mdxGrommetMap}>
       <MDXRenderer>{mdx.code.body}</MDXRenderer>
