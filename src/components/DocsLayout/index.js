@@ -1,7 +1,6 @@
-import React, { useMemo, useEffect } from "react";
-import * as path from "path";
+import React, { useMemo } from "react";
 import { graphql } from "gatsby";
-import { Grid, Box, Heading, Text, ResponsiveContext } from "grommet";
+import { Box, Heading, ResponsiveContext } from "grommet";
 
 import Layout from "../Layout";
 import { theme } from "../../theme";
@@ -27,8 +26,12 @@ const DocsLayout = ({ data }) => {
     else return filtered[0].node;
   };
 
-  const prevNode = useMemo(() => getNthNode(mdx.frontmatter.order - 1), [data]);
-  const nextNode = useMemo(() => getNthNode(mdx.frontmatter.order + 1), [data]);
+  const prevNode = useMemo(() => getNthNode(mdx.frontmatter.order - 1), [
+    mdx.frontmatter.order,
+  ]);
+  const nextNode = useMemo(() => getNthNode(mdx.frontmatter.order + 1), [
+    mdx.frontmatter.order,
+  ]);
 
   return (
     <AxisTheme theme={theme}>
@@ -62,7 +65,11 @@ const DocsLayout = ({ data }) => {
                     </Heading>
                   </Box>
                   <Box
-                    style={{ maxWidth: "1024px", marginTop: "12px" }}
+                    style={{
+                      maxWidth: "1024px",
+                      marginTop: "12px",
+                      position: "relative",
+                    }}
                     {...{
                       pad: {
                         horizontal:
@@ -75,7 +82,7 @@ const DocsLayout = ({ data }) => {
                       },
                     }}
                   >
-                    <DocsContent mdx={mdx} />
+                    <DocsContent mdx={mdx} size={size} />
                     <Box
                       direction={size === "small" ? "column" : "row"}
                       gap="medium"
@@ -114,11 +121,13 @@ export const query = graphql`
       fields {
         file
         instanceName
+        slug
       }
       frontmatter {
         title
         order
         contributors
+        category
       }
       code {
         body

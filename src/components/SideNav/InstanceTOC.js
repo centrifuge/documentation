@@ -8,7 +8,7 @@ const InstanceTOC = ({ nodes, size, title, name, icon }) => {
   const nodesInSubpages = nodes
     .filter((node) => {
       // remove top level subpages from nodes
-      if (node.slug.split("/").filter(Boolean).length === 3) {
+      if (node?.category === "subpage") {
         secondLevelNodes.push(node);
         return false;
       }

@@ -3,6 +3,7 @@ id: investing-into-a-liquidity-pool
 order: 0
 title: Investing into a Liquidity Pool
 contributors: <NunoAlexandre:nuno@k-f.co>
+category: subpage
 ---
 
 # Investing into a Liquidity Pool

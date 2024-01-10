@@ -40,35 +40,6 @@ const NodeTOC = ({ slug, title, tableOfContents, secondLevelPages }) => {
             );
           })}
       </Box>
-      {/* {!!tableOfContents?.items && isActive && (
-        <Box pad={{ left: "small" }}>
-           {tableOfContents.items.map((heading, i) => {
-            return (
-              <Box>
-                <InternalLink
-                  key={i}
-                  href={`${slug}${heading.url}`}
-                  label={heading.title}
-                />
-                {heading?.items?.map((subheading) => {
-                  if (isParent) {
-                    return (
-                      <Box style={{ paddingLeft: "16px" }}>
-                        <InternalLink
-                          key={subheading.title}
-                          href={`${slug}${subheading.url.split("#")[1]}`}
-                          label={subheading.title}
-                        />
-                      </Box>
-                    );
-                  }
-                })}
-              </Box>
-            );
-          })}
-        </Box>
-      )}
-         */}
     </Box>
   );
 };

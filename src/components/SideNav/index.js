@@ -61,6 +61,7 @@ const SideNav = ({ onClose, size }) => {
             ...edge.node.fields,
             ...edge.node.frontmatter,
             tableOfContents: edge.node.tableOfContents,
+            slug: edge.node.fields.slug,
           }))
           .sort((a, b) => a.order - b.order);
 
@@ -69,13 +70,13 @@ const SideNav = ({ onClose, size }) => {
           nodes,
         };
       }),
-    [data]
+    [data, instances]
   );
 
   return (
     <Box
       pad={{
-        horizontal: "medium",
+        left: "medium",
         vertical: "medium",
       }}
       align="start"

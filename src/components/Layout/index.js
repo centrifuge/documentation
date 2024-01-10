@@ -16,7 +16,7 @@ import SideNav from "../SideNav";
 import SocialFooter from "../SocialFooter";
 
 const TopNavLink = styled(Link)`
-  font-weight: 600;
+  font-weight: 500;
   color: ${(props) =>
     props.isActive ? props.theme.global.colors.brand : "black"};
   text-decoration: ${(props) =>

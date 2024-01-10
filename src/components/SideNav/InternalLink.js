@@ -12,8 +12,8 @@ const Link = styled(GatsbyLink)`
   }
 
   font-family: Inter, sans-serif;
-  font-weight: 500;
-  color: ${(props) => props.theme.global.colors.black};
+  font-weight: 400;
+  color: #b4b4b4;
 
   line-height: 1.375;
   padding: ${(props) => (props.size === "large" ? "4px 0" : "4px 16px")};
@@ -23,7 +23,7 @@ const Link = styled(GatsbyLink)`
   &.activeLink {
     color: ${(props) => props.theme.global.colors.black};
     background-color: #f0f4ff;
-    font-weight: 700;
+    font-weight: 600;
   }
 `;
 
@@ -35,10 +35,8 @@ const LinkWithSubpages = styled(GatsbyLink)`
   }
 
   font-family: Inter, sans-serif;
-  font-weight: 500;
-  color: ${(props) =>
-    (!!props.color && props.theme.global.colors[props.color]) ||
-    props.theme.global.colors.black};
+  font-weight: 400;
+  color: #b4b4b4;
 
   line-height: 1.375;
   padding: ${(props) => (props.size === "large" ? "4px 0px" : "4px 16px")};
@@ -47,6 +45,7 @@ const LinkWithSubpages = styled(GatsbyLink)`
 
   &.activeLink {
     font-weight: 600;
+    color: ${(props) => props.theme.global.colors.black};
   }
 
   &svg {
@@ -96,12 +95,7 @@ const InternalLink = (
       </LinkWithSubpages>
     </>
   ) : (
-    <Link
-      {...props}
-      ref={linkRef}
-      partiallyActive={!!hasChildren}
-      activeClassName="activeLink"
-    >
+    <Link {...props} ref={linkRef} partiallyActive activeClassName="activeLink">
       <Text margin={{ left: subpageChild ? "small" : "0" }}>{label}</Text>
     </Link>
   );

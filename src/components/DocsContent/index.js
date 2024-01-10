@@ -10,6 +10,7 @@ import CodeHighlighter from "../CodeHighlighter";
 import "./styles.css";
 
 import link from "../../images/link.svg";
+import AnchorMenu from "../AnchorMenu";
 
 const ListBase = styled(Grommet.Text)`
   padding-left: 1rem;
@@ -163,10 +164,11 @@ const mdxGrommetMap = {
   ),
 };
 
-const DocsContent = ({ mdx }) => {
+const DocsContent = ({ mdx, size }) => {
   return (
     <MDXProvider components={mdxGrommetMap}>
       <MDXRenderer>{mdx.code.body}</MDXRenderer>
+      {size === "large" && <AnchorMenu mdx={mdx} />}
     </MDXProvider>
   );
 };
