@@ -34,11 +34,11 @@ const InstanceTOC = ({ nodes, size, title, name, icon }) => {
         <Box direction="row" align="center" gap="small">
           <Image src={icon} height="20px" />
           <InternalLink
-            primary
             altFont
             size="large"
             href={`/${name}/`}
             label={title}
+            hasChildren
           />
         </Box>
       )}

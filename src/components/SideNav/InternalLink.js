@@ -84,13 +84,15 @@ const InternalLink = (
       >
         <Box direction="row" justify="between" align="center">
           <Text>{label}</Text>
-          <Next
-            style={{
-              stroke: "black",
-              rotate: ref.current?.isActive ? "270deg" : "90deg",
-            }}
-            size="16px"
-          />
+          {ref?.current && (
+            <Next
+              style={{
+                stroke: "black",
+                rotate: ref?.current?.isActive ? "270deg" : "90deg",
+              }}
+              size="16px"
+            />
+          )}
         </Box>
       </LinkWithSubpages>
     </>
