@@ -26,6 +26,7 @@ Other advantages include superior performance with multiple RPC endpoint configu
 - SubQuery Docs: [SubQuery Academy (Documentation)](https://academy.subquery.network/)
 - Intro Quick Start Guide: [1. Create a New Project](https://academy.subquery.network/quickstart/quickstart.html)
 - [Centrifuge Starter Project](https://github.com/subquery/subql-starter/tree/main/Centrifuge/centrifuge-starter)
+- For technical questions and support reach out to us start@subquery.network
 
 ### Running and Hosting your Centrifuge SubQuery APIs
 
