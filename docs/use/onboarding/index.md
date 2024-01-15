@@ -96,9 +96,9 @@ The global onboarding process is now completed. Now it's time to browse the open
 
 ## Onboarding to pool as an individual 
 
-Once you have selected a pool, click `Onboard to [token name]` on the pool's detail page to start the process to onboard as an investor to a specific tranche.
+Once you have selected a pool, choose a tranche to invest in, click on `Invest`, the slide over will pop up and click on `Onboard to [token name]` to start the process to onboard as an investor to a specific tranche.
 
-![](./images/pool_onboarding.png)
+![](./images/pool_onboarding.png#width=300px)
 
 **1. Connect wallet**
 
