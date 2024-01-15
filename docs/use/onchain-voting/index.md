@@ -40,7 +40,7 @@ You can see how many tokens you have locked in governance by going to the [Accou
 
 ## How to vote in a referendum with Proxy
 
-If you already have set up a [Proxy wallet](./governance-proxy-and-delegation), you can also vote on on-chain referenda on SubSquare. Log in with your Proxy (hot) wallet, navigate to [settings](https://centrifuge.subsquare.io/setting/proxy) and specify your proxied (cold) wallet. 
+If you already have set up a [Proxy wallet](https://docs.centrifuge.io/use/governance-proxy-and-delegation/), you can also vote on on-chain referenda on SubSquare. Log in with your Proxy (hot) wallet, navigate to [settings](https://centrifuge.subsquare.io/setting/proxy) and specify your proxied (cold) wallet. 
 
 ![](./images/DefineProxy.png)
 
