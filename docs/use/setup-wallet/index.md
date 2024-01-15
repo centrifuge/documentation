@@ -39,12 +39,10 @@ This will allow you to send to an address of either format.
 
 
 ## Connect your wallet
-When using Centrifuge you can choose between pools deployed on Centrifuge Chain and on Ethereum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with (currently Ethereum and Centrifuge). 
+When using Centrifuge App you can choose between pools deployed on Centrifuge Chain, Ethereum, Base, Celo and Arbitrum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with. 
 
-In the second step select the wallet of your choice. On Centrifuge the system currently supports [Talisman](https://www.talisman.xyz/), [Subwallet](https://chrome.google.com/webstore/detail/subwallet-polkadot-extens/onhogfjeacnfoofkfgppdlbmlmnplgbn) and [Polkadot.js](https://polkadot.js.org/extension/).
-
+In the second step select the wallet of your choice. On Centrifuge Chain the system currently supports [Talisman](https://www.talisman.xyz/), [Subwallet](https://www.subwallet.app/download.html?lang=1), [Polkadot.js](https://polkadot.js.org/extension/), [Fearless Wallet](https://fearlesswallet.io/) and EVM compatible wallets [MetaMask](https://metamask.io/download.html), [Coinbase Wallet](https://www.coinbase.com/wallet) and multiple other wallets through [Wallet Connect](https://walletconnect.com/).
 ![](./images/wallet-component-cf.png#width=40%;)
-
 
 ![](./images/wallet-component-eth.png#width=40%;)
 
