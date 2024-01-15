@@ -59,7 +59,7 @@ Start the onboarding flow to become a KYC-verified investor before onboarding to
 
 Connect the Ethereum or Centrifuge address you want to use depending on the pool and sign the transaction. 
 
-![](./images/choose_network.png)
+![](./images/choose_network_.png)
 
 **2. Select investor type**
 
