@@ -8,7 +8,7 @@ contributors: <Anna Mehrländer:anna@k-f.co>, <Dennis Wellmann:dennis@k-f.co>
 ## Introduction
 Investing in Centrifuge requires onboarding as an investor to each specific pool. Submitting personal information for KYC and signing a subscription document with the pool's issuer usually takes 5-7 minutes, but it can take 1-2 days when the country of citizenship or country of incorporation is not supported by the automated onboarding. 
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_e761fb43f51f747d2613521dedcd1f2f.png)
+![](./images/onboarding_shufti.png)
 
 **Onboard as investor:** Onboarding as an investor is a one-time step to verify personal information for KYC ("Know your customer") through the Centrifuge onboarding flow powered by [Shufti Pro](https://shuftipro.com/). Once an investor is onboarded, they are eligible to invest in any open pool.
 
@@ -53,59 +53,52 @@ Good to know: Don’t worry if you can’t finish the process in one go – you 
 
 Start the onboarding flow to become a KYC-verified investor before onboarding to a pool later. Once you have connected your wallet, click `Verify identity` in the wallet dropdown and start the onboarding flow.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_043f3858737771cdd0d6109e3f4fe4a0.png)
-
+![](./images/pools_overview.png)
 
 **1. Connect and link wallet**
 
 Connect the Ethereum or Centrifuge address you want to use depending on the pool and sign the transaction. 
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_b6d557bf9a221553fabb30b14761dc9f.png)
+![](./images/choose_network.png)
 
 **2. Select investor type**
 
 Choose to onboard as an individual. 
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_375dbe26d76a146e94d56aafc6dfeb6d.png)
+![](./images/start_onboarding.png)
 
 **3. Signer verification**
 
 Enter a valid email address and personal data to complete the onboarding process. The verification of the signer is powered by Shufti Pro.
+![](./images/signer_verification.png)
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_cb2b2da9ceabbc0ab951b79d14c78bf0.png)
 
 **3.1 Upload ID**
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_7ecdb0943b4b746f44d302b1a70919d4.png)
+![](./images/document_upload.png)
 
 
 **3.2 Upload Proof of address and confirm address**
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_d1bf26e2dcc6d770005016ebda30d730.png)
+![](./images/address.png)
 
 **3.3 Face verification**
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_0b61c090c8215de04e65b4a6f2cadfd3.png)
+**4. Confirm email address**
 
-**4. Confirm email address and upload tax information**
+**5. Upload tax information**
 
 Confirm email address by clicking the verification link in the email. Depending on the location of the signer one of the following documents will be required:
 * W-8BEN - individuals based outside US.
 * W9 - U.S. citizen or U.S. person & US entity.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_33bc1067a8b9cd4b331ac09482908878.png)
-
 **5. Identity is verified**
 
 The global onboarding process is now completed. Now it's time to browse the open pools for investment.
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_50137da100b963c808d261b06be45f37.png)
+![](./images/confirmation.png)
 
 ## Onboarding to pool as an individual 
 
 Once you have selected a pool, click `Onboard to [token name]` on the pool's detail page to start the process to onboard as an investor to a specific tranche.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_d8ccfd10fb3cef68e34eb6e8b18585dc.png)
+![](./images/pool_onboarding.png)
 
 **1. Connect wallet**
 
@@ -117,16 +110,14 @@ Since your identity is already verified and tax information is uploaded, the nex
 
 *Read the subscription agreement and click the box below to automatically e-sign the subscription agreement. You don't need to download and sign manually.*
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_958db3979e44d89da6dfbb669c20473d.png)
-
+![](./images/sign_subscriptiona.png)
 **3. Onboarding almost complete.**
 
 Your documents and profile have been sent to the issuer for approval. You will receive an email once the issuer has approved your documents and countersigned the agreement. 
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_eaf58e6ecffe4458d427d01360a8e299.png)
+![](./images/onboarding_almost_complete.png)
 
 After the issuer approves the investment request, the investor receives an email and can now invest into the pool.
-
 
 ## Onboarding as an entity
 
@@ -146,12 +137,11 @@ Enter a valid email address that you can access, legal entity name, country of i
 
 **3.1 Upload Entity's Proof of Address**
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_b2725e4afc51b15a1056e5c0053502cc.png)
+![](./images/entity_proofofaddress.png)
 
 **3.2 Upload Signed and Dated Ownership Structure**
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_cfff4ff58ad893a0b0d429f2623fd2f7.png)
-
+![](./images/ownership_structure.png)
 **4. Confirm email address**
 
 Confirm email address by clicking the verification link in the email. 
@@ -160,14 +150,12 @@ Confirm email address by clicking the verification link in the email.
 
 Add the names of any individuals who own or control more than than 25% of the company. If no person does, please add the largest shareholder.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_7afcd495d32da37565747555bc4b7cf6.png)
-
+![](./images/ubos.png)
 **6. Authorized signer verification**
 
 Add the information of the authorized signer (person who controls the wallet) to complete verification. The verification of the authorized signer is powered by Shufti Pro. This step is identical to individual signer verification.
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_c66628182ceae1e57d6c676fbda1e816.png)
-
+![](./images/authorized_signer.png)
 **6.1 Upload ID of authorized signer**
 **6.2 Upload Proof of Address of authorized signer**
 **6.3 Face verification of authorized signer**
@@ -180,37 +168,9 @@ Depending on the location of the entity one of the following documents will be r
 [W-8BEN-E](https://www.irs.gov/pub/irs-pdf/fw8bene.pdf) - businesses based outside the US
 [W9](https://www.irs.gov/pub/irs-pdf/fw9.pdf) - U.S. citizen or U.S. person & US entity
 
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_473fa643d5883a053bc3b921a484ddf7.png)
-
 **8. Entity and authorized signer is verified**
 
 The global onboarding process is now completed. If the entity is not incorporated in one of the [countries on this list](https://api.shuftipro.com/api/docs/#jurisdiction-codes), you need to wait for manual approval by the service provider Shufti Pro. This might take 1-2 days. You will receive an email when your verification was successful or declined.
-
-## Onboarding to pool as an entity 
-
-Once you have selected a pool, connect and click `Onboard to [token name]` on the pool's detail page to start the process to onboard as an investor to a specific tranche.
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_d8ccfd10fb3cef68e34eb6e8b18585dc.png)
-
-**1. Connect wallet**
-
-If the wallet is disconnected, reconnect and continue where you left off. Connect to an Ethereum or Centrifuge address depending which chain is supported by the pool.
-
-**2. Sign subscription agreement with issuer**
-
-Since your entity is already verified and tax information is uploaded, the next step is the on-chain signature of the subscription agreement. Make sure to have some ETH in your wallet to sign the transaction.
-
-*Read the subscription agreement and click the box below to automatically e-sign the subscription agreement. You don't need to download and sign manually.*
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_958db3979e44d89da6dfbb669c20473d.png)
-
-**3. Onboarding almost complete.**
-
-Your documents and profile have been sent to the issuer for approval. You will receive an email once the issuer approved your documents and countersigned the agreement. 
-
-![](https://storage.googleapis.com/centrifuge-hackmd/upload_eaf58e6ecffe4458d427d01360a8e299.png)
-
-After the issuer approves the investment request, you will receive an email and can now invest into the pool.
 
 ## Resources
 
