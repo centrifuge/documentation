@@ -9,6 +9,8 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Devin Black:devin@centrif
 ### Overview
 [Tinlake](https://legacy.tinlake.centrifuge.io/) is Centrifuge's initial Ethereum-based, open, decentralized smart-contract based platform of asset pools bringing together pool issuers looking for financing and investors who seek to utilize the full potential of decentralized finance (DeFi).
 
+**Note that Tinlake has been replaced by the [Centrifuge App](https://app.centrifuge.io/), however _legacy_ Tinlake pools as described below are still live on the App. Newer pools do not use the below smart contracts, but rather are launched on Centrifuge Chain.**
+
 ### Tinlake from a borrower perspective
 Issuers can responsibly bridge real-world assets, such as invoices, mortgages or streaming royalties into DeFi and access bankless liquidity. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”), using these NFTs as collateral in Tinlake Pools to draw funding.
 

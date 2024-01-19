@@ -22,7 +22,7 @@ You will need them on the `Step 2.` below.
 
 1. ERC20 Approval
 
-    The user should call the ERC20 approval on the investment currency (e.g. USDC on Ethereum) to allow the Liquidity Pools contract to manage those funds for them
+    The user should call the ERC20 approval on the investment currency (e.g. USDC on Ethereum) to allow the Liquidity Pools contract to manage those funds for them.
     
 2. Pick the correct `LiquidityPool` instance
     
@@ -45,17 +45,15 @@ You will need them on the `Step 2.` below.
     
     Then, the pool issuer needs to fulfill this request. 
     
-    Once that's done, yield starts to accrue immediately and the user can claim their tranche tokens.
+    Once that's done, yield starts to accrue immediately, and the user can claim their tranche tokens.
     
 4. Claim the tranche tokens
 
-    Once the request from step 3. is fulfilled, the user can claim their tranche tokens equivalent to `y` by calling:
+    Once the request from step 3 is fulfilled, the user can claim their tranche tokens equivalent to `y` by calling:
 
     **`LiquidityPool.mint(uint256 y, address receiver)`**
     
     **NOTE**: `y` needs to be ≤ `maxDeposit`. The user can find that amount by calling **`LiquidityPool.maxDeposit`**.
-
-<br/>
 
 ## Overview
 
