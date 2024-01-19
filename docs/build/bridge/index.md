@@ -46,7 +46,7 @@ In the bash snippet below we use `jq` to parse a JSON output. You can choose to 
 Otherwise, follow instructions here to install in your distribution: https://stedolan.github.io/jq/.
 
 ## Set environment variables
-**Please reach out to us on [Discord](https://discord.gg/59E2h2pAtb) or [Telegram](https://t.me/centrifuge_chat) for contract addresses.**
+**Please reach out to an admin on [Telegram](https://t.me/centrifuge_chat) for contract addresses.**
 ```=bash
 export ETH_RPC_URL="YOUR_ETH_CLIENT_URL"
 export ETH_PRIVATE_KEY="YOUR_PRIVATE_KEY"
