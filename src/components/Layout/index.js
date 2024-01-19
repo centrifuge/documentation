@@ -104,7 +104,7 @@ const Layout = ({ children, hideFooter, size }) => {
               </TopNavLink>
             </Box>
           </Box>
-          <Box alignSelf="start" justify="center">
+          <Box alignSelf="center" justify="center">
             <a
               href="https://github.com/centrifuge"
               target="_blank"

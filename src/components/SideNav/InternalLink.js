@@ -1,5 +1,5 @@
 import React, { forwardRef, useRef, useImperativeHandle } from "react";
-import { Box, Button, Text } from "grommet";
+import { Box, Text } from "grommet";
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 import { Next } from "grommet-icons";

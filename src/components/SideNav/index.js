@@ -82,7 +82,7 @@ const SideNav = ({ onClose, size }) => {
       align="start"
       gap="medium"
     >
-      {size === "small" && (
+      {size !== "large" && (
         <Box direction="row" fill="horizontal" justify="between" align="center">
           <Link to="/">
             <Image src={docs_wordmark} height="32px" />
@@ -102,14 +102,14 @@ const SideNav = ({ onClose, size }) => {
         {instances
           .filter((instance) => {
             return (
-              size === "small" ||
+              size !== "large" ||
               instance?.name === location?.pathname?.split("/")[1]
             );
           })
           .map((instance, i) => {
             return (
               <Box gap="small" key={i} flex="grow">
-                <InstanceTOC {...instance} size={size} />
+                <InstanceTOC {...instance} size={size} location={location} />
               </Box>
             );
           })}
