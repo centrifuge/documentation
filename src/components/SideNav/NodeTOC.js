@@ -23,6 +23,10 @@ const NodeTOC = ({ slug, title, tableOfContents, secondLevelPages }) => {
         label={title}
         ref={linkRef}
         hasChildren={secondLevelPages.length > 0}
+        onClick={(e) => {
+          e.preventDefault();
+          setExpandChildren(true);
+        }}
       />
       <Box>
         {expandChildren &&

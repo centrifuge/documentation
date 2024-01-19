@@ -55,7 +55,7 @@ const LinkWithSubpages = styled(GatsbyLink)`
 `;
 
 const InternalLink = (
-  { href, label, primary, size, altFont, hasChildren, subpageChild },
+  { href, label, primary, size, altFont, hasChildren, subpageChild, onClick },
   ref
 ) => {
   const linkRef = useRef();
@@ -80,6 +80,7 @@ const InternalLink = (
         activeClassName="activeLink"
         partiallyActive
         hasChildren
+        onClick={onClick}
         {...props}
       >
         <Box direction="row" justify="between" align="center">

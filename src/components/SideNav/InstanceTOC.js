@@ -36,7 +36,7 @@ const InstanceTOC = ({ nodes, size, title, name, icon, location }) => {
           <Image src={icon} height="20px" />
           <button
             style={{border: "none", background: "none", padding: "0", cursor: "pointer"}}
-            onClick={(e) => {
+            onClick={() => {
               setOpenMobileMenu(!openMobileMenu)
             }}
             label={name}
