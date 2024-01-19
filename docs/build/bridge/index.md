@@ -6,10 +6,13 @@ title: Centrifuge - Ethereum Bridge
 
 ## Bridge Contract & Accounts
 ### Token Supply
-The bridge supply can be audited by looking at the number of tokens stored in the bridge account: 4dpEcgqFor2TJw9uWSjx2JpjkNmTic2UjJAK1j9fRtcTUoRu as well as the ERC20 token supply.
+The bridge supply can be audited by comparing the number of tokens stored on the Centrifuge Chain bridge account with the ERC20 token supply of wCFG on Ethereum.
+
+- Centrifuge Chain (CFG): `4dpEcgqFp8UL6eA3b7hhtdj7qftHRZE7g1uadHyuw1WSNSgH`
+- Ethereum (wCFG): `0xc221b7e65ffc80de234bbb6667abdd46593d34f0`
 
 ### Relayer Threshold
-You can submit an RPC call a to a full node and query `chainBridge.relayerThreshold`. This will give you the number of confirmations needed on the Centrifuge Chain to trigger a transfer.
+You can submit an RPC call to a full node and query `chainBridge.relayerThreshold`. This will give you the number of confirmations needed on the Centrifuge Chain to trigger a transfer.
 
 On Ethereum, you can query the Chainbridge public method `_relayerThreshold()(uint8)`:
 
@@ -42,11 +45,12 @@ Follow instructions here: https://github.com/paritytech/substrate/tree/master/bi
 Or run the docker image: https://hub.docker.com/r/parity/subkey
 
 ### Install Jq [Optional]
-In the bash snippet below we use `jq` to parse a JSON output. You can choose to omit that and paste the address manually.
+In the bash snippet below, we use `jq` to parse a JSON output. You can choose to omit that and paste the address manually.
 Otherwise, follow instructions here to install in your distribution: https://stedolan.github.io/jq/.
 
 ## Set environment variables
-**Please reach out to an admin on [Telegram](https://t.me/centrifuge_chat) for contract addresses.**
+**Please submit a ticket on [Discord](https://discord.com/invite/yEzyUq5gxF) for contract addresses.**
+
 ```=bash
 export ETH_RPC_URL="YOUR_ETH_CLIENT_URL"
 export ETH_PRIVATE_KEY="YOUR_PRIVATE_KEY"
@@ -75,7 +79,7 @@ export ETH_GAS_PRICE=40000000000
 
 ## Substrate Native to ERC20 Ethereum
 In the substrate UI, select the `Extrinsics` tab and call `palletBridge.transferNative` with these parameters:
-- Amount: `1000000000000000000` 1 CFG
+- Amount: `1000000000000000000` (= 1 CFG)
 - Recipient: `YOUR_ETH_TARGET_ACCOUNT`
 - Dest Id: `0`
 
