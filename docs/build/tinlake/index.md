@@ -7,9 +7,11 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Devin Black:devin@centrif
 
 ## Introduction to Tinlake on Ethereum
 ### Overview
-[Tinlake](https://tinlake.centrifuge.io/) is Centrifuge's initial Ethereum-based, open, decentralized smart-contract based platform of asset pools bringing together pool issuers looking for financing and investors who seek to utilize the full potential of decentralized finance (DeFi).
+[Tinlake](https://legacy.tinlake.centrifuge.io/) is Centrifuge's initial Ethereum-based, open, decentralized smart-contract based platform of asset pools bringing together pool issuers looking for financing and investors who seek to utilize the full potential of decentralized finance (DeFi).
 
-### Tinlake from a borrower perspective 
+**Note that Tinlake has been replaced by the [Centrifuge App](https://app.centrifuge.io/), however _legacy_ Tinlake pools as described below are still live on the App. Newer pools do not use the below smart contracts, but rather are launched on Centrifuge Chain.**
+
+### Tinlake from a borrower perspective
 Issuers can responsibly bridge real-world assets, such as invoices, mortgages or streaming royalties into DeFi and access bankless liquidity. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”), using these NFTs as collateral in Tinlake Pools to draw funding.
 
 Borrowers (the issuers) have individual assets with varying terms and varying durations drawn against their collateral. The collateral is represented as an NFT, which needs to be locked in the Tinlake contracts to draw a loan from it. Pooling the individual assets removes the cumbersome need of p2p financing for matching maturities, risk, and interest rates, and it allows investors to invest in a diversified portfolio of real world assets.
@@ -26,7 +28,7 @@ The source-code can be found on [Github](https://github.com/centrifuge/tinlake):
 
 
 | Repository | Desc |
-| -------- | -------- | 
+| -------- | -------- |
 | https://github.com/centrifuge/tinlake     | Main Tinlake Repository     |
 | https://github.com/centrifuge/tinlake-math    | Tinlake Math Libary. Adopted from ds-math.     |
 |https://github.com/centrifuge/tinlake-erc20 | Tinlake ERC20 implementation. Re-uses the ERC20 implementation from DAI. |
@@ -61,8 +63,8 @@ Centrifuge has performed multiple audits of its codebase:
 All audit reports can be found [here](https://github.com/centrifuge/security/tree/master/audits).
 
 ### Security Vulnerability Disclosure
-No technology is perfect or perfectly secure. 
-Centrifuge believes that working with skilled security researchers 
+No technology is perfect or perfectly secure.
+Centrifuge believes that working with skilled security researchers
 across the globe is crucial in identifying weaknesses in any technology.
 We welcome the contribution of external security researchers
 and look forward to awarding them for their invaluable contribution to the security of all our users. [Read more about security here](https://centrifuge.io/security/).
@@ -73,22 +75,22 @@ Each Tinlake pool is an individual deployment of the set of smart contracts. A f
 
 ## Overview of Smart Contracts
 ### Introduction
-The design of Tinlake was inspired by the design of the MakerDAO contracts. Some design patterns and best practices like the `auth pattern` have been adopted in the Tinlake contracts. 
+The design of Tinlake was inspired by the design of the MakerDAO contracts. Some design patterns and best practices like the `auth pattern` have been adopted in the Tinlake contracts.
 
-The current version of Tinlake v0.3.5 has around 15 contracts. 
+The current version of Tinlake v0.3.5 has around 15 contracts.
 
 It is important to notice that a deployment of Tinlake can only manage one pool. The current multiple pools on tinlake.centrifuge.io are re-deployments of the same source code.
 
-The reasoning behind this is to keep the logic as simple as possible. 
+The reasoning behind this is to keep the logic as simple as possible.
 
-  
-### Module overview  
+
+### Module overview
 At its core, Tinlake has *two* main modules:
 
 - **Borrower Module**
 - **Lender Module**
 
-Each of the modules consists of multiple contracts written in Solidity.  
+Each of the modules consists of multiple contracts written in Solidity.
 
 The main purpose of the lender module is to handle the investor requests and maintain the pool constraints.
 
@@ -107,7 +109,7 @@ The main actions of an issuer are:
 
 - **open**
     - Opens a new loan
-- **lock** 
+- **lock**
     - Locks a NFT as collateral for loan
 - **borrow**
     - Requests an amount of to borrow from the lender module
@@ -123,11 +125,11 @@ The main actions of an issuer are:
 On the lender side of Tinlake, the there are three main interactions:
 - Supply Order
 - Redeem Order
-- Disburse (Collect) 
+- Disburse (Collect)
 
 
 #### Supply Order
-A user can create a supply order by locking DAI/stablecoin in Tinlake. 
+A user can create a supply order by locking DAI/stablecoin in Tinlake.
 
 ![](./images/supply_order.png#width=60%)
 
@@ -153,14 +155,14 @@ Example:
 - The tokenPrice which Alice gets for her investment is determined when the epoch is closed.
 
 
-#### Redeem Order 
-A user can redeem his DROP or TIN tokens in exchange for DAI/stablecoin with a redeem order.
+#### Redeem Order
+A user can redeem their DROP or TIN tokens in exchange for DAI/stablecoin with a redeem order.
 ![](./images/redeem_order.png#width=60%)
 - During an `epoch`, the locked amount of tokens can be changed
 - After the *epoch* is closed, it is not possible to change the order
 - if the *epoch* is executed, the disburse method must be called to collect the DAI
 
-#### Disburse Order 
+#### Disburse Order
 The disburse method can be called to collect tokens from an executed supply order or DAI/stablecoin from a successfully executed redeem order.
 
 ![](./images/disburse_order.png#width=60%)
@@ -194,7 +196,7 @@ The seniorAsset is the amount which belongs to the senior investor (*DROP*) in a
 **Expected SeniorAsset**
 
 $$
-\text{expectedSeniorAsset} = \text{seniorDebt} + \text{seniorBalance} 
+\text{expectedSeniorAsset} = \text{seniorDebt} + \text{seniorBalance}
 $$
 
 **SeniorDebt**
@@ -202,7 +204,7 @@ $$
 SeniorDebt is the amount which accrues interest for the senior tranche.
 
 $$
-\text{seniorDebt} = \text{seniorDebt} * \text{seniorInterestRate} 
+\text{seniorDebt} = \text{seniorDebt} * \text{seniorInterestRate}
 $$
 
 **SeniorBalance**
@@ -216,7 +218,7 @@ Tinlake Pool:
 | Reserve: 20 DAI  | seniorAsset: 90 DAI |
 ------------------------------------------
 
-In this pool, 80% of the pool value is used for loans. 
+In this pool, 80% of the pool value is used for loans.
 Therefore, 80% of the seniorAsset should be used for interest accumulation.
 
 seniorDebt:     90 DAI * 0.8 =    72 DAI
@@ -251,10 +253,10 @@ The juniorAsset is the amount of the poolValue which belongs to junior investors
 The difference between the seniorAsset value poolValue is the juniorAsset.
 
 $$
-\text{juniorAsset} = max(\text{poolValue} -  \text{seniorAsset}, 0) 
+\text{juniorAsset} = max(\text{poolValue} -  \text{seniorAsset}, 0)
 $$
 
-In case of losses, they are first covered by the junior investors. 
+In case of losses, they are first covered by the junior investors.
 
 
 #### TokenPrices
@@ -280,14 +282,14 @@ Is the total amount of minted ERC20 TIN tokens.
 The seniorAssetRatio is defined as:
 
 $$
-\text{seniorRatio} = \frac{\text{seniorAsset}}{\text{poolValue}} 
+\text{seniorRatio} = \frac{\text{seniorAsset}}{\text{poolValue}}
 $$
 
 It describes the percentage of the poolValue which belongs to senior investors.
 
 $$
-\text{juniorRatio} = 1 - \text{seniorRatio} = 
- \frac{\text{juniorAsset}}{\text{poolValue}} 
+\text{juniorRatio} = 1 - \text{seniorRatio} =
+ \frac{\text{juniorAsset}}{\text{poolValue}}
 $$
 
 The juniorRatio is an important metric in the pool because it defines the protections of the junior investors.
@@ -319,7 +321,7 @@ In an epoch execution, the orders which can be fulfilled are changing the lender
 - $\text{DROP}_{redeem}$
 
 #### Reserve
-Amount of DAI available in the reserve. 
+Amount of DAI available in the reserve.
 
 $$
 \text{Reserve}_{e+1} = \text{Reserve}_{e}  + \text{TIN}_{invest} + \text{DROP}_{invest}  - \text{TIN}_{redeem} - \text{DROP}_{redeem}
@@ -340,7 +342,7 @@ Note: This is a simplification of the seniorAsset formula and does not contain l
 
 #### JuniorAsset
 $$
-\text{JuniorAsset}_{e+1} = NAV + \text{Reserve}_{e+1} - \text{SeniorAsset}_{e+1} 
+\text{JuniorAsset}_{e+1} = NAV + \text{Reserve}_{e+1} - \text{SeniorAsset}_{e+1}
 $$
 
 Note: This is a simplification of the juniorAsset formula.
@@ -378,7 +380,7 @@ All users that place orders within the same epoch are treated equally. Independe
 ```
 - An epoch can be closed after a minimum epoch time has passed
 -  `closeEpoch` creates a snapshot of the current lender state
--  If all orders can be fulfilled without violating any constraints, the epoch is executed 
+-  If all orders can be fulfilled without violating any constraints, the epoch is executed
 -  Otherwise the submission period starts
 
 **executeEpoch**
@@ -401,7 +403,7 @@ function submitSolution(uint seniorRedeem, uint juniorRedeem,
 #### Tranche Module Contracts Overview
 
 A Tinlake deployment has two tranche modules deployed:
-- *DROP* Tranche Module 
+- *DROP* Tranche Module
 - *TIN* Tranche Module
 
 #### Module Diagram
@@ -443,13 +445,13 @@ The `redeemOrder` function can be used to place or revoke a redeem.
 
 **function disburse**
 ```javascript
-function disburse(address usr,  uint endEpoch) public auth returns (uint payoutCurrencyAmount, uint payoutTokenAmount, uint remainingSupplyCurrency, uint remainingRedeemToken) 
+function disburse(address usr,  uint endEpoch) public auth returns (uint payoutCurrencyAmount, uint payoutTokenAmount, uint remainingSupplyCurrency, uint remainingRedeemToken)
 ```
 The `disburse` function can be used after an epoch is over to receive currency and tokens. The collection can be used over multiple epochs.
 
 **Example**
 ```
-Alice: 
+Alice:
 supplyOrder: 100 DAI
 
 Epochs:
@@ -469,11 +471,11 @@ Disburse Amount: 33.33 DROP + 12 DROP = 45.33 DROP
 
 
 
-The contract maintains the supply and redeem orders for epochs. One for DROP and one for TIN. 
+The contract maintains the supply and redeem orders for epochs. One for DROP and one for TIN.
 
-If an epoch gets executed, the tranche contract mints new token or transfers currency to reserve. At any point in time, the contract can hold tokens or the stablecoin-currency. The balances are not considered as part of the Tinlake reserve. 
+If an epoch gets executed, the tranche contract mints new token or transfers currency to reserve. At any point in time, the contract can hold tokens or the stablecoin-currency. The balances are not considered as part of the Tinlake reserve.
 
-A locked amount for a supply or redeem order can be changed as long as the epoch is still ongoing. On the other side, users might have successfully supplied or redeemed their tokens or currency but didn't collect them.   
+A locked amount for a supply or redeem order can be changed as long as the epoch is still ongoing. On the other side, users might have successfully supplied or redeemed their tokens or currency but didn't collect them.
 
 ### Assessor Contract
 ```
@@ -483,7 +485,7 @@ and the constraints of lender module
 ```
 **changeSeniorAsset**
 ```javascript
-function changeSeniorAsset(uint seniorSupply, uint seniorRedeem) external auth 
+function changeSeniorAsset(uint seniorSupply, uint seniorRedeem) external auth
 ```
 
 - Method is called by the coordinator in epoch execute
@@ -492,7 +494,7 @@ function changeSeniorAsset(uint seniorSupply, uint seniorRedeem) external auth
 
 **calcJuniorTokenPrice**
 ```javascript
-  function calcJuniorTokenPrice(uint nav_, uint reserve_) public view returns (uint) 
+  function calcJuniorTokenPrice(uint nav_, uint reserve_) public view returns (uint)
 ```
 - Returns the current junior token price
 
@@ -535,7 +537,7 @@ The borrower contracts use two different types of IDs
     - id of a collateral NFT in Tinlake
     - nftID = keccak(registryAddress, tokenID);
 
-The loanID itself is an ERC721 NFT contract called `Title`. 
+The loanID itself is an ERC721 NFT contract called `Title`.
 
 ### NFT's
 We need to distinguish between three different NFTs used in the Tinlake contracts.
@@ -563,30 +565,30 @@ The collateral NFTs are locked in the Shelf contract.
 
 **issue**
 ```javascript
-  function issue(address registry_, uint token_) external note returns (uint) 
+  function issue(address registry_, uint token_) external note returns (uint)
 ```
 
 This is the first step in the loan process. It issues (or creates) a new loan in Tinlake. Issuing a new loan requires the ownership of a collateral NFT that will be locked in the next step of the loan creation process. It combines a collateral NFT with a loan ID.
 
 **lock**
 ```javascript
-    function lock(uint loan) external owner(loan) note 
+    function lock(uint loan) external owner(loan) note
 ```
 Locks the collateral NFT in the shelf. This requires the ID of an issued loan, and the ownership of both the corresponding loan NFT and the collateral NFT.
 
 **borrow**
 ```javascript
-  function borrow(uint loan, uint currencyAmount) external owner(loan) 
+  function borrow(uint loan, uint currencyAmount) external owner(loan)
 ```
-This starts the borrow process of a loan. The method can only be called if the collateral NFT is locked. 
+This starts the borrow process of a loan. The method can only be called if the collateral NFT is locked.
 
-Calling borrow informs the system of the requested currencyAmount. This requires a `max ceiling` (~max borrow amount) for the collateral NFT to be defined by an oracle in the NAV feed. 
+Calling borrow informs the system of the requested currencyAmount. This requires a `max ceiling` (~max borrow amount) for the collateral NFT to be defined by an oracle in the NAV feed.
 
 If no max ceiling has been provided in the NAV feed contract, the maximum borrow amount would be zero.
 
 **withdraw**
 ```javascript
-  function withdraw(uint loan, uint currencyAmount, address usr) external owner(loan) note 
+  function withdraw(uint loan, uint currencyAmount, address usr) external owner(loan) note
 ```
 - Transfers the requested currencyAmount to the address of the loan owner
 - The method triggers the reserve to ensure the shelf has enough currency
@@ -594,7 +596,7 @@ If no max ceiling has been provided in the NAV feed contract, the maximum borrow
 **repay**
 ```javascript
    function repay(uint loan, uint currencyAmount) external owner(loan) note
-   
+
 ```
 - Repays the debt of a loan
 - Partial repayment is supported
@@ -618,7 +620,7 @@ function close(uint loan) external note
 The pile contract manages the interest rate accumulations for loans.
 ```
 
-The default implementation of the Pile allows creating of different interest rate groups and assigning each loan a rate group. Each interest rate group has an interest rate that is calculated on a per second compounding basis. 
+The default implementation of the Pile allows creating of different interest rate groups and assigning each loan a rate group. Each interest rate group has an interest rate that is calculated on a per second compounding basis.
 
 Its task is to report the outstanding debt for each loan with the method `debt(uint loan) returns (uint)`.
 
@@ -636,9 +638,9 @@ Increases the debt of a loan by a currencyAmount.
 
 **decDebt**
 ```javascript
- function decDebt(uint loan, uint currencyAmount) external auth note 
+ function decDebt(uint loan, uint currencyAmount) external auth note
 ```
-- Increases the debt of a loan by a currencyAmount. Decrease the loan's debt by a currencyAmount. 
+- Increases the debt of a loan by a currencyAmount. Decrease the loan's debt by a currencyAmount.
 
 **debt**
 ```javascript
@@ -711,9 +713,9 @@ A risk group has the following **properties**:
     - Percentage value in Fixed27 (10^27 = ONE)
     - Defines the expected return considering a default rate and loss given default
 
-## NAV 
+## NAV
 ### Introduction to Tinlake NAV
-For a high level introduction to the NAV in Tinlake, please visit the [Pool Valuation (NAV) documentation](https://docs.centrifuge.io/learn/pool-valuation/). 
+For a high level introduction to the NAV in Tinlake, please visit the [Pool Valuation (NAV) documentation](https://docs.centrifuge.io/learn/pool-valuation/).
 In this document, the NAV formulas as seen as given.
 
 The focus of this section is how to efficiently implement the NAV calculation on-chain in Solidity.
@@ -723,7 +725,7 @@ The reader should be familiar with the following financial concepts:
 - **FV** (Future Value)
 - **P** (Present Value)
 - **D** (Discount Rate)
-- **PD** (Probability of Default) 
+- **PD** (Probability of Default)
 - **LGD** (Loss Given Default)
 - **EL** (Expected Loss)
 
@@ -757,7 +759,7 @@ Expected Return = 1 - ExpectedLoss
 Note, `Expected Return` is also denoted Recovery Rate in finance. In the Solidity contract, the variable is called **recoveryRatePD**.
 
 #### Future Value
-Calculation for the future value of a loan. 
+Calculation for the future value of a loan.
 ```
 P.....principal (loan borrow amount)
 i.....interest rate per second
@@ -779,7 +781,7 @@ ExpectedLoss: 0.01 * 0.2 = 0.002
 ExpectedReturnFactor: 1 - 0.002 = 0.998
 FV = 100 DAI * 1.05^(2023-2021) * 0.998 = 100 * 1.05^2 * 0.998 = 110.0295 DAI
 
-Note: For illustration, time and interest is in years instead of seconds. 
+Note: For illustration, time and interest is in years instead of seconds.
 
 #### Present Value of a Loan
 ```
@@ -802,13 +804,13 @@ It is important to note that the present value of the loans is depending on the 
 
 Alice loan has a future value of 110.0295 DAI.
 
-Let's assume a discount rate of 3.00%. 
+Let's assume a discount rate of 3.00%.
 
 In the year 2022 the present value would be:
 
 p = 110.0295/(1.03^(2023-2022)) = 106.82 DAI
 
-Note: For illustration time and interest is in year instead of seconds. 
+Note: For illustration time and interest is in year instead of seconds.
 
 #### Total Discounting
 The total discounting is the sum over all present values of the loans before the **maturity date**.
@@ -860,7 +862,7 @@ A write-off group has three attributes
 The write-group has a different interest rate for the loan debt and a writeOff factor. Most Tinlake pools have around 3-4 different write off groups with different factors (0% - 100%.
 
 ```
-wf....write off factor 
+wf....write off factor
 debt... debt of the loan
 ```
 
@@ -899,8 +901,8 @@ The loans with the same write-off group can be grouped together in the pile cont
 
 This implementation is just done theoretically to introduce a simple solution.
 
-#### NAV_v1: Grouping by maturity date 
-In the first implementation of NAV, we grouped the different loans together by maturity date in a linked-list. Instead of iterating over all loans, we only needed to iterate over all different maturity dates in the future. 
+#### NAV_v1: Grouping by maturity date
+In the first implementation of NAV, we grouped the different loans together by maturity date in a linked-list. Instead of iterating over all loans, we only needed to iterate over all different maturity dates in the future.
 
 **Bucket**
 A bucket includes the future value of all loans with the same maturity date.
@@ -944,7 +946,7 @@ $$
 $$
 
 $$
-\quad \quad \quad \quad  \quad \quad \quad \quad =  \text{totalDiscount}_t * d 
+\quad \quad \quad \quad  \quad \quad \quad \quad =  \text{totalDiscount}_t * d
 $$
 
 
@@ -1007,7 +1009,7 @@ In the final Solidity implementation, we don't iterate over all loans to calcula
                 errTotalDiscount = safeAdd(errPV, rmul(b, rpow(discountRate.value, safeSub(nnow, i), ONE)));
             }
         }
-        
+
         uint totalDiscount = safeSub(rmul(latestDiscount, rpow(discountRate.value, safeSub(nnow, lastNAVUpdate), ONE)), errTotalDiscount),
 ```
 
@@ -1019,7 +1021,7 @@ Afterwards the new loan needs to be added to the `totalDiscount` and `latestNAV`
 
 ## Epochs
 ### Introduction to epochs
-If the demand of investments or redemptions is higher than the available capital, new investments or redemption would result in a first come, first serve situation. Especially if multiple parties want to redeem their tokens after loans from borrowers are repaid. On Ethereum this would result in transaction front-running and very high gas fees for all participants. 
+If the demand of investments or redemptions is higher than the available capital, new investments or redemption would result in a first come, first serve situation. Especially if multiple parties want to redeem their tokens after loans from borrowers are repaid. On Ethereum this would result in transaction front-running and very high gas fees for all participants.
 
 To avoid such a situation, the supply and redemption orders happen in epochs.
 
@@ -1029,7 +1031,7 @@ After the *minimum epoch time* has passed, anyone can execute the epoch.
 
 ![](./images/epochs.png#width=50%)
 
-An epoch can be executed after it is closed to calculate how many supply and redeem orders can be fulfilled. 
+An epoch can be executed after it is closed to calculate how many supply and redeem orders can be fulfilled.
 
 The goal is to fulfill as many orders as possible without violating any pool constraints.
 
@@ -1047,7 +1049,7 @@ In Tinlake, there exists four different order types:
 
 - Order types have different priorities
 - All orders within one order type are valued equally.
-- There is no first come first serve principle. 
+- There is no first come first serve principle.
 
 SeniorRedeemOrders have the highest priority. The goal is to maximize the seniorRedeemOrders and afterwards consider the other order types. The supplyOrders can help to increase the seniorRedeem fulfillment rate.
 
@@ -1055,7 +1057,7 @@ The idea is to fulfill the maximum amount of orders. If it is not possible to fu
 
 For each order type the fulfillment rate is calculated depending on the pool constraints.
 
-The amount left is automatically re-ordered in the next `epoch`. 
+The amount left is automatically re-ordered in the next `epoch`.
 
 After an `epoch` is closed, the current token prices are calculated. The tokenPrice reflects a current valuation of the portfolio expressed in the NAV.
 
@@ -1071,19 +1073,19 @@ The fulfillment of *order types* is constricted by the so-called pool constraint
 
 The following constraints are defined by the asset originator
 
-| Constraints | Desc | 
-| -------- | -------- | 
+| Constraints | Desc |
+| -------- | -------- |
 | C1: Currency Constraint     | It is not possible to allow more redeems than there is currency in the reserve. (after considering the new investments)     |
 | C2: Max Reserve Constraint| The total amount of DAI in the reserve is restricted by the maxReserve parameter. The maxReserve can be updated by the issuer. |
 | C3: MaxSeniorRatio | New supplies and new redemptions are not allowed to violate maxSeniorRatio. A maxSeniorRatio implicitly guarantees a minimum juniorRatio. The juniorRatio protects the senior investors. |
 
 ## The Solver
 ### Why a Solver?
-If all (maximum) invest and redeem orders can be fulfilled without violating any constraints all orders will be executed upon epoch close. 
+If all (maximum) invest and redeem orders can be fulfilled without violating any constraints all orders will be executed upon epoch close.
 
 If not all orders can be fully executed, a solution is required to calculate which orders can be executed adhering to the pool parameters and order priorities. Find more non-technical background on how the solver works in relation to epochs [here](https://docs.centrifuge.io/learn/epoch/#the-solver-mechanism).
 
-Instead of finding the optimal solution on-chain through smart contract calculations, optimal solutions can be calculated off-chain and submitted to the pool. In this approach, the smart contracts only validate and score submitted solutions. The smart contracts allow anyone to submit a solution in the epoch execution state. They then verify that the solution is valid and accept the best submitted solution according to the execution priorities. 
+Instead of finding the optimal solution on-chain through smart contract calculations, optimal solutions can be calculated off-chain and submitted to the pool. In this approach, the smart contracts only validate and score submitted solutions. The smart contracts allow anyone to submit a solution in the epoch execution state. They then verify that the solution is valid and accept the best submitted solution according to the execution priorities.
 
 This approach reduces the complexity and costs of the contracts and allows to easily add new constraints like a `minimumReserve` for example.
 
@@ -1110,7 +1112,7 @@ If in an epoch execution it is not possible to fulfill all orders. the pool open
 - A valid solution is scored and can be compared with others
 - The solution with the best score is stored on-chain
 - A minimum challenge period starts after the first valid solution is submitted
-- After the minimum challenge period the epoch can be executed with the best solution 
+- After the minimum challenge period the epoch can be executed with the best solution
 
 ### Challenge Period
 
@@ -1130,7 +1132,7 @@ From a risk perspective it only requires one honest submitter for having the opt
 
 We included a solver library (based on wasm) in the Tinlake UI so everyone can submit the optimal solution as easy as possible.
 
-It is easy to detect off-chain if a non-optimal solution has been submitted to the contracts. 
+It is easy to detect off-chain if a non-optimal solution has been submitted to the contracts.
 
 ### LP-Constraints
 
@@ -1164,7 +1166,7 @@ $$
 $$
 
 ```
-Example: 
+Example:
 Reserve: 5 DAI
 DROP supplyOrder: 10 DAI
 DROP redeemOrder: 15 DAI
@@ -1269,7 +1271,7 @@ Example:
 reserve: 100k DAI
 maxReserve: 110 DAI
 
-seniorRedeemOrder: 20k 
+seniorRedeemOrder: 20k
 The 20k seniorRedeem orders could fix the unhealthy state.
 
 Instead, if we only would have 5k redeemOrders, we could only improve the reserve constraint.
@@ -1354,14 +1356,14 @@ The rebalancing is happening as part of the epochExecute.
 If a loan is repaid or borrowed, it changes the NAV and reserve. The borrow and repayment amounts are updates to the balance between `seniorDebt` and `seniorBalance`.
 
 **JuniorAsset increase**
-The juniorAsset is defined as the difference between the poolValue and the seniorAsset. Since the NAV is continuously increasing, it results in a juniorAsset increase. This increase of the juniorAsset is only considered in the rebalancing at the end of an epoch. 
+The juniorAsset is defined as the difference between the poolValue and the seniorAsset. Since the NAV is continuously increasing, it results in a juniorAsset increase. This increase of the juniorAsset is only considered in the rebalancing at the end of an epoch.
 
 ### Off-chain - LP Solver Library
 The solver is currently run from our Tinlake Bot, as well as manually callable from the Tinlake UI.
 
 These are both Javascript environments. However, no linear solver exists in vanilla Javascript which fits our requirements.
 
-Therefore, a while back we ported CLP, a well tested C++ based linear solver, using WebAssembly: 
+Therefore, a while back we ported CLP, a well tested C++ based linear solver, using WebAssembly:
 
 - https://github.com/centrifuge/clp-wasm
 
@@ -1369,10 +1371,7 @@ The clp-wasm library contains a C++ wrapper which makes sure the precision we ne
 
 The actual input and constraints are then defined in tinlake.js, our JS client library for Tinlake.
 
-The code for this can be found here: https://github.com/centrifuge/apps/blob/main/tinlake.js/src/services/solver/solver.ts. 
-
-We have also defined test cases in JSON format: https://github.com/centrifuge/apps/tree/main/tinlake.js/src/services/solver/problems.
-
+The code for this can be found [here](https://github.com/centrifuge/tinlake.js).
 
 ## Maker integration
 Some DROP tokens of specific Tinlake pools are accepted as collateral in Maker. In this case, a `Debt ceiling` is defined my Maker governance. In exchange for providing liquidity, DROP tokens are locked in a Maker vault as collateral. Some pools also include an additional over-collateralization as an additional protection. In a liquidation scenario, the overcollateralization would be paid by TIN token holders.
@@ -1404,7 +1403,7 @@ The creditline defines how much an asset originator wants to borrow at maximum f
 **Raise/Sink**
 A raise or sink of the creditline is not triggering a borrowing or repayment of DAI.
 
-It only indicates that it will happen soon and ensures that the pool is ready for it. 
+It only indicates that it will happen soon and ensures that the pool is ready for it.
 
 The pool check if a borrow from Maker would violate any of the constraints.
 
@@ -1433,7 +1432,7 @@ seniorRatio: 0,9
 It would be not possible for TIN investors to redeem after the raise.
 ```
 
-From the constraint perspective in the epoch, it doesn't matter if the amount is already borrowed or not. 
+From the constraint perspective in the epoch, it doesn't matter if the amount is already borrowed or not.
 
 **Draw**
 Borrows DAI from Maker and uses DROP as collateral.
@@ -1448,7 +1447,7 @@ Overcollateralization of 110%
 dropPrice: 1.5
 draw Amount: 100 DAI
 collateralValue: 100 DAI 1.10 = 110 DAI
-collateral in DROP: 110 DAI/1.5 = 73.33 DROP 
+collateral in DROP: 110 DAI/1.5 = 73.33 DROP
 ```
 
 The required over-collateralization of DROP for Maker is paid by TIN investors in case of  liquidation scenario.
@@ -1475,15 +1474,15 @@ transfer DROP to MKR
 deposit: 10 DAI into the reserve
 increase seniorAsset: 11 DAI
 
-State: 
+State:
 seniorAsset:  91 DAI | 91 DROP | dropPrice: 1.0
 juniorAsset:  19 DAI | 20 TIN | tinPrice: 19/20 = 0.95
 Reserve:     110 DAI
-seniorRatio:  91/110: 0.82 
+seniorRatio:  91/110: 0.82
 
 ```
 
-In case of a liquidation the TIN investors would have to pay for the additional DROP. 
+In case of a liquidation the TIN investors would have to pay for the additional DROP.
 
 ```
 In the example above the TIN price would
