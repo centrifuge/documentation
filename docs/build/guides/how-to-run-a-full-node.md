@@ -156,7 +156,7 @@ centrifuge:
 ```
 
 
-Refer to the CLI arguments on section 1.
+**Refer to the CLI arguments on section 1.**
 
 #### Run the container
 
@@ -238,7 +238,7 @@ ExecStart=/var/lib/centrifuge-data/centrifuge-chain \
 WantedBy=multi-user.target
 EOF
 ```
-Refer to the CLI arguments on section 1.
+**Refer to the CLI arguments on section 1.**
 
 
 
