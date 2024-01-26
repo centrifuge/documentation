@@ -22,8 +22,7 @@ process manager restart the process if it reaches memory limits and hangs or cra
 
 ### 1.1 Full node
 CLI documentation: https://docs.substrate.io/reference/command-line-tools/node-template/
-```
-    --port=30333
+```--port=30333
     --rpc-port=9933
     --rpc-external
     --rpc-cors=all
@@ -57,8 +56,7 @@ Everything same as above but adding `--prune=archive` before the `--` on the CLI
 The specific format will depend on how you deploy your node:
 
 Docker/Kuberentes
-```
-    - "--port=30333"
+```- "--port=30333"
     - "--rpc-port=9933"
     ...
     - "--chain=polkadot"
@@ -80,13 +78,13 @@ ExecStart=/var/lib/centrifuge-data/centrifuge-chain \
 #### 1.4.1 Mainnet (Centrifuge Polkadot parachain)
 Bootnodes:
 ```
+
     --bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF
     --bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc
     --bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p
 ```
 Chain args:
-```
-    --chain=centrifuge
+```--chain=centrifuge
     --parachain-id=2031
     --
     --chain=polkadot
@@ -94,14 +92,12 @@ Chain args:
 
 #### 1.4.2 Testnet (Centrifuge DEMO)
 Bootnodes:
-```
-    - --bootnodes=/ip4/35.246.168.210/tcp/30333/p2p/12D3KooWCtdW3HWLuxDLD2fuTZfTspCJDHWxnonKCEgT5JfGsoYQ
+```- --bootnodes=/ip4/35.246.168.210/tcp/30333/p2p/12D3KooWCtdW3HWLuxDLD2fuTZfTspCJDHWxnonKCEgT5JfGsoYQ
     - --bootnodes=/ip4/34.89.182.4/tcp/30333/p2p/12D3KooWETyS1VZTS4fS7dBZpXbPKMP129dy4KpFSWoErBWJ5i5d
     - --bootnodes=/ip4/35.198.144.90/tcp/30333/p2p/12D3KooWMJPzvEp5Jhea8eKsUDufBbAzGrn265GcaCmcnp3koPk4
 ```
 Chain args:
-```
-    --chain=/resources/demo-spec-raw.json
+```--chain=/resources/demo-spec-raw.json
     --parachain-id=2031
     --
     --chain=/resources/westend-alphanet-raw-specs.json
@@ -118,10 +114,9 @@ or be fully trustless by cloning the [Centrifuge Chain repository](https://githu
 and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine),
 if building the image yourself make sure you have checkout the latest tag for the most recent release:
 
-```
-git clone
-git checkout
-docker buildx
+```git clone https://github.com/centrifuge/centrifuge-chain.git
+git checkout vX.Y.Z
+docker buildx build -f docker/centrifuge-chain/Dockerfile . -t YOUR_TAG
 
 ```
 
