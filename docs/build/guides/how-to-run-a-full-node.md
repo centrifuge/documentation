@@ -2,7 +2,7 @@
 id: how-to-run-a-centrifuge-node
 order: 2
 title: How to run a Centrifuge node
-contributors: "@hieronx @gpmayorga"
+contributors: <Jeroen:jeroen@k-f.co> , <Guillermo:guillermo@k-f.co>
 --- 
 # Running a Centrifuge fullnode
 
