@@ -18,7 +18,7 @@ process manager restart the process if it reaches memory limits and hangs or cra
 - Install [`Docker`](https://www.docker.com/) OR [`rustup`](https://rustup.rs/)
 
 
-## 1. About CLI arguments
+## 1. CLI arguments
 
 ### 1.1 Full node
 CLI documentation: https://docs.substrate.io/reference/command-line-tools/node-template/
@@ -95,18 +95,19 @@ Chain args:
 #### 1.4.2 Testnet (Centrifuge DEMO)
 Bootnodes:
 ```
-    --bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF
-    --bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc
-    --bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p
+    - --bootnodes=/ip4/35.246.168.210/tcp/30333/p2p/12D3KooWCtdW3HWLuxDLD2fuTZfTspCJDHWxnonKCEgT5JfGsoYQ
+    - --bootnodes=/ip4/34.89.182.4/tcp/30333/p2p/12D3KooWETyS1VZTS4fS7dBZpXbPKMP129dy4KpFSWoErBWJ5i5d
+    - --bootnodes=/ip4/35.198.144.90/tcp/30333/p2p/12D3KooWMJPzvEp5Jhea8eKsUDufBbAzGrn265GcaCmcnp3koPk4
 ```
 Chain args:
 ```
-    --chain=centrifuge
+    --chain=/resources/demo-spec-raw.json
     --parachain-id=2031
     --
-    --chain=polkadot
+    --chain=/resources/westend-alphanet-raw-specs.json
 ```
-
+`demo-spec-raw.json`and `westend-alphanet-raw-specs.json` can be found either in the path above 
+for the docker container or in the `node/res/` folder [in the codebase](https://github.com/centrifuge/centrifuge-chain/tree/main/node/res) 
 
 ## 2. Recommended deployments
 
@@ -115,7 +116,14 @@ Chain args:
 You can use the container published on the [Centrifuge Docker Hub repo](https://hub.docker.com/r/centrifugeio/centrifuge-chain)
 or be fully trustless by cloning the [Centrifuge Chain repository](https://github.com/centrifuge/centrifuge-chain/)
 and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine),
-in the latter make sure to checkout the specific commit for the latest release before building.
+if building the image yourself make sure you have checkout the latest tag for the most recent release:
+
+```
+git clone
+git checkout
+docker buildx
+
+```
 
 #### Create docker compose file
 
@@ -165,7 +173,7 @@ mkdir /var/lib/centrifuge-data  # Or use a folder location of you choosing. But 
 chown -R centrifuge_service /var/lib/centrifuge-data
 ```
 
-#### Getting the binary
+#### 2.2 Getting the binary
 
 ##### A. Build your own (recommended)
     
@@ -263,6 +271,14 @@ localhost:9933
 ```
 
 Expected output if node is synced is `{"jsonrpc":"2.0","result":false,"id":1}`
+
+### 3.1 Use ws-health-exporter
+
+You can monitor your node to make sure it is ready to serve RPC calls using parity's ws-health-exporter. More info [on the parity's Docker Hub page](https://hub.docker.com/r/paritytech/ws-health-exporter)
+
+### 3.2 Monitoring
+As it happens with any blockchain, the storage will run out eventually, it's recommended to monitor your storage or use any kind of auto-scaling storage to account for this.
+It is also recommended to setup a reverse proxy or an API gateway to monitor the API calls and see the response rate and the response codes to look for errors over time. How to do this is out of the scope of this documentation
 
 ### Troubleshooting
 #### Error logs during syncing
