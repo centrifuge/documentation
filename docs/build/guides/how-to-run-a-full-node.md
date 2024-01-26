@@ -22,27 +22,28 @@ process manager restart the process if it reaches memory limits and hangs or cra
 
 ### 1.1 Full node
 CLI documentation: https://docs.substrate.io/reference/command-line-tools/node-template/
-```--port=30333
-    --rpc-port=9933
-    --rpc-external
-    --rpc-cors=all
-    --chain=centrifuge
-    --parachain-id=2031
-    --base-path=/data
-    --log=main,info,xcm=trace,xcm-executor=trace
-    --database=rocksdb
-    --execution=wasm
-    --wasm-execution=compiled
-    --bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF
-    --bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc
-    --bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p
-    --name=YOUR_NODE_NAME
-    
-    --
-    --execution=wasm
-    --wasm-execution=compiled
-    --chain=polkadot
-    --sync=fast
+```bash
+--port=30333
+--rpc-port=9933
+--rpc-external
+--rpc-cors=all
+--chain=centrifuge
+--parachain-id=2031
+--base-path=/data
+--log=main,info,xcm=trace,xcm-executor=trace
+--database=rocksdb
+--execution=wasm
+--wasm-execution=compiled
+--bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF
+--bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc
+--bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p
+--name=YOUR_NODE_NAME
+
+--
+--execution=wasm
+--wasm-execution=compiled
+--chain=polkadot
+--sync=fast
 ```
 - The bootnodes, parachain-id and chain options will change for each network.
 - Use a descriptive NODE_NAME
@@ -56,15 +57,16 @@ Everything same as above but adding `--prune=archive` before the `--` on the CLI
 The specific format will depend on how you deploy your node:
 
 Docker/Kuberentes
-```- "--port=30333"
-    - "--rpc-port=9933"
-    ...
-    - "--chain=polkadot"
-    - "--sync=fast"    
+```bash 
+- "--port=30333"
+- "--rpc-port=9933"
+...
+- "--chain=polkadot"
+- "--sync=fast"    
 ```
 
 Systemd
-```
+```bash
 ExecStart=/var/lib/centrifuge-data/centrifuge-chain \
     --port=30333 \
     --rpc-port=9933 \
@@ -77,30 +79,32 @@ ExecStart=/var/lib/centrifuge-data/centrifuge-chain \
 ### 1.4 Network values
 #### 1.4.1 Mainnet (Centrifuge Polkadot parachain)
 Bootnodes:
-```
-
-    --bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF
-    --bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc
-    --bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p
+```bash 
+--bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF
+--bootnodes=/ip4/34.159.117.205/tcp/30333/ws/p2p/12D3KooWMspZo4aMEXWBH4UXm3gfiVkeu1AE68Y2JDdVzU723QPc
+--bootnodes=/dns4/node-7010781199623471104-0.p2p.onfinality.io/tcp/23564/ws/p2p/12D3KooWSN6VXWPvo1hoT5rb5hei5B7YdTWeUyDcc42oTPwLGF2p
 ```
 Chain args:
-```--chain=centrifuge
-    --parachain-id=2031
-    --
-    --chain=polkadot
+```bash
+--chain=centrifuge
+--parachain-id=2031
+--
+--chain=polkadot
 ```
 
 #### 1.4.2 Testnet (Centrifuge DEMO)
 Bootnodes:
-```- --bootnodes=/ip4/35.246.168.210/tcp/30333/p2p/12D3KooWCtdW3HWLuxDLD2fuTZfTspCJDHWxnonKCEgT5JfGsoYQ
-    - --bootnodes=/ip4/34.89.182.4/tcp/30333/p2p/12D3KooWETyS1VZTS4fS7dBZpXbPKMP129dy4KpFSWoErBWJ5i5d
-    - --bootnodes=/ip4/35.198.144.90/tcp/30333/p2p/12D3KooWMJPzvEp5Jhea8eKsUDufBbAzGrn265GcaCmcnp3koPk4
+```bash
+- --bootnodes=/ip4/35.246.168.210/tcp/30333/p2p/12D3KooWCtdW3HWLuxDLD2fuTZfTspCJDHWxnonKCEgT5JfGsoYQ
+- --bootnodes=/ip4/34.89.182.4/tcp/30333/p2p/12D3KooWETyS1VZTS4fS7dBZpXbPKMP129dy4KpFSWoErBWJ5i5d
+- --bootnodes=/ip4/35.198.144.90/tcp/30333/p2p/12D3KooWMJPzvEp5Jhea8eKsUDufBbAzGrn265GcaCmcnp3koPk4
 ```
 Chain args:
-```--chain=/resources/demo-spec-raw.json
-    --parachain-id=2031
-    --
-    --chain=/resources/westend-alphanet-raw-specs.json
+```bash
+--chain=/resources/demo-spec-raw.json
+--parachain-id=2031
+--
+--chain=/resources/westend-alphanet-raw-specs.json
 ```
 `demo-spec-raw.json`and `westend-alphanet-raw-specs.json` can be found either in the path above 
 for the docker container or in the `node/res/` folder [in the codebase](https://github.com/centrifuge/centrifuge-chain/tree/main/node/res) 
@@ -114,7 +118,8 @@ or be fully trustless by cloning the [Centrifuge Chain repository](https://githu
 and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine),
 if building the image yourself make sure you have checkout the latest tag for the most recent release:
 
-```git clone https://github.com/centrifuge/centrifuge-chain.git
+```bash
+git clone https://github.com/centrifuge/centrifuge-chain.git
 git checkout vX.Y.Z
 docker buildx build -f docker/centrifuge-chain/Dockerfile . -t YOUR_TAG
 
@@ -256,8 +261,7 @@ sudo journalctl -u centrifuge.service -f
 
 ### 3. Test and health monitoring
 
-Once your node is fully synced, you can run a cURL request to see the status of your node, use
-the port you configured in your `/etc/systemd/system/centrifuge.service` file above
+Once your node is fully synced, you can run a cURL request to see the status of your node, replace localhost for your URL if your node is externally available
 
 ```bash
 curl -H "Content-Type: application/json" \
@@ -269,7 +273,9 @@ Expected output if node is synced is `{"jsonrpc":"2.0","result":false,"id":1}`
 
 ### 3.1 Use ws-health-exporter
 
-You can monitor your node to make sure it is ready to serve RPC calls using parity's ws-health-exporter. More info [on the parity's Docker Hub page](https://hub.docker.com/r/paritytech/ws-health-exporter)
+You can monitor your node to make sure it is ready to serve RPC calls using parity's ws-health-exporter.
+
+More info [on the parity's Docker Hub page](https://hub.docker.com/r/paritytech/ws-health-exporter)
 
 ### 3.2 Monitoring
 As it happens with any blockchain, the storage will run out eventually, it's recommended to monitor your storage or use any kind of auto-scaling storage to account for this.
