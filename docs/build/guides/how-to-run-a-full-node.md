@@ -10,8 +10,7 @@ contributors: <Jeroen:jeroen@k-f.co> , <Guillermo:guillermo@k-f.co>
     - minimum: 2+ cores CPU, 4GB+ RAM, 200GB+ free storage space
     - recommended: 4+ CPU cores, 16GB RAM, 1TB SSD or faster storage
 
-Note: Synching and Runtime Upgrades might put extra load on the node. It is recommended to burst the resources until the node is fully synched and have an
-process manager restart the process if it either reaches memory limits and hangs or crashes
+Note: Syncing and Runtime Upgrades might put extra load on the node. It is recommended to increase the resources until the node is fully synced. Use a process manager to restart the process if it reaches memory limits, hangs, or crashes.
 - Check out [Centrifuge Releases](https://github.com/centrifuge/centrifuge-chain/releases) to pick the latest production release
 - Install [`Docker`](https://www.docker.com/) OR [`rustup`](https://rustup.rs/)
 
@@ -43,7 +42,7 @@ CLI documentation: https://docs.substrate.io/reference/command-line-tools/node-t
 --chain=polkadot
 --sync=fast
 ```
-- The bootnodes, parachain-id and chain options will change for each network.
+- The bootnodes, parachain-id, and chain options will change for each network.
 - Use a descriptive NODE_NAME
 - Decide on the [log levels](https://docs.substrate.io/deploy/deployment-options/) depending on your setup
 
@@ -114,7 +113,7 @@ for the docker container or in the `node/res/` folder [in the codebase](https://
 You can use the container published on the [Centrifuge Docker Hub repo](https://hub.docker.com/r/centrifugeio/centrifuge-chain)
 or be fully trustless by cloning the [Centrifuge Chain repository](https://github.com/centrifuge/centrifuge-chain/)
 and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine).
-If building the image yourself make sure you have checkout the latest tag for the most recent release:
+If you are building the image yourself, make sure you have checked out the latest tag for the most recent release:
 
 ```bash
 git clone https://github.com/centrifuge/centrifuge-chain.git
@@ -299,7 +298,7 @@ INFO tokio-runtime-worker substrate: [Parachain] ⚙️  Syncing 469.4 bps, targ
 everything is working correctly. Once the chain is fully synced, the errors are expected to vanish.
 
 #### Stalled Syncing
-If the chain stops syncing, mostly due to the unavailable blocks, then please restart your node. The reason is in most cases that the p2p-view of your node is incorrect at the moment.
+If the chain stops syncing, often due to unavailable blocks, please restart your node. The reason is in most cases that the p2p-view of your node is incorrect at the moment.
 Resulting in your node dropping the peers and being unable to further sync. A restart helps in theses cases.
 
 Example logs will look like the following:
@@ -308,7 +307,7 @@ WARN tokio-runtime-worker sync: [Parachain] 💔 Error importing block 0x88591cb
 ```
 
 #### Changed bootnode or peer identities
-It is common that bootnodes change their p2p-identity leading to the following logs:
+It is common that bootnodes change their p2p-identity, leading to the following logs:
 
 ```bash
 WARN tokio-runtime-worker sc_network::service: [Relaychain] 💔 The bootnode you want to connect to at `/dns/polkadot-bootnode.polkadotters.com/tcp/30333/p2p/12D3KooWCgNAXvn3spYBeieVWeZ5V5jcMha5Qq1hLMtGTcFPk93Y` provided a different peer ID `12D3KooWPAVUgBaBk6n8SztLrMk8ESByncbAfRKUdxY1nygb9zG3` than the one you expect `12D3KooWCgNAXvn3spYBeieVWeZ5V5jcMha5Qq1hLMtGTcFPk93Y`.
