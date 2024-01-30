@@ -8,12 +8,11 @@ contributors: <Jeroen:jeroen@k-f.co> , <Guillermo:guillermo@k-f.co>
 
 ## Hardware requirements
 
-- Hardware requirements
     - minimum: 2+ cores CPU, 4GB+ RAM, 200GB+ free storage space
     - recommended: 4+ CPU cores, 16GB RAM, 1TB SSD or faster storage
 
-Note: synching and Runtime Upgrades might put extra load on the node, it is recommended to burst the resources until the node is fully synched and have an
-process manager restart the process if it reaches memory limits and hangs or crashes
+Note: Synching and Runtime Upgrades might put extra load on the node. It is recommended to burst the resources until the node is fully synched and have an
+process manager restart the process if it either reaches memory limits and hangs or crashes
 - Check out [Centrifuge Releases](https://github.com/centrifuge/centrifuge-chain/releases) to pick the latest production release
 - Install [`Docker`](https://www.docker.com/) OR [`rustup`](https://rustup.rs/)
 
@@ -56,7 +55,7 @@ Everything same as above but adding `--prune=archive` before the `--` on the CLI
 ### 1.3 Arguments formatting
 The specific format will depend on how you deploy your node:
 
-Docker/Kuberentes
+Docker/Kubernetes
 ```bash 
 - "--port=30333"
 - "--rpc-port=9933"
@@ -77,7 +76,7 @@ ExecStart=/var/lib/centrifuge-data/centrifuge-chain \
 ```
 
 ### 1.4 Network values
-#### 1.4.1 Mainnet (Centrifuge Polkadot parachain)
+#### 1.4.1 Mainnet (Centrifuge Chain)
 Bootnodes:
 ```bash 
 --bootnodes=/ip4/35.198.171.148/tcp/30333/ws/p2p/12D3KooWDXDwSdqi8wB1Vjjs5SVpAfk6neadvNTPAik5mQXqV7jF
@@ -92,7 +91,7 @@ Chain args:
 --chain=polkadot
 ```
 
-#### 1.4.2 Testnet (Centrifuge DEMO)
+#### 1.4.2 Testnet (Centrifuge Demo)
 Bootnodes:
 ```bash
 - --bootnodes=/ip4/35.246.168.210/tcp/30333/p2p/12D3KooWCtdW3HWLuxDLD2fuTZfTspCJDHWxnonKCEgT5JfGsoYQ
@@ -115,8 +114,8 @@ for the docker container or in the `node/res/` folder [in the codebase](https://
 
 You can use the container published on the [Centrifuge Docker Hub repo](https://hub.docker.com/r/centrifugeio/centrifuge-chain)
 or be fully trustless by cloning the [Centrifuge Chain repository](https://github.com/centrifuge/centrifuge-chain/)
-and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine),
-if building the image yourself make sure you have checkout the latest tag for the most recent release:
+and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine).
+If building the image yourself make sure you have checkout the latest tag for the most recent release:
 
 ```bash
 git clone https://github.com/centrifuge/centrifuge-chain.git
@@ -156,7 +155,7 @@ centrifuge:
 ```
 
 
-**Refer to the CLI arguments on section 1.**
+**Refer to the CLI arguments on [section 1.](/#1-cli-arguments)**
 
 #### Run the container
 
@@ -238,7 +237,8 @@ ExecStart=/var/lib/centrifuge-data/centrifuge-chain \
 WantedBy=multi-user.target
 EOF
 ```
-**Refer to the CLI arguments on section 1.**
+**Refer to the CLI arguments on [section 1.](/#1-cli-arguments)**  
+
 
 
 
@@ -250,7 +250,7 @@ sudo systemctl enable centrifuge.service
 sudo systemctl start centrifuge.service
 ```
 
-If everything was set-up correctly, your node should now be starting the process of synchronization.
+If everything was set-up correctly, your node should now start the process of synchronization.
 This will take several hours, depending on your hardware. To check the status of the running service or to follow the logs, use:
 
 ```bash
@@ -261,7 +261,7 @@ sudo journalctl -u centrifuge.service -f
 
 ### 3. Test and health monitoring
 
-Once your node is fully synced, you can run a cURL request to see the status of your node, replace localhost for your URL if your node is externally available
+Once your node is fully synced, you can run a cURL request to see the status of your node. If your node is externally available, replace `localhost` for your URL.  
 
 ```bash
 curl -H "Content-Type: application/json" \
@@ -269,17 +269,17 @@ curl -H "Content-Type: application/json" \
 localhost:9933
 ```
 
-Expected output if node is synced is `{"jsonrpc":"2.0","result":false,"id":1}`
+Expected output if node is synced is `{"jsonrpc":"2.0","result":false,"id":1}`.
 
 ### 3.1 Use ws-health-exporter
 
-You can monitor your node to make sure it is ready to serve RPC calls using parity's ws-health-exporter.
+You can monitor your node to make sure it is ready to serve RPC calls using parity's `ws-health-exporter``.
 
-More info [on the parity's Docker Hub page](https://hub.docker.com/r/paritytech/ws-health-exporter)
+More info [on the parity's Docker Hub page](https://hub.docker.com/r/paritytech/ws-health-exporter).
 
 ### 3.2 Monitoring
-As it happens with any blockchain, the storage will run out eventually, it's recommended to monitor your storage or use any kind of auto-scaling storage to account for this.
-It is also recommended to setup a reverse proxy or an API gateway to monitor the API calls and see the response rate and the response codes to look for errors over time. How to do this is out of the scope of this documentation
+As it happens with any blockchain, the storage will run out eventually. It is recommended to monitor your storage or use any kind of auto-scaling storage to account for this.
+It is also recommended to setup a reverse proxy or an API gateway to monitor the API calls and see the response rate and the response codes to look for errors over time. How to do this is out of the scope of this documentation.
 
 ### Troubleshooting
 #### Error logs during syncing
@@ -290,17 +290,17 @@ ERROR tokio-runtime-worker sc_service::client::client: [Relaychain] Unable to pi
 WARN tokio-runtime-worker parachain::runtime-api: [Relaychain] cannot query the runtime API version: Api called for an unknown Block:  State already discarded [...]
 ```
 
-as long as the following logs are seen
+As long as the following logs are seen
 
 ```bash
 INFO tokio-runtime-worker substrate: [Relaychain] ⚙️  Syncing, target=#18279012 (9 peers), best: #27674 (0x28a4…6fe6), finalized #27648 (0x406d…b89e), ⬇ 1.1MiB/s ⬆ 34.6kiB/s
 INFO tokio-runtime-worker substrate: [Parachain] ⚙️  Syncing 469.4 bps, target=#4306117 (15 peers), best: #33634 (0x79d2…0a45), finalized #0 (0xb3db…9d82), ⬇ 1.3MiB/s ⬆ 2.0kiB/s
 ```
 
-everything is working correctly. Once the chain is fully synced the errors logs will go away.
+everything is working correctly. Once the chain is fully synced, the errors are expected to vanish.
 
 #### Stalled Syncing
-If the chain stops syncing, mostly due to the unavailable blocks then please restart your node. The reason is in most cases that the p2p-view of your node is incorrect at the moment.
+If the chain stops syncing, mostly due to the unavailable blocks, then please restart your node. The reason is in most cases that the p2p-view of your node is incorrect at the moment.
 Resulting in your node dropping the peers and being unable to further sync. A restart helps in theses cases.
 
 Example logs will look like the following:
@@ -309,7 +309,7 @@ WARN tokio-runtime-worker sync: [Parachain] 💔 Error importing block 0x88591cb
 ```
 
 #### Changed bootnode or peer identities
-It is common  that bootnode change their p2p-identity leading to the following logs:
+It is common that bootnodes change their p2p-identity leading to the following logs:
 
 ```bash
 WARN tokio-runtime-worker sc_network::service: [Relaychain] 💔 The bootnode you want to connect to at `/dns/polkadot-bootnode.polkadotters.com/tcp/30333/p2p/12D3KooWCgNAXvn3spYBeieVWeZ5V5jcMha5Qq1hLMtGTcFPk93Y` provided a different peer ID `12D3KooWPAVUgBaBk6n8SztLrMk8ESByncbAfRKUdxY1nygb9zG3` than the one you expect `12D3KooWCgNAXvn3spYBeieVWeZ5V5jcMha5Qq1hLMtGTcFPk93Y`.
