@@ -19,7 +19,7 @@ The underlying Centrifuge protocol has a two layered approach. It is built on Su
 
 Substrate is a modular blockchain framework that enables creating custom blockchains. Centrifuge uses Substrate as the source of truth for document anchoring, heavily involved in the peer to peer document consensus protocol.
 
-For more information, see the [Parity Substrate Project](https://substrate.dev/)
+For more information, see the [Parity Substrate Project](https://docs.substrate.io/)
 
 ### Centrifuge is Beta Software
 
