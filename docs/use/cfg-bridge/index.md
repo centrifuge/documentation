@@ -34,7 +34,7 @@ A hosted bridge UI is available at https://bridge.centrifuge.io Navigate over th
 
 Enter the amount you want to transfer (the bridge fee will be deducted automatically) and the destination address (make sure you use the right address format 0xxxx for Ethereum and 4xxx for Centrifuge chain!):
 
-![Enter transfer details](image.png)
+![image](https://github.com/ImdioR/documentation/assets/90972248/9be13ea1-ac92-45a2-b56f-6ef1fd1d61f4)
 
 Click on **Start Transfer** and then confirm the transfer:
 
