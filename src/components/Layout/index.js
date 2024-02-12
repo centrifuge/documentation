@@ -109,18 +109,29 @@ const Layout = ({ children, hideFooter, size }) => {
       )}
       <Box direction="row" style={{ minHeight: "100vh", position: "relative" }}>
         {size === "large" && (
-          <Box
-            direction="row"
-            flex="grow"
-            height="100vh"
-            style={{
-              position: "fixed",
-              top: "64px",
-            }}
-          >
-            <Box width="306px" overflow="auto">
+          <Box direction="row" height="100vh">
+            <Box
+              width="306px"
+              overflow="auto"
+              style={{
+                position: "fixed",
+                top: "64px",
+                height: "calc(100% - 64px)",
+              }}
+            >
               {/* side nav */}
               <SideNav size={size} />
+              <Box
+                style={{ position: "absolute", bottom: "32px", left: "24px" }}
+              >
+                <a
+                  href="https://github.com/centrifuge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image src={githubLogo} height="24px" />
+                </a>
+              </Box>
             </Box>
           </Box>
         )}
