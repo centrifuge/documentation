@@ -67,14 +67,11 @@ const AnchorLinks = ({ links, slug, size }) => {
         pad={{ left: "small", right: "medium" }}
         gap="xsmall"
         style={{
-          position: "sticky",
-          left: "1024px",
+          position: "fixed",
+          right: 0,
           minWidth: "250px",
           maxWidth: "350px",
-          top:
-            size === "small" || size === "medium"
-              ? "16px"
-              : "calc(55px + 16px)",
+          top: "calc(55px + 16px)",
           display: "flex",
           flexWrap: "wrap",
           borderLeft: "1px solid #E0E0E0",

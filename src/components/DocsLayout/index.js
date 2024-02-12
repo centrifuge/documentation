@@ -56,20 +56,15 @@ const DocsLayout = ({ data }) => {
                         vertical: size === "small" ? "12px" : "24px",
                       },
                     }}
-                    style={{ maxWidth: "1024px" }}
+                    style={{ maxWidth: "740px" }}
                   >
-                    <Heading
-                      level={1}
-                      margin={{ top: "0", bottom: "0" }}
-                      style={{ lineHeight: "32px", maxWidth: "740px" }}
-                    >
+                    <Heading level={1} style={{ lineHeight: "32px" }}>
                       {mdx.frontmatter.title}
                     </Heading>
                   </Box>
                   <Box
                     style={{
                       maxWidth: "1024px",
-                      position: "relative",
                     }}
                     {...{
                       pad: {
