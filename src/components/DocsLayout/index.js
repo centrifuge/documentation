@@ -53,7 +53,7 @@ const DocsLayout = ({ data }) => {
                             : size === "medium"
                             ? "48px"
                             : "24px",
-                        vertical: size === "small" ? "12px" : "24px",
+                        vertical: size === "small" ? "0" : "16px",
                       },
                     }}
                     style={{ maxWidth: "740px" }}
@@ -74,7 +74,7 @@ const DocsLayout = ({ data }) => {
                             : size === "medium"
                             ? "48px"
                             : "24px",
-                        vertical: size === "small" ? "12px" : "0",
+                        vertical: "0",
                       },
                     }}
                   >
@@ -96,7 +96,7 @@ const DocsLayout = ({ data }) => {
                         </Box>
                       )}
                     </Box>
-                    <Box>
+                    <Box style={{ maxWidth: "740px" }}>
                       <NodeNavigation prevNode={prevNode} nextNode={nextNode} />
                     </Box>
                   </Box>
