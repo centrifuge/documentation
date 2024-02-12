@@ -25,7 +25,7 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const AnchorLinks = ({ links, slug }) => {
+const AnchorLinks = ({ links, slug, size }) => {
   const [activeLink, setActiveLink] = React.useState(null);
 
   const internalLinks = links?.map((link) => {
@@ -62,28 +62,34 @@ const AnchorLinks = ({ links, slug }) => {
   }, [internalLinks]);
 
   return (
-    <Box
-      pad={{ left: "small", right: "medium" }}
-      gap="small"
-      style={{
-        position: "fixed",
-        left: "calc(1024px + 300px)",
-        minWidth: "200px",
-        maxWidth: "300px",
-        display: "flex",
-        flexWrap: "wrap",
-        borderLeft: "1px solid #E0E0E0",
-      }}
-    >
-      {internalLinks.map((link) => (
-        <Link
-          key={link.href}
-          to={`${slug}${link.url}`}
-          className={link.href === activeLink ? "activeLink" : ""}
-        >
-          {link.label}
-        </Link>
-      ))}
+    <Box>
+      <Box
+        pad={{ left: "small", right: "medium" }}
+        gap="xsmall"
+        style={{
+          position: "sticky",
+          left: "1024px",
+          minWidth: "250px",
+          maxWidth: "350px",
+          top:
+            size === "small" || size === "medium"
+              ? "16px"
+              : "calc(55px + 16px)",
+          display: "flex",
+          flexWrap: "wrap",
+          borderLeft: "1px solid #E0E0E0",
+        }}
+      >
+        {internalLinks.map((link) => (
+          <Link
+            key={link.href}
+            to={`${slug}${link.href}`}
+            className={link.href === activeLink ? "activeLink" : ""}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </Box>
     </Box>
   );
 };

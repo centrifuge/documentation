@@ -26,12 +26,14 @@ const DocsLayout = ({ data }) => {
     else return filtered[0].node;
   };
 
-  const prevNode = useMemo(() => getNthNode(mdx.frontmatter.order - 1), [
-    mdx.frontmatter.order,
-  ]);
-  const nextNode = useMemo(() => getNthNode(mdx.frontmatter.order + 1), [
-    mdx.frontmatter.order,
-  ]);
+  const prevNode = useMemo(
+    () => getNthNode(mdx.frontmatter.order - 1),
+    [mdx.frontmatter.order]
+  );
+  const nextNode = useMemo(
+    () => getNthNode(mdx.frontmatter.order + 1),
+    [mdx.frontmatter.order]
+  );
 
   return (
     <AxisTheme theme={theme}>
@@ -43,23 +45,23 @@ const DocsLayout = ({ data }) => {
               <Box width="100%" gap="medium" pad={{ bottom: "large" }}>
                 <Box gap="0">
                   <Box
-                    style={{ borderBottom: "1px solid #EEE" }}
                     {...{
                       pad: {
                         horizontal:
                           size === "large"
-                            ? "60px"
+                            ? "66px"
                             : size === "medium"
                             ? "48px"
                             : "24px",
                         vertical: size === "small" ? "12px" : "24px",
                       },
                     }}
+                    style={{ maxWidth: "1024px" }}
                   >
                     <Heading
                       level={1}
                       margin={{ top: "0", bottom: "0" }}
-                      style={{ lineHeight: "32px" }}
+                      style={{ lineHeight: "32px", maxWidth: "740px" }}
                     >
                       {mdx.frontmatter.title}
                     </Heading>
@@ -67,14 +69,13 @@ const DocsLayout = ({ data }) => {
                   <Box
                     style={{
                       maxWidth: "1024px",
-                      marginTop: "12px",
                       position: "relative",
                     }}
                     {...{
                       pad: {
                         horizontal:
                           size === "large"
-                            ? "60px"
+                            ? "66px"
                             : size === "medium"
                             ? "48px"
                             : "24px",

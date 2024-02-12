@@ -8,22 +8,22 @@ const Link = styled(GatsbyLink)`
   text-decoration: none;
 
   :hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   font-family: Inter, sans-serif;
   font-weight: 400;
-  color: #b4b4b4;
+  color: #424242;
 
   line-height: 1.375;
-  padding: ${(props) => (props.size === "large" ? "4px 0" : "4px 16px")};
+  padding: ${(props) => (props.size === "large" ? "4px 0" : "7px 16px")};
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 
   &.activeLink {
     color: ${(props) => props.theme.global.colors.black};
-    background-color: #f0f4ff;
-    font-weight: 600;
+    background-color: #dbe5ff;
+    font-weight: 500;
   }
 `;
 
@@ -31,26 +31,21 @@ const LinkWithSubpages = styled(GatsbyLink)`
   text-decoration: none;
 
   :hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   font-family: Inter, sans-serif;
   font-weight: 400;
-  color: #b4b4b4;
+  color: #424242;
 
   line-height: 1.375;
-  padding: ${(props) => (props.size === "large" ? "4px 0px" : "4px 16px")};
+  padding: ${(props) => (props.size === "large" ? "4px 0px" : "7px 16px")};
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 
   &.activeLink {
-    font-weight: 600;
+    font-weight: 500;
     color: ${(props) => props.theme.global.colors.black};
-  }
-
-  &svg {
-    fill: ${(props) =>
-      props.hasChildren ? "red" : props.theme.global.colors.brand};
   }
 `;
 
@@ -84,7 +79,7 @@ const InternalLink = (
         {...props}
       >
         <Box direction="row" justify="between" align="center">
-          <Text>{label}</Text>
+          <Text size="16px">{label}</Text>
           {ref?.current && (
             <Next
               style={{
@@ -99,7 +94,9 @@ const InternalLink = (
     </>
   ) : (
     <Link {...props} ref={linkRef} partiallyActive activeClassName="activeLink">
-      <Text margin={{ left: subpageChild ? "small" : "0" }}>{label}</Text>
+      <Text size="16px" margin={{ left: subpageChild ? "small" : "0" }}>
+        {label}
+      </Text>
     </Link>
   );
 };

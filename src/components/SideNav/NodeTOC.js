@@ -13,7 +13,7 @@ const NodeTOC = ({ slug, title, tableOfContents, secondLevelPages }) => {
     } else {
       setExpandChildren(false);
     }
-  }, [slug]);
+  }, []);
 
   return (
     <Box>

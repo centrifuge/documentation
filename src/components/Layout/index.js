@@ -16,13 +16,11 @@ import SideNav from "../SideNav";
 import SocialFooter from "../SocialFooter";
 
 const TopNavLink = styled(Link)`
+  font-size: 16px;
   font-weight: 500;
   color: ${(props) =>
-    props.isActive ? props.theme.global.colors.brand : "black"};
-  text-decoration: ${(props) =>
-    props.isActive ? props.theme.global.colors.brand : "black"};
-  border-bottom: ${(props) =>
-    props.isActive ? `2px solid ${props.theme.global.colors.brand}` : "black"};
+    props.isActive ? props.theme.global.colors.brand : "#424242"};
+  text-decoration: none;
 `;
 
 const Layout = ({ children, hideFooter, size }) => {
@@ -44,41 +42,35 @@ const Layout = ({ children, hideFooter, size }) => {
             position: "fixed",
             background: "#f5f5f5",
             zIndex: 1000,
-            height: "54px",
+            height: "55px",
             width: "100%",
             paddingLeft: "20px",
             paddingTop: "8px",
             paddingRight: "90px",
             borderBottom: "1px solid #EEE",
-            fontSize: "15px",
+            fontSize: "16px",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          <Box
-            style={{
-              display: "flex",
-              flexDirection: "row",
-            }}
-          >
-            <Box pad={{ left: "medium", bottom: "-2px" }}>
+          <Box direction="row" gap="32px">
+            <Box
+              pad={{ left: "medium", bottom: "-2px" }}
+              style={{ minWidth: "139px" }}
+            >
               <Link to="/">
                 <Image src={docs_wordmark} height="32px" />
               </Link>
             </Box>
             <Box
+              direction="row"
               style={{
-                position: "absolute",
-                marginLeft: "300px",
-                display: "flex",
-                flexDirection: "row",
                 alignItems: "top",
                 height: "100%",
                 maxHeight: "42px",
                 paddingTop: "6px",
               }}
-              direction="row"
               gap="medium"
             >
               <TopNavLink

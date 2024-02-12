@@ -167,8 +167,17 @@ const mdxGrommetMap = {
 const DocsContent = ({ mdx, size }) => {
   return (
     <MDXProvider components={mdxGrommetMap}>
-      <MDXRenderer>{mdx.code.body}</MDXRenderer>
-      {size === "large" && <AnchorMenu mdx={mdx} />}
+      <Grommet.Box direction="row" gap={"medium"}>
+        <Grommet.Box
+          style={{
+            minWidth: "740px",
+            width: "740px",
+          }}
+        >
+          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+        </Grommet.Box>
+        <AnchorMenu size={size} mdx={mdx} />
+      </Grommet.Box>
     </MDXProvider>
   );
 };
