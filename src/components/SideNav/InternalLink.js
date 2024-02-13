@@ -50,7 +50,17 @@ const LinkWithSubpages = styled(GatsbyLink)`
 `;
 
 const InternalLink = (
-  { href, label, primary, size, altFont, hasChildren, subpageChild, onClick },
+  {
+    href,
+    label,
+    primary,
+    size,
+    altFont,
+    hasChildren,
+    subpageChild,
+    onClick,
+    isExpanded,
+  },
   ref
 ) => {
   const linkRef = useRef();
@@ -84,7 +94,7 @@ const InternalLink = (
             <Next
               style={{
                 stroke: "black",
-                rotate: ref?.current?.isActive ? "270deg" : "90deg",
+                rotate: isExpanded ? "270deg" : "90deg",
               }}
               size="16px"
             />

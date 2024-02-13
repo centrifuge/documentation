@@ -41,7 +41,7 @@ const AnchorLinks = ({ links, slug, size }) => {
           }
         });
       },
-      { threshold: 0.5, rootMargin: "100px 0px -50% 0px" }
+      { threshold: 0.5, rootMargin: "80px 0px -25% 0px" }
     );
 
     internalLinks.forEach((link) => {
@@ -65,7 +65,7 @@ const AnchorLinks = ({ links, slug, size }) => {
     <Box>
       <Box
         pad={{ left: "small", right: "medium" }}
-        gap="xsmall"
+        gap="small"
         style={{
           position: "fixed",
           right: 0,

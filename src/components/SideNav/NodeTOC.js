@@ -3,7 +3,7 @@ import { Box } from "grommet";
 
 import InternalLink from "./InternalLink";
 
-const NodeTOC = ({ slug, title, tableOfContents, secondLevelPages }) => {
+const NodeTOC = ({ slug, title, secondLevelPages }) => {
   const [expandChildren, setExpandChildren] = useState(false);
   const linkRef = useRef(null);
 
@@ -27,6 +27,7 @@ const NodeTOC = ({ slug, title, tableOfContents, secondLevelPages }) => {
           e.preventDefault();
           setExpandChildren(true);
         }}
+        isExpanded={expandChildren}
       />
       <Box>
         {expandChildren &&
@@ -39,6 +40,7 @@ const NodeTOC = ({ slug, title, tableOfContents, secondLevelPages }) => {
                   href={page.slug}
                   label={page.title}
                   subpageChild
+                  isExpanded={expandChildren}
                 />
               </Box>
             );

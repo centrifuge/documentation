@@ -96,15 +96,6 @@ const Layout = ({ children, hideFooter, size }) => {
               </TopNavLink>
             </Box>
           </Box>
-          <Box alignSelf="center" justify="center">
-            <a
-              href="https://github.com/centrifuge"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image src={githubLogo} height="24px" />
-            </a>
-          </Box>
         </Nav>
       )}
       <Box direction="row" style={{ minHeight: "100vh", position: "relative" }}>
@@ -122,7 +113,7 @@ const Layout = ({ children, hideFooter, size }) => {
               {/* side nav */}
               <SideNav size={size} />
               <Box
-                style={{ position: "absolute", bottom: "32px", left: "24px" }}
+                style={{ position: "absolute", bottom: "32px", left: "36px" }}
               >
                 <a
                   href="https://github.com/centrifuge"
