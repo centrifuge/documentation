@@ -19,9 +19,9 @@ contributors: <Dennis Wellmann:dennis@k-f.co>, <Jay:jay@k-f.co>
 - A web browser with a web3 wallet. Centrifuge supports the following wallets:
 
 - Centrifuge/Polkadot
-  - [Polkadot{.js}](https://polkadot.js.org/extension/)
-  - [Talisman - Polkadot Wallet](https://chrome.google.com/webstore/detail/talisman-polkadot-wallet/fijngjgcjhjmmpcmkeiomlglpeiijkld)
-  - [SubWallet](https://chrome.google.com/webstore/detail/subwallet-polkadot-extens/onhogfjeacnfoofkfgppdlbmlmnplgbn)
+    - [Polkadot{.js}](https://polkadot.js.org/extension/)
+    - [Talisman - Polkadot Wallet](https://www.talisman.xyz/)
+    - [SubWallet](https://www.subwallet.app/)
 - Ethereum
   - [Ledger](https://www.ledger.com/) (Note, if using a Ledger Device, please enable "Blind Signing" in the Ethereum app settings and ensure the device has been updated to the latest firmware. It's recommended to disable blind signing after each use.)
   - [Metamask](https://metamask.io/download.html)
@@ -43,10 +43,8 @@ Once an investment is executed, the tranche tokens (in the case of an investment
 
 ## Step-by-step investment guide
 
-### Navigate to [app.centrifuge.io/pools](app.centrifuge.io/pools)
-
-### Connect your wallet
-
+### Navigate to [app.centrifuge.io/pools](https://app.centrifuge.io/pools)
+### Connect your wallet 
 - Connect your investment wallet to the app by clicking "Connect" in the top right corner (if you do not see a "Connect Button", try to either expand your screen or look on the bottom of the page). Please ensure the connected wallet is the same wallet used during the KYC process.
 
 ![](./images/Pool_Overview.png#width=600px)
@@ -84,10 +82,10 @@ You can view your status in your wallet in the top right corner. In order to inv
 Once you are verified and completed pool onboarding by signing the subscription agreement, uploading tax documents, and for US investors certifying investor Accreditation status, you can begin investing in the pool.
 
 - Select the Pool you would like to invest in.
-- From the drop down menu Choose the Pool tranche you want to or have already completed onboarding for. When onboarding you will need to confirm KYC, sign the pools Subscription agreement, and provide Tax documentation. ![](./images/select_tranche.png#width=600px)
-- Enter the Amount you would like to invest. Please note each pool may have a minimum Investment amount, in the example pool seen above, the minimum is 10,000 aUSD. Beneath this number, you can also see your wallet's balance of the stablecoin.
-- You can also click the MAX button to invest your entire Available Balance.
-- Once you enter the amount, Click "Invest" and sign the On-chain transaction. Note, once you have clicked "Invest" your order is locked but not Executed into the pool. You must wait for the epoch to conclude before your Pending investment is executed. [Learn more about Epochs and Pending orders Here](https://).
+- From the drop down menu Choose the Pool tranche you want to or have already completed onboarding for. When onboarding you will need to confirm KYC, sign the pools Subscription agreement, and provide Tax documentation. ![](./images/select_tranche.png#width=600px) 
+- Enter the Amount you would like to invest. Please note each pool may have a minimum Investment amount, in the example pool seen above, the minimum is 10,000 aUSD. Beneath this number, you can also see your wallet's balance of the stablecoin. 
+- You can also click the MAX button to invest your entire Available Balance. 
+- Once you enter the amount, Click "Invest" and sign the On-chain transaction. Note, once you have clicked "Invest" your order is locked but not Executed into the pool. You must wait for the epoch to conclude before your Pending investment is executed. Learn more about Epochs and Pending orders [Here](https://docs.centrifuge.io/learn/epoch/).
 
 ### Changing Locked Investments/Redemptions
 
