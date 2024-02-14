@@ -12,7 +12,7 @@ const Link = styled(GatsbyLink)`
 
   font-family: Inter, sans-serif;
   font-weight: 400;
-  color: #b4b4b4;
+  color: #424242;
 
   line-height: 1.375;
   padding: "4px 0";
