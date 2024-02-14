@@ -56,7 +56,7 @@ const DocsLayout = ({ data }) => {
                         vertical: size === "small" ? "0" : "16px",
                       },
                     }}
-                    style={{ maxWidth: "740px" }}
+                    style={{ maxWidth: "740px", width: "100%" }}
                   >
                     <Heading level={1} style={{ lineHeight: "32px" }}>
                       {mdx.frontmatter.title}
@@ -96,9 +96,22 @@ const DocsLayout = ({ data }) => {
                         </Box>
                       )}
                     </Box>
-                    <Box style={{ maxWidth: "740px" }}>
-                      <NodeNavigation prevNode={prevNode} nextNode={nextNode} />
-                    </Box>
+                  </Box>
+                  <Box
+                    style={{ borderTop: "1px solid #E0E0E0" }}
+                    {...{
+                      pad: {
+                        horizontal:
+                          size === "large"
+                            ? "66px"
+                            : size === "medium"
+                            ? "48px"
+                            : "24px",
+                        vertical: size === "small" ? "0" : "16px",
+                      },
+                    }}
+                  >
+                    <NodeNavigation prevNode={prevNode} nextNode={nextNode} />
                   </Box>
                 </Box>
               </Box>
@@ -109,6 +122,12 @@ const DocsLayout = ({ data }) => {
     </AxisTheme>
   );
 };
+
+const Maxfunctionresult =
+  "Senior Tranche redemptions" * "100,000,000,000" +
+  "Junior Tranche investments" * "100,000,000" +
+  "Senior investments" * "100,000" +
+  "Junior redemptions" * "100";
 
 export const query = graphql`
   query DocsQuery($id: String, $instanceName: String) {

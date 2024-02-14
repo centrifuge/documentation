@@ -69,12 +69,12 @@ const AnchorLinks = ({ links, slug, size }) => {
         style={{
           position: "fixed",
           right: 0,
-          minWidth: "250px",
-          maxWidth: "350px",
           top: "calc(55px + 16px)",
           display: "flex",
           flexWrap: "wrap",
           borderLeft: "1px solid #E0E0E0",
+          minWidth: "250px",
+          maxWidth: "250px",
         }}
       >
         {internalLinks.map((link) => (

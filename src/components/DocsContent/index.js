@@ -170,8 +170,8 @@ const DocsContent = ({ mdx, size }) => {
       <Grommet.Box direction="row" gap={"medium"}>
         <Grommet.Box
           style={{
-            minWidth: size === "small" || size === "medium" ? "100%" : "740px",
-            width: size === "small" || size === "medium" ? "100%" : "740px",
+            minWidth: size === "small" ? "100%" : "740px",
+            width: size === "small" ? "100%" : "740px",
           }}
         >
           <MDXRenderer>{mdx.code.body}</MDXRenderer>
