@@ -4,12 +4,7 @@ import { Previous, Next } from "grommet-icons";
 import { Link } from "gatsby";
 
 const AltText = ({ children, ...props }) => (
-  <Text
-    size="xsmall"
-    color="dark-3"
-    style={{ fontFamily: "Inter" }}
-    {...props}
-  >
+  <Text size="xsmall" color="dark-3" style={{ fontFamily: "Inter" }} {...props}>
     {children}
   </Text>
 );
@@ -21,33 +16,34 @@ const NodeNavigation = ({ prevNode, nextNode }) => {
   const size = useContext(ResponsiveContext);
 
   return (
-    <Box
-      direction={size === "small" ? "column" : "row"}
-      gap="medium"
-    >
+    <Box direction={size === "small" ? "column" : "row"} gap="medium">
       {!!prevNode && (
         <Box
           direction="row"
           gap="small"
           align="start"
-          style={{ border: '1px solid #EEE', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none' }}
+          style={{ padding: "12px 16px", textDecoration: "none" }}
           flex="grow"
           as={Link}
-          to={prevNode.fields.slug}>
-            <>
+          to={prevNode.fields.slug}
+        >
+          <Box align="end">
+            <AltText style={{ marginRight: "22px" }}>Previous</AltText>
+            <Box direction="row" align="center">
+              <Text color="brand" truncate>
+                {prevNode.fields.title}
+              </Text>
               <Previous
+                size="12px"
                 style={{
                   color: prevIconColor,
                   stroke: prevIconColor,
-                  marginRight: '10px',
-                  marginTop: '7px'
+                  marginRight: "10px",
+                  marginTop: "7px",
                 }}
               />
-              <Box>
-                <AltText>Previous</AltText>
-                <Text truncate>{prevNode.fields.title}</Text>
-              </Box>
-            </>
+            </Box>
+          </Box>
         </Box>
       )}
       {!!nextNode && (
@@ -58,23 +54,29 @@ const NodeNavigation = ({ prevNode, nextNode }) => {
           flex="grow"
           align="center"
           alignSelf={size === "small" ? "end" : null}
-          style={{ border: '1px solid #EEE', padding: '12px 16px', borderRadius: '8px', textDecoration: 'none' }}
+          style={{
+            padding: "12px 16px",
+            textDecoration: "none",
+          }}
           as={Link}
           to={nextNode.fields.slug}
         >
-            <>
-              <Box align="end">
-                <AltText>Next</AltText>
-                <Text truncate>{nextNode.fields.title}</Text>
-              </Box>
+          <Box align="end">
+            <AltText style={{ marginRight: "22px" }}>Next</AltText>
+            <Box direction="row" align="center">
+              <Text color="brand" truncate>
+                {nextNode.fields.title}
+              </Text>
               <Next
+                size="12px"
                 style={{
                   color: nextIconColor,
                   stroke: nextIconColor,
-                  marginLeft: '10px'
+                  marginLeft: "10px",
                 }}
               />
-            </>
+            </Box>
+          </Box>
         </Box>
       )}
     </Box>
