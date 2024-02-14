@@ -239,9 +239,5 @@ const HomePage = () => {
 };
 
 export default () => {
-  return (
-    <AxisTheme theme={theme}>
-      <HomePage />
-    </AxisTheme>
-  );
+  return <AxisTheme theme={theme}>{/* <HomePage /> */}</AxisTheme>;
 };
