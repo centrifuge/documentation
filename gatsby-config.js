@@ -104,7 +104,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#2762ff`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.ico`,
+        icon: `src/images/centrifuge-logo.png`,
       },
     },
     `gatsby-plugin-netlify-cache`,
