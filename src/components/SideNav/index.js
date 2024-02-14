@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
-import { Box, Image, Button } from "grommet";
+import { Box, Image, Button, Text } from "grommet";
 import { Close } from "grommet-icons";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { useLocation } from "@reach/router";
 
-import docs_wordmark from "../../images/docs_wordmark.svg";
+import centrifugeLogo from "../../images/logo-centrifuge-full.svg";
 import getting_started_face from "../../images/faces/getting-started-small.svg";
 import use_face from "../../images/faces/use.svg";
 import build_face from "../../images/faces/build.svg";
@@ -84,8 +84,18 @@ const SideNav = ({ onClose, size }) => {
     >
       {size !== "large" && (
         <Box direction="row" fill="horizontal" justify="between" align="center">
-          <Link to="/">
-            <Image src={docs_wordmark} height="32px" />
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Box direction="row" align="center" gap="xxsmall">
+              <Image src={centrifugeLogo} height="26px" />
+              <Text
+                color="black"
+                size="16px"
+                weight={600}
+                style={{ position: "relative", top: "2px" }}
+              >
+                Docs
+              </Text>
+            </Box>
           </Link>
           {!!onClose && (
             <Button

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Box, Button, Image, Layer, Nav } from "grommet";
+import { Box, Button, Image, Layer, Nav, Text } from "grommet";
 import { Menu } from "grommet-icons";
 import { Link } from "gatsby";
 import { useLocation } from "@reach/router";
@@ -9,7 +9,7 @@ import styled from "styled-components";
 import "./styles.css";
 import "@fontsource/inter/variable-full.css";
 
-import docs_wordmark from "../../images/docs_wordmark.svg";
+import centrifugeLogo from "../../images/logo-centrifuge-full.svg";
 import githubLogo from "../../images/github-logo.svg";
 
 import SideNav from "../SideNav";
@@ -59,8 +59,18 @@ const Layout = ({ children, hideFooter, size }) => {
               pad={{ left: "medium", bottom: "-2px" }}
               style={{ minWidth: "139px" }}
             >
-              <Link to="/">
-                <Image src={docs_wordmark} height="32px" />
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Box direction="row" align="center" gap="xxsmall">
+                  <Image src={centrifugeLogo} height="26px" />
+                  <Text
+                    color="black"
+                    size="16px"
+                    weight={600}
+                    style={{ position: "relative", top: "2px" }}
+                  >
+                    Docs
+                  </Text>
+                </Box>
               </Link>
             </Box>
             <Box
@@ -146,8 +156,18 @@ const Layout = ({ children, hideFooter, size }) => {
                 align="center"
                 pad={{ horizontal: "medium", vertical: "medium" }}
               >
-                <Link to="/">
-                  <Image src={docs_wordmark} height="32px" />
+                <Link to="/" style={{ textDecoration: "none" }}>
+                  <Box direction="row" align="center" gap="xxsmall">
+                    <Image src={centrifugeLogo} height="26px" />
+                    <Text
+                      color="black"
+                      size="16px"
+                      weight={600}
+                      style={{ position: "relative", top: "2px" }}
+                    >
+                      Docs
+                    </Text>
+                  </Box>
                 </Link>
                 <Box direction="row" gap="12px">
                   <Box alignSelf="start" justify="center">

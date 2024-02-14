@@ -11,7 +11,8 @@ import {
 import Search from "../Search";
 import styled from "styled-components";
 import { navigate } from "gatsby";
-const wordmark = require("../../images/centrifuge-documentation-wordmark.svg") as string;
+const logoCentrifuge =
+  require("../../images/logo-centrifuge-full.svg") as string;
 
 const Logo = styled(Image)`
   vertical-align: middle;
@@ -88,7 +89,7 @@ const Nav = (props) => {
             <NavBar
               logo={
                 <Logo
-                  src={wordmark}
+                  src={logoCentrifuge}
                   onClick={() => {
                     onRouteClick("/");
                   }}
@@ -115,7 +116,7 @@ const Nav = (props) => {
           <Box direction="row" fill="horizontal" align="stretch">
             <Box margin={{ left: "medium" }} fill={true}>
               <Logo
-                src={wordmark}
+                src={logoCentrifuge}
                 onClick={() => {
                   onRouteClick("/");
                 }}
