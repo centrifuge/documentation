@@ -54,6 +54,7 @@ ratios the Centrifuge "Solver mechanism" would be initiated.
 ## The Solver mechanism
 
 ### How an epoch is currently displayed
+
 These are the different states of an epoch.
 
 | Status                  | Case                                           | Consequence                                               |
@@ -89,7 +90,11 @@ The linear programming of the Centrifuge solver maximizes the execution of the i
 The according sample max function could e.g. be:
 
 $$
-Maxfunctionresult = Senior Tranche redemptions * 100,000,000,000 +  Junior Tranche investments * 100,000,000 + Senior investments * 100,000 + Junior redemptions * 100
+MaxFunctionResult =
+   \newline SeniorTrancheRedemptions * 100,000,000,000 +
+   \newline JuniorTrancheInvestments * 100,000,000 +
+   \newline SeniorInvestments * 100,000 +
+   \newline JuniorRedemptions * 100
 $$
 
 The restrictions for this optimization problem are:
