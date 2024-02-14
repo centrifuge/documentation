@@ -1,6 +1,6 @@
 ---
 id: multi-tranche-system
-order: 9
+order: 8
 title: "Pools with multiple tranches"
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 ---

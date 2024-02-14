@@ -1,6 +1,6 @@
 ---
 id: terms
-order: 8
+order: 7
 title: Introduction to Pools on Centrifuge
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 ---

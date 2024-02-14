@@ -1,6 +1,6 @@
 ---
 id: epoch
-order: 3
+order: 9
 title: Epochs - How investments and redemptions are executed
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 ---

@@ -1,6 +1,6 @@
 ---
 id: interest-rate-methodology
-order: 9
+order: 11
 title: Interest Rate Methodology
 contributors: <Dennis:dennis@k-f.co>
 ---
