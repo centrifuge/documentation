@@ -14,6 +14,7 @@ import EditPage from "./EditPage";
 import Contributors from "./Contributors";
 import NodeNavigation from "./NodeNavigation";
 import DocsContent from "../DocsContent";
+import AnchorMenu from "../AnchorMenu";
 
 const DocsLayout = ({ data }) => {
   const { mdx, allMdx } = data;
@@ -45,26 +46,8 @@ const DocsLayout = ({ data }) => {
               <Box width="100%" gap="medium" pad={{ bottom: "small" }}>
                 <Box gap="0">
                   <Box
-                    {...{
-                      pad: {
-                        horizontal:
-                          size === "large"
-                            ? "66px"
-                            : size === "medium"
-                            ? "48px"
-                            : "24px",
-                        vertical: size === "small" ? "0" : "16px",
-                      },
-                    }}
-                    style={{ maxWidth: "740px", width: "100%" }}
-                  >
-                    <Heading level={1} style={{ lineHeight: "32px" }}>
-                      {mdx.frontmatter.title}
-                    </Heading>
-                  </Box>
-                  <Box
                     style={{
-                      maxWidth: "1024px",
+                      maxWidth: "960px",
                     }}
                     {...{
                       pad: {
@@ -78,7 +61,22 @@ const DocsLayout = ({ data }) => {
                       },
                     }}
                   >
-                    <DocsContent mdx={mdx} size={size} />
+                    <Box
+                      direction="row"
+                      gap={"medium"}
+                      style={{ maxWidth: "960px" }}
+                    >
+                      <Box
+                        style={{
+                          minWidth: size === "small" ? "100%" : "740px",
+                          width: size === "small" ? "100%" : "740px",
+                        }}
+                      >
+                        <DocsContent mdx={mdx} size={size} />
+                      </Box>
+                      <AnchorMenu size={size} mdx={mdx} />
+                    </Box>
+
                     <Box
                       direction={size === "small" ? "column" : "row"}
                       gap="medium"
@@ -107,7 +105,7 @@ const DocsLayout = ({ data }) => {
                             : size === "medium"
                             ? "48px"
                             : "24px",
-                        vertical: size === "small" ? "0" : "16px",
+                        vertical: size === "small" ? "12px" : "16px",
                       },
                     }}
                   >

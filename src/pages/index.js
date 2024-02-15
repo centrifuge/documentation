@@ -153,7 +153,7 @@ const HomePage = () => {
       <SEO title="Centrifuge Documentation" />
       <Box
         style={{
-          maxWidth: "1024px",
+          maxWidth: "960px",
           marginTop: size === "small" ? "0px" : "40px",
           paddingLeft: size === "small" ? "24px" : "0",
           paddingRight: size === "small" ? "24px" : "0",
@@ -189,7 +189,7 @@ const HomePage = () => {
       </Box>
       <Box
         style={{
-          maxWidth: "1024px",
+          maxWidth: "960px",
           paddingLeft: size === "small" ? "24px" : "0",
           paddingRight: size === "small" ? "24px" : "0",
         }}

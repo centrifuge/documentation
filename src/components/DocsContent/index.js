@@ -164,20 +164,13 @@ const mdxGrommetMap = {
   ),
 };
 
-const DocsContent = ({ mdx, size }) => {
+const DocsContent = ({ mdx }) => {
   return (
     <MDXProvider components={mdxGrommetMap}>
-      <Grommet.Box direction="row" gap={"medium"}>
-        <Grommet.Box
-          style={{
-            minWidth: size === "small" ? "100%" : "740px",
-            width: size === "small" ? "100%" : "740px",
-          }}
-        >
-          <MDXRenderer>{mdx.code.body}</MDXRenderer>
-        </Grommet.Box>
-        <AnchorMenu size={size} mdx={mdx} />
-      </Grommet.Box>
+      <Heading level={1} style={{ lineHeight: "32px", marginBottom: 0 }}>
+        {mdx.frontmatter.title}
+      </Heading>
+      <MDXRenderer>{mdx.code.body}</MDXRenderer>
     </MDXProvider>
   );
 };

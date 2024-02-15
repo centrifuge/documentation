@@ -23,7 +23,7 @@ const NodeNavigation = ({ prevNode, nextNode }) => {
   const size = useContext(ResponsiveContext);
 
   return (
-    <Box style={{ maxWidth: "1024px" }}>
+    <Box style={{ maxWidth: "960px" }}>
       <Box direction={size === "small" ? "column" : "row"} gap="medium">
         {!!prevNode && (
           <Box

@@ -35,13 +35,13 @@ const AnchorLinks = ({ links, slug, size }) => {
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveLink(`#${entry.target.id}`);
-          }
-        });
+        const intersectingEntry = entries.find((entry) => entry.isIntersecting);
+
+        if (intersectingEntry) {
+          setActiveLink(`#${intersectingEntry.target.id}`);
+        }
       },
-      { threshold: 0.5, rootMargin: "80px 0px -25% 0px" }
+      { threshold: 0.1 }
     );
 
     internalLinks.forEach((link) => {
@@ -62,13 +62,12 @@ const AnchorLinks = ({ links, slug, size }) => {
   }, [internalLinks]);
 
   return (
-    <Box>
+    <Box pad={{ left: "large" }}>
       <Box
         pad={{ left: "small", right: "medium" }}
         gap="small"
         style={{
-          position: "fixed",
-          right: 0,
+          position: "sticky",
           top: "calc(55px + 16px)",
           display: "flex",
           flexWrap: "wrap",
