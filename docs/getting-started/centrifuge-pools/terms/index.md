@@ -1,12 +1,7 @@
 ---
 id: terms
-<<<<<<< Updated upstream:docs/getting-started/terms/index.md
-order: 7
-title: Introduction to Pools on Centrifuge
-=======
 order: 1
 title: Introduction to Pools
->>>>>>> Stashed changes:docs/getting-started/centrifuge-pools/terms/index.md
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 category: subpage
 ---

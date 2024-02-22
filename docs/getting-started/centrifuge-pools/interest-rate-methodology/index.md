@@ -1,10 +1,6 @@
 ---
 id: interest-rate-methodology
-<<<<<<< Updated upstream:docs/getting-started/interest-rate-methodology/index.md
-order: 11
-=======
 order: 5
->>>>>>> Stashed changes:docs/getting-started/centrifuge-pools/interest-rate-methodology/index.md
 title: Interest Rate Methodology
 contributors: <Dennis:dennis@k-f.co>
 category: subpage

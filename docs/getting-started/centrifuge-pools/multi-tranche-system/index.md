@@ -1,12 +1,7 @@
 ---
 id: multi-tranche-system
-<<<<<<< Updated upstream:docs/getting-started/multi-tranche-system/index.md
-order: 8
-title: "Pools with multiple tranches"
-=======
 order: 2
 title: "Pools with Multiple Tranches"
->>>>>>> Stashed changes:docs/getting-started/centrifuge-pools/multi-tranche-system/index.md
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 category: subpage
 ---

@@ -97,11 +97,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#2762ff`,
         display: `minimal-ui`,
-<<<<<<< Updated upstream
-        icon: `src/images/centrifuge-logo.png`,
-=======
         icon: `src/images/favicon.svg`,
->>>>>>> Stashed changes
       },
     },
     `gatsby-plugin-netlify-cache`,

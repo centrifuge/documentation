@@ -1,21 +1,12 @@
 ---
 id: epoch
-<<<<<<< Updated upstream:docs/getting-started/epoch/index.md
-order: 9
-title: Epochs - How investments and redemptions are executed
-=======
 order: 3
 title: Epochs and Order Execution
->>>>>>> Stashed changes:docs/getting-started/centrifuge-pools/epoch/index.md
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 category: subpage
 ---
 
-<<<<<<< Updated upstream:docs/getting-started/epoch/index.md
 ## Overview
-=======
-# Overview 
->>>>>>> Stashed changes:docs/getting-started/centrifuge-pools/epoch/index.md
 
 A decentralized pool where investors can invest/redeem and Asset Originators originate/repay at any time needs a decentralized mechanism to coordinate investments, redemptions, originations and repayments. Welcome the `Epoch`.
 
