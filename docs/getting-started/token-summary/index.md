@@ -1,11 +1,28 @@
 ---
 id: token-summary
+<<<<<<< Updated upstream
 order: 13
 title: CFG Token Summary
 contributors: <Cassidy Daly:cassidy@centrifuge.foundation>, <Lucas Vogelsang:lucas@centrifuge.foundation>
 ---
 
 # Centrifuge Token Executive Summary
+=======
+order: 4
+title: CFG Token
+contributors: <Cassidy Daly:cassidy@centrifuge.foundation>, <Lucas Vogelsang:lucas@centrifuge.foundation>
+---
+
+# Centrifuge Token
+
+The Centrifuge Token (CFG) powers Centrifuge, facilitating an onchain governance system that empowers CFG holders to steer Centrifuge’s evolution. CFG is also used to pay for transactions on Centrifuge Chain.
+
+wCFG (Wrapped Centrifuge) is CFG bridged 1:1 to Ethereum, where it can be traded on decentralized exchanges like Uniswap.
+Token Utility
+- why we have a CFG token, what they can do with it, etc.
+  (it's important to make the difference between CFG and wCFG clear, but we don't need to get that in the weeds in the intro section)
+
+>>>>>>> Stashed changes
 
 ## Abstract
 
