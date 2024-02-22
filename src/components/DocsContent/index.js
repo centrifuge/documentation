@@ -10,6 +10,7 @@ import CodeHighlighter from "../CodeHighlighter";
 import "./styles.css";
 
 import link from "../../images/link.svg";
+import AnchorMenu from "../AnchorMenu";
 
 const ListBase = styled(Grommet.Text)`
   padding-left: 1rem;
@@ -73,11 +74,7 @@ const Hash = styled.a.attrs({
 `;
 
 const mdxGrommetMap = {
-  p: (props) => (
-    <Paragraph>
-      {props.children}
-    </Paragraph>
-  ),
+  p: (props) => <Paragraph>{props.children}</Paragraph>,
   h1: (props) => (
     <Heading level={1}>
       <Anchor id={props.id} />
@@ -170,6 +167,9 @@ const mdxGrommetMap = {
 const DocsContent = ({ mdx }) => {
   return (
     <MDXProvider components={mdxGrommetMap}>
+      <Heading level={1} style={{ lineHeight: "32px", marginBottom: 0 }}>
+        {mdx.frontmatter.title}
+      </Heading>
       <MDXRenderer>{mdx.code.body}</MDXRenderer>
     </MDXProvider>
   );

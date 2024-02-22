@@ -1,17 +1,18 @@
 import React, { useMemo } from "react";
-import { Box, Image, Button, Anchor } from "grommet";
+import { Box, Image, Button, Text } from "grommet";
 import { Close } from "grommet-icons";
 import { graphql, useStaticQuery, Link } from "gatsby";
+import { useLocation } from "@reach/router";
 
-import docs_wordmark from "../../images/docs_wordmark.svg";
+import centrifugeLogo from "../../images/logo-centrifuge-full.svg";
 import getting_started_face from "../../images/faces/getting-started-small.svg";
-import learn_face from "../../images/faces/learn.svg";
 import use_face from "../../images/faces/use.svg";
 import build_face from "../../images/faces/build.svg";
 
 import InstanceTOC from "./InstanceTOC";
 
 const SideNav = ({ onClose, size }) => {
+  const location = useLocation();
   const data = useStaticQuery(graphql`
     query MyQuery {
       allMdx {
@@ -25,6 +26,7 @@ const SideNav = ({ onClose, size }) => {
               }
               frontmatter {
                 order
+                category
               }
               tableOfContents
             }
@@ -40,9 +42,12 @@ const SideNav = ({ onClose, size }) => {
       title: "Getting Started",
       icon: getting_started_face,
     },
-    { name: "learn", title: "Learn", icon: learn_face },
-    { name: "use", title: "Use", icon: use_face },
-    { name: "build", title: "Build", icon: build_face },
+    { name: "user", title: "User documentation", icon: use_face },
+    {
+      name: "developer",
+      title: "Developer documentation",
+      icon: build_face,
+    },
   ];
 
   instances = useMemo(
@@ -56,6 +61,7 @@ const SideNav = ({ onClose, size }) => {
             ...edge.node.fields,
             ...edge.node.frontmatter,
             tableOfContents: edge.node.tableOfContents,
+            slug: edge.node.fields.slug,
           }))
           .sort((a, b) => a.order - b.order);
 
@@ -64,22 +70,32 @@ const SideNav = ({ onClose, size }) => {
           nodes,
         };
       }),
-    [data]
+    [data, instances]
   );
 
   return (
     <Box
       pad={{
-        horizontal: "medium",
+        left: "medium",
         vertical: "medium",
       }}
       align="start"
       gap="medium"
     >
-      {size === "small" ? (
+      {size !== "large" && (
         <Box direction="row" fill="horizontal" justify="between" align="center">
-          <Link to="/">
-            <Image src={docs_wordmark} height="32px" />
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Box direction="row" align="center" gap="xxsmall">
+              <Image src={centrifugeLogo} height="26px" />
+              <Text
+                color="black"
+                size="16px"
+                weight={600}
+                style={{ position: "relative", top: "2px" }}
+              >
+                Docs
+              </Text>
+            </Box>
           </Link>
           {!!onClose && (
             <Button
@@ -91,19 +107,22 @@ const SideNav = ({ onClose, size }) => {
             />
           )}
         </Box>
-      ) : (
-        <Link to="/">
-          <Image src={docs_wordmark} height="32px" />
-        </Link>
       )}
       <Box gap="medium" fill="horizontal">
-        {instances.map((instance, i) => {
-          return (
-            <Box gap="small" key={i} flex="grow">
-              <InstanceTOC {...instance} size={size} />
-            </Box>
-          );
-        })}
+        {instances
+          .filter((instance) => {
+            return (
+              size !== "large" ||
+              instance?.name === location?.pathname?.split("/")[1]
+            );
+          })
+          .map((instance, i) => {
+            return (
+              <Box gap="small" key={i} flex="grow">
+                <InstanceTOC {...instance} size={size} location={location} />
+              </Box>
+            );
+          })}
       </Box>
     </Box>
   );

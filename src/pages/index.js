@@ -1,47 +1,39 @@
 import { AxisTheme } from "@centrifuge/axis-theme";
 import { Link as GatsbyLink } from "gatsby";
-import { Box, Grid, Image, ResponsiveContext, Text } from "grommet";
+import { Box, Heading, Image, ResponsiveContext, Text } from "grommet";
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import build_face from "../images/faces/build.svg";
 import getting_started_face from "../images/faces/getting-started.svg";
-import learn_face from "../images/faces/learn.svg";
 import use_face from "../images/faces/use.svg";
 import { theme } from "../theme";
 
 const INSTANCE_TYPES = Object.freeze({
-  LEARN: "learn",
-  USE: "use",
-  BUILD: "build",
   GETTING_STARTED: "getting-started",
+  DEVELOPER_DOCS: "developer",
+  USER_DOCS: "user",
 });
 
 const INSTANCES = Object.freeze({
-  [INSTANCE_TYPES.LEARN]: {
-    title: "Learn",
-    uri: "/learn",
-    color: "#FCBA59",
-    avatar: learn_face,
-  },
-  [INSTANCE_TYPES.USE]: {
-    title: "Use",
-    uri: "/use",
-    color: "#2762FF",
-    avatar: use_face,
-  },
-  [INSTANCE_TYPES.BUILD]: {
-    title: "Build",
-    uri: "/build",
-    color: "#F44E72",
-    avatar: build_face,
-  },
   [INSTANCE_TYPES.GETTING_STARTED]: {
     title: "Getting Started",
     uri: "/getting-started",
     color: "#7ED321",
     avatar: getting_started_face,
+  },
+  [INSTANCE_TYPES.USER_DOCS]: {
+    title: "User docs",
+    uri: "/user",
+    color: "#2762FF",
+    avatar: use_face,
+  },
+  [INSTANCE_TYPES.DEVELOPER_DOCS]: {
+    title: "Developer docs",
+    uri: "/developer",
+    color: "#F44E72",
+    avatar: build_face,
   },
 });
 
@@ -50,8 +42,8 @@ const Link = styled(GatsbyLink)`
 
   :hover {
     color: ${(props) =>
-    (!!props.color && props.theme.global.colors[props.color]) ||
-    props.theme.global.colors.black};
+      (!!props.color && props.theme.global.colors[props.color]) ||
+      props.theme.global.colors.black};
   }
 
   font-weight: 500;
@@ -63,8 +55,8 @@ const Link = styled(GatsbyLink)`
 const ExternalLink = styled.a`
   :hover {
     color: ${(props) =>
-    (!!props.color && props.theme.global.colors[props.color]) ||
-    props.theme.global.colors.black};
+      (!!props.color && props.theme.global.colors[props.color]) ||
+      props.theme.global.colors.black};
   }
 
   font-weight: 500;
@@ -159,58 +151,93 @@ const HomePage = () => {
   return (
     <Layout size={size} hideFooter fullWidth>
       <SEO title="Centrifuge Documentation" />
-      <Box style={{ maxWidth: '1024px', marginTop: '80px' }} direction="row" gap="large" justify="between">
-        <Box>
-          <Text style={{ fontFamily: "Inter" }}>Intro</Text>
-        </Box>
-        <Box width="70%">
-          <Text>
-            Welcome to the Centrifuge documentation. If you are new, head to the
-            {" "}<strong>Getting Started</strong> section to understand what
-            Centrifuge is about and to get an overview of our ecosystem. Dive
-            deeper into how our products work in the <strong>Learn</strong>{" "}
-            section. As a user of our network, e.g. investor, issuer,
-            or governance participant, you will find advice and guides in{" "}
-            <strong>Use</strong>. For the most up-to-date technical
-            documentation, check out <strong>Build</strong>.
+      <Box
+        style={{
+          maxWidth: "960px",
+          marginTop: size === "small" ? "0px" : "40px",
+          paddingLeft: size === "small" ? "24px" : "0",
+          paddingRight: size === "small" ? "24px" : "0",
+        }}
+        width="100%"
+        direction="row"
+        gap="large"
+        justify="center"
+        align="center"
+      >
+        <Box width="70%" flex="grow">
+          <Heading lined level={size === "small" ? 2 : 1}>
+            Welcome to Centrifuge documentation
+          </Heading>
+          <Text
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "16px",
+              lineHeight: "1.7em",
+            }}
+          >
+            Welcome to the Centrifuge documentation. If you are new, or want to
+            dive deeper into how our products works head to the{" "}
+            <strong>Getting Started</strong> section to understand what
+            Centrifuge is about and to get an overview of our ecosystem. As a
+            user of our network, e.g. investor, issuer, or governance
+            participant, you will find advice and guides in{" "}
+            <strong>User Documentation</strong>. For the most up-to-date
+            technical documentation, check out{" "}
+            <strong>Developer Documentation</strong>.
           </Text>
         </Box>
       </Box>
-      <Box margin={{ vertical: "xlarge" }} gap="large">
-        <Box align="center">
-          <GettingStartedNavButton
-            {...INSTANCES[INSTANCE_TYPES.GETTING_STARTED]}
-          />
-        </Box>
+      <Box
+        style={{
+          maxWidth: "960px",
+          paddingLeft: size === "small" ? "24px" : "0",
+          paddingRight: size === "small" ? "24px" : "0",
+        }}
+        width="100%"
+        justify="center"
+        align="center"
+      >
         <Box
-          direction={size === "large" ? "row" : "column"}
-          justify="center"
-          gap={size === "large" ? "medium" : "84px"}
+          margin={{ vertical: "xlarge" }}
+          gap={size === "large" ? "medium" : "60px"}
+          width={size === "large" ? "70%" : "100%"}
         >
-          {Object.values(INSTANCE_TYPES)
-            .filter((value) => value !== INSTANCE_TYPES.GETTING_STARTED)
-            .map((value, i) => (
-              <InstanceNavButton key={i} {...INSTANCES[value]} />
-            ))}
+          <Box align="center">
+            <GettingStartedNavButton
+              {...INSTANCES[INSTANCE_TYPES.GETTING_STARTED]}
+            />
+          </Box>
+          <Box
+            direction={size === "large" ? "row" : "column"}
+            justify="center"
+            gap={size === "large" ? "medium" : "60px"}
+            width="100%"
+            align="center"
+          >
+            {Object.values(INSTANCE_TYPES)
+              .filter((value) => value !== INSTANCE_TYPES.GETTING_STARTED)
+              .map((value, i) => (
+                <InstanceNavButton key={i} {...INSTANCES[value]} />
+              ))}
+          </Box>
         </Box>
-      </Box>
-      <Box css={{ fontFamily: "Inter" }} direction="row">
-        <Link to="/code-of-conduct" underline>
-          code of conduct
-        </Link>
-        <Box pad={{ horizontal: "small" }}>|</Box>
-        <ExternalLink href="https://centrifuge.io/contributors#careers" target="_blank">
-          work with us
-        </ExternalLink>
+        <Box css={{ fontFamily: "Inter" }} direction="row">
+          <Link to="/code-of-conduct" underline>
+            code of conduct
+          </Link>
+          <Box pad={{ horizontal: "small" }}>|</Box>
+          <ExternalLink
+            href="https://centrifuge.io/contributors#careers"
+            target="_blank"
+          >
+            work with us
+          </ExternalLink>
+        </Box>
       </Box>
     </Layout>
   );
 };
 
 export default () => {
-  return (
-    <AxisTheme theme={theme}>
-      <HomePage />
-    </AxisTheme>
-  );
+  return <AxisTheme theme={theme}>{/* <HomePage /> */}</AxisTheme>;
 };
