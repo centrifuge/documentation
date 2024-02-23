@@ -1,6 +1,6 @@
 ---
 id: glossary
-order: 6
+order: 7
 title: Glossary
 contributors: <Cassidy Daly:cassidy@centrifuge.foundation>, <Lucas Vogelsang:lucas@centrifuge.foundation>
 ---

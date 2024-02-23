@@ -85,24 +85,24 @@ const Layout = ({ children, hideFooter, size }) => {
             >
               <TopNavLink
                 to="/getting-started"
-                label="Getting started"
+                label="Getting Started"
                 isActive={currentPath === "getting-started"}
               >
-                Getting started
+                Getting Started
               </TopNavLink>
               <TopNavLink
                 isActive={currentPath === "user"}
                 to="/user"
-                label="User documentation"
+                label="User Documentation"
               >
-                User documentation
+                User Documentation
               </TopNavLink>
               <TopNavLink
                 isActive={currentPath === "developer"}
                 to="/developer"
-                label="Developer documentation"
+                label="Developer Documentation"
               >
-                Developer documentation
+                Developer Documentation
               </TopNavLink>
             </Box>
           </Box>

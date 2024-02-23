@@ -1,6 +1,6 @@
 ---
 id: token-summary
-order: 4
+order: 5
 title: CFG Token
 contributors: <Cassidy Daly:cassidy@centrifuge.foundation>, <Lucas Vogelsang:lucas@centrifuge.foundation>
 ---

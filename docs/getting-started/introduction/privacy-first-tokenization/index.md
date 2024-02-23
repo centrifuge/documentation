@@ -1,7 +1,7 @@
 ---
 id: privacy-first-tokenization
 order: 3
-title: Tokenization and Private Data
+title: Tokenization & Private Data
 category: subpage
 ---
 

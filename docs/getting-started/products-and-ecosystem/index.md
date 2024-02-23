@@ -1,5 +1,5 @@
 ---
 id: products-and-ecosystem
-order: 2
+order: 3
 title: Products and Ecosystem
 ---

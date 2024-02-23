@@ -1,5 +1,5 @@
 ---
-id: getting-started
-order: 1
-title: Introduction
+id: centrifuge-at-a-glance
+order: 2
+title: Centrifuge At A Glance
 ---
