@@ -7,7 +7,7 @@ category: subpage
 
 # Temp
 
-## Why are we building Centrifuge?
+## Temp
 
 In traditional finance, asset financing requires many intermediaries to function. For example, the shortlist of parties involved in a bond issuance can include a lead manager, managers, lawyers, paying agents, fiscal agents, auditors, registrars, transfer agents, calculation agents, listing agents, rating agents, process agents.
 

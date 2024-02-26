@@ -1,7 +1,7 @@
 ---
 id: off-chain
 order: 5
-title: Linked to the real world
+title: Legal Structure
 category: subpage
 ---
 
