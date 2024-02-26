@@ -36,5 +36,6 @@ The Centrifuge Network Foundation helps grow Centrifuge by funding research, dev
 
 [Centrifuge Network Foundation site](https://www.centrifuge.foundation/)
 
-## Founding documents of the Centrifuge DAO
-TODO!
+## Founding Documents of the Centrifuge DAO
+[The Founding Documents of the Centrifuge DAO](https://github.com/centrifuge/cps/blob/main/cps/CP29/CP29.md) are a binding agreement that sets the foundation for how we work together as a DAO. Key to the Founding Documents is the Shared Mission, a fixed destination that everyone can navigate towards even while there is significant change around us, a set of principles for how we work, a Code of Conduct, and roles, rights and obligations of members.
+
