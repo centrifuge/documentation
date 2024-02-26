@@ -7,6 +7,8 @@ category: subpage
 
 # Temp
 
+## Temp
+
 At the core of Centrifuge's governance is the Centrifuge DAO. CFG token holders play a pivotal role, steering the direction of the protocol and leveraging the Centrifuge treasury through both offchain and onchain voting. Mandated groups (described in detail below) help guide specific aspects of the DAO and protocol.
 
 A few major components of the Centrifuge DAO include:
