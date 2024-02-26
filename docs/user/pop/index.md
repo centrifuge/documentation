@@ -1,6 +1,6 @@
 ---
 id: pop
-order: 7
+order: 4
 title: Launching a Pool
 contributors: <Orhan Klardashti :klardashti@gmail.com>, <Jay :jay@k-f.co>
 ---

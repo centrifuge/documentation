@@ -5,17 +5,18 @@ title: The Centrifuge DAO
 category: subpage
 ---
 
-# The Centrifuge DAO
+# Temp
+
 At the core of Centrifuge's governance is the Centrifuge DAO. CFG token holders play a pivotal role, steering the direction of the protocol and leveraging the Centrifuge treasury through both offchain and onchain voting. Mandated groups (described in detail below) help guide specific aspects of the DAO and protocol.
 
 A few major components of the Centrifuge DAO include:
 
-## The Centrifuge Credit Group (CCG)
+### The Centrifuge Credit Group (CCG)
 The Centrifuge Credit Group is a team of experienced credit experts who help to onboard high quality real-world assets to Centrifuge. This group provides unbiased and objective reviews of pool onboarding proposals, as well as support for the community with questions about the setup, assets, and risks of proposed new and existing pools. As part of our DAO, the CCG brings traditional financial experience, credit expertise, and institutional networks to the Centrifuge ecosystem.
 
 [Centrifuge Forum: The Centrifuge Credit Group](https://gov.centrifuge.io/c/real-world-assets/credit-group/62).
 
-## Protocol Engineering Group (PEG)
+### Protocol Engineering Group (PEG)
 The Protocol Engineering Group is a mandated group containing Centrifuge core developers responsible for providing technical assessments and roadmaps to the DAO and broader community. They provide feedback of the technical feasability of governance proposals and gather feedback on protocol development.
 
 [Centrifuge Forum: The Protocol Engineering Group](https://gov.centrifuge.io/tag/peg)
@@ -30,7 +31,10 @@ k/factory, (a.k.a. k/f) is a software studio founded by the original contributor
 
 [k/factory site](https://k-f.co/)
 
-## Centrifuge Network Foundation
+## Centrifuge Network Foundation (CNF)
 The Centrifuge Network Foundation helps grow Centrifuge by funding research, development, and maintenance of the protocol and ecosystem.
 
 [Centrifuge Network Foundation site](https://www.centrifuge.foundation/)
+
+## Founding documents of the Centrifuge DAO
+TODO!

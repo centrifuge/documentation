@@ -1,6 +1,6 @@
 ---
 id: p2p-node
-order: 3
+order: 4
 title: Centrifuge POD (P2P Node)
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
 ---

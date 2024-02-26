@@ -1,6 +1,6 @@
 ---
 id: claim-cfg-rewards
-order: 4
+order: 6
 title: Claim CFG rewards
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Nico Dreher:nico@centrifuge.io>
 ---

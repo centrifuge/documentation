@@ -4,7 +4,7 @@ order: 1
 title: Products Overview
 category: subpage
 ---
-# .
+# Temp
 
 Centrifuge includes all the features needed to finance real world assets on a blockchain, from tokenization, securitization, up to liquidity integrations, all built on each other and transparently governed by token holders. This page is a short introductory overview of the main products that Centrifuge provides.
 

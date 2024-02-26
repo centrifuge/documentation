@@ -1,12 +1,12 @@
 ---
 id: governance
 order: 3
-title: Token Holder Governance
+title: Intro to Governance
 category: subpage
 ---
 
-# Governance
+# Temp
 
-## A simple explanation of centrifuge goverance
+## Temp
 
-body text goes here
+Centrifuge is governed by its token holders through a system of onchain governance.
