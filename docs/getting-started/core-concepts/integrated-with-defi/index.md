@@ -16,4 +16,4 @@ Using Liquidity pools, integrations could be used to enable protocols to invest 
 
 While the Centrifuge Protocol is built on Substrate, interacting with the Centrifuge Protocol would be possible from multiple chains creating a true multi-chain ecosystem. 
 
-![](./images/ecosystem.png#width=40%;)
+![](./images/ecosystem.png#width=70%;)

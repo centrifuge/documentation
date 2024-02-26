@@ -7,14 +7,18 @@ contributors: <Cassidy Daly:cassidy@centrifuge.foundation>, <Lucas Vogelsang:luc
 
 # Temp
 
-The Centrifuge Token (CFG) powers Centrifuge, facilitating an onchain governance system that empowers CFG holders to steer Centrifuge’s evolution without reliance on a centralized third party. CFG is also used to pay for transactions on Centrifuge Chain.
-
-Centrifuge can also be bridged 1:1 to Ethereum, where it can be used with decentralized applications.
-
-All changes to the Centrifuge protocol or the CFG token model described here go through governance proposals and need to be implemented by CFG token holders.
+CFG is the native token of Centrifuge, facilitating an onchain governance system that empowers CFG holders to steer Centrifuge’s evolution without reliance on a centralized third party. CFG is also used to pay for transactions on Centrifuge Chain. All changes to the Centrifuge protocol or the CFG token model described here go through governance proposals and need to be implemented by CFG token holders.
 
 ## Governance
 CFG tokens are utilized  for the ability to participate in technical governance in proportion to their stake in the protocol by voting to upgrade the chain runtime code. CFG holders participate in governance through an onchain voting mechanism on proposals: runtime upgrade proposals are voted on by the token holders. Approved proposals are enacted programmatically onchain.
+
+## Tokenomics and block explorer
+[You can find the block explorer for the CFG token here](https://centrifuge.subscan.io/).
+
+## CFG on Ethereum
+Centrifuge can be bridged 1:1 to Ethereum, where it can be used with decentralized applications. [See here for information on bridging CFG between Ethereum and Centrifuge Chain](/user/cfg-bridge).
+
+Centrifuge on Ethereum is an ERC20 token. [You can find the token contract for CFG on Ethereum here](https://etherscan.io/token/0xc221b7e65ffc80de234bbb6667abdd46593d34f0).
 
 ## CFG Token Distribution
 ### Initial Distribution

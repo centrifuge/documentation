@@ -11,7 +11,7 @@ By nature, real-world assets are often illiquid and can have maturities up to se
 
 After an asset is tokenized and an NFT is minted onchain, this NFT is used as a representation of the offchain collateral for an asset linked to an investment pool, as visualized below. The asset is priced and the issuer borrows liquidity from the pool. Over time, the accruing debt per asset is repaid by the issuer including interest payments and principal repayments.
 
-![](./images/pooling.png#width=25%;)
+![](./images/pooling.png#width=60%;)
 
 Together, this creates onchain, asset-level transparency: an investor can see at a glance what assets (NFTs) a pool contains, what has been borrowed against and repaid, what is overdue, and so on. This creates an immutable, transparent track record of financial transactions that can be publicly verified. Compare this to the current state of traditional finance, where historical financial data is often hidden and locked in private, siloed databases unavailable to the public, and financial analysis is done based on spreadsheets. 
 
@@ -38,7 +38,7 @@ The NAV also needs to account for defaults of assets: if an asset fails to be re
 ## Tranching
 Investors often want different kinds of risk exposure and yield on the same asset class. In the traditional finance world, one way to achieve this is by introducing a tiered investment structure or in other words, different tranches. This means that investors can invest in the same group of assets through different classes of debt with different risk/return profiles. A standard example is shown below.
 
-![](./images/tranching.png#width=40%;)
+![](./images/tranching.png#width=60%;)
 
 At its most common form, a pool can have a junior and senior tranche, with the junior tranche tracking the first loss position and receiving the excess yield, while the senior position receives a lower, fixed yield, but is protected from losses by junior. A key advantage of this structure is that it allows the issuer of the pool to invest in the junior tranche and thus take a first loss position in the pool, ensuring skin in the game.
 

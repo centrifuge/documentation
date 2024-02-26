@@ -1,7 +1,7 @@
 ---
 id: privacy-first-tokenization
 order: 2
-title: Tokenization and Private Data
+title: Tokenization & Private Data
 category: subpage
 ---
 
@@ -15,4 +15,4 @@ The Private Data Layer of the Centrifuge Protocol solves this. It allows issuers
 
 Technically, the Private Data Layer is a peer-to-peer network of nodes called PODs (“Private Offchain Data Nodes)” connected with each other to securely share information. All actors using this network can decide with whom and how to share the asset level data. Collaborators can be given read access to more detailed off-chain asset data, e.g. for institutional investors in a pool. It is also possible to define write access to specific data fields, which makes use cases possible such as only allowing a third-party valuation agent to price assets.
 
-![](./images/tokenization.png#width=30%;)
+![](./images/tokenization.png#width=70%;)

@@ -23,9 +23,6 @@ This app is accessible on any supported EVM (Ethereum Virtual Machine) chain, as
 ## Liquidity Pools
 Centrifuge's _Liquidity Pools_ are sets of smart contracts that can be deployed on any Ethereum Virtual Machine (EVM) chain — like Ethereum and its Layer-2 networks, as well as "Alt-L1s". Liquidity Pools allow users and organizations on these chains to invest in pools on Centrifuge without having to leave their native chain.
 
-## Onchain Securitization
-all the cool stuff that differentiates us
-
 ## Centrifuge Prime
 Centrifuge Prime is our product designed for onchain organizations such as DAOs, protocols, as well as entities like protocol foundations. Centrifuge Prime streamlines the process of onboarding and scaling a portfolio of real-world assets for these organizations.
 
