@@ -1,6 +1,6 @@
 ---
 id: cent-chain
-order: 4
+order: 3
 title: Built on Centrifuge Chain
 category: subpage
 ---

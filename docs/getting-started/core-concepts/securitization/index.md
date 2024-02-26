@@ -1,6 +1,6 @@
 ---
 id: securitization
-order: 2
+order: 1
 title: Onchain Securitization
 category: subpage
 ---

@@ -1,6 +1,6 @@
 ---
 id: integrated-with-defi
-order: 5
+order: 4
 title: Integrated with DeFi
 category: subpage
 ---
