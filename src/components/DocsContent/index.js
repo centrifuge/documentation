@@ -10,7 +10,6 @@ import CodeHighlighter from "../CodeHighlighter";
 import "./styles.css";
 
 import link from "../../images/link.svg";
-import AnchorMenu from "../AnchorMenu";
 
 const ListBase = styled(Grommet.Text)`
   padding-left: 1rem;
