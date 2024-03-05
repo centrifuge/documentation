@@ -22,7 +22,7 @@ Investing in Centrifuge requires onboarding as an investor to each specific pool
 
 ### Onboarding as an individual requires:
 * Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet (for Ethereum-based pools)
-* Centrifuge Chain wallet e.g. Talisman, SubWallet or Polkadot.js (For Centrifuge-based pools)
+* Centrifuge Chain wallet e.g. Metamask, Talisman, SubWallet or Polkadot.js (for Centrifuge-based pools)
 * Valid email address
 * A passport or government-issued photo ID
 * Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months)
