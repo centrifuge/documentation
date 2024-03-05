@@ -1,7 +1,7 @@
 ---
 id: cfg-bridge
 order: 5
-title: CFG <> wCFG Bridge
+title: CFG (Centrifuge) <> CFG (Ethereum)
 contributors: <Lucas Vogelsang:lucas@centrifuge.io>
 redirect_from:
   - /use/cfg-bridge
