@@ -2,8 +2,9 @@
 id: resources
 order: 6
 title: Resources
+contributors: <Devin Black:devin@k-f.co>
 ---
-
+# Resources
 This page gathers many resources to help you explore, research, and participate with Centrifuge — from sources of data and analytics to our official communication channels to articles and reports on real-world assets.
 
 ## Data and Analytics
@@ -11,6 +12,10 @@ These sites allow you to explore the data underpinning Centrifuge (as well as th
 - [Dune Analytics](https://dune.com/centrifuge/centrifuge)
 - [RWA.xyz](https://rwa.xyz/)
 - [DeFiLlama](https://defillama.com/protocol/centrifuge) (Check _include borrows_ at the top right)
+
+### CFG token exchanges and market data
+- [CoinGecko](https://www.coingecko.com/en/coins/centrifuge)
+- [CoinMarketCap](https://coinmarketcap.com/currencies/centrifuge/)
 
 ## News and Social Media
 These are all of our public communication channels in one place. Our Twitter and LinkedIn pages as well as our blog are great ways to keep up on Centrifuge. We also have podcasts, interviews, and panels uploading to our YouTube and Spotify pages.

@@ -1,44 +1,35 @@
 ---
 id: p2p-node
-order: 4
+order: 5
 title: Centrifuge POD (P2P Node)
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
+redirect_from:
+  - /build/p2p-node
+  - /build/p2p-node/
 ---
 
-## Introduction
-
-### Centrifuge POD (P2P Node)
-
+# Centrifuge POD (P2P Node)
 The Centrifuge P2P network is built to support a new generation of applications for the financial supply chain. Centrifuge provides users with the ability to remove intermediaries and create financial business documents as Non-Fungible Tokens (NFTs) that have long-term verifiability, are censorship resistant, and are stored and processed in a decentralized fashion.
 
 The Centrifuge P2P node provides a method to create, exchange, and use the data that exists in the financial supply chain. It creates transparent and shareable relationships between interacting companies. Data owners can selectively share the information with their business partners or other users of the network. Centrifuge provides a censorship resistant way to verify the authenticity of data that is transacted through and stored in it. This creates the foundation for data ownership, privacy, and transparency throughout the financial supply chain and also allows third parties to offer additional services, such as instant and decentralized financing of invoices and orders, trade credit insurance and financing supply chains multiple levels deep.
 
 The underlying Centrifuge protocol has a two layered approach. It is built on Substrate which allows businesses to transact freely on a single verifiable source of truth. The public blockchain is used for business identities, committing document status and minting business NFTs. In addition, a peer to peer network enables the exchange of business documents in a private and verifiable way.
 
-### Substrate
+## Substrate
 
 Substrate is a modular blockchain framework that enables creating custom blockchains. Centrifuge uses Substrate as the source of truth for document anchoring, heavily involved in the peer to peer document consensus protocol.
 
-For more information, see the [Parity Substrate Project](https://substrate.dev/)
-
-### Centrifuge is Beta Software
-
-Centrifuge and all its components are Beta Software. There will be substantial changes in the future and backwards compatibility is not guaranteed. Please use with caution. See [Disclaimer](https://docs.centrifuge.io/build/p2p-node/#disclaimer). Also, please read the details about the [protocol and implementation limitations](https://docs.centrifuge.io/build/p2p-node/#protocol-limitations).
+For more information, see the [Parity Substrate Project](https://docs.substrate.io/)
 
 ## Protocol Architecture
-
-### Centrifuge Protocol
-
 The components of the Centrifuge protocol are a collection Substrate Pallets and a peer to peer (P2P) network implemented on [libp2p](https://libp2p.io/). Substrate Pallets are used for maintaining identities, minting NFTs from off-chain Centrifuge documents, and anchoring state commitments.
 
 ![Centrifuge architecture](./images/architecture.png)
 
-### Centrifuge PODs
-
+## Centrifuge PODs
 The Centrifuge POD provides a simple API interface to interact with the p2p network and the Centrifuge Chain. The POD operates on a “service bus” principal where plugins and outside systems can subscribe to messages about specific objects (e.g., a procurement application can subscribe to changes of order objects). The POD abstracts the events that occur on the public blockchain and P2P Layer and translates them into messages on this internal bus for other applications to consume. The POD also offers the connectivity to Centrifuge Chain for applications that build on top of the network.
 
 ### Centrifuge Identities
-
 A Centrifuge Identity (CentrifugeID) is a unique ID assigned to a participant of Centrifuge in a network. It keeps track of the different cryptographic keys in use and enforces that this data can only be modified by the creator and/or a delegate chosen by the creator.
 
 An identity has the following credentials:
@@ -49,12 +40,10 @@ An identity has the following credentials:
 
 The unique identifier of a participant in the Centrifuge protocol is equivalent to the Centrifuge Chain account ID.
 
-### Documents within the protocol
-
+## Documents within the protocol
 A document within the Centrifuge protocol is a structured set of fields with specific types. The protocol supports any document types as long as the formats are agreed upon and shared between the participants. E.g.: A document can be an invoice or a purchase order with agreed upon fields and line items. The structure of the document becomes important for reaching consensus by attaching signatures to the document state, as well as creating specific attestations about a document at a later point in time. Documents are exchanged encrypted, and are only accessible for parties involved in this private data exchange. Collaborators can be added and removed from a document. Different collaborators can update a document and publish new versions within the set of nodes with access.
 
-### Centrifuge Chain
-
+## Centrifuge Chain
 In order to interact with Centrifuge Chain, you can either start your own node and sync with the network or use one of the public full nodes that Centrifuge provides:
 
 - mainnet: `wss://fullnode.centrifuge.io`

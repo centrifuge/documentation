@@ -4,11 +4,11 @@ order: 2
 title: Epochs and Order Execution
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 category: subpage
+redirect_from:
+  - /learn/epoch
+  - /learn/epoch/
 ---
-
-# .
-
-## Overview
+# Epochs and Order Execution
 
 A decentralized pool where investors can invest/redeem and Asset Originators originate/repay at any time needs a decentralized mechanism to coordinate investments, redemptions, originations and repayments. Welcome the `Epoch`.
 

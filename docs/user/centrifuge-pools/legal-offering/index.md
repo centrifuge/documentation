@@ -4,9 +4,12 @@ order: 6
 title: Legal Structure
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Martin Quensel:martin@centrifuge.io>, <Jay:jay@centrifuge.io>
 category: subpage
+redirect_from:
+  - /learn/legal-offering
+  - /learn/legal-offering/
 ---
 
-## Offering Structure
+# Legal Structure
 
 _Disclaimer: This is not legal advice. The information provided here is solely for informational purposes. We recommend you consult a lawyer if you want legal advice. No attorney-client or confidential relationship exists or will be formed between you and any contributors to Centrifuge.
 This article describes the legal structure at a high level and provides boilerplate legal agreements as an example for how to set up the legal framework necessary to ensure Real World Assets can be tokenized and a legal recourse exists for anyone holding these tokens._
@@ -21,13 +24,11 @@ This article explores the current template for a general-offering structure, and
 
 Work is also being done to bring offering structures for other non-US jurisdictions. The outlined structure supports either a 506(b) or a 506(c) offering under Regulation D of the US Securities Act of 1933 for a US-based issuing SPV offering investments directly to either US investors with accredited investor status or non-US investors domiciled in jurisdictions with United States Income Tax Treaties under the Foreign Account Tax Compliance Act (FATCA).
 
-### What is an SPV?
+## What is an SPV?
 
 A Special Purpose Vehicle (SPV) is an independent legal entity. It has its own assets and liabilities, as well as its own legal status. Usually, SPVs are created for a specific objective, often to isolate financial risk. As an SPV is a separate legal entity, it carries even if its parent company goes bankrupt. [Read more](https://corporatefinanceinstitute.com/resources/knowledge/strategy/special-purpose-vehicle-spv/)
 
-## Overview of a Transaction
-
-### Asset Finance Flow
+## Asset Finance Flow
 
 ![Asset Finance Flow](./images/legal_origination_flow.png)
 
@@ -43,7 +44,7 @@ The general flow of financing typically looks as follows:
 
 5. The Borrower pays back the financing amount plus the financing fee at the maturity date of the NFT. This happens either directly on-chain in DAI, or the Borrower does a USD bank transfer to the SPV. The SPV exchanges USD for DAI and pays it to the Centrifuge pool. The full repayment of the NFT unlocks the NFT, which is then returned to the Asset Originator where it can be burned.
 
-### Investors
+## Investors
 
 Investors can join a pool and provide liquidity for assets to be financed. They go through the following process.
 

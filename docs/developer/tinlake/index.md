@@ -1,11 +1,14 @@
 ---
 id: tinlake
 order: 7
-title: Tinlake Smart Contracts
+title: Tinlake Smart Contracts (Legacy)
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Devin Black:devin@centrifuge.io>
+redirect_from:
+  - /build/tinlake
+  - /build/tinlake/
 ---
 
-## Introduction to Tinlake on Ethereum
+# Tinlake Smart Contracts (Legacy)
 
 ### Overview
 [Tinlake](https://legacy.tinlake.centrifuge.io/) is Centrifuge's initial Ethereum-based, open, decentralized smart-contract based platform of asset pools bringing together pool issuers looking for financing and investors who seek to utilize the full potential of decentralized finance (DeFi).

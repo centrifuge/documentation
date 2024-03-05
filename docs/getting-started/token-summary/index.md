@@ -2,11 +2,12 @@
 id: token-summary
 order: 5
 title: The CFG Token
-contributors: <Cassidy Daly:cassidy@centrifuge.foundation>, <Lucas Vogelsang:lucas@centrifuge.foundation>
+contributors: <Lucas Vogelsang:lucas@centrifuge.foundation>, <Cassidy Daly:cassidy@centrifuge.foundation>, <Devin Black:devin@k-f.co>
+redirect_from:
+  - /learn/token-summary
+  - /learn/token-summary/
 ---
-
-# Temp
-
+# The CFG Token
 CFG is the native token of Centrifuge, facilitating an onchain governance system that empowers CFG holders to steer Centrifuge’s evolution without reliance on a centralized third party. CFG is also used to pay for transactions on Centrifuge Chain. All changes to the Centrifuge protocol or the CFG token model described here go through governance proposals and need to be implemented by CFG token holders.
 
 ## Governance

@@ -4,8 +4,14 @@ order: 1
 title: Introduction to Pools
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>, <Devin Black:devin@k-f.co>
 category: subpage
+redirect_from:
+  - /use
+  - /use/
+  - /learn/terms
+  - /learn/terms/
 ---
 
+# Introduction to Pools
 This page explores the core concepts and terminology of Centrifuge's pools.
 
 ## Centrifuge pool

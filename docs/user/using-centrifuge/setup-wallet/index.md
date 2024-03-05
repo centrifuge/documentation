@@ -7,10 +7,11 @@ category: subpage
 redirect_from:
   - /user
   - /user/
+  - /use/setup-wallet
+  - /use/setup-wallet/
 ---
-
+# Wallet Setup
 DISCLAIMER: _Use of this guide is at your own risk. To the maximum extent permitted by applicable law, the services are provided without warranties of any kind, whether express, implied, statutory or otherwise, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, title, quiet enjoyment, accuracy, or non-infringement. Further, to the fullest extent allowed by applicable law, in no event shall the company or its affiliates, be liable to you or any third party for any damages of any kind._
-
 
 ## EVM and Substrate Wallets
 Centrifuge supports both EVM and Substrate accounts. If you already have an Ethereum compatible wallet setup, the easiest way is to use your existing Ethereum wallet. For expert users it might be helpful to use a Substrate compatible wallet such as Polkadot Vault. EVM wallets can be used to connect to any of the live networks while Substrate Wallets only work with Centrifuge Chain.
@@ -20,7 +21,7 @@ A Centrifuge Substrate address will begin with `4...`, an EVM address will begin
 ### Sending tokens between EVM & Substrate Wallets on Centrifuge Chain
 The Centrifuge App can be used to send and receive tokens. It will take care of the address conversion between Substrate and EVM addresses.
 
-#### Receiving CFG on an EVM Account
+### Receiving CFG on an EVM Account
 To receive CFG from someone using a Substrate account, you will need to get your Substrate address. Go to the [App Portfolio](https://app.centrifuge.io/portfolio) and click on [receive](https://app.centrifuge.io/portfolio?receive=CFG) next to your CFG Balance. The Substrate address is then shown to you in the sidebar:
 
 ![](./images/receive_cfg.png#width=80%;)
@@ -28,16 +29,15 @@ To receive CFG from someone using a Substrate account, you will need to get your
 If you are receiving CFG from someone using an EVM account on an EVM account, they can simply use your EVM address and their wallet to send the tokens.
 
 
-#### Receiving CFG on a Substrate Account
+### Receiving CFG on a Substrate Account
 To receive CFG on a Substrate account, simply give the sender your address. The simplest way to send tokens is to go follow the section below (**Sending CFG to any Account**) or they can use their wallet's built in transfer function.
 
-#### Sending CFG to any Account
+### Sending CFG to any Account
 To send CFG from your wallet to any other account (Substrate or EVM), you can use the app. Go to the [App Portfolio](https://app.centrifuge.io/portfolio) and click on [send](https://app.centrifuge.io/portfolio?send=CFG) next to your CFG Balance.
 
 ![](./images/send_cfg.png#width=80%;)
 
 This will allow you to send to an address of either format.
-
 
 ## Connect your wallet
 When using Centrifuge App you can choose between pools deployed on Centrifuge Chain, Ethereum, Base, Celo and Arbitrum. You can connect to both chains via our wallet component that allows you to pick the wallet of your choice. To do so, click on `Connect` in the top right corner. Then, first select the chain you want to connect with. 
@@ -71,7 +71,7 @@ You can create a Centrifuge account in any wallet that supports Polkadot/Substra
 
 For a more comprehensive list head to the Polkadot Wiki: [Wallets and Extensions for Substrate](https://wiki.polkadot.network/docs/wallets-and-extensions)
 
-### Using Talisman
+## Using Talisman
 Talisman is a wallet that supports Substrate (Polkadot) and Ethereum accounts. The Talisman wallet browser extension is available on Google Chrome, Brave, and Firefox, and a corresponding asset dashboard is accessible at [app.talisman.xyz](https://app.talisman.xyz/portfolio).
 
 To set up Talisman:
@@ -98,14 +98,14 @@ Finally, to see an overview of your CFG accounts, click on "Receive" under your 
 
 ![](./images/talisman-wallet.png#width=600)
 
-### Using the Polkadot Vault App (experts only)
+## Using the Polkadot Vault App (experts only)
 The [Polkadot Vault](https://signer.parity.io/ ) (formerly `Parity Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). Follow the instructions in their [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html) to setup the wallet.
 
 The Centrifuge metadata portal can be found here: [centrifuge.github.io/metadata-portal](https://centrifuge.github.io/metadata-portal/#/centrifuge). First add the Centrifuge network and then load the metadata before creating a key (see Vault Documentation for more details).
 
  ![](./images/create-keypair.png#width=40%;)
 
-#### Adding a Vault to the Polkadot.js UI
+### Adding a Vault to the Polkadot.js UI
 You can look up your Centrifuge address by scanning the QR code on the Polkadot.js UI.
 
 - On your computer, navigate to https://polkadot.js.org/apps/#/explorer.

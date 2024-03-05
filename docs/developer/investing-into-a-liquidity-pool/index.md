@@ -3,15 +3,15 @@ id: investing-into-a-liquidity-pool
 order: 4
 title: Investing into a Liquidity Pool
 contributors: <NunoAlexandre:nuno@k-f.co>
-category: subpage
+redirect_from:
+  - /build/guides
+  - /build/guides/
 ---
 
 # Investing into a Liquidity Pool
-
 This guide will teach you how to find the correct liquidity pool instance to invest in, how to invest and get the respective tranche tokens in return, and how the whole system flows behind the scenes.
 
 ## Deployed Contracts
-
 Pick the contracts deployed on the network you want to invest from.
 You will need them on the `Step 2.` below.
 
@@ -20,7 +20,6 @@ You will need them on the `Step 2.` below.
   - `Circle USDC` - `0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48`
 
 ## Steps
-
 1. ERC20 Approval
 
    The user should call the ERC20 approval on the investment currency (e.g. USDC on Ethereum) to allow the Liquidity Pools contract to manage those funds for them
@@ -59,7 +58,6 @@ You will need them on the `Step 2.` below.
 <br/>
 
 ## Overview
-
 Behind the scenes, this is what takes place on steps 2 and 3:
 
 ![Liquidity Pools - Investment Flow](./images/lp-investment-flow.png)

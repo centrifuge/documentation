@@ -4,19 +4,20 @@ order: 3
 title: Investing and Redeeming
 contributors: <Dennis Wellmann:dennis@k-f.co>, <Jay:jay@k-f.co>
 category: subpage
+redirect_from:
+  - /use/Invest
+  - /use/Invest/
 ---
 
-# Investment requirements
+# Investing and Redeeming
 
 ## Legal requirements
-
 - KYC/KYB has been successfully completed
   - Find more information how to onboard [here](/user-documenation/onboarding/)
   - Note that there are some [countries with restricted access](https://docs.centrifuge.io/user-documenation/onboarding/#excluded-countries) and _US individual investors must be accredited investors_
 - Signed `Token Subscription Agreement`
 
 ## Technical requirements
-
 - A web browser with a web3 wallet. Centrifuge supports the following wallets:
 
 - Centrifuge/Polkadot
@@ -33,11 +34,9 @@ If you are setting up a wallet for the first time please apply appropriate secur
 When attempting to invest, ensure you are connected with the wallet address you connected with during the initial KYC process to invest in a pool. If you encounter an issue please confirm KYC has been completed and that the correct wallet is selected. If issue remains please contact support@centrifuge.io.
 
 ## Fund Investment address
-
 Before you invest, please make sure that your KYCed investment address is funded with both the investment amount in the stablecoin of the selected pool and sufficient native chain currency (such as ETH or CFG) to pay for the transaction fees. There are [several centralized and decentralized exchanges](https://cointelegraph.com/ethereum-for-beginners/how-to-buy-ethereum), such as [Coinbase](https://www.coinbase.com/) or [Uniswap](https://uniswap.org/) where you can buy and/or trade ETH and Stablecoins against USD and other tokens.
 
-# Investment flow summary
-
+## Investment flow summary
 Investments and redemptions on Centrifuge are executed in epochs. During an epoch you can lock your investment or redemption order. You can also cancel your locked order during an epoch period. At the end of an epoch all locked orders automatically executed at best effort considering investment/redemption supply and demand and the pool's risk metrics such as minim tranche risk buffers.
 
 Once an investment is executed, the tranche tokens (in the case of an investment) or stable coin (in the case of a redemption) at any time following the start of the next epoch. If your order only partially executes you can collect that portion of your order. The unfulfilled part of the order remains locked for investment/redemption pending execution. As with your initial order, this lock can be canceled at any time.
@@ -118,7 +117,6 @@ Once you are verified and completed pool onboarding by signing the subscription 
 - Once your redemption has been fulfilled you will see "Redemption successful".
 
 ## Investment Disclaimer
-
 Nothing contained in this website is to be construed as a solicitation or offer, or recommendation, to buy or sell any interest in any note or other security, or to engage in any other transaction, and the content herein does not constitute, and should not be considered to constitute, an offer of securities. No statement herein made constitutes an offer to sell or a solicitation of an offer to buy a note or other security. All information on this Web page is provided and maintained by the issuers of the respective Centrifuge pools. The issuers have full responsibility. Please contact the respective issuer in case of any inquiries. Centrifuge and its affiliates are not liable nor responsible for the information provided hereby.
 
 Before investing in any of the Centrifuge pools, please check the issuer's offering materials and subscription documents including the Executive Summary to understand the terms, conditions, and investment risks of each pool. The issuer provides investment risk factors which are important to understand when you consider whether to invest in a pool. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other content before making any decisions based on such information or other content.

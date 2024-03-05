@@ -3,16 +3,17 @@ id: nfts
 order: 2
 title: NFTs on Centrifuge
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
+redirect_from:
+  - /build/nfts
+  - /build/nfts/
 ---
 
-## Introduction
-
+# NFTs on Centrifuge
 User-mintable NFTs are a critical part of the Centrifuge ecosystem. Minting an NFT from a Centrifuge [Document](https://docs.centrifuge.io/build/p2p-node/#documents-within-the-protocol) allows a user to [draw loans](https://docs.centrifuge.io/getting-started/securitization/#on-chain-securitization) against the NFT asset, or simply provides a way to easily transact in privacy-preserving way with a document asset. This flow can be seen in the image below:
 
 ![Centrifuge architecture](./images/mint-flow.jpeg)
 
 ## Verification of Proof Fields
-
 By using [precise proofs](https://medium.com/centrifuge/introducing-precise-proofs-create-validate-field-level-merkle-proofs-a31af9220df0), we can supply privacy preserving proofs that certain fields are present in the NFT to be minted, without revealing the exact value of these fields. Leaves are created by hashing and encoding the property, value, and salts of the data fields which we want to prove:
 
 ```
@@ -92,13 +93,11 @@ An example of an NFT with one proof which can be minted using methods from the p
 The mint method on this NFT would expect one proof of "loanAmount", which has been hardcoded as a state variable. It would furthermore also check that the document from which the NFT should be minted has been properly anchored, before minting the NFT.
 
 ## Anatomy of an NFT
-
 We recommend a certain anatomy for an NFT created with the Centrifuge [privacy enabled ERC721 library](https://github.com/centrifuge/privacy-enabled-erc721/tree/develop).
 
 _Please note that the proposed NFT structure will change pending the launch of the Centrifuge Chain._
 
 ### Metadata
-
 It is useful to store publicly accessible data about the NFT in a separate metadata structure, in order to access and render this data in user facing applications.
 
 We store this metadata in a TokenData structure which typically contains at least the document version and the address of the minter, as well as the fields which are contained in the precise proofs.
@@ -116,7 +115,6 @@ struct TokenData {
 ```
 
 ### Checks
-
 There are several checks that should be done prior to the minting of an NFT:
 
 1. `_checkAnchor`: Checking that the document has been properly anchored.

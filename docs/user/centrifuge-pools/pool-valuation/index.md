@@ -4,15 +4,16 @@ order: 5
 title: Pool Valuation (NAV)
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
 category: subpage
+redirect_from:
+  - /learn/pool-valuation
+  - /learn/pool-valuation/
 ---
 
-## Introduction
-
-### What is asset valuation?
+# Pool Valuation (NAV)
 
 Asset valuation is the process of determining the current worth of an asset or portfolio, often expressed as the net asset value (NAV). This valuation is typically required when an asset or portfolio of assets is being sold, or when investors want to enter or exit an existing investment fund or pool. In such cases, the portfolio's value ultimately determines the investment or redemption price.
 
-### Approaches to asset valuation
+## Approaches to asset valuation
 
 Depending on the asset class, there may be different approaches to valuing an asset or pool of assets. For assets with a public liquid secondary market, such as stocks, bonds, or most fungible crypto tokens, values are usually approximated through available market prices.
 
@@ -20,7 +21,7 @@ Determining the value of illiquid assets common in private credit, which are mos
 
 In such cases, the valuation methodology is often based on a fair value approach utilizing a financial model ("marked to model"). This can involve valuing the present value of future cash flows expected to be received based on these financings, using the discounted cash flow (DCF) method. Another approach may be "marking at par," in which the value of the outstanding debt is simply based on the amount owed.
 
-## On-chain implementation
+## Onchain implementation
 
 ### Flexible, modular valuation setup
 

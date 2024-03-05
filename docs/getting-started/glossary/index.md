@@ -2,16 +2,10 @@
 id: glossary
 order: 7
 title: Glossary
-contributors: <Cassidy Daly:cassidy@centrifuge.foundation>, <Lucas Vogelsang:lucas@centrifuge.foundation>
+contributors: <Devin Black:devin@k-f.co>
 ---
-
-<!---
-some good sources:
-https://docs.google.com/document/d/122bVcxt_U3ZKtPPsNEM7nZZT9wD-DQ5H9gvyfw5aGoM/edit#heading=h.o5e7eecjlzyt
-
--->
-
-A glossy of terms related to Centrifuge and real-world assets onchain. For a more general glossary of blockchain and decentralized finance terms, see [Consensys's Blockchain Glossary](https://consensys.io/knowledge-base/a-blockchain-glossary-for-beginners).
+# Glossary
+A glossary of terms related to Centrifuge and real-world assets onchain. For a more general glossary of blockchain and decentralized finance terms, see [Consensys's Blockchain Glossary](https://consensys.io/knowledge-base/a-blockchain-glossary-for-beginners).
 
 ### Asset
 In a Centrifuge pool, assets are tokenized as NFTs and financed by the pool's issuer.
@@ -26,10 +20,13 @@ The Centrifuge App is Centrifuge's interface for investors to invest in real-wor
 Centrifuge Chain is a blockchain specifically designed for real-world assets. It powers pools, their assets, tranches, onchain governance, the treasury, and the CFG token.
 
 ### Centrifuge Prime
-Centrifuge Prime is our product that helps DAOs, protocols, and other crypto-native organizations invest in and scale a portfolio of real-world assets.
+[Centrifuge Prime](https://centrifuge.io/prime/) is our product that helps DAOs, protocols, and other crypto-native organizations invest in and scale a portfolio of real-world assets.
 
 ### Collateral
 Assets pledged by borrowers to secure a loan, ensuring the lender can recoup some value if the borrower defaults.
+
+### DROP / TIN
+In previous iterations of Centrifuge (i.e. Tinlake), DROP was the name of the token representing the senior tranche in a pool, and TIN the token representing the junior tranche in a pool. Tranche tokens in pools on Centrifuge Chain can have any name as defined by the issuer.
 
 ### Epoch
 In Centrifuge's pools, an epoch is a fixed time period where investment and redemption transactions are temporarily locked and then executed at the end based on predefined rules. This system ensures coordinated and fair handling of funds, allowing for new asset financing while prioritizing investor redemptions.
@@ -42,6 +39,9 @@ Centrifuge Liquidity Pools are smart contracts deployed on EVM chains (like Ethe
 
 ### NAV (Net Asset Value)
 The total value of a pool's assets. This valuation is typically required when an asset or portfolio of assets is being sold, or when investors want to enter or exit an existing pool. In such cases, the portfolio's value ultimately determines the investment or redemption price.
+
+### NFT
+NFTs are a unique digital identifier that, unlike the dollar or ERC-20 tokens like CFG, are unique and "non-fungible." In the case of Centrifuge, NFTs are used to represent real-world assets onchain.
 
 ### Onchain
 Like being online, but on a blockchain. 

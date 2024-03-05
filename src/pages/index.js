@@ -97,6 +97,7 @@ const InstanceNavButton = ({ uri, color, title, avatar }) => {
             }}
           />
         )}
+
         <Text style={{ fontFamily: "Inter" }} size="32px">
           {title}
         </Text>

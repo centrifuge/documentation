@@ -3,12 +3,15 @@ id: contribute-network
 order: 6
 title: Contribute to the Network
 contributors: <Dennis Wellmann:dennis@centrifuge.io>
+redirect_from:
+  - /use/contribute-network
+  - /use/contribute-network/
 ---
 
-## Running a Full Node
+# Contribute to the Network
+You can contribute to Centrifuge by running a **full node**. This article outlines setting up and running a full node.
 
-### Requirements
-
+## Requirements
 **_System Requirements_**
 We recommend consulting the [standard hardware](https://wiki.polkadot.network/docs/en/maintain-guides-how-to-validate-polkadot#standard-hardware) section of the Polkadot Wiki for specs.
 
@@ -20,8 +23,7 @@ Below we describe two ways of running our chain node:
 2. **Bare Metal**
    Running a bare metal setup requires you to compile Centrifuge Chain from source, which can take between a 10 minutes up to 4 hours, depending on your specs. For a production grade setup, we do recommend to run a bare metal validators for 2 reasons: a) It minimizes the tools involved, which increases security, b) The performance is slightly superior.
 
-### Run your node in a Docker Container
-
+## Run your node in a Docker Container
 1. Ensure you have [Docker](https://docs.docker.com/install/) as well as [Subkey](https://github.com/substrate-developer-hub/substrate-developer-hub.github.io/blob/source/docs/knowledgebase/integrate/subkey.md) installed. Use `Subkey` version `v2.0.0`.
 2. Generate a new key pair with Subkey that will be used as your node-key: `subkey generate`. Make sure you save the output in a safe place. For mainnet keys use network flag: `subkey generate -n centrifuge`
 3. Start your node by running the following, where {name} is the name that will show up in Polkadot Telemetry and {node-key} is the private key you just generated (without the `0x` prefix). Note that we do expose RPC and WS ports here for simplicity – these ports should not be exposed in a production grade setup.
@@ -97,8 +99,7 @@ docker run -it centrifugeio/centrifuge-chain:parachain-20220303141305-681f4a6 \
     --chain=polkadot
 ```
 
-### Bare metal instructions
-
+## Bare metal instructions
 1. Install dependencies:
 
    a) On Unix systems (Debian, Ubuntu, ...): `sudo apt install -y cmake pkg-config libssl-dev git gcc build-essential clang libclang-dev`
@@ -134,8 +135,7 @@ docker run -it centrifugeio/centrifuge-chain:parachain-20220303141305-681f4a6 \
 
 The node is now built and available in `target/release/centrifuge-chain`.
 
-#### Executing the binary
-
+## Executing the binary
 Below are the commands to start a node. `{name}` is the name that will show up in [Polkadot Telemetry](https://telemetry.polkadot.io) and `{node-key}` is the private key (`Secret seed` in the output of Subkey) you just generated (without the 0x prefix).
 
 Mainnet:

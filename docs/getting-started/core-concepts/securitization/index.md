@@ -2,11 +2,13 @@
 id: securitization
 order: 1
 title: Onchain Securitization
+contributors: <Jeroen Offerijns:jeroen@k-f.co>, <Dennis Wellmann:dennis@k-f.co>, <Devin Black:devin@k-f.co>
 category: subpage
+redirect_from:
+  - /getting-started/securitization
+  - /getting-started/securitization/
 ---
-# Temp
-
-## Onchain securitization
+# Onchain Securitization
 By nature, real-world assets are often illiquid and can have maturities up to several years. This makes investing in individual assets extremely difficult. A way to solve this is by pooling multiple assets together, and allowing investors to provide financing for this pool instead of each asset individually. This is called a securitization and is a well established concept in traditional financial markets.
 
 After an asset is tokenized and an NFT is minted onchain, this NFT is used as a representation of the offchain collateral for an asset linked to an investment pool, as visualized below. The asset is priced and the issuer borrows liquidity from the pool. Over time, the accruing debt per asset is repaid by the issuer including interest payments and principal repayments.
@@ -28,7 +30,7 @@ Two fundamental components are needed to make this work: an epoch mechanism and 
 ## Epoch mechanism
 A decentralized pool where investors of different tranches can invest and redeem at any time needs a decentralized mechanism to coordinate the inflow of investments and outflow of redemptions. To address this, each pool is managed using “Epochs”: sessions with a fixed minimum time (e.g. 24 hours) over which investment and redemption orders can be submitted. At the end of the epoch, a decentralized solver mechanism considers the pool state and executes the orders according to seniority of the tranches (e.g. senior tranche redemptions take priority over junior tranche redemptions) and available liquidity.
 
-## On-chain NAV
+## Onchain NAV
 The second component to enable revolving pools is an onchain NAV (Net Asset Value) calculation: to support continuous investments and redemptions, accurate pricing for the pool tokens is required. In traditional finance, pricing for such illiquid assets is usually done using Discounted Cash Flow (DCF) models: expected cash flows (e.g. principal payments of assets in the pool at maturity) are discounted to their present value. Centrifuge brings these calculations onchain and calculates the new NAV on an ongoing basis.
 
 The NAV should also account for different kinds of loans, to ensure accurate pricing: financing for real-world assets can vary from simple bullet loans (borrow now and repay principal plus interest at maturity) to complex amortization schedules (repayment of principal plus interest at specific intervals).

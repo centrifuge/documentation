@@ -4,9 +4,12 @@ order: 4
 title: Interest Rate Methodology
 contributors: <Dennis:dennis@k-f.co>
 category: subpage
+redirect_from:
+  - /learn/interest-rate-methodology
+  - /learn/interest-rate-methodology/
 ---
 
-# Introduction
+# Interest Rate Methodology
 
 The standard within the Centrifuge Protocol is to compound and calculate interest every second.
 Transactions on the Centrifuge Protocol are being calculated and executed continuously at any day and time. This requires an equivalent interest rate mechanism that is able to provide the correct amount of interest at any point in time.

@@ -4,11 +4,12 @@ order: 5
 title: Centrifuge Council
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 category: subpage
+redirect_from:
+  - /use/council
+  - /use/council/
 ---
 
-# Temp
-
-## Introduction
+# Centrifuge Council
 
 The Centrifuge council currently consists of 9 councilors (this number can be changed by governance) who are elected by the CFG token holders. The council serves to represent the interest of all Centrifuge stakeholders, be they actively participating token holders or not. Some of the tasks of the council are to:
 
@@ -21,7 +22,6 @@ Any CFG token holder can both submit their candidacy to the council and vote on 
 The Centrifuge council have rolling elections, which means that every 7 days the votes are counted, and the candidates with the highest amount of votes (in terms of CFG) from *candidates*, *runners up* and *members* will be given a seat in the council.
 
 ## How to submit a candidacy to the council
-
 Before you can submit your candidacy to the Centrifuge council, you need to create an **on-chain identity** for the account you will use for your candidacy. You do so by going to [Accounts](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/accounts) in the Polkadot.js web app, then click on the three dots next to the account you want create an on-chain identity for, and select *Set on-chain identity*.
 
 ![](./images/SetIdentity.png)
@@ -39,7 +39,6 @@ If you do not get enough votes to get into either "runners up" or "members" from
 ```
 
 ## How to vote on council candidates
-
 To vote for council candidates, go to the [Council section](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Ffullnode.parachain.centrifuge.io#/council) of the portal and click *Vote*.
 
 ![](./images/VoteCandidates.png)

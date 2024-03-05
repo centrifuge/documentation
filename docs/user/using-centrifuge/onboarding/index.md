@@ -4,11 +4,12 @@ order: 2
 title: Onboarding to a Pool
 contributors: <Anna Mehrländer:anna@k-f.co>, <Dennis Wellmann:dennis@k-f.co>
 category: subpage
+redirect_from:
+  - /use/onboarding
+  - /use/onboarding/
 ---
 
-# . 
-
-## Introduction
+# Onboarding to a Pool
 Investing in Centrifuge requires onboarding as an investor to each specific pool. Submitting personal information for KYC and signing a subscription document with the pool's issuer usually takes 5-7 minutes, but it can take 1-2 days when the country of citizenship or country of incorporation is not supported by the automated onboarding. 
 
 ![](./images/onboarding_shufti.png)
@@ -20,7 +21,6 @@ Investing in Centrifuge requires onboarding as an investor to each specific pool
 ## Requirements
 
 ### Onboarding as an individual requires:
-
 * Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet (for Ethereum-based pools)
 * Centrifuge Chain wallet e.g. Talisman, SubWallet or Polkadot.js (For Centrifuge-based pools)
 * Valid email address
@@ -41,8 +41,7 @@ Investing in Centrifuge requires onboarding as an investor to each specific pool
 * Completed Form W-8BEN-E (businesses based outside the US) or Form W9 (U.S. citizen or U.S. person & US entity)
 
 
-### Onboarding to a pool requires:
-
+### General requirements
 * Ethereum or Centrifuge wallet
 * A verified KYC (i.e. a completed onboarding as an investor)
 
@@ -52,8 +51,7 @@ Good to know: Don’t worry if you can’t finish the process in one go – you 
 * US investors need to be accredited investors to invest in pools. See section **Onboarding as US investor** below.
 * Due to US sanctions, investors from certain countries are excluded from investing. See section **Excluded Countries** below.
 
-## Onboarding as an individual  
-
+## Onboarding as an individual
 Start the onboarding flow to become a KYC-verified investor before onboarding to a pool later. Once you have connected your wallet, click `Verify identity` in the wallet dropdown and start the onboarding flow.
 
 ![](./images/pools_overview.png)
@@ -184,7 +182,7 @@ This section covers further information about:
 * Terms and conditions
 * Investment disclaimer
 
-### Onboarding as an US investor
+## Onboarding as an US investor
 
 To invest in Centrifuge as an US investor you need to be an "Accredited Investor".
 
@@ -198,7 +196,7 @@ The regulations for accredited investors vary from between jurisdictions but req
 - Be a general partner, executive officer, or director for the company that is issuing the unregistered securities or
 - Be a registered brokers and investment advisor
 
-#### What information do I need to provide as accredited investor?
+### What information do I need to provide as accredited investor?
 
 If you are an US investor you further need to provide documentation to prove you are an `Accredited Investor`. You will need to complete a questionnaire as part of the onboarding flow.
 
@@ -221,7 +219,7 @@ Unfortunately, due to US sanctions, investors located in or a resident of the fo
 * Venezuela
 * Zimbabwe
 
-### Data sharing policy
+## Data sharing policy
 
 **Consent to data transfer**
 Shufti Pro Limited enables Investors to disclose their personal data to issuers of such Investors' choosing. Investors located in the European Economic Area ("EEA") or the United Kingdom should be aware that these disclosures may involve transfers to countries that do not provide the same level of protection for personal data as their home countries. Please note that this Data Transfer Consent Form should be read in conjunction with our GLBA Privacy Notice and (for EEA and UK residents) our GDPR Privacy Notice. Any defined terms not defined herein take their meaning from those notices or the Shufti Pro Terms and Conditions. The below information contains key details regarding these transfers:
@@ -245,7 +243,7 @@ By consenting to this disclosure, your information will be transferred to the co
 **Your Consent**
 By consenting to the data transfer, you acknowledge you have read and consent to the transfer of your personal data as set forth herein. You may decline to consent to this transfer, in which case Shufti Pro will not be able to carry out your direction to disclose your personal information to your selected issuer.
 
-### Terms and conditions
+## Terms and conditions
 
 The information to which this website gives access is exclusively intended for persons who are not located in or resident of certain other restricted jurisdictions, and who are otherwise permitted to receive such information under applicable law.
 
@@ -267,7 +265,7 @@ Prospective investors are not to construe this information as investment, legal,
 
 If you are located in, or are a resident of, a country in which the cross-border marketing of securities is restricted, you are confirming that you are requesting this information without having been being solicited or approached, directly or indirectly, by the issuer or any issuer's affiliate or issuer's partner or other person acting as agent or otherwise on behalf of the issuer.
 
-### Investment disclaimer
+## Investment disclaimer
 
 Nothing contained in this website is to be construed as a solicitation or offer, or recommendation, to buy or sell any interest in any note or other security, or to engage in any other transaction, and the content herein does not constitute, and should not be considered to constitute, an offer of securities. No statement herein made constitutes an offer to sell or a solicitation of an offer to buy a note or other security. All information on this Web page is provided and maintained by the issuers of the respective pools. The issuers have full responsibility. Please contact the respective issuer in case of any inquiries. Centrifuge and its affiliates are not liable nor responsible for the information provided hereby.
 
