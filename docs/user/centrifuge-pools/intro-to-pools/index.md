@@ -7,6 +7,8 @@ category: subpage
 redirect_from:
   - /use
   - /use/
+  - /user
+  - /user/
   - /learn/terms
   - /learn/terms/
 ---
