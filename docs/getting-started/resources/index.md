@@ -27,12 +27,12 @@ These are all of our public communication channels in one place. Our Twitter and
 - [Telegram Feed](https://t.me/centrifuge_chat)
 
 ## Events and Campaigns
-The Real-World Asset Summit, hosted by Centrifuge, brings together the brighest minds from both decentralized and traditional finance. Fixing Finance is our campaign to tell the story of what problems we're solving here at Centrifuge. Check them both out below.
+The Real-World Asset Summit, hosted by Centrifuge, brings together the brightest minds from both decentralized and traditional finance. Fixing Finance is our campaign to tell the story of what problems we're solving here at Centrifuge. Check them both out below.
 - [Real-World Asset Summit](https://www.rwasummit.io/)
 - [Fixing Finance](https://fixing.finance/)
 
 ## Governance and Community
-Get involved with the Centrifuge community. Our forum is for governance RFCs (request for comments) and votes as well as general discussion about the platform and protocol. The Discord channel is more casual, and a great place to reach out if you need technical support or are looking to connect with the team for a partnership.
+Get involved with the Centrifuge community. Our forum is for governance RFCs (Request for comments) and votes as well as general discussion about the platform and protocol. The Discord channel is more casual, and a great place to reach out if you need technical support or are looking to connect with the team for a partnership.
 - [Centrifuge Forum](https://gov.centrifuge.io/)
 - [Community Discord](https://discord.com/invite/yEzyUq5gxF)
 
