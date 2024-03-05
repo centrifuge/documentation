@@ -52,3 +52,43 @@ https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
 /nfts/overview/verification/    /developer/nfts/#verification-of-proof-fields
 # /code-of-conduct/
 # /centrifuge-os-node-api/
+
+#Redirects for new layout update 2024
+/	/getting-started/introduction/welcome/
+/getting-started/	/getting-started/introduction/welcome/
+/learn/	/getting-started/introduction/welcome/
+/use/	/user/centrifuge-pools/intro-to-pools/
+/build/	/developer/cent-chain/
+/faq/	/getting-started/introduction/welcome/
+/getting-started/centrifuge-at-a-glance/	/getting-started/introduction/welcome/
+/getting-started/privacy-first-tokenization/	/getting-started/core-concepts/privacy-first-tokenization/
+/getting-started/securitization/	/getting-started/core-concepts/privacy-first-tokenization/
+/getting-started/cent-chain/	/getting-started/core-concepts/cent-chain/
+/getting-started/integrated-with-defi/	/getting-started/core-concepts/integrated-with-defi/
+/getting-started/off-chain/	/getting-started/core-concepts/legal-structure
+/learn/terms/	/user/centrifuge-pools/intro-to-pools/
+/learn/multi-tranche-system/	/user/centrifuge-pools/multi-tranche-system/
+/learn/epoch/	/user/centrifuge-pools/epoch/
+/learn/pool-valuation/	/user/centrifuge-pools/pool-valuation/
+/learn/interest-rate-methodology/	/user/centrifuge-pools/interest-rate-methodology/
+/learn/legal-offering/	/user/centrifuge-pools/legal-offering/
+/learn/token-summary/	/getting-started/token-summary/
+/use/setup-wallet/	/user/using-centrifuge/setup-wallet/
+/use/onboarding/	/user/using-centrifuge/onboarding/
+/use/Invest/	/user/using-centrifuge/invest/
+/use/claim-cfg-rewards/	/getting-started/introduction/welcome/
+/use/governance-process/	/user/governance/governance-process/
+/use/pop/	/user/pop/
+/use/offchain-voting/	/user/governance/offchain-voting/
+/use/onchain-voting/	/user/governance/onchain-voting/
+/use/governance-proxy-and-delegation/	/user/governance/governance-proxy-and-delegation/
+/use/council/	/user/governance/council/
+/use/contribute-network/	/developer/contribute-network/
+/use/cfg-bridge/	/user/cfg-bridge/
+/build/cent-chain/	/developer/cent-chain/
+/build/tinlake/	/developer/tinlake/
+/build/guides/	/developer/investing-into-a-liquidity-pool/
+/build/p2p-node/	/developer/p2p-node/
+/build/nfts/	/developer/nfts/
+/build/bridge/	/developer/bridge/
+

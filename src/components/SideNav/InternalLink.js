@@ -90,15 +90,13 @@ const InternalLink = (
       >
         <Box direction="row" justify="between" align="center">
           <Text size="16px">{label}</Text>
-          {ref?.current && (
-            <Next
-              style={{
-                stroke: "black",
-                rotate: isExpanded ? "270deg" : "90deg",
-              }}
-              size="16px"
-            />
-          )}
+          <Next
+            style={{
+              stroke: "black",
+              rotate: isExpanded ? "270deg" : "90deg",
+            }}
+            size="16px"
+          />
         </Box>
       </LinkWithSubpages>
     </>

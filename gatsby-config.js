@@ -46,13 +46,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `faq`,
-        path: `${__dirname}/docs/faq`,
-      },
-    },
-    {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [".mdx", ".md"],
@@ -104,7 +97,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#2762ff`,
         display: `minimal-ui`,
-        icon: `src/images/centrifuge-logo.png`,
+        icon: `src/images/favicon.svg`,
       },
     },
     `gatsby-plugin-netlify-cache`,
