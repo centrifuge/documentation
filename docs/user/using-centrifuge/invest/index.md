@@ -21,9 +21,10 @@ redirect_from:
 - A web browser with a web3 wallet. Centrifuge supports the following wallets:
 
 - Centrifuge/Polkadot
-    - [Polkadot{.js}](https://polkadot.js.org/extension/)
-    - [Talisman - Polkadot Wallet](https://www.talisman.xyz/)
+    - [Metamask](https://metamask.io/download.html)
+    - [Talisman - EVM and Polkadot Wallet](https://www.talisman.xyz/)
     - [SubWallet](https://www.subwallet.app/)
+    - [Polkadot{.js}](https://polkadot.js.org/extension/)
 - Ethereum
   - [Ledger](https://www.ledger.com/) (Note, if using a Ledger Device, please enable "Blind Signing" in the Ethereum app settings and ensure the device has been updated to the latest firmware. It's recommended to disable blind signing after each use.)
   - [Metamask](https://metamask.io/download.html)
@@ -33,7 +34,7 @@ If you are setting up a wallet for the first time please apply appropriate secur
 
 When attempting to invest, ensure you are connected with the wallet address you connected with during the initial KYC process to invest in a pool. If you encounter an issue please confirm KYC has been completed and that the correct wallet is selected. If issue remains please contact support@centrifuge.io.
 
-## Fund Investment address
+## Fund investment address
 Before you invest, please make sure that your KYCed investment address is funded with both the investment amount in the stablecoin of the selected pool and sufficient native chain currency (such as ETH or CFG) to pay for the transaction fees. There are [several centralized and decentralized exchanges](https://cointelegraph.com/ethereum-for-beginners/how-to-buy-ethereum), such as [Coinbase](https://www.coinbase.com/) or [Uniswap](https://uniswap.org/) where you can buy and/or trade ETH and Stablecoins against USD and other tokens.
 
 ## Investment flow summary
@@ -87,7 +88,7 @@ Once you are verified and completed pool onboarding by signing the subscription 
 - You can also click the MAX button to invest your entire Available Balance. 
 - Once you enter the amount, Click "Invest" and sign the On-chain transaction. Note, once you have clicked "Invest" your order is locked but not Executed into the pool. You must wait for the epoch to conclude before your Pending investment is executed. Learn more about Epochs and Pending orders [Here](https://docs.centrifuge.io/learn/epoch/).
 
-### Changing Locked Investments/Redemptions
+### Changing locked investments/redemptions
 
 - After you lock an investment or redemption order, if you would like to change your order follow the steps below:
 - To change a Locked Order that has not executed to pool (See below for how to check investment status, click "Change Order".![](./images/change_order.png#width=600px)
@@ -116,7 +117,7 @@ Once you are verified and completed pool onboarding by signing the subscription 
   ![](./images/redeem_value.png#width=600px)
 - Once your redemption has been fulfilled you will see "Redemption successful".
 
-## Investment Disclaimer
+## Investment disclaimer
 Nothing contained in this website is to be construed as a solicitation or offer, or recommendation, to buy or sell any interest in any note or other security, or to engage in any other transaction, and the content herein does not constitute, and should not be considered to constitute, an offer of securities. No statement herein made constitutes an offer to sell or a solicitation of an offer to buy a note or other security. All information on this Web page is provided and maintained by the issuers of the respective Centrifuge pools. The issuers have full responsibility. Please contact the respective issuer in case of any inquiries. Centrifuge and its affiliates are not liable nor responsible for the information provided hereby.
 
 Before investing in any of the Centrifuge pools, please check the issuer's offering materials and subscription documents including the Executive Summary to understand the terms, conditions, and investment risks of each pool. The issuer provides investment risk factors which are important to understand when you consider whether to invest in a pool. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other content before making any decisions based on such information or other content.
