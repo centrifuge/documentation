@@ -36,7 +36,7 @@ The asset originator originates real-world assets and pledges these to the issue
 
 ### Investors
 
-Investors provide the liquidity that issuers use to finance assets and in return earn yield. For every Centrifuge pool, investors can invest in pool tranche tokens which represent their stake in that tranche. These tranches represent a tired investment structure with different tranches common in traditional finance — see below.
+Investors provide the liquidity that issuers use to finance assets and in return earn yield. For every Centrifuge pool, investors can invest in pool tranche tokens which represent their stake in that tranche. These tranches represent a tiered investment structure with different tranches common in traditional finance — see below.
 
 ## Tranche tokens
 
@@ -67,7 +67,7 @@ An NFT on Centrifuge is a tokenized representation of a real-world asset. Centri
 After locking an NFT as collateral in their Centrifuge pool, an issuer can draw down financing from Centrifuge up to the value of the NFT. Every financing accrues interest at the financing fee. To close the financing, the entire outstanding amount including accrued interest needs to be repaid. The issuer can only unlock the collateral NFT after full repayment.
 
 ### Asset value / NAV
-The NAV (net asset value) reflects the present value of the outstanding portfolio of financings including the reserve (liquidity) of the pool. It is the sum of the present values of the risk-adjusted expected repayments of all outstanding financings. Valuation parameters are also provided by the document underlying the NFT, which is created and shared through Centrifuge's private offchain data layer.
+The NAV (Net Asset Value) reflects the present value of the outstanding portfolio of financings including the reserve (liquidity) of the pool. It is the sum of the present values of the risk-adjusted expected repayments of all outstanding financings. Valuation parameters are also provided by the document underlying the NFT, which is created and shared through Centrifuge's private offchain data layer.
 
 The NAV ultimately determines the junior tranche value and thus the token price at which investors invest and redeem at every epoch. Centrifuge pools allow for different type of valuation methods. You can find more details about Centrifuge's valuation approach, including simplified examples [here](/getting-started/pool-valuation/).
 
@@ -97,7 +97,7 @@ The reserve is the current liquidity in the pool that is not deployed to finance
 ### Cash drag
 Centrifuge's financing fees are applied on financed assets only and excess liquidity in the pool’s reserve does not earn interest. Therefore, it's important to note on how issuers manage their liquidity. High liquidity or "cash" holding decreases the pool's effective yields.
 
-### Max Reserve amount
+### Max reserve amount
 The issuer can limit the liquidity they are willing to accept with the maximum reserve amount. No investments will be accepted if the current reserve is larger than the max reserve amount.
 
 ### Available liquidity
@@ -109,14 +109,13 @@ The tranche investment capacity indicates how much capacity is left for addition
 ### Oversubscribed pools
 If a pool is oversubscribed, no additional senior investors can join the pool, and investment orders cannot be executed. A pool can be oversubscribed for two reasons:
 
-- The pool's reserve is above the max reserve` set by the issuer.
+- The pool's reserve is above the max reserve set by the issuer.
 - The senior subordination ratio is at its limit and thus the pool can not take on more senior tranche investments without more capital invested into the junior tranche.
-
 - The pool can become open for investments again through a decrease of the reserve by senior investor redemptions, asset originations, an increase of the max reserve or additional junior investments are made into the pool that increase the current junior subordination.
 
 ## Interest rates, fees, and yields
-### Financing Fee
-The Financing Fee is the rate at which the outstanding amount of an individual asset financing accrues interest. It is expressed as an "APR" (Annual Percentage Rate) and compounds interest every second. For example, a financing fee of 8.00% compounding interest over seconds through the course of one year leads to an APY ("Annual Percentage Yield") of 8.xx%. Different assets can have different financing fees depending on their risk score.
+### Financing fee
+The Financing fee is the rate at which the outstanding amount of an individual asset financing accrues interest. It is expressed as an "APR" (Annual Percentage Rate) and compounds interest every second. For example, a financing fee of 8.00% compounding interest over seconds through the course of one year leads to an APY ("Annual Percentage Yield") of 8.xx%. Different assets can have different financing fees depending on their risk score.
 
 ### Senior token return
 The senior token APR is the rate at which the senior token accrues interest per second. Note, that this is only applied to deployed capital, thus liquidity in the reserve does not generate yield for the senior token. The actual senior token return may therefore differ from the senior Token APR due to compounding and cash drag.
@@ -125,7 +124,7 @@ The senior token APR is the rate at which the senior token accrues interest per 
 The junior tranche does not have a predefined fixed or variable interest rate. Junior token returns are mainly driven by the spread between financing rates and senior token APR and capture the increasing value of the portfolio. As liquidity in the reserve does not generate yield, a high reserve also drags down potential junior token returns.
 
 ## Risk and pricing
-### Current Subordination
+### Current subordination
 The junior tranche protects the more senior tranches against defaults of financed assets by taking the first loss position. If a financing is not repaid and is written off, this would reduce the NAV and with it the junior token value. The senior token's principal and returns remain unaffected as long as the loss is less than the total junior tranche of the pool at the time of default or write off. Thus, the current subordination ratios describe the extent of junior tranche protection for the more senior tranches. It is calculated per tranche as
 
 $$
