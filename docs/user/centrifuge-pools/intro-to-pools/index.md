@@ -2,7 +2,7 @@
 id: intro-to-pools
 order: 1
 title: Introduction to Pools
-contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>, <Devin Black:devin@k-f.co>
+contributors: <Dennis Wellmann:dennis@k-f.co>, <Jay:jay@k-f.co>, <Devin Black:devin@k-f.co>
 category: subpage
 redirect_from:
   - /use
