@@ -389,9 +389,11 @@ The coordinator contract manages the epochs for the investors.
 
 #### Contract Diagram
 
-<!-- The epoch coordinator calculates the token price and percentage of redemption & investment orders which can be fulfilled in an epoch for each tranche. The calculation is based on the total amount of invest and redeem orders, the current equity ratio, total amount of repayments, currency available and the priority of order types (For example: if a redeem comes before invest).
+{/*
+The epoch coordinator is responsible for determining the token price and the fulfillment percentage of redemption and investment orders within each tranche for a given epoch. This process involves analyzing the aggregate volume of investment and redemption orders, assessing the current equity ratio, evaluating the total repayments, considering the available currency, and factoring in the precedence of order types (e.g., prioritizing redemptions over investments).
 
-All users that place orders within the same epoch are treated equally. Independent order volume and submission time don’t result in preferences. -->
+It is important to note that the system ensures fairness among users by treating all orders placed within the same epoch identically. The volume of orders and the timing of their submission do not influence the order's priority or likelihood of fulfillment.
+*/}
 
 ![](./images/coordinator.png)
 
