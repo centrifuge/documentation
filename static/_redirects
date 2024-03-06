@@ -58,7 +58,7 @@ https://developer.centrifuge.io/* https://docs.centrifuge.io/:splat
 /getting-started/	/getting-started/introduction/welcome/
 /learn/	/getting-started/introduction/welcome/
 /use/	/user/centrifuge-pools/intro-to-pools/
-/build/	/developer/cent-chain/
+/build/	/developer/guides/
 /faq/	/getting-started/introduction/welcome/
 /getting-started/centrifuge-at-a-glance/	/getting-started/introduction/welcome/
 /getting-started/privacy-first-tokenization/	/getting-started/core-concepts/privacy-first-tokenization/
