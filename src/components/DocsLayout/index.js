@@ -142,9 +142,7 @@ export const query = graphql`
         contributors
         category
       }
-      code {
-        body
-      }
+      body
       tableOfContents
     }
     allMdx(

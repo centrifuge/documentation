@@ -1,5 +1,5 @@
 import React from "react";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from "@mdx-js/tag";
 import styled from "styled-components";
 import * as Grommet from "grommet";

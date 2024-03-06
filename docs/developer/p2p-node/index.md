@@ -390,7 +390,7 @@ The Centrifuge POD is capable of maintaining multiple accounts. Accounts are use
 
 | Header             | Value               |
 | ------------------ |---------------------|
-| **authorization:** | Bearer <jw3t_token> |
+| **authorization:** | Bearer &lt;jw3t_token&gt; |
 
 ### Token
 

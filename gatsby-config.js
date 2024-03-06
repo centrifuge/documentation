@@ -1,4 +1,8 @@
 const siteUrl = process.env.URL || "http://localhost:8000";
+const katex = import("rehype-katex");
+const slug = import("rehype-slug");
+const imageAttributes = import("remark-image-attributes");
+const math = import("remark-math");
 
 module.exports = {
   siteMetadata: {
@@ -46,15 +50,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
-        hastPlugins: [
-          require("rehype-slug"),
-          require("remark-math"),
-          require("remark-image-attributes"),
-          require("rehype-katex"),
-        ],
+        remarkPlugins: [math, imageAttributes],
+        rehypePlugins: [katex, slug],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-copy-linked-files`,
@@ -105,3 +105,4 @@ module.exports = {
     `gatsby-plugin-typescript`,
   ],
 };
+

@@ -43,7 +43,7 @@ proofs = new bytes32[][](5);
 The verification method can be found in our optimised [Merkle Verifier](https://github.com/centrifuge/privacy-enabled-erc721) contract.
 
 An example of an NFT with one proof which can be minted using methods from the precise-proofs library is as follows:
-
+```
     pragma solidity >=0.4.23;
     pragma experimental ABIEncoderV2;
 
@@ -89,7 +89,7 @@ An example of an NFT with one proof which can be minted using methods from the p
           _mint(usr, tkn);
         }
     }
-
+```
 The mint method on this NFT would expect one proof of "loanAmount", which has been hardcoded as a state variable. It would furthermore also check that the document from which the NFT should be minted has been properly anchored, before minting the NFT.
 
 ## Anatomy of an NFT
