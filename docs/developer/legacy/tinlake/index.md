@@ -11,7 +11,7 @@ redirect_from:
 
 # Tinlake Smart Contracts (Legacy)
 
-### Overview
+## Overview
 [Tinlake](https://legacy.tinlake.centrifuge.io/) is Centrifuge's initial Ethereum-based, open, decentralized smart-contract based platform of asset pools bringing together pool issuers looking for financing and investors who seek to utilize the full potential of decentralized finance (DeFi).
 
 **Note that Tinlake has been replaced by the [Centrifuge App](https://app.centrifuge.io/), however _legacy_ Tinlake pools as described below are still live on the App. Newer pools do not use the below smart contracts, but rather are launched on Centrifuge Chain.**
