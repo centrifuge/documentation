@@ -25,16 +25,16 @@ Please note that the CFG (Centrifuge) <> CFG (Ethereum) bridging fee costs 100 C
 
 In addition, because Centrifuge Chain does not have any insight into gas prices on Ethereum, there is no way to charge the actual gas spent. The bridge fees are constant and can be changed at any time by the council and are shown to you before you bridge any tokens. There are ways to improve the performance of this in future iterations (batching of transactions, signature aggregation etc.).
 
-## How are CFG & wCFG different?
+## How are CFG on Centrifuge Chain & CFG on Ethereum different?
 
 Each CFG (Ethereum) is backed by one CFG (Centrifuge) locked up in the bridge account on Centrifuge Chain when moved over to Ethereum. You can move between Ethereum and Centrifuge at any time without any restrictions.
 
-Using **CFG** on Centrifuge Chain allows you to:
+Using **CFG on Centrifuge Chain** allows you to:
 
 - Participate in governance
 - Pay for fees on Centrifuge Chain
 
-Using **CFG** on Ethereum allows you:
+Using **CFG on Ethereum** allows you:
 
 - To interact with DeFi apps that support ERC20 tokens
 - Use it within Ethereum and hold it in your Ethereum wallet.
