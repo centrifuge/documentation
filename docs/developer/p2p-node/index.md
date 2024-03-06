@@ -1,17 +1,17 @@
 ---
-id: p2p-node
+id: pod
 order: 3
-title: Centrifuge POD (P2P Node)
+title: Centrifuge POD
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
 redirect_from:
   - /build/p2p-node
   - /build/p2p-node/
 ---
 
-# Centrifuge POD (P2P Node)
-The Centrifuge P2P network is built to support a new generation of applications for the financial supply chain. Centrifuge provides users with the ability to remove intermediaries and create financial business documents as Non-Fungible Tokens (NFTs) that have long-term verifiability, are censorship resistant, and are stored and processed in a decentralized fashion.
+# Centrifuge POD
+The Centrifuge POD network is built to support a new generation of applications for the financial supply chain. Centrifuge provides users with the ability to remove intermediaries and create financial business documents as Non-Fungible Tokens (NFTs) that have long-term verifiability, are censorship resistant, and are stored and processed in a decentralized fashion.
 
-The Centrifuge P2P node provides a method to create, exchange, and use the data that exists in the financial supply chain. It creates transparent and shareable relationships between interacting companies. Data owners can selectively share the information with their business partners or other users of the network. Centrifuge provides a censorship resistant way to verify the authenticity of data that is transacted through and stored in it. This creates the foundation for data ownership, privacy, and transparency throughout the financial supply chain and also allows third parties to offer additional services, such as instant and decentralized financing of invoices and orders, trade credit insurance and financing supply chains multiple levels deep.
+The Centrifuge POD node provides a method to create, exchange, and use the data that exists in the financial supply chain. It creates transparent and shareable relationships between interacting companies. Data owners can selectively share the information with their business partners or other users of the network. Centrifuge provides a censorship resistant way to verify the authenticity of data that is transacted through and stored in it. This creates the foundation for data ownership, privacy, and transparency throughout the financial supply chain and also allows third parties to offer additional services, such as instant and decentralized financing of invoices and orders, trade credit insurance and financing supply chains multiple levels deep.
 
 The underlying Centrifuge protocol has a two layered approach. It is built on Substrate which allows businesses to transact freely on a single verifiable source of truth. The public blockchain is used for business identities, committing document status and minting business NFTs. In addition, a peer to peer network enables the exchange of business documents in a private and verifiable way.
 

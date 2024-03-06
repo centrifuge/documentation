@@ -5,7 +5,7 @@ title: Overview
 category: subpage
 contributors: <Jeroen:jeroen@k-f.co>
 --- 
-# Running a Centrifuge node
+# Overview
 
 ## High level contract overview
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_a119caaac6809ee2d5337d1699a2bf7d.png)
@@ -27,22 +27,14 @@ Because of the epoch mechanism, as well as the fact that Liquidity Pools communi
 
 The communication between Liquidity Pools and Centrifuge Chain uses external general message passing protocols. Messages are encoded using a compacted ABI encoding scheme, as implemented in `src/gateway/Messages.sol`.
 
-### Multiple currency support
+## Multiple currency support
 While there is 1 native pool currency, Liquidity Pools (acronym: LP) are built to support deposits in multiple currencies. Each Liquidity Pool is linked to 1 currency (asset) and 1 tranche token (share), but Liquidity Pools can be deployed linked to the same tranche token (share). The Liquidity Pool contract therefore passes through the ERC20 methods to the underlying share implementation. To support this, the ERC20 of the tranche token uses ERC2771 context, and the tranche token contract ensures that all Liquidity Pools are considered trusted forwarders for this.
 
 The other challenge with supporting multiple currencies is that the decimals between the tranche token (which is based on the native pool currency decimals) and the investment currency (or asset) can differ. Therefore, all price calculations and conversions between shares and assets (or tranche tokens and currencies) need to account for these differences. This is accomplished by normalizing all balances and prices to 18 decimal fixed point integers, doing the calculations using these normalized values, and then unnormalizing back to the intended decimals. Currencies with more than 18 decimals are not supported and blocked in the contracts.
 
-### User flows
-#### How pools and tranches are created and deployed
+## User flows
+### How pools and tranches are created and deployed
 ![Pool creation flow.](https://github.com/code-423n4/2023-09-centrifuge/blob/main/images/pool_creation_flow.png?raw=true)
 
-#### How users can invest
+### How users can invest
 ![Simple investment flow.](https://github.com/code-423n4/2023-09-centrifuge/blob/main/images/investment_flow.png?raw=true)
-
-#### How liquidity is managed
-When investors deposit in a currency that is not equivalent to the native pool currency, this needs to be swapped in order to execute the investment. And vice versa for redemptions. These swaps occur on Centrifuge Chain. These swaps also guarantee that sufficient liquidity is in the escrow contract to fulfill any orders. Note that locking, for example, USDC in Liquidity Pools on Ethereum, leads to Wrapped Ethereum LP on USDC, which will be non-fungible with USDC locked in Liquidity Pools on Arbitrum, which leads to Wrapped Arbitrum LP on USDC.
-
-An example flow for how this works is visualized below:
-
-![Liquidity overview.](https://github.com/code-423n4/2023-09-centrifuge/blob/main/images/liquidity_flow1.png?raw=true)
-![Liquidity overview.](https://github.com/code-423n4/2023-09-centrifuge/blob/main/images/liquidity_flow2.png?raw=true)

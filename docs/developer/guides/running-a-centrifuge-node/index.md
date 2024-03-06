@@ -12,37 +12,6 @@ redirect_from:
 --- 
 # Running a Centrifuge node
 
-- [Running a Centrifuge node](#running-a-centrifuge-node)
-  - [Introduction](#introduction)
-  - [Hardware requirements](#hardware-requirements)
-  - [CLI arguments](#cli-arguments)
-    - [Full node](#full-node)
-    - [Fast synching](#fast-synching)
-    - [Archive node](#archive-node)
-    - [Arguments formatting](#arguments-formatting)
-    - [Network values](#network-values)
-      - [Mainnet (Centrifuge Chain)](#mainnet-centrifuge-chain)
-      - [Testnet (Centrifuge Demo)](#testnet-centrifuge-demo)
-  - [Recommended deployments](#recommended-deployments)
-    - [Docker](#docker)
-      - [docker-compose](#docker-compose)
-      - [Kubernetes](#kubernetes)
-  - [Ubuntu binaries and systemd](#ubuntu-binaries-and-systemd)
-    - [Prepare user and folder](#prepare-user-and-folder)
-    - [Getting the binary](#getting-the-binary)
-      - [A. Build your own (recommended)](#a-build-your-own-recommended)
-      - [B. "Extract from a docker image"](#b-extract-from-a-docker-image)
-    - [Configure systemd](#configure-systemd)
-        - [Create systemd service file](#create-systemd-service-file)
-        - [Start the systemd service](#start-the-systemd-service)
-  - [Test and health monitoring](#test-and-health-monitoring)
-    - [Use ws-health-exporter](#use-ws-health-exporter)
-    - [Monitoring](#monitoring)
-  - [Troubleshooting](#troubleshooting)
-    - [Error logs during syncing](#error-logs-during-syncing)
-    - [Stalled Syncing](#stalled-syncing)
-    - [Changed bootnode or peer identities](#changed-bootnode-or-peer-identities)
-
 ## Introduction
 
 Running a full node allows to query the Centrifuge Chain blocks through it's RPC endpoints, wether you're a Dapp developer or you
