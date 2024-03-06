@@ -5,11 +5,8 @@ title: API
 category: subpage
 contributors: <Jeroen:jeroen@k-f.co>
 --- 
-# LiquidityPool
+# Liquidity Pool API
 [Git Source](https://github.com/centrifuge/liquidity-pools/blob/d3ac058a6ddd3342f78bf09fd1d37058007c6644/src/LiquidityPool.sol)
-
-**Inherits:**
-[Auth](/src/Auth.sol/contract.Auth.md), [IERC7540](/src/interfaces/IERC7540.sol/interface.IERC7540.md)
 
 Liquidity Pool implementation for Centrifuge pools
 following the ERC-7540 Asynchronous Tokenized Vault standard

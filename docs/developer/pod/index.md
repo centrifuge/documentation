@@ -1,6 +1,6 @@
 ---
 id: pod
-order: 3
+order: 5
 title: Centrifuge POD
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
 redirect_from:

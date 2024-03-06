@@ -19,8 +19,8 @@ For more general documentation on the Centrifuge inetgration and usage of SubQue
 
 | **Network** | **GraphQL Endpoint**|
 |------------|-------------------------------------------------------------------|
-| Dev        | https://api.subquery.network/sq/embrio-tech/centrifuge-subql      |
 | Centrifuge | https://api.subquery.network/sq/centrifuge/pools                  |
+| Dev        | https://api.subquery.network/sq/centrifuge/pools-development      |
 
 
 ## Sample Queries
