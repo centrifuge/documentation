@@ -93,11 +93,11 @@ module.exports = {
       options: {
         name: `centrifuge-developers`,
         short_name: `centrifuge`,
-        start_url: `/cent-node/overview/introduction/`,
+        start_url: `/getting-started/introduction/welcome/`,
         background_color: `#fff`,
         theme_color: `#2762ff`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.svg`,
+        icon: `src/images/favicon.png`,
       },
     },
     `gatsby-plugin-netlify-cache`,
