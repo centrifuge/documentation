@@ -1,7 +1,8 @@
 ---
 id: bridge
-order: 3
+order: 2
 title: Centrifuge - Ethereum Bridge
+category: subpage
 redirect_from:
   - /build/bridge
   - /build/bridge/

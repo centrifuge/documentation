@@ -1,11 +1,9 @@
 ---
-id: cent-chain
-order: 1
+id: centrifuge-chain
+order: 4
 title: Centrifuge Chain
 contributors: <Cassidy Daly:cassidy@centrifuge.io>, <Dennis Wellmann:dennis@centrifuge.io>
 redirect_from:
-  - /developer
-  - /developer/
   - /build
   - /build/
   - /build/cent-chain
