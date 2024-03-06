@@ -3,7 +3,6 @@ id: api
 order: 2
 title: API
 category: subpage
-contributors: <Jeroen:jeroen@k-f.co>
 --- 
 # Liquidity Pool API
 [Git Source](https://github.com/centrifuge/liquidity-pools/blob/d3ac058a6ddd3342f78bf09fd1d37058007c6644/src/LiquidityPool.sol)

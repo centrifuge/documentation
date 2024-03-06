@@ -2,7 +2,7 @@
 id: pod
 order: 5
 title: Centrifuge POD
-contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
+contributors: <Dennis Wellmann:dennis@k-f.co>, <Cosmin Damian:cosmin@k-f.co>
 redirect_from:
   - /build/p2p-node
   - /build/p2p-node/
