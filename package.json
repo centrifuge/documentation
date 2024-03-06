@@ -9,7 +9,9 @@
     "@fontsource/inter": "4.5.12",
     "@mdx-js/mdx": "^0.16.8",
     "@mdx-js/tag": "^0.16.8",
+    "btoa": "^1.2.1",
     "docsearch.js": "^2.6.2",
+    "formdata-node": "4.4.1",
     "gatsby": "^2.0.118",
     "gatsby-image": "^2.0.29",
     "gatsby-mdx": "^0.3.6",
@@ -53,7 +55,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -p 8001",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"

@@ -3,28 +3,49 @@ import { Box } from "grommet";
 
 import InternalLink from "./InternalLink";
 
-const NodeTOC = ({ slug, title, order, tableOfContents, size }) => {
-  const [isActive, setActive] = useState(false);
+const NodeTOC = ({ slug, title, secondLevelPages }) => {
+  const [expandChildren, setExpandChildren] = useState(false);
   const linkRef = useRef(null);
 
   useEffect(() => {
-    setActive(!!linkRef.current?.isActive);
-  }, [slug]);
+    if (linkRef.current?.isActive) {
+      setExpandChildren(true);
+    } else {
+      setExpandChildren(false);
+    }
+  }, []);
 
   return (
-    <Box gap="xsmall">
-      <InternalLink primary href={slug} label={title} ref={linkRef} />
-      {!!tableOfContents?.items && isActive && (
-        <Box pad={{ left: "small" }}>
-          {tableOfContents.items.map((heading, i) => (
-            <InternalLink
-              key={i}
-              href={`${slug}${heading.url}`}
-              label={heading.title}
-            />
-          ))}
-        </Box>
-      )}
+    <Box>
+      <InternalLink
+        primary
+        href={slug}
+        label={title}
+        ref={linkRef}
+        hasChildren={secondLevelPages.length > 0}
+        onClick={(e) => {
+          e.preventDefault();
+          setExpandChildren(true);
+        }}
+        isExpanded={expandChildren}
+      />
+      <Box>
+        {expandChildren &&
+          secondLevelPages &&
+          secondLevelPages.map((page, i) => {
+            return (
+              <Box margin={{ left: "small" }}>
+                <InternalLink
+                  key={`${i}+${page.slug}`}
+                  href={page.slug}
+                  label={page.title}
+                  subpageChild
+                  isExpanded={expandChildren}
+                />
+              </Box>
+            );
+          })}
+      </Box>
     </Box>
   );
 };

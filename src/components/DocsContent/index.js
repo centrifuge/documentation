@@ -73,11 +73,7 @@ const Hash = styled.a.attrs({
 `;
 
 const mdxGrommetMap = {
-  p: (props) => (
-    <Paragraph>
-      {props.children}
-    </Paragraph>
-  ),
+  p: (props) => <Paragraph>{props.children}</Paragraph>,
   h1: (props) => (
     <Heading level={1}>
       <Anchor id={props.id} />
@@ -170,6 +166,16 @@ const mdxGrommetMap = {
 const DocsContent = ({ mdx }) => {
   return (
     <MDXProvider components={mdxGrommetMap}>
+      {/*  Note from Devin: temporary fix here to not render page title.
+      This is because, with current nav / anchor link system, all articles *must* have at least 1 H1 and 1 H2 element.
+      This way we can instead use the in-text H1 as page title (which looks mostly the same) and H2s as subheaders.
+      This is an easier fix from a content perspective than forcing every page to have an H1 and an H2 (many pages are not long enough to warrant this)
+      So for now, we'll use in-text H1 as title and restore the below once H1s and H2s are not required for every page.
+
+      <Heading level={1} style={{ lineHeight: "32px", marginBottom: 0 }}>
+        {mdx.frontmatter.title}
+      </Heading>
+      */}
       <MDXRenderer>{mdx.code.body}</MDXRenderer>
     </MDXProvider>
   );

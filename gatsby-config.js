@@ -34,29 +34,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `learn`,
-        path: `${__dirname}/docs/learn`,
+        name: `user`,
+        path: `${__dirname}/docs/user`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `use`,
-        path: `${__dirname}/docs/use`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `build`,
-        path: `${__dirname}/docs/build`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `faq`,
-        path: `${__dirname}/docs/faq`,
+        name: `developer`,
+        path: `${__dirname}/docs/developer`,
       },
     },
     {
@@ -111,7 +97,7 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#2762ff`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.ico`,
+        icon: `src/images/favicon.svg`,
       },
     },
     `gatsby-plugin-netlify-cache`,
