@@ -1,6 +1,6 @@
 ---
 id: tinlake
-order: 7
+order: 1
 title: Tinlake smart contracts
 category: subpage
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Devin Black:devin@centrifuge.io>
