@@ -69,7 +69,7 @@ After locking an NFT as collateral in their Centrifuge pool, an issuer can draw 
 ### Asset value / NAV
 The NAV (Net Asset Value) reflects the present value of the outstanding portfolio of financings including the reserve (liquidity) of the pool. It is the sum of the present values of the risk-adjusted expected repayments of all outstanding financings. Valuation parameters are also provided by the document underlying the NFT, which is created and shared through Centrifuge's private offchain data layer.
 
-The NAV ultimately determines the junior tranche value and thus the token price at which investors invest and redeem at every epoch. Centrifuge pools allow for different type of valuation methods. You can find more details about Centrifuge's valuation approach, including simplified examples [here](/getting-started/pool-valuation/).
+The NAV ultimately determines the junior tranche value and thus the token price at which investors invest and redeem at every epoch. Centrifuge pools allow for different type of valuation methods. You can find more details about Centrifuge's valuation approach, including simplified examples [here](https://docs.centrifuge.io/user/centrifuge-pools/pool-valuation/).
 
 ## Investments and redemptions
 
