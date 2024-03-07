@@ -39,4 +39,4 @@ In these docs, you'll find everything you need to know about Centrifuge; from ba
 
 **[Developer Documentation](/developer)**: Learn about the technology that runs Centrifuge, across Centrifuge Chain and Ethereum-based networks.
 
-A good place to begin is [Centrifuge's Mission and History](/getting-started/mission-and-history).
+A good place to begin is [Centrifuge's Mission and History](/getting-started/introduction/mission-and-history).

@@ -49,5 +49,5 @@ These are a few handpicked articles and reports diving into the thriving real-wo
 Centrifuge is open source software. You can explore our source code as well as professional audits of our protocol in the links below.
 - [Github](https://github.com/centrifuge/)
 - [Audits](https://github.com/centrifuge/security/tree/main/audits)
-- [Security](ttps://centrifuge.io/security)
+- [Security](https://centrifuge.io/security)
 - [Brand Guidelines](https://centrifuge.io/brand)
