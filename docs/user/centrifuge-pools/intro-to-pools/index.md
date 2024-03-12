@@ -22,7 +22,7 @@ A Centrifuge pool is an onchain structure that brings together asset issuers and
 
 ### Revolving pool
 
-Centrifuge pools are set up as "revolving pools". Revolving pools allow investors to lock investments and redemptions at any point in time. A decentralized solver mechanism matches investments and redemptions with the liquidity in the pool and ensures that certain risk metrics remain intact. This ensures that issuerss have a constant source of liquidity while investors can flexibly invest and redeem.
+Centrifuge pools are set up as "revolving pools". Revolving pools allow investors to lock investments and redemptions at any point in time. A decentralized solver mechanism matches investments and redemptions with the liquidity in the pool and ensures that certain risk metrics remain intact. This ensures that issuers have a constant source of liquidity while investors can flexibly invest and redeem.
 
 ## Entities involved in Centrifuge pools
 
