@@ -5,3 +5,5 @@ title: Contributing
 category: subpage
 ---
 # Contributing
+
+## Heading 2
