@@ -1,6 +1,6 @@
 ---
 id: centrifuge-chain
-order: 4
+order: 3
 title: Centrifuge Chain
 ---
 
