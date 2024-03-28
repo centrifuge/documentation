@@ -138,7 +138,7 @@ for the docker container or in the `node/res/` folder [in the codebase](https://
 
 You can use the container published on the [Centrifuge Docker Hub repo](https://hub.docker.com/r/centrifugeio/centrifuge-chain)
 or be fully trustless by cloning the [Centrifuge Chain repository](https://github.com/centrifuge/centrifuge-chain/)
-and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/Dockerfile) (2-4h build time on an average machine).
+and using the [Dockerfile](https://github.com/centrifuge/centrifuge-chain/blob/main/docker/centrifuge-chain/Dockerfile) (2-4h build time on an average machine).
 If you are building the image yourself, make sure you have checked out the latest tag for the most recent release:
 
 ```bash
