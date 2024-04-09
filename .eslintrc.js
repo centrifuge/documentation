@@ -8,7 +8,6 @@ module.exports = {
   ],
   rules: {
     "no-undef": "off",
-    "no-unused-vars": "off",
     "react/prop-types": "off",
     "react/display-name": "off",
     // add your custom rules here
