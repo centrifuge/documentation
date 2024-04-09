@@ -16,7 +16,7 @@ const SideNav = ({ onClose, size }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       allMdx {
-        group(field: fields___instanceName) {
+        group(field: { fields: { instanceName: SELECT } }) {
           fieldValue
           edges {
             node {

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Box, Text, Image, Drop } from "grommet";
 
-const Contributor = ({ name, email, avatar }) => {
+const Contributor = ({ name, avatar }) => {
   const [showDrop, setShowDrop] = useState(false);
   const targetRef = useRef();
 

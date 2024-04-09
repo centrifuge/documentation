@@ -25,7 +25,7 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const AnchorLinks = ({ links, slug, size }) => {
+const AnchorLinks = ({ links, slug }) => {
   const [activeLink, setActiveLink] = React.useState(null);
 
   const internalLinks = links?.map((link) => {

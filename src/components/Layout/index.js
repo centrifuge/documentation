@@ -7,7 +7,7 @@ import { useLocation } from "@reach/router";
 import styled from "styled-components";
 
 import "./styles.css";
-import "@fontsource/inter/variable-full.css";
+import "@fontsource/inter";
 
 import centrifugeLogo from "../../images/logo-centrifuge-full.svg";
 import githubLogo from "../../images/github-logo.svg";

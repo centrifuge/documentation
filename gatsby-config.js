@@ -46,15 +46,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
-        hastPlugins: [
-          require("rehype-slug"),
-          require("remark-math"),
-          require("remark-image-attributes"),
-          require("rehype-katex"),
-        ],
+        mdxOptions: {
+          remarkPlugins: [
+            require("remark-math"),
+            require("remark-image-attributes"),
+          ],
+          rehypePlugins: [require("rehype-slug"), require("rehype-katex")],
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-copy-linked-files`,
@@ -100,7 +101,6 @@ module.exports = {
         icon: `src/images/favicon.png`,
       },
     },
-    `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-typescript`,
   ],

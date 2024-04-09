@@ -34,9 +34,8 @@ const NodeTOC = ({ slug, title, secondLevelPages }) => {
           secondLevelPages &&
           secondLevelPages.map((page, i) => {
             return (
-              <Box margin={{ left: "small" }}>
+              <Box key={`${i}+${page.slug}`} margin={{ left: "small" }}>
                 <InternalLink
-                  key={`${i}+${page.slug}`}
                   href={page.slug}
                   label={page.title}
                   subpageChild

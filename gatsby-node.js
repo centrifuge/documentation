@@ -7,56 +7,55 @@ exports.onCreateNode = (args) => {
 
   // Add New Fields To GraphQL
   if (node.internal.type === "Mdx") {
-
     const value = createFilePath({ node, getNode });
-    const instanceName = getNode(node.parent).sourceInstanceName
+    const instanceName = getNode(node.parent).sourceInstanceName;
     createNodeField({
       name: `instanceName`,
       node,
-      value: instanceName
+      value: instanceName,
     });
 
     createNodeField({
       name: `file`,
       node,
-      value: `${instanceName}${value.slice(0, -1)}/index.md`
+      value: `${instanceName}${value.slice(0, -1)}/index.md`,
     });
 
     createNodeField({
       name: `slug`,
       node,
-      value: `/${instanceName}${value}`
+      value: node.frontmatter?.slug
+        ? node.frontmatter?.slug
+        : `/${instanceName}${value}`,
     });
 
     createNodeField({
       name: `category`,
       node,
-      value: node.frontmatter.category || ``
+      value: node.frontmatter.category || ``,
     });
 
     createNodeField({
       name: "id",
       node,
-      value: node.frontmatter.id || node.id
+      value: node.frontmatter.id || node.id,
     });
 
     createNodeField({
       name: "title",
       node,
-      value: node.frontmatter.title || parent.name
+      value: node.frontmatter.title || parent.name,
     });
 
     createNodeField({
       name: "subtitle",
       node,
-      value: node.frontmatter.subtitle || ``
+      value: node.frontmatter.subtitle || ``,
     });
   }
-
-
 };
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -77,7 +76,11 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         `
-      ).then(result => {
+      ).then((result) => {
+        if (result.errors) {
+          reporter.panicOnBuild("Error loading MDX result", result.errors);
+          reject(result.errors);
+        }
         if (result.errors) {
           console.error(result.errors);
           reject(result.errors);
@@ -85,7 +88,6 @@ exports.createPages = ({ graphql, actions }) => {
 
         // We'll call `createPage` for each result
         result.data.allMdx.edges.forEach(({ node }) => {
-
           createPage({
             // This is the slug we created before
             // (or `node.frontmatter.slug`)
@@ -96,7 +98,7 @@ exports.createPages = ({ graphql, actions }) => {
 
             // We can use the values in this context in
             // our page layout component
-            context: { id: node.id,instanceName:node.fields.instanceName }
+            context: { id: node.id, instanceName: node.fields.instanceName },
           });
         });
       })
@@ -111,10 +113,14 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         rules: [
           {
             test: /autocomplete.js/,
-            use: loaders.null()
-          }
-        ]
-      }
+            use: loaders.null(),
+          },
+          {
+            test: /\.mdx?$/,
+            use: ["babel-loader", "@mdx-js/loader"],
+          },
+        ],
+      },
     });
   }
 };

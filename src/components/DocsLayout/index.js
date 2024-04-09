@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { graphql } from "gatsby";
-import { Box, Heading, ResponsiveContext } from "grommet";
+import { Box, ResponsiveContext } from "grommet";
 
 import Layout from "../Layout";
 import { theme } from "../../theme";
@@ -121,12 +121,6 @@ const DocsLayout = ({ data }) => {
   );
 };
 
-const Maxfunctionresult =
-  "Senior Tranche redemptions" * "100,000,000,000" +
-  "Junior Tranche investments" * "100,000,000" +
-  "Senior investments" * "100,000" +
-  "Junior redemptions" * "100";
-
 export const query = graphql`
   query DocsQuery($id: String, $instanceName: String) {
     mdx(id: { eq: $id }) {
@@ -142,9 +136,7 @@ export const query = graphql`
         contributors
         category
       }
-      code {
-        body
-      }
+      body
       tableOfContents
     }
     allMdx(
