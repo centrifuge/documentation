@@ -5,7 +5,7 @@ const docsLayoutTemplate = path.resolve(`./src/components/DocsLayout/index.js`);
 
 exports.onCreateNode = (args) => {
   const { node, actions, getNode } = args;
-  const { createNodeField } = actions;
+  const { createNodeField, createRedirect } = actions;
 
   // Add New Fields To GraphQL
   if (node.internal.type === "Mdx") {
@@ -54,6 +54,23 @@ exports.onCreateNode = (args) => {
       node,
       value: node.frontmatter.subtitle || ``,
     });
+
+    createNodeField({
+      name: "redirect_from",
+      node,
+      value: node.frontmatter.redirect_from || ``,
+    });
+
+    if (node.frontmatter?.redirect_from) {
+      node.frontmatter.redirect_from.forEach((redirect) => {
+        createRedirect({
+          fromPath: redirect,
+          toPath: `/${instanceName}${value}`,
+          isPermanent: true,
+          redirectInBrowser: true,
+        });
+      });
+    }
   }
 };
 
@@ -94,6 +111,11 @@ exports.createPages = ({ graphql, actions, reporter }) => {
 
         // We'll call `createPage` for each result
         result.data.allMdx.edges.forEach(({ node }) => {
+          // createRedirect({
+          //   fromPath: `/`,
+          //   toPath: `/getting-started/introduction/`,
+          // });
+
           createPage({
             // This is the slug we created before
             // (or `node.frontmatter.slug`)
