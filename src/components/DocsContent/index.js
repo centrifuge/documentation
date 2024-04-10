@@ -1,6 +1,5 @@
 import React from "react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
-import { MDXProvider } from "@mdx-js/tag";
+import { MDXProvider } from "@mdx-js/react";
 import styled from "styled-components";
 import {
   Text as GrommetText,
@@ -170,7 +169,7 @@ const mdxGrommetMap = {
   ),
 };
 
-const DocsContent = ({ mdx }) => {
+const DocsContent = ({ children }) => {
   return (
     <MDXProvider components={mdxGrommetMap}>
       {/*  Note from Devin: temporary fix here to not render page title.
@@ -183,7 +182,7 @@ const DocsContent = ({ mdx }) => {
         {mdx.frontmatter.title}
       </Heading>
       */}
-      <MDXRenderer>{mdx.code.body}</MDXRenderer>
+      {children}
     </MDXProvider>
   );
 };

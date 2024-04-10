@@ -13,6 +13,7 @@ module.exports = {
     // add your custom rules here
   },
   settings: {
+    "mdx/code-blocks": true,
     react: {
       version: "detect", // automatically detect the version of React to use
     },

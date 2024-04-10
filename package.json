@@ -10,7 +10,7 @@
     "@centrifuge/axis-theme": "0.3.1",
     "@fontsource/inter": "^5.0.17",
     "@mdx-js/loader": "1.6.22",
-    "@mdx-js/mdx": "1.6.22",
+    "@mdx-js/react": "^3.0.1",
     "@mdx-js/tag": "^0.20.3",
     "babel-loader": "^9.1.3",
     "babel-plugin-styled-components": "^2.1.4",

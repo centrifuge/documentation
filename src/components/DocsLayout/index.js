@@ -16,7 +16,7 @@ import NodeNavigation from "./NodeNavigation";
 import DocsContent from "../DocsContent";
 import AnchorMenu from "../AnchorMenu";
 
-const DocsLayout = ({ data }) => {
+export const DocsLayout = ({ data, children }) => {
   const { mdx, allMdx } = data;
 
   const getNthNode = (n) => {
@@ -72,7 +72,7 @@ const DocsLayout = ({ data }) => {
                           width: size === "small" ? "100%" : "740px",
                         }}
                       >
-                        <DocsContent mdx={mdx} size={size} />
+                        <DocsContent>{children}</DocsContent>
                       </Box>
                       <AnchorMenu size={size} mdx={mdx} />
                     </Box>
@@ -121,7 +121,7 @@ const DocsLayout = ({ data }) => {
   );
 };
 
-export const query = graphql`
+export const pageQuery = graphql`
   query DocsQuery($id: String, $instanceName: String) {
     mdx(id: { eq: $id }) {
       id

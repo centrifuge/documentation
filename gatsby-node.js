@@ -1,6 +1,8 @@
 const { createFilePath } = require("gatsby-source-filesystem");
 const path = require("path");
 
+const docsLayoutTemplate = path.resolve(`./src/components/DocsLayout/index.js`);
+
 exports.onCreateNode = (args) => {
   const { node, actions, getNode } = args;
   const { createNodeField } = actions;
@@ -70,6 +72,10 @@ exports.createPages = ({ graphql, actions, reporter }) => {
                   fields {
                     slug
                     instanceName
+                    file
+                  }
+                  internal {
+                    contentFilePath
                   }
                 }
               }
@@ -94,7 +100,8 @@ exports.createPages = ({ graphql, actions, reporter }) => {
             path: node.fields.slug,
 
             // This component will wrap our MDX content
-            component: path.resolve(`./src/components/DocsLayout/index.js`),
+            // component: path.resolve(`./src/components/DocsLayout/index.js`),
+            component: `${docsLayoutTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
 
             // We can use the values in this context in
             // our page layout component

@@ -1,6 +1,15 @@
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import remarkMath from "remark-math";
+import remarkImageAttrs from "remark-image-attributes";
+import rehypeSlug from "rehype-slug";
+import rehypeKatex from "rehype-katex";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const siteUrl = process.env.URL || "http://localhost:8000";
 
-module.exports = {
+export default {
   siteMetadata: {
     title: `Centrifuge Documentation`,
     siteUrl,
@@ -11,6 +20,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        excerpt_separator: `---`,
+      },
+    },
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
@@ -50,11 +65,8 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         mdxOptions: {
-          remarkPlugins: [
-            require("remark-math"),
-            require("remark-image-attributes"),
-          ],
-          rehypePlugins: [require("rehype-slug"), require("rehype-katex")],
+          remarkPlugins: [remarkMath, remarkImageAttrs],
+          rehypePlugins: [rehypeSlug, rehypeKatex],
         },
         gatsbyRemarkPlugins: [
           {
