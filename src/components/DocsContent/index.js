@@ -5,6 +5,7 @@ import {
   Text as GrommetText,
   Heading as GrommetHeading,
   Paragraph as GrommetParagraph,
+  Anchor as GrommetAnchor,
   Image,
   Box,
   Table,
@@ -139,7 +140,7 @@ const mdxGrommetMap = {
   li: (props) => <Text {...props} as="li" />,
   ul: (props) => <ListBase {...props} as="ul" />,
   ol: (props) => <ListBase {...props} as="ol" />,
-  a: Anchor,
+  a: GrommetAnchor,
   img: (props) => {
     const styleProps = qs.parseUrl(props.src, { parseBooleans: true }).query;
 

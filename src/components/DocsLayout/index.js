@@ -8,7 +8,7 @@ import { AxisTheme } from "@centrifuge/axis-theme/";
 import SEO from "../SEO";
 
 // Import KaTex styles to render Math functions
-import "katex/dist/katex.css";
+import "katex/dist/katex.min.css";
 
 import EditPage from "./EditPage";
 import Contributors from "./Contributors";
