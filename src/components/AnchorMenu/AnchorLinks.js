@@ -41,7 +41,7 @@ const AnchorLinks = ({ links, slug }) => {
           setActiveLink(`#${intersectingEntry.target.id}`);
         }
       },
-      { threshold: 0.1, rootMargin: "55px 0px -40% 0px" }
+      { threshold: 0.1, rootMargin: "55px 0px -40% 0px" },
     );
 
     internalLinks.forEach((link) => {

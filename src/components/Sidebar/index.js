@@ -44,7 +44,7 @@ const SidebarAccordion = ({ children }) => {
       <AccordionPanel
         header={renderPanelHeader(
           "Table of Contents",
-          String(activeIndex).includes(0)
+          String(activeIndex).includes(0),
         )}
       >
         <Box overflow="visible">{children}</Box>

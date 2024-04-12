@@ -21,7 +21,7 @@ export const DocsLayout = ({ data, children }) => {
 
   const getNthNode = (n) => {
     let filtered = allMdx.edges.filter(
-      (edge) => edge.node.frontmatter.order === n
+      (edge) => edge.node.frontmatter.order === n,
     );
     if (filtered.length !== 1) return null;
     else return filtered[0].node;
@@ -29,11 +29,11 @@ export const DocsLayout = ({ data, children }) => {
 
   const prevNode = useMemo(
     () => getNthNode(mdx.frontmatter.order - 1),
-    [mdx.frontmatter.order]
+    [mdx.frontmatter.order],
   );
   const nextNode = useMemo(
     () => getNthNode(mdx.frontmatter.order + 1),
-    [mdx.frontmatter.order]
+    [mdx.frontmatter.order],
   );
 
   return (
@@ -55,8 +55,8 @@ export const DocsLayout = ({ data, children }) => {
                           size === "large"
                             ? "66px"
                             : size === "medium"
-                            ? "48px"
-                            : "24px",
+                              ? "48px"
+                              : "24px",
                         vertical: "0",
                       },
                     }}
@@ -103,8 +103,8 @@ export const DocsLayout = ({ data, children }) => {
                           size === "large"
                             ? "66px"
                             : size === "medium"
-                            ? "48px"
-                            : "24px",
+                              ? "48px"
+                              : "24px",
                         vertical: size === "small" ? "12px" : "16px",
                       },
                     }}

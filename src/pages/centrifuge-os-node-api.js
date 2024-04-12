@@ -10,7 +10,7 @@ import { AxisTheme } from "@centrifuge/axis-theme";
 const SwaggerUI = React.lazy(() =>
   typeof window !== "undefined"
     ? import("swagger-ui-react")
-    : Promise.resolve({ default: () => null })
+    : Promise.resolve({ default: () => null }),
 );
 
 export default () => (

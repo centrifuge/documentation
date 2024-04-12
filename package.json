@@ -61,13 +61,15 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "yarn lint && gatsby build",
+    "build": "yarn lint && yarn format:check && gatsby build",
     "develop": "gatsby develop -p 8001",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx,.mdx .",
-    "nuke": "yarn cache clean && rm -rf node_modules yarn.lock && yarn && yarn develop"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "nuke": "yarn cache clean && rm -rf node_modules yarn.lock && yarn"
   },
   "repository": {
     "type": "git",
@@ -76,5 +78,8 @@
   "bugs": {
     "url": "https://github.com/centrifuge/developer.centrifuge.io/issues"
   },
-  "homepage": "https://github.com/centrifuge/developer.centrifuge.io#readme"
+  "homepage": "https://github.com/centrifuge/developer.centrifuge.io#readme",
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
 }

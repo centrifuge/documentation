@@ -79,27 +79,25 @@ exports.createPages = ({ graphql, actions, reporter }) => {
 
   return new Promise((resolve, reject) => {
     resolve(
-      graphql(
-        `
-          {
-            allMdx(filter: { fields: { title: { ne: "404" } } }) {
-              edges {
-                node {
-                  id
-                  fields {
-                    slug
-                    instanceName
-                    file
-                  }
-                  internal {
-                    contentFilePath
-                  }
+      graphql(`
+        {
+          allMdx(filter: { fields: { title: { ne: "404" } } }) {
+            edges {
+              node {
+                id
+                fields {
+                  slug
+                  instanceName
+                  file
+                }
+                internal {
+                  contentFilePath
                 }
               }
             }
           }
-        `
-      ).then((result) => {
+        }
+      `).then((result) => {
         if (result.errors) {
           reporter.panicOnBuild("Error loading MDX result", result.errors);
           reject(result.errors);
@@ -124,7 +122,7 @@ exports.createPages = ({ graphql, actions, reporter }) => {
             context: { id: node.id, instanceName: node.fields.instanceName },
           });
         });
-      })
+      }),
     );
   });
 };

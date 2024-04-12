@@ -54,7 +54,7 @@ const SideNav = ({ onClose, size }) => {
     () =>
       instances.map((instance) => {
         const group = data.allMdx.group.filter(
-          (group) => group.fieldValue === instance.name
+          (group) => group.fieldValue === instance.name,
         )[0];
         const nodes = group.edges
           .map((edge) => ({
@@ -70,7 +70,7 @@ const SideNav = ({ onClose, size }) => {
           nodes,
         };
       }),
-    [data, instances]
+    [data, instances],
   );
 
   return (

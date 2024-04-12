@@ -1,8 +1,9 @@
 .gatsby-resp-image-background-image {
-    display: none !important;
+  display: none !important;
 }
 
-p, li {
-    font-size: 16px;
-    line-height: 1.7em;
+p,
+li {
+  font-size: 16px;
+  line-height: 1.7em;
 }
