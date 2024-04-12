@@ -51,6 +51,7 @@
     "rehype-katex": "^7.0.0",
     "rehype-slug": "4.0.0",
     "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "3.0.0",
     "remark-image-attributes": "^0.2.1",
     "remark-math": "3.0.1",
     "styled-components": "5",
@@ -65,7 +66,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx,.mdx ."
+    "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx,.mdx .",
+    "nuke": "yarn cache clean && rm -rf node_modules yarn.lock && yarn && yarn develop"
   },
   "repository": {
     "type": "git",
