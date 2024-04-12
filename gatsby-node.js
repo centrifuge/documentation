@@ -111,18 +111,12 @@ exports.createPages = ({ graphql, actions, reporter }) => {
 
         // We'll call `createPage` for each result
         result.data.allMdx.edges.forEach(({ node }) => {
-          // createRedirect({
-          //   fromPath: `/`,
-          //   toPath: `/getting-started/introduction/`,
-          // });
-
           createPage({
             // This is the slug we created before
             // (or `node.frontmatter.slug`)
             path: node.fields.slug,
 
             // This component will wrap our MDX content
-            // component: path.resolve(`./src/components/DocsLayout/index.js`),
             component: `${docsLayoutTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
 
             // We can use the values in this context in
