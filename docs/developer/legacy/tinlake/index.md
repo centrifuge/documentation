@@ -12,11 +12,13 @@ redirect_from:
 # Tinlake Smart Contracts (Legacy)
 
 ## Overview
+
 [Tinlake](https://legacy.tinlake.centrifuge.io/) is Centrifuge's initial Ethereum-based, open, decentralized smart-contract based platform of asset pools bringing together pool issuers looking for financing and investors who seek to utilize the full potential of decentralized finance (DeFi).
 
 **Note that Tinlake has been replaced by the [Centrifuge App](https://app.centrifuge.io/), however _legacy_ Tinlake pools as described below are still live on the App. Newer pools do not use the below smart contracts, but rather are launched on Centrifuge Chain.**
 
 ### Tinlake from a borrower perspective
+
 Issuers can responsibly bridge real-world assets, such as invoices, mortgages or streaming royalties into DeFi and access bankless liquidity. They do this by tokenizing their financial assets into Non-Fungible Tokens (“NFTs”), using these NFTs as collateral in Tinlake Pools to draw funding.
 
 Borrowers (the issuers) have individual assets with varying terms and varying durations drawn against their collateral. The collateral is represented as an NFT, which needs to be locked in the Tinlake contracts to draw a loan from it. Pooling the individual assets removes the cumbersome need of p2p financing for matching maturities, risk, and interest rates, and it allows investors to invest in a diversified portfolio of real world assets.
@@ -34,28 +36,23 @@ Investors earn yield on [TIN and DROP](https://medium.com/centrifuge/a-tale-of-t
 Tinlake is implemented in Solidity and deployed on Ethereum mainnet.
 The source-code can be found on [Github](https://github.com/centrifuge/tinlake):
 
-
-| Repository | Desc |
-| -------- | -------- |
-| https://github.com/centrifuge/tinlake     | Main Tinlake Repository     |
-| https://github.com/centrifuge/tinlake-math    | Tinlake Math Libary. Adopted from ds-math.     |
-|https://github.com/centrifuge/tinlake-erc20 | Tinlake ERC20 implementation. Re-uses the ERC20 implementation from DAI. |
-|https://github.com/centrifuge/tinlake-title | ERC721 implementation used for Tinlake. |
-|https://github.com/centrifuge/tinlake-deploy | Tinlake deploy scripts build with bash and seth |
-|https://github.com/centrifuge/tinlake-proxy | Tinlake proxy contract used for the borrower interactions |
-|https://github.com/centrifuge/tinlake-actions | Tinlake actions is a libary used via delegate call by the proxy |
-|https://github.com/centrifuge/tinlake-auth | Tinlake authentification pattern libary |
-|https://github.com/centrifuge/tinlake-maker-lib | Tinlake Maker adapter. MIP22 implementation |
-|https://github.com/centrifuge/tinlake-rpc-tests | Tinlake RPC tests for the Maker integration. Tests run against live Mainnet or Kovan deployment. |
-| https://github.com/centrifuge/tinlake-maker-tests| Tinlake Maker integration system tests.|
-|https://github.com/centrifuge/tinlake-spells-mainnet |Tinlake Mainnet spells (changes on Mainnet deployments) |
-|https://github.com/centrifuge/tinlake-spells-kovan | Tinlake Kovan spells (changes on Mainnet deployments)|
-|https://github.com/centrifuge/tinlake-pools-cli | Tinlake pool management|
-|https://github.com/centrifuge/tinlake-tranche-worker | Contract for cancelling all orders in a pool. (Required for contract upgrades)|
-
-
-
-### Security
+| Repository                                           | Desc                                                                                             |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| https://github.com/centrifuge/tinlake                | Main Tinlake Repository                                                                          |
+| https://github.com/centrifuge/tinlake-math           | Tinlake Math Libary. Adopted from ds-math.                                                       |
+| https://github.com/centrifuge/tinlake-erc20          | Tinlake ERC20 implementation. Re-uses the ERC20 implementation from DAI.                         |
+| https://github.com/centrifuge/tinlake-title          | ERC721 implementation used for Tinlake.                                                          |
+| https://github.com/centrifuge/tinlake-deploy         | Tinlake deploy scripts build with bash and seth                                                  |
+| https://github.com/centrifuge/tinlake-proxy          | Tinlake proxy contract used for the borrower interactions                                        |
+| https://github.com/centrifuge/tinlake-actions        | Tinlake actions is a libary used via delegate call by the proxy                                  |
+| https://github.com/centrifuge/tinlake-auth           | Tinlake authentification pattern libary                                                          |
+| https://github.com/centrifuge/tinlake-maker-lib      | Tinlake Maker adapter. MIP22 implementation                                                      |
+| https://github.com/centrifuge/tinlake-rpc-tests      | Tinlake RPC tests for the Maker integration. Tests run against live Mainnet or Kovan deployment. |
+| https://github.com/centrifuge/tinlake-maker-tests    | Tinlake Maker integration system tests.                                                          |
+| https://github.com/centrifuge/tinlake-spells-mainnet | Tinlake Mainnet spells (changes on Mainnet deployments)                                          |
+| https://github.com/centrifuge/tinlake-spells-kovan   | Tinlake Kovan spells (changes on Mainnet deployments)                                            |
+| https://github.com/centrifuge/tinlake-pools-cli      | Tinlake pool management                                                                          |
+| https://github.com/centrifuge/tinlake-tranche-worker | Contract for cancelling all orders in a pool. (Required for contract upgrades)                   |
 
 #### Audits
 
@@ -73,6 +70,7 @@ Centrifuge has performed multiple audits of its codebase:
 All audit reports can be found [here](https://github.com/centrifuge/security/tree/master/audits).
 
 ### Security Vulnerability Disclosure
+
 No technology is perfect or perfectly secure.
 Centrifuge believes that working with skilled security researchers
 across the globe is crucial in identifying weaknesses in any technology.
@@ -84,7 +82,9 @@ and look forward to awarding them for their invaluable contribution to the secur
 Each Tinlake pool is an individual deployment of the set of smart contracts. A full list of all deployed pools, including metadata, can be found [here](https://github.com/centrifuge/tinlake-pools-mainnet).
 
 ## Overview of Smart Contracts
+
 ### Introduction
+
 The design of Tinlake was inspired by the design of the MakerDAO contracts. Some design patterns and best practices like the `auth pattern` have been adopted in the Tinlake contracts.
 
 The current version of Tinlake v0.3.5 has around 15 contracts.
@@ -93,9 +93,9 @@ It is important to notice that a deployment of Tinlake can only manage one pool.
 
 The reasoning behind this is to keep the logic as simple as possible.
 
-
 ### Module overview
-At its core, Tinlake has *two* main modules:
+
+At its core, Tinlake has _two_ main modules:
 
 - **Borrower Module**
 - **Lender Module**
@@ -119,9 +119,9 @@ The Borrow module contract handles the individual loans of the issuers.
 The main actions of an issuer are:
 
 - **open**
-    - Opens a new loan
+  - Opens a new loan
 - **lock**
-    - Locks a NFT as collateral for loan
+  - Locks a NFT as collateral for loan
 - **borrow**
   - Requests an amount of to borrow from the lender module
 - **withdraw**
@@ -139,8 +139,8 @@ On the lender side of Tinlake, the there are three main interactions:
 - Redeem Order
 - Disburse (Collect)
 
-
 #### Supply Order
+
 A user can create a supply order by locking DAI/stablecoin in Tinlake.
 
 ![](./images/supply_order.png#width=60%)
@@ -169,10 +169,12 @@ Example:
 #### Redeem Order
 
 #### Redeem Order
+
 A user can redeem their DROP or TIN tokens in exchange for DAI/stablecoin with a redeem order.
 ![](./images/redeem_order.png#width=60%)
 
 #### Disburse Order
+
 The disburse method can be called to collect tokens from an executed supply order or DAI/stablecoin from a successfully executed redeem order.
 
 ![](./images/disburse_order.png#width=60%)
@@ -276,19 +278,8 @@ $$
 
 In case of losses, they are first covered by the junior investors.
 
-
-#### TokenPrices
-
-$$
-\text{dropPrice} = \frac{\text{seniorAsset}}{\text{seniorSupply}}
-$$
-
 **seniorSupply**
 Is the total amount of minted ERC20 DROP tokens.
-
-$$
-\text{tinPrice} = \frac{\text{juniorAsset}}{\text{juniorSupply}}
-$$
 
 **juniorSupply**
 Is the total amount of minted ERC20 TIN tokens.
@@ -344,6 +335,7 @@ In an epoch execution, the orders which can be fulfilled are changing the lender
 - $\text{DROP}_{redeem}$
 
 #### Reserve
+
 Amount of DAI available in the reserve.
 
 $$
@@ -390,10 +382,6 @@ The coordinator contract manages the epochs for the investors.
 
 #### Contract Diagram
 
-<!-- The epoch coordinator calculates the token price and percentage of redemption & investment orders which can be fulfilled in an epoch for each tranche. The calculation is based on the total amount of invest and redeem orders, the current equity ratio, total amount of repayments, currency available and the priority of order types (For example: if a redeem comes before invest).
-
-All users that place orders within the same epoch are treated equally. Independent order volume and submission time don’t result in preferences. -->
-
 ![](./images/coordinator.png)
 
 #### Coordinator State Diagram
@@ -409,9 +397,9 @@ All users that place orders within the same epoch are treated equally. Independe
 ```
 
 - An epoch can be closed after a minimum epoch time has passed
--  `closeEpoch` creates a snapshot of the current lender state
--  If all orders can be fulfilled without violating any constraints, the epoch is executed
--  Otherwise the submission period starts
+- `closeEpoch` creates a snapshot of the current lender state
+- If all orders can be fulfilled without violating any constraints, the epoch is executed
+- Otherwise the submission period starts
 
 **executeEpoch**
 
@@ -437,8 +425,9 @@ function submitSolution(uint seniorRedeem, uint juniorRedeem,
 #### Tranche Module Contracts Overview
 
 A Tinlake deployment has two tranche modules deployed:
-- *DROP* Tranche Module
-- *TIN* Tranche Module
+
+- _DROP_ Tranche Module
+- _TIN_ Tranche Module
 
 #### Module Diagram
 
@@ -631,9 +620,11 @@ This is the first step in the loan process. It issues (or creates) a new loan in
 Locks the collateral NFT in the shelf. This requires the ID of an issued loan, and the ownership of both the corresponding loan NFT and the collateral NFT.
 
 **borrow**
+
 ```javascript
   function borrow(uint loan, uint currencyAmount) external owner(loan)
 ```
+
 This starts the borrow process of a loan. The method can only be called if the collateral NFT is locked.
 
 Calling borrow informs the system of the requested currencyAmount. This requires a `max ceiling` (~max borrow amount) for the collateral NFT to be defined by an oracle in the NAV feed.
@@ -706,6 +697,7 @@ Increases the debt of a loan by a currencyAmount.
 ```javascript
  function decDebt(uint loan, uint currencyAmount) external auth note
 ```
+
 - Increases the debt of a loan by a currencyAmount. Decrease the loan's debt by a currencyAmount.
 
 **debt**
@@ -795,8 +787,8 @@ A risk group has the following **properties**:
 
 ## NAV
 
-## NAV
 ### Introduction to Tinlake NAV
+
 For a high level introduction to the NAV in Tinlake, please visit the [Pool Valuation (NAV) documentation](https://docs.centrifuge.io/learn/pool-valuation/).
 In this document, the NAV formulas as seen as given.
 
@@ -846,7 +838,9 @@ Expected Return = 1 - ExpectedLoss
 Note, `Expected Return` is also denoted Recovery Rate in finance. In the Solidity contract, the variable is called **recoveryRatePD**.
 
 #### Future Value
+
 Calculation for the future value of a loan.
+
 ```
 P.....principal (loan borrow amount)
 i.....interest rate per second
@@ -896,7 +890,7 @@ Let's assume a discount rate of 3.00%.
 
 In the year 2022 the present value would be:
 
-p = 110.0295/(1.03^(2023-2022)) = 106.82 DAI
+p = 110.0295\/(1.03^(2023-2022)) = 106.82 DAI
 
 Note: For illustration time and interest is in year instead of seconds.
 
@@ -996,6 +990,7 @@ The loans with the same write-off group can be grouped together in the pile cont
 This implementation is just done theoretically to introduce a simple solution.
 
 #### NAV_v1: Grouping by maturity date
+
 In the first implementation of NAV, we grouped the different loans together by maturity date in a linked-list. Instead of iterating over all loans, we only needed to iterate over all different maturity dates in the future.
 
 **Bucket**
@@ -1120,6 +1115,7 @@ Afterwards the new loan needs to be added to the `totalDiscount` and `latestNAV`
 ## Epochs
 
 ### Introduction to epochs
+
 If the demand of investments or redemptions is higher than the available capital, new investments or redemption would result in a first come, first serve situation. Especially if multiple parties want to redeem their tokens after loans from borrowers are repaid. On Ethereum this would result in transaction front-running and very high gas fees for all participants.
 
 To avoid such a situation, the supply and redemption orders happen in epochs.
@@ -1174,15 +1170,16 @@ The fulfillment of _order types_ is constricted by the so-called pool constraint
 
 The following constraints are defined by the asset originator
 
-| Constraints | Desc |
-| -------- | -------- |
-| C1: Currency Constraint     | It is not possible to allow more redeems than there is currency in the reserve. (after considering the new investments)     |
-| C2: Max Reserve Constraint| The total amount of DAI in the reserve is restricted by the maxReserve parameter. The maxReserve can be updated by the issuer. |
-| C3: MaxSeniorRatio | New supplies and new redemptions are not allowed to violate maxSeniorRatio. A maxSeniorRatio implicitly guarantees a minimum juniorRatio. The juniorRatio protects the senior investors. |
+| Constraints                | Desc                                                                                                                                                                                     |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| C1: Currency Constraint    | It is not possible to allow more redeems than there is currency in the reserve. (after considering the new investments)                                                                  |
+| C2: Max Reserve Constraint | The total amount of DAI in the reserve is restricted by the maxReserve parameter. The maxReserve can be updated by the issuer.                                                           |
+| C3: MaxSeniorRatio         | New supplies and new redemptions are not allowed to violate maxSeniorRatio. A maxSeniorRatio implicitly guarantees a minimum juniorRatio. The juniorRatio protects the senior investors. |
 
 ## The Solver
 
 ### Why a Solver?
+
 If all (maximum) invest and redeem orders can be fulfilled without violating any constraints all orders will be executed upon epoch close.
 
 If all (maximum) invest and redeem orders can be fulfilled without violating any constraints all orders will be executed upon epoch close.
@@ -1463,7 +1460,7 @@ $$
 \text{seniorBalance} = max(\text{seniorAsset} - \text{seniorBalance}, 0);
 $$
 
-With every epoch that has executed supply/redeem transactions, the relation between senior und junior tranches changes.
+With every epoch that has executed supply\/redeem transactions, the relation between senior und junior tranches changes.
 
 The rebalancing is happening as part of the epochExecute.
 
@@ -1608,4 +1605,6 @@ In case of a liquidation the TIN investors would have to pay for the additional 
 ```
 In the example above the TIN price would
 drop to 0.95 in case of a liquidation.
+
+
 ```
