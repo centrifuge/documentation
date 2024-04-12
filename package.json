@@ -50,7 +50,6 @@
     "react-helmet": "^6.1.0",
     "rehype-katex": "^7.0.0",
     "rehype-slug": "4.0.0",
-    "remark-frontmatter": "^5.0.0",
     "remark-gfm": "3.0.0",
     "remark-image-attributes": "^0.2.1",
     "remark-math": "3.0.1",

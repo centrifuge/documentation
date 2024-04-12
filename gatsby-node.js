@@ -122,7 +122,7 @@ exports.createPages = ({ graphql, actions, reporter }) => {
             context: { id: node.id, instanceName: node.fields.instanceName },
           });
         });
-      }),
+      })
     );
   });
 };

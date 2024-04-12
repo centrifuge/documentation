@@ -4,7 +4,6 @@ import remarkMath from "remark-math";
 import remarkImageAttrs from "remark-image-attributes";
 import rehypeSlug from "rehype-slug";
 import rehypeKatex from "rehype-katex";
-import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -88,12 +87,7 @@ export default {
           },
         ],
         mdxOptions: {
-          remarkPlugins: [
-            remarkGfm,
-            remarkMath,
-            remarkImageAttrs,
-            remarkFrontmatter,
-          ],
+          remarkPlugins: [remarkGfm, remarkMath, remarkImageAttrs],
           rehypePlugins: [rehypeSlug, rehypeKatex],
         },
       },

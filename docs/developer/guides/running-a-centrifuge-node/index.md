@@ -26,7 +26,7 @@ just want to be fully trustless and run your own node this guide will teach you 
 Note: Syncing and Runtime Upgrades might put extra load on the node. It is recommended to increase the resources until the node is fully synced. Use a process manager to restart the process if it reaches memory limits, hangs, or crashes.
 
 - Check out [Centrifuge Releases](https://github.com/centrifuge/centrifuge-chain/releases) to pick the latest production release
-- Install [`Docker`](https://www.docker.com/) OR [`rustup`](https://rustup.rs/)
+- Install [Docker](https://www.docker.com/) OR [rustup](https://rustup.rs/)
 
 ## CLI arguments
 
