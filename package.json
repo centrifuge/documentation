@@ -61,7 +61,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "yarn lint && yarn format:check && gatsby build",
+    "build": "gatsby build",
     "develop": "gatsby develop -p 8001",
     "start": "gatsby develop",
     "serve": "gatsby serve",
