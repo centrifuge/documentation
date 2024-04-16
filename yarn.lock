@@ -6177,16 +6177,16 @@ core-js-compat@3.31.0:
     browserslist "^4.21.5"
 
 core-js-compat@^3.31.0, core-js-compat@^3.36.1:
-  version "3.36.1"
-  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.36.1.tgz#1818695d72c99c25d621dca94e6883e190cea3c8"
-  integrity sha512-Dk997v9ZCt3X/npqzyGdTlq6t7lDBhZwGvV94PKzDArjp7BTRm7WlDAXYd/OWdeFHO8OChQYRJNJvUCqCbrtKA==
+  version "3.37.0"
+  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.37.0.tgz#d9570e544163779bb4dff1031c7972f44918dc73"
+  integrity sha512-vYq4L+T8aS5UuFg4UwDhc7YNRWVeVZwltad9C/jV3R2LgVOpS9BDr7l/WL6BN0dbV3k1XejPTHqqEzJgsa0frA==
   dependencies:
     browserslist "^4.23.0"
 
 core-js-pure@^3.23.3, core-js-pure@^3.30.2:
-  version "3.36.1"
-  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.36.1.tgz#1461c89e76116528b54eba20a0aff30164087a94"
-  integrity sha512-NXCvHvSVYSrewP0L5OhltzXeWFJLo2AL2TYnj6iLV3Bw8mM62wAQMNgUCRI6EBu6hVVpbCxmOPlxh1Ikw2PfUA==
+  version "3.37.0"
+  resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.37.0.tgz#ce99fb4a7cec023fdbbe5b5bd1f06bbcba83316e"
+  integrity sha512-d3BrpyFr5eD4KcbRvQ3FTUx/KWmaDesr7+a3+1+P46IUnNoEt+oiLijPINZMEon7w9oGkIINWxrBAU9DEciwFQ==
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -6199,9 +6199,9 @@ core-js@^2.4.0, core-js@^2.5.0:
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
 core-js@^3.31.0:
-  version "3.36.1"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.36.1.tgz#c97a7160ebd00b2de19e62f4bbd3406ab720e578"
-  integrity sha512-BTvUrwxVBezj5SZ3f10ImnX2oRByMxql3EimVqMysepbC9EeMUOpLwdy6Eoili2x6E4kf+ZUB5k/+Jv55alPfA==
+  version "3.37.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.37.0.tgz#d8dde58e91d156b2547c19d8a4efd5c7f6c426bb"
+  integrity sha512-fu5vHevQ8ZG4og+LXug8ulUtVxjOcEYvifJr7L5Bfq9GOztVqsKd9/59hUk2ZSbCrS3BqUr3EpaYGIYzq7g3Ug==
 
 core-util-is@1.0.2:
   version "1.0.2"
