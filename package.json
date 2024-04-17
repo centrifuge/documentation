@@ -78,5 +78,6 @@
   "bugs": {
     "url": "https://github.com/centrifuge/developer.centrifuge.io/issues"
   },
-  "homepage": "https://github.com/centrifuge/developer.centrifuge.io#readme"
+  "homepage": "https://github.com/centrifuge/developer.centrifuge.io#readme",
+  "packageManager": "yarn@4.1.1"
 }
