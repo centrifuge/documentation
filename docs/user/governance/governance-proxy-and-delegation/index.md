@@ -7,6 +7,7 @@ category: subpage
 ---
 
 # Delegation and Proxies
+
 There are two ways you can delegate your voting power to another wallet: creating a _Governance Proxy_ or using _Delegation_.
 
 A _Governance Proxy_ is a wallet that can perform governance related tasks on-chain on behalf of another wallet. It is possible to create [different types of proxies](https://wiki.polkadot.network/docs/learn-proxies), but a Governance Proxy specifically only allows for transactions related to governance (i.e. it cannot transfer tokens).

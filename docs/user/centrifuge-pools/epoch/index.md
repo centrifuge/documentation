@@ -8,6 +8,7 @@ redirect_from:
   - /learn/epoch
   - /learn/epoch/
 ---
+
 # Epochs and Order Execution
 
 A decentralized pool where investors can invest/redeem and Asset Originators originate/repay at any time needs a decentralized mechanism to coordinate investments, redemptions, originations and repayments. Welcome the `Epoch`.
@@ -102,7 +103,7 @@ $$
 
 The restrictions for this optimization problem are:
 
-- Executed order needs to be smaller or equal to the submitted order [e.g. Total executed Junior invest <= Total locked Junior invest]
+- Executed order needs to be smaller or equal to the submitted order [e.g. Total executed Junior invest \<\= Total locked Junior invest]
 - All executed orders need to be larger than or equal to zero [e.g. Total Junior invest > 0]
 - The Reserve is larger than zero and smaller than the `max eserve amount` after all transactions are executed [0 < Reserve < Maximum Reserve Amount]
 - A sub-ordination ratio of the resulting state is smaller than the required suboardination ratio for any tranche [Min subordination ratio > Current subordination ratio]

@@ -6,7 +6,7 @@ const InstanceTOC = ({ nodes, size, title, name, icon, location }) => {
   const [openMobileMenu, setOpenMobileMenu] = useState(
     title
       .toLowerCase()
-      .includes(location.pathname.split("/")[1].split("-").join(" "))
+      .includes(location.pathname.split("/")[1].split("-").join(" ")),
   );
   const secondLevelNodes = [];
   const nodesInSubpages = nodes

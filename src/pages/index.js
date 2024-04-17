@@ -106,7 +106,7 @@ const InstanceNavButton = ({ uri, color, title, avatar }) => {
   );
 };
 
-const GettingStartedNavButton = ({ uri, color, title, avatar }) => {
+const GettingStartedNavButton = ({ color, title, avatar }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -146,7 +146,7 @@ const GettingStartedNavButton = ({ uri, color, title, avatar }) => {
   );
 };
 
-const HomePage = () => {
+export const HomePage = () => {
   const size = useContext(ResponsiveContext);
 
   return (

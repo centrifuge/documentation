@@ -25,7 +25,7 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const AnchorLinks = ({ links, slug, size }) => {
+const AnchorLinks = ({ links, slug }) => {
   const [activeLink, setActiveLink] = React.useState(null);
 
   const internalLinks = links?.map((link) => {
@@ -41,7 +41,7 @@ const AnchorLinks = ({ links, slug, size }) => {
           setActiveLink(`#${intersectingEntry.target.id}`);
         }
       },
-      { threshold: 0.1, rootMargin: "55px 0px -40% 0px" }
+      { threshold: 0.1, rootMargin: "55px 0px -40% 0px" },
     );
 
     internalLinks.forEach((link) => {

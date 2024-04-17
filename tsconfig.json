@@ -21,11 +21,7 @@
     "jsx": "preserve",
     "isolatedModules": false,
     "strictPropertyInitialization": false,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ]
+    "lib": ["dom", "dom.iterable", "esnext"]
   },
   "exclude": [
     "node_modules",
