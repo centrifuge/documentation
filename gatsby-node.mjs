@@ -1,9 +1,9 @@
-const { createFilePath } = require("gatsby-source-filesystem");
-const path = require("path");
+import { createFilePath } from "gatsby-source-filesystem";
+import path from "path";
 
 const docsLayoutTemplate = path.resolve(`./src/components/DocsLayout/index.js`);
 
-exports.onCreateNode = (args) => {
+export const onCreateNode = (args) => {
   const { node, actions, getNode } = args;
   const { createNodeField, createRedirect } = actions;
 
@@ -74,7 +74,7 @@ exports.onCreateNode = (args) => {
   }
 };
 
-exports.createPages = ({ graphql, actions, reporter }) => {
+export const createPages = ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -122,12 +122,12 @@ exports.createPages = ({ graphql, actions, reporter }) => {
             context: { id: node.id, instanceName: node.fields.instanceName },
           });
         });
-      }),
+      })
     );
   });
 };
 
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+export const onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {
