@@ -62,13 +62,13 @@ The DCF valuation process can be summarized as follows:
    The standard formula to calculate the PV of a cash flow is:
 
 $$
-PV=\frac{CF}{(1+r)^t}
+\text{PV}=\frac{\text{CF}}{(1+r)^t} 
 $$
 
 with `r = discount rate` and `t = period of cash flows`. As we deal with intra-year cash flows, the formula becomes
 
 $$
-PV=\frac{CF}{(1+\frac{r}{n})^{t*n}}
+\text{PV}=\frac{CF}{(1+\frac{r}{n})^{t*n}}
 $$
 
 with $n$ being `number of discounting periods per year` (e.g. 360 days for a financial year).
@@ -77,13 +77,13 @@ with $n$ being `number of discounting periods per year` (e.g. 360 days for a fin
    Adding up the present values of the risk-adjusted expected cash flows for all financings in the pool leads to the portfolio Value.
 
 $$
-Portfolio Value = \sum{i=1}{}{}
+\text{Portfolio Value} = \sum{i=1}{}{}
 $$
 
 The portfolio value plus the liquidity currently in the Reserve of the Pool gives the Pool Value.
 
 $$
-Pool Value = Portfolio Value + Reserve
+\text{Pool Value} = \text{Portfolio Value} + \text{Reserve}
 $$
 
 Please find a visual overview of this process below:
@@ -117,7 +117,7 @@ Seconds per year: 31104000
 Remember, the textbook compounding formula is:
 
 $$
-Expected CF = P * (1 + \frac{i}{n})^{(n*t)}
+\text{Expected CF} = P * (1 + \frac{i}{n})^{(n*t)}
 $$
 
 where
@@ -129,7 +129,7 @@ n = Number of times interest is compounded per unit `t` [31104000 seconds per ye
 Applying this to our financing assuming compounding per second gives
 
 $$
-Expected CF = 100 DAI * (1 + \frac{0.1}{31104000})^{(31104000*\frac{180}{365})} = 105.13 DAI
+\text{Expected CF} = 100 \text{ DAI} * (1 + \frac{0.1}{31104000})^{(31104000*\frac{180}{365})} = 105.13 \text{ DAI}
 $$
 
 2. Adjust the expected cash flow for default risk:
@@ -137,13 +137,13 @@ $$
 The Expected Loss with the risk parameters given is
 
 $$
-Annual Expected Loss = 105.13 DAI * 0.04 * 0.5 = 2.10 DAI
+\text{Annual Expected Loss} = 105.13 \text{ DAI} * 0.04 * 0.5 = 2.10 \text{ DAI}
 $$
 
 as the PD expresses the annual probability of default we further adjust the expected loss for the term of the asset (assuming a uniform distribution of defaults):
 
 $$
-adjusted Expected Loss = 105.13 DAI * (0.04/180*360) * 0.5 = 1.05 DAI
+\text{adjusted Expected Loss} = 105.13 \text{ DAI} * (0.04/180*360) * 0.5 = 1.05 \text{ DAI}
 $$
 
 This is substracted from the Expected CF to calculate the risk-adjusted expected CF: 105.13 DAI - 1.05 DAI ~ 104.08 DAI
@@ -157,7 +157,7 @@ n = 31104000 seconds per year,
 gives:
 
 $$
-PV = \frac{104 DAI}{(1 + \frac{0.05}{31104000})^{0.25*31104000}} = 102.78 DAI
+PV = \frac{104 \text{ DAI}}{(1 + \frac{0.05}{31104000})^{0.25*31104000}} = 102.78 \text{ DAI}
 $$
 
 Please also find the underlying calculations as well as other examples [here](https://docs.google.com/spreadsheets/d/1O124ru0MsdKLsOjRRUqlb4zAoIC5RNgNfQpxbAv1wNw/edit#gid=1005868729).
