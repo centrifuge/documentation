@@ -62,7 +62,7 @@ The DCF valuation process can be summarized as follows:
    The standard formula to calculate the PV of a cash flow is:
 
 $$
-\text{PV}=\frac{\text{CF}}{(1+r)^t} 
+\text{PV}=\frac{\text{CF}}{(1+r)^t}
 $$
 
 with `r = discount rate` and `t = period of cash flows`. As we deal with intra-year cash flows, the formula becomes

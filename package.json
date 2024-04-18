@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "@centrifuge",
   "dependencies": {
+    "@babel/eslint-parser": "^7.24.1",
     "@babel/preset-env": "^7.24.4",
     "@babel/preset-react": "^7.24.1",
     "@centrifuge/axis-nav-bar": "^0.3.2-develop.47",
@@ -16,7 +17,9 @@
     "babel-plugin-styled-components": "^2.1.4",
     "btoa": "^1.2.1",
     "docsearch.js": "^2.6.2",
+    "eslint": "^8.57.0",
     "eslint-plugin-mdx": "^3.1.5",
+    "eslint-plugin-react": "^7.34.1",
     "formdata-node": "6.0.3",
     "gatsby": "^5.13.3",
     "gatsby-image": "^2.0.29",
