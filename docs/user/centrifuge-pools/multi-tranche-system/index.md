@@ -19,7 +19,7 @@ Introducing different investment tranches enables customization of the risk-retu
 
 The top tranche is commonly referred to as the senior tranche, the bottom tranche as the junior tranche, and any tranches in between as different forms of mezzanine tranches. The senior tranche is the most secure as it receives proceeds from the asset pool first and is protected against defaults by the tranches below. Consequently, the senior tranche usually offers a lower, often stable or fixed return. The remaining proceeds after serving the senior tranche are further allocated to the subordinated tranches below based on their defined return profiles. The junior tranche receives the remaining proceeds after all other tranches have been served. Hence, the higher the proceeds remaining in the waterfall, the higher the variable returns for the junior tranche. In the event of a default, the junior tranche absorbs the losses first (hence its designation as the "first loss piece"), while more senior investors remain protected against these losses. Only when the junior tranche is fully depleted do more senior investors start bearing losses from defaults. The returns of the junior tranche before losses are usually relatively high to compensate for the risk of facing losses from defaults. The allocation of proceeds from the top and risks from the bottom among the different tranches is commonly known as "the waterfall."
 
-![Waterfall](./images/Pool_tranches.svg#width=50%;)
+![Waterfall](./images/pool_tranches.svg)
 
 ## The subordination ratio
 
