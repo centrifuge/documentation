@@ -9,7 +9,7 @@
     "@centrifuge/axis-nav-bar": "^0.3.2-develop.47",
     "@centrifuge/axis-theme": "0.3.1",
     "@fontsource/inter": "^5.0.17",
-    "@mdx-js/loader": "1.6.22",
+    "@mdx-js/loader": "3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@mdx-js/tag": "^0.20.3",
     "babel-loader": "^9.1.3",
@@ -36,7 +36,6 @@
     "gatsby-remark-image-attributes": "^1.1.0",
     "gatsby-remark-images": "^7.13.1",
     "gatsby-remark-katex": "^7.13.1",
-    "gatsby-remark-mathjax": "^1.0.0",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "grommet": "^2.36.1",
@@ -69,7 +68,7 @@
     "lint": "yarn eslint --ext .js,.jsx,.ts,.tsx,.mdx .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "nuke": "yarn cache clean && rm -rf node_modules yarn.lock && yarn"
+    "nuke": "yarn cache clean && rm -rf node_modules yarn.lock .cache public && yarn"
   },
   "repository": {
     "type": "git",
