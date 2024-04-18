@@ -170,9 +170,9 @@ const mdxGrommetMap = {
     const code = props.children.props.children.trim();
     const language = String(props.children.props.className).replace(/^language-/, "");
     return (
-      <div style={{  color: 'white', padding: '10px', borderRadius: '5px' }}>
+      <Box style={{  color: 'white', padding: '10px', borderRadius: '5px' }}>
         <CodeHighlighter code={code} language={language} />
-      </div>
+      </Box>
     ); 
   },
 };
