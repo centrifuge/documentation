@@ -27,10 +27,10 @@ The develop branch is continuously deployed to a preview site. [View dev site](h
 This repo uses yarn v4 to enable building on Cloudflare pages. If this is your first time using yarn v4 follow these steps:
 
 1. clear all generated folders (`.cache`, `public`, `node_modules`)
-2. install yarn v4 by running `corepack enable` and `yarn init -2`
-3. ensure you're using the correct node version by running `nvm use`. You should be using node v18.19.1
-4. install dependencies by running `yarn install`
-5. start the dev server by running `yarn develop`
+2. install yarn v4: `corepack enable` and `yarn init -2`
+3. ensure you're using the correct node version: `nvm use`. You should be using node v18.19.1
+4. install dependencies: `yarn install`
+5. start the dev server: `yarn develop`
 
 ### Images
 
