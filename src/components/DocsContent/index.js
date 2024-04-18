@@ -161,13 +161,20 @@ const mdxGrommetMap = {
         </Box>
       );
   },
-  inlineCode: (props) => <Text color="brand" as="code" {...props} />,
-  code: (props) => (
-    <CodeHighlighter
-      code={props.children.trim()}
-      language={String(props.className).replace(/^language-/, "")}
-    />
-  ),
+  // inline code (single backticks)
+  code: (props) => {
+    return  <Text  style={{color: "#2762ff", fontFamily: "monospace", padding: "0 3px"}} as="code">{props.children}</Text>;
+  },
+  // code block (triple backticks)
+  pre: (props) => {
+    const code = props.children.props.children.trim();
+    const language = String(props.children.props.className).replace(/^language-/, "");
+    return (
+      <div style={{  color: 'white', padding: '10px', borderRadius: '5px' }}>
+        <CodeHighlighter code={code} language={language} />
+      </div>
+    ); 
+  },
 };
 
 const DocsContent = ({ children }) => {
