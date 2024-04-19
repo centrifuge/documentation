@@ -22,12 +22,12 @@ This section gives a general introduction into interest compounding and the diff
 
 Interest can be compounded at different frequencies. Most common are annual, monthly and daily frequencies. Annual compounding is simple. Imagine you invest $100 and earn 6.00% interest compounded annually. Then you receive $6.00 calculated as `$100 * 6.00% = $6.00` at the end of one year.
 
-Now assume you get 6.00% interest on your \$100 — but you compound monthly. That means at the end of the first month, you apply the monthly interest rate calculated as `6.00%/12=0.50%` to receive interest of $0.50. This leaves you with $100.50 at the end of the first month. At the end of the second month, you do the same, but as you also consider the previously earned interest you now get slightly more: `$100.50 * 0.5% = $0.5025`. If you continue to do this for 12 months you end up with \$106.1678 at the end of the year. That's slightly more than with annual compounding despite the same interest rate of 6.00% - the "power of compounding".
+Now assume you get 6.00% interest on your \$100 — but you compound monthly. That means at the end of the first month, you apply the monthly interest rate calculated as `6.00%/12=0.50%` to receive interest of \$0.50. This leaves you with \$100.50 at the end of the first month. At the end of the second month, you do the same, but as you also consider the previously earned interest you now get slightly more: `$100.50 * 0.5% = $0.5025`. If you continue to do this for 12 months you end up with \$106.1678 at the end of the year. That's slightly more than with annual compounding despite the same interest rate of 6.00% - the "power of compounding".
 
 Note that you can calculate the total interest accrued by repeating the above monthly calculation 12 times or - much easier - apply the general interest rate formula:
 
 $$
-Debt = Principal * (1 + \frac{i}{n})^{(n*t)},
+\text{Debt} = \text{Principal} * (1 + \frac{i}{n})^{(n*t)},
 $$
 
 with
@@ -66,7 +66,7 @@ The implementation on-chain is slightly different to the standard compounding fo
 To calculate the `Debt` at any point in time, a variable called `ratePerSecond` or `rate` is introduced. This is calculated as
 
 $$
-rate = 1 + \frac{\mathtt{i}}{\mathtt{y}}
+\text{rate} = 1 + \frac{\mathtt{i}}{\mathtt{y}}
 $$
 
 with
@@ -84,10 +84,10 @@ $$
 
 with t reflecting the time period **in seconds** for the on-chain implementation.
 
-Continuing the simple example from above with P = 100 and i = 0.06, the $rate$ variable can be calculated as:
+Continuing the simple example from above with P = 100 and i = 0.06, the $\text{rate}$ variable can be calculated as:
 
 $$
-rate  = 1 + \frac{0.06}{31536000} = 1.00000000190259.
+\text{rate}  = 1 + \frac{0.06}{31536000} = 1.00000000190259.
 $$
 
 Assuming the Debt to be outstanding over the course of a year (so t = 31536000), the Debt at the end of the year amounts to:

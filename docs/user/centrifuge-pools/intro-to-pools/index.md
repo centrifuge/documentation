@@ -150,7 +150,7 @@ The junior tranche does not have a predefined fixed or variable interest rate. J
 The junior tranche protects the more senior tranches against defaults of financed assets by taking the first loss position. If a financing is not repaid and is written off, this would reduce the NAV and with it the junior token value. The senior token's principal and returns remain unaffected as long as the loss is less than the total junior tranche of the pool at the time of default or write off. Thus, the current subordination ratios describe the extent of junior tranche protection for the more senior tranches. It is calculated per tranche as
 
 $$
-Current subordination  = \frac{Sum of subordinated tranche values}{Pool Value}
+\text{Current subordination}  = \frac{\text{Sum of subordinated tranche values}}{\text{Pool Value}}
 $$
 
 The higher the subordination ratio, the higher the risk protection for the respective tranche.
