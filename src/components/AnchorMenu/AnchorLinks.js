@@ -25,7 +25,7 @@ const Link = styled(GatsbyLink)`
   }
 `;
 
-const AnchorLinks = ({ links, slug, size }) => {
+const AnchorLinks = ({ links, slug }) => {
   const [activeLink, setActiveLink] = React.useState(null);
 
   const internalLinks = links?.map((link) => {
@@ -41,10 +41,10 @@ const AnchorLinks = ({ links, slug, size }) => {
           setActiveLink(`#${intersectingEntry.target.id}`);
         }
       },
-      { threshold: 0.1, rootMargin: "55px 0px -40% 0px" }
+      { threshold: 0.1, rootMargin: "55px 0px -40% 0px" },
     );
 
-    internalLinks.forEach((link) => {
+    internalLinks?.forEach((link) => {
       const target = document.querySelector(`#${link.href.split("#")[1]}`);
       if (target) {
         observer.observe(target);
@@ -52,7 +52,7 @@ const AnchorLinks = ({ links, slug, size }) => {
     });
 
     return () => {
-      internalLinks.forEach((link) => {
+      internalLinks?.forEach((link) => {
         const target = document.querySelector(`#${link.href.split("#")[1]}`);
         if (target) {
           observer.unobserve(target);
@@ -76,7 +76,7 @@ const AnchorLinks = ({ links, slug, size }) => {
           maxWidth: "250px",
         }}
       >
-        {internalLinks.map((link) => (
+        {internalLinks?.map((link) => (
           <Link
             key={link.href}
             to={`${slug}${link.href}`}

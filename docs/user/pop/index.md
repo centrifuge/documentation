@@ -9,9 +9,11 @@ redirect_from:
 ---
 
 # Launching a Pool
+
 The Pool Onboarding Proposal, POP for short, is a community owned and CFG governance-led process for onboarding RWAs into DeFi through the Centrifuge protocol.
 
 ## Why POP?
+
 The POP is intended to both simplify the process, as well as curate the quality of RWAs financed through Centrifuge in a transparent, open structure that enables participation from the community as well as from experts within the community. With the launch of the Centrifuge App, the POP is more important than ever. The information provided helps the community vote on your pool with confidence. The process is held by the Community, and most specifically CFG token holders, using their tokens to vote on launching proposed pools.
 
 ## How to submit a POP?

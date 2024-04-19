@@ -25,7 +25,7 @@ const Contributors = ({ contributors }) => {
       contributors
         .split(/,[\s]*/)
         .map((contributor) => parseContributor(contributor)),
-    [contributors]
+    [contributors],
   );
 
   return (

@@ -1,8 +1,19 @@
 import React from "react";
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
-import { MDXProvider } from "@mdx-js/tag";
+import { MDXProvider } from "@mdx-js/react";
 import styled from "styled-components";
-import * as Grommet from "grommet";
+import {
+  Text as GrommetText,
+  Heading as GrommetHeading,
+  Paragraph as GrommetParagraph,
+  Anchor as GrommetAnchor,
+  Image,
+  Box,
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableCell,
+} from "grommet";
 import qs from "query-string";
 
 import CodeHighlighter from "../CodeHighlighter";
@@ -11,7 +22,7 @@ import "./styles.css";
 
 import link from "../../images/link.svg";
 
-const ListBase = styled(Grommet.Text)`
+const ListBase = styled(GrommetText)`
   padding-left: 1rem;
 `;
 
@@ -23,19 +34,19 @@ const Anchor = styled.a.attrs({
   top: -80px;
 `;
 
-const Heading = styled(Grommet.Heading)`
+const Heading = styled(GrommetHeading)`
   position: relative;
   border-bottom: none;
   padding-bottom: 0;
 `;
 
-const Paragraph = styled(Grommet.Paragraph)`
+const Paragraph = styled(GrommetParagraph)`
   font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 1.7em;
 `;
 
-const Text = styled(Grommet.Text)`
+const Text = styled(GrommetText)`
   font-family: Inter, sans-serif;
   font-size: 16px;
   line-height: 1.7em;
@@ -117,29 +128,25 @@ const mdxGrommetMap = {
     </Heading>
   ),
   table: (props) => (
-    <Grommet.Box fill={"horizontal"}>
-      <Grommet.Table className={"MdxTable"}>{props.children}</Grommet.Table>
-    </Grommet.Box>
+    <Box fill={"horizontal"}>
+      <Table className={"MdxTable"}>{props.children}</Table>
+    </Box>
   ),
-  thead: (props) => <Grommet.TableHeader>{props.children}</Grommet.TableHeader>,
-  tbody: (props) => <Grommet.TableBody>{props.children}</Grommet.TableBody>,
-  tr: (props) => (
-    <Grommet.TableRow as={"tr"}>{props.children}</Grommet.TableRow>
-  ),
-  td: (props) => <Grommet.TableCell>{props.children}</Grommet.TableCell>,
-  th: (props) => (
-    <Grommet.TableCell scope="col">{props.children}</Grommet.TableCell>
-  ),
+  thead: (props) => <TableHeader>{props.children}</TableHeader>,
+  tbody: (props) => <TableBody>{props.children}</TableBody>,
+  tr: (props) => <TableRow as={"tr"}>{props.children}</TableRow>,
+  td: (props) => <TableCell>{props.children}</TableCell>,
+  th: (props) => <TableCell scope="col">{props.children}</TableCell>,
   li: (props) => <Text {...props} as="li" />,
   ul: (props) => <ListBase {...props} as="ul" />,
   ol: (props) => <ListBase {...props} as="ol" />,
-  a: Grommet.Anchor,
+  a: GrommetAnchor,
   img: (props) => {
     const styleProps = qs.parseUrl(props.src, { parseBooleans: true }).query;
 
     if (styleProps.width)
       return (
-        <Grommet.Image
+        <Image
           {...props}
           style={{
             float: styleProps.float || "auto",
@@ -149,21 +156,38 @@ const mdxGrommetMap = {
       );
     else
       return (
-        <Grommet.Box pad="large">
-          <Grommet.Image {...props} width="100%" />
-        </Grommet.Box>
+        <Box pad="large">
+          <Image {...props} width="100%" />
+        </Box>
       );
   },
-  inlineCode: (props) => <Grommet.Text color="brand" as="code" {...props} />,
-  code: (props) => (
-    <CodeHighlighter
-      code={props.children.trim()}
-      language={String(props.className).replace(/^language-/, "")}
-    />
-  ),
+  // inline code (single backticks)
+  code: (props) => {
+    return (
+      <Text
+        style={{ color: "#2762ff", fontFamily: "monospace", padding: "0 3px" }}
+        as="code"
+      >
+        {props.children}
+      </Text>
+    );
+  },
+  // code block (triple backticks)
+  pre: (props) => {
+    const code = props.children.props.children.trim();
+    const language = String(props.children.props.className).replace(
+      /^language-/,
+      "",
+    );
+    return (
+      <Box style={{ color: "white", padding: "10px", borderRadius: "5px" }}>
+        <CodeHighlighter code={code} language={language} />
+      </Box>
+    );
+  },
 };
 
-const DocsContent = ({ mdx }) => {
+const DocsContent = ({ children }) => {
   return (
     <MDXProvider components={mdxGrommetMap}>
       {/*  Note from Devin: temporary fix here to not render page title.
@@ -176,7 +200,7 @@ const DocsContent = ({ mdx }) => {
         {mdx.frontmatter.title}
       </Heading>
       */}
-      <MDXRenderer>{mdx.code.body}</MDXRenderer>
+      {children}
     </MDXProvider>
   );
 };

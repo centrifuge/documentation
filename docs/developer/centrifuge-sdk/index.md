@@ -3,7 +3,8 @@ id: centrifuge-sdk
 order: 3
 title: Centrifuge SDK
 contributors: <Sophia:sophia@k-f.co> , <Onno:onno@k-f.co> , <JP:jp@k-f.co>
---- 
+---
+
 # Centrifuge SDK
 
 Centrifuge SDK provides a JavaScript client to interact with Centrifuge Chain. It provides comprehensive modules to easily create and manage pools, nfts, loans and metadata. CentrifugeJS is built on top of [@polkadot/api](https://polkadot.js.org/docs/api) and uses the [RxJS](https://rxjs.dev/api) API to query chaindata and submit extrinsics.
@@ -19,11 +20,11 @@ npm install --save @centrifuge/centrifuge-js
 Create an instance and pass optional configuration
 
 ```js
-import Centrifuge from '@centrifuge/centrifuge-js'
+import Centrifuge from "@centrifuge/centrifuge-js";
 
 const centrifuge = new Centrifuge({
-  centrifugeWsUrl: 'wss://fullnode.development.cntrfg.com',
-})
+  centrifugeWsUrl: "wss://fullnode.development.cntrfg.com",
+});
 ```
 
 The following config options can be passed on initilization of CentrifugeJS:
@@ -103,15 +104,15 @@ Here's a full sample how to query all of the pools and subscribe to the state. B
 ```js
 centrifuge.pools.getPools().subscribe({
   next: (value) => {
-    console.log('next', value) // Pool[]
+    console.log("next", value); // Pool[]
   },
   complete: () => {
-    console.log('complete')
+    console.log("complete");
   },
   error: () => {
-    console.log('error')
+    console.log("error");
   },
-})
+});
 ```
 
 Some cases don't require a subscription. We find it easist to use a helper from `rxjs` to convert the observable into a promise. You'll have to install `rxjs`
@@ -123,11 +124,11 @@ yarn add --save rxjs
 Then the query could look like this
 
 ```js
-import { firstValueFrom } from 'rxjs'
+import { firstValueFrom } from "rxjs";
 
 // ...
 
-const pools = await firstValueFrom(cenrtifuge.pools.getPools()) // Pool[]
+const pools = await firstValueFrom(cenrtifuge.pools.getPools()); // Pool[]
 ```
 
 ## Transactions

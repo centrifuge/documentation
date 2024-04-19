@@ -10,15 +10,11 @@
   z-index: 2;
 }
 
-
 @media (max-width: 600px) {
   .algolia-autocomplete .ds-dropdown-menu {
     min-width: 295px;
   }
 }
-
-
-
 
 .algolia-autocomplete .ds-dropdown-menu:before {
   border-top: 1px solid transparent;

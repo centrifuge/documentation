@@ -7,6 +7,7 @@ contributors: <NunoAlexandre:nuno@k-f.co>
 ---
 
 # Querying data
+
 You can follow the official GraphQL guide [here](https://graphql.org/learn/) to learn more about GraphQL, how it works, and how to use it:
 
 - There are libraries to help you implement GraphQL in your application.
@@ -15,11 +16,10 @@ You can follow the official GraphQL guide [here](https://graphql.org/learn/) to 
 
 ## Endpoints
 
-| **Network** | **GraphQL Endpoint**|
-|------------|-------------------------------------------------------------------|
-| Centrifuge | https://api.subquery.network/sq/centrifuge/pools                  |
-| Dev        | https://api.subquery.network/sq/centrifuge/pools-development      |
-
+| **Network** | **GraphQL Endpoint**                                         |
+| ----------- | ------------------------------------------------------------ |
+| Centrifuge  | https://api.subquery.network/sq/centrifuge/pools             |
+| Dev         | https://api.subquery.network/sq/centrifuge/pools-development |
 
 ## Sample Queries
 
@@ -27,23 +27,21 @@ Queries can be tested in a dedicated [SubQL Sandbox](https://explorer.subquery.n
 
 Here some important hints and common pitfalls that can save you some time when working woth our data:
 
-- Currencies and Token amounts are expressed in fixed decimal precision 
-    
-    As pools have different reference currencies, the amount this precision can vary. For this matter we reference the Currency entity in Pools, so that the correct amount of decimals can be queried together with each pool.
+- Currencies and Token amounts are expressed in fixed decimal precision
+
+  As pools have different reference currencies, the amount this precision can vary. For this matter we reference the Currency entity in Pools, so that the correct amount of decimals can be queried together with each pool.
 
 - Queries return a maximum of 100 entries per page by default
-    
-    This can be increased to a maximum of 1000 entries per page in production environments. Sanbox environments are limited to 100 results.
+
+  This can be increased to a maximum of 1000 entries per page in production environments. Sanbox environments are limited to 100 results.
 
 - Entities ids are not necessarily the same as on chain ids
-    
-    Therefore, when querying an entity, always refer to the GraphQL data model to verify how the id is composed.
+  Therefore, when querying an entity, always refer to the GraphQL data model to verify how the id is composed.
 
+### Get net portfolio valuation and active loans for all Centrifuge Pools
 
- ### Get net portfolio valuation and active loans for all Centrifuge Pools
-
- ```graphql
- {
+```graphql
+{
   pools {
     nodes {
       id
@@ -51,17 +49,17 @@ Here some important hints and common pitfalls that can save you some time when w
         id
         decimals
       }
-    portfolioValuation
-    sumNumberOfActiveLoans
+      portfolioValuation
+      sumNumberOfActiveLoans
     }
   }
 }
- ```
+```
 
- ### Get balances and last investor transactions for an account
+### Get balances and last investor transactions for an account
 
- ```graphql
- {
+```graphql
+{
   account(id: "kALNreUp6oBmtfG87fe7MakWR8BnmQ4SmKjjfG27iVd3nuTue") {
     id
     outstandingOrders {
@@ -71,7 +69,7 @@ Here some important hints and common pitfalls that can save you some time when w
         trancheId
       }
     }
-    investorTransactions (last: 2) {
+    investorTransactions(last: 2) {
       nodes {
         type
         currencyAmount
@@ -93,11 +91,11 @@ Here some important hints and common pitfalls that can save you some time when w
     }
   }
 }
- ```
+```
 
- ### Get outstanding debt information for loans belongig to a pool
+### Get outstanding debt information for loans belongig to a pool
 
- ```graphql
+```graphql
 {
   pool(id: "2825130900") {
     id
@@ -113,11 +111,11 @@ Here some important hints and common pitfalls that can save you some time when w
     }
   }
 }
- ```
+```
 
- ### Get historical token price and token supply evolution for a given tranche token
+### Get historical token price and token supply evolution for a given tranche token
 
- ```graphql
+```graphql
 {
   trancheSnapshots(
     orderBy: TIMESTAMP_ASC
@@ -132,15 +130,21 @@ Here some important hints and common pitfalls that can save you some time when w
       tokenSupply
     }
   }
-} 
- ```
+}
+```
 
- ### Get TVL for single pools or for the entire ecosystem
+### Get TVL for single pools or for the entire ecosystem
 
 The TVL for each pool can be obtained with the following query:
 
 ```graphql
-{ pools { nodes { value } } }
+{
+  pools {
+    nodes {
+      value
+    }
+  }
+}
 ```
 
 The total for the entire CFG ecosystem is obtained by summing across all results.

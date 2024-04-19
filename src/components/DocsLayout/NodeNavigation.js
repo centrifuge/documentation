@@ -17,8 +17,8 @@ const Clickable = styled(Text)`
 `;
 
 const NodeNavigation = ({ prevNode, nextNode }) => {
-  const prevIconColor = !!prevNode ? "black" : "dark-3";
-  const nextIconColor = !!nextNode ? "black" : "dark-3";
+  const prevIconColor = prevNode ? "black" : "dark-3";
+  const nextIconColor = nextNode ? "black" : "dark-3";
 
   const size = useContext(ResponsiveContext);
 

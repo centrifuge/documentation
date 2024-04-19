@@ -61,7 +61,7 @@ const InternalLink = (
     onClick,
     isExpanded,
   },
-  ref
+  ref,
 ) => {
   const linkRef = useRef();
 

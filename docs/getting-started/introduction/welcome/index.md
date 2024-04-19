@@ -17,6 +17,7 @@ redirect_from:
   - /use/claim-cfg-rewards
   - /use/claim-cfg-rewards/
 ---
+
 # Welcome to Centrifuge
 
 Centrifuge is the pioneering platform for real-world asset tokenization. Through Centrifuge, investors gain access to a diverse range of assets, improving transparency and achieving better insight into their portfolio. Asset managers tokenize their funds and streamline access to necessary service providers and investors, saving cost for fund operations and unlocking new sources of capital.
