@@ -28,7 +28,9 @@ Centrifuge on Ethereum is an ERC20 token. [You can find the token contract for C
 
 For platforms that wish to track the circulating supply and total supply of CFG, use these endpoints:
 
+
 **Circulating supply**: https://europe-west3-peak-vista-185616.cloudfunctions.net/centrifuge-circulating-supply
+
 **Total supply**: https://europe-west3-peak-vista-185616.cloudfunctions.net/centrifuge-total-issuance
 
 ## CFG Token Distribution
