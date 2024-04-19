@@ -28,7 +28,7 @@ In mid-2021, [Centrifuge integrated the first real-world asset pool with MakerDA
 
 ### Bringing the first credit fund onchain
 
-In 2022, BlockTower Credit became the [first institutional credit fund to bring their collateralized lending operations onchain](https://centrifuge.mirror.xyz/yGWnk8ar_iXuoML-ZKF79NfKa9Q43o5SKgu13qR4uIg) by funding $220M of real-world assets through Centrifuge — with MakerDAO providing $150M of senior capital to BlockTower's Centrifuge pools. This marked the largest onchain investment in real-world assets.
+In 2022, BlockTower Credit became the [first institutional credit fund to bring their collateralized lending operations onchain](https://centrifuge.mirror.xyz/yGWnk8ar_iXuoML-ZKF79NfKa9Q43o5SKgu13qR4uIg) by funding \$220M of real-world assets through Centrifuge — with MakerDAO providing \$150M of senior capital to BlockTower's Centrifuge pools. This marked the largest onchain investment in real-world assets.
 
 ### Building the RWA Ecosystem
 
