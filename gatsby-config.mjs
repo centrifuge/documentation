@@ -1,6 +1,5 @@
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import remarkImageAttrs from "remark-image-attributes";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
@@ -58,6 +57,7 @@ export default {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
+          "gatsby-image-custom-width",
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
@@ -72,12 +72,6 @@ export default {
             },
           },
           {
-            resolve: "gatsby-remark-image-attributes",
-            options: {
-              styleAttributes: ["box-shadow", "margin"],
-            },
-          },
-          {
             resolve: `gatsby-remark-katex`,
             options: {
               strict: `ignore`,
@@ -85,7 +79,7 @@ export default {
           },
         ],
         mdxOptions: {
-          remarkPlugins: [remarkGfm, remarkImageAttrs],
+          remarkPlugins: [remarkGfm],
           rehypePlugins: [rehypeSlug],
         },
       },
