@@ -142,22 +142,21 @@ const mdxGrommetMap = {
   ol: (props) => <ListBase {...props} as="ol" />,
   a: GrommetAnchor,
   img: (props) => {
-    const styleProps = qs.parseUrl(props.src, { parseBooleans: true }).query;
-
-    if (styleProps.width)
+    const width = props?.title?.split("width=")[1];
+    if (width)
       return (
         <Image
           {...props}
           style={{
-            float: styleProps.float || "auto",
-            width: styleProps.width || "80%",
+            float: "auto",
+            width: width || "80%",
           }}
         />
       );
     else
       return (
         <Box pad="large">
-          <Image {...props} width="100%" />
+          <Image width="100%" {...props} />
         </Box>
       );
   },
@@ -177,7 +176,7 @@ const mdxGrommetMap = {
     const code = props.children.props.children.trim();
     const language = String(props.children.props.className).replace(
       /^language-/,
-      "",
+      ""
     );
     return (
       <Box style={{ color: "white", padding: "10px", borderRadius: "5px" }}>
