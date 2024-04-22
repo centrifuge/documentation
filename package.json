@@ -36,7 +36,6 @@
     "gatsby-plugin-styled-components": "^6.13.1",
     "gatsby-plugin-typescript": "^5.13.1",
     "gatsby-remark-copy-linked-files": "^6.13.1",
-    "gatsby-remark-image-attributes": "^1.1.0",
     "gatsby-remark-images": "^7.13.1",
     "gatsby-remark-katex": "^7.13.1",
     "gatsby-source-filesystem": "^5.13.1",
@@ -53,11 +52,11 @@
     "react-helmet": "^6.1.0",
     "rehype-slug": "4.0.0",
     "remark-gfm": "3.0.0",
-    "remark-image-attributes": "^0.2.1",
     "styled-components": "5",
     "styled-icons": "^10.47.1",
     "swagger-ui-react": "^5.14.0",
-    "to-style": "^1.3.3"
+    "to-style": "^1.3.3",
+    "unist-util-visit": "^5.0.0"
   },
   "license": "MIT",
   "scripts": {
