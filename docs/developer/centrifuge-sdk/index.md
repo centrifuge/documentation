@@ -135,7 +135,7 @@ const pools = await firstValueFrom(cenrtifuge.pools.getPools()); // Pool[]
 
 Transactions/extrinsics require a little more configuration because they need to be signed. Please note that this does not cover how to sign transactions with a proxy.
 
-By connecting the `centrifuge` instance with a `signer`, the sourced wallet extension will be triggered to ask for a signature. The `signer` can be any signer that's compatible with the polkadot API. We use @subwallet/wallet-connect to source mutliple wallets.
+By connecting the `centrifuge` instance with a `signer`, the sourced wallet extension will be triggered to ask for a signature. The `signer` can be any signer that's compatible with the polkadot API. We use @subwallet/wallet-connect to source multiple wallets.
 
 ```js
 // wallet setup imported from @subwallet/wallet-connect/dotsama/wallets
