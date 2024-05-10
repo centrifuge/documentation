@@ -10,61 +10,66 @@ redirect_from:
 ---
 
 # Onboarding to a Pool
-Investing in Centrifuge requires onboarding as an investor to each specific pool. Submitting personal information for KYC and signing a subscription document with the pool's issuer usually takes 5-7 minutes, but it can take 1-2 days when the country of citizenship or country of incorporation is not supported by the automated onboarding. 
+
+Investing in Centrifuge requires onboarding as an investor to each specific pool. Submitting personal information for KYC and signing a subscription document with the pool's issuer usually takes 5-7 minutes, but it can take 1-2 days when the country of citizenship or country of incorporation is not supported by the automated onboarding.
 
 ![](./images/onboarding_shufti.png)
 
 **Onboard as investor:** Onboarding as an investor is a one-time step to verify personal information for KYC ("Know your customer") through the Centrifuge onboarding flow powered by [Shufti Pro](https://shuftipro.com/). Once an investor is onboarded, they are eligible to invest in any open pool.
 
-**Onboard to a pool:** Onboarding to a pool requires signing a subscription agreement with the pool issuer. Once the agreement has been signed by both parties, and the issuer approves the investment request, the investor can place an investment into the pool. 
+**Onboard to a pool:** Onboarding to a pool requires signing a subscription agreement with the pool issuer. Once the agreement has been signed by both parties, and the issuer approves the investment request, the investor can place an investment into the pool.
 
 ## Requirements
 
 ### Onboarding as an individual requires:
-* Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet (for Ethereum-based pools)
-* Centrifuge Chain wallet e.g. Metamask, Talisman, SubWallet or Polkadot.js (for Centrifuge-based pools)
-* Valid email address
-* A passport or government-issued photo ID
-* Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months)
-* Completed Form W-8BEN (individuals based outside US), Form W9 (U.S. citizen or U.S. person & US entity)
+
+- Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet (for Ethereum-based pools)
+- Centrifuge Chain wallet e.g. Metamask, Talisman, SubWallet or Polkadot.js (for Centrifuge-based pools)
+- Valid email address
+- A passport or government-issued photo ID
+- Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months)
+- Completed Form W-8BEN (individuals based outside US), Form W9 (U.S. citizen or U.S. person & US entity)
 
 ### Onboarding as an entity requires:
-* Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet (for Ethereum-based pools)
-* Centrifuge wallet e.g. Talisman, SubWallet or Polkadot.js (For Centrifuge-based pools)
-* Valid email address
-* Legal entity name, Country of incorporation, Registration number
-* Proof of address of the entity (for manual onboarding)
-* Signed and Dated Ownership Structure (for manual onboarding)
-* Names, date of birth, country of citizenship and country of residency of ultimate beneficial owners
-* A passport or government-issued photo ID of the authorized signer
-* Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months) of the authorized signer
-* Completed Form W-8BEN-E (businesses based outside the US) or Form W9 (U.S. citizen or U.S. person & US entity)
 
+- Ethereum wallet, e.g. Metamask, Wallet Connect, Coinbase Wallet (for Ethereum-based pools)
+- Centrifuge wallet e.g. Talisman, SubWallet or Polkadot.js (For Centrifuge-based pools)
+- Valid email address
+- Legal entity name, Country of incorporation, Registration number
+- Proof of address of the entity (for manual onboarding)
+- Signed and Dated Ownership Structure (for manual onboarding)
+- Names, date of birth, country of citizenship and country of residency of ultimate beneficial owners
+- A passport or government-issued photo ID of the authorized signer
+- Proof of address (e.g. utility bill, phone bill or council tax bill, not older than 3 months) of the authorized signer
+- Completed Form W-8BEN-E (businesses based outside the US) or Form W9 (U.S. citizen or U.S. person & US entity)
 
 ### General requirements
-* Ethereum or Centrifuge wallet
-* A verified KYC (i.e. a completed onboarding as an investor)
+
+- Ethereum or Centrifuge wallet
+- A verified KYC (i.e. a completed onboarding as an investor)
 
 Good to know: Don’t worry if you can’t finish the process in one go – you can always leave the onboarding flow and continue later where you’ve left off before.
 
 ### Further requirements
-* US investors need to be accredited investors to invest in pools. See section **Onboarding as US investor** below.
-* Due to US sanctions, investors from certain countries are excluded from investing. See section **Excluded Countries** below.
+
+- US investors need to be accredited investors to invest in pools. See section **Onboarding as US investor** below.
+- Due to US sanctions, investors from certain countries are excluded from investing. See section **Excluded Countries** below.
 
 ## Onboarding as an individual
+
 Start the onboarding flow to become a KYC-verified investor before onboarding to a pool later. Once you have connected your wallet, click `Verify identity` in the wallet dropdown and start the onboarding flow.
 
 ![](./images/pools_overview.png)
 
 **1. Connect and link wallet**
 
-Connect the Ethereum or Centrifuge address you want to use depending on the pool and sign the transaction. 
+Connect the Ethereum or Centrifuge address you want to use depending on the pool and sign the transaction.
 
 ![](./images/choose_networks.png)
 
 **2. Select investor type**
 
-Choose to onboard as an individual. 
+Choose to onboard as an individual.
 ![](./images/start_onboarding.png)
 
 **3. Signer verification**
@@ -72,10 +77,8 @@ Choose to onboard as an individual.
 Enter a valid email address and personal data to complete the onboarding process. The verification of the signer is powered by Shufti Pro.
 ![](./images/signer_verification.png)
 
-
 **3.1 Upload ID**
 ![](./images/document_upload.png)
-
 
 **3.2 Upload Proof of address and confirm address**
 ![](./images/address.png)
@@ -87,15 +90,16 @@ Enter a valid email address and personal data to complete the onboarding process
 **5. Upload tax information**
 
 Confirm email address by clicking the verification link in the email. Depending on the location of the signer one of the following documents will be required:
-* W-8BEN - individuals based outside US.
-* W9 - U.S. citizen or U.S. person & US entity.
+
+- W-8BEN - individuals based outside US.
+- W9 - U.S. citizen or U.S. person & US entity.
 
 **5. Identity is verified**
 
 The global onboarding process is now completed. Now it's time to browse the open pools for investment.
 ![](./images/confirmation.png)
 
-## Onboarding to pool as an individual 
+## Onboarding to pool as an individual
 
 Once you have selected a pool, choose a tranche to invest in, click on `Invest`, the slide over will pop up and click on `Onboard to [token name]` to start the process to onboard as an investor to a specific tranche.
 
@@ -109,12 +113,12 @@ If the wallet is disconnected, reconnect and continue where you left off. Connec
 
 Since your identity is already verified and tax information is uploaded, the next step is the on-chain signature of the subscription agreement. Make sure to have some ETH in your wallet to sign the transaction.
 
-*Read the subscription agreement and click the box below to automatically e-sign the subscription agreement. You don't need to download and sign manually.*
+_Read the subscription agreement and click the box below to automatically e-sign the subscription agreement. You don't need to download and sign manually._
 
 ![](./images/sign_subscriptiona.png)
 **3. Onboarding almost complete.**
 
-Your documents and profile have been sent to the issuer for approval. You will receive an email once the issuer has approved your documents and countersigned the agreement. 
+Your documents and profile have been sent to the issuer for approval. You will receive an email once the issuer has approved your documents and countersigned the agreement.
 
 ![](./images/onboarding_almost_complete.png)
 
@@ -122,19 +126,19 @@ After the issuer approves the investment request, the investor receives an email
 
 ## Onboarding as an entity
 
-The first two steps are identical to the steps shown in the individual onboarding flow. 
+The first two steps are identical to the steps shown in the individual onboarding flow.
 
 **1. Connect and link wallet**
 
-Connect the Ethereum or Centrifuge address you want to use depending on the pool and sign the transaction. 
+Connect the Ethereum or Centrifuge address you want to use depending on the pool and sign the transaction.
 
 **2. Select investor type**
 
-Choose to onboard as an entity. 
+Choose to onboard as an entity.
 
 **3. Provide information about your business**
 
-Enter a valid email address that you can access, legal entity name, country of incorporation and the registration number. If the entity is incorporated in one of the  [countries on this list](https://api.shuftipro.com/api/docs/#jurisdiction-codes) you can skip to step 4. The verification of the entity is powered by Shufti Pro.  
+Enter a valid email address that you can access, legal entity name, country of incorporation and the registration number. If the entity is incorporated in one of the [countries on this list](https://api.shuftipro.com/api/docs/#jurisdiction-codes) you can skip to step 4. The verification of the entity is powered by Shufti Pro.
 
 **3.1 Upload Entity's Proof of Address**
 
@@ -145,7 +149,7 @@ Enter a valid email address that you can access, legal entity name, country of i
 ![](./images/ownership_structure.png)
 **4. Confirm email address**
 
-Confirm email address by clicking the verification link in the email. 
+Confirm email address by clicking the verification link in the email.
 
 **5. Confirm ultimate beneficial owners**
 
@@ -161,7 +165,7 @@ Add the information of the authorized signer (person who controls the wallet) to
 **6.2 Upload Proof of Address of authorized signer**
 **6.3 Face verification of authorized signer**
 
-**7. Upload tax information** 
+**7. Upload tax information**
 
 Depending on the location of the entity one of the following documents will be required:
 
@@ -176,23 +180,25 @@ The global onboarding process is now completed. If the entity is not incorporate
 ## Resources
 
 This section covers further information about:
-* Onboarding as an US investor / Accredited Investor
-* Excluded countries
-* Data sharing policy
-* Terms and conditions
-* Investment disclaimer
+
+- Onboarding as an US investor / Accredited Investor
+- Excluded countries
+- Data sharing policy
+- Terms and conditions
+- Investment disclaimer
 
 ## Onboarding as an US investor
 
 To invest in Centrifuge as an US investor you need to be an "Accredited Investor".
 
 #### What is an "Accredited Investor"?
+
 An accredited investor is an individual or a business entity that is allowed to trade securities that may not be registered with financial authorities such as the SEC. They are entitled to this privileged access by satisfying certain requirements regarding their income, net worth, asset size, governance status or professional experience. In the U.S, the definition of an accredited investor is put forth by [SEC in Rule 501 of Regulation D](https://www.ecfr.gov/current/title-17/chapter-II/part-230/subject-group-ECFR6e651a4c86c0174/section-230.501).
 
 The regulations for accredited investors vary from between jurisdictions but require that a person:
 
 - Any natural person whose individual net worth, or joint net worth with that person's spouse or spousal equivalent, exceeds $1,000,000;
-- Any natural person who had an individual income in excess of $200,000 in each of the two most recent years or joint income with that person's spouse or spousal equivalent in excess of $300,000 in each of those years and has a reasonable expectation of reaching the same income level in the current year; 
+- Any natural person who had an individual income in excess of $200,000 in each of the two most recent years or joint income with that person's spouse or spousal equivalent in excess of $300,000 in each of those years and has a reasonable expectation of reaching the same income level in the current year;
 - Be a general partner, executive officer, or director for the company that is issuing the unregistered securities or
 - Be a registered brokers and investment advisor
 
@@ -201,23 +207,24 @@ The regulations for accredited investors vary from between jurisdictions but req
 If you are an US investor you further need to provide documentation to prove you are an `Accredited Investor`. You will need to complete a questionnaire as part of the onboarding flow.
 
 ## Excluded countries
+
 Unfortunately, due to US sanctions, investors located in or a resident of the following countries are currently blocked from investing in Centrifuge:
 
-* Cuba
-* Iran
-* North Korea
-* Syria
-* Belarus
-* Congo, Democratic Republic of
-* Iraq
-* Libya
-* Nicaragua
-* Russia
-* Ukraine 
-* Somalia
-* Sudan
-* Venezuela
-* Zimbabwe
+- Cuba
+- Iran
+- North Korea
+- Syria
+- Belarus
+- Congo, Democratic Republic of
+- Iraq
+- Libya
+- Nicaragua
+- Russia
+- Ukraine
+- Somalia
+- Sudan
+- Venezuela
+- Zimbabwe
 
 ## Data sharing policy
 
@@ -237,8 +244,8 @@ Shufti Pro will disclose your personal data stored in your account for the purpo
 Shufti Pro only facilitates the initial disclosure to the issuers that you have affirmatively selected. Should you no longer want to communicate with a particular issuer after consenting to the disclosure discussed herein, or if you wish that issuer to delete the personal data it has been provided pursuant to this consent, please contact that issuer directly.
 
 **Risks of Data Transfer**
-By consenting to this disclosure, your information will be transferred to the country in which the particular issuers you have selected are located. ***According to EEA regulations, the United States does not provide an "adequate" level of protection for purposes of data protection, and no alternative safeguards are in place for this particular transfer. Further, the issuer you have selected may be located in the United States or in another country that does not provide such adequate levels of protection or safeguards. As such, your information may be at risk of unauthorized or unwanted access.
-***Please note, however, that Shufti Pro takes the security of your information seriously and implements organizational and technical measures to ensure a level of security for your personal data appropriate to these risks.
+By consenting to this disclosure, your information will be transferred to the country in which the particular issuers you have selected are located. **_According to EEA regulations, the United States does not provide an "adequate" level of protection for purposes of data protection, and no alternative safeguards are in place for this particular transfer. Further, the issuer you have selected may be located in the United States or in another country that does not provide such adequate levels of protection or safeguards. As such, your information may be at risk of unauthorized or unwanted access.
+_**Please note, however, that Shufti Pro takes the security of your information seriously and implements organizational and technical measures to ensure a level of security for your personal data appropriate to these risks.
 
 **Your Consent**
 By consenting to the data transfer, you acknowledge you have read and consent to the transfer of your personal data as set forth herein. You may decline to consent to this transfer, in which case Shufti Pro will not be able to carry out your direction to disclose your personal information to your selected issuer.

@@ -7,6 +7,7 @@ category: subpage
 ---
 
 # Delegation and Proxies
+
 There are two ways you can delegate your voting power to another wallet: creating a _Governance Proxy_ or using _Delegation_.
 
 A _Governance Proxy_ is a wallet that can perform governance related tasks on-chain on behalf of another wallet. It is possible to create [different types of proxies](https://wiki.polkadot.network/docs/learn-proxies), but a Governance Proxy specifically only allows for transactions related to governance (i.e. it cannot transfer tokens).
@@ -23,7 +24,7 @@ Note that OpenSquare Snapshots do not support delegation, but you can vote with 
 
 ## How to create a Governance Proxy
 
-The first step is to [create a hot wallet](https://docs.centrifuge.io/user-documenation/setup-wallet/). You can do that using the [Polkadot.js browser extension](https://polkadot.js.org/extension/). This will be your Governance Proxy.
+The first step is to [create a hot wallet](https://docs.centrifuge.io/user/using-centrifuge/setup-wallet/). You can do that using the [Polkadot.js browser extension](https://polkadot.js.org/extension/). This will be your Governance Proxy.
 
 If your tokens are in a cold wallet (e.g. Parity Signer), you need to import it to the Polkadot.js portal first, using the browser extension. You can find simple instructions on how to do that for Parity Signer [here](https://support.polkadot.network/support/solutions/articles/65000182010-how-to-add-a-parity-signer-account-on-polkadot-js-ui) (use the section _How to add your account through the Polkadot extension_). This way you make your cold wallet hot temporarily while you set up your Governance proxy - make sure to remove it again if you want it to remain cold.
 

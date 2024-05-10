@@ -1,7 +1,6 @@
 import React from "react";
 
-import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/oceanicNext";
+import { Highlight, themes } from "prism-react-renderer";
 import styled from "styled-components";
 
 const Pre = styled.pre`
@@ -24,14 +23,17 @@ const LineNo = styled.span`
 `;
 
 export const CodeHighlighter = ({ code, language }) => (
-  <Highlight {...defaultProps} code={code} language={language} theme={theme}>
+  <Highlight code={code} language={language} theme={themes.oceanicNext}>
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <Pre className={className} style={style}>
         {tokens.map((line, i) => (
-          <div {...getLineProps({ line, key: i })}>
+          <div key={`${line}-${i}`} {...getLineProps({ line, key: i })}>
             <LineNo>{i + 1}</LineNo>
             {line.map((token, key) => (
-              <span {...getTokenProps({ token, key })} />
+              <span
+                key={`${token}-${key}`}
+                {...getTokenProps({ token, key })}
+              />
             ))}
           </div>
         ))}

@@ -8,6 +8,7 @@ redirect_from:
   - /learn/epoch
   - /learn/epoch/
 ---
+
 # Epochs and Order Execution
 
 A decentralized pool where investors can invest/redeem and Asset Originators originate/repay at any time needs a decentralized mechanism to coordinate investments, redemptions, originations and repayments. Welcome the `Epoch`.
@@ -93,16 +94,16 @@ The linear programming of the Centrifuge solver maximizes the execution of the i
 The according sample max function could e.g. be:
 
 $$
-MaxFunctionResult =
-   \newline SeniorTrancheRedemptions * 100,000,000,000 +
-   \newline JuniorTrancheInvestments * 100,000,000 +
-   \newline SeniorInvestments * 100,000 +
-   \newline JuniorRedemptions * 100
+\text{MaxFunctionResult} =
+   \newline \text{SeniorTrancheRedemptions} * 100,000,000,000 +
+   \newline \text{JuniorTrancheInvestments} * 100,000,000 +
+   \newline \text{SeniorInvestments} * 100,000 +
+   \newline \text{JuniorRedemptions} * 100
 $$
 
 The restrictions for this optimization problem are:
 
-- Executed order needs to be smaller or equal to the submitted order [e.g. Total executed Junior invest <= Total locked Junior invest]
+- Executed order needs to be smaller or equal to the submitted order [e.g. Total executed Junior invest \<\= Total locked Junior invest]
 - All executed orders need to be larger than or equal to zero [e.g. Total Junior invest > 0]
 - The Reserve is larger than zero and smaller than the `max eserve amount` after all transactions are executed [0 < Reserve < Maximum Reserve Amount]
 - A sub-ordination ratio of the resulting state is smaller than the required suboardination ratio for any tranche [Min subordination ratio > Current subordination ratio]
@@ -112,7 +113,7 @@ The restrictions for this optimization problem are:
 With every epoch that has executed invest/redeem transactions the relation between different tranches changes. This also needs to be reflected in `Tranche Debt` to ensure that interest accrued on tranche debt is in line with the tranche value relation. To ensure this, Tranche Debt is rebalanced in line with the relation between the `Tranche Value = (Tranche Debt + Tranche Balance)` and the `Pool Value = (NAV + Reserve)`. This relation is called `Tranche Ratio`.
 
 $$
-Tranche Ratio = \frac{Tranche Debt + Tranche Balance}{NAV + Reserve}
+\text{Tranche Ratio} = \frac{\text{Tranche Debt} + \text{Tranche Balance}}{\text{NAV} + \text{Reserve}}
 $$
 
 The tranche ratio is multiplied by the NAV to calculate the `Target Tranche Debt` and the tranche debt and balance are re-balanced to set the tranche debt equal to `Target Tranche Debt`. Note that the `Tranche value` remains unchanged. You can find a simple model that illustrates the re-balancing mechanism [here](https://docs.google.com/spreadsheets/d/1mkIbWzhD7IXbnbYXKreTMYuaZJEzyTVqllhJnP4YdPs/edit#gid=880740688).

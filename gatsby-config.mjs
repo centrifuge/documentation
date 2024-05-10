@@ -1,6 +1,13 @@
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const siteUrl = process.env.URL || "http://localhost:8000";
 
-module.exports = {
+export default {
   siteMetadata: {
     title: `Centrifuge Documentation`,
     siteUrl,
@@ -46,16 +53,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
-        hastPlugins: [
-          require("rehype-slug"),
-          require("remark-math"),
-          require("remark-image-attributes"),
-          require("rehype-katex"),
-        ],
         gatsbyRemarkPlugins: [
+          "gatsby-image-custom-width",
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
@@ -70,21 +72,18 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-image-attributes",
+            resolve: `gatsby-remark-katex`,
             options: {
-              styleAttributes: ["box-shadow", "margin"],
+              strict: `ignore`,
             },
           },
         ],
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+          rehypePlugins: [rehypeSlug],
+        },
       },
     },
-    {
-      resolve: "gatsby-redirect-from",
-      options: {
-        query: "allMdx",
-      },
-    },
-    "gatsby-plugin-meta-redirect",
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
@@ -100,7 +99,6 @@ module.exports = {
         icon: `src/images/favicon.png`,
       },
     },
-    `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-typescript`,
   ],
