@@ -1,6 +1,6 @@
 ---
 id: contributing
-order: 4
+order: 5
 title: Contributing
 contributors: <William Freudenberger:william@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
 category: subpage

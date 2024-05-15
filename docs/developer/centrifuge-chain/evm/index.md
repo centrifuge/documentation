@@ -1,6 +1,6 @@
 ---
 id: evm
-order: 3
+order: 4
 title: EVM
 contributors: <William Freudenberger:william@centrifuge.io>
 category: subpage

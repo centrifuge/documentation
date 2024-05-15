@@ -1,6 +1,6 @@
 ---
 id: networks
-order: 2
+order: 3
 title: Networks
 contributors: <William Freudenberger:william@centrifuge.io>
 category: subpage
