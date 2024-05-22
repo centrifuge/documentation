@@ -94,7 +94,7 @@ If the Council Motion/Democracy Proposal passes, update the post again with a li
 ## Cooling-off Period
 
 A cooling-off period is the time that must pass before a proposal can be re-submitted.
-If a proposal fails to pass an off-chain or an on-chain vote, the cooling-off period is 15 days (counting from when the snapshot vote has ended) before a new RFC can be resubmitted.
+If a proposal fails to pass an offchain or an onchain vote, the cooling-off period is 15 days (counting from when the vote has ended) before a new RFC can be resubmitted.
 
 The cooling-off period is important in order to take the feedback from the Community into account and make the necessary changes to the submitted proposal, and re-submit the RFC.
 
@@ -115,7 +115,7 @@ These are the components in our CP Framework:
 | [CP32](https://github.com/centrifuge/cps/blob/main/cps/CP32.md)                               | Roadmap Proposals                         | Create a Roadmap Proposal to replace the previous one                                          |
 | [CP63](https://github.com/centrifuge/cps/blob/main/cps/CP63.md)                               | Pool Types                         | Creating processes around any of the three different pool types
 
-Components can have different governance processes, but what they all have in common is that they start with a post on the Forum and all CPs must be submitted to the [Centrifuge Proposals Repository](https://github.com/centrifuge/cps) on Github. Click on the link for a component above to see its correct process and template.
+Components can have different governance processes, but what they all have in common is that they start with a post on the Forum and all CPs must be submitted to the [Centrifuge Proposals Repository](https://github.com/centrifuge/cps) on Github. Click on the link for a component above to see its correct process and template, including a standard header that is used in all forum posts.
 
 It is very important that a CP is submitted correctly. In the event of an incorrect format of a proposal, the process will need to be repeated.
 
