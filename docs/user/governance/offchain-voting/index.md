@@ -11,7 +11,7 @@ redirect_from:
 
 # Offchain Voting
 
-Offchain voting takes place on [OpenSquare](https://voting.opensquare.io/space/centrifuge), and you vote with your CFG tokens. This works a bit differently than when you vote in an on-chain referendum in the sense that you are not actually locking your CFG tokens or making any transaction on the blockchain (hence no fees related to it). You can look at OpenSquare Snapshots as _off-chain voting, using on-chain data_.
+Offchain voting takes place on [OpenSquare](https://voting.opensquare.io/space/centrifuge), and you vote with your CFG tokens. This works a bit differently than when you vote in an on-chain referendum in the sense that you are not actually locking your CFG tokens or making any transaction on the blockchain (hence no fees related to it). You can look at OpenSquare Snapshots as offchain voting, using onchain data.
 
 When you vote on OpenSquare, you don't need to specify any amount or conviction - you just select your option (typically Yes, No or Abstain), and you will vote with the balance you had when the snapshot was taken.
 
