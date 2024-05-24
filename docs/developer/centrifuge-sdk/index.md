@@ -1,6 +1,6 @@
 ---
 id: centrifuge-sdk
-order: 3
+order: 4
 title: Centrifuge SDK
 contributors: <Sophia:sophia@k-f.co> , <Onno:onno@k-f.co> , <JP:jp@k-f.co>
 ---
