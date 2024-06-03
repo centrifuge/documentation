@@ -1,7 +1,7 @@
 ---
 id: evm
 order: 4
-title: EVM
+title: EVM compatibility
 contributors: <William Freudenberger:william@centrifuge.io>
 category: subpage
 ---
