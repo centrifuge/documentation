@@ -8,11 +8,15 @@ contributors: <William Freudenberger:william@centrifuge.io>, <Cosmin Damian:cosm
 
 # Centrifuge Chain Codebase
 
-The architecture of Centrifuge Chain modules, which are called pallets, is centered around `pallet-pool-system` which contains the core logic for managing investment pools such as bundling loans, slicing pools into tranches and controlling investment epochs.
+The Centrifuge Chain functionality is grouped in 4 key groups of modules (also known as pallets). `pool-system` is at the core of everything, tieing together the investment side with the asset side.
 
-Another key component is the Liquidity Pools stack which located in the upper left corner of the below image.
-Liquidity Pools enable investment activities on EVM chains using Solidity contracts, bridging the liquidity of EVM ecosystems with the efficiency and security of the Polkadot ecosystem through the flexibly configurable LP Gateway.
-The Centrifuge Chain remains the central source of truth, ensuring consistent state communication between chains.
+**Pools** (`pool-system`, `pool-registry`, `investments`, `pool-fees`): The core logic for managing investment pools such as bundling loans, slicing pools into tranches and controlling investment epochs, as well as charging and accruing fees incurred by pool issuers.
+
+**Assets** (`loans`, `interest-accrual`, `anchors`, `oracle-`): Managing the assets that make up the value of a pool, computing the NAV (Net Asset Value) of a pool, managing data feeds (oracles) that brings in pricing from external sources, and any other asset related features.
+
+**Liquidity Pools** (`liquidity-pools-`, `foreign-investment`, `swaps`, `order-book`, `token-mux`): Enables investment activities on EVM chains using Solidity contracts, bridging the liquidity of EVM ecosystems with the efficiency and security of the Polkadot ecosystem through the flexibly configurable LP Gateway.
+
+**Permissioning** (`restricted-(x)tokens`, `transfer-allowlist`): Extension of the token logic that enables strict permissioning, to ensure regulatory compliance for tranche tokens of pools, as well as increased operational security for stablecoins and other pool currencies.
 
 ![](./images/centrifuge-chain-pallets.png#width=120%;)
 
