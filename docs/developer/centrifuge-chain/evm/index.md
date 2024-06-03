@@ -50,7 +50,7 @@ Ethereum block metadata is stored on-chain as part of the final Substrate block 
 Centrifuge supports all native Ethereum precompiles, including `DELEGATECALL`.
 Additionally, it includes the following precompiles:
 
-* **ERC-20 Precompile**: This enables seamless and user-friendly cross-chain CFG transfers and supports Axelar ITS. It also replaces the deprecated ChainBridge solution for bridging CFG to other domains.
+* **ERC-20 Precompile**: This enables seamless and user-friendly cross-chain CFG transfers.
 * **Custom Precompile**: Centrifuge has an Axelar gateway precompile, which handles incoming Liquidity Pools messages from the Axelar network.
 
 By supporting these precompiles, Centrifuge ensures efficient execution of smart contracts and compatibility with Ethereum's cryptographic functions.
