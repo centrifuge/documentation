@@ -176,7 +176,7 @@ The high level flow to upgrade to a newer version of Polkadot is:
 
 Since the Centrifuge Chain repository uses workspace inheritance, dependency revisions only need to be configured in the root `Cargo.toml`.
 
-1. **Update the `cargo patch` rules in `Cargo.toml`**
+1. **Update the `patch` rules in `Cargo.toml`**
 
     The cargo patch rules ensure that we use specific revision for the Polkadot SDK, Frontier and others, by
     pointing to a specific git revision or branch. For each of the projects covered by these rules, look up whether there exists a git branch for the specific Polkadot SDK version to which you want to upgrade.
