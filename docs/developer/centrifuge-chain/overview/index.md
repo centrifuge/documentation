@@ -13,7 +13,7 @@ category: subpage
 
 # Centrifuge Chain Overview
 
-Centrifuge Chain is our blockchain built with Rust and [Substrate](https://docs.substrate.io/), purpose built for real-world assets. Pools (and their assets, tranches, etc), [onchain governance](https://docs.centrifuge.io/use/governance-process/) and the Centrifuge treasury, and the CFG token live on Centrifuge Chain.
+Centrifuge Chain is our blockchain built with Rust and the [Polkadot SDK](https://github.com/paritytech/polkadot-sdk), purpose built for real-world assets. Pools (and their assets, tranches, etc), [onchain governance](https://docs.centrifuge.io/use/governance-process/) and the Centrifuge treasury, and the CFG token live on Centrifuge Chain.
 
 Investors can invest in assets on Centrifuge from other chains via Liquidity Pools deployed on supported chains. For example, a Liquidity Pool deployed on Ethereum allows users on Ethereum to invest in a pool on Centrifuge without leaving Ethereum.
 
