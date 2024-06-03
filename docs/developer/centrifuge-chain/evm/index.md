@@ -34,7 +34,7 @@ However, it is not completely foolproof against someone deliberately crafting a 
 Centrifuge offers full JSON-RPC compatibility with Ethereum through its default RPC endpoints.
 This allows developers to use familiar Ethereum tools and libraries to interact with Centrifuge nodes for tasks such as account management, transaction submission, smart contract deployment, and event monitoring.
 
-For more information, please refer to the [official Ethereum JSON-RPC API documentatio](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_sendtransaction)n.
+For more information, please refer to the [official Ethereum JSON-RPC API documentation](https://ethereum.org/en/developers/docs/apis/json-rpc/#eth_sendtransaction).
 
 ## Blocks
 
