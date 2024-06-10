@@ -13,7 +13,6 @@ The sections that follow outline the specifics of Ethereum compatibility, unders
 ## EVM compatibility
 
 Centrifuge features a fully integrated Ethereum Virtual Machine (EVM), enabling the execution of smart contracts written in Solidity or other EVM-compatible languages.
-Currently, contract creation is restricted to calls made via RPC, but future updates will allow developers to deploy existing Ethereum smart contracts on Centrifuge with minimal modifications.
 
 ## Accounts
 
