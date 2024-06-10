@@ -22,7 +22,7 @@ Looking ahead: we're building Centrifuge to be a comprehensive platform to take 
 
 ### Pioneering real-world assets in decentralized finance
 
-Centrifuge was founded in 2017 with the mission to solve inefficiencies in the financial system with blockchain technology. The first iteration of our platform, built on Ethereum, was called [Tinlake](https://legacy.tinlake.centrifuge.io/). With Tinlake, we pioneered multiple tranches and revolving pools that financed assets in the real world — both firsts for decentralized finance.
+Centrifuge was founded in 2017 with the mission to solve inefficiencies in the financial system with blockchain technology. The first iteration of our platform, built on Ethereum, was called Tinlake. With Tinlake, we pioneered multiple tranches and revolving pools that financed assets in the real world — both firsts for decentralized finance.
 
 In mid-2021, [Centrifuge integrated the first real-world asset pool with MakerDAO](https://medium.com/centrifuge/defi-2-0-first-real-world-loan-is-financed-on-maker-fbe24675428f). This was the first loan to use MakerDAO as a credit facility as well as the first instance of a stablecoin (DAI) being backed by real-world assets. Later in 2021, we launched the [RWA Market](https://medium.com/centrifuge/rwa-market-the-aave-market-for-real-world-assets-goes-live-48976b984dde), making use of the Aave protocol to bring liquidity to RWAs on Centrifuge.
 
