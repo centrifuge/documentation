@@ -24,7 +24,6 @@ This involves adding some extra information to ensure compatibility with Centrif
 * **Zero** Byte: A single zero byte is appended.
 
 This enhanced format facilitates the recognition of Ethereum addresses within Centrifuge and enables their conversion back to the original.
-However, it is not completely foolproof against someone deliberately crafting a similar address.
 
 **Example**: The Ethereum address `0x7F429e2e38BDeFa7a2E797e3BEB374a3955746a4` is converted to the Centrifuge address `0x7F429e2e38BDeFa7a2E797e3BEB374a3955746a400000000000007ef45564d00` which is equivalent to `4eDcBEZ6Kor2HGLhX9XUQd9j3t69G9zs17B1E5AfYfQ2LNqY` in the Centrifuge [SS58 address format](https://docs.substrate.io/reference/glossary/#ss58-address-format).
 
