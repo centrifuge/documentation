@@ -10,7 +10,7 @@ title: Security
 
 ### Liquidity Pools
 
-- Spearbit (Cantina Managed) - October 2023 - [Local](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-10-Spearbit-Cantina-Managed.pdf)
+- Cantina Managed - October 2023 - [Local](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-10-Spearbit-Cantina-Managed.pdf)
 - SRLabs - September 2023 - [Local](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-09-SRLabs.pdf)
 - Code4rena - September 2023 - [Report](https://code4rena.com/reports/2023-09-centrifuge) - [Local](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-09-Code4rena.md)
 
@@ -29,3 +29,7 @@ title: Security
 ### POD
 
 - Trail of Bits - March 2019 - [Local](https://github.com/centrifuge/security/blob/main/audits/node/Trail-of-Bits-Audit.pdf)
+
+### Miscellaneous
+
+- Attestations ERC20 Wrapper - Cantina Managed - June 2024 - [Local](https://github.com/centrifuge/morpho-market/blob/main/audits/2023-06-cantina.pdf)
