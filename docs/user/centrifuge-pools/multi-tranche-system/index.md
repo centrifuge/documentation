@@ -29,7 +29,7 @@ For example, in a three-tranche structure, a subordination ratio of 20% for the 
 ## Implicit leverage of the junior tranche
 
 While the junior tranche bears the risk of first-loss defaults to protect the tranches above, it also typically benefits from higher variable returns. This is partly driven by capturing excess returns greater than the fixed rates of the tranches above.
-Let's assume a pool of $100 yields a total return on its portfolio of 10% or $10. It is structured with a $50 senior tranche with a fixed return of 4% (earning $2), a $30 mezzanine tranche with a fixed return of 5% (earning $1.5), and a $20 junior tranche with variable returns. This leaves a 1% return for the junior tranche. However, note that the junior tranche also receives the excess returns from the tranches above. Therefore, its total income on the outstanding $20 tranche is the remaining $6.5 not captured by the other tranches, resulting in a significant return on investment of $6.5/\$20 = 32.5%.
+Let's assume a pool of `$100` yields a total return on its portfolio of 10% or `$10`. It is structured with a `$50` senior tranche with a fixed return of 4% (earning `$2`), a `$30` mezzanine tranche with a fixed return of 5% (earning `$1.5`), and a `$20` junior tranche with variable returns. This leaves a 1% return for the junior tranche. However, note that the junior tranche also receives the excess returns from the tranches above. Therefore, its total income on the outstanding `$20` tranche is the remaining `$6.5` not captured by the other tranches, resulting in a significant return on investment of `$6.5/$20` = 32.5%.
 
 ## Scalable tranche configuration
 
@@ -38,7 +38,7 @@ Centrifuge allows for flexible configuration of multiple tranches within a pool.
 ## Cash drag across tranches
 
 A pool only accrues interest on the deployed capital or financed assets, while liquidity in the reserve does not earn any interest. This situation can result in what is known as "cash drag."
-For example, consider a pool of $100 with a portfolio of assets worth $80 and a reserve of \$20. If the portfolio of assets yields 10%, the pool will generate a total return of 8% because the 20% cash portion of undeployed capital reduces the overall return.
+For example, consider a pool of `$100` with a portfolio of assets worth `$80` and a reserve of `$20`. If the portfolio of assets yields 10%, the pool will generate a total return of 8% because the 20% cash portion of undeployed capital reduces the overall return.
 In Centrifuge's revolving pools, the cash drag is equally distributed across the tranches. So, if the above pool has three tranches yielding fixed returns of 2%, 3%, and 15%, respectively, the effective returns would be 20% lower, resulting in 1.8%, 2.4%, and 12.0%.
 
 ## Breach of subordination ratios
