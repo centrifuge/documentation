@@ -10,9 +10,11 @@ title: Security
 
 ### Liquidity Pools
 
-- Cantina Managed - October 2023 - [Local](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-10-Spearbit-Cantina-Managed.pdf)
-- SRLabs - September 2023 - [Local](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-09-SRLabs.pdf)
-- Code4rena - September 2023 - [Report](https://code4rena.com/reports/2023-09-centrifuge) - [Local](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-09-Code4rena.md)
+- Spearbit - July 2024 - [Report](https://github.com/spearbit/portfolio/blob/master/pdfs/Centrifuge-Spearbit-Security-Review-July-2024.pdf)
+- Invariant test development - Mar - Apr 2024 - [`Part 1`](https://getrecon.substack.com/p/lessons-learned-from-fuzzing-centrifuge)
+- Cantina - October 2023 - [Report](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-10-Spearbit-Cantina-Managed.pdf)
+- SRLabs - September 2023 - [Report](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-09-SRLabs.pdf)
+- Code4rena - September 2023 - [Report](https://code4rena.com/reports/2023-09-centrifuge)
 
 ### Centrifuge Chain
 
