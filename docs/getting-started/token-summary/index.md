@@ -22,6 +22,8 @@ Centrifuge can be bridged 1:1 to Ethereum, where it can be used with decentraliz
 
 Centrifuge on Ethereum is an ERC20 token. [You can find the token contract for CFG on Ethereum here](https://etherscan.io/token/0xc221b7e65ffc80de234bbb6667abdd46593d34f0).
 
+Centrifuge on Base is an ERC20 token. [You can find the token contract for CFG on Base here](https://https://basescan.org/token/0x2b51E2Ec9551F9B87B321f63b805871f1c81ba97).
+
 ## Tokenomics, block explorer, and token supply endpoints
 
 [You can find the block explorer for the CFG token here](https://centrifuge.subscan.io/), to see accounts, transactions, and statistics about CFG and Centrifuge Chain.
