@@ -67,11 +67,11 @@ On the [Centrifuge App](https://app.centrifuge.io) to connect a MetaMask wallet:
 
 ## Using Ledger with Centrifuge
 
-If you do not yet have your Ledger configured, read their [getting started guide](https://support.ledger.com/article/360015259693-zd?redirect=false).You will also need to install the [Polkadot (DOT)](https://support.ledger.com/article/360016289919-zd?redirect=false) App if you want to store native Centrifuge tokens on Ledger.
+If you do not yet have your Ledger configured, read their [getting started guide](https://support.ledger.com/article/360015259693-zd?redirect=false). You will also need to install the [Polkadot (DOT)](https://support.ledger.com/article/360016289919-zd?redirect=false) App if you want to store native Centrifuge tokens on Ledger.
 
 For EVM tokens please install [Ethereum App](https://support.ledger.com/article/360009576554-zd?redirect=false) and enable [blind signing](https://support.ledger.com/article/4405481324433-zd?redirect=false). Make sure to [connect your ledger](https://support.ledger.com/article/4404366864657-zd?redirect=false) to Metamask.
 
-Tutorial on how to Migrate Assets to Polkadot Generic Accounts Using the [Polkadot Migration App](https://support.ledger.com/article/Migrate-Assets-to-Polkadot-Generic-App-Accounts-Using-the-Polkadot-Generic-App).
+Tutorial on how to [Migrate Assets to Polkadot Generic Accounts](https://support.ledger.com/article/Migrate-Assets-to-Polkadot-Generic-App-Accounts-Using-the-Polkadot-Generic-App) using the Polkadot Migration App.
 
 ## Set up a Substrate wallet
 
