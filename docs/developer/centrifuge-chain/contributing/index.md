@@ -51,11 +51,11 @@ cargo test --workspace --release --features runtime-benchmarks,try-runtime
 You can deploy a relay chain and connect a Centrifuge Chain node as parachain
 to it to verify how it behaves in the entire environment (end-to-end).
 
-0. Prerequisites. You must install these tools before:
+1. Prerequisites. You must install these tools before:
     - [docker](https://docs.docker.com/get-docker/)
     - [*jd*](https://stedolan.github.io/jq/)
 
-1. Start a local [relay chain](https://wiki.polkadot.network/docs/learn-architecture#relay-chain).
+2. Start a local [relay chain](https://wiki.polkadot.network/docs/learn-architecture#relay-chain).
 It contains two [validator](https://wiki.polkadot.network/docs/learn-validator) nodes
     (Alice and Bob):
     ```bash
@@ -65,7 +65,7 @@ It contains two [validator](https://wiki.polkadot.network/docs/learn-validator) 
 
     *Note: You can stop the relay chain using `./scripts/init.sh stop-relay-chain`*
 
-2. Start a *Centrifuge Chain* as [parachain](https://wiki.polkadot.network/docs/learn-parachains).
+3. Start a *Centrifuge Chain* as [parachain](https://wiki.polkadot.network/docs/learn-parachains).
 It runs a [collator](https://wiki.polkadot.network/docs/learn-collator) node:
     ```bash
     ./scripts/init.sh start-parachain
@@ -87,7 +87,7 @@ It runs a [collator](https://wiki.polkadot.network/docs/learn-collator) node:
    The different `PARA_CHAIN_SPEC` values can be found at [`src/command.rs`](src/command.rs) under the `load_spec()`
    function.
 
-3. Onboard the parachain
+4. Onboard the parachain
     This step will have the targeted parachain onboarded in the relay chain. The parachain will NOT produce blocks until this step is completed successfully.
     ```bash
     ./scripts/init.sh onboard-parachain
