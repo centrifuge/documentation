@@ -94,7 +94,7 @@ Confirm email address by clicking the verification link in the email. Depending 
 - W-8BEN - individuals based outside US.
 - W9 - U.S. citizen or U.S. person & US entity.
 
-**5. Identity is verified**
+**6. Identity is verified**
 
 The global onboarding process is now completed. Now it's time to browse the open pools for investment.
 ![](./images/confirmation.png)
