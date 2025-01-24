@@ -1,182 +1,122 @@
----
-id: centrifuge-sdk
-order: 4
-title: Centrifuge SDK
-contributors: <Sophia:sophia@k-f.co> , <Onno:onno@k-f.co> , <JP:jp@k-f.co>
----
+# Welcome
 
-# Centrifuge SDK
+Welcome to the Centrifuge SDK documentation. The Centrifuge SDK is a JavaScript client for interacting with the [Centrifuge](https://centrifuge.io) ecosystem. It provides a comprehensive, fully typed library to integrate investments and redemptions, generate financial reports, manage pools, and much more.
 
-Centrifuge SDK provides a JavaScript client to interact with Centrifuge Chain. It provides comprehensive modules to easily create and manage pools, nfts, loans and metadata. CentrifugeJS is built on top of [@polkadot/api](https://polkadot.js.org/docs/api) and uses the [RxJS](https://rxjs.dev/api) API to query chaindata and submit extrinsics.
-
-## Installation
+# Installation
 
 ```bash
-npm install --save @centrifuge/centrifuge-js
+npm install @centrifuge/sdk viem
+
+# or
+
+yarn add @centrifuge/sdk viem
 ```
 
-## Init and config
+The SDK is available as an npm package. It it is built to run both client-side and server-side. The SDK uses [viem](https://viem.sh/) under the hood and is required as a peer dependency.
 
-Create an instance and pass optional configuration
+# Initialization
 
-```js
-import Centrifuge from "@centrifuge/centrifuge-js";
+```typescript
+import { Centrifuge } from "@centrifuge/sdk";
 
+const centrifuge = new Centrifuge();
+```
+
+The SDK can be initialized with or without a config object. If no config is provided, the SDK will use the default values.
+
+## Config
+
+```typescript
+type Config = {
+  environment: "mainnet" | "demo" | "dev";
+  rpcUrls?: Record<number | string, string>;
+  indexerUrl: string;
+  ipfsUrl: string;
+};
+```
+
+### Mainnet
+
+```typescript
 const centrifuge = new Centrifuge({
-  centrifugeWsUrl: "wss://fullnode.development.cntrfg.com",
+  environment: "mainnet",
+  rpcUrls: {
+    1: "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID",
+  },
+  indexerUrl: "https://indexer.centrifuge.io",
+  ipfsUrl: "https://ipfs.centrifuge.io",
 });
 ```
 
-The following config options can be passed on initilization of CentrifugeJS:
+Mainnet is the default environment if no config is provided. Any configurations can be overridden in the config object.
 
-#### `network`
+### Demo
 
-Default value: `centrifuge`
-
-Network the instance should run on, either `altair` or `centrifuge`.
-
-#### `centrifugeWsUrl`
-
-Default value: `wss://fullnode.centrifuge.io`
-
-Collator websocket URL.
-
-#### `altairWsUrl`
-
-Default value: `https://api.subquery.network/sq/centrifuge/pools`
-
-Altair collator websocket URL.
-
-#### `metadataHost`
-
-Default value: `https://centrifuge.mypinata.cloud`
-
-IPFS gateway url for retrieving metadata.
-
-#### `centrifugeSubqueryUrl`
-
-Default value: `https://api.subquery.network/sq/centrifuge/pools`
-
-Indexed subquery for retrieving historical chain data.
-
-#### `signer`
-
-Can either be passed in the config on initialization or can be set programmatically by calling `centrifuge.connect(<signing-address>, <signer>)`
-
-#### `signingAddress`
-
-Can either be passed in the config on initialization or can be set programmatically by calling `centrifuge.connect(<signing-address>, <signer>)`
-
-#### `pinFile`
-
-A function that returns an object `{ uri: string }` containing the URI of the pinned file. This is used to upload and reference metadata in pools, collections and nfts. If not set, `pools.createPool`, `nfts.mintNft` etc will not work.
-
-## Library structure
-
-Creating a `centrifuge` instance will give you access to the entire polkadot API and subset of modules to make easier to query and write data. We recommend using Typescript for autocompletion.
-
-The modules include:
-
-- `pools`
-- `nfts`
-- `metadata`
-- and a few more..
-
-Methods are accessed like this:
-
-```js
-// pools
-const data = centrifuge.pools.createPool([...])
-
-// nfts
-const data = centrifuge.nfts.mintNft([...])
-
-// metadata
-const data = centrifuge.metadata.getMetadata("uri")
+```typescript
+const centrifuge = new Centrifuge({
+  environment: "demo",
+});
 ```
+
+By setting the environment to `demo`, the SDK will connect to Sepolia testnet.
+
+# SDK Overview
+
+The Centrifuge SDK provides the following interfaces (more will be added soon):
+
+- Pools
+- Reports
+- Account
 
 ## Queries
 
-All of the CentrifugeJS modules have queries prefixed with `get` that return [Observables](https://rxjs.dev/guide/observable).
-
-Here's a full sample how to query all of the pools and subscribe to the state. Behind the scenes the pool data is aggregated from multiple sources and formatted into an object. By subscribing to the observable you're also subscribing to events on-chain that will cause the subscription to update when necessary.
+```ts
+try {
+  const pool = await centrifuge.pools();
+} catch (error) {
+  console.error(error);
+}
+```
 
 ```js
-centrifuge.pools.getPools().subscribe({
-  next: (value) => {
-    console.log("next", value); // Pool[]
-  },
-  complete: () => {
-    console.log("complete");
-  },
-  error: () => {
-    console.log("error");
-  },
-});
+const subscription = centrifuge.pools().subscribe(
+  (pool) => console.log(pool),
+  (error) => console.error(error)
+);
+subscription.unsubscribe();
 ```
 
-Some cases don't require a subscription. We find it easist to use a helper from `rxjs` to convert the observable into a promise. You'll have to install `rxjs`
+Queries return Promise-like [Observables](https://rxjs.dev/guide/observable). They can be either awaited to get a single value, or subscribed to to get fresh data whenever on-chain data changes.
 
-```sh
-yarn add --save rxjs
-```
-
-Then the query could look like this
-
-```js
-import { firstValueFrom } from "rxjs";
-
-// ...
-
-const pools = await firstValueFrom(cenrtifuge.pools.getPools()); // Pool[]
-```
+The returned results are either immutable values, or entities that can be further queried.
 
 ## Transactions
 
-Transactions/extrinsics require a little more configuration because they need to be signed. Please note that this does not cover how to sign transactions with a proxy.
+```js
+centrifuge.setSigner(signer);
+```
 
-By connecting the `centrifuge` instance with a `signer`, the sourced wallet extension will be triggered to ask for a signature. The `signer` can be any signer that's compatible with the polkadot API. We use @subwallet/wallet-connect to source multiple wallets.
+To perform transactions, you need to set a signer on the `centrifuge` instance.
+
+```ts
+const pool = await centrifuge.pool("1");
+try {
+  const status = await pool.closeEpoch();
+  console.log(status);
+} catch (error) {
+  console.error(error);
+}
+```
 
 ```js
-// wallet setup imported from @subwallet/wallet-connect/dotsama/wallets
-const wallet = getWalletBySource("polkadot-js");
-await wallet?.enable();
-const accounts = await wallet?.getAccounts();
-
-const signingAddress = accounts?.[0].address as string;
-
-// connect centrifuge to wallet to enable signatures
-const connectedCent = centrifuge.connect(signingAddress, wallet?.signer);
-
-// subscription based
-connectedCent.pools.closeEpoch(["<your-pool-id>"]).subscribe({
-  complete: () => {
-    console.log("Tx complete");
-  }
-});
-
-// or promise based (using firstValueFrom imported from rxjs)
-await firstValueFrom(connectedCent.pools.closeEpoch(["<your-pool-id>"]))
+const pool = await centrifuge.pool("1");
+const subscription = pool.closeEpoch().subscribe(
+  (status) => console.log(pool),
+  (error) => console.error(error),
+  () => console.log("complete")
+);
 ```
 
-## Local development
+`signer` can be a [EIP1193](https://eips.ethereum.org/EIPS/eip-1193)-compatible provider or a Viem [LocalAccount](https://viem.sh/docs/accounts/local).
 
-Install dependencies with `yarn` or `npm`.
-
-Start dev server
-
-```sh
-yarn start
-```
-
-### Running tests
-
-Run test with `yarn test`
-
-### Building for production
-
-Create a bundle in the `./dist` folder with `yarn build`.
-
-### Publishing to NPM package registry
-
-Make sure the version in `package.json` has been increased since the last publish, then push a tag starting with `centrifuge-js/v*` to kick of the publish Github action.
+With this you can call transaction methods. Similar to queries they can be awaited to get their final result, or subscribed to get get status updates.

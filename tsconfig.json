@@ -1,35 +1,8 @@
 {
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "module": "esnext",
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "jsx": "preserve",
-    "isolatedModules": false,
-    "strictPropertyInitialization": false,
-    "lib": ["dom", "dom.iterable", "esnext"]
+    "baseUrl": "."
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
-  ]
+  "exclude": [".docusaurus", "build"]
 }

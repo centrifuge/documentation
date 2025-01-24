@@ -1,9 +1,8 @@
 ---
 id: welcome
-order: 1
+position: 1.1
 title: Welcome to Centrifuge
 contributors: <Devin Black:devin@k-f.co>
-category: subpage
 redirect_from:
   - /getting-started
   - /getting-started/
