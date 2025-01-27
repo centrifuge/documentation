@@ -1,6 +1,5 @@
 ---
 id: security
-order: 6
 title: Security
 ---
 

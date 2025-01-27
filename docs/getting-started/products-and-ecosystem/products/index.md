@@ -1,6 +1,5 @@
 ---
 id: products
-order: 1
 title: Products Overview
 contributors: <Devin Black:devin@k-f.co>
 category: subpage

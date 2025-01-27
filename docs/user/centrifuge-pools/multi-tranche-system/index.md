@@ -1,6 +1,5 @@
 ---
 id: multi-tranche-system
-order: 3
 title: Tranches
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
 category: subpage

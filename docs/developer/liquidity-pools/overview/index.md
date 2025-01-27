@@ -1,6 +1,5 @@
 ---
 id: overview
-order: 1
 title: Overview
 category: subpage
 contributors: <Jeroen:jeroen@k-f.co>
@@ -25,6 +24,7 @@ The deployment of these tranches and the management of investments is controlled
 - [**Adapters**](https://github.com/centrifuge/liquidity-pools/tree/main/src/gateway/adapters): Adapter implementations for messaging layers.
 
 ## How it works
+
 Using the Centrifuge protocol, issuers can launch pools of real-world assets. Each pool can have 1 or more tranches that investors can buy. The purpose of these tranches is to give investors different kinds of risk exposure and yield on the same asset class. Each pool has 1 pool asset. The decimals of this pool asset define the decimals of the tranche tokens that are issued per tranche. Both deposit (also known as investments) and redemptions in tranches of Centrifuge pool happen asynchronously, through an epoch mechanism. Prices for tranches are calculated on Centrifuge Chain based on the Net Asset Value of the real world assets in the pool. More information on this can be found in the [documentation](https://docs.centrifuge.io/getting-started/securitization/).
 
 Because of the epoch mechanism, as well as the fact that Liquidity Pools communicate with Centrifuge Chain through messaging layers, deposits and redemptions cannot be executed automatically, and rather are executed asynchronously. A key goal of Liquidity Pools is to increase composability of Centrifuge assets. This is accomplished through the ERC7540 token standard for asynchronous deposits and redemptions. There is also support for permits when requesting deposits/redemptions. More details on this in `User flows` below.
@@ -32,6 +32,7 @@ Because of the epoch mechanism, as well as the fact that Liquidity Pools communi
 The communication between Liquidity Pools and Centrifuge Chain uses external general message passing protocols. Messages are encoded using a compacted ABI encoding scheme.
 
 ### Multiple asset support
+
 While there is 1 native pool asset, ERC-7540 vaults, using the ERC7575 extension, are built to support deposits in multiple assets. Each vault is linked to 1 asset (asset) and 1 tranche token (share), but multiple vaults can be deployed linked to the same tranche token (share). The vault contract therefore passes through the ERC20 methods to the underlying share implementation.
 
 ![](https://storage.googleapis.com/centrifuge-hackmd/upload_53a9cc360964cc609a86b41ab0b83c83.png)
@@ -39,8 +40,10 @@ While there is 1 native pool asset, ERC-7540 vaults, using the ERC7575 extension
 The challenge with supporting multiple assets is that the decimals between the tranche token (which is based on the native pool asset decimals) and the investment asset (or asset) can differ. Therefore, all price calculations and conversions between shares and assets (or tranche tokens and assets) need to account for these differences. This is accomplished by normalizing all balances and prices to 18 decimal fixed point integers, doing the calculations using these normalized values, and then unnormalizing back to the intended decimals. Currencies with more than 18 decimals are not supported and blocked in the contracts.
 
 ## User flows
+
 `TT` = Tranche Tokens
 `<<Message>>` = an encoded message
+
 ### Pool creation flow
 
 ![Pool creation flow.](./images/poolcreation.png)

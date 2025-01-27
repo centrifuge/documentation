@@ -1,6 +1,5 @@
 ---
 id: on-chain-voting
-order: 3
 title: Onchain Voting
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 category: subpage

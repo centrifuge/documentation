@@ -1,6 +1,5 @@
 ---
 id: securitization
-order: 1
 title: Onchain Securitization
 contributors: <Jeroen Offerijns:jeroen@k-f.co>, <Dennis Wellmann:dennis@k-f.co>, <Devin Black:devin@k-f.co>
 category: subpage

@@ -1,6 +1,5 @@
 ---
 id: governance-process
-order: 1
 title: Governance Process
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 category: subpage
@@ -33,7 +32,7 @@ It is very important that the CP is submitted correctly. In the event of an inco
 
 ## Centrifuge Proposal Repository
 
-All proposals must be submitted to the [Centrifuge Proposals Repository](https://github.com/centrifuge/cps) (PR) on Github which is used to log all proposals. The discussion (RFC) takes place on the Forum, and if there are any changes made to the proposal, it must happen via the PR during the RFC phase, i.e. before the proposal proceeds to a snapshot vote/onchain vote. 
+All proposals must be submitted to the [Centrifuge Proposals Repository](https://github.com/centrifuge/cps) (PR) on Github which is used to log all proposals. The discussion (RFC) takes place on the Forum, and if there are any changes made to the proposal, it must happen via the PR during the RFC phase, i.e. before the proposal proceeds to a snapshot vote/onchain vote.
 
 This is to ensure that a proposal is not changed during a vote or after it has ended.
 A proposal is only deemed valid, if it has been submitted to the PR and been merged. Once merged, the proposal is final.
@@ -60,16 +59,16 @@ However, not all proposals require an offchain vote.
 
 **Snapshot voting is required**
 
-- When a proposal does not require an onchain vote*, i.e. proposals that does not change anything onchain (e.g. mandate requests, changes to our governance process etc.)
+- When a proposal does not require an onchain vote\*, i.e. proposals that does not change anything onchain (e.g. mandate requests, changes to our governance process etc.)
 - When a proposal is not going to be followed by an onchain vote straight after, i.e. proposals that are going to be implemented later (e.g. part of a Runtime Upgrade)
 
-**If a proposal does not require an onchain vote, the snapshot vote will be binding (i.e. if the snapshot vote passes, the proposal passes).*
+\*_If a proposal does not require an onchain vote, the snapshot vote will be binding (i.e. if the snapshot vote passes, the proposal passes)._
 
 **Snapshot voting is optional**
 
 In all other situations than the ones mentioned above, snapshot voting is optional. It can be used as a temperature check if the proposer wants to get a sentiment around their proposal before submitting it to a vote.
 
-The minimum voting time for snapshots on OpenSquare is 7 days but the proposer could increase this to any amount of days, if they deem it necessary. This information has to be communicated to the community in the Forum post. 
+The minimum voting time for snapshots on OpenSquare is 7 days but the proposer could increase this to any amount of days, if they deem it necessary. This information has to be communicated to the community in the Forum post.
 
 As soon as a proposal has moved on to a snapshot vote, it must be announced in the forum post with a link to the vote.
 
@@ -113,7 +112,7 @@ These are the components in our CP Framework:
 | [CP4](https://github.com/centrifuge/cps/blob/main/cps/CP4/CP4.md)                             | General Improvements                      | Any proposal type, that does not fit under any of the other CPs                                |
 | [CP5](https://github.com/centrifuge/cps/blob/main/cps/CP5/CP5.md)                             | Centrifuge Pool Onboarding Proposal (POP) | Onboarding new pools on Centrifuge Chain                                                       |
 | [CP32](https://github.com/centrifuge/cps/blob/main/cps/CP32.md)                               | Roadmap Proposals                         | Create a Roadmap Proposal to replace the previous one                                          |
-| [CP63](https://github.com/centrifuge/cps/blob/main/cps/CP63.md)                               | Pool Types                         | Creating processes around any of the three different pool types
+| [CP63](https://github.com/centrifuge/cps/blob/main/cps/CP63.md)                               | Pool Types                                | Creating processes around any of the three different pool types                                |
 
 Components can have different governance processes, but what they all have in common is that they start with a post on the Forum and all CPs must be submitted to the [Centrifuge Proposals Repository](https://github.com/centrifuge/cps) on Github. Click on the link for a component above to see its correct process and template, including a standard header that is used in all forum posts.
 
@@ -123,14 +122,14 @@ It is very important that a CP is submitted correctly. In the event of an incorr
 
 We can distinguish between the different stages of a proposal by adding/removing tags as it progresses through the stages. Specific tags and their usage:
 
-```rfc```: add when RFC is created on the forum 
+`rfc`: add when RFC is created on the forum
 
-```voting```: add when OpenSquare snapshot/onchain proposal has been created
+`voting`: add when OpenSquare snapshot/onchain proposal has been created
 
-```passed/rejected```: add appropriate tag when the CP has ended
+`passed/rejected`: add appropriate tag when the CP has ended
 
-So after a proposal has moved on from the RFC, the ```rfc``` tag will be removed and replaced by ```voting``` and again after the proposal has ended so the last tag will be either ```passed``` or ```rejected``` which will remain on the post. 
+So after a proposal has moved on from the RFC, the `rfc` tag will be removed and replaced by `voting` and again after the proposal has ended so the last tag will be either `passed` or `rejected` which will remain on the post.
 
-In addition to the tags above, specific tags can be added, depending on what the proposal is about (e.g. ```runtime-upgrade```, ```governance-process```, ```liquidity-rewards```, ```pop-submission``` etc.) and also which components the proposal consists of (e.g. ```CP1```, ```CP2```, ```CP3```, ```CP4```, ```CP5``` etc.)
+In addition to the tags above, specific tags can be added, depending on what the proposal is about (e.g. `runtime-upgrade`, `governance-process`, `liquidity-rewards`, `pop-submission` etc.) and also which components the proposal consists of (e.g. `CP1`, `CP2`, `CP3`, `CP4`, `CP5` etc.)
 
 Please contact the Governance & Coordination Group on the Forum or Discord ([Rhano](https://gov.centrifuge.io/u/Rhano) or [ImdioR](https://gov.centrifuge.io/u/imdior)), if you have any questions regarding the process or need help with submitting a proposal.

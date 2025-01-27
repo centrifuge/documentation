@@ -1,6 +1,5 @@
 ---
 id: off-chain-voting
-order: 2
 title: Offchain Voting
 contributors: <Orhan Klardashti:klardashti@gmail.com>
 category: subpage

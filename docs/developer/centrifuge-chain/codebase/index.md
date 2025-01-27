@@ -1,6 +1,5 @@
 ---
 id: codebase
-order: 2
 title: Codebase
 category: subpage
 contributors: <William Freudenberger:william@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
