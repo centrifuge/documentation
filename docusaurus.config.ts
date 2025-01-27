@@ -9,7 +9,7 @@ import rehypeKatex from "rehype-katex";
 const config: Config = {
   title: "Centrifuge Docs",
   tagline: "Centrifuge user documentation",
-  favicon: "img/centrifuge-logo.png",
+  favicon: "img/favicon.png",
 
   // Set the production url of your site here
   url: "https://your-docusaurus-site.example.com",
@@ -41,6 +41,7 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        blog: false,
       } satisfies Preset.Options,
     ],
   ],
@@ -77,7 +78,7 @@ const config: Config = {
           exact: true,
         },
         {
-          href: "https://github.com/centrifuge/docs",
+          href: "https://github.com/centrifuge/documentation",
           label: "GitHub",
           position: "right",
         },
@@ -88,6 +89,9 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  stylesheets: [
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+  ],
 };
 
 export default config;
