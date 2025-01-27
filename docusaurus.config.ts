@@ -53,7 +53,8 @@ const config: Config = {
       title: "Centrifuge Docs",
       logo: {
         alt: "Centrifuge Docs Logo",
-        src: "img/centrifuge-logo.png",
+        src: "img/centrifuge-logo.svg",
+        srcDark: "img/centrifuge-logo-dark.svg",
       },
       items: [
         {
