@@ -25,6 +25,8 @@ Takes a number and the decimals of the currency and returns an object that can b
 
 ## Currency.fromFloat()
 
+The static method `fromFloat` can be used to create a Currency object from a floating point number.
+
 ```typescript
 const currency = Currency.fromFloat(1000, 6);
 currency.toBigInt(); // 1_000_000_000n
@@ -33,9 +35,11 @@ currency.toString(); // '1000000000'
 currency.toDecimal(); // 1000
 ```
 
-The static method `fromFloat` can be used to create a Currency object from a floating point number.
-
 ## Currency Arithmetic
+
+Basic arithmetic operations are available on the Currency object. When an operation is performed on two Currency objects, the result is a new Currency object. The result will have the same decimals as the original Currency object.
+
+Operations can also be performed by passing in a bigint. The result will still have the same decimals as the original Currency object and will be returned as a Currency object.
 
 ```typescript
 const currency = new Currency(1000n, 6);
@@ -47,11 +51,11 @@ const product = currency.mul(currency2);
 const quotient = currency.div(currency2);
 ```
 
-Basic arithmetic operations are available on the Currency object. When an operation is performed on two Currency objects, the result is a new Currency object. The result will have the same decimals as the original Currency object.
-
-Operations can also be performed by passing in a bigint. The result will still have the same decimals as the original Currency object and will be returned as a Currency object.
-
 ## Currency Comparison
+
+Just like arithmetic operations, comparison operations are available on the Currency object. When an operation is performed on two Currency objects, the result is a boolean.
+
+Operations can also be performed by passing in a bigint. The result will still be a boolean.
 
 ```typescript
 const currency = new Currency(1000n, 6);
@@ -60,10 +64,6 @@ const isEqual = currency.equals(currency2);
 const isGreaterThan = currency.greaterThan(currency2);
 const isLessThan = currency.lessThan(currency2);
 ```
-
-Just like arithmetic operations, comparison operations are available on the Currency object. When an operation is performed on two Currency objects, the result is a boolean.
-
-Operations can also be performed by passing in a bigint. The result will still be a boolean.
 
 ## Rate
 

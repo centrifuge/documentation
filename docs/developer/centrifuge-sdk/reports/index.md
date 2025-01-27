@@ -18,6 +18,8 @@ Available reports are:
 - `feeTransactions`
 - `assetList`
 - `investorList`
+- `ordersList`
+- `assetTimeSeries`
 
 ### Report Filtering
 
@@ -32,3 +34,5 @@ const balanceSheetReport = await pool.reports.balanceSheet({
   groupBy: "month",
 });
 ```
+
+Some reports have additional filtering options. They can be found in the TypeScript [type definitions](https://github.com/centrifuge/sdk/blob/main/src/types/reports.ts#L153).
