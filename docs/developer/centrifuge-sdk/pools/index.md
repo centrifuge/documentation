@@ -3,10 +3,10 @@
 Pools are collections of assets that can be financed.
 
 ```ts
-const pool = await centrifuge.pool("<pool-id>");
+const pool = await centrifuge.pool("<pool-id>", "<metadata-hash>");
 ```
 
-Pools can be queried by their pool ID.
+Pools can be queried by their pool ID. Metadata hash is optional but recommended for pool reports.
 
 ## Tranches
 

@@ -1,11 +1,13 @@
 # Reports
 
 ```ts
-const pool = await centrifuge.pool("<pool-id>");
+const pool = await centrifuge.pool("<pool-id>", "<metadata-hash>");
 const balanceSheetReport = await pool.reports.balanceSheet();
 ```
 
 Reports are generated from data from the Centrifuge API and are combined with pool metadata to provide a comprehensive view of the pool's financials.
+
+Some reports rely on the pool metadata. The metadata hash should be provided to the `pool` function.
 
 Available reports are:
 
