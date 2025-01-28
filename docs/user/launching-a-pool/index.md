@@ -2,9 +2,6 @@
 id: pop
 title: Launching a Pool
 contributors: <Orhan Klardashti :klardashti@gmail.com>, <Jay :jay@k-f.co>
-redirect_from:
-  - /use/pop/
-  - /use/pop
 ---
 
 # Launching a Pool

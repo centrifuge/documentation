@@ -2,9 +2,6 @@
 id: pod
 title: Centrifuge POD
 contributors: <Dennis Wellmann:dennis@k-f.co>, <Cosmin Damian:cosmin@k-f.co>
-redirect_from:
-  - /build/p2p-node
-  - /build/p2p-node/
 ---
 
 # Centrifuge POD

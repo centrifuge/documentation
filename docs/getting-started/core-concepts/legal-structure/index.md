@@ -2,10 +2,6 @@
 id: legal-structure
 title: Legal Structure
 contributors: <Jeroen Offerijns:jeroen@k-f.co>, <Dennis Wellmann:dennis@k-f.co>, <Devin Black:devin@k-f.co>
-category: subpage
-redirect_from:
-  - /getting-started/off-chain
-  - /getting-started/off-chain/
 ---
 
 # Legal Structure

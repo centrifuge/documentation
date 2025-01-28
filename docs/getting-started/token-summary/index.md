@@ -2,9 +2,6 @@
 id: token-summary
 title: The CFG Token
 contributors: <Lucas Vogelsang:lucas@centrifuge.foundation>, <Cassidy Daly:cassidy@centrifuge.foundation>, <Devin Black:devin@k-f.co>
-redirect_from:
-  - /learn/token-summary
-  - /learn/token-summary/
 ---
 
 # The CFG Token

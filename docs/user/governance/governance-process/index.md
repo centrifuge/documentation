@@ -2,12 +2,6 @@
 id: governance-process
 title: Governance Process
 contributors: <Orhan Klardashti:klardashti@gmail.com>
-category: subpage
-redirect_from:
-  - /use/governance-process
-  - /use/governance-process/
-  - /use/governance-proxy-and-delegation
-  - /use/governance-proxy-and-delegation/
 ---
 
 # Governance Process

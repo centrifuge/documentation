@@ -2,9 +2,6 @@
 id: cfg-bridge
 title: CFG (Centrifuge) to CFG (Ethereum)
 contributors: <Lucas Vogelsang:lucas@centrifuge.io>, <Graham Nelson:graham@k-f.co>
-redirect_from:
-  - /use/cfg-bridge
-  - /use/cfg-bridge/
 ---
 
 # CFG (Centrifuge) {'\<\>'} CFG (Ethereum) {'\<\>'} CFG (Base)

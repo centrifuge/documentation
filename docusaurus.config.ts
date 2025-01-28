@@ -3,6 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import { redirects } from "./src/redirects";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -92,6 +93,14 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
   stylesheets: [
     "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap",
+  ],
+  plugins: [
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: redirects,
+      },
+    ],
   ],
 };
 

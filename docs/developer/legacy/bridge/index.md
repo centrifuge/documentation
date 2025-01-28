@@ -2,9 +2,6 @@
 id: bridge
 title: Centrifuge - Ethereum Bridge
 category: subpage
-redirect_from:
-  - /build/bridge
-  - /build/bridge/
 ---
 
 # Centrifuge-Ethereum Bridge

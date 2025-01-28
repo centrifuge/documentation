@@ -3,9 +3,6 @@ id: tinlake
 title: Tinlake smart contracts
 category: subpage
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Devin Black:devin@centrifuge.io>
-redirect_from:
-  - /build/tinlake
-  - /build/tinlake/
 ---
 
 # Tinlake Smart Contracts (Legacy)

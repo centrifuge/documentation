@@ -3,11 +3,6 @@ id: running-a-centrifuge-node
 title: Running a Centrifuge node
 contributors: <Jeroen:jeroen@k-f.co> , <Guillermo:guillermo@k-f.co>
 slug: /developer
-redirect_from:
-  - /developer/guides
-  - /developer/guides/
-  - /developer
-  - /developer/
 ---
 
 # Running a Centrifuge node

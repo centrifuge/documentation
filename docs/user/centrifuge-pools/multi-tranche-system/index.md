@@ -2,10 +2,6 @@
 id: multi-tranche-system
 title: Tranches
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Jay:jay@centrifuge.io>
-category: subpage
-redirect_from:
-  - /learn/multi-tranche-system
-  - /learn/multi-tranche-system/
 ---
 
 # Tranches

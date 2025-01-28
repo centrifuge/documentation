@@ -2,10 +2,6 @@
 id: invest
 title: Investing and Redeeming
 contributors: <Dennis Wellmann:dennis@k-f.co>, <Jay:jay@k-f.co>, <Anna:anna@k-f.co>
-category: subpage
-redirect_from:
-  - /use/Invest
-  - /use/Invest/
 ---
 
 # Investing and Redeeming

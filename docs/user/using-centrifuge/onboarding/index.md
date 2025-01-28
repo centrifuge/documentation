@@ -3,9 +3,6 @@ id: onboarding
 title: Onboarding to a Pool
 contributors: <Anna Mehrländer:anna@k-f.co>, <Dennis Wellmann:dennis@k-f.co>
 category: subpage
-redirect_from:
-  - /use/onboarding
-  - /use/onboarding/
 ---
 
 # Onboarding to a Pool

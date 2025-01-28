@@ -2,10 +2,6 @@
 id: cent-chain
 title: Built on Centrifuge Chain
 contributors: <Jeroen Offerijns:jeroen@k-f.co>, <Dennis Wellmann:dennis@k-f.co>, <Devin Black:devin@k-f.co>
-category: subpage
-redirect_from:
-  - /getting-started/cent-chain
-  - /getting-started/cent-chain/
 ---
 
 # Built on Centrifuge Chain
