@@ -1,12 +1,7 @@
 ---
 id: privacy-first-tokenization
-order: 2
 title: Private Data Layer
 contributors: <Jeroen Offerijns:jeroen@k-f.co>, <Dennis Wellmann:dennis@k-f.co>, <Devin Black:devin@k-f.co>
-category: subpage
-redirect_from:
-  - /getting-started/privacy-first-tokenization
-  - /getting-started/privacy-first-tokenization/
 ---
 
 # Private Data Layer

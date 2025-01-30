@@ -1,6 +1,5 @@
 ---
 id: api
-order: 2
 title: API
 category: subpage
 ---

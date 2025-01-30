@@ -1,12 +1,7 @@
 ---
 id: interest-rate-methodology
-order: 4
 title: Interest Rate Methodology
 contributors: <Dennis:dennis@k-f.co>
-category: subpage
-redirect_from:
-  - /learn/interest-rate-methodology
-  - /learn/interest-rate-methodology/
 ---
 
 # Interest Rate Methodology

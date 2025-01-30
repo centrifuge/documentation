@@ -1,12 +1,7 @@
 ---
 id: council
-order: 5
 title: Centrifuge Council
 contributors: <Orhan Klardashti:klardashti@gmail.com>
-category: subpage
-redirect_from:
-  - /use/council
-  - /use/council/
 ---
 
 # Centrifuge Council

@@ -1,16 +1,8 @@
 ---
 id: intro-to-pools
-order: 1
 title: Introduction to Pools
 contributors: <Dennis Wellmann:dennis@k-f.co>, <Jay:jay@k-f.co>, <Devin Black:devin@k-f.co>
-category: subpage
-redirect_from:
-  - /use
-  - /use/
-  - /user
-  - /user/
-  - /learn/terms
-  - /learn/terms/
+slug: /user
 ---
 
 # Introduction to Pools

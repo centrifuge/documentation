@@ -1,12 +1,7 @@
 ---
 id: legal-offering
-order: 6
 title: Legal Structure
 contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Martin Quensel:martin@centrifuge.io>, <Jay:jay@centrifuge.io>
-category: subpage
-redirect_from:
-  - /learn/legal-offering
-  - /learn/legal-offering/
 ---
 
 # Legal Structure

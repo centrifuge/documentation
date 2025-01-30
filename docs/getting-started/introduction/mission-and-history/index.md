@@ -1,6 +1,6 @@
 ---
 id: mission-and-history
-order: 2
+position: 1.2
 title: Mission and History
 contributors: <Devin Black:devin@k-f.co>
 category: subpage

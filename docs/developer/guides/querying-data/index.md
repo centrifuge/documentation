@@ -1,6 +1,5 @@
 ---
 id: querying-data
-order: 3
 title: Querying data
 category: subpage
 contributors: <NunoAlexandre:nuno@k-f.co>

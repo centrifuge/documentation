@@ -1,6 +1,5 @@
 ---
 id: resources
-order: 6
 title: Resources
 contributors: <Devin Black:devin@k-f.co>
 ---
