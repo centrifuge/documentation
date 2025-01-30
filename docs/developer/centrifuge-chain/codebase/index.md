@@ -43,13 +43,9 @@ On top of the [Substrate FRAME](https://docs.substrate.io/reference/frame-pallet
 
 - [**keystore**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/keystore) ([docs](https://reference.centrifuge.io/pallet_keystore/index.html)): Linking public keys to accounts. Supporting the operations of the offchain document consensus layer through the Centrifuge POD (Private Offchain Data) Node.
 
-- [**liquidity-pools**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/liquidity-pools) ([docs](https://reference.centrifuge.io/pallet_liquidity_pools/index.html)): Provides the toolset to enable foreign investments on foreign domains.
+- [**liquidity-pools**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/liquidity-pools-gateway) ([docs](https://reference.centrifuge.io/pallet_liquidity_pools/index.html)): Provides the toolset to enable foreign investments on foreign domains.
 
 - [**liquidity-pools-gateway**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/liquidity-pools-gateway) ([docs](https://reference.centrifuge.io/pallet_liquidity_pools_gateway/index.html)): The main handler of incoming and outgoing Liquidity Pools messages.
-
-- [**liquidity-pools-gateway-routers**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/liquidity-pools-gateway/routers) ([docs](https://reference.centrifuge.io/liquidity_pools_gateway_routers/index.html)): This crate contains the `DomainRouters` used by the Liquidity Pools Gateway pallet.
-
-- [**axelar-gateway-precompile**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/liquidity-pools-gateway/axelar-gateway-precompile) ([docs](https://reference.centrifuge.io/axelar_gateway_precompile/index.html)): Pallet that serves as an EVM precompile for incoming Liquidity Pools messages from the Axelar network.
 
 - [**liquidity-rewards**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/liquidity-rewards) ([docs](https://reference.centrifuge.io/pallet_liquidity_rewards/index.html)): Epoch based reward system.
 
@@ -75,7 +71,7 @@ On top of the [Substrate FRAME](https://docs.substrate.io/reference/frame-pallet
 
 - [**rewards**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/rewards) ([docs](https://reference.centrifuge.io/pallet_rewards/index.html)): Implement a [scalable reward distribution](https://solmaz.io/2019/02/24/scalable-reward-changing/) mechanism that can be used for other pallets to create different rewards systems.
 
-- [**swaps**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/swaps) ([docs](https://reference.centrifuge.io/pallet_swaps/index.html)): Enables applying swaps independently of previous swaps in the same or opposite directions.
+- [**swaps**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/token-mux) ([docs](https://reference.centrifuge.io/pallet_token_mux/index.html)): Enables applying swaps independently of previous swaps in the same or opposite directions.
 
 - [**token-mux**](https://github.com/centrifuge/centrifuge-chain/tree/main/pallets/token-mux) ([docs](https://reference.centrifuge.io/pallet_token_mux/index.html)): Enables proxying variants of the same foreign assets to a local asset representation.
 

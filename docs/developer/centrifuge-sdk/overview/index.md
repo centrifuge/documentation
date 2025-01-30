@@ -66,9 +66,9 @@ const centrifuge = new Centrifuge({
 
 The Centrifuge SDK provides the following interfaces (more will be added soon):
 
-- [Pools](https://docs.centrifuge.io/developer/centrifuge-sdk/pools/)
-- [Reports](https://docs.centrifuge.io/developer/centrifuge-sdk/reports/)
-- [Account](https://docs.centrifuge.io/developer/centrifuge-sdk/account/)
+- [Pools](/developer/centrifuge-sdk/pools)
+- [Reports](/developer/centrifuge-sdk/reports)
+- [Account](/developer/centrifuge-sdk/account)
 
 ## Queries
 
