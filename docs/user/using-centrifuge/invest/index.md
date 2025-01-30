@@ -97,7 +97,7 @@ Once you are verified and completed pool onboarding by signing the subscription 
 
 ![](./images/check_status.png#width=600px)
 
-- Scroll down to the bottom of the page to view Order Overview. You can learn more about how orders are processed [here](https://docs.centrifuge.io/getting-started/epoch/).
+- Scroll down to the bottom of the page to view Order Overview. You can learn more about how orders are processed [here](/getting-started/epoch/).
 
 ### Canceling a locked investment/redemption
 

@@ -49,7 +49,7 @@ In the second step select the wallet of your choice. On Centrifuge Chain the sys
 
 ## Setting up an Ethereum wallet
 
-On Ethereum and other EVM compatible networks including Centrifuge Chain, the system supports [MetaMask](https://metamask.io/download.html), [Coinbase Wallet](https://www.coinbase.com/wallet) and multiple other wallets through [Wallet Connect](https://walletconnect.com/).
+On Ethereum and other EVM compatible networks including Centrifuge Chain, the system supports [MetaMask](https://metamask.io/download/), [Coinbase Wallet](https://www.coinbase.com/wallet) and multiple other wallets through [Wallet Connect](https://walletconnect.com/).
 
 Metamask is a popular browser extension allowing you to access EVM compatible blockchains. If you do not yet have MetaMask set up, head over to [MetaMask](https://metamask.io/download/) to download and install MetaMask.
 
@@ -75,7 +75,7 @@ You can create a Centrifuge account in any wallet that supports Polkadot/Substra
 - [Talisman](https://talisman.xyz) for your browser
 - [Nova Wallet](https://novawallet.io/) for iOS and Android
 - [Polkadot.js Extension](https://wiki.polkadot.network/docs/polkadotjs#polkadot-js-extension) The Polkadot.js Extension is no longer maintained actively. We recommend using another wallet.
-- [Polkadot Vault](https://signer.parity.io/) (formerly called Parity Signer) for a secure offline wallet using an old airgapped mobile device
+- [Polkadot Vault](https://vault.novasama.io/) (formerly called Parity Signer) for a secure offline wallet using an old airgapped mobile device.
 
 For a more comprehensive list head to the Polkadot Wiki: [Wallets and Extensions for Substrate](https://wiki.polkadot.network/docs/wallets-and-extensions)
 
@@ -85,7 +85,7 @@ Talisman is a wallet that supports Substrate (Polkadot) and Ethereum accounts. T
 
 To set up Talisman:
 
-- Download the extension [here](https://www.talisman.xyz/wallet) and install it.
+- Download the extension [here](https://www.talisman.xyz/) and install it.
 - Create a wallet using the instructions from Talisman [here](https://docs.talisman.xyz/talisman/navigating-the-paraverse/account-management/create-a-talisman-wallet).
   You can create or import an account in Talisman by clicking on `More options` and `Add account`. This will open a browser tab that allows you to create a new account or add existing accounts via Recovery Phrase, JSON or from your Ledger.
 
@@ -109,7 +109,7 @@ Finally, to see an overview of your CFG accounts, click on "Receive" under your 
 
 ## Using the Polkadot Vault App (experts only)
 
-The [Polkadot Vault](https://signer.parity.io/) (formerly `Parity Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). Follow the instructions in their [guide](https://paritytech.github.io/parity-signer/tutorials/Start.html) to setup the wallet.
+The [Polkadot Vault](https://vault.novasama.io/) (formerly `Parity Signer`) is a cold storage solution that allows you to use a phone in airplane mode as an air-gapped wallet. The Vault app is not technically a wallet, as it does not allow to transfer funds. It is more of a key-chain tool that will enable you the create, manage, and restore accounts or transfer funds together with other wallets or the [Polkadot.js UI](https://wiki.polkadot.network/docs/polkadotjs-ui). Follow the instructions in their [guide](https://wiki.polkadot.network/docs/polkadot-vault) to setup the wallet.
 
 The Centrifuge metadata portal can be found here: [centrifuge.github.io/metadata-portal](https://centrifuge.github.io/metadata-portal/#/centrifuge). First add the Centrifuge network and then load the metadata before creating a key (see Vault Documentation for more details).
 
