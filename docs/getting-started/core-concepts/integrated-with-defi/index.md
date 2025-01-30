@@ -1,12 +1,7 @@
 ---
 id: integrated-with-defi
-order: 4
 title: Integrated with DeFi
 contributors: <Jeroen Offerijns:jeroen@k-f.co>, <Dennis Wellmann:dennis@k-f.co>, <Devin Black:devin@k-f.co>
-category: subpage
-redirect_from:
-  - /getting-started/integrated-with-defi
-  - /getting-started/integrated-with-defi/
 ---
 
 # Integrated with DeFi

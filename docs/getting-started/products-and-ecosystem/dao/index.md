@@ -1,6 +1,5 @@
 ---
 id: dao
-order: 2
 title: The Centrifuge DAO
 contributors: <Devin Black:devin@k-f.co>
 category: subpage

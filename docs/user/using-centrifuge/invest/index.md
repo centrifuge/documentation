@@ -1,12 +1,7 @@
 ---
 id: invest
-order: 3
 title: Investing and Redeeming
 contributors: <Dennis Wellmann:dennis@k-f.co>, <Jay:jay@k-f.co>, <Anna:anna@k-f.co>
-category: subpage
-redirect_from:
-  - /use/Invest
-  - /use/Invest/
 ---
 
 # Investing and Redeeming
@@ -14,8 +9,8 @@ redirect_from:
 ## Legal requirements
 
 - KYC/KYB has been successfully completed
-  - Find more information how to onboard [here](/user-documenation/onboarding/)
-  - Note that there are some [countries with restricted access](https://docs.centrifuge.io/user-documenation/onboarding/#excluded-countries) and _US individual investors must be accredited investors_
+  - Find more information how to onboard [here](/user/using-centrifuge/onboarding/)
+  - Note that there are some countries with restricted access and _US individual investors must be accredited investors_
 - Signed Token Subscription Agreement
 
 ## Technical requirements
@@ -33,7 +28,7 @@ redirect_from:
   - [Wallet Connect](https://walletconnect.com/)
   - [Coinbase Wallet](https://www.coinbase.com/en-fr/wallet)
 
-If you are setting up a wallet for the first time please apply appropriate security measures when setting up your web3 wallet. Find more information how to set up a web3 wallet [here](/user-documenation/setup-wallet/).
+If you are setting up a wallet for the first time please apply appropriate security measures when setting up your web3 wallet. Find more information how to set up a web3 wallet [here](/user/using-centrifuge/setup-wallet/).
 
 When attempting to invest, ensure you are connected with the wallet address you connected with during the initial KYC process to invest in a pool. If you encounter an issue please confirm KYC has been completed and that the correct wallet is selected. If issue remains please contact support@centrifuge.io.
 
@@ -102,7 +97,7 @@ Once you are verified and completed pool onboarding by signing the subscription 
 
 ![](./images/check_status.png#width=600px)
 
-- Scroll down to the bottom of the page to view Order Overview. You can learn more about how orders are processed [here](https://docs.centrifuge.io/getting-started/epoch/).
+- Scroll down to the bottom of the page to view Order Overview. You can learn more about how orders are processed [here](/getting-started/epoch/)
 
 ### Canceling a locked investment/redemption
 

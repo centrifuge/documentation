@@ -1,11 +1,7 @@
 ---
 id: token-summary
-order: 5
 title: The CFG Token
 contributors: <Lucas Vogelsang:lucas@centrifuge.foundation>, <Cassidy Daly:cassidy@centrifuge.foundation>, <Devin Black:devin@k-f.co>
-redirect_from:
-  - /learn/token-summary
-  - /learn/token-summary/
 ---
 
 # The CFG Token
@@ -29,7 +25,6 @@ Centrifuge on Base is an ERC20 token. [You can find the token contract for CFG o
 [You can find the block explorer for the CFG token here](https://centrifuge.subscan.io/), to see accounts, transactions, and statistics about CFG and Centrifuge Chain.
 
 For platforms that wish to track the circulating supply and total supply of CFG, use these endpoints:
-
 
 **Circulating supply**: https://europe-west3-peak-vista-185616.cloudfunctions.net/centrifuge-circulating-supply
 

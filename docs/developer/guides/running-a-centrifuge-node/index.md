@@ -1,14 +1,8 @@
 ---
 id: running-a-centrifuge-node
-order: 1
 title: Running a Centrifuge node
-category: subpage
 contributors: <Jeroen:jeroen@k-f.co> , <Guillermo:guillermo@k-f.co>
-redirect_from:
-  - /developer/guides
-  - /developer/guides/
-  - /developer
-  - /developer/
+slug: /developer
 ---
 
 # Running a Centrifuge node
@@ -196,7 +190,7 @@ centrifuge:
     - "--sync=fast"
 ```
 
-**Refer to the CLI arguments on [section 1.](/#1-cli-arguments)**
+**Refer to the CLI arguments on [section 1.](https://docs.centrifuge.io/developer/guides/running-a-centrifuge-node/#cli-arguments)**
 
 **Runing the container**
 
@@ -445,7 +439,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-**Refer to the CLI arguments on [section 1.](/#1-cli-arguments)**
+**Refer to the CLI arguments on [section 1.](https://docs.centrifuge.io/developer/guides/running-a-centrifuge-node/#cli-arguments)**
 
 ##### Start the systemd service
 

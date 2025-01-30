@@ -1,10 +1,10 @@
 ---
 id: contributing
-order: 5
 title: Contributing
 contributors: <William Freudenberger:william@centrifuge.io>, <Cosmin Damian:cosmin@centrifuge.io>
 category: subpage
 ---
+
 # Contributing to Centrifuge Chain
 
 The development of the Centrifuge Chain benefits greatly from the diverse perspectives and skills of our external contributors. Whether you are fixing a bug, proposing a new feature, or enhancing the existing documentation, your efforts are highly valued. Join us in further developing this open-source project by sharing your unique contributions.
@@ -35,7 +35,7 @@ Great! You have already compiled the Centrifuge Chain!
 
 ## Tests
 
-There are two kinds of tests, one related to how the *Centrifuge Chain* works itself
+There are two kinds of tests, one related to how the _Centrifuge Chain_ works itself
 and another one to verify how it works in a more real environment as a parachain.
 
 ### Chain tests
@@ -51,43 +51,44 @@ cargo test --workspace --release --features runtime-benchmarks,try-runtime
 You can deploy a relay chain and connect a Centrifuge Chain node as parachain
 to it to verify how it behaves in the entire environment (end-to-end).
 
-0. Prerequisites. You must install these tools before:
-    - [docker](https://docs.docker.com/get-docker/)
-    - [*jd*](https://stedolan.github.io/jq/)
+0.  Prerequisites. You must install these tools before:
 
-1. Start a local [relay chain](https://wiki.polkadot.network/docs/learn-architecture#relay-chain).
-It contains two [validator](https://wiki.polkadot.network/docs/learn-validator) nodes
+    - [docker](https://docs.docker.com/get-docker/)
+    - [_jd_](https://stedolan.github.io/jq/)
+
+1.  Start a local [relay chain](https://wiki.polkadot.network/docs/learn-architecture#relay-chain).
+    It contains two [validator](https://wiki.polkadot.network/docs/learn-validator) nodes
     (Alice and Bob):
-    ```bash
-    ./scripts/init.sh start-relay-chain
-    ```
+    `bash
+./scripts/init.sh start-relay-chain
+`
     After a few seconds you can see the block production of the relay chain using the [polkadot.js (on localhost:9944)](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2Flocalhost%3A9944#/explorer) client.
 
-    *Note: You can stop the relay chain using `./scripts/init.sh stop-relay-chain`*
+            *Note: You can stop the relay chain using `./scripts/init.sh stop-relay-chain`*
 
-2. Start a *Centrifuge Chain* as [parachain](https://wiki.polkadot.network/docs/learn-parachains).
-It runs a [collator](https://wiki.polkadot.network/docs/learn-collator) node:
-    ```bash
-    ./scripts/init.sh start-parachain
-    ```
-    *Note: the command above will show logs and block until the parachain is stopped.
-    If you had a previous state, you can reset the node using `purge` after the command.*
+2.  Start a _Centrifuge Chain_ as [parachain](https://wiki.polkadot.network/docs/learn-parachains).
+    It runs a [collator](https://wiki.polkadot.network/docs/learn-collator) node:
+    `bash
+./scripts/init.sh start-parachain
+`
+    _Note: the command above will show logs and block until the parachain is stopped.
+    If you had a previous state, you can reset the node using `purge` after the command._
 
-    Similar to the relay chain, you can explore the parachain using the [polkadot.js (on localhost:11936)](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2Flocalhost%3A11936#/explorer) client.
-    You will see the block production frozen until you connect it to the relay chain.
+            Similar to the relay chain, you can explore the parachain using the [polkadot.js (on localhost:11936)](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2Flocalhost%3A11936#/explorer) client.
+            You will see the block production frozen until you connect it to the relay chain.
 
-   By default, the initialized parachain will have the id `2000`.
-   Please note that for ephemeral chains specs such as `development`, `centrifuge-local` or `altair-local`, the
-   parachain ID is currently hardcoded.
-   If you need to customize it, please open an issue and we will add such a feature.
-   If choose other chain specifications, you can set the `PARA_CHAIN_SPEC` env var, e.g.:
-    ```bash
+        By default, the initialized parachain will have the id `2000`.
+        Please note that for ephemeral chains specs such as `development`, `centrifuge-local` or `altair-local`, the
+        parachain ID is currently hardcoded.
+        If you need to customize it, please open an issue and we will add such a feature.
+        If choose other chain specifications, you can set the `PARA_CHAIN_SPEC` env var, e.g.:
+        `bash
+
     PARA_CHAIN_SPEC=development ./scripts/init.sh start-parachain
-    ```
-   The different `PARA_CHAIN_SPEC` values can be found at [`src/command.rs`](src/command.rs) under the `load_spec()`
-   function.
+    `    The different`PARA_CHAIN_SPEC` values can be found at [`src/command.rs`](https://github.com/centrifuge/centrifuge-chain/blob/main/node/src/command.rs) under the `load_spec()`
+    function.
 
-3. Onboard the parachain
+3.  Onboard the parachain
     This step will have the targeted parachain onboarded in the relay chain. The parachain will NOT produce blocks until this step is completed successfully.
     ```bash
     ./scripts/init.sh onboard-parachain
@@ -102,16 +103,20 @@ You can play with it from the parachain client, make transfers, inspect events, 
 ## Linting
 
 ### Source code
+
 Lint the source code with `cargo fmt --all`. This excludes certain paths (defined in `rustfmt.toml`) that we want to stay as close as possible to `paritytech/substrate` to simplify upgrading to new releases.
 
 ### Cargo.toml files
+
 1. Install [taplo](https://github.com/tamasfe/taplo) with `cargo install taplo-cli`.
 2. Lint the `Cargo.toml` files with `taplo fmt`.
 
 ## Verifying Runtime
+
 1. Check out the commit at which the runtime was built.
 2. Build the WASM via `cargo build --release`
 3. Ensure the output from [subwasm](https://github.com/chevdor/subwasm) matches the release one. Run `subwasm info ./target/release/wbuild/centrifuge-runtime/centrifuge_runtime.compact.compressed.wasm`, which creates an output like the following one:
+
 ```
 🏋️  Runtime size:             1.819 MB (1,906,886 bytes)
 🗜  Compressed:               Yes, 78.50%
@@ -123,8 +128,9 @@ Lint the source code with `cargo fmt --all`. This excludes certain paths (define
 🗳️  Blake2-256 hash:          0xb7f74401c52ee8634ad28fe91e8a6b1debb802d4d2058fdda184a6f2746477f6
 📦  IPFS:                     https://www.ipfs.io/ipfs/QmS3GDmbGKvcmSd7ca1AN9B34BW3DuDEDQ1iSLXgkjktpG
 ```
+
 4. The `Blake2-256` hash should match the hex of the `authorizeUpgrade` call.
-    See more [here](docs/runtime-upgrade.md).
+   See more [here](https://github.com/centrifuge/centrifuge-chain/blob/main/docs/runtime-upgrade.md).
 
 ## Generate new Spec and Parachain files
 
@@ -134,8 +140,8 @@ and plain), wasm and state files.
 ```shell
 ./scripts/export_parachain_files.sh demo true
 ```
-Adapt parameters accordingly.
 
+Adapt parameters accordingly.
 
 ## Benchmarking
 
@@ -178,12 +184,12 @@ Since the Centrifuge Chain repository uses workspace inheritance, dependency rev
 
 1. **Update the `patch` rules in `Cargo.toml`**
 
-    The cargo patch rules ensure that we use specific revision for the Polkadot SDK, Frontier and others, by
-    pointing to a specific git revision or branch. For each of the projects covered by these rules, look up whether there exists a git branch for the specific Polkadot SDK version to which you want to upgrade.
+   The cargo patch rules ensure that we use specific revision for the Polkadot SDK, Frontier and others, by
+   pointing to a specific git revision or branch. For each of the projects covered by these rules, look up whether there exists a git branch for the specific Polkadot SDK version to which you want to upgrade.
 
 2. **Repeat step 1. for the other Centrifuge repositories that the Centrifuge Chain depends on**
 
-    For each of those repositories, create a new branch out of the latest `polkadot-vX.Y.Z` and repeat step 1 for each of them.
+   For each of those repositories, create a new branch out of the latest `polkadot-vX.Y.Z` and repeat step 1 for each of them.
 
    - [centrifuge/chainbridge-substrate](https://github.com/centrifuge/chainbridge-substrate)
    - [centrifuge/fudge](https://github.com/centrifuge/fudge)
@@ -191,28 +197,26 @@ Since the Centrifuge Chain repository uses workspace inheritance, dependency rev
    - [centrifuge/go-substrate-rpc-client](https://github.com/centrifuge/go-substrate-rpc-client)
      - NOTE: Only required in case of breaking client changes (i.e. deprecations or new host functions)
 
-
 3. **Back to Centrifuge-chain, update the crates in the projects updated in step 2.**
 
-    For example, if before we have a dependency on `fudge` at branch `polkadot-v1.1.1`, update it to `polkadot-v1.7.0`.
+   For example, if before we have a dependency on `fudge` at branch `polkadot-v1.1.1`, update it to `polkadot-v1.7.0`.
 
-    Note: assuming `1.7.0` is the version we are updating to.
-
+   Note: assuming `1.7.0` is the version we are updating to.
 
 4. **Repeat step 3. for other third-party dependencies that also depend on Polkadot/Substrate/Cumulus**
 
-    If any of the third-party projects we depend on don't yet have a branch or release for the new Polkadot version,
-    either wait or fork said project and run step 1 for it and open a PR and point that revision.
+   If any of the third-party projects we depend on don't yet have a branch or release for the new Polkadot version,
+   either wait or fork said project and run step 1 for it and open a PR and point that revision.
+
    - [`orml` pallets](https://github.com/open-web3-stack/open-runtime-module-library)
    - [`frontier` pallets](https://github.com/moonbeam-foundation/frontier/)
    - [xcm-simulator](https://github.com/shaunxw/xcm-simulator)
    - etc
 
-
 5. **Build and test the project and migrate any new introduced changes**
 
-    Now that all dependencies are aligned with the latest version of Polkadot, run build and test commands and address
-    any compilation issue.
+   Now that all dependencies are aligned with the latest version of Polkadot, run build and test commands and address
+   any compilation issue.
 
 ### Troubleshooting
 

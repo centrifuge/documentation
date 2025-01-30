@@ -1,16 +1,12 @@
 ---
 id: cfg-bridge
-order: 5
 title: CFG (Centrifuge) to CFG (Ethereum)
 contributors: <Lucas Vogelsang:lucas@centrifuge.io>, <Graham Nelson:graham@k-f.co>
-redirect_from:
-  - /use/cfg-bridge
-  - /use/cfg-bridge/
 ---
 
-# CFG (Centrifuge) {'\<\>'} CFG (Ethereum)  {'\<\>'} CFG (Base)
+# CFG (Centrifuge) {'\<\>'} CFG (Ethereum) {'\<\>'} CFG (Base)
 
-The **CFG** token lives natively on Centrifuge Chain but can be bridged to Ethereum and used as an ERC20 token, Once on Ethereum, CFG can then be transferred to Base. The ERC20 Token is also called **CFG** on Ethereum and Base has the address `0xc221b7E65FfC80DE234bbB6667aBDd46593D34F0` on Ethereum mainnet and `0x2b51E2Ec9551F9B87B321f63b805871f1c81ba97` on Base mainnet. 
+The **CFG** token lives natively on Centrifuge Chain but can be bridged to Ethereum and used as an ERC20 token, Once on Ethereum, CFG can then be transferred to Base. The ERC20 Token is also called **CFG** on Ethereum and Base has the address `0xc221b7E65FfC80DE234bbB6667aBDd46593D34F0` on Ethereum mainnet and `0x2b51E2Ec9551F9B87B321f63b805871f1c81ba97` on Base mainnet.
 
 ## How are CFG on Centrifuge Chain & CFG on Ethereum/Base different?
 
@@ -60,10 +56,10 @@ The bridge relayers now submit your transfer request on chain. After enough conf
 
 The bridge used by Centrifuge for CFG transfer from Ethereum -> Base leverages Axelar’s interchain service, a decentralized and secure cross-chain communication network, to facilitate seamless transfers between Ethereum and the Base chain. When assets are moved between these chains, Axelar’s network of validators securely relays messages. For instance, when an asset is transferred from Ethereum to Base, Axelar validators detect the transaction on Ethereum and trigger the corresponding transaction on Base, or vice versa. This ensures a trustless, scalable, and efficient bridging solution. Axelar’s interchain service is widely adopted across multiple blockchain ecosystems, making it a reliable choice for cross-chain interoperability. [Learn more about Axelar’s interchain service.](https://www.axelar.network/its)
 
-The setup makes use of the [Mint/Burn Token Manager](https://github.com/axelarnetwork/interchain-token-service/blob/main/contracts/token-manager/TokenManager.sol). Therefore, when transferring CFG from Ethereum to Base, the specified amount is burned on Ethereum and then minted on Base after Axelar's secure cross-chain communication process has completed. 
+The setup makes use of the [Mint/Burn Token Manager](https://github.com/axelarnetwork/interchain-token-service/blob/main/contracts/token-manager/TokenManager.sol). Therefore, when transferring CFG from Ethereum to Base, the specified amount is burned on Ethereum and then minted on Base after Axelar's secure cross-chain communication process has completed.
 
 ## Using the bridge (Ethereum to Base)
 
-To transfer CFG from Ethereum to Base, you are required to use [Squid Router](https://app.squidrouter.com/). 
+To transfer CFG from Ethereum to Base, you are required to use [Squid Router](https://app.squidrouter.com/).
 
-Squid operates as a cross-chain router, enabling single-click actions such as token swaps, purchases, deposits, and staking across different blockchains. Squid integrates with Axelar’s infrastructure to provide a secure and efficient cross-chain experience. 
+Squid operates as a cross-chain router, enabling single-click actions such as token swaps, purchases, deposits, and staking across different blockchains. Squid integrates with Axelar’s infrastructure to provide a secure and efficient cross-chain experience.

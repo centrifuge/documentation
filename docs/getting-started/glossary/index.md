@@ -1,6 +1,5 @@
 ---
 id: glossary
-order: 7
 title: Glossary
 contributors: <Devin Black:devin@k-f.co>
 ---
