@@ -190,7 +190,7 @@ centrifuge:
     - "--sync=fast"
 ```
 
-**Refer to the CLI arguments on [section 1.](https://docs.centrifuge.io/developer/guides/running-a-centrifuge-node/#cli-arguments)**
+**Refer to the CLI arguments on [section 1.](https://docs.centrifuge.io/developer/guides/running-a-centrifuge-node/#cli-arguments)**  !!!**Broken link**!!!
 
 **Runing the container**
 
