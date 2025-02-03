@@ -439,7 +439,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-**Refer to the CLI arguments on [section 1.](https://docs.centrifuge.io/developer/guides/running-a-centrifuge-node/#cli-arguments)**
+**Refer to the CLI arguments on [section 1.](/developer#cli-arguments)**
 
 ##### Start the systemd service
 
