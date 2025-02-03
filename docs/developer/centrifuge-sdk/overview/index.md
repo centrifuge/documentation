@@ -68,7 +68,6 @@ The Centrifuge SDK provides the following interfaces (more will be added soon):
 
 - [Pools](/developer/centrifuge-sdk/pools)
 - [Reports](/developer/centrifuge-sdk/reports)
-- [Account](/developer/centrifuge-sdk/account)
 
 ## Queries
 
