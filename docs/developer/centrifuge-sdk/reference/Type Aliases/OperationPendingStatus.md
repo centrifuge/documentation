@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / OperationPendingStatus
-
 # Type Alias: OperationPendingStatus
 
 > **OperationPendingStatus**: `object`

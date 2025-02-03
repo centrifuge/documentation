@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Pool
-
 # Class: Pool
 
 Defined in: [src/Pool.ts:8](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Pool.ts#L8)
@@ -20,7 +14,7 @@ Defined in: [src/Pool.ts:8](https://github.com/centrifuge/centrifuge-sdk/blob/35
 
 Defined in: [src/Pool.ts:12](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Pool.ts#L12)
 
-***
+---
 
 ### metadataHash?
 
@@ -56,7 +50,7 @@ Get the networks where a pool is active. It doesn't mean that any vaults are dep
 
 [`Query`](../type-aliases/Query.md)\<[`PoolNetwork`](PoolNetwork.md)[]\>
 
-***
+---
 
 ### metadata()
 
@@ -68,7 +62,7 @@ Defined in: [src/Pool.ts:22](https://github.com/centrifuge/centrifuge-sdk/blob/3
 
 [`Query`](../type-aliases/Query.md)\<`PoolMetadata`\> \| [`Query`](../type-aliases/Query.md)\<`null`\>
 
-***
+---
 
 ### network()
 
@@ -88,7 +82,7 @@ Get a specific network where a pool can potentially be deployed.
 
 [`Query`](../type-aliases/Query.md)\<[`PoolNetwork`](PoolNetwork.md)\>
 
-***
+---
 
 ### networks()
 
@@ -102,7 +96,7 @@ Get all networks where a pool can potentially be deployed.
 
 [`Query`](../type-aliases/Query.md)\<[`PoolNetwork`](PoolNetwork.md)[]\>
 
-***
+---
 
 ### trancheIds()
 
@@ -114,7 +108,7 @@ Defined in: [src/Pool.ts:28](https://github.com/centrifuge/centrifuge-sdk/blob/3
 
 [`Query`](../type-aliases/Query.md)\<`string`[]\>
 
-***
+---
 
 ### vault()
 

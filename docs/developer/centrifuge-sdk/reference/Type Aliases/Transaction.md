@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Transaction
-
 # Type Alias: Transaction
 
 > **Transaction**: [`Query`](Query.md)\<[`OperationStatus`](OperationStatus.md)\>

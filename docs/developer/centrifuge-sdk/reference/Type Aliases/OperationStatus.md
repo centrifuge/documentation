@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / OperationStatus
-
 # Type Alias: OperationStatus
 
 > **OperationStatus**: [`OperationSigningStatus`](OperationSigningStatus.md) \| [`OperationSigningMessageStatus`](OperationSigningMessageStatus.md) \| [`OperationSignedMessageStatus`](OperationSignedMessageStatus.md) \| [`OperationPendingStatus`](OperationPendingStatus.md) \| [`OperationConfirmedStatus`](OperationConfirmedStatus.md) \| [`OperationSwitchChainStatus`](OperationSwitchChainStatus.md)

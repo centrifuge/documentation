@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / AssetListReportBase
-
 # Type Alias: AssetListReportBase
 
 > **AssetListReportBase**: `object`

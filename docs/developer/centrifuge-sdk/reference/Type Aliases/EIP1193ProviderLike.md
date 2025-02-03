@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / EIP1193ProviderLike
-
 # Type Alias: EIP1193ProviderLike
 
 > **EIP1193ProviderLike**: `object`

@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / AssetListReportPublicCredit
-
 # Type Alias: AssetListReportPublicCredit
 
 > **AssetListReportPublicCredit**: `object`

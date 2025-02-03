@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Vault
-
 # Class: Vault
 
 Defined in: [src/Vault.ts:19](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Vault.ts#L19)
@@ -25,7 +19,7 @@ Defined in: [src/Vault.ts:30](https://github.com/centrifuge/centrifuge-sdk/blob/
 
 The contract address of the vault.
 
-***
+---
 
 ### chainId
 
@@ -33,7 +27,7 @@ The contract address of the vault.
 
 Defined in: [src/Vault.ts:21](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Vault.ts#L21)
 
-***
+---
 
 ### network
 
@@ -41,7 +35,7 @@ Defined in: [src/Vault.ts:21](https://github.com/centrifuge/centrifuge-sdk/blob/
 
 Defined in: [src/Vault.ts:34](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Vault.ts#L34)
 
-***
+---
 
 ### pool
 
@@ -49,7 +43,7 @@ Defined in: [src/Vault.ts:34](https://github.com/centrifuge/centrifuge-sdk/blob/
 
 Defined in: [src/Vault.ts:20](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Vault.ts#L20)
 
-***
+---
 
 ### trancheId
 
@@ -80,7 +74,7 @@ The address of the owner
 
 [`Query`](../type-aliases/Query.md)\<[`Currency`](Currency.md)\>
 
-***
+---
 
 ### cancelInvestOrder()
 
@@ -94,7 +88,7 @@ Cancel an open investment order.
 
 [`Transaction`](../type-aliases/Transaction.md)
 
-***
+---
 
 ### cancelRedeemOrder()
 
@@ -108,7 +102,7 @@ Cancel an open redemption order.
 
 [`Transaction`](../type-aliases/Transaction.md)
 
-***
+---
 
 ### claim()
 
@@ -131,13 +125,13 @@ The address that should receive the funds. If not provided, the investor's addre
 `string`
 
 The address of the user that has invested. Allows someone else to claim on behalf of the user
- if the user has set the CentrifugeRouter as an operator on the vault. If not provided, the investor's address is used.
+if the user has set the CentrifugeRouter as an operator on the vault. If not provided, the investor's address is used.
 
 #### Returns
 
 [`Transaction`](../type-aliases/Transaction.md)
 
-***
+---
 
 ### increaseInvestOrder()
 
@@ -159,7 +153,7 @@ The amount to invest in the vault
 
 [`Transaction`](../type-aliases/Transaction.md)
 
-***
+---
 
 ### increaseRedeemOrder()
 
@@ -181,7 +175,7 @@ The amount of shares to redeem
 
 [`Transaction`](../type-aliases/Transaction.md)
 
-***
+---
 
 ### investment()
 
@@ -203,7 +197,7 @@ The address of the investor
 
 [`Query`](../type-aliases/Query.md)\<\{ `claimableCancelInvestCurrency`: [`Currency`](Currency.md); `claimableCancelRedeemShares`: `Token`; `claimableInvestCurrencyEquivalent`: [`Currency`](Currency.md); `claimableInvestShares`: `Token`; `claimableRedeemCurrency`: [`Currency`](Currency.md); `claimableRedeemSharesEquivalent`: `Token`; `hasPendingCancelInvestRequest`: `boolean`; `hasPendingCancelRedeemRequest`: `boolean`; `investmentCurrency`: [`CurrencyMetadata`](../type-aliases/CurrencyMetadata.md); `investmentCurrencyAllowance`: [`Currency`](Currency.md); `investmentCurrencyBalance`: [`Currency`](Currency.md); `isAllowedToInvest`: `boolean`; `pendingInvestCurrency`: [`Currency`](Currency.md); `pendingRedeemShares`: `Token`; `shareBalance`: `Token`; `shareCurrency`: [`CurrencyMetadata`](../type-aliases/CurrencyMetadata.md); \}\>
 
-***
+---
 
 ### investmentCurrency()
 
@@ -217,7 +211,7 @@ Get the details of the investment currency.
 
 [`Query`](../type-aliases/Query.md)\<[`CurrencyMetadata`](../type-aliases/CurrencyMetadata.md)\>
 
-***
+---
 
 ### shareCurrency()
 

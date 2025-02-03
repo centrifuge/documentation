@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Query
-
 # Type Alias: Query\<T\>
 
 > **Query**\<`T`\>: `PromiseLike`\<`T`\> & `Observable`\<`T`\> & `object`

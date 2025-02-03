@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / OperationSigningMessageStatus
-
 # Type Alias: OperationSigningMessageStatus
 
 > **OperationSigningMessageStatus**: `object`

@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / TokenPriceReport
-
 # Type Alias: TokenPriceReport
 
 > **TokenPriceReport**: `object`

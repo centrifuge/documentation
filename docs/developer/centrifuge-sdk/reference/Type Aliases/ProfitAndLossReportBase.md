@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / ProfitAndLossReportBase
-
 # Type Alias: ProfitAndLossReportBase
 
 > **ProfitAndLossReportBase**: `object`

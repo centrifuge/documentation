@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Perquintill
-
 # Class: ~~Perquintill~~
 
 Defined in: [src/utils/BigInt.ts:246](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/utils/BigInt.ts#L246)
@@ -48,7 +42,7 @@ Defined in: [src/utils/BigInt.ts:27](https://github.com/centrifuge/centrifuge-sd
 
 `DecimalWrapper.decimals`
 
-***
+---
 
 ### ~~value~~
 
@@ -60,7 +54,7 @@ Defined in: [src/utils/BigInt.ts:3](https://github.com/centrifuge/centrifuge-sdk
 
 `DecimalWrapper.value`
 
-***
+---
 
 ### ~~decimals~~
 
@@ -84,7 +78,7 @@ Defined in: [src/utils/BigInt.ts:115](https://github.com/centrifuge/centrifuge-s
 
 ##### value
 
-`bigint` | `T` *extends* `BigIntWrapper` ? `T`\<`T`\> : `never`
+`bigint` | `T` _extends_ `BigIntWrapper` ? `T`\<`T`\> : `never`
 
 #### Returns
 
@@ -94,7 +88,7 @@ Defined in: [src/utils/BigInt.ts:115](https://github.com/centrifuge/centrifuge-s
 
 `DecimalWrapper.eq`
 
-***
+---
 
 ### ~~gt()~~
 
@@ -110,7 +104,7 @@ Defined in: [src/utils/BigInt.ts:105](https://github.com/centrifuge/centrifuge-s
 
 ##### value
 
-`bigint` | `T` *extends* `BigIntWrapper` ? `T`\<`T`\> : `never`
+`bigint` | `T` _extends_ `BigIntWrapper` ? `T`\<`T`\> : `never`
 
 #### Returns
 
@@ -120,7 +114,7 @@ Defined in: [src/utils/BigInt.ts:105](https://github.com/centrifuge/centrifuge-s
 
 `DecimalWrapper.gt`
 
-***
+---
 
 ### ~~gte()~~
 
@@ -136,7 +130,7 @@ Defined in: [src/utils/BigInt.ts:110](https://github.com/centrifuge/centrifuge-s
 
 ##### value
 
-`bigint` | `T` *extends* `BigIntWrapper` ? `T`\<`T`\> : `never`
+`bigint` | `T` _extends_ `BigIntWrapper` ? `T`\<`T`\> : `never`
 
 #### Returns
 
@@ -146,7 +140,7 @@ Defined in: [src/utils/BigInt.ts:110](https://github.com/centrifuge/centrifuge-s
 
 `DecimalWrapper.gte`
 
-***
+---
 
 ### ~~isZero()~~
 
@@ -162,7 +156,7 @@ Defined in: [src/utils/BigInt.ts:119](https://github.com/centrifuge/centrifuge-s
 
 `DecimalWrapper.isZero`
 
-***
+---
 
 ### ~~lt()~~
 
@@ -178,7 +172,7 @@ Defined in: [src/utils/BigInt.ts:95](https://github.com/centrifuge/centrifuge-sd
 
 ##### value
 
-`bigint` | `T` *extends* `BigIntWrapper` ? `T`\<`T`\> : `never`
+`bigint` | `T` _extends_ `BigIntWrapper` ? `T`\<`T`\> : `never`
 
 #### Returns
 
@@ -188,7 +182,7 @@ Defined in: [src/utils/BigInt.ts:95](https://github.com/centrifuge/centrifuge-sd
 
 `DecimalWrapper.lt`
 
-***
+---
 
 ### ~~lte()~~
 
@@ -204,7 +198,7 @@ Defined in: [src/utils/BigInt.ts:100](https://github.com/centrifuge/centrifuge-s
 
 ##### value
 
-`bigint` | `T` *extends* `BigIntWrapper` ? `T`\<`T`\> : `never`
+`bigint` | `T` _extends_ `BigIntWrapper` ? `T`\<`T`\> : `never`
 
 #### Returns
 
@@ -214,7 +208,7 @@ Defined in: [src/utils/BigInt.ts:100](https://github.com/centrifuge/centrifuge-s
 
 `DecimalWrapper.lte`
 
-***
+---
 
 ### ~~toBigInt()~~
 
@@ -230,7 +224,7 @@ Defined in: [src/utils/BigInt.ts:21](https://github.com/centrifuge/centrifuge-sd
 
 `DecimalWrapper.toBigInt`
 
-***
+---
 
 ### ~~toDecimal()~~
 
@@ -246,7 +240,7 @@ Defined in: [src/utils/BigInt.ts:43](https://github.com/centrifuge/centrifuge-sd
 
 `DecimalWrapper.toDecimal`
 
-***
+---
 
 ### ~~toFloat()~~
 
@@ -262,7 +256,7 @@ Defined in: [src/utils/BigInt.ts:47](https://github.com/centrifuge/centrifuge-sd
 
 `DecimalWrapper.toFloat`
 
-***
+---
 
 ### ~~toPercent()~~
 
@@ -274,7 +268,7 @@ Defined in: [src/utils/BigInt.ts:261](https://github.com/centrifuge/centrifuge-s
 
 `Decimal`
 
-***
+---
 
 ### ~~toString()~~
 
@@ -290,7 +284,7 @@ Defined in: [src/utils/BigInt.ts:17](https://github.com/centrifuge/centrifuge-sd
 
 `DecimalWrapper.toString`
 
-***
+---
 
 ### ~~fromFloat()~~
 
@@ -308,7 +302,7 @@ Defined in: [src/utils/BigInt.ts:253](https://github.com/centrifuge/centrifuge-s
 
 [`Perquintill`](Perquintill.md)
 
-***
+---
 
 ### ~~fromPercent()~~
 

@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / GroupBy
-
 # Type Alias: GroupBy
 
 > **GroupBy**: `"day"` \| `"month"` \| `"quarter"` \| `"year"`

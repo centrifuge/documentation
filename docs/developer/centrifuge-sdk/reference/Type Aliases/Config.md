@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Config
-
 # Type Alias: Config
 
 > **Config**: `object`

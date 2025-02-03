@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / HexString
-
 # Type Alias: HexString
 
 > **HexString**: `` `0x${string}` ``

@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Centrifuge
-
 # Class: Centrifuge
 
 Defined in: [src/Centrifuge.ts:72](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Centrifuge.ts#L72)
@@ -40,7 +34,7 @@ Defined in: [src/Centrifuge.ts:82](https://github.com/centrifuge/centrifuge-sdk/
 
 `number`[]
 
-***
+---
 
 ### config
 
@@ -54,7 +48,7 @@ Defined in: [src/Centrifuge.ts:74](https://github.com/centrifuge/centrifuge-sdk/
 
 `DerivedConfig`
 
-***
+---
 
 ### signer
 
@@ -90,7 +84,7 @@ Defined in: [src/Centrifuge.ts:123](https://github.com/centrifuge/centrifuge-sdk
 
 [`Query`](../type-aliases/Query.md)\<`Account`\>
 
-***
+---
 
 ### balance()
 
@@ -124,7 +118,7 @@ The chain ID
 
 [`Query`](../type-aliases/Query.md)\<[`Currency`](Currency.md)\>
 
-***
+---
 
 ### currency()
 
@@ -152,7 +146,7 @@ The chain ID
 
 [`Query`](../type-aliases/Query.md)\<[`CurrencyMetadata`](../type-aliases/CurrencyMetadata.md)\>
 
-***
+---
 
 ### getChainConfig()
 
@@ -170,7 +164,7 @@ Defined in: [src/Centrifuge.ts:85](https://github.com/centrifuge/centrifuge-sdk/
 
 `Chain`
 
-***
+---
 
 ### getClient()
 
@@ -188,7 +182,7 @@ Defined in: [src/Centrifuge.ts:79](https://github.com/centrifuge/centrifuge-sdk/
 
 `undefined` \| \{\}
 
-***
+---
 
 ### pool()
 
@@ -210,7 +204,7 @@ Defined in: [src/Centrifuge.ts:119](https://github.com/centrifuge/centrifuge-sdk
 
 [`Query`](../type-aliases/Query.md)\<[`Pool`](Pool.md)\>
 
-***
+---
 
 ### setSigner()
 

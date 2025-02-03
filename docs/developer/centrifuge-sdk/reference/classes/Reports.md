@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Reports
-
 # Class: Reports
 
 Defined in: [src/Reports/index.ts:38](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L38)
@@ -38,7 +32,7 @@ Defined in: [src/Reports/index.ts:77](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<[`AssetListReport`](../type-aliases/AssetListReport.md)[]\>
 
-***
+---
 
 ### assetTimeSeries()
 
@@ -56,7 +50,7 @@ Defined in: [src/Reports/index.ts:89](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<`AssetTimeSeriesReport`[]\>
 
-***
+---
 
 ### assetTransactions()
 
@@ -74,7 +68,7 @@ Defined in: [src/Reports/index.ts:65](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<[`AssetTransactionReport`](../type-aliases/AssetTransactionReport.md)[]\>
 
-***
+---
 
 ### balanceSheet()
 
@@ -92,7 +86,7 @@ Defined in: [src/Reports/index.ts:49](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<[`BalanceSheetReport`](../type-aliases/BalanceSheetReport.md)[]\>
 
-***
+---
 
 ### cashflow()
 
@@ -110,7 +104,7 @@ Defined in: [src/Reports/index.ts:53](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<[`CashflowReport`](../type-aliases/CashflowReport.md)[]\>
 
-***
+---
 
 ### feeTransactions()
 
@@ -128,7 +122,7 @@ Defined in: [src/Reports/index.ts:73](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<[`FeeTransactionReport`](../type-aliases/FeeTransactionReport.md)[]\>
 
-***
+---
 
 ### investorList()
 
@@ -146,7 +140,7 @@ Defined in: [src/Reports/index.ts:81](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<[`InvestorListReport`](../type-aliases/InvestorListReport.md)[]\>
 
-***
+---
 
 ### investorTransactions()
 
@@ -164,7 +158,7 @@ Defined in: [src/Reports/index.ts:61](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<[`InvestorTransactionsReport`](../type-aliases/InvestorTransactionsReport.md)[]\>
 
-***
+---
 
 ### ordersList()
 
@@ -182,7 +176,7 @@ Defined in: [src/Reports/index.ts:85](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<`OrdersListReport`[]\>
 
-***
+---
 
 ### profitAndLoss()
 
@@ -200,7 +194,7 @@ Defined in: [src/Reports/index.ts:57](https://github.com/centrifuge/centrifuge-s
 
 [`Query`](../type-aliases/Query.md)\<[`ProfitAndLossReport`](../type-aliases/ProfitAndLossReport.md)[]\>
 
-***
+---
 
 ### tokenPrice()
 

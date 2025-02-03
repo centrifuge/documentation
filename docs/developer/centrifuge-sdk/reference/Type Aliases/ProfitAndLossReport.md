@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / ProfitAndLossReport
-
 # Type Alias: ProfitAndLossReport
 
 > **ProfitAndLossReport**: [`ProfitAndLossReportPublicCredit`](ProfitAndLossReportPublicCredit.md) \| [`ProfitAndLossReportPrivateCredit`](ProfitAndLossReportPrivateCredit.md)

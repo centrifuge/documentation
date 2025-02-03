@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / BalanceSheetReport
-
 # Type Alias: BalanceSheetReport
 
 > **BalanceSheetReport**: `object`

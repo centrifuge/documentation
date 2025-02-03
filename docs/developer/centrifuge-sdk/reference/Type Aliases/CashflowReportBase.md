@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / CashflowReportBase
-
 # Type Alias: CashflowReportBase
 
 > **CashflowReportBase**: `object`

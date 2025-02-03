@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Client
-
 # Type Alias: Client
 
 > **Client**: `PublicClient`\<`any`, `Chain`\>

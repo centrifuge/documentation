@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / OperationSwitchChainStatus
-
 # Type Alias: OperationSwitchChainStatus
 
 > **OperationSwitchChainStatus**: `object`

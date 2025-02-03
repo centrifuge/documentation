@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / ReportFilter
-
 # Type Alias: ReportFilter
 
 > **ReportFilter**: `object`

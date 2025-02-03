@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / CurrencyMetadata
-
 # Type Alias: CurrencyMetadata
 
 > **CurrencyMetadata**: `object`

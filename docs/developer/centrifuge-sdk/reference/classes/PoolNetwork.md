@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / PoolNetwork
-
 # Class: PoolNetwork
 
 Defined in: [src/PoolNetwork.ts:16](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/PoolNetwork.ts#L16)
@@ -22,7 +16,7 @@ Query and interact with a pool on a specific network.
 
 Defined in: [src/PoolNetwork.ts:21](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/PoolNetwork.ts#L21)
 
-***
+---
 
 ### pool
 
@@ -52,7 +46,7 @@ The tranche ID
 
 [`Query`](../type-aliases/Query.md)\<`boolean`\>
 
-***
+---
 
 ### deployTranche()
 
@@ -74,7 +68,7 @@ The tranche ID
 
 [`Transaction`](../type-aliases/Transaction.md)
 
-***
+---
 
 ### deployVault()
 
@@ -102,7 +96,7 @@ The investment currency address
 
 [`Transaction`](../type-aliases/Transaction.md)
 
-***
+---
 
 ### isActive()
 
@@ -117,7 +111,7 @@ and doesn't indicate whether any vaults have been deployed.
 
 [`Query`](../type-aliases/Query.md)\<`boolean`\>
 
-***
+---
 
 ### shareCurrency()
 
@@ -139,7 +133,7 @@ The tranche ID
 
 [`Query`](../type-aliases/Query.md)\<[`CurrencyMetadata`](../type-aliases/CurrencyMetadata.md)\>
 
-***
+---
 
 ### vault()
 
@@ -167,7 +161,7 @@ The investment currency address
 
 [`Query`](../type-aliases/Query.md)\<[`Vault`](Vault.md)\>
 
-***
+---
 
 ### vaults()
 
@@ -190,7 +184,7 @@ The tranche ID
 
 [`Query`](../type-aliases/Query.md)\<[`Vault`](Vault.md)[]\>
 
-***
+---
 
 ### vaultsByTranche()
 

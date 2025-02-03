@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / Signer
-
 # Type Alias: Signer
 
 > **Signer**: [`EIP1193ProviderLike`](EIP1193ProviderLike.md) \| `LocalAccount`

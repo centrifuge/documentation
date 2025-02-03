@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / OperationStatusType
-
 # Type Alias: OperationStatusType
 
 > **OperationStatusType**: `"SwitchingChain"` \| `"SigningTransaction"` \| `"SigningMessage"` \| `"SignedMessage"` \| `"TransactionPending"` \| `"TransactionConfirmed"`

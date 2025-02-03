@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / AssetListReportFilter
-
 # Type Alias: AssetListReportFilter
 
 > **AssetListReportFilter**: `object`

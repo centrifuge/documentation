@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / AssetListReport
-
 # Type Alias: AssetListReport
 
 > **AssetListReport**: [`AssetListReportBase`](AssetListReportBase.md) & [`AssetListReportPublicCredit`](AssetListReportPublicCredit.md) \| [`AssetListReportPrivateCredit`](AssetListReportPrivateCredit.md)

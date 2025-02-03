@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / InvestorListReport
-
 # Type Alias: InvestorListReport
 
 > **InvestorListReport**: `object`

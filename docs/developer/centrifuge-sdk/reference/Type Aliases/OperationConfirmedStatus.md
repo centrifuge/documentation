@@ -1,9 +1,3 @@
-[**@centrifuge/sdk**](../README.md)
-
-***
-
-[@centrifuge/sdk](../README.md) / OperationConfirmedStatus
-
 # Type Alias: OperationConfirmedStatus
 
 > **OperationConfirmedStatus**: `object`
