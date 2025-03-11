@@ -9,7 +9,7 @@ on:
   # uncomment this to test outside of main branch:
   pull_request:
     paths:
-      - ".github/workflows/update-docs.yml"
+      - ".github/workflows/update-sdk-docs.yml"
 
 jobs:
   # This is a sanity check to make sure the trigger is coming from the sdk repo
