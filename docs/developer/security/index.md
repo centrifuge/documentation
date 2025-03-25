@@ -7,10 +7,11 @@ title: Security
 
 ## Audits
 
-### Liquidity Pools
+### Centrifuge Protocol
 
+- Cantina - Feb 2025 - [Report](https://cantina.xyz/portfolio/c74ed8af-cd8e-4e9e-bd56-b97a02e86a1e)
 - Spearbit - July 2024 - [Report](https://github.com/spearbit/portfolio/blob/master/pdfs/Centrifuge-Spearbit-Security-Review-July-2024.pdf)
-- Recon - Invariant test development - Mar-Apr 2024 - [Part 1](https://getrecon.substack.com/p/lessons-learned-from-fuzzing-centrifuge)
+- Recon - Invariant test development - Mar-Apr 2024 - [Part 1](https://getrecon.substack.com/p/lessons-learned-from-fuzzing-centrifuge) [Part 2](https://getrecon.substack.com/p/lessons-learned-from-fuzzing-centrifuge-059)
 - Cantina - October 2023 - [Report](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-10-Spearbit-Cantina-Managed.pdf)
 - SRLabs - September 2023 - [Report](https://github.com/centrifuge/security/blob/main/audits/liquidity-pools/2023-09-SRLabs.pdf)
 - Code4rena - September 2023 - [Report](https://code4rena.com/reports/2023-09-centrifuge)
