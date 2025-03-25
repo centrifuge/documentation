@@ -60,19 +60,19 @@ Defined in: [src/Centrifuge.ts:74](https://github.com/centrifuge/centrifuge-sdk/
 
 #### Get Signature
 
-> **get** **signer**(): `null` \| [`Signer`](../type-aliases/Signer.md)
+> **get** **signer**(): `null` \| [`Signer`](../type-aliases/Signer.md) **Broken link**
 
 Defined in: [src/Centrifuge.ts:93](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Centrifuge.ts#L93)
 
 ##### Returns
 
-`null` \| [`Signer`](../type-aliases/Signer.md)
+`null` \| [`Signer`](../type-aliases/Signer.md) **Broken link**
 
 ## Methods
 
 ### account()
 
-> **account**(`address`, `chainId`?): [`Query`](../type-aliases/Query.md)\<`Account`\>
+> **account**(`address`, `chainId`?): [`Query`](../type-aliases/Query.md)\<`Account`\> **Broken link**
 
 Defined in: [src/Centrifuge.ts:123](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Centrifuge.ts#L123)
 
@@ -88,7 +88,7 @@ Defined in: [src/Centrifuge.ts:123](https://github.com/centrifuge/centrifuge-sdk
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<`Account`\>
+[`Query`](../type-aliases/Query.md)\<`Account`\> **Broken link**
 
 ***
 
@@ -128,7 +128,7 @@ The chain ID
 
 ### currency()
 
-> **currency**(`address`, `chainId`?): [`Query`](../type-aliases/Query.md)\<[`CurrencyMetadata`](../type-aliases/CurrencyMetadata.md)\>
+> **currency**(`address`, `chainId`?): [`Query`](../type-aliases/Query.md)\<[`CurrencyMetadata`](../type-aliases/CurrencyMetadata.md)\> **Broken link**
 
 Defined in: [src/Centrifuge.ts:132](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Centrifuge.ts#L132)
 
@@ -150,7 +150,7 @@ The chain ID
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`CurrencyMetadata`](../type-aliases/CurrencyMetadata.md)\>
+[`Query`](../type-aliases/Query.md)\<[`CurrencyMetadata`](../type-aliases/CurrencyMetadata.md)\> **Broken link**
 
 ***
 

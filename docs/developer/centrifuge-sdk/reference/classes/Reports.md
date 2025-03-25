@@ -24,7 +24,7 @@ Defined in: [src/Reports/index.ts:43](https://github.com/centrifuge/centrifuge-s
 
 ### assetList()
 
-> **assetList**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`AssetListReport`](../type-aliases/AssetListReport.md)[]\>
+> **assetList**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`AssetListReport`](../type-aliases/AssetListReport.md)[]\> **Broken link**
 
 Defined in: [src/Reports/index.ts:77](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L77)
 
@@ -32,11 +32,11 @@ Defined in: [src/Reports/index.ts:77](https://github.com/centrifuge/centrifuge-s
 
 ##### filter?
 
-[`AssetListReportFilter`](../type-aliases/AssetListReportFilter.md)
+[`AssetListReportFilter`](../type-aliases/AssetListReportFilter.md) **Broken link**
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`AssetListReport`](../type-aliases/AssetListReport.md)[]\>
+[`Query`](../type-aliases/Query.md)\<[`AssetListReport`](../type-aliases/AssetListReport.md)[]\> **Broken link**
 
 ***
 
@@ -54,13 +54,13 @@ Defined in: [src/Reports/index.ts:89](https://github.com/centrifuge/centrifuge-s
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<`AssetTimeSeriesReport`[]\>
+[`Query`](../type-aliases/Query.md)\<`AssetTimeSeriesReport`[]\> 
 
 ***
 
 ### assetTransactions()
 
-> **assetTransactions**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`AssetTransactionReport`](../type-aliases/AssetTransactionReport.md)[]\>
+> **assetTransactions**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`AssetTransactionReport`](../type-aliases/AssetTransactionReport.md)[]\> **Broken link**
 
 Defined in: [src/Reports/index.ts:65](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L65)
 
@@ -68,17 +68,17 @@ Defined in: [src/Reports/index.ts:65](https://github.com/centrifuge/centrifuge-s
 
 ##### filter?
 
-[`AssetTransactionReportFilter`](../type-aliases/AssetTransactionReportFilter.md)
+[`AssetTransactionReportFilter`](../type-aliases/AssetTransactionReportFilter.md) **Broken link**
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`AssetTransactionReport`](../type-aliases/AssetTransactionReport.md)[]\>
+[`Query`](../type-aliases/Query.md)\<[`AssetTransactionReport`](../type-aliases/AssetTransactionReport.md)[]\> **Broken link**
 
 ***
 
 ### balanceSheet()
 
-> **balanceSheet**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`BalanceSheetReport`](../type-aliases/BalanceSheetReport.md)[]\>
+> **balanceSheet**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`BalanceSheetReport`](../type-aliases/BalanceSheetReport.md)[]\> **Broken link**
 
 Defined in: [src/Reports/index.ts:49](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L49)
 
@@ -86,17 +86,17 @@ Defined in: [src/Reports/index.ts:49](https://github.com/centrifuge/centrifuge-s
 
 ##### filter?
 
-[`ReportFilter`](../type-aliases/ReportFilter.md)
+[`ReportFilter`](../type-aliases/ReportFilter.md) **Broken link**
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`BalanceSheetReport`](../type-aliases/BalanceSheetReport.md)[]\>
+[`Query`](../type-aliases/Query.md)\<[`BalanceSheetReport`](../type-aliases/BalanceSheetReport.md)[]\> **Broken link**
 
 ***
 
 ### cashflow()
 
-> **cashflow**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`CashflowReport`](../type-aliases/CashflowReport.md)[]\>
+> **cashflow**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`CashflowReport`](../type-aliases/CashflowReport.md)[]\> **Broken link**
 
 Defined in: [src/Reports/index.ts:53](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L53)
 
@@ -108,13 +108,13 @@ Defined in: [src/Reports/index.ts:53](https://github.com/centrifuge/centrifuge-s
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`CashflowReport`](../type-aliases/CashflowReport.md)[]\>
+[`Query`](../type-aliases/Query.md)\<[`CashflowReport`](../type-aliases/CashflowReport.md)[]\> **Broken link**
 
 ***
 
 ### feeTransactions()
 
-> **feeTransactions**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`FeeTransactionReport`](../type-aliases/FeeTransactionReport.md)[]\>
+> **feeTransactions**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`FeeTransactionReport`](../type-aliases/FeeTransactionReport.md)[]\> **Broken link**
 
 Defined in: [src/Reports/index.ts:73](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L73)
 
@@ -122,17 +122,17 @@ Defined in: [src/Reports/index.ts:73](https://github.com/centrifuge/centrifuge-s
 
 ##### filter?
 
-[`FeeTransactionReportFilter`](../type-aliases/FeeTransactionReportFilter.md)
+[`FeeTransactionReportFilter`](../type-aliases/FeeTransactionReportFilter.md) **Broken link**
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`FeeTransactionReport`](../type-aliases/FeeTransactionReport.md)[]\>
+[`Query`](../type-aliases/Query.md)\<[`FeeTransactionReport`](../type-aliases/FeeTransactionReport.md)[]\> **Broken link**
 
 ***
 
 ### investorList()
 
-> **investorList**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`InvestorListReport`](../type-aliases/InvestorListReport.md)[]\>
+> **investorList**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`InvestorListReport`](../type-aliases/InvestorListReport.md)[]\> **Broken link**
 
 Defined in: [src/Reports/index.ts:81](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L81)
 
@@ -140,17 +140,17 @@ Defined in: [src/Reports/index.ts:81](https://github.com/centrifuge/centrifuge-s
 
 ##### filter?
 
-[`InvestorListReportFilter`](../type-aliases/InvestorListReportFilter.md)
+[`InvestorListReportFilter`](../type-aliases/InvestorListReportFilter.md) **Broken link**
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`InvestorListReport`](../type-aliases/InvestorListReport.md)[]\>
+[`Query`](../type-aliases/Query.md)\<[`InvestorListReport`](../type-aliases/InvestorListReport.md)[]\> **Broken link**
 
 ***
 
 ### investorTransactions()
 
-> **investorTransactions**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`InvestorTransactionsReport`](../type-aliases/InvestorTransactionsReport.md)[]\>
+> **investorTransactions**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`InvestorTransactionsReport`](../type-aliases/InvestorTransactionsReport.md)[]\> **Broken link**
 
 Defined in: [src/Reports/index.ts:61](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L61)
 
@@ -158,11 +158,11 @@ Defined in: [src/Reports/index.ts:61](https://github.com/centrifuge/centrifuge-s
 
 ##### filter?
 
-[`InvestorTransactionsReportFilter`](../type-aliases/InvestorTransactionsReportFilter.md)
+[`InvestorTransactionsReportFilter`](../type-aliases/InvestorTransactionsReportFilter.md) **Broken link**
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`InvestorTransactionsReport`](../type-aliases/InvestorTransactionsReport.md)[]\>
+[`Query`](../type-aliases/Query.md)\<[`InvestorTransactionsReport`](../type-aliases/InvestorTransactionsReport.md)[]\> **Broken link**
 
 ***
 
@@ -186,7 +186,7 @@ Defined in: [src/Reports/index.ts:85](https://github.com/centrifuge/centrifuge-s
 
 ### profitAndLoss()
 
-> **profitAndLoss**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`ProfitAndLossReport`](../type-aliases/ProfitAndLossReport.md)[]\>
+> **profitAndLoss**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`ProfitAndLossReport`](../type-aliases/ProfitAndLossReport.md)[]\> **Broken link**
 
 Defined in: [src/Reports/index.ts:57](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L57)
 
@@ -194,17 +194,17 @@ Defined in: [src/Reports/index.ts:57](https://github.com/centrifuge/centrifuge-s
 
 ##### filter?
 
-[`ReportFilter`](../type-aliases/ReportFilter.md)
+[`ReportFilter`](../type-aliases/ReportFilter.md) **Broken link**
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`ProfitAndLossReport`](../type-aliases/ProfitAndLossReport.md)[]\>
+[`Query`](../type-aliases/Query.md)\<[`ProfitAndLossReport`](../type-aliases/ProfitAndLossReport.md)[]\> **Broken link**
 
 ***
 
 ### tokenPrice()
 
-> **tokenPrice**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`TokenPriceReport`](../type-aliases/TokenPriceReport.md)[]\>
+> **tokenPrice**(`filter`?): [`Query`](../type-aliases/Query.md)\<[`TokenPriceReport`](../type-aliases/TokenPriceReport.md)[]\> **Broken link**
 
 Defined in: [src/Reports/index.ts:69](https://github.com/centrifuge/centrifuge-sdk/blob/35076f925246b8dbb28e12a5beeb6327f126023f/src/Reports/index.ts#L69)
 
@@ -212,8 +212,8 @@ Defined in: [src/Reports/index.ts:69](https://github.com/centrifuge/centrifuge-s
 
 ##### filter?
 
-[`TokenPriceReportFilter`](../type-aliases/TokenPriceReportFilter.md)
+[`TokenPriceReportFilter`](../type-aliases/TokenPriceReportFilter.md) **Broken link**
 
 #### Returns
 
-[`Query`](../type-aliases/Query.md)\<[`TokenPriceReport`](../type-aliases/TokenPriceReport.md)[]\>
+[`Query`](../type-aliases/Query.md)\<[`TokenPriceReport`](../type-aliases/TokenPriceReport.md)[]\> **Broken link**
