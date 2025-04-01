@@ -6,29 +6,42 @@ contributors: <Lucas Vogelsang:lucas@centrifuge.foundation>, <Cassidy Daly:cassi
 
 # The CFG Token
 
-CFG is the native token of Centrifuge, facilitating an onchain governance system that empowers CFG holders to steer Centrifuge’s evolution without reliance on a centralized third party. CFG is also used to pay for transactions on Centrifuge Chain. All changes to the Centrifuge protocol or the CFG token model described here go through governance proposals and need to be implemented by CFG token holders.
+CFG is the native governance token of Centrifuge, empowering holders to shape the protocol’s evolution through a decentralized, onchain governance system. With the transition to Centrifuge V3, an EVM-based protocol, CFG is migrating from the legacy Centrifuge Chain to Ethereum as of mid-March 2025. This shift deprecates the original CFG on Centrifuge Chain and Wrapped CFG (WCFG) on Ethereum, consolidating them into a single EVM-compatible CFG token.
+
+For instructions on migrating your legacy CFG or WCFG, see [Legacy CFG/WCFG Migration to Ethereum](./token-migration).
 
 ## Governance
 
-CFG tokens are utilized for the ability to participate in technical governance in proportion to their stake in the protocol by voting to upgrade the chain runtime code. CFG holders participate in governance through an onchain voting mechanism on proposals: runtime upgrade proposals are voted on by the token holders. Approved proposals are enacted programmatically onchain.
+CFG holders steer the Centrifuge protocol by voting on proposals, including runtime upgrades and strategic initiatives. With the deprecation of the Centrifuge Chain (expected Q4 2025), governance is transitioning to EVM-based tools:
+
+- **Phase 1**: Voting will continue as normal on Centrifuge chain until control is given over to the council via a onchain vote. ETA is still to be announced. 
+- **Phase 2**: Offchain voting via [Snapshot](https://snapshot.org/#/centrifuge.eth) starting post the launch of V3 in Q2. 
+- **Phase 3**: A future onchain governance framework using smart contracts, to be detailed in a subsequent proposal.
+
+Voting power is proportional to a holder’s CFG stake, ensuring decentralized control over the protocol’s evolution.
 
 ## CFG on Ethereum
 
-Centrifuge can be bridged 1:1 to Ethereum, where it can be used with decentralized applications. [See here for information on bridging CFG between Ethereum and Centrifuge Chain](/user/cfg-bridge).
+As of April 2025, CFG will operate natively on Ethereum as an ERC20 token, replacing both the legacy CFG (Centrifuge Chain) and WCFG (Ethereum). 
 
-Centrifuge on Ethereum is an ERC20 token. [You can find the token contract for CFG on Ethereum here](https://etherscan.io/token/0xc221b7e65ffc80de234bbb6667abdd46593d34f0).
+**Key details:**
 
-Centrifuge on Base is an ERC20 token. [You can find the token contract for CFG on Base here](https://basescan.org/token/0x2b51E2Ec9551F9B87B321f63b805871f1c81ba97).
+- **Token Address**: [0xcccCCCcCCC33D538DBC2EE4fEab0a7A1FF4e8A94](https://etherscan.io/token/0xcccccccccc33d538dbc2ee4feab0a7a1ff4e8a94).
+- **Migration**: Legacy CFG and WCFG holders can swap 1:1 for the new CFG token. See [Legacy CFG/WCFG Migration to Ethereum](./token-migration) for details.
+- **Bridging**: The previous CFG bridge between Centrifuge Chain and Ethereum will be discontinued with the chain’s deprecation.
+
 
 ## Tokenomics, block explorer, and token supply endpoints
 
-[You can find the block explorer for the CFG token here](https://centrifuge.subscan.io/), to see accounts, transactions, and statistics about CFG and Centrifuge Chain.
+The migration introduces an updated token supply:
+- **Current Supply (Pre-Migration)**: [~562,565,045 CFG] (https://europe-west3-peak-vista-185616.cloudfunctions.net/centrifuge-total-issuance) 
+- **Post-Migration Total Supply**: 675,000,000 CFG, including 115M newly minted tokens for strategic initiatives (released gradually).
+- **Inflation**: 3% yearly inflation will continue, accruing to the Centrifuge DAO Treasury on Ethereum.
 
-For platforms that wish to track the circulating supply and total supply of CFG, use these endpoints:
 
-**Circulating supply**: https://europe-west3-peak-vista-185616.cloudfunctions.net/centrifuge-circulating-supply
+[You can find the block explorer for the legacy CFG token on Centrifuge here on ](https://centrifuge.subscan.io/), to see accounts, transactions, and statistics about CFG and Centrifuge Chain.
 
-**Total supply**: https://europe-west3-peak-vista-185616.cloudfunctions.net/centrifuge-total-issuance
+This section will be updated post the full migration to refelect the up to date total supply. 
 
 ## CFG Token Distribution
 
