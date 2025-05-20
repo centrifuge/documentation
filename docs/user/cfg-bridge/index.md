@@ -4,8 +4,12 @@ title: CFG (Centrifuge) to CFG (Ethereum)
 contributors: <Lucas Vogelsang:lucas@centrifuge.io>, <Graham Nelson:graham@k-f.co>
 ---
 
-# CFG (Centrifuge) {'\<\>'} CFG (Ethereum) {'\<\>'} CFG (Base)
+# CFG (Centrifuge) {'\<\>'} CFG (Ethereum)
 
+The following bridge has been deprecated in favor for the CFG token migraiton bridge. 
+
+See [Legacy CFG/WCFG Migration to Ethereum](./token-migration) for details.
+<!-- 
 The **CFG** token lives natively on Centrifuge Chain but can be bridged to Ethereum and used as an ERC20 token, Once on Ethereum, CFG can then be transferred to Base. The ERC20 Token is also called **CFG** on Ethereum and Base has the address `0xc221b7E65FfC80DE234bbB6667aBDd46593D34F0` on Ethereum mainnet and `0x2b51E2Ec9551F9B87B321f63b805871f1c81ba97` on Base mainnet.
 
 ## How are CFG on Centrifuge Chain & CFG on Ethereum/Base different?
@@ -62,4 +66,4 @@ The setup makes use of the [Mint/Burn Token Manager](https://github.com/axelarne
 
 To transfer CFG from Ethereum to Base, you are required to use [Squid Router](https://app.squidrouter.com/).
 
-Squid operates as a cross-chain router, enabling single-click actions such as token swaps, purchases, deposits, and staking across different blockchains. Squid integrates with Axelar’s infrastructure to provide a secure and efficient cross-chain experience.
+Squid operates as a cross-chain router, enabling single-click actions such as token swaps, purchases, deposits, and staking across different blockchains. Squid integrates with Axelar’s infrastructure to provide a secure and efficient cross-chain experience. -->

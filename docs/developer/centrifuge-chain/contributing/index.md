@@ -191,7 +191,7 @@ Since the Centrifuge Chain repository uses workspace inheritance, dependency rev
 
    For each of those repositories, create a new branch out of the latest `polkadot-vX.Y.Z` and repeat step 1 for each of them.
 
-   - [centrifuge/chainbridge-substrate](https://github.com/centrifuge/chainbridge-substrate)
+   <!-- - [centrifuge/chainbridge-substrate](https://github.com/centrifuge/chainbridge-substrate) -->
    - [centrifuge/fudge](https://github.com/centrifuge/fudge)
    - [foss3/runtime-pallet-library](https://github.com/foss3/runtime-pallet-library)
    - [centrifuge/go-substrate-rpc-client](https://github.com/centrifuge/go-substrate-rpc-client)
