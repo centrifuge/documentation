@@ -1,4 +1,4 @@
----
+<!-- ---
 id: bridge
 title: Centrifuge - Ethereum Bridge
 category: subpage
@@ -6,6 +6,8 @@ category: subpage
 
 # Centrifuge-Ethereum Bridge
 
+
+<!-- 
 The CFG token can be bridged 1:1 to Ethereum. [Read the guide here for instructions on how to bridge CFG](/user/cfg-bridge).
 
 ## Token Supply
@@ -120,4 +122,4 @@ TARGET_SUBSTRATE_ADDR="YOUR_SUBSTRATE_SS58_ADDRESS"
 TARGET_PUBLICKEY=`subkey inspect --output-type json $TARGET_SUBSTRATE_ADDR | jq  -r '.publicKey'`
 
 cb-sol-cli --gasLimit $ETH_GAS_LIMIT --gasPrice $ETH_GAS_PRICE --privateKey $ETH_PRIVATE_KEY --url $ETH_RPC_URL erc20 deposit --amount 1000000000000000000 --dest 1 --recipient $TARGET_PUBLICKEY --resourceId $BRIDGE_ERC20_RESOURCE_ID --bridge $BRIDGE_ADDRESS
-```
+``` --> -->

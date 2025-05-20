@@ -15,14 +15,14 @@ For instructions on migrating your legacy CFG or WCFG, see [Legacy CFG/WCFG Migr
 CFG holders steer the Centrifuge protocol by voting on proposals, including runtime upgrades and strategic initiatives. With the deprecation of the Centrifuge Chain (expected Q4 2025), governance is transitioning to EVM-based tools:
 
 - **Phase 1**: Voting will continue as normal on Centrifuge chain until control is given over to the council via a onchain vote. ETA is still to be announced. 
-- **Phase 2**: Offchain voting via [Snapshot](https://snapshot.org/#/centrifuge.eth) starting post the launch of V3 in Q2. 
+- **Phase 2**: Offchain voting via [Snapshot](https://snapshot.org/#/centrifuge.eth) starting post the launch of V3 in Q3. 
 - **Phase 3**: A future onchain governance framework using smart contracts, to be detailed in a subsequent proposal.
 
 Voting power is proportional to a holder’s CFG stake, ensuring decentralized control over the protocol’s evolution.
 
 ## CFG on Ethereum
 
-As of April 2025, CFG will operate natively on Ethereum as an ERC20 token, replacing both the legacy CFG (Centrifuge Chain) and WCFG (Ethereum). 
+As of May 20th 2025, CFG will operate natively on Ethereum as an ERC20 token, replacing both the legacy CFG (Centrifuge Chain) and WCFG (Ethereum). 
 
 **Key details:**
 
