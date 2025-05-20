@@ -39,8 +39,7 @@ The migration process is set to begin on **May 20th 2025**, after a successful [
 **IMPORTANT: The proccess can take up to 1 hour to complete**
 
 **Demo Video**:  
-<img src="/img/cfgmigration.gif" alt="Legacy CFG Migration Tutorial" width="800" style={{borderRadius: '8px'}} />
-
+<img src="https://gateway.pinata.cloud/ipfs/bafybeihrf45autpgownm7gkpny5ytq5wydf2m4zpornpjalr4s6g3bj6lu" alt="Legacy CFG Migration Tutorial" width="800" style={{borderRadius: '8px'}} />
 
 #### WCFG (Wrapped CFG on Ethereum)
 1. Navigate to [https://app.centrifuge.io/migrate](https://app.centrifuge.io/#/portfolio/migrate/eth).
@@ -54,8 +53,7 @@ The migration process is set to begin on **May 20th 2025**, after a successful [
 **IMPORTANT: The proccess is atomic and you will receive your new CFG tokens immediately **
 
 **Demo Video**:  
-<img src="/img/wcfgmigration.gif" alt="WCFG Migration Tutorial" width="800" style={{borderRadius: '8px'}} />
-
+<img src="https://gateway.pinata.cloud/ipfs/bafybeibqxzvaszgcgdepbf6kcsdzf2pzmu5epwm36lniuojac6fbxxccs4" alt="WCFG Migration Tutorial" width="800" style={{borderRadius: '8px'}} />
 
 ---
 
