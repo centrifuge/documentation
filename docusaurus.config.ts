@@ -10,7 +10,7 @@ import { redirects } from "./src/redirects";
 const config: Config = {
   title: "Centrifuge Docs",
   tagline: "Centrifuge user documentation",
-  favicon: "img/favicon.png",
+  favicon: "img/logomark-dark.png",
 
   // Set the production url of your site here
   url: "https://your-docusaurus-site.example.com",
@@ -48,7 +48,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: "img/centrifuge-logo-full.svg",
     navbar: {
       title: "Centrifuge Docs",
@@ -61,28 +60,23 @@ const config: Config = {
         {
           type: "docSidebar",
           sidebarId: "getting-started",
-          position: "left",
+          position: "right",
           label: "Getting Started",
           exact: true,
         },
         {
           type: "docSidebar",
           sidebarId: "user-documentation",
-          position: "left",
+          position: "right",
           label: "User Documentation",
           exact: true,
         },
         {
           type: "docSidebar",
           sidebarId: "developer-documentation",
-          position: "left",
+          position: "right",
           label: "Developer Documentation",
           exact: true,
-        },
-        {
-          href: "https://github.com/centrifuge/documentation",
-          label: "GitHub",
-          position: "right",
         },
       ],
     },
