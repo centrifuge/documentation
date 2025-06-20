@@ -7,7 +7,7 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 # Hub
 
-The **Hub module** in the Centrifuge Protocol serves as the core orchestration layer for decentralized pool management. It acts as the central controller that connects various components of a pool’s lifecycle — from registration and accounting to share class configuration and metadata handling.
+The Hub module in the Centrifuge Protocol serves as the core orchestration layer for decentralized pool management. It acts as the central controller that connects various components of a pool’s lifecycle — from registration and accounting to share class configuration and metadata handling.
 
 ![](./images/hub.png)
 
@@ -21,7 +21,7 @@ It contains five smart contracts:
 * **Responsibilities**:
 
   * Aggregates and exposes all core pool functions in a single interface.
-  * Allows pools to assign **hub managers** — trusted entities with full permissions over the pool lifecycle.
+  * Allows pools to assign hub managers — trusted entities with full permissions over the pool lifecycle.
   * Coordinates pool creation, share class setup, metadata updates, and notification hooks.
 
 ### HubRegistry
@@ -39,11 +39,11 @@ It contains five smart contracts:
 * **Responsibilities**:
 
   * Tracks internal balances and positions for each pool.
-  * Associates each holding with a unique **accounting ID** for traceability.
+  * Associates each holding with a unique accounting ID for traceability.
 
 ### Accounting
 
-* **Description**: A robust **double-entry bookkeeping** system.
+* **Description**: A robust double-entry bookkeeping system.
 * **Responsibilities**:
 
   * Manages debits and credits across accounting IDs.
@@ -57,8 +57,6 @@ It contains five smart contracts:
 
   * Handles **epoch-based workflows**, including request submission, approval, and fulfillment.
   * Generates share class IDs and manages cross-chain state.
-
----
 
 ## Pool Setup Workflow
 

@@ -7,11 +7,9 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 # Spoke
 
-The **Spoke** module is a core component of the Centrifuge protocol's on-chain infrastructure, responsible for local management and orchestration of asset pools, share classes, vaults, and related operations. It acts as the local registry and integration hub for factory-based deployments and other pool contracts.
+The Spoke module is a core component of the Centrifuge protocol's on-chain infrastructure, responsible for local management and orchestration of asset pools, share classes, vaults, and related operations. It acts as the local registry and integration hub for factory-based deployments and other pool contracts.
 
 ![](./images/spoke.png)
-
----
 
 ## Contracts
 
@@ -30,8 +28,6 @@ Key integrations:
 * `PoolEscrowFactory` – for creating pool-specific escrows.
 * `BalanceSheet` – to enable financial tracking and share/token management.
 
----
-
 ### Escrow
 
 There are two primary types of escrow contracts:
@@ -44,8 +40,6 @@ There are two primary types of escrow contracts:
 
 Factories such as `PoolEscrowFactory` are responsible for deterministic escrow deployments.
 
----
-
 ### BalanceSheet
 
 The `BalanceSheet` contract:
@@ -55,8 +49,6 @@ The `BalanceSheet` contract:
 * Coordinates with `MerkleProofManager` and `OnOfframpManager` to verify and execute off-chain proofs and liquidity bridges.
 
 Vault managers like `SyncManager` and `AsyncRequestManager` interact with this module to perform vault-specific logic.
-
----
 
 ### ShareToken
 
@@ -74,15 +66,11 @@ These hook contracts implement the `ITransferHook` interface and can be dynamica
 
 Each `ShareToken` is instantiated by the `TokenFactory` and linked to a specific pool and share class.
 
----
-
 ## Factories
 
 * **TokenFactory**: Creates ERC20-compliant `ShareToken` contracts.
 * **VaultFactory**: Spawns vaults that conform to `IVault`.
 * **PoolEscrowFactory**: Deploys dedicated `PoolEscrow` instances per pool.
-
----
 
 ## Vaults and Managers
 

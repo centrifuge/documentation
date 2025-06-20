@@ -7,13 +7,13 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 # On/Off Ramp Manager
 
-The **On/Off Ramp Manager** in the Centrifuge Protocol is a smart contract responsible for managing the flow of ERC20 assets between external wallets and the pool's internal balance sheet. It ensures secure, efficient, and compliant asset movement via well-defined onramping and offramping mechanisms.
+The On/Off Ramp Manager in the Centrifuge Protocol is a smart contract responsible for managing the flow of ERC20 assets between external wallets and the pool's internal balance sheet. It ensures secure, efficient, and compliant asset movement via well-defined onramping and offramping mechanisms.
 
-## Onramping (Deposits)
+## Onramping (deposits)
 
 Anyone can initiate the onramp process, provided the following conditions are met:
 
-* The asset is on the **approved token list**.
+* The asset is on the approved token list.
 * ERC20 tokens have already been transferred to the On/Off Ramp Manager's address.
 
 #### How it works
@@ -22,11 +22,9 @@ Anyone can initiate the onramp process, provided the following conditions are me
 2. Anyone (including the user or a third party) can then call the contract to finalize the onramp.
 3. The tokens are credited to the internal balance sheet of the pool.
 
----
+## Offramping (withdrawals)
 
-## Offramping (Withdrawals)
-
-Offramping is restricted to enhance security and compliance. Only **predefined relayers** can initiate a withdrawal to a **predefined recipient (offramp) account**.
+Offramping is restricted to enhance security and compliance. Only predefined relayers can initiate a withdrawal to a predefined recipient (offramp) account.
 
 #### Key features
 
