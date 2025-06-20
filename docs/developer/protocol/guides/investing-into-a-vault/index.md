@@ -16,7 +16,7 @@ This guide explains how to invest in and redeem from Centrifuge vaults, using bo
 
 Synchronous vaults process deposits and redemptions immediately within a single transaction.
 
-#### Depositing into a synchronous vault
+### Depositing into a synchronous vault
 
 To deposit assets (e.g., USDC) and receive vault shares:
 
@@ -29,11 +29,11 @@ vault.deposit(assets, receiver);
 
 This call mints shares in exchange for assets immediately.
 
-#### Redeeming from a synchronous vault
+### Redeeming from a synchronous vault
 
 Redemptions occur in two steps:
 
-##### Step 1: Submit a redemption request
+#### Step 1: Submit a redemption request
 
 ```solidity
 vault.requestRedeem(shares, user, user);
@@ -44,7 +44,7 @@ vault.requestRedeem(shares, user, user);
 
 This step locks in your redemption, signaling intent to redeem vault shares.
 
-##### Step 2: Claim redemption and withdraw assets
+#### Step 2: Claim redemption and withdraw assets
 
 After the redemption window has passed (depending on vault-specific rules):
 
@@ -59,7 +59,7 @@ vault.withdraw(vault.maxWithdraw(user), receiver, user);
 
 Asynchronous vaults batch and process deposits at set intervals. Deposits and withdrawals are split into pending and claimable phases.
 
-#### Requesting a deposit
+### Requesting a deposit
 
 Instead of depositing directly, you submit a request:
 
@@ -72,7 +72,7 @@ vault.requestDeposit(assets, user, user);
 
 Your request is queued and will be processed by the issuer of the pool.
 
-#### Claiming a deposit (minting shares)
+### Claiming a deposit (minting shares)
 
 After the deposit request is fulfilled:
 
@@ -83,7 +83,7 @@ vault.mint(vault.maxMint(user), user);
 * `vault.maxMint(user)` returns the number of shares available to mint based on your request.
 * `user`: Receives the minted vault shares.
 
-#### Redeeming (same as synchronous)
+### Redeeming (same as synchronous)
 
 Asynchronous vaults use the same redemption flow as synchronous ones:
 

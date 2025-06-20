@@ -56,13 +56,12 @@ function requestDeposit(
 
 This function allows the Merkle Proof Manager to extract and validate the `controller` and `owner` addresses, ensuring only allowed accounts are involved in the call.
 
-## Security and Control
+## Security
 
-The Merkle Proof Manager enables protocol governance or other trusted actors to:
+The Merkle Proof Manager enables pool managers to:
 
 * Predefine exactly which contract calls are permitted
 * Limit address-level permissions per call
 * Prevent strategists from executing unauthorized transactions
-* Include or exclude native gas tokens as needed
 
-This model ensures strategy-level control without compromising on extensibility. Strategists can operate within a predefined boundary—enforced cryptographically—ensuring funds remain safe from malicious redirection or misuse.
+This model ensures strategy-level control without compromising on extensibility.
