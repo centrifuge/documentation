@@ -16,11 +16,11 @@ We’ll walk through:
 
 ---
 
-## 🔄 Synchronous Vaults (e.g., `deJTRSY`)
+## Synchronous Vaults (e.g., `deJTRSY`)
 
 Synchronous vaults process deposits and redemptions immediately within a single transaction.
 
-### ✅ Depositing into a Synchronous Vault
+### Depositing into a Synchronous Vault
 
 To deposit assets (e.g., USDC) and receive vault shares:
 
@@ -35,7 +35,7 @@ This call mints shares in exchange for assets **immediately**.
 
 ---
 
-### 🔁 Redeeming from a Synchronous Vault
+### Redeeming from a Synchronous Vault
 
 Redemptions occur in two steps:
 
@@ -63,11 +63,11 @@ vault.withdraw(vault.maxWithdraw(user), receiver, user);
 
 ---
 
-## ⏳ Asynchronous Vaults (e.g., `JTRSY`)
+## Asynchronous Vaults (e.g., `JTRSY`)
 
 Asynchronous vaults batch and process deposits at set intervals. Deposits and withdrawals are split into **pending** and **claimable** phases.
 
-### 📝 Requesting a Deposit
+### Requesting a Deposit
 
 Instead of depositing directly, you submit a request:
 
@@ -80,7 +80,7 @@ vault.requestDeposit(assets, user, user);
 
 Your request is queued and will be processed by the issuer of the pool.
 
-### ✅ Claiming a Deposit (Minting Shares)
+### Claiming a Deposit (Minting Shares)
 
 After the deposit request is fulfilled:
 
@@ -93,7 +93,7 @@ vault.mint(vault.maxMint(user), user);
 
 ---
 
-### 🔁 Redeeming (Same as Synchronous)
+### Redeeming (Same as Synchronous)
 
 Asynchronous vaults use the **same redemption flow** as synchronous ones:
 
@@ -110,7 +110,7 @@ Asynchronous vaults use the **same redemption flow** as synchronous ones:
 
 ---
 
-## 🧠 Summary Table
+## Summary Table
 
 | Action          | Synchronous Vault       | Asynchronous Vault                        |
 | --------------- | ----------------------- | ----------------------------------------- |
