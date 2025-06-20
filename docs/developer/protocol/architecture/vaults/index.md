@@ -72,6 +72,6 @@ It builds on:
 
 Vaults in this module support **ERC-7575**, enabling:
 
-* **Multi-asset deposits and redemptions**: A single share token can be exchanged for multiple accepted collateral assets.
+* A single share token can be exchanged for multiple accepted collateral assets.
 * Greater composability and flexibility in portfolio management.
 * Enhanced user experience for diversified asset deposits.
