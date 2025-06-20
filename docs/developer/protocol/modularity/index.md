@@ -13,7 +13,6 @@ Below is an overview of the smart contracts of the Centrifuge Protocol and where
 
 ![](./images/modularity.png)
 
-
 ---
 
 ## Transfer Hooks
