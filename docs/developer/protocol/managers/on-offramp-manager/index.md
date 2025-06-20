@@ -11,14 +11,12 @@ The **On-Offramp Manager** in the Centrifuge Protocol is a smart contract respon
 
 ## Onramping (Deposits)
 
-**Permissionless Process**
-
 Anyone can initiate the onramp process, provided the following conditions are met:
 
 * The asset is on the **approved token list**.
 * ERC20 tokens have already been transferred to the On-Offramp Manager's address.
 
-### How It Works
+#### How it works
 
 1. A user transfers approved ERC20 tokens to the On-Offramp Manager contract.
 2. Anyone (including the user or a third party) can then call the contract to finalize the onramp.
@@ -28,11 +26,9 @@ Anyone can initiate the onramp process, provided the following conditions are me
 
 ## Offramping (Withdrawals)
 
-**Permissioned Process**
-
 Offramping is restricted to enhance security and compliance. Only **predefined relayers** can initiate a withdrawal to a **predefined recipient (offramp) account**.
 
-### Key Features
+#### Key features
 
 * Only authorized relayers can execute withdrawals.
 * Offramp accounts must be preconfigured and recognized by the pool.
