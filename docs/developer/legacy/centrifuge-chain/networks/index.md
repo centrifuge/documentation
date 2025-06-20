@@ -9,8 +9,6 @@ category: subpage
 
 Centrifuge operates three networks, each tailored for specific stages of development, testing, and deployment. The native assets across all networks have 18 decimals of precision.
 
-For instructions on running a node for any of the three networks, please refer to the [relevant documentation](https://docs.centrifuge.io/developer/guides/running-a-centrifuge-node/)
-
 | **Feature**             | **Centrifuge**                                                                                                     | **Altair**                                                                                                     | **Demo**                                                                                                                |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | --- |
 | **Network Type**        | Mainnet                                                                                                            | Mainnet (Canary)                                                                                               | Testnet                                                                                                                 |
