@@ -50,7 +50,7 @@ vault.requestRedeem(shares, user, user);
 
 This step **locks in your redemption**, signaling intent to redeem vault shares.
 
-#### Step 2: Finalize redemption and withdraw assets
+#### Step 2: Claim redemption and withdraw assets
 
 After the redemption window has passed (depending on vault-specific rules):
 
@@ -80,7 +80,7 @@ vault.requestDeposit(assets, user, user);
 
 Your request is queued and will be processed by the issuer of the pool.
 
-### ✅ Finalizing a Deposit (Minting Shares)
+### ✅ Claiming a Deposit (Minting Shares)
 
 After the deposit request is fulfilled:
 
@@ -102,19 +102,11 @@ Asynchronous vaults use the **same redemption flow** as synchronous ones:
    ```solidity
    vault.requestRedeem(shares, user, user);
    ```
-2. Finalize withdrawal:
+2. Claim redemption:
 
    ```solidity
    vault.withdraw(vault.maxWithdraw(user), receiver, user);
    ```
-
----
-
-## 🔐 Permissions & Security Notes
-
-* Ensure your wallet or smart contract has the necessary **ERC-20 allowances** set for the vault to pull funds on `deposit` or `requestDeposit`.
-* Redemptions and minting **may require waiting** for the issuer to fulfill the request.
-* Always check vault-specific parameters like **minimums**, **fees**, or **batch periods**.
 
 ---
 
@@ -124,4 +116,4 @@ Asynchronous vaults use the **same redemption flow** as synchronous ones:
 | --------------- | ----------------------- | ----------------------------------------- |
 | Deposit         | `vault.deposit()`       | `vault.requestDeposit()` → `vault.mint()` |
 | Request Redeem  | `vault.requestRedeem()` | Same as synchronous                       |
-| Finalize Redeem | `vault.withdraw()`      | Same as synchronous                       |
+| Claim Redeem    | `vault.withdraw()`      | Same as synchronous                       |
