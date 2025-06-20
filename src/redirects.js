@@ -259,7 +259,11 @@ const redirects = [
   },
   {
     from: "/build/guides/",
-    to: "/developer/guides/investing-into-a-liquidity-pool/",
+    to: "/developer/guides/investing-into-a-vault/",
+  },
+  {
+    from: "/developer/guides/investing-into-a-liquidity-pool/",
+    to: "/developer/guides/investing-into-a-vault/",
   },
   {
     from: "/build/p2p-node/",
