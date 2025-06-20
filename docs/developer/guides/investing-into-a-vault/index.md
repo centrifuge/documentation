@@ -1,26 +1,24 @@
 ---
 id: investing-into-a-vault
-title: Investing into a Vault
+title: Investing into a vault
 category: subpage
 contributors: 
 ---
 
-# Investing into a Vault
+# Investing into a vault
 
-This guide explains how to invest in and redeem from **Centrifuge vaults**, using both **synchronous** and **asynchronous** vault types. Centrifuge vaults are on-chain investment vehicles that allow you to gain exposure to real-world assets like U.S. Treasury bills via tokenized shares.
+This guide explains how to invest in and redeem from Centrifuge vaults, using both synchronous and asynchronous vault types. Centrifuge vaults are on-chain investment vehicles that allow you to gain exposure to real-world assets like U.S. Treasury bills via tokenized shares.
 
 We’ll walk through:
 
-* How to **deposit** and **redeem** in a **synchronous vault** (e.g., `deJTRSY` for T-bills).
-* How to interact with an **asynchronous vault** (e.g., `JTRSY`), which operates in two distinct phases for deposits and redemptions.
+* How to deposit and redeem in a synchronous vault (e.g., `deJTRSY` for T-bills).
+* How to interact with an asynchronous vault (e.g., `JTRSY`), which operates in two distinct phases for deposits and redemptions.
 
----
-
-## Synchronous Vaults (e.g., `deJTRSY`)
+## Synchronous vaults (e.g., `deJTRSY`)
 
 Synchronous vaults process deposits and redemptions immediately within a single transaction.
 
-### Depositing into a Synchronous Vault
+#### Depositing into a synchronous vault
 
 To deposit assets (e.g., USDC) and receive vault shares:
 
@@ -31,15 +29,13 @@ vault.deposit(assets, receiver);
 * `assets`: Amount of underlying asset to deposit (e.g., 1000 \* 1e6 for 1000 USDC).
 * `receiver`: Address to receive the vault shares.
 
-This call mints shares in exchange for assets **immediately**.
+This call mints shares in exchange for assets immediately.
 
----
-
-### Redeeming from a Synchronous Vault
+#### Redeeming from a synchronous vault
 
 Redemptions occur in two steps:
 
-#### Step 1: Submit a redemption request
+##### Step 1: Submit a redemption request
 
 ```solidity
 vault.requestRedeem(shares, user, user);
@@ -48,9 +44,9 @@ vault.requestRedeem(shares, user, user);
 * `shares`: Amount of shares to redeem.
 * The second and third `user` arguments specify both the owner and the receiver of the redemption claim.
 
-This step **locks in your redemption**, signaling intent to redeem vault shares.
+This step locks in your redemption, signaling intent to redeem vault shares.
 
-#### Step 2: Claim redemption and withdraw assets
+##### Step 2: Claim redemption and withdraw assets
 
 After the redemption window has passed (depending on vault-specific rules):
 
@@ -61,13 +57,11 @@ vault.withdraw(vault.maxWithdraw(user), receiver, user);
 * `vault.maxWithdraw(user)` computes the maximum amount of assets that can now be withdrawn.
 * `receiver`: Address to receive the underlying asset (e.g., USDC).
 
----
+## Asynchronous vaults (e.g., `JTRSY`)
 
-## Asynchronous Vaults (e.g., `JTRSY`)
+Asynchronous vaults batch and process deposits at set intervals. Deposits and withdrawals are split into pending and claimable phases.
 
-Asynchronous vaults batch and process deposits at set intervals. Deposits and withdrawals are split into **pending** and **claimable** phases.
-
-### Requesting a Deposit
+#### Requesting a deposit
 
 Instead of depositing directly, you submit a request:
 
@@ -80,7 +74,7 @@ vault.requestDeposit(assets, user, user);
 
 Your request is queued and will be processed by the issuer of the pool.
 
-### Claiming a Deposit (Minting Shares)
+#### Claiming a deposit (minting shares)
 
 After the deposit request is fulfilled:
 
@@ -91,11 +85,9 @@ vault.mint(vault.maxMint(user), user);
 * `vault.maxMint(user)` returns the number of shares available to mint based on your request.
 * `user`: Receives the minted vault shares.
 
----
+#### Redeeming (same as synchronous)
 
-### Redeeming (Same as Synchronous)
-
-Asynchronous vaults use the **same redemption flow** as synchronous ones:
+Asynchronous vaults use the same redemption flow as synchronous ones:
 
 1. Request to redeem:
 
@@ -107,13 +99,3 @@ Asynchronous vaults use the **same redemption flow** as synchronous ones:
    ```solidity
    vault.withdraw(vault.maxWithdraw(user), receiver, user);
    ```
-
----
-
-## Summary Table
-
-| Action          | Synchronous Vault       | Asynchronous Vault                        |
-| --------------- | ----------------------- | ----------------------------------------- |
-| Deposit         | `vault.deposit()`       | `vault.requestDeposit()` → `vault.mint()` |
-| Request Redeem  | `vault.requestRedeem()` | Same as synchronous                       |
-| Claim Redeem    | `vault.withdraw()`      | Same as synchronous                       |
