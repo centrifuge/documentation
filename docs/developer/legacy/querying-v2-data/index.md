@@ -1,11 +1,11 @@
 ---
-id: querying-data
-title: Querying data
+id: querying-v2-data
+title: Querying V2 data
 category: subpage
 contributors: <NunoAlexandre:nuno@k-f.co>
 ---
 
-# Querying data
+# Querying V2 data
 
 You can follow the official GraphQL guide [here](https://graphql.org/learn/) to learn more about GraphQL, how it works, and how to use it:
 

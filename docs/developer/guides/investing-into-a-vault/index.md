@@ -7,9 +7,7 @@ contributors:
 
 # Investing into a vault
 
-This guide explains how to invest in and redeem from Centrifuge vaults, using both synchronous and asynchronous vault types. Centrifuge vaults are on-chain investment vehicles that allow you to gain exposure to real-world assets like U.S. Treasury bills via tokenized shares.
-
-We’ll walk through:
+This guide explains how to invest in and redeem from Centrifuge vaults, using both synchronous and asynchronous vault types. We’ll walk through:
 
 * How to deposit and redeem in a synchronous vault (e.g., `deJTRSY` for T-bills).
 * How to interact with an asynchronous vault (e.g., `JTRSY`), which operates in two distinct phases for deposits and redemptions.

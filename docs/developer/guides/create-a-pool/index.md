@@ -7,19 +7,19 @@ contributors:
 
 # Create a pool
 
-Centrifuge enables the tokenization and management of real-world assets on multiple chains. This guide walks you through the process of creating a pool, launching share classes, and deploying share tokens using the Centrifuge protocol.
+Centrifuge enables the tokenization and management of pools on multiple chains. This guide walks you through the process of creating a pool, launching share classes, and deploying share tokens using the Centrifuge protocol.
 
 ## Core concepts
 
-### Pool
+#### Pool
 
 A Pool represents a distinct investment product or strategy. Each pool can exist across multiple chains, identified globally by a unique `poolId`.
 
-### Share class
+#### Share class
 
 Each pool can have multiple share classes, each with its own share token. These tokens represent claims to the underlying assets or yield and can be permissioned or permissionless.
 
-### Share token
+#### Share token
 
 Each share class is deployed as a token (ERC-20 compatible) on every supported network. These tokens have a transfer hook to enable permission logic.
 
@@ -60,7 +60,7 @@ This can include information to be shown in the UI.
 
 ### 4. Notify pool registration
 
-Once deployed, the pool must notify the other networks of its existence. This should be called for every `centrifugeId` where the pool is going to be launched.
+Once created, the pool must notify the other networks of its existence. This should be called for every `centrifugeId` where the pool is going to be launched.
 
 ```solidity
 hub.notifyPool(poolId, centrifugeId);
@@ -88,12 +88,14 @@ hub.addShareClass(poolId, "Tokenized MMF", "MMF", bytes32(bytes("1")));
 
 * `"Tokenized MMF"`: Display name of the share class
 * `"MMF"`: Token symbol
-* `bytes32(bytes("1"))`: Custom metadata (e.g., tranche ID or version)
+* `bytes32(bytes("1"))`: Salt, to be used for deterministic deployments and vanity addresses. Needs to be globally unique.
 
-### 3. Notify and configure the share token
+### 3. Notify the share token
 
-Finalize the share class by notifying it with the `centrifugeId` and specifying a transfer hook:
+Once created, the pool must notify the other networks of each share class. This should be called for every `centrifugeId` where the share token is going to be launched.
 
 ```solidity
 hub.notifyShareClass(poolId, scId, centrifugeId, bytes32(bytes20(hook)));
 ```
+
+This will deploy the ERC20 share token.
