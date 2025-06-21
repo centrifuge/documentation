@@ -9,12 +9,12 @@ contributors:
 
 This guide explains how to invest in and redeem from Centrifuge vaults, using both synchronous and asynchronous vault types. We’ll walk through:
 
-* How to deposit and redeem in a synchronous vault (e.g., `deJTRSY` for T-bills).
+* How to deposit and redeem in a synchronous deposit vault (e.g., `deJTRSY` for T-bills).
 * How to interact with an asynchronous vault (e.g., `JTRSY`), which operates in two distinct phases for deposits and redemptions.
 
-## Synchronous vaults (e.g., `deJTRSY`)
+## Synchronous deposit vaults (e.g., `deJTRSY`)
 
-Synchronous vaults process deposits and redemptions immediately within a single transaction.
+Synchronous vaults process deposits immediately within a single transaction, and processes redemptions asynchronously.
 
 ### Depositing into a synchronous vault
 
