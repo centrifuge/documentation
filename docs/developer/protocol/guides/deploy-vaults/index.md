@@ -9,7 +9,7 @@ contributors:
 
 The Centrifuge protocol supports deploying and managing different types of vaults that facilitate investment into real-world assets. Vaults are associated with a specific pool (`poolId`), share class (`scId`), asset (`assetId`), and network (`centrifugeId`). The protocol supports both asynchronous and synchronous vault configurations, and relies on standardized interfaces to ensure cross-chain operability and compatibility with multiple asset types.
 
-## Vault types supported
+## Overview
 
 ### Asynchronous vaults
 
@@ -19,11 +19,11 @@ Asynchronous vaults are fully request-based and follow the ERC-7540 standard. Th
 
 These vaults follow a hybrid model using both ERC-4626 and ERC-7540. Deposits are executed instantly using ERC-4626 behavior, allowing users to receive shares immediately. However, redemptions are handled asynchronously through ERC-7540, using the Hub to queue and manage the withdrawal requests.
 
-## Support for multiple investment assets
+### Support for multiple investment assets
 
 The protocol supports ERC-7575 to allow multiple vaults with different investment assets to buy a single share token.
 
-## Initial deployment steps
+## Deploying vaults
 
 Before deploying a vault, the associated share token must be deployed on the target network. This token represents the share class (`scId`) that investors receive when interacting with the vault.
 
@@ -63,7 +63,7 @@ Once the manager is configured, the vault is deployed using:
 hub.updateVault(poolId, scId, assetId, address(syncDepositVaultFactory).toBytes32(), VaultUpdateKind.DeployAndLink, 0);
 ```
 
-## Share price initialization
+### Share price initialization
 
 After the vault is deployed, it cannot accept investments until the share price has been updated at least once. This ensures that the value of shares can be accurately calculated based on the current value of underlying assets.
 

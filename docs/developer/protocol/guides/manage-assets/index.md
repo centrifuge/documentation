@@ -19,14 +19,14 @@ Call the following method on the Hub, to set a balance sheet manager, for the `c
 hub.updateBalanceSheetManager(centrifugeId, poolId, manager.toBytes32(), true);
 ```
 
-### Parameters
+#### Parameters
 
 * `centrifugeId`: The network identifier.
 * `poolId`: The pool ID.
 * `manager.toBytes32()`: The manager’s address, converted to `bytes32`.
 * `true`: Indicates that this manager is being added (use `false` to remove a manager).
 
-### Supported manager types:
+#### Supported manager types
 
 * **Gnosis Safe** or **Fireblocks wallet**: For direct control by the manager of the pool.
 * [**On/Off Ramp Manager**](/developer/protocol/managers/on-offramp-manager/): Restricts asset flows to a set of predefined whitelisted addresses, suitable for compliance-sensitive use cases.
@@ -40,7 +40,7 @@ Once a balance sheet manager is configured, assets can be withdrawn manually. He
 balanceSheet.withdraw(poolId, scId, address(usdc), 0, receiver, amount);
 ```
 
-### Parameters
+#### Parameters
 
 * `poolId`: ID of the pool from which to withdraw.
 * `scId`: ID of the share class on which to represent the withdrawn assets.
@@ -55,14 +55,12 @@ balanceSheet.withdraw(poolId, scId, address(usdc), 0, receiver, amount);
 
 To deposit assets into a pool, you must first approve the `balanceSheet` contract to spend the tokens. Then call the `deposit` function.
 
-### Example: Depositing USDC
-
 ```solidity
 usdc.approve(balanceSheet, amount);
 balanceSheet.deposit(poolId, scId, address(usdc), 0, amount);
 ```
 
-### Parameters
+#### Parameters
 
 * `poolId`: ID of the destination pool.
 * `scId`: ID of the share class on which to represent the deposited assets.
