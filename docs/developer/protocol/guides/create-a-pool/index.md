@@ -86,11 +86,11 @@ Add a new share class with a name, symbol, and optional metadata:
 hub.addShareClass(poolId, "Tokenized MMF", "MMF", bytes32(bytes("1")));
 ```
 
-* `"Tokenized MMF"`: Display name of the share class
-* `"MMF"`: Token symbol
+* `"Tokenized MMF"`: ERC20 token name
+* `"MMF"`: ERC20 token symbol
 * `bytes32(bytes("1"))`: Salt, to be used for deterministic deployments and vanity addresses. Needs to be globally unique.
 
-### 3. Notify the share token
+### 3. Deploy the share token(s)
 
 Once created, the pool must notify the other networks of each share class. This should be called for every `centrifugeId` where the share token is going to be launched.
 
