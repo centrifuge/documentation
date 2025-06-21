@@ -9,47 +9,47 @@ const redirects = [
   },
   {
     from: "/cent-node/getting-started/chain-account/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/further-reading/disclaimer/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/further-reading/protocol-limitations/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/configuration/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/geth-account/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/install-cent-node/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/ping/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/tools/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/overview/introduction/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/overview/protocol-architecture/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/usage/rest-api-examples/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
 
   // Chain redirects
@@ -71,7 +71,7 @@ const redirects = [
   },
   {
     from: "/chain/get-started/run-node/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/chain/get-started/validate/",
@@ -87,7 +87,7 @@ const redirects = [
   },
   {
     from: "/chain/overview/introduction/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
 
   // Tinlake redirects
@@ -259,11 +259,11 @@ const redirects = [
   },
   {
     from: "/build/guides/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/developer/protocol/guides/investing-into-a-liquidity-pool/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/build/p2p-node/",
@@ -271,7 +271,7 @@ const redirects = [
   },
   {
     from: "/build/nfts/",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/build/bridge/",
@@ -323,7 +323,7 @@ const redirects = [
   },
   {
     from: "/build",
-    to: "/developer/protocol/guides/investing-into-a-vault/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
 ];
 
