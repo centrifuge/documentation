@@ -27,14 +27,19 @@ Each share class is deployed as a token (ERC-20 compatible) on every supported n
 
 ### 1. Derive the unique pool ID
 
-To deploy a pool across different networks, use the `centrifugeId` as the global identifier and derive a network-specific `PoolId`.
+To deploy a pool across different networks, choose which network you want to use as the Hub network. This will be where you create the pool, manage permissions, and control all other networks.
+
+Use the `centrifugeId` as the network identifier of the Hub chain and derive a network-specific `PoolId`.
+
+
 
 ```solidity
 PoolId poolId = hubRegistry.poolId(centrifugeId, 1); // Derive a unique PoolId using centrifugeId and a local identifier
 ```
 
-* `centrifugeId`: A unique global ID for the pool (same across chains).
+* `centrifugeId`: [View all possible centrifuge IDs here](/developer/protocol/deployments/#centrifuge-ids)
 * `1`: A local identifier.
+
 
 ### 2. Create the pool
 
