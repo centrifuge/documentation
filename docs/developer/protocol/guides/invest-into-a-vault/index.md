@@ -1,11 +1,11 @@
 ---
-id: investing-into-a-vault
-title: Investing into a vault
+id: invest-into-a-vault
+title: Invest into a vault
 category: subpage
 contributors: 
 ---
 
-# Investing into a vault
+# Invest into a vault
 
 This guide explains how to invest in and redeem from Centrifuge vaults, using both synchronous and asynchronous vault types. We’ll walk through:
 
