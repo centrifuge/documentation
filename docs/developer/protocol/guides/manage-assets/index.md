@@ -28,7 +28,7 @@ hub.updateBalanceSheetManager(centrifugeId, poolId, manager.toBytes32(), true);
 
 ### Supported manager types:
 
-* **Gnosis Safe** or **Fireblocks wallet**: For direct manual control by custodians or institutional operators.
+* **Gnosis Safe** or **Fireblocks wallet**: For direct control by the manager of the pool.
 * [**On/Off Ramp Manager**](/developer/protocol/managers/on-offramp-manager/): Restricts asset flows to a set of predefined whitelisted addresses, suitable for compliance-sensitive use cases.
 * [**Merkle Proof Manager**](/developer/protocol/managers/merkle-proof-manager/): Allows integration with third-party protocols and enables permissioned access via Merkle proofs.
 
