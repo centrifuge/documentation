@@ -99,6 +99,12 @@ hub.addShareClass(poolId, "Tokenized MMF", "MMF", bytes32(bytes("1")));
 
 Once created, the pool must notify the other networks of each share class. This should be called for every `centrifugeId` where the share token is going to be launched.
 
+For each token, choose the hook that you want:
+- **`fullRestrictions`**: any user needs to be added to the memberlist for every deposit/redeem request.
+- **`redemptionRestrictions`**: any user needs to be added to the memberlist only for redeem requests.
+- **`freezeOnly`**: users don't need to be added for requests, but it is possible to freeze users.
+- **`address(0)`**: token is fully permissionless.
+
 ```solidity
 hub.notifyShareClass(poolId, scId, centrifugeId, bytes32(bytes20(hook)));
 ```
