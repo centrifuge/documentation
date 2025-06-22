@@ -58,6 +58,8 @@ All deposit and redeem requests move through five stages:
 * **Fulfilled**: The corresponding vault is informed that the request has been processed. The user can now claim their shares (for deposits) or assets (for redemptions).
 * **Claimed**: The user has successfully claimed their resulting assets or shares.
 
+![](./images/request-stages.png)
+
 ### Approving a request
 
 Once a request is pending, the Hub manager must approve it. This is done by calling the appropriate function on the Hub:
