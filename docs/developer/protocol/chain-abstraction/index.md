@@ -9,9 +9,9 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 The Centrifuge protocol is designed to scale tokenized assets across multiple blockchains using a hub-and-spoke architecture. This model solves a fundamental limitation of traditional tokenization protocols: the inability to efficiently operate across chains.
 
-## The problem with traditional multi-chain tokenization
+## The problem with isolated multi-chain tokenization
 
-In legacy designs, each token is issued independently on each network. That means if a pool wants to make its asset available across Ethereum, Base, and Arbitrum, it must issue three separate tokens—one on each chain. Each version of the token has to be deployed, managed, and reconciled separately.
+In legacy designs, each token is issued on each network, fully isolated. That means if a pool wants to make its asset available across Ethereum, Base, and Arbitrum, it must issue three separate tokens—one on each chain. Each version of the token has to be deployed, managed, and reconciled separately.
 
 This model introduces operational overhead:
 
