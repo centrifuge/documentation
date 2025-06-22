@@ -38,29 +38,29 @@ To make this possible, Centrifuge includes a robust messaging system between the
 
 ### Multi-message aggregation
 
-To increase the security of cross-chain communication, the protocol aggregates multiple messages into a single payload. This payload is then distributed along with multiple independent proofs, allowing verification through more than one interoperability provider. This reduces reliance on any single provider and improves resilience against downtime, censorship, or fraud. By aggregating messages, Centrifuge ensures that cross-chain actions remain atomic and consistent.
+To increase the security of cross-chain communication, the protocol integrates multiple interoperability providers. Each message is sent along with multiple independent proofs, allowing verification through more than one interoperability provider. This reduces the risk of a single interoperability provider impacting the security of the system.
 
-### Built-in retries and repayment
+### Built-in retries and repayments
 
-Cross-chain messaging can fail due to gas volatility, endpoint downtime, or validator issues. The Centrifuge protocol addresses this with:
+Message execution across multiple chains can fail for several issues. To reduce the overhead, the protocol implements:
 
+* Built-in repayment method for messages that were underfunded with gas
 * Automatic retry logic for failed messages
-* Built-in repayment flows for messages that were underfunded with gas
 
-This ensures that cross-chain actions are reliably completed without requiring manual intervention from the pool manager or end user.
+This ensures that cross-chain actions are reliably executed without requiring manual intervention from the pool manager or end user.
 
 ### Automatic batching of messages
 
-Centrifuge automatically groups multiple messages together whenever possible, whether they come from vault operations, redemptions, or token transfers. This reduces the total number of relayed messages and significantly lowers gas costs.
+Centrifuge automatically groups multiple messages together whenever possible, into a single payload and set of proofs. This reduces the total number of relayed messages and significantly lowers gas costs.
 
-Batching is handled by the protocol itself, requiring no configuration from pool deployers. It is especially valuable for high-frequency use cases like redemptions, subscriptions, and rewards.
+Batching is handled by the protocol itself, requiring no configuration from pool deployers.
 
-### User subsidy and automatic gas token relaying
+### Automatic gas subsidies
 
-The protocol also includes economic support features for pool users:****
+The protocol also includes automatic gas subsidies for users of a pool, such that:
 
+* Gas payments can be subsidized or reimbursed by the pool manager
 * Pool users do not need to hold native gas tokens on each spoke chain
 * Centrifuge relays gas tokens automatically between chains to fund transactions
-* Gas payments can be subsidized or reimbursed by the protocol for specific actions
 
 These features remove the burden of managing gas on multiple chains and create a seamless user experience—even when interacting with vaults across different networks.
