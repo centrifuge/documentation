@@ -1,11 +1,11 @@
 ---
-id: multi-chain-design
-title: Multi-chain design
+id: chain-abstraction
+title: Chain abstraction
 category: subpage
 contributors: <Jeroen:jeroen@k-f.co>
 ---
 
-# Multi-chain design
+# Chain abstraction
 
 The Centrifuge protocol is designed to scale tokenized assets across multiple blockchains using a hub-and-spoke architecture. This model solves a fundamental limitation of traditional tokenization protocols: the inability to efficiently operate across chains.
 
@@ -57,7 +57,7 @@ Batching is handled by the protocol itself, requiring no configuration from pool
 
 ### User subsidy and automatic gas token relaying
 
-The protocol also includes economic support features for pool users:
+The protocol also includes economic support features for pool users:****
 
 * Pool users do not need to hold native gas tokens on each spoke chain
 * Centrifuge relays gas tokens automatically between chains to fund transactions
