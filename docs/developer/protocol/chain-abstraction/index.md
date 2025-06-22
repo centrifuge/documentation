@@ -18,7 +18,7 @@ This model introduces operational overhead:
 * Each chain requires its own custodian setup or self-custody wallet.
 * Gas tokens must be managed on every chain.
 * Blockchain endpoints must be monitored and maintained.
-* Vault accounting becomes fragmented and complex.
+* Token accounting becomes fragmented and complex.
 
 This approach does not scale in a multi-chain world, where asset issuers increasingly seek access to liquidity across many L1s and L2s. Managing each chain as a silo creates complexity and risk, making cross-chain tokenization inefficient and brittle.
 
@@ -40,15 +40,6 @@ To make this possible, Centrifuge includes a robust messaging system between the
 
 To increase the security of cross-chain communication, the protocol integrates multiple interoperability providers. Each message is sent along with multiple independent proofs, allowing verification through more than one interoperability provider. This reduces the risk of a single interoperability provider impacting the security of the system.
 
-### Built-in retries and repayments
-
-Message execution across multiple chains can fail for several issues. To reduce the overhead, the protocol implements:
-
-* Built-in repayment method for messages that were underfunded with gas
-* Automatic retry logic for failed messages
-
-This ensures that cross-chain actions are reliably executed without requiring manual intervention from the pool manager or end user.
-
 ### Automatic batching of messages
 
 Centrifuge automatically groups multiple messages together whenever possible, into a single payload and set of proofs. This reduces the total number of relayed messages and significantly lowers gas costs.
@@ -64,3 +55,12 @@ The protocol also includes automatic gas subsidies for users of a pool, such tha
 * Centrifuge relays gas tokens automatically between chains to fund transactions
 
 These features remove the burden of managing gas on multiple chains and create a seamless user experience—even when interacting with vaults across different networks.
+
+### Built-in retries and repayments
+
+Message execution across multiple chains can fail for several issues. To reduce the overhead, the protocol implements:
+
+* Built-in repayment method for messages that were underfunded with gas
+* Automatic retry logic for failed messages
+
+This ensures that cross-chain actions are reliably executed without requiring manual intervention from the pool manager or end user.
