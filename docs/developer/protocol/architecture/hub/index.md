@@ -13,7 +13,7 @@ The Hub module in the Centrifuge Protocol serves as the core orchestration layer
 
 ## Contracts
 
-It contains five smart contracts:
+It contains six smart contracts:
 
 ### Hub
 
@@ -23,6 +23,13 @@ It contains five smart contracts:
   * Aggregates and exposes all core pool functions in a single interface.
   * Allows pools to assign hub managers — trusted entities with full permissions over the pool lifecycle.
   * Coordinates pool creation, share class setup, metadata updates, and notification hooks.
+
+### HubHelpers
+
+* **Description**: Extension of the `Hub`.
+* **Responsibilities**:
+
+  * Additional functionality for the `Hub` contract.
 
 ### HubRegistry
 
