@@ -53,12 +53,14 @@ Each request is tracked in a central contract called the `ShareClassManager`.
 All deposit and redeem requests move through five stages:
 
 * **Pending**: The initial state after submission by the user. The request has not yet been approved.
-* **Approved**: The Hub manager approves the request. For deposits, this allows Balance Sheet Managers to withdraw the requested assets and allocate them as needed. At this stage, the request is not yet priced.
+* **Approved**: The Hub manager approves the request. For deposits, this allows Balance Sheet Managers to withdraw the requested assets and allocate them as needed. At this stage, the request is not yet priced. The request can not be cancelled anymore once approved.
 * **Issued/revoked**: A share price is assigned. For deposits, shares are issued to the user; for redemptions, shares are revoked in return for assets.
 * **Fulfilled**: The corresponding vault is informed that the request has been processed. The user can now claim their shares (for deposits) or assets (for redemptions).
 * **Claimed**: The user has successfully claimed their resulting assets or shares.
 
 ![](./images/request-stages.png)
+
+The separation of approval and issuance/revocation is to be used for cases where the price of the execution depends on buying or selling underlying assets, which can only happen after the request is fulfilled and the assets can be withdrawn and the request cannot be cancelled anymore.
 
 ### Approving a request
 
