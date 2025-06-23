@@ -15,7 +15,9 @@ Using protocol-level chain abstraction, tokenization issuers access liquidity ac
 
 ## Protocol
 
-Centrifuge V3 operates on a hub-and-spoke model. Each pool chooses a single hub chain, and can tokenize and manage liquidity on many spoke chains.
+Centrifuge V3 operates on a [hub-and-spoke model](/developer/protocol/chain-abstraction/). Each pool chooses a single hub chain, and can tokenize and manage liquidity on many spoke chains.
+
+![](./images/overview.png)
 
 ### Centrifuge Hub
 * Manage and control your tokens from a single chain of your choice
@@ -26,33 +28,3 @@ Centrifuge V3 operates on a hub-and-spoke model. Each pool chooses a single hub 
 * Tokenize ownership using ERC-20 — customizable with modules of your choice
 * Distribute to DeFi with ERC-4626 and ERC-7540 vaults
 * Support 1:1 token transfers between chains using burn-and-mint process
-
-## Project structure
-```
-.
-├── deployments
-├── docs
-│  └── audits
-├── script
-├── src
-│  ├── misc
-│  ├── common
-│  ├── hub
-│  ├── spoke
-│  ├── vaults
-│  └── hooks
-├── test
-├── foundry.toml
-└── README.json
-```
-- `deployments` contains the deployment information of the supported chains
-- `docs` documentation, diagrams and security audit reports
-- `script` deployment scripts used to deploy a part or the full system, along with adapters.
-- `src` main source containing all the contrats. Look for the interfaces and libraries inside of each module.
-  - `misc` generic contracts
-  - `common` common code to `hub` and `spoke`
-  - `hub` code related to Centrifuge Hub
-  - `spoke` code related to Centrifuge Spoke
-  - `vaults` extension of Centrifuge Spoke, for ERC-4626 and ERC-7540 vaults
-  - `hooks` extension of Centrifuge Spoke, for implementing transfer hooks
-- `test` cotains all tests: unitary test, integration test per module, and end-to-end integration tests
