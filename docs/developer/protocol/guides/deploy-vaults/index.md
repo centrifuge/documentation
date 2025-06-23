@@ -39,14 +39,14 @@ For asynchronous vaults, the `AsyncRequestManager` contract must be configured i
 The configuration is done using the following commands:
 
 ```solidity
-hub.setRequestManager(poolId, scId, assetId, address(asyncRequestManager).toBytes32());
-hub.updateBalanceSheetManager(centrifugeId, poolId, address(asyncRequestManager).toBytes32(), true);
+hub.setRequestManager(poolId, scId, assetId, bytes32(bytes20(address(asyncRequestManager))));
+hub.updateBalanceSheetManager(centrifugeId, poolId, bytes32(bytes20(address(asyncRequestManager))), true);
 ```
 
 After setup, the asynchronous vault can be deployed with:
 
 ```solidity
-hub.updateVault(poolId, scId, assetId, address(asyncVaultFactory).toBytes32(), VaultUpdateKind.DeployAndLink, 0);
+hub.updateVault(poolId, scId, assetId, bytes32(bytes20(address(asyncVaultFactory))), VaultUpdateKind.DeployAndLink, 0);
 ```
 
 #### Synchronous deposit vaults
@@ -54,13 +54,13 @@ hub.updateVault(poolId, scId, assetId, address(asyncVaultFactory).toBytes32(), V
 For synchronous vaults, the `SyncManager` must be set as a Balance Sheet Manager, which allows it to handle asset transfers as part of deposit execution:
 
 ```solidity
-hub.updateBalanceSheetManager(centrifugeId, poolId, address(syncManager).toBytes32(), true);
+hub.updateBalanceSheetManager(centrifugeId, poolId, bytes32(bytes20(address(syncManager))), true);
 ```
 
 Once the manager is configured, the vault is deployed using:
 
 ```solidity
-hub.updateVault(poolId, scId, assetId, address(syncDepositVaultFactory).toBytes32(), VaultUpdateKind.DeployAndLink, 0);
+hub.updateVault(poolId, scId, assetId, bytes32(bytes20(address(syncDepositVaultFactory))), VaultUpdateKind.DeployAndLink, 0);
 ```
 
 ### Share price initialization

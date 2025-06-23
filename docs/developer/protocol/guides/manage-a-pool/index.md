@@ -89,11 +89,11 @@ This step locks in the value of the transaction by applying the calculated share
 Once shares are issued or revoked, each vault must be notified so that individual users can claim their resulting assets or shares. This is done per user using the following calls:
 
 ```solidity
-uint32 maxClaims = shareClassManager.maxDepositClaims(scId, user.toBytes32(), assetId);
-hub.notifyDeposit(poolId, scId, assetId, user.toBytes32(), maxClaims);
+uint32 maxClaims = shareClassManager.maxDepositClaims(scId, bytes32(bytes20(user)), assetId);
+hub.notifyDeposit(poolId, scId, assetId, bytes32(bytes20(user)), maxClaims);
 
-uint32 maxClaims = shareClassManager.maxRedeemClaims(scId, user.toBytes32(), assetId);
-hub.notifyRedeem(poolId, scId, assetId, user.toBytes32(), maxClaims)
+uint32 maxClaims = shareClassManager.maxRedeemClaims(scId, bytes32(bytes20(user)), assetId);
+hub.notifyRedeem(poolId, scId, assetId, bytes32(bytes20(user)), maxClaims)
 ```
 
 After this, the request is marked as fulfilled, and the user can proceed to claim.
