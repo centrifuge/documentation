@@ -25,7 +25,9 @@ hub.updateSharePrice(poolId, scId, sharePrice);
 
 The `sharePrice` must be denominated as an 18 decimal fixed point integer.
 
-> **On-chain pricing**: Currently, the pricing mechanism is intended to be provided by an off-chain computation. In the future, on-chain price calculations will be implemented, using the holdings and double-entry bookkeeping accounting mechanism of the Hub.
+:::info[On-chain pricing]
+Currently, the pricing mechanism is intended to be provided by an off-chain computation. In the future, on-chain price calculations will be implemented, using the holdings and double-entry bookkeeping accounting mechanism of the Hub.
+:::
 
 ### Pushing to price oracles
 
@@ -61,6 +63,11 @@ All deposit and redeem requests move through five stages:
 ![](./images/request-stages.png)
 
 The separation of approval and issuance/revocation is to be used for cases where the price of the execution depends on buying or selling underlying assets, which can only happen after the request is fulfilled and the assets can be withdrawn and the request cannot be cancelled anymore.
+
+:::info[ERC-4626 vaults]
+For synchronous deposit vaults using ERC-4626, asset deposits skip all five stages, and shares are immediately minted into the user's wallet.
+:::
+
 
 ### Approving a request
 

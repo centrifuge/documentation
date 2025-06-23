@@ -49,7 +49,9 @@ balanceSheet.withdraw(poolId, scId, address(usdc), 0, receiver, amount);
 * `receiver`: Address that will receive the withdrawn funds.
 * `amount`: Amount of the token to withdraw.
 
-> Token support: The balance sheet supports both ERC20 and ERC6909 tokens. The token type is specified using the numeric identifier — use `0` for ERC20 and a non-zero `tokenId` for ERC6909.
+:::info[Token support]
+The balance sheet supports both ERC20 and ERC6909 tokens. The token type is specified using the numeric identifier — use `0` for ERC20 and a non-zero `tokenId` for ERC6909.
+:::
 
 ## Depositing assets
 
