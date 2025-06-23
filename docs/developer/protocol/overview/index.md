@@ -28,3 +28,9 @@ Centrifuge V3 operates on a [hub-and-spoke model](/developer/protocol/chain-abst
 * Tokenize ownership using ERC-20 — customizable with modules of your choice
 * Distribute to DeFi with ERC-4626 and ERC-7540 vaults
 * Support 1:1 token transfers between chains using burn-and-mint process
+
+## Pooled Vaults
+
+Each pool issued on Centrifuge can launch tokens and deploy ERC-4626 or ERC-7540 on multiple chains.
+
+The protocol also supported setting up multiple investment assets per share token, using the ERC-7575 standard. Liquidity from all vaults is aggregated into a single pool of capital, to be allocated efficiently across all assets.
