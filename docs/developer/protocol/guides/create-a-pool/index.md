@@ -53,6 +53,8 @@ You can also use the ERC20 address of any other token.
 hub.createPool(poolId, msg.sender, address(840));
 ```
 
+> Currently, pool creation is still permissioned, while the protocol is in its initial rollout. Pool creation will be opened up permissionlessly in the following months.
+
 ### 3. Set metadata
 
 Optionally set metadata to describe the pool:
