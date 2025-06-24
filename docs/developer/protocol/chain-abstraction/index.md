@@ -54,7 +54,7 @@ The protocol also includes automatic gas subsidies for users of a pool, such tha
 * Pool users do not need to hold native gas tokens on each spoke chain
 * Centrifuge relays gas tokens automatically between chains to fund transactions
 
-These features remove the burden of managing gas on multiple chains and create a seamless user experience—even when interacting with vaults across different networks.
+These features remove the burden of managing gas on multiple chains and create a seamless user experience, even when interacting with vaults across different networks.
 
 ### Built-in retries and repayments
 
