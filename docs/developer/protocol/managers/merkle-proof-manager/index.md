@@ -15,7 +15,7 @@ This approach enhances composability and decentralization by allowing flexible i
 
 ## How It Works
 
-At the heart of the Merkle Proof Manager is a Merkle tree, where each leaf node encodes a specific call that is permitted under the policy. The root hash of this tree—called the policy—is stored on-chain.
+At the heart of the Merkle Proof Manager is a Merkle tree, where each leaf node encodes a specific call that is permitted under the policy. The root hash of this tree, called the policy, is stored on-chain.
 
 Each leaf is derived from the following components:
 
