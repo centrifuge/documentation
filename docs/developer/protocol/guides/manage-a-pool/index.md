@@ -9,7 +9,7 @@ contributors:
 
 This guide outlines how to manage a pool on the Centrifuge protocol.
 
-## Updating the share price
+## Price updates
 
 Each pool on the Centrifuge protocol can have multiple share classes. The price of each share token must be maintained and updated to reflect its current value. This price is managed at the protocol level through the Hub contract.
 
@@ -43,6 +43,18 @@ hub.notifySharePrice(poolId, scId, centrifugeId);
 * `scId`: the share class identifier for which the price was updated
 * `centrifugeId`: the network identifier where the oracle should receive the updated price
 
+
+### Updating and pushing asset prices
+
+Since multiple assets can be used to invest in the same pool, the price of the asset denominated in the currency of the pool (e.g. USD) also needs to be set.
+
+By default, this price is assumed to be `1.0`, implying a 1-to-1 peg between all assets.
+
+This needs to be pushed to the asset price oracle on each network once:
+
+```solidity
+hub.notifyAssetPrice(poolId, scId, assetId);
+```
 
 ## Managing investment requests
 
