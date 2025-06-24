@@ -26,7 +26,7 @@ Centrifuge V3 operates on a [hub-and-spoke model](/developer/protocol/chain-abst
 * Manage investment requests from all investors
 
 ### Centrifuge Spoke
-* Tokenize ownership using ERC-20 — customizable with modules of your choice
+* Tokenize ownership using ERC-20 - customizable with modules of your choice
 * Distribute to DeFi with ERC-4626 and ERC-7540 vaults
 * Multiple vaults supported for pooled liquidity from different assets
 * Support 1:1 token transfers between chains using burn-and-mint process
