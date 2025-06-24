@@ -7,7 +7,7 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 # On/Off Ramp Manager
 
-The On/Off Ramp Manager in the Centrifuge Protocol is a smart contract responsible for managing the flow of ERC20 assets between external wallets and the pool's internal balance sheet. It ensures secure, efficient, and compliant asset movement via well-defined onramping and offramping mechanisms.
+The On/Off Ramp Manager in the Centrifuge Protocol is a smart contract responsible for managing the flow of ERC20 assets between external wallets and the pool's internal balance sheet. It ensures secure, efficient and compliant asset movement via well-defined onramping and offramping mechanisms.
 
 ## Onramping (deposits)
 
