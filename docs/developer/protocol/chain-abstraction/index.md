@@ -11,7 +11,7 @@ The Centrifuge protocol is designed to scale tokenized assets across multiple bl
 
 ## The problem with isolated multi-chain tokenization
 
-In legacy designs, each token is issued on each network, fully isolated. That means if a pool wants to make its asset available across Ethereum, Base, and Arbitrum, it must issue three separate tokens—one on each chain. Each version of the token has to be deployed, managed, and reconciled separately.
+In legacy designs, each token is issued on each network, fully isolated. That means if a pool wants to make its asset available across Ethereum, Base, and Arbitrum, it must issue three separate tokens - one on each chain. Each version of the token has to be deployed, managed, and reconciled separately.
 
 This model introduces operational overhead:
 
