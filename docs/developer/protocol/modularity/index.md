@@ -36,7 +36,7 @@ This module provides fine-grained control over fund architecture and investor dy
 
 ## Balance Sheet Managers
 
-Balance Sheet Managers enable the protocol to support and manage any form of collateral. Whether dealing with tokenized real-world assets (RWAs), stablecoins, crypto-native tokens, or other DeFi protocols, Balance Sheet Managers abstract the logic required to:
+Balance Sheet Managers enable the protocol to support and manage any form of collateral. Whether dealing with tokenized real-world assets (RWAs), stablecoins, crypto-native tokens, or other DeFi protocols - Balance Sheet Managers abstract the logic required to:
 
 * On/off ramping for assets
 * Integrate DeFi protocols
