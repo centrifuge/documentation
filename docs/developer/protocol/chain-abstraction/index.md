@@ -24,7 +24,7 @@ This approach does not scale in a multi-chain world, where asset issuers increas
 
 ## Centrifuge’s hub-and-spoke solution
 
-Centrifuge V3 solves this challenge with a hub-and-spoke architecture. Each pool selects a single hub chain—its source of truth and control—and issues assets and vaults across any number of spoke chains.
+Centrifuge V3 solves this challenge with a hub-and-spoke architecture. Each pool selects a single hub chain, its source of truth and control, and issues assets and vaults across any number of spoke chains.
 
 ![](./images/hub-and-spoke.png)
 
