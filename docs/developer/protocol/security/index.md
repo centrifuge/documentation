@@ -7,7 +7,7 @@ title: Security
 
 Centrifuge has best-in-class security process, with highlights including
 * 16 security reviews to date for the Centrifuge protocol.
-* Launched on mainnet in 2018, 0 exploits.
+* Launched on mainnet in 2019, 0 exploits.
 * Extensive invariant test suite.
 
 The protocol codebase is fully immutable, and any emergency functions are locked behind a 72-hour timelock.
