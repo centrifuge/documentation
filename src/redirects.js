@@ -5,77 +5,77 @@ const redirects = [
   // Cent-node redirects
   {
     from: "/cent-node/further-reading/testnets/",
-    to: "/developer/centrifuge-chain/networks/",
+    to: "/developer/legacy/centrifuge-chain/networks/",
   },
   {
     from: "/cent-node/getting-started/chain-account/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/further-reading/disclaimer/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/further-reading/protocol-limitations/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/configuration/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/geth-account/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/install-cent-node/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/ping/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/getting-started/tools/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/overview/introduction/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/overview/protocol-architecture/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/cent-node/usage/rest-api-examples/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
 
   // Chain redirects
   {
     from: "/chain/ethereum-bridge/about/",
-    to: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
   },
   {
     from: "/chain/ethereum-bridge/bridge-operations/",
-    to: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
   },
   {
     from: "/chain/further-resources/resources/",
-    to: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
   },
   {
     from: "/chain/get-started/account/",
-    to: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
   },
   {
     from: "/chain/get-started/run-node/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/chain/get-started/validate/",
-    to: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
   },
   {
     from: "/chain/governance/about-governance/",
@@ -83,11 +83,11 @@ const redirects = [
   },
   {
     from: "/chain/overview/testnets/",
-    to: "/developer/centrifuge-chain/networks/",
+    to: "/developer/legacy/centrifuge-chain/networks/",
   },
   {
     from: "/chain/overview/introduction/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
 
   // Tinlake redirects
@@ -123,15 +123,15 @@ const redirects = [
   // NFTs redirects
   {
     from: "/nfts/overview/anatomy/",
-    to: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
   },
   {
     from: "/nfts/overview/introduction/",
-    to: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
   },
   {
     from: "/nfts/overview/verification/",
-    to: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
   },
 
   // 2024 Layout Update redirects
@@ -241,7 +241,7 @@ const redirects = [
   },
   {
     from: "/use/contribute-network/",
-    to: "/developer/centrifuge-chain/contributing/",
+    to: "/developer/legacy/centrifuge-chain/contributing/",
   },
   {
     from: "/use/cfg-bridge/",
@@ -251,7 +251,7 @@ const redirects = [
   // Build section redirects
   {
     from: "/build/cent-chain/",
-    to: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
   },
   {
     from: "/build/tinlake/",
@@ -259,15 +259,59 @@ const redirects = [
   },
   {
     from: "/build/guides/",
-    to: "/developer/guides/investing-into-a-liquidity-pool/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
+  },
+  {
+    from: "/developer/protocol/guides/investing-into-a-liquidity-pool/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
+  },
+  {
+    from: "/developer/guides/querying-data/",
+    to: "/developer/legacy/querying-v2-data/",
+  },
+  {
+    from: "/developer/liquidity-pools/overview/",
+    to: "/developer/protocol/overview/",
+  },
+  {
+    from: "/developer/liquidity-pools/api/",
+    to: "/developer/protocol/overview/",
+  },
+  {
+    from: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
+  },
+  {
+    from: "/developer/centrifuge-chain/codebase/",
+    to: "/developer/legacy/centrifuge-chain/codebase/",
+  },
+  {
+    from: "/developer/centrifuge-chain/networks/",
+    to: "/developer/legacy/centrifuge-chain/networks/",
+  },
+  {
+    from: "/developer/centrifuge-chain/evm/",
+    to: "/developer/legacy/centrifuge-chain/evm/",
+  },
+  {
+    from: "/developer/centrifuge-chain/contributing/",
+    to: "/developer/legacy/centrifuge-chain/contributing/",
+  },
+  {
+    from: "/developer/pod/",
+    to: "/developer/legacy/pod/",
   },
   {
     from: "/build/p2p-node/",
-    to: "/developer/pod/",
+    to: "/developer/legacy/pod/",
+  },
+  {
+    from: "/developer/security/",
+    to: "/developer/protocol/security/",
   },
   {
     from: "/build/nfts/",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
     from: "/build/bridge/",
@@ -319,7 +363,7 @@ const redirects = [
   },
   {
     from: "/build",
-    to: "/developer/",
+    to: "/developer/protocol/guides/invest-into-a-vault/",
   },
 ];
 
