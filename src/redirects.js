@@ -266,8 +266,48 @@ const redirects = [
     to: "/developer/protocol/guides/invest-into-a-vault/",
   },
   {
+    from: "/developer/guides/querying-data/",
+    to: "/developer/legacy/querying-v2-data/",
+  },
+  {
+    from: "/developer/liquidity-pools/overview/",
+    to: "/developer/protocol/overview/",
+  },
+  {
+    from: "/developer/liquidity-pools/api/",
+    to: "/developer/protocol/overview/",
+  },
+  {
+    from: "/developer/centrifuge-chain/overview/",
+    to: "/developer/legacy/centrifuge-chain/overview/",
+  },
+  {
+    from: "/developer/centrifuge-chain/codebase/",
+    to: "/developer/legacy/centrifuge-chain/codebase/",
+  },
+  {
+    from: "/developer/centrifuge-chain/networks/",
+    to: "/developer/legacy/centrifuge-chain/networks/",
+  },
+  {
+    from: "/developer/centrifuge-chain/evm/",
+    to: "/developer/legacy/centrifuge-chain/evm/",
+  },
+  {
+    from: "/developer/centrifuge-chain/contributing/",
+    to: "/developer/legacy/centrifuge-chain/contributing/",
+  },
+  {
+    from: "/developer/pod/",
+    to: "/developer/legacy/pod/",
+  },
+  {
     from: "/build/p2p-node/",
     to: "/developer/legacy/pod/",
+  },
+  {
+    from: "/developer/security/",
+    to: "/developer/protocol/security/",
   },
   {
     from: "/build/nfts/",
