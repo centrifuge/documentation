@@ -9,13 +9,10 @@ import { redirects } from "./src/redirects";
 
 const config: Config = {
   title: "Centrifuge Docs",
-  tagline: "Centrifuge user documentation",
+  tagline: "Centrifuge documentation",
   favicon: "img/favicon.png",
 
-  // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: "https://docs.centrifuge.io",
   baseUrl: "/",
 
   onBrokenLinks: "ignore",
