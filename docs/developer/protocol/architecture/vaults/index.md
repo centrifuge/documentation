@@ -13,7 +13,7 @@ It builds on:
 
 * **ERC-4626**: Tokenized vaults for yield-bearing assets (synchronous behavior).
 * **ERC-7540**: Standard for asynchronous deposits/redemptions.
-* **ERC-7575**: Multitoken vaults — a single share token can be issued in exchange for multiple different underlying assets.
+* **ERC-7575**: Multitoken vaults - a single share token can be issued in exchange for multiple different underlying assets.
 
 ## Contract Structure
 
