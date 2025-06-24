@@ -39,9 +39,9 @@ This module provides fine-grained control over fund architecture and investor dy
 Balance Sheet Managers enable the protocol to support and manage any form of collateral. Whether dealing with tokenized real-world assets (RWAs), stablecoins, crypto-native tokens, or other DeFi protocols - Balance Sheet Managers abstract the logic required to:
 
 * On/off ramping for assets
-* Integrate DeFi protocols
-* Track performance and management fees
-* Integrate onchain loans
+* Integrating DeFi protocols
+* Tracking performance and management fees
+* Integrating onchain loans
 
 This makes Centrifuge ideal for bridging traditional finance and DeFi through modular asset management.
 
