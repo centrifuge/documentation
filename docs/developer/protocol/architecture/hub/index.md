@@ -7,7 +7,7 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 # Hub
 
-The Hub module in the Centrifuge Protocol serves as the core orchestration layer for decentralized pool management. It acts as the central controller that connects various components of a pool’s lifecycle — from registration and accounting to share class configuration and metadata handling.
+The Hub module in the Centrifuge Protocol serves as the core orchestration layer for decentralized pool management. It acts as the central controller that connects various components of a pool’s lifecycle - from registration and accounting to share class configuration and metadata handling.
 
 ![](./images/hub.png)
 
