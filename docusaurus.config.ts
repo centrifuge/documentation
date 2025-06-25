@@ -76,17 +76,19 @@ const config: Config = {
           label: "Developer Documentation",
           exact: true,
         },
-        {
-          href: "https://github.com/centrifuge/documentation",
-          label: "GitHub",
-          position: "right",
-        },
       ],
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ["solidity"],
+    },
+    algolia: {
+      appId: "Q7BQ8D4TVA",
+      apiKey: "2a75cfd883570849b5343da30e1a7f6c",
+      indexName: "centrifuge",
+      contextualSearch: true,
+      insights: false,
     },
   } satisfies Preset.ThemeConfig,
   stylesheets: [
