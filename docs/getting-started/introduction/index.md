@@ -26,4 +26,4 @@ In these docs, you'll find everything you need to know about Centrifuge; from ba
 
 **[Developer Documentation](/developer)**: Learn about the technology, how to core contracts of Centrifuge work, how to integrate with the protocol - both on a contract and on a UI level.
 
-A good place to begin is [Centrifuge's Mission and History](/getting-started/introduction/mission-and-history).
+
