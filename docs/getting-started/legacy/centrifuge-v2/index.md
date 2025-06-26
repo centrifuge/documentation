@@ -1,8 +1,40 @@
 ---
-id: securitization
-title: Onchain Securitization
-contributors: <Jeroen Offerijns:jeroen@k-f.co>, <Dennis Wellmann:dennis@k-f.co>, <Devin Black:devin@k-f.co>
+id: centrifuge-v2
+title: Centrifuge V2
+contributors: <Frederik Gartenmeister:frederik@k-f.co>
 ---
+
+# Built on Centrifuge Chain
+Centrifuge is built on Centrifuge Chain, a layer 1 blockchain custom built for financing real-world assets(RWAs). Real-world assets are tokenized as NFTs (Non-Fungible Tokens) to create an on-chain representation, and are linked to detailed off-chain data. The assets are pooled together and securitized by the issuer. Liquidity Pools can be used to invest from other blockchains. Integrations with DeFi protocols such as Maker, Aave, and more are already set up across the ecosystem.
+
+The advantages of a blockchain custom-built for RWA include:
+
+1. Lower transaction costs and increased scalability, as the functionality is natively built into the runtime logic of the blockchain, which enables optimization for dedicated transactions and use cases.
+2. The flexibility to develop features that are not possible within a general-purpose smart-contract blockchain such as Ethereum.
+3. Dedicated blockspace for real-world asset transactions: if there's a hugely popular NFT drop tomorrow on Ethereum, this won't block borrowers from repaying or investors from redeeming.
+4. The ability to define transaction ordering, e.g. ensuring that redemption orders can always be submitted, even in highly contested blocks.
+
+## Governed by CFG holders
+
+The native token of Centrifuge Chain, CFG, is used as an on-chain governance mechanism that empowers CFG holders to manage the development of the Centrifuge Protocol.
+
+Centrifuge's formalized governance system enables onchain voting mechanisms for binding and transparent governance by CFG token holders. Beyond the use of the Centrifuge token (CFG) for governance of the blockchain, CFG is also used to pay transaction fees.
+
+
+# Integrated with DeFi
+
+Currently, most DeFi (decentralized finance) applications are limited to their respective blockchain ecosystem. Bridges between chains exist but using them is cumbersome and expensive with the need to set up different tools and swap several tokens.
+
+Centrifuge Protocol provides Liquidity pools that allow for direct integration with any general purpose EVM blockchain. By creating a standard layer to invest in Centrifuge pools this minimizes the effort required to integrate a new EVM based chain.
+
+## Liquidity Pools
+
+Using Liquidity pools, integrations could be used to enable protocols to invest in real world assets. Stablecoin protocols such as MakerDAO could invest into the pools that they want. This could allow issuers to access deeper liquidity without having to integrate all these DeFi sources of liquidity and new end user markets themselves.
+
+While the Centrifuge Protocol is built on Substrate, interacting with the Centrifuge Protocol would be possible from multiple chains creating a true multi-chain ecosystem.
+
+![](./images/ecosystem.png#width=70%;)
+
 
 # Onchain Securitization
 
