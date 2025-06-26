@@ -8,7 +8,6 @@ contributors: <Lucas Vogelsang:lucas@centrifuge.io>, <Graham Nelson:graham@k-f.c
 
 The following bridge has been deprecated in favor for the CFG token migraiton bridge. 
 
-See [Legacy CFG/WCFG Migration to Ethereum](https://docs.centrifuge.io/getting-started/token-summary/token-migration/) for details.
 <!-- 
 The **CFG** token lives natively on Centrifuge Chain but can be bridged to Ethereum and used as an ERC20 token, Once on Ethereum, CFG can then be transferred to Base. The ERC20 Token is also called **CFG** on Ethereum and Base has the address `0xc221b7E65FfC80DE234bbB6667aBDd46593D34F0` on Ethereum mainnet and `0x2b51E2Ec9551F9B87B321f63b805871f1c81ba97` on Base mainnet.
 
