@@ -2,6 +2,7 @@
 id: introduction
 title: Welcome to Centrifuge
 contributors: <Devin Black:devin@k-f.co>
+slug: /
 ---
 
 # Welcome to Centrifuge
