@@ -1,9 +1,7 @@
 ---
 id: mission-and-history
-position: 1.2
 title: Mission and History
 contributors: <Devin Black:devin@k-f.co>
-category: subpage
 ---
 
 # Centrifuge's Mission and History

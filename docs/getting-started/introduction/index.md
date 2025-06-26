@@ -1,9 +1,7 @@
 ---
 id: welcome
-position: 1.1
 title: Welcome to Centrifuge
 contributors: <Devin Black:devin@k-f.co>
-slug: /
 ---
 
 # Welcome to Centrifuge
