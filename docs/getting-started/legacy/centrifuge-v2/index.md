@@ -14,6 +14,8 @@ The advantages of a blockchain custom-built for RWA include:
 3. Dedicated blockspace for real-world asset transactions: if there's a hugely popular NFT drop tomorrow on Ethereum, this won't block borrowers from repaying or investors from redeeming.
 4. The ability to define transaction ordering, e.g. ensuring that redemption orders can always be submitted, even in highly contested blocks.
 
+![](./images/CentrifugeProtocol.png#width=70%;)
+
 ## Governed by CFG holders
 
 The native token of Centrifuge Chain, CFG, is used as an on-chain governance mechanism that empowers CFG holders to manage the development of the Centrifuge Protocol.
