@@ -1,6 +1,6 @@
 ---
 id: dao
-title: The CFG DAO
+title: Centrifuge DAO
 contributors: <Devin Black:devin@k-f.co>
 category: subpage
 ---
