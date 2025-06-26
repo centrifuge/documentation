@@ -7,7 +7,7 @@ contributors: <Dennis Wellmann:dennis@centrifuge.io>, <Devin Black:devin@centrif
 
 # Tinlake Smart Contracts (Legacy)
 
-For a brief description of the Tinlake protocol go to [/getting-started/legacy/centrifuge-v1].
+For a brief description of the Tinlake protocol go to [here](/getting-started/legacy/centrifuge-v1).
 
 ### Repositories
 
