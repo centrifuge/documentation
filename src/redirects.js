@@ -149,23 +149,23 @@ const redirects = [
   },
   {
     from: "/getting-started/privacy-first-tokenization/",
-    to: "/getting-started/core-concepts/privacy-first-tokenization/",
+    to: "/",
   },
   {
     from: "/getting-started/securitization/",
-    to: "/getting-started/core-concepts/securitization/",
+    to: "/",
   },
   {
     from: "/getting-started/cent-chain/",
-    to: "/getting-started/core-concepts/cent-chain/",
+    to: "/",
   },
   {
     from: "/getting-started/integrated-with-defi/",
-    to: "/getting-started/core-concepts/integrated-with-defi/",
+    to: "/",
   },
   {
     from: "/getting-started/off-chain/",
-    to: "/getting-started/core-concepts/legal-structure/",
+    to: "/",
   },
 
   // Learn section redirects
