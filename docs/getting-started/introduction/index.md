@@ -1,5 +1,5 @@
 ---
-id: welcome
+id: introduction
 title: Welcome to Centrifuge
 contributors: <Devin Black:devin@k-f.co>
 ---
@@ -20,10 +20,10 @@ In these docs, you'll find everything you need to know about Centrifuge; from ba
 
 ## The Centrifuge Docs
 
-**Getting Started**: Learn about the basic concepts and core products of Centrifuge. You're in this section now!
+**Getting Started**: Learn about the history and ecosystem of Centrifuge. You're in this section now!
 
-**[User Documentation](/user)**: Read guides on using Centrifuge, from investing in pools of real-world assets to participating in onchain governance.
+**[User Documentation](/user)**: Read about the concepts of Centrifuge, how to interact with the protocol and learn about the building blocks Centrifuge provides to build tokenized financial products.
 
-**[Developer Documentation](/developer)**: Learn about the technology that runs Centrifuge, across Centrifuge Chain and Ethereum-based networks.
+**[Developer Documentation](/developer)**: Learn about the technology, how to core contracts of Centrifuge work, how to integrate with the protocol - both on a contract and on a UI level.
 
 A good place to begin is [Centrifuge's Mission and History](/getting-started/introduction/mission-and-history).
