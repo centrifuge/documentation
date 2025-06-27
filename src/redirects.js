@@ -171,27 +171,27 @@ const redirects = [
   // Learn section redirects
   {
     from: "/learn/terms/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/multi-tranche-system/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/epoch/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/pool-valuation/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/interest-rate-methodology/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/legal-offering/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/token-summary/",
@@ -201,15 +201,15 @@ const redirects = [
   // Base redirects for main sections
   {
     from: "/use/setup-wallet",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/use/onboarding",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/use/Invest",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/use/claim-cfg-rewards/",
@@ -217,11 +217,11 @@ const redirects = [
   },
   {
     from: "/use/governance-process/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/use/pop/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/use/offchain-voting/",
