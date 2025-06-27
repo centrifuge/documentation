@@ -8,6 +8,7 @@ contributors: <Devin Black:devin@k-f.co>
 
 ## Explore
 
+import DocCardList from '@theme/DocCardList';
 
 <DocCardList
 items={[
