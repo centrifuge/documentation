@@ -179,19 +179,19 @@ const redirects = [
   },
   {
     from: "/learn/epoch/",
-    to: "/user/centrifuge-pools/epoch/",
+    to: "/user/",
   },
   {
     from: "/learn/pool-valuation/",
-    to: "/user/centrifuge-pools/pool-valuation/",
+    to: "/user/",
   },
   {
     from: "/learn/interest-rate-methodology/",
-    to: "/user/centrifuge-pools/interest-rate-methodology/",
+    to: "/user/",
   },
   {
     from: "/learn/legal-offering/",
-    to: "/user/centrifuge-pools/legal-offering/",
+    to: "/user/",
   },
   {
     from: "/learn/token-summary/",
@@ -201,15 +201,15 @@ const redirects = [
   // Base redirects for main sections
   {
     from: "/use/setup-wallet",
-    to: "/user/using-centrifuge/setup-wallet/",
+    to: "/user/",
   },
   {
     from: "/use/onboarding",
-    to: "/user/using-centrifuge/onboarding/",
+    to: "/user/",
   },
   {
     from: "/use/Invest",
-    to: "/user/using-centrifuge/invest/",
+    to: "/user/",
   },
   {
     from: "/use/claim-cfg-rewards/",
@@ -217,7 +217,7 @@ const redirects = [
   },
   {
     from: "/use/governance-process/",
-    to: "/user/governance/governance-process/",
+    to: "/user/",
   },
   {
     from: "/use/pop/",
@@ -225,19 +225,19 @@ const redirects = [
   },
   {
     from: "/use/offchain-voting/",
-    to: "/user/governance/offchain-voting/",
+    to: "/getting-started/dao-summary/offchain-voting/",
   },
   {
     from: "/use/onchain-voting/",
-    to: "/user/governance/onchain-voting/",
+    to: "/getting-started/dao-summary/onchain-voting/",
   },
   {
     from: "/use/governance-proxy-and-delegation/",
-    to: "/user/governance/governance-proxy-and-delegation/",
+    to: "/getting-started/dao-summary/governance-proxy-and-delegation/",
   },
   {
     from: "/use/council/",
-    to: "/user/governance/council/",
+    to: "/getting-started/dao-summary/council/",
   },
   {
     from: "/use/contribute-network/",
@@ -245,7 +245,7 @@ const redirects = [
   },
   {
     from: "/use/cfg-bridge/",
-    to: "/user/cfg-bridge/",
+    to: "/",
   },
 
   // Build section redirects
@@ -315,7 +315,7 @@ const redirects = [
   },
   {
     from: "/build/bridge/",
-    to: "/user/cfg-bridge/",
+    to: "/",
   },
 
   // Temporary redirects
