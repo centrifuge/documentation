@@ -359,7 +359,7 @@ const redirects = [
   },
   {
     from: "/use",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/build",
