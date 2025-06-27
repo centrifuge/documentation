@@ -19,7 +19,7 @@ By bringing the entire structured credit market onchain across securitization, t
 
 In these docs, you'll find everything you need to know about Centrifuge; from basic concepts to user guides to developer documentation. Here's a rundown of the three sections:
 
-## The Centrifuge Docs
+## Centrifuge Documentation
 
 **Getting Started**: Learn about the history and ecosystem of Centrifuge. You're in this section now!
 
