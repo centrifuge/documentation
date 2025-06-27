@@ -79,7 +79,7 @@ const redirects = [
   },
   {
     from: "/chain/governance/about-governance/",
-    to: "/user/governance/governance-process/",
+    to: "/getting-started/dao-summary/governance-process/",
   },
   {
     from: "/chain/overview/testnets/",
