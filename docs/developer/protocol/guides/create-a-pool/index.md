@@ -45,12 +45,12 @@ PoolId poolId = hubRegistry.poolId(centrifugeId, 1); // Derive a unique PoolId u
 
 Call the `createPool` function with the derived `PoolId`, the pool manager, and the denomination currency.
 
-As the denomination currency, you can use `address(840)`, where 840 is the ISO4217 identifier of USD.
+As the denomination currency, you can use `newAssetId(840)`, where 840 is the ISO4217 identifier of USD.
 
 You can also use the ERC20 address of any other token.
 
 ```solidity
-hub.createPool(poolId, msg.sender, address(840));
+hub.createPool(poolId, msg.sender, newAssetId(840));
 ```
 
 :::info
