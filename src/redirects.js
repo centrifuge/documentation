@@ -79,7 +79,7 @@ const redirects = [
   },
   {
     from: "/chain/governance/about-governance/",
-    to: "/user/governance/governance-process/",
+    to: "/getting-started/dao-summary/governance-process/",
   },
   {
     from: "/chain/overview/testnets/",
@@ -149,49 +149,49 @@ const redirects = [
   },
   {
     from: "/getting-started/privacy-first-tokenization/",
-    to: "/getting-started/core-concepts/privacy-first-tokenization/",
+    to: "/",
   },
   {
     from: "/getting-started/securitization/",
-    to: "/getting-started/core-concepts/securitization/",
+    to: "/",
   },
   {
     from: "/getting-started/cent-chain/",
-    to: "/getting-started/core-concepts/cent-chain/",
+    to: "/",
   },
   {
     from: "/getting-started/integrated-with-defi/",
-    to: "/getting-started/core-concepts/integrated-with-defi/",
+    to: "/",
   },
   {
     from: "/getting-started/off-chain/",
-    to: "/getting-started/core-concepts/legal-structure/",
+    to: "/",
   },
 
   // Learn section redirects
   {
     from: "/learn/terms/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/multi-tranche-system/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/epoch/",
-    to: "/user/centrifuge-pools/epoch/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/pool-valuation/",
-    to: "/user/centrifuge-pools/pool-valuation/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/interest-rate-methodology/",
-    to: "/user/centrifuge-pools/interest-rate-methodology/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/legal-offering/",
-    to: "/user/centrifuge-pools/legal-offering/",
+    to: "/user/overview/",
   },
   {
     from: "/learn/token-summary/",
@@ -201,15 +201,15 @@ const redirects = [
   // Base redirects for main sections
   {
     from: "/use/setup-wallet",
-    to: "/user/using-centrifuge/setup-wallet/",
+    to: "/user/overview/",
   },
   {
     from: "/use/onboarding",
-    to: "/user/using-centrifuge/onboarding/",
+    to: "/user/overview/",
   },
   {
     from: "/use/Invest",
-    to: "/user/using-centrifuge/invest/",
+    to: "/user/overview/",
   },
   {
     from: "/use/claim-cfg-rewards/",
@@ -217,27 +217,27 @@ const redirects = [
   },
   {
     from: "/use/governance-process/",
-    to: "/user/governance/governance-process/",
+    to: "/user/overview/",
   },
   {
     from: "/use/pop/",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/use/offchain-voting/",
-    to: "/user/governance/offchain-voting/",
+    to: "/getting-started/dao-summary/offchain-voting/",
   },
   {
     from: "/use/onchain-voting/",
-    to: "/user/governance/onchain-voting/",
+    to: "/getting-started/dao-summary/onchain-voting/",
   },
   {
     from: "/use/governance-proxy-and-delegation/",
-    to: "/user/governance/governance-proxy-and-delegation/",
+    to: "/getting-started/dao-summary/governance-proxy-and-delegation/",
   },
   {
     from: "/use/council/",
-    to: "/user/governance/council/",
+    to: "/getting-started/dao-summary/council/",
   },
   {
     from: "/use/contribute-network/",
@@ -245,7 +245,7 @@ const redirects = [
   },
   {
     from: "/use/cfg-bridge/",
-    to: "/user/cfg-bridge/",
+    to: "/",
   },
 
   // Build section redirects
@@ -315,7 +315,7 @@ const redirects = [
   },
   {
     from: "/build/bridge/",
-    to: "/user/cfg-bridge/",
+    to: "/",
   },
 
   // Temporary redirects
@@ -359,7 +359,7 @@ const redirects = [
   },
   {
     from: "/use",
-    to: "/user/",
+    to: "/user/overview/",
   },
   {
     from: "/build",
