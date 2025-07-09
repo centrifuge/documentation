@@ -6,7 +6,7 @@ contributors: <Graham Nelson:graham@k-f.co>
 
 # Issuers
 
-This guide helps issuers tokenize real-world assets (RWA) using Centrifuge V3’s RWA Launchpad. It walks through the end-to-end process of launching an asset-backed issuance, from setup to deployment.
+This guide helps issuers tokenize real-world assets (RWA) using Centrifuge V3’s RWA Launchpad. It walks through the end-to-end process of launching an asset-backed issuance, from setup to deployment. 
 
 ## Overview
 
@@ -28,12 +28,30 @@ Supported use cases include:
 Use the Launchpad interface to configure:
 
 - All pool details (type, issuer info, providers, ratings etc)
+<details>
+<summary>Show pool details UI</summary>
+
+![Pool Details](https://gateway.pinata.cloud/ipfs/bafkreifgfchfoqbwfqbp6rdstol6wgkwb7iobmpzqlstvpzxit2pxmjfxq)
+
+</details>
 - Asset type (e.g. bond, equity, real estate)
 - Share class structure (e.g. junior/senior tranches)
+<details>
+<summary>Asset type & Share class structure UI </summary>
+
+![Pool Details](https://gateway.pinata.cloud/ipfs/bafkreidzhorp36q33djipol2ehqp74x3cgs3n5jqursltvnrjneima35f4)
+
+</details>
+
 - Compliance rules (e.g. allowlist, jurisdictional controls)
 - Manager access controls 
+<summary>Access Contol UI </summary>
+<details>
+![Pool Details](https://gateway.pinata.cloud/ipfs/bafkreiewkztvw5izthzpxztxkxrhb5w5gd5hq3ruitkui42ysncfoviszu)
 
-### 2. Deploy your smart contracts
+</details>
+
+### 2. Deploy your pool
 
 Launchpad deploys a suite of protocol-native contracts:
 
@@ -58,9 +76,9 @@ This ensures compliance and control over fund flows.
 
 Once contracts are deployed and configured:
 
+- Begin accepting deposits from whitelisted or any users depending on your configuration
 - Mint and distribute share tokens
 - Fund the vaults with capital or asset-backed flows
-- Begin accepting deposits from approved users
 
 Deposits and redemptions will follow the configured vault logic:
 - **Synchronous deposits**: users receive shares immediately (ERC-4626)
@@ -82,10 +100,14 @@ Issuers can combine multiple vaults into a single pool using the ERC-7575 pooled
 
 Track the performance and operations of your issuance:
 
+- Issuer Dashboard
+
+![Issuer Dashboard](https://gateway.pinata.cloud/ipfs/bafkreigmer5ns34nz2pfjyg62dt6czdfqxazpjvdtdjlwx7knpuc24eqmq)
+
 - Live reporting on NAV, share price, and token supply
-- Fee and yield distribution
-- Audit logs of on-chain activity
-- Optional investor dashboards
+
+![Update Dashboard](https://gateway.pinata.cloud/ipfs/bafkreidozv26pnarp75gv5m2th7iyvjyfzc6opb4pdj3zm5tww3w2llayq)
+
 
 ## Extensibility
 
@@ -101,4 +123,4 @@ Launchpad products are fully modular. Issuers can integrate:
 - **Fast time to market**: Launch in days, not months
 - **Secure and immutable**: Smart contracts are non-upgradeable and decentralized
 - **Composability**: Plug into the broader DeFi ecosystem
-- **Customizability**: tailor every aspect of your product to fit your asset and investor needs
+- **Customizability**: Tailor every aspect of your product to fit your asset and investor needs
