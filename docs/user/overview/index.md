@@ -1,52 +1,40 @@
 ---
 id: overview
 title: Overview
-contributors: <Devin Black:devin@k-f.co>
+contributors: <Graham Nelson:graham@k-f.co>
 ---
 
-# User Documentation 
+# User Documentation
+
+Centrifuge V3 enables permissionless, onchain asset management across multiple roles. This section helps users understand how to interact with the protocol depending on who they are and what they want to do. Whether you're issuing a pool, curating assets, investing, or testing the system—this guide will get you started.
 
 ## Explore
 
-import DocCardList from '@theme/DocCardList';
+<div className="card-grid">
 
-<DocCardList
-items={[
-{
-type: 'link',
-href: '/user/concepts',
-label: 'Concepts',
-description: 'Short description for A',
-},
-{
-type: 'link',
-href: '/user/issuer',
-label: 'Issuer',
-description: 'Description for B',
-},
-{
-type: 'link',
-href: '/user/distributor',
-label: 'Distributor',
-description: 'Short description for A',
-},
-{
-type: 'link',
-href: '/user/investor',
-label: 'Investors',
-description: 'Description for B',
-},
-{
-type: 'link',
-href: '/user/builder',
-label: 'Builder',
-description: 'Short description for A',
-},
-{
-type: 'link',
-href: '/user/deployments',
-label: 'Try it out',
-description: 'Description for B',
-},
-]}
-/>
+  <a className="card-tile" href="/user/concepts">
+    <h3>Concepts</h3>
+    <p>Core ideas behind Centrifuge V3: hub-and-spoke architecture, vaults, assets, and token flows.</p>
+  </a>
+
+  <a className="card-tile" href="/user/issuer">
+    <h3>Issuer</h3>
+    <p>Tokenize real-world assets using configurable onchain vaults through the RWA Launchpad.</p>
+  </a>
+
+  <a className="card-tile" href="/user/curator">
+    <h3>Curator</h3>
+    <p>Structure and manage pools, set investment logic, and configure vault permissions.</p>
+  </a>
+
+  <a className="card-tile" href="/user/investor">
+    <h3>Investors</h3>
+    <p>Invest in tokenized assets across networks. Understand access controls and redemption flows.</p>
+  </a>
+
+  <a className="card-tile" href="/user/deployments">
+    <h3>Try it out</h3>
+    <p>Test the protocol, interact with vaults, and explore onchain flows in a sandbox environment.</p>
+  </a>
+
+</div>
