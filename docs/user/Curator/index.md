@@ -6,49 +6,86 @@ contributors: <Graham Nelson:graham@k-f.co>
 
 # Curators
 
-Curators are specialized participants in the Centrifuge protocol who manage and create tokenized strategies by managing asset allocation and NAV within pools. Unlike issuers, curators do not originate assets but **invest in existing ones**, including assets from other Centrifuge pools (e.g. JTRSY) or any DeFi asset.
+Curators are strategy designers within the Centrifuge protocol. They create and manage tokenized investment products by configuring vaults, allocating capital, and managing performance. Centrifuge serves as the strategy execution layer—giving curators a programmable, chain-abstracted platform for building custom structured products.
 
-## Key Differences from Issuers
+Unlike issuers, curators do not originate RWAs. Instead, they compose strategies using existing assets—including RWA vault tokens, DeFi primitives, or other Centrifuge pools.
 
-1. **Asset Allocation**  
-   Curators configure pools that allocate capital into other assets and not necessarily those originated by themselves. These assets can be on-chain tokens, other Centrifuge pool tokens, or DeFi strategies.
+## Two types of curator strategies
 
-   Some examples of asset allocations: 
-   - RWA's issued by Anemoy 
-   - Leveraged stablecoin strategy 
-   - Stablecoin yield index fund 
-   - Combination of the above
+### 1. Direct-to-user strategies
 
-   See more below regarding the **Merkle Proof Manager** which curators can leverage to enhance security and enforce programmable strategies
+In this model, curators configure vaults that users can deposit into directly. These vaults are typically structured around a single asset strategy and may use:
 
-2. **NAV Management**  
-   They actively manage and update the Net Asset Value (NAV) of their pools, tracking underlying asset performance and price.
+- A stablecoin yield vault
+- A Centrifuge pool token (e.g. Anemoy RWA vault)
+- A fixed-income DeFi position
 
-3. **Custom UI & Interfaces**  
-   Curators can build their own front-end on top of the Centrifuge pool interface to manage distribution, user experience, and reporting. 
+Users interact directly with the vault. The curator manages allocation, fees, and performance reporting.
 
-   Curators should co-ordinate with the Centrifuge team if they want their pool to visible on the Centrifuge UI. 
+**Example**:  
+A curator creates a USDC-denominated vault that allocates into a leveraged LRT/ETH strategy. Users deposit directly into the vault.
 
-4. **Vault Configuration**  
-   Curators choose between:
-   - **Synchronous vaults** (with real-time liquidity)
-   - **Asynchronous vaults** (with delayed withdrawal or investment periods)
-   - Or a combination of both, depending on the strategy
+### 2. Multi-layered strategies via vault tokens
 
----
+Curators can also build **meta-vaults** by depositing vault tokens (ERC-20) from underlying strategies into a higher-level structure. This enables feeder-fund-style products and simplifies downstream integrations.
+
+All capital flows into the base Centrifuge strategy vault. The curator only needs to manage one vault at the execution layer—simplifying rebalancing, reporting, and risk.
+
+**Example**:  
+- Vault A (e.g. Anemoy) holds RWAs  
+- Vault B (e.g. LRT strategy) holds staked ETH positions  
+- Curator creates Vault C that deposits into both A and B  
+- Vault C tokens are deposited into an external aggregator (e.g. Morpho, Veda)
+
+This pattern supports composability and abstraction while maintaining a single point of capital execution.
+
+## Why build strategies on Centrifuge?
+
+- **Multi-currency vault infrastructure**  
+  Native support for multiple investment assets and ERC-7575 pooled vaults.
+
+- **Composable DeFi & RWA integration**  
+  Combine yield-bearing DeFi tokens and tokenized RWAs in a single strategy.
+
+- **Protocol-level abstraction**  
+  Manage investment operations cross-chain from a single Hub deployment.
+
+- **Custom vault configuration**  
+  Choose between synchronous (ERC-4626) and asynchronous (ERC-7540) flows—or mix both.
+
+- **Fine-grained control via Merkle Proof Manager**  
+  Restrict interactions, define strategy rules, and automate execution.
+
+## NAV management
+
+Curators are responsible for managing the Net Asset Value (NAV) of their pools. This includes:
+
+- Tracking underlying asset prices
+- Updating NAV onchain
+- Ensuring accurate pricing for deposits and redemptions
+
+## Custom UI and integrations
+
+Curators can build custom user interfaces to:
+
+- Streamline investor UX
+- Control branding and messaging
+- Build analytics or dashboards
+
+To be listed on the Centrifuge frontend, contact the Centrifuge team for integration and review.
 
 ## Merkle Proof Manager
 
-Curators can leverage the **Merkle Proof Manager** to enhance security and enforce programmable strategies.
-
 > Learn more: [Merkle Proof Manager →](/developer/protocol/managers/merkle-proof-manager/)
 
-The Merkle Proof Manager is a smart contract module that enforces **policy-based call restrictions** using Merkle proofs. It enables pool managers to **predefine and limit contract interactions**, ensuring secure strategy execution.
+The Merkle Proof Manager allows curators to enforce programmable strategies by limiting allowed contract calls.
 
 ### Benefits
 
-- Ensures only authorized contract calls are executed
-- Offers fine-grained control over target addresses and calldata
-- Enables composable but secure integrations
+- Enforces only whitelisted interactions with external protocols
+- Locks vault logic into predefined flows
+- Enables secure integration with external DeFi protocols
 
----
+## Summary
+
+Centrifuge gives curators a robust foundation to define, launch, and scale onchain strategies. Whether building direct-to-user vaults or composing layered feeder products, curators benefit from composable infrastructure, chain abstraction, and secure capital management.
