@@ -13,6 +13,8 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 Every smart contract of the Centrifuge protocol is deployed at the same address on every EVM network.
 
+The protocol is currently deployed on Ethereum, Base, Arbitrum, Avalanche and Plume.
+
 | Contract          | Address |
 |------------------|----|
 | `root` | `0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f` |
