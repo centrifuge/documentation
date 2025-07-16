@@ -1,70 +1,97 @@
 ---
-id: multi-chain 
-title: Multi-Chain Protocol 
+id: multi-chain
+title: Multi-Chain Protocol
+category: subpage
 contributors: <Graham Nelson:graham@k-f.co>
 ---
+
 # Multi-Chain Protocol
 
-Centrifuge V3 is built to work seamlessly across multiple blockchains. Using a hub-and-spoke model, the protocol gives users a unified experience regardless of which network they use.
+Centrifuge V3 is designed to scale tokenized asset management across blockchains. Using a **hub-and-spoke architecture**, each pool is managed from a single hub chain while operating vaults and issuing tokens on multiple spoke chains.
 
-This means:
+This makes Centrifuge truly multi-chain, giving investors and managers a consistent experience wherever they operate.
 
-- You can interact with vaults on any supported chain
-- Managers only need one hub to coordinate everything
-- Tokens and accounting stay consistent, even across chains
+![](./images/overview.png)
 
+## What does this solve?
 
-## What problem does this solve?
+In most protocols, issuing tokens on multiple chains means maintaining separate contracts, price feeds, wallets, and accounting per chain. This creates silos, increases overhead, and fragments liquidity.
 
-Many protocols issue separate tokens on every chain. This leads to duplication and unnecessary complexity.
+![](./images/hub-and-spoke.png)
 
-Each network needs its own:
+Centrifuge avoids this by keeping one unified source of truth on the hub chain, while letting vaults and tokens live across networks like Ethereum, Base, or Arbitrum.
 
-- Token contracts
-- Pricing oracles
-- Wallet setup and funding
-- Manual reconciliation
+## How it works
 
-This makes scaling difficult and creates a fragmented experience for both users and managers.
+Each pool selects a **hub chain**, which acts as the central control point. This is where:
 
-## Centrifuge’s approach
+- Investment requests are approved
+- Vault pricing and NAV are updated
+- Tokens and strategies are registered
+- Accounting is consolidated
 
-Centrifuge solves this with a single point of control: the hub chain.
+From there, the pool can launch vaults and share tokens on any number of **spoke chains**. These are the chains where users interact with the product and capital is deployed.
 
-- The hub manages the rules, prices, and accounting for your pool
-- Vaults are deployed to spoke chains where users interact and capital flows
-- Everything stays connected and consistent across chains
+## As an investor
 
-## If you’re a pool manager
+- You can invest on any supported chain where the vault is deployed  
+- You interact locally, while pricing and approvals are handled on the hub  
+- You never need to manage gas across multiple networks  
+- You receive the same experience no matter which chain you choose  
 
-- Choose one hub chain to manage your pool
-- Deploy vaults on the chains where your users and liquidity are
-- Avoid duplicating infrastructure or managing each chain separately
+## As a manager
 
-## If you’re an investor
+- You choose a single hub chain to coordinate your pool  
+- You deploy vaults on the spoke chains that match your liquidity goals  
+- You do not need to replicate logic or infrastructure across chains  
+- You stay in control of share prices, NAV, and asset flows from one place  
 
-- Deposit and redeem on the chain you prefer
-- No need to know where the hub is
-- Gas costs can be covered by the pool
-- You get a consistent experience across networks
+## What the hub does
 
-## What happens behind the scenes?
+The **hub chain** is where all logic and coordination happens:
 
-The Centrifuge protocol handles all the complexity:
+- Maintains share class metadata and pricing  
+- Tracks NAV and accounting across all vaults  
+- Approves or denies deposit and redemption requests  
+- Pushes share and asset prices to oracles on each network  
 
-- Cross-chain messages are sent and verified securely
-- Messages are bundled together to reduce gas costs
-- If something fails, it is automatically retried
-- You do not need to hold gas tokens on every chain
+## What the spokes do
 
-## Why it matters
+**Spoke chains** are where users interact and assets are moved:
 
-Centrifuge’s multi-chain design gives you:
+- Vaults accept deposits and redemptions  
+- Share tokens are minted or burned  
+- Assets are allocated into external strategies  
+- Vault logic can include ERC-4626 or ERC-7540 flows  
 
-- One connected experience across Ethereum, Base, Arbitrum, and other networks
-- Vaults that work the same way no matter where you access them
-- Pools that are easy to scale and manage across chains
+Vaults can be synchronous, asynchronous, or hybrid depending on how the manager configures them.
 
-This architecture makes Centrifuge ready for a multi-chain world without introducing additional burden for users or managers.
+## Cross-chain coordination
 
+Behind the scenes, Centrifuge handles messaging between the hub and spokes with built-in reliability and efficiency:
+
+### Message aggregation  
+Each cross-chain message is verified using multiple interoperability providers to improve security.
+
+### Batching  
+Messages are bundled together to reduce gas usage and keep processing fast.
+
+### Gas abstraction  
+Users do not need to hold gas tokens across chains. Pools can cover or subsidize transaction costs.
+
+### Retry and repayment  
+If a message fails or runs out of gas, it is retried automatically or repaid without manual work.
+
+## Summary
+
+Centrifuge’s multi-chain protocol gives you:
+
+- Unified control of your pool from a single hub  
+- Vault access on any supported network  
+- Secure, automated cross-chain messaging  
+- A consistent experience for both investors and managers  
+
+This design eliminates the need to duplicate logic or infrastructure and removes the complexity of scaling across chains.
+
+> Want to learn more about how the messaging system works?  
 > See the [developer documentation on chain abstraction](/developer/protocol/chain-abstraction/)
