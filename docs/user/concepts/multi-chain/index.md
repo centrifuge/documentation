@@ -11,8 +11,6 @@ Centrifuge V3 is designed to scale tokenized asset management across blockchains
 
 This makes Centrifuge truly multi-chain, giving investors and managers a consistent experience wherever they operate.
 
-![](./images/overview.png)
-
 ## What does this solve?
 
 In most protocols, issuing tokens on multiple chains means maintaining separate contracts, price feeds, wallets, and accounting per chain. This creates silos, increases overhead, and fragments liquidity.

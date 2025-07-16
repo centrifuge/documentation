@@ -15,10 +15,6 @@ Each tokenized asset is created and managed through a **pool**, which contains o
 > - [How vaults work](/user/concepts/vaults)  
 > - [Understanding share tokens](/user/concepts/tokens)
 
-:::info
-Not all tokenized assets are freely transferable. Pools define permissioning rules that control who can hold, invest in, or redeem share tokens.
-:::
-
 ## Why tokenization?
 
 Tokenization enables assets to become:
@@ -27,6 +23,10 @@ Tokenization enables assets to become:
 - **Composable**: Tokens can integrate into DeFi if designed to follow standards like ERC-4626 or deRWA
 - **Auditable**: All transactions, balances, and ownership records are transparently recorded onchain
 - **Programmable**: Rules and strategies are enforced using smart contracts
+
+:::info
+Not all tokenized assets are freely transferable. Pools define permissioning rules that control who can hold, invest in, or redeem share tokens.
+:::
 
 ## What gets tokenized?
 

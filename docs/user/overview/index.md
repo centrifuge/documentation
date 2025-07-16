@@ -32,9 +32,4 @@ Centrifuge V3 enables permissionless, onchain asset management across multiple r
     <p>Invest in tokenized assets across networks. Understand access controls and redemption flows.</p>
   </a>
 
-  <a className="card-tile" href="/user/deployments">
-    <h3>Try it out</h3>
-    <p>Test the protocol, interact with vaults, and explore onchain flows in a sandbox environment.</p>
-  </a>
-
 </div>
