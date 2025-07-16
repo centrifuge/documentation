@@ -77,15 +77,6 @@ Make sure to check whether the pool uses a synchronous or asynchronous flow befo
 
 <!-- Add UI flows to show what's happening -->
 
-## Redemptions
-
-When withdrawing funds:
-
-- **Synchronous vaults**: Redemptions are requested and fulfilled asynchronously via `requestRedeem` and `claimRedeem`
-- **Asynchronous vaults**: Same two-step redemption flow, with timing depending on the pool’s liquidity and policies
-
-Redemptions may be delayed based on vault configuration and available liquidity.
-
 ## What to consider
 
 - **Access control**: Ensure your wallet is allowed to invest or redeem

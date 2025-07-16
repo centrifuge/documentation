@@ -18,6 +18,7 @@ Every share class in a pool has its own **share token**. These tokens:
 - Represent a claim on the pool’s assets or yield  
 - Follow the ERC-20 standard (so they work in most wallets and DeFi apps)  
 - Are issued when a user deposits, and burned when they redeem  
+- Are **price-accruing**, meaning their value increases over time rather than their balance increasing
 
 Share tokens are deployed on **spoke chains** where users interact with vaults.
 
@@ -55,12 +56,14 @@ Users can invest or redeem on any chain where the vault is deployed. All state c
 
 ## How token pricing works
 
-Each token has a price per share that is updated by the pool manager on the Hub. This price reflects the value of the vault’s underlying assets and is used to:
+Each token has a **price per share** that is updated by the pool manager on the Hub. This price reflects the value of the vault’s underlying assets and is used to:
 
 - Issue the correct number of shares when someone deposits  
 - Calculate how much someone receives when redeeming  
 
-Prices are pushed to local oracles on each chain so external contracts and apps can fetch the current value.
+Prices are pushed to local oracles on each chain so external contracts and apps can retrieve the current value.
+
+Because tokens are price-accruing, the token balance in your wallet stays constant, but its value increases over time as the strategy yields returns.
 
 ## Summary
 
@@ -68,6 +71,7 @@ Tokens in Centrifuge give users access to onchain investment strategies in a fam
 
 - Compliance and permissioning  
 - Accurate cross-chain accounting  
-- Dynamic share pricing and redemption logic  
+- Price-accruing logic that reflects value growth  
+- Integration with wallets, DeFi protocols, and oracles  
 
 Whether you’re holding tokens in your wallet or using them in DeFi, they represent real positions in tokenized, managed assets.

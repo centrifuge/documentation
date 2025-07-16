@@ -6,63 +6,70 @@ category: subpage
 
 # Tokenization
 
-Tokenization in Centrifuge V3 refers to the process of representing real-world assets (RWAs) or strategies as onchain tokens. These tokens are issued through smart contracts and may be held, transferred, and used across EVM-compatible chains, depending on the permissioning rules set by the pool.
+Tokenization in Centrifuge V3 is the process of representing assets or strategies as onchain tokens. These tokens are issued through smart contracts and reflect ownership in a vault, governed by rules set at the pool and share class level.
 
-Each tokenized asset is managed within a **vault**, which defines the investment logic, accepted currencies, and redemption mechanics. Once issued, the token becomes the onchain representation of a user’s ownership or claim on the underlying asset strategy.
+Each tokenized asset is created and managed through a **pool**, which contains one or more **vaults**, and each vault issues **share tokens** to investors. These tokens may be held, transferred, and used across supported EVM-compatible networks, depending on how the pool is configured.
+
+> Learn more:  
+> - [What is a pool?](/user/concepts/pools)  
+> - [How vaults work](/user/concepts/vaults)  
+> - [Understanding share tokens](/user/concepts/tokens)
+
+:::info
+Not all tokenized assets are freely transferable. Pools define permissioning rules that control who can hold, invest in, or redeem share tokens.
+:::
 
 ## Why tokenization?
 
-Tokenization allows assets to become:
+Tokenization enables assets to become:
 
-- **Transferable** *(when permitted)*: Investors may hold or move share tokens, depending on whether the token is permissioned
-- **Composable**: Tokens can integrate into DeFi if the vault and token are designed for it (e.g. deRWA, ERC-4626)
-- **Auditable**: All token movements and balances are recorded onchain
-- **Programmable**: Issuers and curators can enforce rules and automate strategy logic via smart contracts
-
-Note: Not all tokenized assets are freely transferable. Pools can enforce restrictions on who can hold, invest in, or redeem share tokens.
+- **Transferable** *(when permitted)*: Users may hold or move share tokens based on pool-level permissions
+- **Composable**: Tokens can integrate into DeFi if designed to follow standards like ERC-4626 or deRWA
+- **Auditable**: All transactions, balances, and ownership records are transparently recorded onchain
+- **Programmable**: Rules and strategies are enforced using smart contracts
 
 ## What gets tokenized?
 
-Centrifuge can tokenize:
+Centrifuge can tokenize many types of assets and strategies, including:
 
-- Real world assets (US Treasuries, Collateral Loan Obligations (CLO's), Indexes and more)
-- Onchain assets (e.g. vaults composed of other tokens)
-- Strategies that combine both
+- **Real world assets**: US Treasuries, real estate, credit, carbon, or consumer finance  
+- **Onchain assets**: Tokens, staked positions, or DeFi strategies  
+- **Structured products**: Combinations of both onchain and offchain exposures
 
-Tokenization is flexible: products can range from direct credit exposure to complex structured vaults backed by multiple assets.
+Tokenization is flexible. Products can range from direct credit exposure to complex multi-asset vaults or portfolio strategies.
 
 ## How tokenization works in Centrifuge
 
 1. **Create a pool**  
-   An issuer or curator deploys a pool on a chosen Hub chain. This pool defines the logic for managing vaults, share classes, and capital flows.
+   A manager launches a pool on a selected hub chain. The pool defines capital flow, share classes, and permissioning.
 
 2. **Configure vaults**  
-   Vaults are created to accept investment into specific strategies or assets. These vaults can be synchronous (real-time) or asynchronous (request-based).
+   Vaults are deployed to accept specific currencies and invest in target assets. They define whether flows are synchronous or asynchronous.
 
 3. **Deploy tokens**  
-   Share tokens (ERC-20) are minted to represent user ownership. Optional modules can enforce compliance (ERC-1404), multi-asset logic (ERC-7575), or asynchronous flows (ERC-7540).
+   Each share class issues a share token (ERC-20 compatible), optionally including modules for compliance, multi-asset handling, or async workflows.
 
-4. **Distribute to users**  
-   Investors deposit accepted currencies into the vault and receive share tokens in return.
+4. **Distribute to investors**  
+   Investors deposit into vaults and receive share tokens that represent their claim on the strategy.
 
 ## Token standards used
 
-Centrifuge uses and extends several Ethereum standards to represent tokenized assets:
+Centrifuge builds on Ethereum token standards to support flexible, compliant tokenization:
 
-- **ERC-20**: Base token standard for share tokens and vault assets
-- **ERC-1404**: Optional restrictions for compliance and permissioning
-- **ERC-4626**: Standardized vault interface for synchronous deposits
-- **ERC-7540**: Request-based vault flow for asynchronous investing/redeeming
-- **ERC-7575**: Enables pooled vaults with multiple investment assets
+- **ERC-20**: Base standard for share tokens and vault balances  
+- **ERC-1404**: Enables permissioning and compliance rules  
+- **ERC-4626**: Vault standard for synchronous investing  
+- **ERC-7540**: Request-based standard for asynchronous flows  
+- **ERC-7575**: Allows pooled vaults with multiple investment assets
 
 ## Examples
 
-- An RWA-backed pool issues share tokens to investors after offchain assets are verified and deposited
-- A curator tokenizes a yield strategy using staked ETH and LRTs, offering a wrapped vault token to DeFi investors
-- A higher-order strategy tokenizes a portfolio of other Centrifuge vaults, each representing different real world or crypto strategies
+- A tokenized real estate fund issues permissioned share tokens to accredited investors  
+- A DeFi-native strategy wraps staked ETH and LSTs into a vault, offering a token to DeFi protocols  
+- A curated portfolio combines several Centrifuge vaults into one share class backed by diverse assets
 
 ## Key takeaways
 
-- Every tokenized position is backed by smart contract logic and chain-native accounting
-- Tokenization is modular, issuers and curators choose how to configure their strategy
-- Once issued, tokens integrate seamlessly into DeFi or investor portfolios
+- Tokenization connects assets and strategies to onchain liquidity using programmable, standard-based tokens  
+- Pools define the rules and permissions, vaults define the investment flows, and tokens represent the user’s ownership  
+- Once issued, share tokens can be held, redeemed, or integrated across DeFi and institutional platforms

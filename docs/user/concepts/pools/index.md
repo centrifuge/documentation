@@ -53,7 +53,7 @@ For more, see the [Vaults](/user/vaults) section.
 
 ## Creating a pool
 
-Pool creation is currently permissioned but will become open to all users. When creating a pool, managers choose:
+When creating a pool, managers choose:
 
 - A hub chain (for central control)
 - A base currency (e.g. USD, USDC)

@@ -20,7 +20,6 @@ Supported use cases include:
 
 <img src="https://gateway.pinata.cloud/ipfs/bafybeieu2z5spguobpdeoyeyc7ff5vcoscoa2s4zlvdyt3j76jhviwz5si" alt="RWA Launchpad" width="800" style={{borderRadius: '8px'}} />
 
-
 ## Issuance workflow
 
 ### 1. Configure your product
@@ -34,20 +33,22 @@ Use the Launchpad interface to configure:
 ![Pool Details](https://gateway.pinata.cloud/ipfs/bafkreifgfchfoqbwfqbp6rdstol6wgkwb7iobmpzqlstvpzxit2pxmjfxq)
 
 </details>
+
 - Asset type (e.g. bond, equity, real estate)
 - Share class structure (e.g. junior/senior tranches)
 <details>
 <summary>Asset type & Share class structure UI </summary>
 
-![Pool Details](https://gateway.pinata.cloud/ipfs/bafkreidzhorp36q33djipol2ehqp74x3cgs3n5jqursltvnrjneima35f4)
+![Share Class Details](https://gateway.pinata.cloud/ipfs/bafkreidzhorp36q33djipol2ehqp74x3cgs3n5jqursltvnrjneima35f4)
 
 </details>
 
 - Compliance rules (e.g. allowlist, jurisdictional controls)
 - Manager access controls 
-<summary>Access Contol UI </summary>
 <details>
-![Pool Details](https://gateway.pinata.cloud/ipfs/bafkreiewkztvw5izthzpxztxkxrhb5w5gd5hq3ruitkui42ysncfoviszu)
+<summary>Access Control UI</summary>
+
+![Access Control](https://gateway.pinata.cloud/ipfs/bafkreiewkztvw5izthzpxztxkxrhb5w5gd5hq3ruitkui42ysncfoviszu)
 
 </details>
 
@@ -57,7 +58,7 @@ Launchpad deploys a suite of protocol-native contracts:
 
 - ERC-20 share tokens with optional ERC-1404 restrictions
 - Vaults using ERC-4626 (for synchronous deposits) or ERC-7540 (for asynchronous flows)
-- Optional pooled vaults using ERC-7575
+- Pooled vaults using ERC-7575 to aggregate capital across supported assets
 - On/Off Ramp Manager to control asset movements
 - Fee, accounting, and reporting modules
 
@@ -67,8 +68,8 @@ All contracts are upgrade-free and immutable once deployed.
 
 Configure on-chain and off-chain capital flows:
 
-- **Onramp**: any user can deposit approved ERC20 tokens into the pool.
-- **Offramp**: only authorized relayers can initiate withdrawals to predefined recipient addresses.
+- **Onramp**: any user can deposit approved ERC20 tokens into the pool
+- **Offramp**: only authorized relayers can initiate withdrawals to predefined recipient addresses
 
 This ensures compliance and control over fund flows.
 
@@ -76,25 +77,26 @@ This ensures compliance and control over fund flows.
 
 Once contracts are deployed and configured:
 
-- Begin accepting deposits from whitelisted or any users depending on your configuration
+- Begin accepting deposits from whitelisted or open users (based on your setup)
 - Mint and distribute share tokens
-- Fund the vaults with capital or asset-backed flows
+- Fund vaults with capital or asset-backed flows
 
 Deposits and redemptions will follow the configured vault logic:
+
 - **Synchronous deposits**: users receive shares immediately (ERC-4626)
 - **Asynchronous redemptions**: requests are queued and processed via the Hub (ERC-7540)
 
 ## Vault logic
 
-Centrifuge supports two primary vault types:
+Centrifuge supports two primary vault configurations:
 
 - **Asynchronous vaults (ERC-7540)**  
-  Both deposits and redemptions are queued via a request system and managed through the Centrifuge Hub.
+  Deposits and redemptions are request-based, coordinated through the Hub. This is ideal for RWAs with delayed settlement or valuation updates.
 
 - **Synchronous deposit vaults**  
-  Deposits use ERC-4626 and are fulfilled instantly. Redemptions remain asynchronous via ERC-7540.
+  Deposits are executed immediately using ERC-4626. Redemptions are still handled asynchronously via ERC-7540. This is ideal for liquid, onchain assets.
 
-Issuers can combine multiple vaults into a single pool using the ERC-7575 pooled vault standard. For example, synchronous investments and asynchronous redemptions. 
+Each share token can be backed by multiple vaults—each accepting a different asset—using the ERC-7575 standard. This allows issuers to consolidate liquidity across asset types while managing them independently.
 
 ## Post-launch operations
 
@@ -107,7 +109,6 @@ Track the performance and operations of your issuance:
 - Live reporting on NAV, share price, and token supply
 
 ![Update Dashboard](https://gateway.pinata.cloud/ipfs/bafkreidozv26pnarp75gv5m2th7iyvjyfzc6opb4pdj3zm5tww3w2llayq)
-
 
 ## Extensibility
 

@@ -2,92 +2,64 @@
 id: vaults
 title: Vaults
 category: subpage
+contributors: <Graham Nelson:graham@k-f.co>
 ---
-
-<!-- Will add some flow diagrams later -->
 
 # Vaults
 
-Vaults are the core building blocks of Centrifuge V3. Each vault defines how users can invest into a pool, how capital is managed, and how redemptions are handled.
+Vaults are how users interact with pools in Centrifuge. They define how assets are deposited, redeemed, and allocated across strategies.
 
-Every pool can deploy one or more vaults, each with its own configuration and strategy. Vaults determine how share tokens are issued and how liquidity flows in and out of the system.
-
-## What does a vault do?
-
-A vault in Centrifuge:
-
-- Accepts investor deposits in specific assets (e.g. USDC, DAI)
-- Mints share tokens that represent ownership in the strategy
-- Coordinates investment or redemption flows with the Hub
-- Routes capital into other assets or protocols via the Balance Sheet
-
-Each vault operates on a **spoke chain**, but is coordinated by the **Hub chain**.
+Each share token is backed by one or more vaults. These vaults live on spoke chains, allowing users to invest directly from the chain of their choice. Vaults are configured to support either synchronous or asynchronous flows.
 
 ## Vault types
 
-Centrifuge supports two main vault types:
+Centrifuge supports two types of vaults. Pool managers choose the right type depending on their product needs.
 
 ### Synchronous vaults
 
-- Based on the ERC-4626 standard
-- Deposits are executed immediately
-- Share tokens are minted instantly
-- Redemptions are queued and processed asynchronously
+Synchronous vaults use the ERC-4626 standard. When users deposit, they immediately receive share tokens. These vaults offer real-time minting and are best suited for highly liquid strategies where on-demand issuance is feasible.
 
-This vault type is familiar to many DeFi users, ideal for real-time access and integrations with other protocols.
+- Real-time minting  
+- Easy DeFi integration  
+- Ideal for liquid, onchain strategies
 
 ### Asynchronous vaults
 
-- Based on the ERC-7540 standard
-- Both deposits and redemptions happen in two steps:
-  - A request is submitted (`requestDeposit` / `requestRedeem`)
-  - Later, the user completes the flow with a `claim`
+Asynchronous vaults follow the ERC-7540 standard. In this model, deposits and redemptions are processed through a request lifecycle managed by the hub chain. Users submit a request and receive or redeem tokens after it’s been approved and priced.
 
-These vaults allow for controlled liquidity flows, ideal for strategies that need time-based rebalancing or require manager approval.
+- Request-based flow (invest and redeem)  
+- Suited for RWA strategies with offchain components  
+- Requests are queued, approved, priced, and fulfilled  
 
-### Hybrid flows
+> Learn more: [Managing investment requests](/user/concepts/onchain-accounting)
 
-Some vaults use a **hybrid model** where deposits are synchronous (ERC-4626), but redemptions are handled asynchronously (ERC-7540). This allows users to get shares instantly while giving the pool manager more flexibility on liquidity outflows.
+## Multi-asset support
 
-## Multi-asset vaults
+A single share token can be backed by **multiple vaults**, each accepting a different asset. For example, one share class might accept both USDC and DAI by deploying two separate vaults—each linked to the same token.
 
-Vaults can accept multiple investment currencies by using the ERC-7575 standard. This allows a single vault to hold several assets (e.g. USDC, DAI, wETH), while tracking ownership and share pricing accurately.
+This setup is supported by [ERC-7575], allowing flexible entry points while consolidating capital into one balance sheet.
 
-When using pooled vaults:
+- Users can deposit different currencies  
+- Capital is aggregated and managed centrally  
+- Investors all receive the same share token regardless of entry asset  
 
-- Liquidity is aggregated across all currencies
-- Assets are managed under a single balance sheet
-- Share token supply is unified, regardless of input asset
+## How vaults connect to the protocol
 
-## User experience
+Each vault is deployed to a spoke chain and connected to a pool via:
 
-As an **investor**, you simply:
+- A defined share class and share token  
+- Asset configuration (what currencies are accepted)  
+- Logic for investing, pricing, and redemption  
 
-1. Choose a pool and a vault
-2. Deposit the accepted currency
-3. Receive share tokens (immediately or after a claim)
-4. Redeem your shares when ready
-
-Whether the vault is synchronous or asynchronous, the Centrifuge UI guides you through the right flow, showing when to request, claim, or wait for processing.
-
-## Vault lifecycle
-
-1. **Creation**  
-   A pool deploys a vault on a chosen spoke chain, defining asset type, flow (sync/async), and any permissioning rules.
-
-2. **Investment**  
-   Users deposit accepted assets and receive share tokens.
-
-3. **NAV updates**  
-   The Hub updates pricing regularly to reflect the value of assets held in the vault.
-
-4. **Redemption**  
-   Users redeem their shares and receive their claimable assets based on vault timing and rules.
+Vaults can interact with external DeFi protocols or offchain strategies, depending on how the balance sheet and permissions are configured.
 
 ## Summary
 
-Vaults are where users interact with pools. They determine how you invest, what you receive, and how liquidity is managed. Whether you’re building a strategy or allocating capital, vaults are the access point into Centrifuge.
+Vaults are how users enter and exit investment strategies in Centrifuge. They are:
 
-- Choose synchronous for instant access
-- Choose asynchronous for managed liquidity
-- Choose pooled vaults for multi-asset strategies
+- Deployed on spoke chains  
+- Backed by pool-defined share tokens  
+- Configured for real-time or request-based flows  
+- Flexible enough to support multiple assets through distinct vaults  
+
+Whether users are depositing stablecoins into a treasury vault or redeeming from an offchain credit strategy, vaults are the interface that coordinates capital across the protocol.

@@ -35,7 +35,7 @@ All capital flows into the base Centrifuge strategy vault. The curator only need
 - Vault A (e.g. Anemoy) holds RWAs  
 - Vault B (e.g. LRT strategy) holds staked ETH positions  
 - Curator creates Vault C that deposits into both A and B  
-- Vault C tokens are deposited into an external aggregator (e.g. Morpho, Veda)
+- Vault C tokens are deposited into an external aggregator (e.g. Morpho)
 
 This pattern supports composability and abstraction while maintaining a single point of capital execution.
 
@@ -71,8 +71,6 @@ Curators can build custom user interfaces to:
 - Streamline investor UX
 - Control branding and messaging
 - Build analytics or dashboards
-
-To be listed on the Centrifuge frontend, contact the Centrifuge team for integration and review.
 
 ## Merkle Proof Manager
 
