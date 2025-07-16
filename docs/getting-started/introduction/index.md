@@ -25,11 +25,6 @@ In these docs, you'll find everything you need to know about Centrifuge; from ba
 
 <div className="card-grid">
 
- <a className="card-tile" href="/user/overview">
-    <h3>User Documentation</h3>
-    <p>Explore core concepts and learn how to interact with the Centrifuge protocol. Build and use tokenized financial products across chains.</p>
-  </a>
-
   <a className="card-tile" href="/user/overview">
     <h3>User Documentation</h3>
     <p>Explore core concepts and learn how to interact with the Centrifuge protocol. Build and use tokenized financial products across chains.</p>
