@@ -6,7 +6,7 @@ category: subpage
 
 # Hub and Spoke Model
 
-Centrifuge V3 uses a **hub-and-spoke architecture** to make tokenized asset management scalable and chain-agnostic. Instead of issuing and managing separate tokens on every chain, each pool operates from a single control point—the **hub chain**—and can deploy vaults and tokens on any number of **spoke chains**.
+Centrifuge V3 uses a **hub-and-spoke architecture** to make tokenized asset management scalable and chain-agnostic. Instead of issuing and managing separate tokens on every chain, each pool operates from a single control point. The **hub chain** and can deploy vaults and tokens on any number of **spoke chains**.
 
 This design enables secure and efficient multi-chain operations without duplicating infrastructure or fragmenting accounting.
 
@@ -32,9 +32,9 @@ On each spoke chain:
 
 Vaults on spoke chains are fully programmable and can be configured for synchronous or asynchronous flows.
 
-As an **investor**, you can interact with a vault on any chain where it has been deployed—without needing to know where the pool is managed from.
+As an **investor**, you can interact with a vault on any chain where it has been deployed without needing to know where the pool is managed from.
 
-As a **pool manager**, you choose the hub chain and deploy to spoke chains that match your goals—whether it’s deep liquidity on Ethereum, low fees on Base, or access to specific protocols on Arbitrum.
+As a **pool manager**, you choose the hub chain and deploy to spoke chains that match your goals whether it’s deep liquidity on Ethereum, low fees on Base, or access to specific protocols on Arbitrum.
 On each spoke chain:
 
 
@@ -42,7 +42,7 @@ On each spoke chain:
 
 Most protocols issue tokens independently on each chain, creating siloed ecosystems.
 
-Each token must be managed separately—with its own oracle, wallet, and accounting. This leads to operational overhead, duplication of effort, and fragmented liquidity.
+Each token must be managed separately with its own oracle, wallet, and accounting. This leads to operational overhead, duplication of effort, and fragmented liquidity.
 
 ![](./images/hub-and-spoke.png)
 
@@ -97,4 +97,4 @@ Centrifuge’s hub-and-spoke model enables:
 - **Unified accounting** and capital coordination
 - **Better UX** for both investors and managers
 
-This architecture powers scalable, composable asset management—without chain silos or operational overhead.
+This architecture powers scalable, composable asset management without chain silos or operational overhead.

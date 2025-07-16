@@ -11,8 +11,8 @@ This next evolution of Centrifuge represents an open, non-opinionated set of imm
 ## Core ideas
 
 * **Hub and spoke model**
-    * *Hub* — one chain selected by the operator  to serve as the operational back-office. All bookkeeping and control actions for a tokenization flow through this chain.
-    * *Spokes* — additional chains that act as separate balance sheets. Tokens can be issued, transferred, or redeemed on any spoke; Assets can be deposited or withdrawn to the balance sheet on their origination chain, the hub consolidates each spoke’s balances into one coherent view.
+    * *Hub*: one chain selected by the operator  to serve as the operational back-office. All bookkeeping and control actions for a tokenization flow through this chain.
+    * *Spokes*: additional chains that act as separate balance sheets. Tokens can be issued, transferred, or redeemed on any spoke; Assets can be deposited or withdrawn to the balance sheet on their origination chain, the hub consolidates each spoke’s balances into one coherent view.
 
 * **Multi-asset pools**
     * Every operator operates a **pool** on the hub chain.

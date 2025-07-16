@@ -29,7 +29,7 @@ Centrifuge can tokenize:
 - Onchain assets (e.g. vaults composed of other tokens)
 - Strategies that combine both
 
-Tokenization is flexible—products can range from direct credit exposure to complex structured vaults backed by multiple assets.
+Tokenization is flexible: products can range from direct credit exposure to complex structured vaults backed by multiple assets.
 
 ## How tokenization works in Centrifuge
 
@@ -64,5 +64,5 @@ Centrifuge uses and extends several Ethereum standards to represent tokenized as
 ## Key takeaways
 
 - Every tokenized position is backed by smart contract logic and chain-native accounting
-- Tokenization is modular—issuers and curators choose how to configure their strategy
+- Tokenization is modular, issuers and curators choose how to configure their strategy
 - Once issued, tokens integrate seamlessly into DeFi or investor portfolios

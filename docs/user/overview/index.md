@@ -6,7 +6,7 @@ contributors: <Graham Nelson:graham@k-f.co>
 
 # User Documentation
 
-Centrifuge V3 enables permissionless, onchain asset management across multiple roles. This section helps users understand how to interact with the protocol depending on who they are and what they want to do. Whether you're issuing a pool, curating assets, investing, or testing the system—this guide will get you started.
+Centrifuge V3 enables permissionless, onchain asset management across multiple roles. This section helps users understand how to interact with the protocol depending on who they are and what they want to do. Whether you're issuing a pool, curating assets, investing, or testing the system, this guide will get you started.
 
 ## Explore
 
