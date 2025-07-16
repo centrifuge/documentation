@@ -17,15 +17,23 @@ Centrifuge's ecosystem extends beyond its onchain financial infrastructure, inco
 
 By bringing the entire structured credit market onchain across securitization, tokenization, privacy, governance, and liquidity integrations, Centrifuge is building a more transparent, affordable, and limitless financial system.
 
+Learn more about [Centrifuge's Mission and History](/getting-started/introduction/mission-and-history).
+
 In these docs, you'll find everything you need to know about Centrifuge; from basic concepts to user guides to developer documentation. Here's a rundown of the three sections:
 
 ## Centrifuge Documentation
 
-**Getting Started**: Learn about the history and ecosystem of Centrifuge. You're in this section now!
+<div className="card-grid">
 
-**[User Documentation](/user)**: Read about the concepts of Centrifuge, how to interact with the protocol and learn about the building blocks Centrifuge provides to build tokenized financial products.
+  <a className="card-tile" href="/user/overview">
+    <h3>User Documentation</h3>
+    <p>Explore core concepts and learn how to interact with the Centrifuge protocol. Build and use tokenized financial products across chains.</p>
+  </a>
 
-**[Developer Documentation](/developer)**: Learn about the technology, how to core contracts of Centrifuge work, how to integrate with the protocol - both on a contract and on a UI level.
+  <a className="card-tile" href="/developer/protocol/overview/">
+    <h3>Developer Documentation</h3>
+    <p>Understand how Centrifuge works under the hood. Integrate contracts and interfaces into your application or strategy.</p>
+  </a>
 
-A good place to begin is [Centrifuge's Mission and History](/getting-started/introduction/mission-and-history).
+</div>
 
