@@ -1,6 +1,6 @@
 ---
-id: tokens
-title: Tokens
+id: share-tokens
+title: Share tokens
 category: subpage
 contributors: <Graham Nelson:graham@k-f.co>
 ---

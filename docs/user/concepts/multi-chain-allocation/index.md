@@ -1,6 +1,6 @@
 ---
-id: balance-sheet 
-title: Spoke Balance Sheets
+id: multi-chain-allocation
+title: Multi-chain allocation
 contributors: <Devin Black:devin@k-f.co>
 ---
 
