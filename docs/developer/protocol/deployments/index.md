@@ -69,8 +69,8 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Ethereum Mainnet | 1  |
 | Base             | 2  |
 | Arbitrum         | 3  |
-| Avalanche        | 4  |
-| Plume            | 5  |
+| Plume            | 4  |
+| Avalanche        | 5  |
 
 ### Testnet
 
