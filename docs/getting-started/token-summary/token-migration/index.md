@@ -28,34 +28,30 @@ The migration process started on **May 20th 2025**, following a successful [gove
 2. Connect your wallet that holds legacy CFG.
 3. Follow the on-screen instructions:
    - Connect an EVM-based address and sign a message proving ownership of your Ethereum wallet. 
-     <div style={{ display: 'flex', gap: '10px' }}>
-       <img src="/img/cfg_migration_1.png" alt="Migration Step 1" style={{ width: '500px' }} />
-     </div>
+   ![](./images/cfg_migration_1.png#width=60%)
    - Submit a transaction on the Centrifuge Chain to request migration.
-      <div style={{ display: 'flex', gap: '10px' }}>
-       <img src="/img/cfg_migration_3.png" alt="Migration Step 1" style={{ width: '500px' }} />
-      </div>
+ ![](./images/cfg_migration_3.png#width=60%)
 4. Upon completion, the new CFG tokens will be sent to your EVM wallet.
 
 > **IMPORTANT:** The process can take up to 1 hour to complete.
 
 **Demo Video**:  
-[!Watch the video on Youtube](https://www.youtube.com/watch?v=xaoM5qMgnT0)
+[Watch the video on Youtube](https://www.youtube.com/watch?v=xaoM5qMgnT0)
+
 <img src="https://gateway.pinata.cloud/ipfs/bafybeihrf45autpgownm7gkpny5ytq5wydf2m4zpornpjalr4s6g3bj6lu" alt="Legacy CFG Migration Tutorial" width="800" style={{borderRadius: '8px'}} />
 
 #### WCFG (Wrapped CFG on Ethereum)
 1. Navigate to [https://app.centrifuge.io/migrate](https://app.centrifuge.io/#/portfolio/migrate/eth).
 2. Connect your Ethereum wallet holding WCFG.
 3. Follow the on-screen instructions to complete the WCFG-to-CFG conversion.
-      <div style={{ display: 'flex', gap: '10px' }}>
-       <img src="/img/wcfg_migration_1.png" alt="Migration Step 1" style={{ width: '500px' }} />
-      </div>
+![](./images/wcfg_migration_1#width=60%)
 4. Receive the new CFG tokens in your Ethereum wallet.
 
 > **IMPORTANT:** The process is atomic, and you will receive your new CFG tokens immediately.
 
 **Demo Video**:  
-[!Watch the video on Youtube](https://www.youtube.com/watch?v=f63OraAZJu8)
+[Watch the video on Youtube](https://www.youtube.com/watch?v=f63OraAZJu8)
+
 <img src="https://gateway.pinata.cloud/ipfs/bafybeibqxzvaszgcgdepbf6kcsdzf2pzmu5epwm36lniuojac6fbxxccs4" alt="WCFG Migration Tutorial" width="800" style={{borderRadius: '8px'}} />
 
 ---
