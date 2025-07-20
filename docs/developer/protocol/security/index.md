@@ -41,4 +41,4 @@ The core team contributing to Centrifuge has completed an operational security r
 
 ## Bug bounty
 
-Centrifuge runs an active bug bounty program with a $250,000 maximum reward, available on [Cantina](https://cantina.xyz/code/6cc9d51a-ac1e-4385-a88a-a3924e40c00e/overview).
+Centrifuge runs an active bug bounty program with a $250,000 maximum reward, available on [Cantina](https://cantina.xyz/bounties/6cc9d51a-ac1e-4385-a88a-a3924e40c00e).
