@@ -1,105 +1,104 @@
 ---
 id: glossary
 title: Glossary
-contributors: <Devin Black:devin@k-f.co>
+category: subpage
 ---
 
 # Glossary
 
-A glossary of terms related to Centrifuge and real-world assets onchain. For a more general glossary of blockchain and decentralized finance terms, see [Consensys's Blockchain Glossary](https://consensys.io/knowledge-base/a-blockchain-glossary-for-beginners).
+A reference guide to key terms and concepts used across the Centrifuge V3 documentation.
 
-### Asset
+## Centrifuge-specific terms
 
-In a Centrifuge pool, assets are tokenized as NFTs and financed by the pool's issuer.
+**Centrifuge V3**  
+The third version of the Centrifuge protocol, designed for scalable, permissionless, and multi-chain asset tokenization.
 
-### Asset Originator
+**RWA (Real-World Asset)**  
+A physical or offchain financial asset such as bonds, real estate, or private credit that is tokenized onchain.
 
-Often (but not always) the issuer, responsible for sourcing and managing real-world assets to be financed.
+**RWA Launchpad**  
+The no-code interface for issuers to configure, deploy, and manage tokenized financial products using Centrifuge contracts.
 
-### Centrifuge App
+**Hub chain**  
+The central coordination chain for a pool. Manages accounting, permissions, share prices, and controls interactions across spoke chains.
 
-The Centrifuge App is Centrifuge's interface for investors to invest in real-world assets and for issuers to manage their pools and assets as well as to draw financing from these assets.
+**Spoke chain**  
+A network where user interaction occurs. Vaults are deployed on spoke chains, and investors deposit or redeem assets there.
 
-### Centrifuge Chain
+**Hub-and-spoke model**  
+Centrifuge's multi-chain architecture, where one hub coordinates activity across many spokes.
 
-Centrifuge Chain is a blockchain specifically designed for real-world assets. It powers pools, their assets, tranches, onchain governance, the treasury, and the CFG token.
+**Centrifuge ID (centrifugeId)**  
+A unique identifier for a supported chain in the Centrifuge protocol. Used to direct communication and actions across chains.
 
-### Centrifuge Prime
+**Pool**  
+A unique investment product deployed on Centrifuge, consisting of vaults, share classes, and tokens. Identified by a `poolId`.
 
-[Centrifuge Prime](https://centrifuge.io/prime/) is our product that helps DAOs, protocols, and other crypto-native organizations invest in and scale a portfolio of real-world assets.
+**Pool ID (poolId)**  
+A globally unique identifier for a pool, derived from the hub chain and local pool index.
 
-### Collateral
+**Share class**  
+A distinct investment tranche within a pool. Each share class can have different rules, permissions, and associated tokens.
 
-Assets pledged by borrowers to secure a loan, ensuring the lender can recoup some value if the borrower defaults.
+**Share class ID (scId)**  
+The identifier for a specific share class within a pool.
 
-### DROP / TIN
+**Share token**  
+An ERC-20 token representing user ownership in a specific share class. Issued when users invest and burned upon redemption.
 
-In previous iterations of Centrifuge (i.e. Tinlake), DROP was the name of the token representing the senior tranche in a pool, and TIN the token representing the junior tranche in a pool. Tranche tokens in pools on Centrifuge Chain can have any name as defined by the issuer.
+**Vault**  
+A smart contract that manages deposits, redemptions, and asset allocations for a specific strategy. Vaults can be synchronous or asynchronous.
 
-### Epoch
+**Synchronous vault (ERC-4626)**  
+A vault where deposits are fulfilled immediately. Shares are minted on deposit; redemptions are typically processed asynchronously.
 
-In Centrifuge's pools, an epoch is a fixed time period where investment and redemption transactions are temporarily locked and then executed at the end based on predefined rules. This system ensures coordinated and fair handling of funds, allowing for new asset financing while prioritizing investor redemptions.
+**Asynchronous vault (ERC-7540)**  
+A vault where deposits and redemptions are request-based and processed in batches. Useful for offchain or delayed asset management.
 
-### Issuer
+**Pooled vault (ERC-7575)**  
+A share token that collects value across multiple vaults. Enables strategies with multiple currencies or layered structures.
 
-An entity that offers real-world assets for financing on Centrifuge. In many (but not all) cases, an issuer may also be the pool operator and/or the asset originator.
+**Asset ID (assetId)**  
+The identifier for a specific investment currency (ERC-20 or ERC-6909) used in a vault, scoped to a given chain.
 
-### Liquidity Pools
+**NAV (Net Asset Value)**  
+The total value of a vault or share class, representing its current worth based on asset prices and liabilities.
 
-Centrifuge Liquidity Pools are smart contracts deployed on EVM chains (like Ethereum and its L2 networks) that allow for users to invest in pools on Centrifuge. For example, Liquidity Pools deployed on Ethereum allow Ethereum users to invest in a Centrifuge pool without leaving Ethereum.
+## Token standards
 
-### NAV (Net Asset Value)
+**ERC-20**  
+Ethereum's base token standard. Used for share tokens and supported investment currencies.
 
-The total value of a pool's assets. This valuation is typically required when an asset or portfolio of assets is being sold, or when investors want to enter or exit an existing pool. In such cases, the portfolio's value ultimately determines the investment or redemption price.
+**ERC-1404**  
+An extension of ERC-20 for permissioned tokens. Allows restriction on transfers and redemptions.
 
-### NFT
+**ERC-4626**  
+A standard for yield-bearing vaults. Used for synchronous vaults in Centrifuge.
 
-NFTs are a unique digital identifier that, unlike the dollar or ERC-20 tokens like CFG, are unique and "non-fungible." In the case of Centrifuge, NFTs are used to represent real-world assets onchain.
+**ERC-7540**  
+A request-based vault interface used for asynchronous investing and redeeming.
 
-### Onchain
+**ERC-7575**  
+A standard that enables a single token to represent positions across multiple vaults. Used for pooled vault strategies.
 
-Like being online, but on a blockchain.
+## User roles
 
-### Pool
+**Issuer**  
+Deploys a new pool using the RWA Launchpad. Responsible for onboarding assets and configuring structure and compliance.
 
-A collection of assets bundled and financed onchain on Centrifuge.
+**Curator**  
+Designs and manages tokenized strategies by composing assets, vaults, and rules. May or may not involve RWAs.
 
-### Pool Reserve
+**Investor**  
+Deposits capital into vaults and receives share tokens. Can redeem tokens for the underlying assets or exit the strategy.
 
-Funds in a pool not actively financing assets.
+## Concepts in practice
 
-### Pool Value
+**Tokenization**  
+The process of representing an asset or strategy as an onchain token.
 
-The total value of assets within a specific pool on Centrifuge. This also includes the reserve.
+**Redemption**  
+The act of converting share tokens back into the original asset or currency, usually through a vault.
 
-### Real-world Asset
-
-Physical, tangible assets like real estate, treasuries, or commodities, as opposed to natively digital assets. In Centrifuge, these are tokenized for use in decentralized finance. Not to be confused with risk weighted assets!
-
-### SPV (Special Purpose Vehicle)
-
-A separate legal entity created to isolate financial risk. In the context of Centrifuge pools, an SPV is typically used for holding real-world assets that are being financed. It allows these assets to be legally and financially separated from the main operating company, reducing risk and improving transparency for investors.
-
-### Tinlake
-
-The first iteration of Centrifuge's decentralized application for investing in and financing real-world assets, deployed on Ethereum. Tinlake is now a legacy platform and has been replaced by the Centrifuge App.
-
-### Tokenization
-
-The process of issuing a digital representation of an asset on a blockchain. In the context of Centrifuge, tokenization is process of converting real-world assets into digital tokens onchain. Tokenization
-
-### Total Assets Financed
-
-The cumulative value of all real-world assets financed through the Centrifuge platform, all time.
-
-### Total Value Locked (TVL)
-
-The total amount of assets that are currently being staked or locked in a blockchain protocol, a common metric in DeFi to assess the scale of participation. In Centrifuge, TVL is measured as the sum of all pool values.
-
-### Tranche
-
-Common in traditional finance, tranches are layers within a pool characterized by varying degrees of risk and return. Common examples are senior, mezzanine, and junior tranches, with senior being the lowest risk and junior being the highest (with differing returns to match).
-
-### Tranche Token
-
-Digital tokens representing a stake in a specific tranche of an investment pool, entitling holders to returns based on the performance of that tranche.
+**Composability**  
+The ability of Centrifuge assets to integrate into DeFi protocols and strategies.
