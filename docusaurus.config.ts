@@ -10,7 +10,7 @@ import { redirects } from "./src/redirects";
 const config: Config = {
   title: "Centrifuge Docs",
   tagline: "Centrifuge documentation",
-  favicon: "img/favicon.png",
+  favicon: "img/logomark-dark.png",
 
   url: "https://docs.centrifuge.io",
   baseUrl: "/",
