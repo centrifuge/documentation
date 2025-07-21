@@ -33,16 +33,10 @@ Explore these topics to get a clear overview of how Centrifuge fits together.
     <p>Create and manage investment products using share classes, vaults, and permissioned logic.</p>
   </a>
 
-  <a className="card-tile" href="/user/concepts/tokens">
-    <h3>Tokens</h3>
+  <a className="card-tile" href="/user/concepts/share-tokens">
+    <h3>Share Tokens</h3>
     <p>Understand share tokens, permissioning rules, and how ownership is tracked across chains.</p>
   </a>
-
-  <a className="card-tile" href="/user/concepts/onchain-accounting">
-    <h3>Onchain Accounting</h3>
-    <p>Track vault assets, liabilities, and NAV updates using transparent, onchain bookkeeping.</p>
-  </a>
-
   <a className="card-tile" href="/user/concepts/spoke-balance-sheets">
     <h3>Spoke Balance Sheets</h3>
     <p>Manage capital flows per chain, and allocate assets through permissioned managers and modules.</p>

@@ -30,7 +30,7 @@ Use the Launchpad interface to configure:
 <details>
 <summary>Show pool details UI</summary>
 
-![Pool Details](https://gateway.pinata.cloud/ipfs/bafkreifgfchfoqbwfqbp6rdstol6wgkwb7iobmpzqlstvpzxit2pxmjfxq)
+![Pool Details](./images/page1.png)
 
 </details>
 
@@ -39,7 +39,7 @@ Use the Launchpad interface to configure:
 <details>
 <summary>Asset type & Share class structure UI </summary>
 
-![Share Class Details](https://gateway.pinata.cloud/ipfs/bafkreidzhorp36q33djipol2ehqp74x3cgs3n5jqursltvnrjneima35f4)
+![Share Class Details](./images/page2.png)
 
 </details>
 
@@ -48,7 +48,7 @@ Use the Launchpad interface to configure:
 <details>
 <summary>Access Control UI</summary>
 
-![Access Control](https://gateway.pinata.cloud/ipfs/bafkreiewkztvw5izthzpxztxkxrhb5w5gd5hq3ruitkui42ysncfoviszu)
+![Access Control](./images/page3.png)
 
 </details>
 
@@ -104,11 +104,11 @@ Track the performance and operations of your issuance:
 
 - Issuer Dashboard
 
-![Issuer Dashboard](https://gateway.pinata.cloud/ipfs/bafkreigmer5ns34nz2pfjyg62dt6czdfqxazpjvdtdjlwx7knpuc24eqmq)
+![Issuer Dashboard](./images/page5.png)
 
 - Live reporting on NAV, share price, and token supply
 
-![Update Dashboard](https://gateway.pinata.cloud/ipfs/bafkreidozv26pnarp75gv5m2th7iyvjyfzc6opb4pdj3zm5tww3w2llayq)
+![Update Dashboard](./images/page4.png)
 
 ## Extensibility
 

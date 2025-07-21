@@ -49,7 +49,7 @@ Each share class can be connected to one or more vaults. Vaults are deployed to 
 - Vaults can use synchronous or asynchronous flows
 - Assets are tracked and settled across chains through the Hub
 
-For more, see the [Vaults](/user/vaults) section.
+For more, see the [Vaults](/user/concept/vaults) section.
 
 ## Creating a pool
 
