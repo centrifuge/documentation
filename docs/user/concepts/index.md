@@ -18,28 +18,20 @@ Explore these topics to get a clear overview of how Centrifuge fits together.
     <h3>Tokenization</h3>
     <p>Turn real-world or onchain assets into programmable share tokens, backed by smart contract logic.</p>
   </a>
+    <a className="card-tile" href="/user/concepts/multi-chain">
+    <h3>Multi-Chain Protocol</h3>
+    <p>Access liquidity and interact with vaults on any supported chain, coordinated through a single hub.</p>
+  </a>
+    <a className="card-tile" href="/user/concepts/pools">
+    <h3>Pools</h3>
+    <p>Create and manage investment products using share classes, vaults, and permissioned logic.</p>
+  </a>
+    <a className="card-tile" href="/user/concepts/share-tokens">
+    <h3>Share Tokens</h3>
+    <p>Understand share tokens, permissioning rules, and how ownership is tracked across chains.</p>
+  </a>
   <a className="card-tile" href="/user/concepts/vaults">
     <h3>Vaults</h3>
     <p>Deposit, redeem, and allocate assets through vaults that support synchronous or asynchronous flows.</p>
   </a>
-
-  <a className="card-tile" href="/user/concepts/multi-chain">
-    <h3>Multi-Chain Protocol</h3>
-    <p>Access liquidity and interact with vaults on any supported chain, coordinated through a single hub.</p>
-  </a>
-
-  <a className="card-tile" href="/user/concepts/pools">
-    <h3>Pools</h3>
-    <p>Create and manage investment products using share classes, vaults, and permissioned logic.</p>
-  </a>
-
-  <a className="card-tile" href="/user/concepts/share-tokens">
-    <h3>Share Tokens</h3>
-    <p>Understand share tokens, permissioning rules, and how ownership is tracked across chains.</p>
-  </a>
-  <a className="card-tile" href="/user/concepts/spoke-balance-sheets">
-    <h3>Spoke Balance Sheets</h3>
-    <p>Manage capital flows per chain, and allocate assets through permissioned managers and modules.</p>
-  </a>
-
 </div>

@@ -1,11 +1,11 @@
 ---
 id: share-tokens
-title: Share tokens
+title: Share Tokens
 category: subpage
 contributors: <Graham Nelson:graham@k-f.co>
 ---
 
-# Tokens
+# Share Tokens
 
 In Centrifuge, tokens represent ownership in a vault or pool. They are the interface for investors to hold, redeem, or interact with tokenized strategies.
 

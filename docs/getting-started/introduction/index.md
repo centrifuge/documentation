@@ -19,21 +19,14 @@ By bringing the entire structured credit market onchain across securitization, t
 
 Learn more about [Centrifuge's Mission and History](/getting-started/introduction/mission-and-history).
 
-In these docs, you'll find everything you need to know about Centrifuge; from basic concepts to user guides to developer documentation. Here's a rundown of the three sections:
-
-## Centrifuge Documentation
-
+In these docs, you'll find everything you need to know about Centrifuge; from basic concepts to user guides to developer documentation. Dive in:
 <div className="card-grid">
-
   <a className="card-tile" href="/user/overview">
     <h3>User Documentation</h3>
     <p>Explore core concepts and learn how to interact with the Centrifuge protocol. Build and use tokenized financial products across chains.</p>
   </a>
-
   <a className="card-tile" href="/developer/protocol/overview/">
     <h3>Developer Documentation</h3>
     <p>Understand how Centrifuge works under the hood. Integrate contracts and interfaces into your application or strategy.</p>
   </a>
-
 </div>
-
