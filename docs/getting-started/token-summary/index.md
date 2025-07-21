@@ -31,7 +31,7 @@ As of **May 20, 2025**, a new ERC20 CFG went live on Ethereum, replacing both th
 **Key details:**
 
 - **Token Address:** [0xcccCCCcCCC33D538DBC2EE4fEab0a7A1FF4e8A94](https://etherscan.io/token/0xcccccccccc33d538dbc2ee4feab0a7a1ff4e8a94)
-- **Migration:** Legacy CFG and WCFG holders can swap 1:1 for the new CFG token. See [Migration Details](#legacy-cfgwcfg-migration-to-ethereum) for details. Migration ends **November 30, 2025**.
+- **Migration:** Legacy CFG and WCFG holders can swap 1:1 for the new CFG token. See [Migration Details](./token-migration) for details. Migration ends **November 30, 2025**.
 - **Bridging:** The previous CFG bridge between Centrifuge Chain and Ethereum will be discontinued with the deprecation of the chain.
 
 
@@ -76,6 +76,8 @@ To ensure a transparent and sustainable release, the distribution of the 115 mil
 - Core team members have 48-month lockups when they join, with a 12-month cliff.
 - Generally, CFG sales are also subject to long-term lockups.
 - Rewards may also be subject to lockups.
+- During the migration phase, CFG tokens can be utilised to facilitate and support the migration of legacy tokens. 
+This may result in transfers exceeding the currently unlocked token amounts. Please note that exchanged legacy tokens will be migrated from the legacy chain and then re-added to the unvested amount upon completion of the migration process. 
 
 
 This section will be updated post the full migration to reflect the up-to-date total supply.
