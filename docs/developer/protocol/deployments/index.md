@@ -71,6 +71,7 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Arbitrum         | 3  |
 | Plume            | 4  |
 | Avalanche        | 5  |
+| BNB Smart Chain  | 6  |
 
 ### Testnet
 
