@@ -93,21 +93,21 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 
 ## Vaults
 
-### JTRSY
+#### JTRSY
 
 | Network          | Asset | Address |
 |------------------|-------|---------|
 | Ethereum Mainnet | USDC  | [`0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a`](https://etherscan.io/address/0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a)  |
 | Avalanche        | USDC  | [`0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a`](https://snowscan.xyz/address/0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a)  |
 
-### JAAA
+#### JAAA
 
 | Network          | Asset | Address |
 |------------------|-------|---------|
 | Ethereum Mainnet | USDC  | [`0x4880799ee5200fc58da299e965df644fbf46780b`](https://etherscan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
 | Avalanche        | USDC  | [`0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784`](https://snowscan.xyz/address/0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784)  |
 
-### deJTRSY
+#### deJTRSY
 
 | Network          | Asset | Address |
 |------------------|-------|---------|
@@ -115,7 +115,7 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Ethereum Mainnet | JTRSY | [`0x04157759a9fe406d82a16bdeb20f9beb9bbeb958`](https://etherscan.io/address/0x04157759a9fe406d82a16bdeb20f9beb9bbeb958)  |
 | Avalanche        | USDC  | [`0x04157759a9fe406d82a16bdeb20f9beb9bbeb958`](https://snowscan.xyz/address/0x04157759a9fe406d82a16bdeb20f9beb9bbeb958)  |
 
-### deJAAA
+#### deJAAA
 
 | Network          | Asset | Address |
 |------------------|-------|---------|
