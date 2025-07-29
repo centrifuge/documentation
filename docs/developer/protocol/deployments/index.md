@@ -80,3 +80,44 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Ethereum Sepolia | 1  |
 | Base Sepolia     | 2  |
 | Arbitrum Sepolia | 3  |
+
+
+## Tokens
+
+| Token          | Address |
+|----------------|---------|
+| JTRSY          | `0x8c213ee79581ff4984583c6a801e5263418c4b86`  |
+| JAAA           | `0x5a0f93d040de44e78f251b03c43be9cf317dcf64`  |
+| deJTRSY        | `0xa6233014b9b7aaa74f38fa1977ffc7a89642dc72`  |
+| deJAAA         | `0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc`  |
+
+## Vaults
+
+### JTRSY
+
+| Network          | Asset | Address |
+|------------------|-------|---------|
+| Ethereum Mainnet | USDC  | `0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a`  |
+| Avalanche        | USDC  | `0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a`  |
+
+### JAAA
+
+| Network          | Asset | Address |
+|------------------|-------|---------|
+| Ethereum Mainnet | USDC  | `0x4880799ee5200fc58da299e965df644fbf46780b`  |
+| Avalanche        | USDC  | `0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784`  |
+
+### deJTRSY
+
+| Network          | Asset | Address |
+|------------------|-------|---------|
+| Ethereum Mainnet | USDC  | `0xcf4c60066aab54b3f750f94c2a06046d5466ccf9`  |
+| Ethereum Mainnet | JTRSY | `0x04157759a9fe406d82a16bdeb20f9beb9bbeb958`  |
+| Avalanche        | USDC  | `0x04157759a9fe406d82a16bdeb20f9beb9bbeb958`  |
+
+### deJAAA
+
+| Network          | Asset | Address |
+|------------------|-------|---------|
+| Ethereum Mainnet | USDC  | `0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784`  |
+| Avalanche        | USDC  | `0xcf4c60066aab54b3f750f94c2a06046d5466ccf9`  |
