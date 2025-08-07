@@ -10,11 +10,12 @@ This page gathers many resources to help you explore, research, and participate 
 
 ## Data and Analytics
 
-These sites allow you to explore the data underpinning Centrifuge (as well as the broader RWA ecosystem), from information on loans originated to asset classes represented on Centrifuge.
+These sites allow you to explore the data underpinning Centrifuge (as well as the broader RWA ecosystem), such as information on TVL and assets issued on Centrifuge.
 
 - [Dune Analytics](https://dune.com/centrifuge/centrifuge)
 - [RWA.xyz](https://rwa.xyz/)
 - [DeFiLlama](https://defillama.com/protocol/centrifuge) (Check _include borrows_ at the top right)
+- [Centrifugescan](https://centrifugescan.io/)
 
 ### CFG token exchanges and market data
 
