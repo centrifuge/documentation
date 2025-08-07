@@ -15,6 +15,10 @@ Every smart contract of the Centrifuge protocol is deployed at the same address 
 
 The protocol is currently deployed on Ethereum, Base, Arbitrum, Avalanche, Plume and Binance Smart Chain.
 
+:::warning
+The Centrifuge protocol is only deployed on these addresses on Ethereum, Base, Arbitrum, Avalanche, Plume and Binance Smart Chain. Smart contracts on other chains with the same addresses cannot be assumed to be official Centrifuge contracts.
+:::
+
 | Contract | Address | Networks |
 |----------|---------|----------|
 | root | `0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f` | [<img src="/img/ethereum-icon.png" alt="Ethereum" width="20" height="20" />](https://etherscan.io/address/0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f) [<img src="/img/base-icon.png" alt="Base" width="20" height="20" />](https://basescan.org/address/0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f) [<img src="/img/arbitrum-icon.png" alt="Arbitrum" width="20" height="20" />](https://arbiscan.io/address/0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f) [<img src="/img/avalanche-icon.png" alt="Avalanche" width="20" height="20" />](https://snowscan.xyz/address/0x7ed48c31f2fdc40d37407cbabf0870b2b688368f) [<img src="/img/plume-icon.png" alt="Plume" width="20" height="20" />](https://explorer.plume.org/address/0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f) [<img src="/img/bsc-icon.png" alt="BSC" width="20" height="20" />](https://bscscan.com/address/0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f) |
