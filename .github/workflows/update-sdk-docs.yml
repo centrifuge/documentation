@@ -9,13 +9,14 @@ on:
   # uncomment this to test outside of main branch:
   pull_request:
     paths:
-      - ".github/workflows/update-docs.yml"
+      - ".github/workflows/update-sdk-docs.yml"
 
 jobs:
   # This is a sanity check to make sure the trigger is coming from the sdk repo
   # if not, we will fail the workflow and it will not run the rest of the jobs
   validate-trigger:
     runs-on: ubuntu-latest
+    if: github.event_name == 'repository_dispatch'
     steps:
       - name: Validate webhook secret
         env:
@@ -28,8 +29,9 @@ jobs:
             exit 1
           fi
           echo "Webhook validation successful"
-  update-docs:
+  build-docs:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' || success()
     steps:
       - name: Checkout centrifuge/sdk repository
         uses: actions/checkout@v4
@@ -61,7 +63,7 @@ jobs:
           retention-days: 1
 
   update-sdk-docs:
-    needs: update-docs
+    needs: build-docs
     runs-on: ubuntu-latest
     permissions:
       contents: write
