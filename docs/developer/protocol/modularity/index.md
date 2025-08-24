@@ -50,6 +50,7 @@ This makes Centrifuge ideal for bridging traditional finance and DeFi through mo
 Adapters are the interoperability layer of the protocol. They connect pools on Centrifuge to any blockchain, enabling cross-chain vault deployment and communication. Supported adapters include:
 
 * Wormhole adapter
+* LayerZero adapter
 * Axelar adapter
 
 Adapters route cross-chain messages via the `Gateway` contract, maintaining a 1-to-many relationship between a single hub on one chain and many vaults.
