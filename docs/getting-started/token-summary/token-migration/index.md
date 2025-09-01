@@ -24,7 +24,7 @@ The migration process started on **May 20th 2025**, following a successful [gove
 
 #### Legacy CFG (CFG on Centrifuge Chain)
 
-1. Navigate to [https://app.centrifuge.io/migrate](https://app.centrifuge.io/#/portfolio/migrate/cent).
+1. Navigate to [https://app.centrifuge.io/migrate](https://migrate.centrifuge.io/#/migrate/cent).
 2. Connect your wallet that holds legacy CFG.
 3. Follow the on-screen instructions:
    - Connect an EVM-based address and sign a message proving ownership of your Ethereum wallet. 
@@ -39,7 +39,7 @@ The migration process started on **May 20th 2025**, following a successful [gove
 
 
 #### WCFG (Wrapped CFG on Ethereum)
-1. Navigate to [https://app.centrifuge.io/migrate](https://app.centrifuge.io/#/portfolio/migrate/eth).
+1. Navigate to [https://app.centrifuge.io/migrate](https://migrate.centrifuge.io/#/migrate/eth).
 2. Connect your Ethereum wallet holding WCFG.
 3. Follow the on-screen instructions to complete the WCFG-to-CFG conversion.
 ![wCFG migration](../images/wcfg_migration_1.png#width=60%)
