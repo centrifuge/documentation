@@ -143,7 +143,7 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Network          | Asset | Address |
 |------------------|-------|---------|
 | Ethereum Mainnet | USDC  | [`0x4880799ee5200fc58da299e965df644fbf46780b`](https://etherscan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
-| Base | [`0x2AEf271F00A9d1b0DA8065D396f4E601dBD0Ef0b`](https://basescan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
+| Base | USDC  | [`0x2AEf271F00A9d1b0DA8065D396f4E601dBD0Ef0b`](https://basescan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
 | Avalanche        | USDC  | [`0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784`](https://snowtrace.io/address/0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784)  |
 
 #### deJTRSY
