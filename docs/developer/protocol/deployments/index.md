@@ -103,7 +103,9 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Network          | Address |
 |------------------|---------|
 | Ethereum Mainnet | [`0x5a0f93d040de44e78f251b03c43be9cf317dcf64`](https://etherscan.io/address/0x5a0f93d040de44e78f251b03c43be9cf317dcf64)  |
+| Base | [`0x5a0F93D040De44e78F251b03c43be9CF317Dcf64`](https://basescan.io/address/0x5a0f93d040de44e78f251b03c43be9cf317dcf64)  |
 | Avalanche        | [`0x58f93d6b1ef2f44ec379cb975657c132cbed3b6b`](https://snowtrace.io/address/0x58f93d6b1ef2f44ec379cb975657c132cbed3b6b)  |
+
 
 #### deJTRSY
 
@@ -113,6 +115,8 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Base | [`0xa6233014b9b7aaa74f38fa1977ffc7a89642dc72`](https://basescan.org/address/0xa6233014b9b7aaa74f38fa1977ffc7a89642dc72)  |
 | Arbitrum | [`0xa6233014b9b7aaa74f38fa1977ffc7a89642dc72`](https://arbiscan.io/address/0xa6233014b9b7aaa74f38fa1977ffc7a89642dc72)  |
 | Avalanche        | [`0xa6233014b9b7aaa74f38fa1977ffc7a89642dc72`](https://snowtrace.io/address/0xa6233014b9b7aaa74f38fa1977ffc7a89642dc72)  |
+| Solana        | [`DeJXZwShCZYJnRX2ruVASfhUhsC44qPW1pacbxRFuGLR`](https://solscan.io/token/DeJXZwShCZYJnRX2ruVASfhUhsC44qPW1pacbxRFuGLR)  |
+
 
 #### deJAAA
 
@@ -122,6 +126,7 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Base | [`0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc`](https://basescan.org/address/0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc)  |
 | Arbitrum | [`0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc`](https://arbiscan.io/address/0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc)  |
 | Avalanche        | [`0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc`](https://snowtrace.io/address/0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc)  |
+| Solana        | [`AAASV2sCaykNGdEQzJ1mMVNfJMsgEtR7PJaqrCuk4bq6`](https://solscan.io/token/AAASV2sCaykNGdEQzJ1mMVNfJMsgEtR7PJaqrCuk4bq6)  |
 
 
 ## Vaults
@@ -138,6 +143,7 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Network          | Asset | Address |
 |------------------|-------|---------|
 | Ethereum Mainnet | USDC  | [`0x4880799ee5200fc58da299e965df644fbf46780b`](https://etherscan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
+| Base | [`0x2AEf271F00A9d1b0DA8065D396f4E601dBD0Ef0b`](https://basescan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
 | Avalanche        | USDC  | [`0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784`](https://snowtrace.io/address/0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784)  |
 
 #### deJTRSY
