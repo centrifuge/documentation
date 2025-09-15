@@ -126,11 +126,11 @@ Here are a few tips for speeding up slow GraphQL queries.
 
 The Centrifuge API v3 indexes data from multiple blockchain networks:
 
-- **Ethereum** (Chain ID: 1): Production environment
-- **Arbitrum** (Chain ID: 42161): Layer 2 scaling solution
-- **Base** (Chain ID: 8453): Coinbase's Layer 2 network
-- **Avalanche** (Chain ID: 43114): High-performance blockchain
-- **Plume** (Chain ID: 98866): Centrifuge's native network
+- **Ethereum** (Chain ID: 1)
+- **Arbitrum** (Chain ID: 42161)
+- **Base** (Chain ID: 8453)
+- **Avalanche** (Chain ID: 43114)
+- **Plume** (Chain ID: 98866)
 
 ## Data freshness
 
