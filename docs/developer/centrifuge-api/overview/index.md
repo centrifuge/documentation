@@ -59,7 +59,6 @@ The Centrifuge GraphQL API is currently public and does not require authenticati
 - **Asset** - Represents an asset in the Centrifuge protocol living on a spoke chain.
 - **TokenInstance** - The instance of a shareClass token deployed on a particular spoke chain.
 - **Escrow** - PoolEscrow acts as a custodial wallet for each pool's assets, providing secure asset management and controlled access.
-- **HoldingEscrow** - (No specific JSDoc description provided, but appears to be a generic resource.)
 
 ### Crosschain Communication
 
