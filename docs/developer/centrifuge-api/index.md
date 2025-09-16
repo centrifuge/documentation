@@ -1,28 +1,16 @@
 ---
-id: overview
-title: Overview
-category: subpage
-contributors: <Filippo:filippo@embriotech.ch>
+id: centrifuge-api
+title: Centrifuge API
+contributors: <Filippo Fontana:filippo@embriotech.ch>
 ---
 
-# Overview
+# Centrifuge API
 
-Centrifuge API leverages [GraphQl](https://graphql.org/). GraphQL is an open-source query language standard for APIs and a runtime. It uses a strongly-typed approach to querying large and complex sets of data. It provides a more efficient, powerful, and flexible alternative to the traditional REST API approach. With GraphQL, clients can request exactly the data they need, and nothing more, which reduces the amount of data transferred over the network and improves performance. It also allows for more predictable and structured responses, making it easier to work with complex data structures.
-
-## Open Source Client Libraries
-
-To interact with the Centrifuge API, you can use a variety of open-source client libraries that simplify the process of querying GraphQL data. Here are some popular options:
-
-- **[Apollo Client](https://github.com/apollographql/apollo-client)**: A comprehensive state management library for JavaScript that enables you to manage both local and remote data with GraphQL. It is highly flexible and can be used with any JavaScript front-end framework, such as React, Angular, or Vue.js.
-- **[Relay](https://github.com/facebook/relay)**: A JavaScript framework for building data-driven React applications powered by GraphQL. Relay is known for its performance and scalability, making it suitable for large applications.
-- **[urql](https://github.com/urql-graphql/urql)**: A lightweight and flexible GraphQL client for React that is easy to set up and use. It provides a simple API for querying and mutating data.
-- **[graffle](https://github.com/graffle-js/graffle)**: Minimal GraphQL client supporting Node and browsers for scripts or simple apps.
-
-These libraries provide robust solutions for interacting with GraphQL APIs, each with its own strengths and use cases. Choose the one that best fits your project's requirements and your team's familiarity with the technology stack.
+The Centrifuge API provides a robust interface for accessing data from the Centrifuge protocol, enabling users to efficiently query and retrieve information about various entities within the ecosystem. It allows developers to interact with data related to pools, tokens, assets, and other protocol resources, offering a streamlined way to access and manage blockchain-based data. By using the Centrifuge API, clients can obtain precise and structured data responses, facilitating the development of applications that require real-time data access, historical records and integration with the Centrifuge network. This API is designed to support complex data queries while ensuring optimal performance and scalability for diverse use cases.
 
 ## Getting started
 
-The Centrifuge GraphQL API endpoint is located at `https://api.centrifuge.io`. It offers a GraphiQL UI for interactively testing queries and includes extensive documentation about graph filters and available entities. For programmatic use, you can send GraphQL compliant POST requests to this endpoint.
+The Centrifuge API endpoint is located at [https://api.centrifuge.io](https://api.centrifuge.io). It offers a GraphiQL UI for interactively testing queries and includes extensive documentation about graph filters and available entities. For programmatic use, you can send GraphQL compliant POST requests to this endpoint.
 
 Autocomplete is your friend when building queries in GraphiQL. Use `Ctrl + Space` to trigger the contextual menu, which provides suggestions based on the current context of your query. This feature helps in quickly discovering available fields, arguments, and even documentation for the API, making query building more efficient and less error-prone.
 
