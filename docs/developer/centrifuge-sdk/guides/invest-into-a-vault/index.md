@@ -1,4 +1,4 @@
-# Invest Into a Vault (using the SDK)
+# Invest Into a Vault
 
 This guide shows how to invest into a Centrifuge vault using the **Centrifuge SDK**.  
 It covers setup, connecting to mainnet or testnet, and sending your first investment transaction.
