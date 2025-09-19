@@ -52,17 +52,13 @@ First set a signer, e.g. a wallet provider:
 ```typescript
 centrifuge.setSigner(signer);
 const pool = await centrifuge.pool("1");
-const tx = await pool.closeEpoch();
+const tx = await pool.updatePoolManagers([
+  {
+    address: "0xAddress",
+    canManage: true,
+  },
+]);
 console.log(tx.hash);
-```
-
-### Invest in a vault
-
-```typescript
-const pool = await centrifuge.pool('1');
-const vault = await pool.vault( /* share class ID */ , /* currency address */ );
-const result = await vault.increaseInvestOrder(1000);
-console.log(result.hash);
 ```
 
 ### Generate reports

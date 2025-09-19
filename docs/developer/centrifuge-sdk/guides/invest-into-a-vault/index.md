@@ -63,7 +63,7 @@ const pool = await centrifuge.pool("1");
 
 // Get a vault for a specific share class and currency
 const vault = await pool.vault(
-  1, // share class ID
+  "0xShareClassId",
   "0xCurrencyAddress" // e.g. USDC address
 );
 ```
@@ -73,8 +73,9 @@ const vault = await pool.vault(
 You can now create an investment order by specifying the amount of currency to invest:
 
 ```typescript
-const tx = await vault.increaseInvestOrder(1000); // invest 1000 units of the currency
-console.log("Transaction hash:", tx.hash);
+const { investmentCurrency } = await vault.details();
+const amount = Balance.fromFloat(1000, investmentCurrency.decimals);
+const tx = await vault.increaseInvestOrder(amount);
 ```
 
 Depending on the vault type:
