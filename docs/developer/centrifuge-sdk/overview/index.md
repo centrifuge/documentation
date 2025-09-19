@@ -1,18 +1,16 @@
 # Overview
 
-[![Codecov](https://codecov.io/gh/centrifuge/sdk/graph/badge.svg?token=Q2yU8QfefP)](https://codecov.io/gh/centrifuge/sdk) [![Build CI status](https://github.com/centrifuge/sdk/actions/workflows/build-test-report.yml/badge.svg)](https://github.com/centrifuge/sdk/actions/workflows/build-test-report.yml) [![Latest Release](https://img.shields.io/github/v/release/centrifuge/sdk?sort=semver)](https://github.com/centrifuge/sdk/releases/latest)
-
 Welcome to the Centrifuge SDK documentation. The Centrifuge SDK is a JavaScript client for interacting with the [Centrifuge](https://centrifuge.io) ecosystem. It provides a comprehensive, fully typed library to integrate investments and redemptions, generate financial reports, manage pools, and much more.
 
-# Installation
+## Installation
 
-The SDK is available as an npm package. It it is built to run both client-side and server-side. The SDK uses [viem](https://viem.sh/) under the hood and is required as a peer dependency.
+The SDK is available as an npm package. It it is built to run both client-side and server-side.
 
 ```bash
-npm install @centrifuge/sdk
+pnpm add @centrifuge/sdk
 ```
 
-# Basic Setup (Mainnet)
+## Basic setup (mainnet)
 
 ```typescript
 import Centrifuge from "@centrifuge/sdk";
@@ -22,7 +20,8 @@ const centrifuge = new Centrifuge({
 });
 ```
 
-> 💡 Side note: To connect to the testnet instead, replace "mainnet" with "testnet".
+:::info[Testnet]
+To connect to the testnet instead, replace `mainnet` with `testnet`.
 
 ```typescript
 const centrifuge = new Centrifuge({
@@ -30,14 +29,14 @@ const centrifuge = new Centrifuge({
 });
 ```
 
-## Key Concepts
+:::
+
+## Key concepts
 
 - Pool: A collection of assets that investors can invest in or redeem from.
 - Vault: A mechanism for handling investments/redemptions via tokenized share classes.
 - Investor position: Data about an investor's balance, pending orders, and what can be claimed.
 - Reports: Financial views like token price.
-
-## Common Tasks
 
 ### Query data (read-only)
 
@@ -75,7 +74,7 @@ const report = await pool.reports.sharePrices({
 console.log(report);
 ```
 
-## Example Full Flow (Mainnet)
+## Example full flow (mainnet)
 
 ```typescript
 import Centrifuge from "@centrifuge/sdk";
