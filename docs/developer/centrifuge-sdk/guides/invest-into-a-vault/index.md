@@ -55,11 +55,12 @@ If you’re using a private key or server-side setup, you can also provide a [Vi
 ## Step 3 — Get a Pool and Vault
 
 Each pool can contain multiple share classes (vaults).
-You need the pool ID, share class ID, and investment currency address.
+You need the pool ID, share class ID, chain ID, and asset address.
 
 ```typescript
 // Get a pool by ID
-const pool = await centrifuge.pool("1");
+const poolId = PoolId.from(1, 1);
+const pool = await centrifuge.pool(poolId);
 // Get a vault
 const vault = await pool.vault(11155111, "0xShareClassId", "0xAssetId");
 ```

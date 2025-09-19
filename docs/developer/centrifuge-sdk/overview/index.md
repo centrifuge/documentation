@@ -51,7 +51,8 @@ First set a signer, e.g. a wallet provider:
 
 ```typescript
 centrifuge.setSigner(signer);
-const pool = await centrifuge.pool("1");
+const poolId = PoolId.from(1, 1);
+const pool = await centrifuge.pool(poolId);
 const tx = await pool.updatePoolManagers([
   {
     address: "0xAddress",
@@ -64,7 +65,8 @@ console.log(tx.hash);
 ### Generate reports
 
 ```typescript
-const pool = await centrifuge.pool("1");
+const poolId = PoolId.from(1, 1);
+const pool = await centrifuge.pool(poolId);
 const report = await pool.reports.sharePrices({
   from: fromNum,
   to: toNum,
@@ -84,7 +86,8 @@ async function main() {
   centrifuge.setSigner(walletProvider);
 
   // get a pool
-  const pool = await centrifuge.pool("1");
+  const poolId = PoolId.from(1, 1);
+  const pool = await centrifuge.pool(poolId);
 
   // invest
   const vault = await pool.vault(11155111, "0xShareClassId", "0xAssetId");
