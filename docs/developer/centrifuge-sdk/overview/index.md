@@ -88,9 +88,11 @@ async function main() {
   // get a pool
   const poolId = PoolId.from(1, 1);
   const pool = await centrifuge.pool(poolId);
+  const scId = ShareClassId.from(poolId, 1);
+  const assetId = AssetId.from(centId, 1);
 
   // invest
-  const vault = await pool.vault(11155111, "0xShareClassId", "0xAssetId");
+  const vault = await pool.vault(11155111, scId, assetId);
   await vault.increaseInvestOrder(Balance.fromFloat(1000, 18));
 
   // once processed, claim

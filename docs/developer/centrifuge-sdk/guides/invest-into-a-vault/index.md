@@ -61,8 +61,10 @@ You need the pool ID, share class ID, chain ID, and asset address.
 // Get a pool by ID
 const poolId = PoolId.from(1, 1);
 const pool = await centrifuge.pool(poolId);
+const scId = ShareClassId.from(poolId, 1);
+const assetId = AssetId.from(centId, 1);
 // Get a vault
-const vault = await pool.vault(11155111, "0xShareClassId", "0xAssetId");
+const vault = await pool.vault(11155111, scId, assetId);
 ```
 
 ## Step 4 — Place an Investment Order
