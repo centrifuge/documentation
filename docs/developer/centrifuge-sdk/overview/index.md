@@ -65,7 +65,7 @@ console.log(tx.hash);
 
 ```typescript
 const pool = await centrifuge.pool("1");
-const report = await pool.reports.pool.reports.sharePrices({
+const report = await pool.reports.sharePrices({
   from: fromNum,
   to: toNum,
   groupBy: "day",
@@ -87,8 +87,8 @@ async function main() {
   const pool = await centrifuge.pool("1");
 
   // invest
-  const vault = await pool.vault(1, "0xCurrencyAddress");
-  await vault.increaseInvestOrder(1000);
+  const vault = await pool.vault(11155111, "0xShareClassId", "0xAssetId");
+  await vault.increaseInvestOrder(Balance.fromFloat(1000, 18));
 
   // once processed, claim
   await vault.claim();
@@ -97,7 +97,7 @@ async function main() {
   const fromNum = toUTCEpoch("2025-01-01", "s");
   const toNum = toUTCEpoch("2025-01-02", "s");
 
-  const report = await pool.reports.pool.reports.sharePrices({
+  const report = await pool.reports.sharePrices({
     from: fromNum,
     to: toNum,
     groupBy: "day",

@@ -60,12 +60,8 @@ You need the pool ID, share class ID, and investment currency address.
 ```typescript
 // Get a pool by ID
 const pool = await centrifuge.pool("1");
-
-// Get a vault for a specific share class and currency
-const vault = await pool.vault(
-  "0xShareClassId",
-  "0xCurrencyAddress" // e.g. USDC address
-);
+// Get a vault
+const vault = await pool.vault(11155111, "0xShareClassId", "0xAssetId");
 ```
 
 ## Step 4 — Place an Investment Order
