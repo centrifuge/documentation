@@ -9,144 +9,105 @@ Welcome to the Centrifuge SDK documentation. The Centrifuge SDK is a JavaScript 
 The SDK is available as an npm package. It it is built to run both client-side and server-side. The SDK uses [viem](https://viem.sh/) under the hood and is required as a peer dependency.
 
 ```bash
-npm install @centrifuge/sdk viem
-
-# or
-
-yarn add @centrifuge/sdk viem
+npm install @centrifuge/sdk
 ```
 
-# Initialization
-
-The SDK can be initialized with or without a config object. If no config is provided, the SDK will use the default values.
+# Basic Setup (Mainnet)
 
 ```typescript
-import { Centrifuge } from "@centrifuge/sdk";
+import Centrifuge from "@centrifuge/sdk";
 
-const centrifuge = new Centrifuge();
-```
-
-## Config
-
-```typescript
-type Config = {
-  environment: "mainnet" | "demo" | "dev";
-  rpcUrls?: Record<number | string, string>;
-  indexerUrl: string;
-  ipfsUrl: string;
-};
-```
-
-### Mainnet
-
-Mainnet is the default environment if no config is provided. Any configurations can be overridden in the config object.
-
-```typescript
 const centrifuge = new Centrifuge({
   environment: "mainnet",
-  rpcUrls: {
-    1: "https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID",
-  },
-  indexerUrl: "https://indexer.centrifuge.io",
-  ipfsUrl: "https://ipfs.centrifuge.io",
 });
 ```
 
-### Demo
-
-By setting the environment to `demo`, the SDK will connect to Sepolia testnet.
+> 💡 Side note: To connect to the testnet instead, replace "mainnet" with "testnet".
 
 ```typescript
 const centrifuge = new Centrifuge({
-  environment: "demo",
+  environment: "testnet",
 });
 ```
 
-# SDK Overview
+## Key Concepts
 
-The Centrifuge SDK provides the following interfaces (more will be added soon):
+- Pool: A collection of assets that investors can invest in or redeem from.
+- Vault: A mechanism for handling investments/redemptions via tokenized share classes.
+- Investor position: Data about an investor's balance, pending orders, and what can be claimed.
+- Reports: Financial views like token price.
 
-- [Pools](/developer/centrifuge-sdk/pools)
-- [Reports](/developer/centrifuge-sdk/reports)
-- [Account](/developer/centrifuge-sdk/account)
+## Common Tasks
 
-## Queries
+### Query data (read-only)
 
-Queries return Promise-like [Observables](https://rxjs.dev/guide/observable). They can be either awaited to get a single value, or subscribed to to get fresh data whenever on-chain data changes.
-
-The returned results are either immutable values, or entities that can be further queried.
-
-```ts
-try {
-  const pool = await centrifuge.pools();
-} catch (error) {
-  console.error(error);
-}
+```typescript
+const pools = await centrifuge.pools();
 ```
 
-```js
-const subscription = centrifuge.pools().subscribe(
-  (pool) => console.log(pool),
-  (error) => console.error(error)
-);
-subscription.unsubscribe();
-```
+### Perform transactions
 
-### Query caching
+First set a signer, e.g. a wallet provider:
 
-```ts
-const report1 = await pool.reports.balanceSheet();
-const report2 = await pool.reports.balanceSheet(); // resolves immediately
-const report3 = await pool.reports.balanceSheet({ groupBy: "month" }); // also resolves immediately as it doesn't need to fetch new data
-
-sleep(5 * 60 * 1000);
-
-const report4 = await pool.reports.balanceSheet(); // will wait for fresh data
-```
-
-The results of queries are cached and shared between observables. When subscribing to a query multiple times, the underlying observables that fetch data are only subscribed to once. Data remains cached for a few minutes and will be passed to new subscribers. This is particularly useful in user-facing applications as queries can sometimes lead to a cascade of 4 or 5 requests and can slow down an application.
-
-```ts
-const centrifuge = new Centrifuge({ cache: false }); // TODO NOT YET IMPLEMENTED
-
-// ...
-
-const investment1 = await vault.investment("0x...");
-
-await vault.claim();
-
-const investment2 = await vault.investment("0x..."); // will fetch again
-```
-
-In a script you may want to disable caching to ensure that data is always fresh.
-
-## Transactions
-
-To perform transactions, you need to set a signer on the `centrifuge` instance.
-
-```js
+```typescript
 centrifuge.setSigner(signer);
+const pool = await centrifuge.pool("1");
+const tx = await pool.closeEpoch();
+console.log(tx.hash);
 ```
 
-`signer` can be a [EIP1193](https://eips.ethereum.org/EIPS/eip-1193)-compatible provider or a Viem [LocalAccount](https://viem.sh/docs/accounts/local).
+### Invest in a vault
 
-With this you can call transaction methods. Similar to queries they can be awaited to get their final result, or subscribed to get get status updates.
+```typescript
+const pool = await centrifuge.pool('1');
+const vault = await pool.vault( /* share class ID */ , /* currency address */ );
+const result = await vault.increaseInvestOrder(1000);
+console.log(result.hash);
+```
 
-```ts
+### Generate reports
+
+```typescript
 const pool = await centrifuge.pool("1");
-try {
-  const status = await pool.closeEpoch();
-  console.log(status);
-} catch (error) {
-  console.error(error);
+const report = await pool.reports.pool.reports.sharePrices({
+  from: fromNum,
+  to: toNum,
+  groupBy: "day",
+});
+console.log(report);
+```
+
+## Example Full Flow (Mainnet)
+
+```typescript
+import Centrifuge from "@centrifuge/sdk";
+
+async function main() {
+  const centrifuge = new Centrifuge({ environment: "mainnet" });
+  // set signer (wallet or provider)
+  centrifuge.setSigner(walletProvider);
+
+  // get a pool
+  const pool = await centrifuge.pool("1");
+
+  // invest
+  const vault = await pool.vault(1, "0xCurrencyAddress");
+  await vault.increaseInvestOrder(1000);
+
+  // once processed, claim
+  await vault.claim();
+
+  // get a report
+  const fromNum = toUTCEpoch("2025-01-01", "s");
+  const toNum = toUTCEpoch("2025-01-02", "s");
+
+  const report = await pool.reports.pool.reports.sharePrices({
+    from: fromNum,
+    to: toNum,
+    groupBy: "day",
+  });
+  console.log(report);
 }
-```
 
-```js
-const pool = await centrifuge.pool("1");
-const subscription = pool.closeEpoch().subscribe(
-  (status) => console.log(pool),
-  (error) => console.error(error),
-  () => console.log("complete")
-);
+main().catch(console.error);
 ```
