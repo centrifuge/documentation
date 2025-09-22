@@ -81,6 +81,29 @@ const chainId = 11155111; // Ethereum Sepolia
 const vault = await pool.vault(chainId, tokenId, assetId);
 ```
 
+or if you do not know token ID and asset ID you can do:
+
+```typescript
+// This has information about tokens
+const poolDetails = await pool.details();
+const shareClasses = poolDetails.shareClasses;
+
+// This will return all the networks to which pool is deployed
+const poolNetworks = await pool.activeNetworks();
+
+// Now we can loop through networks and tokens to retrieve the desired token ID and call:
+
+const vaults = await poolNetwork.vaults(tokenId);
+
+// OR
+
+const vaults = await shareClass.vaults(chainId);
+
+// OR if we do have asset address
+
+const vault = await poolNetwork.vault(tokenId, assetAddress);
+```
+
 ## 5. Query investor position
 
 Get the details of the investment of an investor in the vault and any pending investments or redemptions.
