@@ -104,7 +104,7 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Network          | Address |
 |------------------|---------|
 | Ethereum Mainnet | [`0x5a0f93d040de44e78f251b03c43be9cf317dcf64`](https://etherscan.io/address/0x5a0f93d040de44e78f251b03c43be9cf317dcf64)  |
-| Base | [`0x5a0F93D040De44e78F251b03c43be9CF317Dcf64`](https://basescan.io/address/0x5a0f93d040de44e78f251b03c43be9cf317dcf64)  |
+| Base | [`0x5a0F93D040De44e78F251b03c43be9CF317Dcf64`](https://basescan.org/address/0x5a0f93d040de44e78f251b03c43be9cf317dcf64)  |
 | Avalanche        | [`0x58f93d6b1ef2f44ec379cb975657c132cbed3b6b`](https://snowtrace.io/address/0x58f93d6b1ef2f44ec379cb975657c132cbed3b6b)  |
 
 #### ACRDX
@@ -115,7 +115,7 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 #### SPXA
 | Network          | Address |
 |------------------|---------|
-| Base | [`0x09b61343097c1f9b159a3ae7151298efd10f0db2`](https://basescan.io/address/0x09b61343097c1f9b159a3ae7151298efd10f0db2)  |
+| Base | [`0x09b61343097c1f9b159a3ae7151298efd10f0db2`](https://basescan.org/address/0x09b61343097c1f9b159a3ae7151298efd10f0db2)  |
 
 #### deJTRSY
 
@@ -155,7 +155,7 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Network          | Asset | Address |
 |------------------|-------|---------|
 | Ethereum Mainnet | USDC  | [`0x4880799ee5200fc58da299e965df644fbf46780b`](https://etherscan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
-| Base | USDC  | [`0x2AEf271F00A9d1b0DA8065D396f4E601dBD0Ef0b`](https://basescan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
+| Base | USDC  | [`0x2AEf271F00A9d1b0DA8065D396f4E601dBD0Ef0b`](https://basescan.org/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
 | Avalanche        | USDC  | [`0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784`](https://snowtrace.io/address/0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784)  |
 
 
@@ -167,7 +167,7 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 #### SPXA
 | Network          | Asset | Address |
 |------------------|-------|---------|
-| Base | USDC  | [`0x99e9092bae6d4394e54034ecb1e45441678323b9`](https://basescan.io/address/0x99e9092bae6d4394e54034ecb1e45441678323b9)  |
+| Base | USDC  | [`0x99e9092bae6d4394e54034ecb1e45441678323b9`](https://basescan.org/address/0x99e9092bae6d4394e54034ecb1e45441678323b9)  |
 
 #### deJTRSY
 
@@ -183,5 +183,5 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 |------------------|-------|---------|
 | Ethereum Mainnet | USDC  | [`0x4865bc9701fbd1207a7b50e2af442c7daf154c9c`](https://etherscan.io/address/0x4865bc9701fbd1207a7b50e2af442c7daf154c9c)  |
 | Ethereum Mainnet | JAAA  | [`0x559907981ed375b2d7eea6108273d181216a10cc`](https://etherscan.io/address/0x559907981ed375b2d7eea6108273d181216a10cc)  |
-| Base             | USDC  | [`0x9183dbe074a61cebf82525c907458cabb984f9da`](https://basescan.io/address/0x9183dbe074a61cebf82525c907458cabb984f9da)   |
+| Base             | USDC  | [`0x9183dbe074a61cebf82525c907458cabb984f9da`](https://basescan.org/address/0x9183dbe074a61cebf82525c907458cabb984f9da)   |
 | Avalanche        | USDC  | [`0x498b6394b778a75ed9b0148e379778070b4621d2`](https://snowtrace.io/address/0x498b6394b778a75ed9b0148e379778070b4621d2)  |
