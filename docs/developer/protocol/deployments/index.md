@@ -97,15 +97,25 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 | Base | [`0x8c213ee79581ff4984583c6a801e5263418c4b86`](https://basescan.org/address/0x8c213ee79581ff4984583c6a801e5263418c4b86)  |
 | Arbitrum | [`0x8c213ee79581ff4984583c6a801e5263418c4b86`](https://arbiscan.io/address/0x8c213ee79581ff4984583c6a801e5263418c4b86)  |
 | Avalanche        | [`0xa5d465251fbcc907f5dd6bb2145488dfc6a2627b`](https://snowtrace.io/address/0xa5d465251fbcc907f5dd6bb2145488dfc6a2627b)  |
+| Plume        | [`0xa5d465251fbcc907f5dd6bb2145488dfc6a2627b`](https://explorer.plume.org/address/0xa5d465251fbcc907f5dd6bb2145488dfc6a2627b)  |
 
 #### JAAA
 
 | Network          | Address |
 |------------------|---------|
 | Ethereum Mainnet | [`0x5a0f93d040de44e78f251b03c43be9cf317dcf64`](https://etherscan.io/address/0x5a0f93d040de44e78f251b03c43be9cf317dcf64)  |
-| Base | [`0x5a0F93D040De44e78F251b03c43be9CF317Dcf64`](https://basescan.io/address/0x5a0f93d040de44e78f251b03c43be9cf317dcf64)  |
+| Base | [`0x5a0F93D040De44e78F251b03c43be9CF317Dcf64`](https://basescan.org/address/0x5a0f93d040de44e78f251b03c43be9cf317dcf64)  |
 | Avalanche        | [`0x58f93d6b1ef2f44ec379cb975657c132cbed3b6b`](https://snowtrace.io/address/0x58f93d6b1ef2f44ec379cb975657c132cbed3b6b)  |
 
+#### ACRDX
+| Network          | Address |
+|------------------|---------|
+| Plume        | [`0x9477724bb54ad5417de8baff29e59df3fb4da74f`](https://explorer.plume.org/address/0x9477724bb54ad5417de8baff29e59df3fb4da74f)  |
+
+#### SPXA
+| Network          | Address |
+|------------------|---------|
+| Base | [`0x09b61343097c1f9b159a3ae7151298efd10f0db2`](https://basescan.org/address/0x09b61343097c1f9b159a3ae7151298efd10f0db2)  |
 
 #### deJTRSY
 
@@ -137,14 +147,27 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 |------------------|-------|---------|
 | Ethereum Mainnet | USDC  | [`0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a`](https://etherscan.io/address/0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a)  |
 | Avalanche        | USDC  | [`0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a`](https://snowtrace.io/address/0xfe6920eb6c421f1179ca8c8d4170530cdbdfd77a)  |
+| Plume        | USDC  | [`0x818a3593340622c1d6a51b039e191f2f8c99a1f2`](https://explorer.plume.org/address/0x818A3593340622c1D6A51B039e191F2f8C99A1F2)  |
+| Arbitrum        | USDC  | [`0x04ffdbd63626942d5cabf12120805465b7a17547`](https://arbiscan.io/address/0x04ffdbd63626942d5cabf12120805465b7a17547)  |
 
 #### JAAA
 
 | Network          | Asset | Address |
 |------------------|-------|---------|
 | Ethereum Mainnet | USDC  | [`0x4880799ee5200fc58da299e965df644fbf46780b`](https://etherscan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
-| Base | USDC  | [`0x2AEf271F00A9d1b0DA8065D396f4E601dBD0Ef0b`](https://basescan.io/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
+| Base | USDC  | [`0x2AEf271F00A9d1b0DA8065D396f4E601dBD0Ef0b`](https://basescan.org/address/0x4880799ee5200fc58da299e965df644fbf46780b)  |
 | Avalanche        | USDC  | [`0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784`](https://snowtrace.io/address/0x1121f4e21ed8b9bc1bb9a2952cdd8639ac897784)  |
+
+
+#### ACRDX
+| Network          | Asset | Address |
+|------------------|-------|---------|
+| Plume | USDC  | [`0x354a9222571259457b2e98b2285b62e6a9bf4ed3`](https://explorer.plume.org/address/0x354a9222571259457b2e98b2285b62e6a9bf4ed3)  |
+
+#### SPXA
+| Network          | Asset | Address |
+|------------------|-------|---------|
+| Base | USDC  | [`0x99e9092bae6d4394e54034ecb1e45441678323b9`](https://basescan.org/address/0x99e9092bae6d4394e54034ecb1e45441678323b9)  |
 
 #### deJTRSY
 
@@ -160,5 +183,5 @@ The protocol uses `centrifugeId` (`uint16`) as an identifier of the network. The
 |------------------|-------|---------|
 | Ethereum Mainnet | USDC  | [`0x4865bc9701fbd1207a7b50e2af442c7daf154c9c`](https://etherscan.io/address/0x4865bc9701fbd1207a7b50e2af442c7daf154c9c)  |
 | Ethereum Mainnet | JAAA  | [`0x559907981ed375b2d7eea6108273d181216a10cc`](https://etherscan.io/address/0x559907981ed375b2d7eea6108273d181216a10cc)  |
-| Base             | USDC  | [`0x9183dbe074a61cebf82525c907458cabb984f9da`](https://basescan.io/address/0x9183dbe074a61cebf82525c907458cabb984f9da)   |
+| Base             | USDC  | [`0x9183dbe074a61cebf82525c907458cabb984f9da`](https://basescan.org/address/0x9183dbe074a61cebf82525c907458cabb984f9da)   |
 | Avalanche        | USDC  | [`0x498b6394b778a75ed9b0148e379778070b4621d2`](https://snowtrace.io/address/0x498b6394b778a75ed9b0148e379778070b4621d2)  |
