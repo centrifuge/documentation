@@ -46,74 +46,40 @@ await provider.request({ method: "eth_requestAccounts" });
 centrifuge.setSigner(provider);
 ```
 
-## 3. Get a pool and a vault
+## 3. Get balance sheet managers or add a new one
 
-Select the pool and vault where you want to buy or sell assets.
+Retrieve the current balance sheet managers for a pool, or update the list by adding a new manager.
 
 ```typescript
-// Get a pool by ID
+const balanceSheetManager =
+
+// Or add new one
 const poolId = new PoolId(1);
 const pool = await centrifuge.pool(poolId);
 const scId = ShareClassId.from(poolId, 1);
-const assetId = AssetId.from(centId, 1);
 const chainId = 11155111; // Ethereum Sepolia
-// Get a vault
-const vault = await pool.vault(chainId, scId, assetId);
+const assetId = AssetId.from(centId, 1);
+
+const poolNetwork = new PoolNetwork(centrifuge, pool, chainId)
+const shareClass = new ShareClass(centrifuge, pool, scId.raw)
+const balanceSheet = new BalanceSheet(centrifuge, poolNetwork, shareClass)
+await balanceSheet.pool.updateBalanceSheetManagers([{ chainId, address: '0xManagerAddress', canManage: true }])
 ```
 
-## 4. Buy assets (invest into a vault)
+## 4. Withdraw pool funds
 
-Placing a buy order means increasing the invest order in the vault.
+Withdraw funds from the pool balance sheet to a specified manager address.
 
 ```typescript
-const { investmentCurrency } = await vault.details();
-const amount = Balance.fromFloat(1000, investmentCurrency.decimals);
-const tx = await vault.increaseInvestOrder(amount);
+const amount = Balance.fromFloat(1, 18);
+
+await balanceSheet.withdraw(assetId, "0xManagerAddress", amount);
 ```
 
-Depending on the vault type:
+## 5. Deposit asset into the pool
 
-- Sync vaults: the investment settles immediately.
-- Async vaults: the order is processed during the next epoch.
-
-## 5. Claim your shares
-
-Once the investment is processed (immediately or after an epoch), you need to claim your shares:
+Deposit an asset into the pool balance sheet after it has been purchased.
 
 ```typescript
-const claimTx = await vault.claim();
-console.log("Claim transaction hash:", claimTx.hash);
-```
-
-## 6. Sell assets (redeem from a vault)
-
-Selling assets means creating a redeem order to exchange your shares back into currency.
-
-```typescript
-const amount = Balance.fromFloat(500, decimals);
-const redeemTx = await vault.increaseRedeemOrder(amount); // redeem 500 shares
-console.log("Redeem transaction hash:", redeemTx.hash);
-```
-
-After the order is processed, claim your redeemed currency:
-
-```typescript
-const claimRedeemTx = await vault.claim();
-console.log("Claim redeem transaction hash:", claimRedeemTx.hash);
-```
-
-## 7. Check investor position
-
-You can check your balance, pending investments, and pending redemptions.
-
-```typescript
-const investment = await vault.investment("0xInvestorAddress");
-
-console.log(investment.shareBalance);
-console.log(investment.shareCurrency);
-console.log(investment.claimableRedeemCurrency);
-console.log(investment.claimableRedeemSharesEquivalent);
-console.log(investment.pendingRedeemShares);
-console.log(investment.claimableCancelRedeemShares);
-console.log(investment.hasPendingCancelRedeemRequest);
+await balanceSheet.deposit(assetId, amount);
 ```
