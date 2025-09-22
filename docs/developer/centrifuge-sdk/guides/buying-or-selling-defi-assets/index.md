@@ -60,9 +60,8 @@ const scId = ShareClassId.from(poolId, 1);
 const chainId = 11155111; // Ethereum Sepolia
 const assetId = AssetId.from(centId, 1);
 
-const poolNetwork = new PoolNetwork(centrifuge, pool, chainId)
 const shareClass = new ShareClass(centrifuge, pool, scId.raw)
-const balanceSheet = new BalanceSheet(centrifuge, poolNetwork, shareClass)
+const balanceSheet = shareClass.balanceSheet(chainId)
 await balanceSheet.pool.updateBalanceSheetManagers([{ chainId, address: '0xManagerAddress', canManage: true }])
 ```
 
