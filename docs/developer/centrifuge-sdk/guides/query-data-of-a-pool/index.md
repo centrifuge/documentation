@@ -6,9 +6,9 @@ This guide shows how to use the Centrifuge SDK to read pool data, vaults, and in
 
 Before you begin, make sure you have:
 
-- Node.js v18 or later
-- npm or yarn
-- Access to a wallet or provider if you want to query investor-specific data
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- A package manager: [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- A wallet or signer that can connect to Ethereum-compatible chains (e.g. MetaMask, WalletConnect, or a private key account via [Viem](https://viem.sh/))
 
 ## Installation
 
@@ -90,8 +90,7 @@ const investment = await vault.investment("0xInvestorAddress");
 
 console.log(investment.shareBalance);
 console.log(investment.shareCurrency);
-console.log(investment.shareBalance);
-console.log(investment.investmentCurren);
+console.log(investment.investmentCurrencyBalance);
 console.log(investment.investmentCurrencyAllowance);
 console.log(investment.isAllowedToInvest);
 console.log(investment.isAllowedToRedeem);
