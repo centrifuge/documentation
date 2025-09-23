@@ -50,7 +50,7 @@ If you’re using a private key or server-side setup, you can also provide a [Vi
 
 ## 3. Get a pool
 
-Pools are the main entry point to query data.
+Pools are the main entry point to query data:
 
 ```typescript
 // Get a pool by ID
@@ -60,7 +60,7 @@ const pool = await centrifuge.pool(poolId);
 
 ## 4. Get a pool metadata
 
-This includes general pool information such as name, manager, and configuration.
+This includes general pool information such as name, manager, and configuration:
 
 ```typescript
 const metadata = await pool.metadata();
@@ -70,7 +70,7 @@ console.log(metadata);
 ## 4. Query a vault
 
 Each pool can contain multiple tokens and each token can have multiple vaults.
-You can query a single vault using pool ID, token ID, chain ID, and asset address
+You can query a single vault using pool ID, token ID, chain ID, and asset address:
 
 ```typescript
 // Get tokenId based on previously defined poolId
@@ -106,7 +106,7 @@ const vault = await poolNetwork.vault(tokenId, assetAddress);
 
 ## 5. Query investor position
 
-Get the details of the investment of an investor in the vault and any pending investments or redemptions.
+Get the details of the investment of an investor in the vault and any pending investments or redemptions:
 
 ```typescript
 const investment = await vault.investment("0xInvestorAddress");

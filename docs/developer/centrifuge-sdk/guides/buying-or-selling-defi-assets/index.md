@@ -46,7 +46,7 @@ await provider.request({ method: "eth_requestAccounts" });
 centrifuge.setSigner(provider);
 ```
 
-## 3. Deploy merlke proof manager
+## 3. Deploy MerkleProofManager
 
 ```typescript
 const poolId = new PoolId(1);
@@ -58,9 +58,9 @@ const poolNetworks = await pool.activeNetworks();
 await poolNetwork.deployMerkleProofManager();
 ```
 
-## 4. Retrieve merlke proof manager and add as balance sheet manager
+## 4. Retrieve MerkleProofManager and add as balance sheet manager
 
-Retrieve the current balance sheet managers for a pool, or update the list by adding a new manager.
+Retrieve the deployed MerkleProofManager and set it as a BalanceSheet manager:
 
 ```typescript
 const merkleProofManager = await poolNetwork.merkleProofManager();
@@ -69,7 +69,7 @@ await poolNetwork.updateBalanceSheetManagers([{ chainId, address: merkleProofMan
 
 ## 5. Withdraw pool funds
 
-Withdraw funds from the pool balance sheet to a specified merkle proof manager address.
+Use the MerkleProofManager to deposit funds from the BalanceSheet into an external vault:
 
 ```typescript
 const addresses = await centrifuge._protocolAddresses(chainId);
@@ -98,7 +98,7 @@ await merkleProofManager.execute([
 
 ## 6. Deposit asset into the pool
 
-Deposit an asset into the pool balance sheet after it has been purchased.
+Deposit an asset into the pool balance sheet after it has been purchased:
 
 ```typescript
 centrifuge.setSigner(strategist);
