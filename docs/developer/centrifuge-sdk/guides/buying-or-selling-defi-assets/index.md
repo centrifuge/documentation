@@ -46,39 +46,60 @@ await provider.request({ method: "eth_requestAccounts" });
 centrifuge.setSigner(provider);
 ```
 
-## 3. Get balance sheet managers or add a new one
+## 3. Deploy merlke proof manager
+
+```typescript
+const poolId = new PoolId(1);
+const pool = await centrifuge.pool(poolId);
+const scId = ShareClassId.from(poolId, 1);
+
+const poolNetworks = await pool.activeNetworks();
+
+await poolNetwork.deployMerkleProofManager();
+```
+
+## 4. Retrieve merlke proof manager
 
 Retrieve the current balance sheet managers for a pool, or update the list by adding a new manager.
 
 ```typescript
-const balanceSheetManager =
-
-// Or add new one
-const poolId = new PoolId(1);
-const pool = await centrifuge.pool(poolId);
-const scId = ShareClassId.from(poolId, 1);
-const chainId = 11155111; // Ethereum Sepolia
-const assetId = AssetId.from(centId, 1);
-
-const shareClass = new ShareClass(centrifuge, pool, scId.raw)
-const balanceSheet = shareClass.balanceSheet(chainId)
-await balanceSheet.pool.updateBalanceSheetManagers([{ chainId, address: '0xManagerAddress', canManage: true }])
+const merkleProofManager = await poolNetwork.merkleProofManager();
 ```
 
-## 4. Withdraw pool funds
+## 5. Withdraw pool funds
 
-Withdraw funds from the pool balance sheet to a specified manager address.
+Withdraw funds from the pool balance sheet to a specified merkle proof manager address.
 
 ```typescript
-const amount = Balance.fromFloat(1, 18);
+const addresses = await centrifuge._protocolAddresses(chainId);
+const strategist = "0xStrategistAddress";
 
-await balanceSheet.withdraw(assetId, "0xManagerAddress", amount);
+const policy = {
+  assetId: assetId.toString(),
+  decoder: addresses.vaultDecoder,
+  target: "0xVaultAddress",
+  abi: "function deposit(uint256,address)",
+  args: [null, strategist],
+  argsEncoded: encodePacked(["address"], ["0xVaultAddress"]),
+};
+
+centrifuge.setSigner(fundManager);
+await merkleProofManager.setPolicies(strategist, [policy]);
+
+centrifuge.setSigner(strategist);
+await merkleProofManager.execute([
+  {
+    policy,
+    inputs: [amountToDeposit],
+  },
+]);
 ```
 
-## 5. Deposit asset into the pool
+## 6. Deposit asset into the pool
 
 Deposit an asset into the pool balance sheet after it has been purchased.
 
 ```typescript
+centrifuge.setSigner(strategist);
 await balanceSheet.deposit(assetId, amount);
 ```
