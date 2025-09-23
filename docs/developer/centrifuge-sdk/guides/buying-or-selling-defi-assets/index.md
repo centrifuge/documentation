@@ -58,12 +58,13 @@ const poolNetworks = await pool.activeNetworks();
 await poolNetwork.deployMerkleProofManager();
 ```
 
-## 4. Retrieve merlke proof manager
+## 4. Retrieve merlke proof manager and add as balance sheet manager
 
 Retrieve the current balance sheet managers for a pool, or update the list by adding a new manager.
 
 ```typescript
 const merkleProofManager = await poolNetwork.merkleProofManager();
+await poolNetwork.updateBalanceSheetManagers([{ chainId, address: merkleProofManager.address, canManage: true }]),
 ```
 
 ## 5. Withdraw pool funds
