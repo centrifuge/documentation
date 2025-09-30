@@ -8,7 +8,7 @@ It covers setup, connecting to mainnet or testnet, and sending your first invest
 Before you begin, make sure you have:
 
 - [Node.js](https://nodejs.org/) (v18 or later recommended)
-- A package manager: [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- A package manager: [pnpm](https://pnpm.io/), [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - A wallet or signer that can connect to Ethereum-compatible chains (e.g. MetaMask, WalletConnect, or a private key account via [Viem](https://viem.sh/))
 - Investment currency (e.g. USDC) on `mainnet` or `testnet`
 

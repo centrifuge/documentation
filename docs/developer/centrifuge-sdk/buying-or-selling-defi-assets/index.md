@@ -7,7 +7,7 @@ This guide shows how to use the Centrifuge SDK to buy and sell tokenized DeFi as
 Before you begin, make sure you have:
 
 - [Node.js](https://nodejs.org/) (v18 or later recommended)
-- A package manager: [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- A package manager: [pnpm](https://pnpm.io/), [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - A wallet or signer that can connect to Ethereum-compatible chains (e.g. MetaMask, WalletConnect, or a private key account via [Viem](https://viem.sh/))
 
 ## Installation
@@ -34,21 +34,26 @@ const centrifuge = new Centrifuge({
 For testing purposes, you can connect to testnet instead by setting environment: `testnet`.
 :::
 
-## 2. Deploy MerkleProofManager
+## 2. Deploy Merkle Proof Manager
 
 ```typescript
 const poolId = new PoolId(1);
 const pool = await centrifuge.pool(poolId);
 const scId = ShareClassId.from(poolId, 1);
+const chainId = 11155111; // Ethereum Sepolia
 
 const poolNetworks = await pool.activeNetworks();
+
+const poolNetwork = poolNetworks.filter(
+  (activeNetwork) => activeNetwork.chainId === chainId
+);
 
 await poolNetwork.deployMerkleProofManager();
 ```
 
-## 3. Retrieve MerkleProofManager and add as balance sheet manager
+## 3. Retrieve Merkle Proof Manager and add as balance sheet manager
 
-Retrieve the deployed MerkleProofManager and set it as a BalanceSheet manager:
+Retrieve the deployed Merkle Proof Manager and set it as a BalanceSheet manager:
 
 ```typescript
 const merkleProofManager = await poolNetwork.merkleProofManager();
@@ -57,7 +62,7 @@ await poolNetwork.updateBalanceSheetManagers([{ chainId, address: merkleProofMan
 
 ## 4. Setup policies
 
-Policies define specific contract methods that strategists are authorized to execute for managing pool assets. The MerkleProofManager controls access to BalanceSheet functions and enables whitelisting of strategists, allowing them to perform approved operations securely:
+Policies define specific contract methods that strategists are authorized to execute for managing pool assets. The Merkle Proof Manager controls access to balance sheet functions and enables whitelisting of strategists, allowing them to perform approved operations securely:
 
 ```typescript
 const addresses = await centrifuge._protocolAddresses(chainId);
@@ -133,7 +138,4 @@ await merkleProofManager.execute([
     inputs: [0, amount],
   },
 ]);
-
-centrifuge.setSigner(strategist);
-await balanceSheet.deposit(assetId, amount);
 ```
