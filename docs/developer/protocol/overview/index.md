@@ -7,7 +7,7 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 # Overview
 
-Centrifuge V3 is an open, decentralized protocol for onchain asset management. Built on immutable smart contracts, it enables permissionless deployment of customizable tokenization products.
+The Centrifuge Protocol is an open, decentralized protocol for onchain asset management. Built on immutable smart contracts, it enables permissionless deployment of customizable tokenization products.
 
 Build a wide range of use cases, from permissioned funds to onchain loans, while enabling fast, secure deployment. ERC-4626 and ERC-7540 vaults allow seamless integration into DeFi.
 
@@ -15,7 +15,7 @@ Using protocol-level chain abstraction, tokenization issuers access liquidity ac
 
 ## Protocol
 
-Centrifuge V3 operates on a [hub-and-spoke model](/developer/protocol/chain-abstraction/). Each pool chooses a single hub chain, and can tokenize and manage liquidity on many spoke chains.
+The Centrifuge Protocol operates on a [hub-and-spoke model](/developer/protocol/chain-abstraction/). Each pool chooses a single hub chain, and can tokenize and manage liquidity on many spoke chains.
 
 ![](./images/overview.png)
 

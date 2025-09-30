@@ -6,7 +6,7 @@ category: subpage
 
 # Tokenization
 
-Tokenization in Centrifuge V3 is the process of representing assets or strategies as onchain tokens. These tokens are issued through smart contracts and reflect ownership in a vault, governed by rules set at the pool and share class level.
+Tokenization on Centrifuge is the process of representing assets or strategies as onchain tokens. These tokens are issued through smart contracts and reflect ownership in a vault, governed by rules set at the pool and share class level.
 
 Each tokenized asset is created and managed through a **pool**, which contains one or more **vaults**, and each vault issues **share tokens** to investors. These tokens may be held, transferred, and used across supported EVM-compatible networks, depending on how the pool is configured.
 

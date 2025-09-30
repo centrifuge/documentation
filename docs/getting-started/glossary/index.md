@@ -6,7 +6,7 @@ category: subpage
 
 # Glossary
 
-A reference guide to key terms and concepts used across the Centrifuge V3 documentation.
+A reference guide to key terms and concepts used across the Centrifuge documentation.
 
 ## Centrifuge-specific terms
 

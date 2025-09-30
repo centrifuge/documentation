@@ -6,7 +6,7 @@ contributors: <Graham Nelson:graham@k-f.co>
 
 # Issuers
 
-This guide helps issuers tokenize real-world assets (RWA) using Centrifuge V3’s RWA Launchpad. It walks through the end-to-end process of launching an asset-backed issuance, from setup to deployment. 
+This guide helps issuers tokenize real-world assets (RWA) using Centrifuge's RWA Launchpad. It walks through the end-to-end process of launching an asset-backed issuance, from setup to deployment. 
 
 ## Overview
 
