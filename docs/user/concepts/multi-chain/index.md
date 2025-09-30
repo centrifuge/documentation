@@ -7,7 +7,7 @@ contributors: <Graham Nelson:graham@k-f.co>
 
 # Multi-Chain Protocol
 
-Centrifuge V3 is designed to scale tokenized asset management across blockchains. Using a **hub-and-spoke architecture**, each pool is managed from a single hub chain while operating vaults and issuing tokens on multiple spoke chains.
+Centrifuge is designed to scale tokenized asset management across blockchains. Using a **hub-and-spoke architecture**, each pool is managed from a single hub chain while operating vaults and issuing tokens on multiple spoke chains.
 
 This makes Centrifuge truly multi-chain, giving investors and managers a consistent experience wherever they operate.
 

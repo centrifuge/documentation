@@ -61,7 +61,7 @@ The Centrifuge protocol is only deployed on these addresses on Ethereum, Base, A
 
 ### Testnet
 
-The latest testnet deployments can be found here: https://github.com/centrifuge/protocol-v3/tree/main/env
+The latest testnet deployments can be found here: https://github.com/centrifuge/protocol/tree/main/env
 
 ## Centrifuge IDs
 

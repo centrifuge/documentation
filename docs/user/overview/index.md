@@ -14,7 +14,7 @@ Centrifuge is the open infrastructure for onchain asset management. This section
 
   <a className="card-tile" href="/user/concepts">
     <h3>Concepts</h3>
-    <p>Core ideas behind Centrifuge V3: hub-and-spoke architecture, vaults, assets, and token flows.</p>
+    <p>Core ideas behind the Centrifuge Protocol: hub-and-spoke architecture, vaults, assets, and token flows.</p>
   </a>
 
   <a className="card-tile" href="/user/issuer">
