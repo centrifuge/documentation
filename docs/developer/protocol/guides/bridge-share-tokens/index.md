@@ -29,7 +29,7 @@ spoke.crosschainTransferShares{value: gas}(centrifugeId, poolId, scId, receiver,
 
 * `receiver`
   The address of the recipient on the destination chain.
-  :::warning
+  :::info
   This must be right-padded with zeros. E.g. `0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f` becomes `0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f000000000000000000000000`.
   :::
 
