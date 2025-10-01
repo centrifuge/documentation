@@ -73,6 +73,7 @@ const vaultDepositPolicy = {
   decoder: addresses.vaultDecoder,
   target: "0xVaultAddress",
   abi: "function deposit(uint256,address)",
+  valueNonZero: false,
   args: [null, strategist],
   argsEncoded: encodePacked(["address"], ["0xVaultAddress"]),
 };
@@ -80,7 +81,7 @@ const vaultDepositPolicy = {
 const balanceSheetWithdrawPolicy = {
   assetId: assetId.toString(),
   decoder: addresses.vaultDecoder,
-  target,
+  target: poolNetwork.balanceSheet(),
   abi: "function withdraw(uint64,bytes16,address,uint256,address,uint128)",
   valueNonZero: false,
   args: [
@@ -99,8 +100,8 @@ const balanceSheetWithdrawPolicy = {
 
 const balanceSheetDepositPolicy = {
   assetId: assetId.toString(),
-  decoder,
-  target,
+  decoder: addresses.vaultDecoder,
+  target: poolNetwork.balanceSheet(),
   abi: "function deposit(uint64 poolId, bytes16 scId, address asset, uint256, uint128)",
   valueNonZero: false,
   args: [poolId.toString(), scId.raw, someErc20, null, null],

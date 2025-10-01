@@ -67,7 +67,7 @@ const metadata = await pool.metadata();
 console.log(metadata);
 ```
 
-## 4. Query a vault
+## 5. Query a vault
 
 Each pool can contain multiple tokens and each token can have multiple vaults.
 You can query a single vault using pool ID, token ID, chain ID, and asset address:
@@ -104,7 +104,7 @@ const vaults = await shareClass.vaults(chainId);
 const vault = await poolNetwork.vault(tokenId, assetAddress);
 ```
 
-## 5. Query investor position
+## 6. Query investor position
 
 Get the details of the investment of an investor in the vault and any pending investments or redemptions:
 
@@ -132,7 +132,7 @@ console.log(investment.hasPendingCancelRedeemRequest);
 console.log(investment.investmentCurrency);
 ```
 
-## 6. Query reports
+## 7. Query reports
 
 ```typescript
 const poolId = new PoolId(1);
