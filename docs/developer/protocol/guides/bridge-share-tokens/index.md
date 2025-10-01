@@ -47,7 +47,7 @@ The gas value passed to the transaction is used to pay for the cross-chain trans
 
 You must ensure that the `receiver` on the target network can receive share tokens.
 
-If the share token has a whitelist or other forms of restrictions, the receiver must be whitelisted before the transfer is executed on the target chain.
+If the share token has a whitelist or other forms of restrictions, the receiver must be whitelisted before the transfer is executed on the target chain. If the receiver is not whitelisted, the minting transaction on the destination network will fail, and will need to be manually re-executed once the receiver is whitelisted.
 
 ## Monitoring
 
