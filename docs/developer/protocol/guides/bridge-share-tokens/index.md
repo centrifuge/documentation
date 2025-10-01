@@ -7,7 +7,7 @@ contributors:
 
 # Bridge share tokens
 
-Centrifuge supports native mint-and-burn bridging for any share token across any supported network. This guide explains how to call this.
+Centrifuge supports native mint-and-burn bridging for any share token across any supported network. This guide explains how to use the bridge.
 
 ## Bridging
 
