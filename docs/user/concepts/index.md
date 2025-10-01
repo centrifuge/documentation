@@ -6,7 +6,7 @@ contributors: <Graham Nelson:graham@k-f.co>
 
 # Concepts
 
-Centrifuge V3 introduces several core concepts that define how the protocol works. These concepts form the foundation for understanding tokenized strategies, vault behavior, and multi-chain asset management.
+Centrifuge introduces several core concepts that define how the protocol works. These concepts form the foundation for understanding tokenized strategies, vault behavior, and multi-chain asset management.
 
 Explore these topics to get a clear overview of how Centrifuge fits together.
 
