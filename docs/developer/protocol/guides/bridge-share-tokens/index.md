@@ -27,7 +27,9 @@ To bridge share tokens across chains, you must call the `crosschainTransferShare
 
 * `receiver`
   The address of the recipient on the destination chain.
-  ⚠️ This must be right-padded with zeros to fit into `bytes32`.
+  :::warning
+  This must be right-padded with zeros. E.g. `0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f` becomes `0x7Ed48C31f2fdC40d37407cBaBf0870B2b688368f000000000000000000000000`.
+  :::
 
 * `amount`
   The amount of share tokens to transfer, expressed in the token’s decimals.
