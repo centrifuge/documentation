@@ -34,7 +34,7 @@ This centralized state management ensures consistency while still supporting mul
 The Hub maintains an onchain double-entry bookkeeping system that records all financial transactions. When investments are processed, the system:
 
 * Debits the asset account (per invested asset per chain)
-* Credits the equity account (shared across all networks)
+* Credits the equity account (per chain)
 
 This traditional accounting approach, implemented onchain, provides transparency and auditability for all participants.
 
