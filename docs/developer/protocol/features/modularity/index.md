@@ -23,6 +23,16 @@ Transfer Hooks are customizable restrictions and checks that can be applied to E
 
 These hooks integrate directly with ERC20 token logic and enable regulatory and operational controls without changing the core token.
 
+## Hook Managers
+
+Hook Managers are smart contracts deployed on Spoke chains that build on top of the Transfer Hooks system to provide automated account management capabilities. These managers interact with the underlying transfer restriction hooks to enable:
+
+* **Automated whitelisting**: Programmatically add or remove addresses from whitelists based on custom logic or external events
+* **Freezing and unfreezing accounts**: Dynamically control which accounts can transfer tokens in response to compliance requirements or risk events
+* **Custom access control logic**: Implement sophisticated rules for managing who can hold and transfer share tokens
+
+Hook Managers enable builders to create permissioning systems that respond to onchain or offchain events, integrate with KYC/AML providers, or implement time-based restrictions - all without requiring manual intervention or modifications to the core token contracts. This provides a flexible layer for managing compliance and access control at scale.
+
 ## Hub Managers
 
 The `Hub` is the central smart contract responsible for managing Net Asset Value (NAV) calculations, investor share class logic, and fund-level mechanics. Using Hub Managers, developers can define custom logic for:
@@ -51,5 +61,6 @@ Adapters are the interoperability layer of the protocol. They connect pools on C
 
 * Wormhole adapter
 * Axelar adapter
+* LayerZero adapter
 
 Adapters route cross-chain messages via the `Gateway` contract, maintaining a 1-to-many relationship between a single hub on one chain and many vaults.
