@@ -9,7 +9,9 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 The Centrifuge Protocol is an open-source, decentralized protocol for tokenizing and distributing financial products across multiple blockchain networks. Built on immutable smart contracts, it provides the infrastructure for creating customizable asset management products with seamless multi-chain deployment.
 
-The protocol is designed to be **non-opinionated and extensible**, empowering builders to create diverse financial products - from permissioned investment funds to freely tradable tokenized assets, onchain loans, and custom financial structures.
+The protocol is designed to be **non-opinionated and extensible**, empowering builders to create diverse financial products, from permissioned investment funds to freely tradable tokenized assets, onchain loans, and custom financial structures.
+
+![](./images/overview.png)
 
 ## Key features
 
@@ -27,25 +29,19 @@ Pools can hold and accept multiple types of onchain assets on its balance sheet.
 
 ### Onchain accounting
 
-The protocol implements fully onchain and automated accounting of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, debiting asset accounts and crediting equity accounts as investments flow through the system. The NAV Manager automatically calculates the Net Asset Value, while the Price Manager computes share prices and pushes oracle updates to all deployed networks. This automation eliminates manual NAV calculations and provides complete transparency into pricing logic and accounting state, with all financial data verifiable onchain in real-time.
+The protocol implements fully onchain and automated accounting of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, debiting asset accounts and crediting equity accounts as investments flow through the system.
 
-## Protocol Architecture
+## Protocol architecture
 
 The Centrifuge Protocol operates on a [hub-and-spoke model](/developer/protocol/chain-abstraction/). Each pool selects a single hub chain for management and can tokenize and distribute liquidity on many spoke chains.
 
-![](./images/overview.png)
-
 ### Centrifuge Hub
 
-The hub chain serves as the central control and accounting layer for the entire pool. From a single chain of your choice, you can manage all tokens and vaults across every deployment. The hub maintains consolidated accounting using double-entry bookkeeping, tracking all vault balances and holdings in one place. NAV calculations are performed on the hub, with price oracle updates pushed to all networks automatically. Investment requests from all investors across all chains are processed and coordinated centrally, while vault deployments, manager assignments, and configuration updates are orchestrated through the hub.
+The hub chain serves as the central control and accounting layer for the entire pool. From a single chain of your choice, you can manage all tokens and vaults across every deployment. The hub maintains consolidated accounting using double-entry bookkeeping, tracking all vault balances and holdings in one place. NAV calculations are performed on the hub, with price oracle updates pushed to all networks
 
 ### Centrifuge Spoke
 
-Spoke chains provide the tokenization and distribution layer where end users interact with the protocol. Each spoke deploys ERC-20 share tokens that are customizable with transfer hooks for compliance and restrictions. Both ERC-4626 and ERC-7540 vaults can be deployed for seamless DeFi integration, with multiple vaults supported per share class to accept different payment assets. Users can bridge their tokens between chains using a secure burn-and-mint process, while local registries track pool and share class deployments on each network.
-
-## Use cases
-
-The protocol's flexible architecture supports a wide range of financial products. You can create permissioned investment funds with tranching, NAV management, and automated accounting, or tokenize individual loans as NFTs and manage them within a pool structure. Build custom yield aggregation strategies that accept multiple asset types, or deploy investment products across multiple chains with unified management from a single hub. The protocol supports compliance-first products through customizable transfer hooks that implement KYC/AML requirements, as well as freely tradable DeFi-native assets that integrate seamlessly with the broader ecosystem.
+Spoke chains provide the tokenization and distribution layer where end users interact with the protocol. Each spoke deploys ERC-20 share tokens that are customizable with transfer hooks for compliance and restrictions. Both ERC-4626 and ERC-7540 vaults can be deployed for seamless DeFi integration, with multiple vaults supported per share class to accept different payment assets.
 
 ## Immutable core, modular extensions
 
