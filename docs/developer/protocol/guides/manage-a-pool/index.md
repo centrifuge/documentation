@@ -16,14 +16,13 @@ Each pool on the Centrifuge protocol can have multiple share classes. The price 
 To update the token price for a specific share class in a pool, call the following function on the Hub:
 
 ```solidity
-hub.updateSharePrice(poolId, scId, sharePrice);
+hub.updateSharePrice(poolId, scId, sharePrice, uint64(block.timestamp));
 ```
 
 * `poolId`: the unique identifier of the pool
 * `scId`: the identifier of the share class within the pool
-* `sharePrice`: the new price of the share token
-
-The `sharePrice` must be denominated as an 18 decimal fixed point integer.
+* `sharePrice`: the new price of the share token (18 decimal fixed point integer)
+* `uint64(block.timestamp)`: timestamp when the price was computed
 
 :::info[On-chain pricing]
 Currently, the pricing mechanism is intended to be provided by an off-chain computation. In the future, on-chain price calculations will be implemented, using the holdings and double-entry bookkeeping accounting mechanism of the Hub.
@@ -31,17 +30,19 @@ Currently, the pricing mechanism is intended to be provided by an off-chain comp
 
 ### Pushing to price oracles
 
-After updating the share token price, it must be pushed to the price oracle on each delpoyed network. This ensures that other contracts and off-chain components can retrieve the latest share price.
+After updating the share token price, it must be pushed to the price oracle on each deployed network. This ensures that other contracts and off-chain components can retrieve the latest share price.
 
 To notify the price oracle, call the following function:
 
 ```solidity
-hub.notifySharePrice(poolId, scId, centrifugeId);
+hub.notifySharePrice{value: gas}(poolId, scId, centrifugeId, msg.sender);
 ```
 
 * `poolId`: the identifier of the pool whose share price was updated
 * `scId`: the share class identifier for which the price was updated
 * `centrifugeId`: the network identifier where the oracle should receive the updated price
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
 
 
 ### Updating and pushing asset prices
@@ -53,8 +54,11 @@ By default, this price is assumed to be `1.0`, implying a 1-to-1 peg between all
 This needs to be pushed to the asset price oracle on each network once:
 
 ```solidity
-hub.notifyAssetPrice(poolId, scId, assetId);
+hub.notifyAssetPrice{value: gas}(poolId, scId, assetId, msg.sender);
 ```
+
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
 
 ## Managing investment requests
 
