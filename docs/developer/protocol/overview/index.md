@@ -9,7 +9,7 @@ contributors: <Jeroen:jeroen@k-f.co>
 
 The Centrifuge Protocol is an open-source, decentralized protocol for tokenizing and distributing financial products across multiple blockchain networks. Built on immutable smart contracts, it provides the infrastructure for creating customizable asset management products with seamless multi-chain deployment.
 
-The protocol is designed to be **non-opinionated and extensible**, empowering builders to create diverse financial products, from permissioned investment funds to freely tradable tokenized assets, onchain loans, and custom financial structures.
+The protocol is designed to be non-opinionated and extensible, empowering builders to create diverse financial products, from permissioned investment funds to freely tradable tokenized assets, onchain loans, and custom financial structures.
 
 ![](./images/overview.png)
 
@@ -17,11 +17,11 @@ The protocol is designed to be **non-opinionated and extensible**, empowering bu
 
 ### Multi-chain asset management
 
-Using protocol-level [chain abstraction](/developer/protocol/chain-abstraction/), issuers can access and manage liquidity across any supported network while maintaining unified control from a single hub chain. The protocol operates on a hub-and-spoke model where one hub chain handles operational management, accounting, pricing, and investment request processing, while multiple spoke chains act as separate balance sheets where tokens can be issued, transferred, and redeemed. Cross-chain transfers use a secure burn-and-mint mechanism for 1:1 token movement between chains.
+Using protocol-level [chain abstraction](/developer/protocol/features/chain-abstraction/), issuers can access and manage liquidity across any supported network while maintaining unified control from a single hub chain. The protocol operates on a hub-and-spoke model where one hub chain handles operational management, accounting, pricing, and investment request processing, while multiple spoke chains act as separate balance sheets where tokens can be issued, transferred, and redeemed. Cross-chain transfers use a secure burn-and-mint mechanism for 1:1 token movement between chains.
 
 ### Standards-based composability
 
-The protocol provides vault implementations that integrate seamlessly with the broader DeFi ecosystem. ERC-4626 vaults offer the standard tokenized vault interface for synchronous deposits and redemptions, while ERC-7540 vaults provide an asynchronous standard for request-based investment flows. The protocol also supports ERC-7575, enabling multi-asset vaults where a single share token can be exchanged for multiple accepted assets. These standards enable easy integration with existing DeFi protocols, aggregators, and tools.
+The protocol provides [vault implementations](/developer/protocol/features/vaults/) that integrate seamlessly with the broader DeFi ecosystem. ERC-4626 vaults offer the standard tokenized vault interface for synchronous deposits and redemptions, while ERC-7540 vaults provide an asynchronous standard for request-based investment flows. The protocol also supports ERC-7575, enabling multi-asset vaults where a single share token can be exchanged for multiple accepted assets. These standards enable easy integration with existing DeFi protocols, aggregators, and tools.
 
 ### Multi-asset pools
 
@@ -29,11 +29,11 @@ Pools can hold and accept multiple types of onchain assets on its balance sheet.
 
 ### Onchain accounting
 
-The protocol implements fully onchain and automated accounting of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, debiting asset accounts and crediting equity accounts as investments flow through the system.
+The protocol implements [fully onchain and automated accounting](/developer/protocol/features/onchain-accounting/) of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, debiting asset accounts and crediting equity accounts as investments flow through the system.
 
 ## Protocol architecture
 
-The Centrifuge Protocol operates on a [hub-and-spoke model](/developer/protocol/chain-abstraction/). Each pool selects a single hub chain for management and can tokenize and distribute liquidity on many spoke chains.
+The Centrifuge Protocol operates on a [hub-and-spoke model](/developer/protocol/features/chain-abstraction/). Each pool selects a single hub chain for management and can tokenize and distribute liquidity on many spoke chains.
 
 ### Centrifuge Hub
 
