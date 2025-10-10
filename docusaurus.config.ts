@@ -16,8 +16,13 @@ const config: Config = {
   baseUrl: "/",
 
   onBrokenLinks: "ignore",
-  onBrokenMarkdownLinks: "ignore",
   onBrokenAnchors: "ignore",
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: "ignore",
+    },
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

@@ -1,5 +1,5 @@
 {
-  "name": "docs-new",
+  "name": "centrifuge-docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,22 +15,22 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "3.7.0",
-    "@docusaurus/plugin-client-redirects": "^3.7.0",
-    "@docusaurus/preset-classic": "3.7.0",
-    "@mdx-js/react": "^3.0.0",
-    "clsx": "^2.0.0",
-    "prism-react-renderer": "^2.3.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "rehype-katex": "^7.0.1",
-    "remark-math": "^6.0.0"
+    "@docusaurus/core": "3.9.1",
+    "@docusaurus/plugin-client-redirects": "3.9.1",
+    "@docusaurus/preset-classic": "3.9.1",
+    "@mdx-js/react": "3.0.0",
+    "clsx": "2.0.0",
+    "prism-react-renderer": "2.3.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "rehype-katex": "7.0.1",
+    "remark-math": "6.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.7.0",
-    "@docusaurus/tsconfig": "^3.7.0",
-    "@docusaurus/types": "^3.7.0",
-    "typescript": "^5.7.3"
+    "@docusaurus/module-type-aliases": "3.9.1",
+    "@docusaurus/tsconfig": "3.9.1",
+    "@docusaurus/types": "3.9.1",
+    "typescript": "5.7.3"
   },
   "browserslist": {
     "production": [
@@ -47,5 +47,5 @@
   "engines": {
     "node": ">=18.0"
   },
-  "packageManager": "yarn@4.6.0+sha512.5383cc12567a95f1d668fbe762dfe0075c595b4bfff433be478dbbe24e05251a8e8c3eb992a986667c1d53b6c3a9c85b8398c35a960587fbd9fa3a0915406728"
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
 }
