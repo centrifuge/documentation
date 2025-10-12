@@ -25,10 +25,6 @@ Using protocol-level [chain abstraction](/developer/protocol/features/chain-abst
 
 The protocol provides [vault implementations](/developer/protocol/features/vaults/) that integrate seamlessly with the broader DeFi ecosystem. ERC-4626 vaults offer the standard tokenized vault interface for synchronous deposits and redemptions, while ERC-7540 vaults provide an asynchronous standard for request-based investment flows. The protocol also supports ERC-7575, enabling multi-asset vaults where a single share token can be exchanged for multiple accepted assets. These standards enable easy integration with existing DeFi protocols, aggregators, and tools.
 
-### Multi-asset pools
-
-Pools can hold and accept multiple types of onchain assets on its balance sheet. The protocol supports ERC-20 tokens like stablecoins and yield-bearing tokens, and ERC-6909 multi-token standard for scalability. This flexibility enables operators to accept diverse forms of collateral and create sophisticated investment strategies that combine different asset types within a single pool.
-
 ### Onchain accounting
 
 The protocol implements [fully onchain and automated accounting](/developer/protocol/features/onchain-accounting/) of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, debiting asset accounts and crediting equity accounts as investments flow through the system.
