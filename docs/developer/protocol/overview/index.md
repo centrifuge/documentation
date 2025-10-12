@@ -23,11 +23,19 @@ Using protocol-level [chain abstraction](/developer/protocol/features/chain-abst
 
 ### Standards-based composability
 
-The protocol provides [vault implementations](/developer/protocol/features/vaults/) that integrate seamlessly with the broader DeFi ecosystem. ERC-4626 vaults offer the standard tokenized vault interface for synchronous deposits and redemptions, while ERC-7540 vaults provide an asynchronous standard for request-based investment flows. The protocol also supports ERC-7575, enabling multi-asset vaults where a single share token can be exchanged for multiple accepted assets. These standards enable easy integration with existing DeFi protocols, aggregators, and tools.
+The protocol provides [vault implementations](/developer/protocol/features/vaults/) that integrate seamlessly with the broader DeFi ecosystem. Share tokens are issued as ERC-20 tokens. ERC-4626 vaults offer the standard tokenized vault interface for synchronous deposits and redemptions, while ERC-7540 vaults provide an asynchronous standard for request-based investment flows. The protocol also supports ERC-7575, enabling multi-asset vaults where a single share token can be exchanged for multiple accepted assets. These standards enable easy integration with existing DeFi protocols, aggregators, and tools.
+
+### Immutable core, modular extensions
+
+The protocol combines an [immutable core](/developer/protocol/architecture/overview/) with a [modular set of extensions](/developer/protocol/features/modularity/) for customization. The protocol allows customizing investment vaults, transfer hooks for compliance logic, balance sheet managers for asset allocation strategies, hub managers for automated pricing and order management, valuation contracts for asset pricing, per-pool cross-chain adapters, and much more. This architecture enables builders to innovate at the extension layer while maintaining the security guarantees of the immutable core.
 
 ### Onchain accounting
 
-The protocol implements [fully onchain and automated accounting](/developer/protocol/features/onchain-accounting/) of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, debiting asset accounts and crediting equity accounts as investments flow through the system.
+The protocol implements [fully onchain and automated accounting](/developer/protocol/features/onchain-accounting/) of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, as well as a ledger for all pool holdings. An automated cross-chain synchronization mechanism ensures data across many chains can be aggregated in a single smart contract.
+
+### One-click deployment
+
+The protocol uses monolithic contracts for the immutable core, with automated deployment of share tokens, escrows for pool holdings, vaults and much more. This enables tokenizing financial products and launching tokens and vaults on new chains in a single click.
 
 ## Protocol architecture
 
@@ -40,11 +48,3 @@ The hub chain serves as the central control and accounting layer for the entire 
 ### Centrifuge Spoke
 
 Spoke chains provide the tokenization and distribution layer where end users interact with the protocol. Each spoke deploys ERC-20 share tokens that are customizable with transfer hooks for compliance and restrictions. Both ERC-4626 and ERC-7540 vaults can be deployed for seamless DeFi integration, with multiple vaults supported per share class to accept different payment assets.
-
-## Immutable core, modular extensions
-
-The protocol is built on an [immutable core](/developer/protocol/architecture/overview/) that provides a secure foundation, while supporting modular extensions for customization. The immutable core consists of the Hub and Spoke architecture.
-
-On top of this core, the protocol supports pluggable managers for custom logic, including hub managers, balance sheet managers, and request managers. Transfer hooks provide customizable compliance and restriction logic for share tokens. Cross-chain messaging is handled through adapters supporting Wormhole, Axelar, or custom implementations. Valuation modules enable custom NAV calculation and pricing logic tailored to specific asset types.
-
-This architecture enables builders to innovate at the extension layer while maintaining the security guarantees of the immutable core.
