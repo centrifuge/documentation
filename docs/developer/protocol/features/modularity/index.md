@@ -1,11 +1,11 @@
 ---
 id: modularity
-title: Modularity
+title: Modular extensions
 category: subpage
 contributors: <Jeroen:jeroen@k-f.co>
 ---
 
-# Modularity
+# Modular extensions
 
 The Centrifuge Protocol is designed as a modular, extensible system to support complex financial products. This architecture empowers builders to plug into various components independently or collectively, enabling permissioned tokenization, cross-chain deployment, custom pricing logic, and diverse collateral management.
 
@@ -54,6 +54,14 @@ Balance Sheet Managers enable the protocol to support and manage any form of col
 * Integrating onchain loans
 
 This makes Centrifuge ideal for bridging traditional finance and DeFi through modular asset management.
+
+## Request Managers
+
+Request Managers can be implemented to enable custom investment and redemption logic cross-chain.
+
+The image below shows the primary vaults implementation in the protocol, and how it leverages the immutable core as the base for the cross-chain request handling logic. The orange contracts can be fully customized.
+
+![](./images/request-managers.png)
 
 ## Adapters
 

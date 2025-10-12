@@ -1,11 +1,11 @@
 ---
 id: vaults
-title: Vaults
+title: Standards-based composability
 category: subpage
 contributors: <Jeroen:jeroen@k-f.co>
 ---
 
-# Vaults
+# Standards-based composability
 
 The Centrifuge protocol leverages tokenized vault standard for investments and redemptions of share tokens.
 
