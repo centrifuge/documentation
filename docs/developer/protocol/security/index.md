@@ -6,7 +6,7 @@ title: Security
 # Security
 
 Centrifuge has best-in-class security process, with highlights including
-* 16 security reviews to date for the Centrifuge protocol.
+* 19 security reviews to date for the Centrifuge protocol.
 * Launched on mainnet in 2019, 0 exploits.
 * Extensive invariant test suite.
 
@@ -18,6 +18,8 @@ The protocol codebase is fully immutable, and any emergency functions are locked
 
 | Auditor                                              | Scope            | Date            | Engagement                 | Report                                                                                                                                                                      |
 | ---------------------------------------------------- | --------------- | --------------- | :------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [burraSec](https://www.burrasec.com/)                      | V3.1       | Sep 2025        | Security review            | [`Report`](https://github.com/centrifuge/protocol/blob/main/docs/audits/2025-09-burraSec.pdf)                                                                             |
+| [burraSec](https://www.burrasec.com/)                      | LayerZero adapter        | Aug 2025        | Security review            | [`Report`](https://github.com/centrifuge/protocol/blob/main/docs/audits/2025-08-burraSec.pdf)                                                                             |
 | [Spearbit](https://spearbit.com/)                      | V3.0        | July 2025        | Security review            | [`Report`](https://cantina.xyz/portfolio/5feee047-ded1-4e15-b3a8-0e05afa62ddb)                                                                             |
 | [xmxanuel](https://x.com/xmxanuel)                   | V3.0        | May-July 2025       | Security review            |  [`Report`](https://github.com/centrifuge/protocol/blob/main/docs/audits/2025-07-xmxanuel.pdf)                                                                                                                                                                    |
 | [Macro](https://0xmacro.com/)                      | Merkle Proof Manager        | June 2025        | Security review            | [`Report`](https://0xmacro.com/library/audits/centrifuge-1.html)                                                                             |
