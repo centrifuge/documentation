@@ -31,7 +31,8 @@ The protocol combines an [immutable core](/developer/protocol/architecture/overv
 
 ### Onchain accounting
 
-The protocol implements [fully onchain and automated accounting](/developer/protocol/features/onchain-accounting/) of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, as well as a ledger for all pool holdings. An automated cross-chain synchronization mechanism ensures data across many chains can be aggregated in a single smart contract.
+The protocol implements [fully onchain and automated accounting](/developer/protocol/features/onchain-accounting/) of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, as well as a ledger for all pool holdings. An automated cross-chain synchronization mechanism ensures that data across many chains can be aggregated in a single smart contract.
+The usage of the accounting system is optional, allowing issuers to automate processes according to their needs.
 
 ### One-click deployment
 
