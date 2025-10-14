@@ -23,7 +23,7 @@ Using protocol-level [chain abstraction](/developer/protocol/features/chain-abst
 
 ### Standards-based composability
 
-The protocol provides [vault implementations](/developer/protocol/features/vaults/) that integrate seamlessly with the broader DeFi ecosystem. Share tokens are issued as ERC-20 tokens. ERC-4626 vaults offer the standard tokenized vault interface for synchronous deposits and redemptions, while ERC-7540 vaults provide an asynchronous standard for request-based investment flows. The protocol also supports ERC-7575, enabling multi-asset vaults where a single share token can be exchanged for multiple accepted assets. These standards enable easy integration with existing DeFi protocols, aggregators, and tools.
+The protocol provides [vault implementations](/developer/protocol/features/vaults/) that integrate seamlessly with the broader DeFi ecosystem. Share tokens are issued as ERC-20 tokens. ERC-4626 vaults offer the standard tokenized vault interface for synchronous deposits and redemptions, while ERC-7540 vaults provide an asynchronous standard for request-based investment flows. The protocol also supports ERC-7575, enabling multi-asset vaults where a single share token can be exchanged for different accepted assets. These standards enable easy integration with existing DeFi protocols, aggregators, and tools.
 
 ### Immutable core, modular extensions
 
@@ -31,7 +31,8 @@ The protocol combines an [immutable core](/developer/protocol/architecture/overv
 
 ### Onchain accounting
 
-The protocol implements [fully onchain and automated accounting](/developer/protocol/features/onchain-accounting/) of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, as well as a ledger for all pool holdings. An automated cross-chain synchronization mechanism ensures data across many chains can be aggregated in a single smart contract.
+The protocol implements [fully onchain and automated accounting](/developer/protocol/features/onchain-accounting/) of tokenized assets across all chains. The Hub maintains a complete double-entry bookkeeping system that records all financial transactions, as well as a ledger for all pool holdings. An automated cross-chain synchronization mechanism ensures that data across many chains can be aggregated in a single smart contract.
+The usage of the accounting system is optional, allowing issuers to automate processes according to their needs.
 
 ### One-click deployment
 
