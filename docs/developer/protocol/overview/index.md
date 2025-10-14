@@ -23,7 +23,7 @@ Using protocol-level [chain abstraction](/developer/protocol/features/chain-abst
 
 ### Standards-based composability
 
-The protocol provides [vault implementations](/developer/protocol/features/vaults/) that integrate seamlessly with the broader DeFi ecosystem. Share tokens are issued as ERC-20 tokens. ERC-4626 vaults offer the standard tokenized vault interface for synchronous deposits and redemptions, while ERC-7540 vaults provide an asynchronous standard for request-based investment flows. The protocol also supports ERC-7575, enabling multi-asset vaults where a single share token can be exchanged for multiple accepted assets. These standards enable easy integration with existing DeFi protocols, aggregators, and tools.
+The protocol provides [vault implementations](/developer/protocol/features/vaults/) that integrate seamlessly with the broader DeFi ecosystem. Share tokens are issued as ERC-20 tokens. ERC-4626 vaults offer the standard tokenized vault interface for synchronous deposits and redemptions, while ERC-7540 vaults provide an asynchronous standard for request-based investment flows. The protocol also supports ERC-7575, enabling multi-asset vaults where a single share token can be exchanged for different accepted assets. These standards enable easy integration with existing DeFi protocols, aggregators, and tools.
 
 ### Immutable core, modular extensions
 
