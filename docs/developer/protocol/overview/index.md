@@ -11,7 +11,7 @@ The Centrifuge Protocol is an open-source, decentralized protocol for tokenizing
 
 The protocol is designed to be non-opinionated and extensible, empowering builders to create diverse financial products, from permissioned investment funds to freely tradable tokenized assets, onchain loans, and custom financial structures.
 
-The protocol has had [16 security reviews](/developer/protocol/security/) to date, and is currently live on [6 blockchains](/developer/protocol/deployments/).
+The protocol has had [19 security reviews](/developer/protocol/security/) to date, and is currently live on [6 blockchains](/developer/protocol/deployments/).
 
 ![](./images/overview.png)
 
