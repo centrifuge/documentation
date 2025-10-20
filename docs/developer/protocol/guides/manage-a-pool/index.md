@@ -87,20 +87,14 @@ For synchronous deposit vaults using ERC-4626, asset deposits skip all six stage
 
 ### Request queuing and partial fulfillment
 
-The `BatchRequestManager` maintains a First-In-First-Out (FIFO) queue for all pending requests. Batches are created when the fund manager triggers an approval, all requests that are pending at that moment become part of that batch. Within each batch, partial fulfillment is supported automatically.
+The `BatchRequestManager` maintains a First-In-First-Out (FIFO) batch-based queue for all pending requests. Batches are created when the fund manager triggers an approval, all requests that are pending at that moment become part of that batch. When a batch is approved with a specific total amount, the `BatchRequestManager` processes all requests in that batch. If the approved amount is insufficient to fulfill all requests in the batch, each request is fulfilled proportionally based on its share of the total requested amount.
 
-#### How the queue works
-
-When a batch is approved with a specific total amount, the `BatchRequestManager` processes all requests in that batch. If the approved amount is insufficient to fulfill all requests in the batch, each request is fulfilled proportionally based on its share of the total requested amount.
-
-**Example scenario:**
-
-Consider three deposit requests submitted in this order:
+As an example, consider three deposit requests submitted in this order:
 1. User A requests 10 shares
 2. User B requests 5 shares  
 3. User A requests another 10 shares
 
-**Example 1: Approving after each request**
+**Case 1: Approving after each request**
 
 If the fund manager approves 15 shares after the second request is submitted:
 - **Batch 1** (requests 1-2, approved for 15 shares):
@@ -116,7 +110,7 @@ After both batches:
 - User B has 5 shares fully approved
 - User A still has 5 shares pending from their second request, which will be in the next batch when approval is triggered
 
-**Example 2: Approving after all three requests**
+**Case 2: Approving after all three requests**
 
 If the fund manager waits and approves 20 shares only after all three requests are submitted:
 - **Batch 1** (requests 1-3, approved for 20 shares total out of 25 requested):
