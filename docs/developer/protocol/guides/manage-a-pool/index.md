@@ -68,7 +68,7 @@ Each request is tracked in a central contract called the `BatchRequestManager`.
 
 ### Lifecycle of a request
 
-All deposit and redeem requests move through five stages:
+Deposit and redeem requests move through six stages:
 
 * **Queued**: An optional stage that requests go through if there was non-zero approved or issued/revoked but not yet fulfilled requests for this user.
 * **Pending**: The initial state after submission by the user. The request has not yet been approved.
@@ -108,7 +108,6 @@ Then if the fund manager approves 5 shares after the third request:
 After both batches:
 - User A has 10 shares fully approved from first request, and 5 shares partially approved from second request
 - User B has 5 shares fully approved
-- User A still has 5 shares pending from their second request, which will be in the next batch when approval is triggered
 
 **Case 2: Approving after all three requests**
 
@@ -121,7 +120,6 @@ If the fund manager waits and approves 20 shares only after all three requests a
 After this batch:
 - User A has 8 shares approved from first request and 8 shares approved from second request (16 total)
 - User B has 4 shares approved
-- All three requests still have pending amounts (User A: 2 + 2 = 4 shares pending, User B: 1 share pending), which will be included in the next batch when approval is triggered again
 
 This batch-based FIFO approach ensures fair and predictable processing across all investors, with the timing of approvals determining which requests are grouped together for processing.
 
