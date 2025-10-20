@@ -136,9 +136,14 @@ This batch-based FIFO approach ensures fair and predictable processing across al
 Once a request is pending, the Hub manager must approve it. This is done by calling the appropriate function on the `BatchRequestManager`:
 
 ```solidity
-batchRequestManager.approveDeposits(poolId, scId, assetId, batchRequestManager.nowDepositEpoch(scId, assetId), amount)
-batchRequestManager.approveRedeems(poolId, scId, assetId, batchRequestManager.nowRedeemEpoch(scId, assetId), amount)
+batchRequestManager.approveDeposits{value: gas}(poolId, scId, assetId, batchRequestManager.nowDepositEpoch(poolId, scId, assetId), approvedAssetAmount, pricePoolPerAsset, msg.sender);
+batchRequestManager.approveRedeems{value: gas}(poolId, scId, assetId, batchRequestManager.nowRedeemEpoch(poolId, scId, assetId), approvedShareAmount, pricePoolPerAsset);
 ```
+
+* `approvedAssetAmount` / `approvedShareAmount`: The total amount being approved for this batch
+* `pricePoolPerAsset`: The price of the asset denominated in the pool currency (18 decimal fixed point integer)
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund (deposits only)
 
 Approving a deposit allows any authorized Balance Sheet Manager to withdraw the approved amount of assets. These assets can be invested before the share price is determined.
 
@@ -147,9 +152,14 @@ Approving a deposit allows any authorized Balance Sheet Manager to withdraw the 
 After approval, the next step is to finalize the share price and process the request. This is done by issuing shares (for deposits) or revoking shares (for redemptions):
 
 ```solidity
-batchRequestManager.issueShares(poolId, scId, assetId, batchRequestManager.nowIssueEpoch(scId, assetId), sharePrice);
-batchRequestManager.revokeShares(poolId, scId, assetId, batchRequestManager.nowRevokeEpoch(scId, assetId), sharePrice);
+batchRequestManager.issueShares{value: gas}(poolId, scId, assetId, batchRequestManager.nowIssueEpoch(poolId, scId, assetId), pricePoolPerShare, extraGasLimit, msg.sender);
+batchRequestManager.revokeShares{value: gas}(poolId, scId, assetId, batchRequestManager.nowRevokeEpoch(poolId, scId, assetId), pricePoolPerShare, extraGasLimit, msg.sender);
 ```
+
+* `pricePoolPerShare`: The share price in pool currency (18 decimal fixed point integer)
+* `extraGasLimit`: Additional gas limit for cross-chain message execution (uint128, can usually be set to 0)
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
 
 This step locks in the value of the transaction by applying the calculated share price.
 
@@ -158,10 +168,10 @@ This step locks in the value of the transaction by applying the calculated share
 Once shares are issued or revoked, each vault must be notified so that individual users can claim their resulting assets or shares. This is done per user using the following calls:
 
 ```solidity
-uint32 maxClaims = batchRequestManager.maxDepositClaims(scId, bytes32(bytes20(user)), assetId);
+uint32 maxClaims = batchRequestManager.maxDepositClaims(poolId, scId, bytes32(bytes20(user)), assetId);
 hub.notifyDeposit(poolId, scId, assetId, bytes32(bytes20(user)), maxClaims);
 
-uint32 maxClaims = batchRequestManager.maxRedeemClaims(scId, bytes32(bytes20(user)), assetId);
+uint32 maxClaims = batchRequestManager.maxRedeemClaims(poolId, scId, bytes32(bytes20(user)), assetId);
 hub.notifyRedeem(poolId, scId, assetId, bytes32(bytes20(user)), maxClaims)
 ```
 
