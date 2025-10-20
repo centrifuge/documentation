@@ -64,12 +64,13 @@ hub.notifyAssetPrice{value: gas}(poolId, scId, assetId, msg.sender);
 
 Investment requests, whether deposits or redemptions, are submitted by users through vaults operating on various chains. Despite being initiated on different networks, these requests are managed centrally on the Hub chain. This ensures consistent processing and coordination across the entire protocol.
 
-Each request is tracked in a central contract called the `ShareClassManager`.
+Each request is tracked in a central contract called the `BatchRequestManager`.
 
 ### Lifecycle of a request
 
 All deposit and redeem requests move through five stages:
 
+* **Queued**: An optional stage that requests go through if there was non-zero approved or issued/revoked but not yet fulfilled requests for this user.
 * **Pending**: The initial state after submission by the user. The request has not yet been approved.
 * **Approved**: The Hub manager approves the request. For deposits, this allows Balance Sheet Managers to withdraw the requested assets and allocate them as needed. At this stage, the request is not yet priced. The request can not be cancelled anymore once approved.
 * **Issued/revoked**: A share price is assigned. For deposits, shares are issued to the user; for redemptions, shares are revoked in return for assets.
@@ -81,17 +82,62 @@ All deposit and redeem requests move through five stages:
 The separation of approval and issuance/revocation is to be used for cases where the price of the execution depends on buying or selling underlying assets, which can only happen after the request is fulfilled and the assets can be withdrawn and the request cannot be cancelled anymore.
 
 :::info[ERC-4626 vaults]
-For synchronous deposit vaults using ERC-4626, asset deposits skip all five stages, and shares are immediately minted into the user's wallet.
+For synchronous deposit vaults using ERC-4626, asset deposits skip all six stages, and shares are immediately minted into the user's wallet.
 :::
 
+### Request queuing and partial fulfillment
+
+The `BatchRequestManager` maintains a First-In-First-Out (FIFO) queue for all pending requests. Batches are created when the fund manager triggers an approval, all requests that are pending at that moment become part of that batch. Within each batch, partial fulfillment is supported automatically.
+
+#### How the queue works
+
+When a batch is approved with a specific total amount, the `BatchRequestManager` processes all requests in that batch. If the approved amount is insufficient to fulfill all requests in the batch, each request is fulfilled proportionally based on its share of the total requested amount.
+
+**Example scenario:**
+
+Consider three deposit requests submitted in this order:
+1. User A requests 10 shares
+2. User B requests 5 shares  
+3. User A requests another 10 shares
+
+**Example 1: Approving after each request**
+
+If the fund manager approves 15 shares after the second request is submitted:
+- **Batch 1** (requests 1-2, approved for 15 shares):
+  - First request (User A, 10 shares): Fully approved ✓
+  - Second request (User B, 5 shares): Fully approved ✓
+
+Then if the fund manager approves 5 shares after the third request:
+- **Batch 2** (request 3, approved for 5 shares):
+  - Third request (User A, 10 shares): Partially approved for 5 shares
+
+After both batches:
+- User A has 10 shares fully approved from first request, and 5 shares partially approved from second request
+- User B has 5 shares fully approved
+- User A still has 5 shares pending from their second request, which will be in the next batch when approval is triggered
+
+**Example 2: Approving after all three requests**
+
+If the fund manager waits and approves 20 shares only after all three requests are submitted:
+- **Batch 1** (requests 1-3, approved for 20 shares total out of 25 requested):
+  - First request (User A, 10 shares): Partially approved for 8 shares (10 / 25 × 20 = 8)
+  - Second request (User B, 5 shares): Partially approved for 4 shares (5 / 25 × 20 = 4)
+  - Third request (User A, 10 shares): Partially approved for 8 shares (10 / 25 × 20 = 8)
+
+After this batch:
+- User A has 8 shares approved from first request and 8 shares approved from second request (16 total)
+- User B has 4 shares approved
+- All three requests still have pending amounts (User A: 2 + 2 = 4 shares pending, User B: 1 share pending), which will be included in the next batch when approval is triggered again
+
+This batch-based FIFO approach ensures fair and predictable processing across all investors, with the timing of approvals determining which requests are grouped together for processing.
 
 ### Approving a request
 
-Once a request is pending, the Hub manager must approve it. This is done by calling the appropriate function on the Hub:
+Once a request is pending, the Hub manager must approve it. This is done by calling the appropriate function on the `BatchRequestManager`:
 
 ```solidity
-hub.approveDeposits(poolId, scId, assetId, shareClassManager.nowDepositEpoch(scId, assetId), amount)
-hub.approveRedeems(poolId, scId, assetId, shareClassManager.nowRedeemEpoch(scId, assetId), amount)
+batchRequestManager.approveDeposits(poolId, scId, assetId, batchRequestManager.nowDepositEpoch(scId, assetId), amount)
+batchRequestManager.approveRedeems(poolId, scId, assetId, batchRequestManager.nowRedeemEpoch(scId, assetId), amount)
 ```
 
 Approving a deposit allows any authorized Balance Sheet Manager to withdraw the approved amount of assets. These assets can be invested before the share price is determined.
@@ -101,8 +147,8 @@ Approving a deposit allows any authorized Balance Sheet Manager to withdraw the 
 After approval, the next step is to finalize the share price and process the request. This is done by issuing shares (for deposits) or revoking shares (for redemptions):
 
 ```solidity
-hub.issueShares(poolId, scId, assetId, shareClassManager.nowIssueEpoch(scId, assetId), sharePrice);
-hub.revokeShares(poolId, scId, assetId, shareClassManager.nowRevokeEpoch(scId, assetId), sharePrice);
+batchRequestManager.issueShares(poolId, scId, assetId, batchRequestManager.nowIssueEpoch(scId, assetId), sharePrice);
+batchRequestManager.revokeShares(poolId, scId, assetId, batchRequestManager.nowRevokeEpoch(scId, assetId), sharePrice);
 ```
 
 This step locks in the value of the transaction by applying the calculated share price.
@@ -112,10 +158,10 @@ This step locks in the value of the transaction by applying the calculated share
 Once shares are issued or revoked, each vault must be notified so that individual users can claim their resulting assets or shares. This is done per user using the following calls:
 
 ```solidity
-uint32 maxClaims = shareClassManager.maxDepositClaims(scId, bytes32(bytes20(user)), assetId);
+uint32 maxClaims = batchRequestManager.maxDepositClaims(scId, bytes32(bytes20(user)), assetId);
 hub.notifyDeposit(poolId, scId, assetId, bytes32(bytes20(user)), maxClaims);
 
-uint32 maxClaims = shareClassManager.maxRedeemClaims(scId, bytes32(bytes20(user)), assetId);
+uint32 maxClaims = batchRequestManager.maxRedeemClaims(scId, bytes32(bytes20(user)), assetId);
 hub.notifyRedeem(poolId, scId, assetId, bytes32(bytes20(user)), maxClaims)
 ```
 
