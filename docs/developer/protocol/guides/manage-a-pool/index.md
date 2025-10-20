@@ -85,9 +85,9 @@ The separation of approval and issuance/revocation is to be used for cases where
 For synchronous deposit vaults using ERC-4626, asset deposits skip all six stages, and shares are immediately minted into the user's wallet.
 :::
 
-### Request queuing and partial fulfillment
+### Request batching and partial fulfillment
 
-The `BatchRequestManager` maintains a First-In-First-Out (FIFO) batch-based queue for all pending requests. Batches are created when the fund manager triggers an approval, all requests that are pending at that moment become part of that batch. When a batch is approved with a specific total amount, the `BatchRequestManager` processes all requests in that batch. If the approved amount is insufficient to fulfill all requests in the batch, each request is fulfilled proportionally based on its share of the total requested amount.
+The `BatchRequestManager` maintains First-In-First-Out (FIFO) batch-based logic for all pending requests. Batches are created when the fund manager triggers an approval, all requests that are pending at that moment become part of that batch. When a batch is approved with a specific total amount, the `BatchRequestManager` processes all requests in that batch. If the approved amount is insufficient to fulfill all requests in the batch, each request is fulfilled proportionally based on its share of the total requested amount.
 
 As an example, consider three deposit requests submitted in this order:
 1. User A requests 10 shares
