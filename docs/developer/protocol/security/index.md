@@ -12,6 +12,8 @@ Centrifuge has best-in-class security process, with highlights including
 
 The protocol codebase is fully immutable, and any emergency functions are locked behind a 72-hour timelock.
 
+![](./images/auditors.png)
+
 ## Security reviews
 
 ### Protocol
