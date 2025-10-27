@@ -76,20 +76,14 @@ const vaultDepositPolicy = {
   valueNonZero: false,
   inputs: [
     {
-      parameter: "uint256",
+      parameter: "Amount",
       input: [],
     },
     {
-      parameter: "address",
+      parameter: "Address",
       input: ["0xVaultAddress"],
     },
-  ]
-  inputCombinations: [
-  {
-    inputs: [null, randomUser],
-    inputsEncoded: encodePacked(["address"], ["0xVaultAddress"]),
-  },
-]
+  ],
 };
 
 const balanceSheetWithdrawPolicy = {
@@ -100,37 +94,28 @@ const balanceSheetWithdrawPolicy = {
   valueNonZero: false,
   inputs: [
     {
-      parameter: "poolId",
+      parameter: "Pool ID",
       input: [poolId.toString() as HexString],
     },
     {
-      parameter: "shareClassId",
+      parameter: "Share class ID",
       input: [scId.raw],
     },
     {
-      parameter: "erc20",
+      parameter: "Asset",
       input: [someErc20],
     },
     {
-      parameter: "uint256",
+      parameter: "Token ID",
       input: [],
     },
     {
-      parameter: "address",
+      parameter: "Receiver",
       input: [merkleProofManager.address],
     },
     {
-      parameter: "uint128",
+      parameter: "Amount",
       input: [],
-    },
-  ],
-  inputCombinations: [
-    {
-      inputs: [poolId.toString() as HexString, scId.raw, someErc20, null, merkleProofManager.address, null],
-      inputsEncoded: encodePacked(
-        ["uint64", "bytes16", "address", "address"],
-        [poolId.raw, scId.raw, someErc20, merkleProofManager.address]
-      ),
     },
   ],
 };
@@ -139,34 +124,29 @@ const balanceSheetDepositPolicy = {
   assetId: assetId.toString(),
   decoder: addresses.vaultDecoder,
   target: addresses.balanceSheet,
-  action: "function deposit(uint64 poolId, bytes16 scId, address asset, uint256, uint128)",
+  action:
+    "function deposit(uint64 poolId, bytes16 scId, address asset, uint256, uint128)",
   valueNonZero: false,
   inputs: [
     {
-      parameter: "poolId",
+      parameter: "Pool ID",
       input: [poolId.toString() as HexString],
     },
     {
-      parameter: "shareClassId",
+      parameter: "Share class ID",
       input: [scId.raw],
     },
     {
-      parameter: "erc20",
+      parameter: "Asset",
       input: [someErc20],
     },
     {
-      parameter: "uint256",
+      parameter: "Token ID",
       input: [],
     },
     {
-      parameter: "uint128",
+      parameter: "Amount",
       input: [],
-    },
-  ],
-  inputCombinations: [
-    {
-      inputs: [poolId.toString() as HexString, scId.raw, someErc20, null, null],
-      inputsEncoded: encodePacked(["uint64", "bytes16", "address"], [poolId.raw, scId.raw, someErc20]),
     },
   ],
 };
