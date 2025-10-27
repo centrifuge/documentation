@@ -72,43 +72,83 @@ const vaultDepositPolicy = {
   assetId: assetId.toString(),
   decoder: addresses.vaultDecoder,
   target: "0xVaultAddress",
-  abi: "function deposit(uint256,address)",
+  action: "function deposit(uint256,address)",
   valueNonZero: false,
-  args: [null, strategist],
-  argsEncoded: encodePacked(["address"], ["0xVaultAddress"]),
+  inputs: [
+    {
+      parameter: "Amount",
+      input: [],
+    },
+    {
+      parameter: "Address",
+      input: ["0xVaultAddress"],
+    },
+  ],
 };
 
 const balanceSheetWithdrawPolicy = {
   assetId: assetId.toString(),
   decoder: addresses.vaultDecoder,
   target: addresses.balanceSheet,
-  abi: "function withdraw(uint64,bytes16,address,uint256,address,uint128)",
+  action: "function withdraw(uint64,bytes16,address,uint256,address,uint128)",
   valueNonZero: false,
-  args: [
-    poolId.toString(),
-    scId,
-    erc20,
-    null,
-    merkleProofManager.address,
-    null,
+  inputs: [
+    {
+      parameter: "Pool ID",
+      input: [poolId.toString() as HexString],
+    },
+    {
+      parameter: "Share class ID",
+      input: [scId.raw],
+    },
+    {
+      parameter: "Asset",
+      input: [someErc20],
+    },
+    {
+      parameter: "Token ID",
+      input: [],
+    },
+    {
+      parameter: "Receiver",
+      input: [merkleProofManager.address],
+    },
+    {
+      parameter: "Amount",
+      input: [],
+    },
   ],
-  argsEncoded: encodePacked(
-    ["uint64", "bytes16", "address", "address"],
-    [poolId, scId, erc20, merkleProofManager.address]
-  ),
 };
 
 const balanceSheetDepositPolicy = {
   assetId: assetId.toString(),
   decoder: addresses.vaultDecoder,
   target: addresses.balanceSheet,
-  abi: "function deposit(uint64 poolId, bytes16 scId, address asset, uint256, uint128)",
+  action:
+    "function deposit(uint64 poolId, bytes16 scId, address asset, uint256, uint128)",
   valueNonZero: false,
-  args: [poolId.toString(), scId.raw, someErc20, null, null],
-  argsEncoded: encodePacked(
-    ["uint64", "bytes16", "address"],
-    [poolId.raw, scId.raw, someErc20]
-  ),
+  inputs: [
+    {
+      parameter: "Pool ID",
+      input: [poolId.toString() as HexString],
+    },
+    {
+      parameter: "Share class ID",
+      input: [scId.raw],
+    },
+    {
+      parameter: "Asset",
+      input: [someErc20],
+    },
+    {
+      parameter: "Token ID",
+      input: [],
+    },
+    {
+      parameter: "Amount",
+      input: [],
+    },
+  ],
 };
 
 centrifuge.setSigner(fundManager);
