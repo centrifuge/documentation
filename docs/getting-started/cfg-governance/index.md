@@ -23,7 +23,7 @@ This change enables agility in the fast-evolving RWA space while keeping CFG hol
 
 
 ## Centrifuge Network Foundation (CNF)
-![Centrifuge Foundation](/img/CNF.png "Centrifuge Foundation")
+![](./images/CNF.png)
 
 The Centrifuge Network Foundation (CNF) is a non-profit entity dedicated to stewarding the Centrifuge ecosystem's growth, funding core infrastructure, and ensuring long-term sustainability, RWA growth, and CFG value accrual. CNF maintains transparency via public dashboards and reports (TVL, revenue, metrics) and aligns operations with CFG holder interests.
 ### Board Structure
@@ -43,7 +43,7 @@ Centrifuge Foundation's board ensures diverse expertise in finance, tech, and go
 - Community: Engage via Discord ([link](https://discord.gg/xHT2t2eTd7)) or Telegram ([link](https://t.me/centrifuge_chat))
 
 ## Centrifuge Labs (fka k-factory)
-![Centrifuge Labs](/img/CFGlabs.png "Centrifuge Labs")
+![](./images/CFGlabs.png)
 
 Centrifuge Labs, formerly known as k-f (k/factory), is a software studio that serves as the primary development and execution engine for the Centrifuge Protocol. Centrifuge Labs builds and maintains the open-source infrastructure powering Centrifuge.
 
