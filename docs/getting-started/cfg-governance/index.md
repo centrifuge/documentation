@@ -17,9 +17,9 @@ This change enables agility in the fast-evolving RWA space while keeping CFG hol
 
 | Entity | Role | Focus |
 |---|---|---|
-| **Centrifuge Network Foundation (CNF)** | Board-led oversight; manages treasury and assets transferred from DAO; ensures all actions grow protocol adoption and value | Long-term value accrual; protocol sustainability |
-| **Centrifuge Labs** | CNF subsidiary handling operations | Product development; partnerships; marketing; revenue |
-| **CFG Holders & Community** | Retain ultimate stewardship and control of the Centrifuge protocol; drive engagement through local activations; events; grassroots initiatives | Empower community-driven long-term value accrual; ensure protocol sustainability through stewardship, innovation, and adoption efforts |
+| **Centrifuge Network Foundation (CNF)** | Board-led oversight, manages treasury and assets transferred from DAO, ensures all actions grow protocol adoption and value | Long-term value accrual, protocol sustainability |
+| **Centrifuge Labs** | CNF subsidiary handling operations | Product development, partnerships, marketing, revenue |
+| **CFG Holders & Community** | Retain ultimate stewardship and control of the Centrifuge protocol, drive engagement through local activations, events | Empower community-driven long-term value accrual, ensure protocol sustainability through stewardship, innovation, and adoption efforts |
 
 
 ## Centrifuge Network Foundation (CNF)
