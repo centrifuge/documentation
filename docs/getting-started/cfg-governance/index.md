@@ -39,7 +39,7 @@ Centrifuge Foundation's board ensures diverse expertise in finance, tech, and go
 ### Get Involved
 
 - Contact: [info@centrifuge.foundation](mailto:info@centrifuge.foundation)
-- Learn more: https://centrifuge.foundation or join discussions on https://gov.centrifuge.io
+- Learn more: https://centrifuge.foundation
 - Community: Engage via Discord ([link](https://discord.gg/xHT2t2eTd7)) or Telegram ([link](https://t.me/centrifuge_chat))
 
 ## Centrifuge Labs (fka k-factory)
@@ -51,10 +51,10 @@ Centrifuge Labs, formerly known as k-f (k/factory), is a software studio that se
 
 Centrifuge Labs is a fully remote team emphasising diversity and shared values.
 
-- **Bhaji Illuminati**, CEO and Co-Founder of Centrifuge, brings extensive experience in scaling marketplace tech companies and leading go-to-market strategies in fintech, having previously held roles at Dragonboat, Surkus, Social Native, and Taulia.
-- **Anil Sood**, Chief Strategy and Growth Officer and Co-Founder of Centrifuge, is a leader in ETFs, capital markets, and asset management with expertise in crypto, having co-founded Anemoy and held roles at Knight Capital, Cantor Fitzgerald, Goldman Sachs, and Barclays.
-- **Martin Quensel**, President and Co-Founder of Centrifuge, has built multiple startups, including Taulia and Ebydos, with expertise in financial supply chain management and developing regulated DeFi products.
-- **Jeroen Offerijns**, Chief Technology Officer and Co-Founder of Centrifuge, leads technology for on-chain finance and protocol development, specialising in engineering security into large-scale systems.
+- **Bhaji Illuminati**, CEO and Co-founder of Centrifuge, brings extensive experience in scaling marketplace tech companies and leading go-to-market strategies in fintech, having previously held roles at Dragonboat, Surkus, Social Native, and Taulia.
+- **Anil Sood**, Chief Strategy and Growth Officer and Co-founder of Centrifuge, is a leader in ETFs, capital markets, and asset management with expertise in crypto, having co-founded Anemoy and held roles at Knight Capital, Cantor Fitzgerald, Goldman Sachs, and Barclays.
+- **Martin Quensel**, President and Co-founder of Centrifuge, has built multiple startups, including Taulia and Ebydos, with expertise in financial supply chain management and developing regulated DeFi products.
+- **Jeroen Offerijns**, Chief Technology Officer and Co-founder of Centrifuge, leads technology for on-chain finance and protocol development, specialising in engineering security into large-scale systems.
 - **Eli Cohen**, Chief Legal Officer at Centrifuge and Chief Compliance Officer for Anemoy Capital, has over 25 years of experience in financial services law, including at Baker & McKenzie, Euroclear Bank, Singapore Exchange, CME Group, and Block.One.
 - **Jürgen Blumberg**, Chief Operating Officer at Centrifuge, is an ETF trading veteran with over two decades of experience, having worked at BlackRock, Invesco, Goldman Sachs, and leading institutional adoption of tokenised assets.
 
