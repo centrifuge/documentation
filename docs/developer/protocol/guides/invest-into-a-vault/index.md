@@ -11,6 +11,7 @@ This guide explains how to invest in and redeem from Centrifuge vaults, using bo
 
 * How to deposit and redeem in a synchronous deposit vault (e.g., `deJTRSY` for T-bills).
 * How to interact with an asynchronous vault (e.g., `JTRSY`), which operates in two distinct phases for deposits and redemptions.
+* How to query the share token price using the price oracle.
 
 ## Synchronous deposit vaults (e.g., `deJTRSY`)
 
@@ -97,3 +98,22 @@ Asynchronous vaults use the same redemption flow as synchronous ones:
    ```solidity
    vault.withdraw(vault.maxWithdraw(user), receiver, user);
    ```
+
+## Price oracle
+
+To get the latest price of vault shares in terms of the investment asset, use the `vault.convertToAssets()` method:
+
+```solidity
+// First get the share token decimals
+uint8 shareDecimals = vault.share().decimals();
+
+// Convert 1 share to its equivalent value in the investment asset
+uint256 oneShare = 10 ** shareDecimals;
+uint256 assetValue = vault.convertToAssets(oneShare);
+```
+
+This method returns the current value denominated in the investment asset (e.g., USDC). The result is expressed in the decimals of the investment asset. For example, if the investment asset is USDC (6 decimals), the returned value will be in USDC's 6 decimal format.
+
+:::info[Deposit and redeem prices]
+The latest price returned by `convertToAssets()` might not be the exact price at which your investment or redemption is executed, as there can be a time lag between querying the price and when the transaction is processed.
+:::
