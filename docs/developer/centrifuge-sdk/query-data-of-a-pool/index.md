@@ -104,7 +104,22 @@ const vaults = await shareClass.vaults(chainId);
 const vault = await poolNetwork.vault(tokenId, assetAddress);
 ```
 
-## 6. Query investor position
+## 6. Get share token price
+
+To get the current price per share of a vault's share token, use the `shareClass.details()` method:
+
+```typescript
+// Get the share class (token) details
+const shareClassDetails = await shareClass.details();
+
+// Access the price per share
+const pricePerShare = shareClassDetails.pricePerShare;
+console.log(`Price per share: ${pricePerShare}`);
+```
+
+The `pricePerShare` field represents the current value of one share token in the vault's underlying currency. It is always denominated as an 18 decimals fixed point integer.
+
+## 7. Query investor position
 
 Get the details of the investment of an investor in the vault and any pending investments or redemptions:
 
