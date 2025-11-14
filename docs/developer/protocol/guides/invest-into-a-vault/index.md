@@ -19,7 +19,13 @@ Synchronous vaults process deposits immediately within a single transaction, and
 
 ### Depositing into a synchronous vault
 
-To deposit assets (e.g., USDC) and receive vault shares:
+Before depositing, approve the vault contract to spend your tokens:
+
+```solidity
+asset.approve(address(vault), assets);
+```
+
+Then deposit assets (e.g., USDC) to receive vault shares:
 
 ```solidity
 vault.deposit(assets, receiver);
@@ -62,7 +68,13 @@ Asynchronous vaults batch and process deposits at set intervals. Deposits and wi
 
 ### Requesting a deposit
 
-Instead of depositing directly, you submit a request:
+Before requesting a deposit, approve the vault contract to spend your tokens:
+
+```solidity
+asset.approve(address(vault), assets);
+```
+
+Then submit a deposit request:
 
 ```solidity
 vault.requestDeposit(assets, user, user);
