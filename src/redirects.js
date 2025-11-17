@@ -79,7 +79,7 @@ const redirects = [
   },
   {
     from: "/chain/governance/about-governance/",
-    to: "/getting-started/dao-summary/governance-process/",
+    to: "/getting-started/cfg-governance/",
   },
   {
     from: "/chain/overview/testnets/",
@@ -225,19 +225,19 @@ const redirects = [
   },
   {
     from: "/use/offchain-voting/",
-    to: "/getting-started/dao-summary/offchain-voting/",
+    to: "/getting-started/cfg-governance/",
   },
   {
     from: "/use/onchain-voting/",
-    to: "/getting-started/dao-summary/onchain-voting/",
+    to: "/getting-started/cfg-governance/",
   },
   {
     from: "/use/governance-proxy-and-delegation/",
-    to: "/getting-started/dao-summary/governance-proxy-and-delegation/",
+    to: "/getting-started/cfg-governance/",
   },
   {
     from: "/use/council/",
-    to: "/getting-started/dao-summary/council/",
+    to: "/getting-started/cfg-governance/",
   },
   {
     from: "/use/contribute-network/",
