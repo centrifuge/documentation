@@ -90,11 +90,11 @@ async function main() {
   const scId = ShareClassId.from(poolId, 1);
   const assetId = AssetId.from(centId, 1);
 
-  // invest
+  // deposit into vault (async)
   const vault = await pool.vault(11155111, scId, assetId);
-  await vault.increaseInvestOrder(Balance.fromFloat(1000, 18));
+  await vault.asyncDeposit(Balance.fromFloat(1000, 18));
 
-  // once processed, claim
+  // once processed, claim shares
   await vault.claim();
 
   // get a report

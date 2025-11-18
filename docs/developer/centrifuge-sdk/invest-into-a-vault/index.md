@@ -10,7 +10,7 @@ Before you begin, make sure you have:
 - [Node.js](https://nodejs.org/) (v18 or later recommended)
 - A package manager: [pnpm](https://pnpm.io/), [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 - A wallet or signer that can connect to Ethereum-compatible chains (e.g. MetaMask, WalletConnect, or a private key account via [Viem](https://viem.sh/))
-- Investment currency (e.g. USDC) on `mainnet` or `testnet`
+- Deposit asset (e.g. USDC) on `mainnet` or `testnet`
 
 ## Installation
 
@@ -66,29 +66,46 @@ const chainId = 11155111; // Ethereum Sepolia
 const vault = await pool.vault(chainId, scId, assetId);
 ```
 
-## 4. Place an investment order
+## 4. Deposit into the vault
 
-You can now create an investment order by specifying the amount of currency to invest:
+You can deposit into the vault using either synchronous or asynchronous deposit methods:
+
+### Synchronous deposits (ERC-4626)
+
+For vaults that support synchronous deposits, use `syncDeposit()`:
 
 ```typescript
-const { investmentCurrency } = await vault.details();
-const amount = Balance.fromFloat(1000, investmentCurrency.decimals);
-const tx = await vault.increaseInvestOrder(amount);
+const { asset } = await vault.details();
+const amount = Balance.fromFloat(1000, asset.decimals);
+const tx = await vault.syncDeposit(amount);
 ```
 
-Depending on the vault type:
+The deposit settles immediately and shares are minted in the same transaction.
 
-- Sync vaults: the investment settles immediately.
-- Async vaults: the order is processed during the next epoch.
+### Asynchronous deposits (ERC-7540)
+
+For vaults that support asynchronous deposits, use `asyncDeposit()`:
+
+```typescript
+const { asset } = await vault.details();
+const amount = Balance.fromFloat(1000, asset.decimals);
+const tx = await vault.asyncDeposit(amount);
+```
+
+The deposit request is queued and will be processed during the next epoch.
 
 ## 5. Claim your shares
 
-Once the investment is processed (immediately or after an epoch), you need to claim your shares:
+For asynchronous deposits, once the deposit request is processed during an epoch, you need to claim your shares:
 
 ```typescript
 const claimTx = await vault.claim();
 console.log("Claim transaction hash:", claimTx.hash);
 ```
+
+:::info
+For synchronous deposits using `syncDeposit()`, shares are minted immediately in the same transaction, so there's no need to claim separately.
+:::
 
 ## 6. Check investor position
 
@@ -98,6 +115,6 @@ You can query your current position in the vault at any time:
 const investor = await vault.investment("0xYourWalletAddress");
 
 console.log(investor.shareBalance); // current balance of shares
-console.log(investor.pendingInvestCurrency); // still pending investment
-console.log(investor.claimableInvestShares); // shares ready to be claimed
+console.log(investor.pendingDepositAssets); // assets in pending deposit requests
+console.log(investor.claimableDepositShares); // shares ready to be claimed
 ```
