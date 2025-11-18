@@ -121,30 +121,30 @@ The `pricePerShare` field represents the current value of one share token in the
 
 ## 7. Query investor position
 
-Get the details of the investment of an investor in the vault and any pending investments or redemptions:
+Get the details of the investment of an investor in the vault and any pending deposits or redemptions:
 
 ```typescript
 const investment = await vault.investment("0xInvestorAddress");
 
 console.log(investment.shareBalance);
-console.log(investment.shareCurrency);
-console.log(investment.investmentCurrencyBalance);
-console.log(investment.investmentCurrencyAllowance);
-console.log(investment.isAllowedToInvest);
+console.log(investment.share);
+console.log(investment.assetBalance);
+console.log(investment.assetAllowance);
+console.log(investment.isAllowedToDeposit);
 console.log(investment.isAllowedToRedeem);
-console.log(investment.isSyncInvest);
-console.log(investment.maxInvest);
-console.log(investment.claimableInvestShares);
-console.log(investment.claimableInvestCurrencyEquivalent);
-console.log(investment.claimableRedeemCurrency);
+console.log(investment.isSyncDeposit);
+console.log(investment.maxDeposit);
+console.log(investment.claimableDepositShares);
+console.log(investment.claimableDepositAssetEquivalent);
+console.log(investment.claimableRedeemAssets);
 console.log(investment.claimableRedeemSharesEquivalent);
-console.log(investment.pendingInvestCurrency);
+console.log(investment.pendingDepositAssets);
 console.log(investment.pendingRedeemShares);
-console.log(investment.claimableCancelInvestCurrency);
+console.log(investment.claimableCancelDepositAssets);
 console.log(investment.claimableCancelRedeemShares);
-console.log(investment.hasPendingCancelInvestRequest);
+console.log(investment.hasPendingCancelDepositRequest);
 console.log(investment.hasPendingCancelRedeemRequest);
-console.log(investment.investmentCurrency);
+console.log(investment.asset);
 ```
 
 ## 7. Query reports
