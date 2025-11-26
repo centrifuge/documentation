@@ -16,15 +16,17 @@ Before assets can be deposited or withdrawn, a balance sheet manager must be ass
 Call the following method on the Hub, to set a balance sheet manager, for the `centrifugeId` where you want to manage assets:
 
 ```solidity
-hub.updateBalanceSheetManager(centrifugeId, poolId, bytes32(bytes20(manager)), true);
+hub.updateBalanceSheetManager{value: gas}(poolId, centrifugeId, bytes32(bytes20(manager)), true, msg.sender);
 ```
 
 #### Parameters
 
-* `centrifugeId`: The network identifier.
 * `poolId`: The pool ID.
+* `centrifugeId`: The network identifier.
 * `bytes32(bytes20(manager))`: The manager’s address, converted to `bytes32`.
 * `true`: Indicates that this manager is being added (use `false` to remove a manager).
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded).
+* `msg.sender`: Address to receive any excess gas refund.
 
 #### Supported manager types
 

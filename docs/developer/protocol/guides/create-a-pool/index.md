@@ -72,8 +72,11 @@ This can include information to be shown in the UI.
 Once created, the pool must notify the other networks of its existence. This should be called for every `centrifugeId` where the pool is going to be launched.
 
 ```solidity
-hub.notifyPool(poolId, centrifugeId);
+hub.notifyPool{value: gas}(poolId, centrifugeId, msg.sender);
 ```
+
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
 
 ## Adding share classes
 
@@ -110,7 +113,10 @@ For each token, choose the hook that you want:
 - **`address(0)`**: token is fully permissionless.
 
 ```solidity
-hub.notifyShareClass(poolId, scId, centrifugeId, bytes32(bytes20(hook)));
+hub.notifyShareClass{value: gas}(poolId, scId, centrifugeId, bytes32(bytes20(hook)), msg.sender);
 ```
+
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
 
 This will deploy the ERC20 share token.

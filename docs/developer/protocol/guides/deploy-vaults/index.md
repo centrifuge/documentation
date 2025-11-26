@@ -19,35 +19,51 @@ Before deploying a vault, the associated share token must be deployed on the tar
 
 For asynchronous vaults, the `AsyncRequestManager` contract must be configured in two roles:
 
-1. As the Request Manager, so it can handle investment actions via the Hub.
+1. As the Spoke Request Manager, so it can handle investment actions via the Hub.
 2. As the Balance Sheet Manager, so it can move assets in and out of the balance sheet.
+
+The `BatchRequestManager` also needs to be configure das the Hub Request Manager.
 
 The configuration is done using the following commands:
 
 ```solidity
-hub.setRequestManager(poolId, scId, assetId, bytes32(bytes20(address(asyncRequestManager))));
-hub.updateBalanceSheetManager(centrifugeId, poolId, bytes32(bytes20(address(asyncRequestManager))), true);
+hub.setRequestManager{value: gas}(poolId, centrifugeId, hubRequestManagerContract, bytes32(bytes20(address(batchRequestManager))), bytes32(bytes20(address(asyncRequestManager))), msg.sender);
+hub.updateBalanceSheetManager{value: gas}(poolId, centrifugeId, bytes32(bytes20(address(asyncRequestManager))), true, msg.sender);
 ```
+
+* `batchRequestManager`: The Hub-side request manager contract instance
+* `asyncRequestManager`: The Spoke-side request manager contract instance
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
 
 After setup, the asynchronous vault can be deployed with:
 
 ```solidity
-hub.updateVault(poolId, scId, assetId, bytes32(bytes20(address(asyncVaultFactory))), VaultUpdateKind.DeployAndLink, 0);
+hub.updateVault{value: gas}(poolId, scId, assetId, bytes32(bytes20(address(asyncVaultFactory))), VaultUpdateKind.DeployAndLink, 0, msg.sender);
 ```
+
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
 
 #### Synchronous deposit vaults
 
 For synchronous vaults, the `SyncManager` must be set as a Balance Sheet Manager, which allows it to handle asset transfers as part of deposit execution:
 
 ```solidity
-hub.updateBalanceSheetManager(centrifugeId, poolId, bytes32(bytes20(address(syncManager))), true);
+hub.updateBalanceSheetManager{value: gas}(poolId, centrifugeId, bytes32(bytes20(address(syncManager))), true, msg.sender);
 ```
+
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
 
 Once the manager is configured, the vault is deployed using:
 
 ```solidity
-hub.updateVault(poolId, scId, assetId, bytes32(bytes20(address(syncDepositVaultFactory))), VaultUpdateKind.DeployAndLink, 0);
+hub.updateVault{value: gas}(poolId, scId, assetId, bytes32(bytes20(address(syncDepositVaultFactory))), VaultUpdateKind.DeployAndLink, 0, msg.sender);
 ```
+
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
 
 ### Price initialization
 
