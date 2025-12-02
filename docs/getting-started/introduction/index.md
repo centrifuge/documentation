@@ -18,7 +18,7 @@ Centrifuge is designed to make launching and operating tokenized funds simple, f
 * **Native DeFi compatibility**: ERC-4626 and ERC-7540 assets integrate seamlessly with Maker, Aave Horizon, Morpho, Pendle, and more.
 * **Institutional-grade security**: 21+ audits, an immutable core, and years of production usage ensure a robust foundation.
 
-Learn more about [Centrifuge's Mission and History](/getting-started/introduction/mission-and-history).
+Learn more about [Centrifuge's mission and history](/getting-started/introduction/mission-and-history).
 
 In these docs, you'll find everything you need to know about Centrifuge; from basic concepts to user guides to developer documentation. Dive in:
 <div className="card-grid">
