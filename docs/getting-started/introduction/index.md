@@ -13,12 +13,8 @@ Today, Centrifuge powers onchain strategies for leading institutions including A
 
 Centrifuge is designed to make launching and operating tokenized funds simple, fast, and institution-ready:
 * **Launch in weeks**: Pre-built components for tokenization, onboarding, NAV, and multi-chain distribution remove the heavy engineering lift.
-* **Built-in compliance**: Configure modular KYC/AML, whitelisting, and transfer controls enforced directly at the protocol level.
-* **Extend with SDKs & APIs**: Build custom frontends, automate operations, or integrate Centrifuge data into your systems.
+* **Extend with SDK & API**: Build custom frontends, automate operations, or integrate Centrifuge data into your systems.
 * **Native DeFi compatibility**: ERC-4626 and ERC-7540 assets integrate seamlessly with Maker, Aave Horizon, Morpho, Pendle, and more.
-* **Institutional-grade security**: 21+ audits, an immutable core, and years of production usage ensure a robust foundation.
-
-Learn more about [Centrifuge's mission and history](/getting-started/introduction/mission-and-history).
 
 In these docs, you'll find everything you need to know about Centrifuge; from basic concepts to user guides to developer documentation. Dive in:
 <div className="card-grid">
