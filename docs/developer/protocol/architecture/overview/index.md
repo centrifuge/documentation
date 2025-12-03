@@ -21,7 +21,7 @@ The immutable core includes:
 ## Modular extensions
 
 Built on top of the immutable core, the protocol supports various extension points that enable customization without modifying core contracts:
-- Adapters: Cross-chain messaging adapters integrating with LayerZero, Wormhole, Axelar, and recovery mechanisms
+- Adapters: Cross-chain messaging adapters integrating with LayerZero, Wormhole, Chainlink, Axelar, and recovery mechanisms
 - Hooks: Transfer hook implementations (FreezeOnly, RedemptionRestrictions, FullRestrictions, FreelyTransferable)
 - Hub Managers: NAVManager for net asset value tracking and SimplePriceManager for single-share-class pool pricing
 - Spoke Managers: OnOfframpManager for asset custody, MerkleProofManager for permissioned operations, QueueManager for batched syncing

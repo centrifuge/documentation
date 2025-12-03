@@ -67,8 +67,9 @@ The image below shows the primary vaults implementation in the protocol, and how
 
 Adapters are the interoperability layer of the protocol. They connect pools on Centrifuge to any blockchain, enabling cross-chain vault deployment and communication. Supported adapters include:
 
-* Wormhole adapter
-* Axelar adapter
 * LayerZero adapter
+* Wormhole adapter
+* Chainlink adapter
+* Axelar adapter
 
 Adapters route cross-chain messages via the `Gateway` contract, maintaining a 1-to-many relationship between a single hub on one chain and many vaults.
