@@ -40,12 +40,12 @@ For testing purposes, you can connect to testnet instead by setting environment:
 const poolId = new PoolId(1);
 const pool = await centrifuge.pool(poolId);
 const scId = ShareClassId.from(poolId, 1);
-const chainId = 11155111; // Ethereum Sepolia
+const centrifugeId = 1; // Centrifuge network ID
 
 const poolNetworks = await pool.activeNetworks();
 
 const poolNetwork = poolNetworks.filter(
-  (activeNetwork) => activeNetwork.chainId === chainId
+  (activeNetwork) => activeNetwork.centrifugeId === centrifugeId
 );
 
 await poolNetwork.deployMerkleProofManager();
@@ -57,7 +57,7 @@ Retrieve the deployed Merkle Proof Manager and set it as a BalanceSheet manager:
 
 ```typescript
 const merkleProofManager = await poolNetwork.merkleProofManager();
-await poolNetwork.updateBalanceSheetManagers([{ chainId, address: merkleProofManager.address, canManage: true }]),
+await poolNetwork.updateBalanceSheetManagers([{ centrifugeId, address: merkleProofManager.address, canManage: true }]),
 ```
 
 ## 4. Setup policies
@@ -65,7 +65,7 @@ await poolNetwork.updateBalanceSheetManagers([{ chainId, address: merkleProofMan
 Policies define specific contract methods that strategists are authorized to execute for managing pool assets. The Merkle Proof Manager controls access to balance sheet functions and enables whitelisting of strategists, allowing them to perform approved operations securely:
 
 ```typescript
-const addresses = await centrifuge._protocolAddresses(chainId);
+const addresses = await centrifuge._protocolAddresses(centrifugeId);
 const strategist = "0xStrategistAddress";
 
 const vaultDepositPolicy = {

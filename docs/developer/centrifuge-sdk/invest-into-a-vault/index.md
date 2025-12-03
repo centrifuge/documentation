@@ -53,7 +53,7 @@ If you’re using a private key or server-side setup, you can also provide a [Vi
 ## 3. Get a pool and vault
 
 Each pool can contain multiple share classes and each share class can have multiple vaults issuing tokens against an deposit asset.
-You need the pool ID, share class ID, chain ID, and asset address.
+You need the pool ID, share class ID, centrifuge ID, and asset address.
 
 ```typescript
 // Get a pool by ID
@@ -61,9 +61,9 @@ const poolId = new PoolId(1);
 const pool = await centrifuge.pool(poolId);
 const scId = ShareClassId.from(poolId, 1);
 const assetId = AssetId.from(centId, 1);
-const chainId = 11155111; // Ethereum Sepolia
+const centrifugeId = 1; // Centrifuge network ID
 // Get a vault
-const vault = await pool.vault(chainId, scId, assetId);
+const vault = await pool.vault(centrifugeId, scId, assetId);
 ```
 
 ## 4. Deposit into the vault
