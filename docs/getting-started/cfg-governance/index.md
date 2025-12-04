@@ -8,7 +8,7 @@ category: subpage
 # The Centrifuge Governance
 
 Centrifuge has evolved its structure to accelerate RWA adoption, boost transparency, and drive CFG value accrual.
-Per [CP171](https://github.com/centrifuge/cps/blob/main/cps/cp171.md)(approved by CFG DAO token holders on October 30, 2025), active DAO governance has paused, shifting execution to a streamlined model under Centrifuge Network Foundation supervision.
+Per [CP171](https://github.com/centrifuge/cps/blob/main/cps/cp171.md) (approved by CFG DAO token holders on November 03, 2025), active DAO governance has paused, shifting execution to a streamlined model under Centrifuge Network Foundation supervision.
 This change enables agility in the fast-evolving RWA space while keeping CFG holders in control of the protocol. The DAO tools remain paused but available for potential reactivation.
 
 
