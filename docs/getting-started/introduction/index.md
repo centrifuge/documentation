@@ -7,14 +7,14 @@ slug: /
 
 # Welcome to Centrifuge
 
-Centrifuge is the open, institutional-grade infrastructure powering onchain asset management. As one of the first and largest tokenization platforms, Centrifuge connects traditional capital markets to onchain liquidity; enabling asset managers, fintechs, and DeFi protocols to launch compliant tokenized funds in weeks, not months.
+Centrifuge is institutional-grade infrastructure for the future of finance, bringing efficiency, liquidity, and composability to onchain asset management. As one of the first and largest tokenization platforms, it connects traditional capital markets to onchain rails, enabling asset managers, fintechs, and DeFi protocols to launch compliant tokenized funds with ease.
 
-Today, Centrifuge powers onchain strategies for leading institutions including Apollo, Janus Henderson, and S&P Dow Jones Indices, while its tokenized assets integrate deeply across DeFi through protocols such as Sky, Aave, and Morpho. More than $2B in real-world assets have already been tokenized through the platform, supported by 21+ audits, deployments on 7 chains, and a proven security record. 
+Today, Centrifuge powers onchain strategies for leading institutions including Apollo, Janus Henderson, and S&P Dow Jones Indices, while its tokenized assets integrate deeply across DeFi through protocols such as Sky, Aave, and Morpho. More than $2B in real-world assets have already been tokenized through the platform, supported by 21+ audits, deployments on 7 chains, and a proven security record.
 
-Centrifuge is designed to make launching and operating tokenized funds simple, fast, and institution-ready:
-* **Launch in weeks**: Pre-built components for tokenization, onboarding, NAV, and multi-chain distribution remove the heavy engineering lift.
-* **Extend with SDK & API**: Build custom frontends, automate operations, or integrate Centrifuge data into your systems.
-* **Native DeFi compatibility**: ERC-4626 and ERC-7540 assets integrate seamlessly with Maker, Aave Horizon, Morpho, Pendle, and more.
+Centrifuge is designed to make launching and operating tokenized funds simple, fast, and the highest quality:
+* Accelerate deployment with pre-built modules for tokenization, NAV, investor management, and multi-chain distribution, leapfrogging months of development work.
+* Build and scale with our SDK and API to customize your own frontend, automate operations, and integrate Centrifuge data into your systems.
+* Ensure seamless DeFi interoperability with ERC-4626 and ERC-7540 assets that plug into Sky, Aave Horizon, Morpho, Pendle, and more.
 
 In these docs, you'll find everything you need to know about Centrifuge; from basic concepts to user guides to developer documentation. Dive in:
 <div className="card-grid">
