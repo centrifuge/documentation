@@ -1,11 +1,11 @@
 ---
 id: chain-abstraction
-title: Chain abstraction
+title: Multi-chain asset management
 category: subpage
 contributors: <Jeroen:jeroen@k-f.co>
 ---
 
-# Chain abstraction
+# Multi-chain asset management
 
 The Centrifuge protocol is designed to scale tokenized assets across multiple blockchains using a hub-and-spoke architecture. This model solves a fundamental limitation of traditional tokenization protocols: the inability to efficiently operate across chains.
 

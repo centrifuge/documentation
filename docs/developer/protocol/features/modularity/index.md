@@ -1,11 +1,11 @@
 ---
 id: modularity
-title: Modularity
+title: Modular extensions
 category: subpage
 contributors: <Jeroen:jeroen@k-f.co>
 ---
 
-# Modularity
+# Modular extensions
 
 The Centrifuge Protocol is designed as a modular, extensible system to support complex financial products. This architecture empowers builders to plug into various components independently or collectively, enabling permissioned tokenization, cross-chain deployment, custom pricing logic, and diverse collateral management.
 
@@ -22,6 +22,16 @@ Transfer Hooks are customizable restrictions and checks that can be applied to E
 * Minimum investment thresholds: Limit the minimum investment amount.
 
 These hooks integrate directly with ERC20 token logic and enable regulatory and operational controls without changing the core token.
+
+## Hook Managers
+
+Hook Managers are smart contracts deployed on Spoke chains that build on top of the Transfer Hooks system to provide automated account management capabilities. These managers interact with the underlying transfer restriction hooks to enable:
+
+* **Automated whitelisting**: Programmatically add or remove addresses from whitelists based on custom logic or external events
+* **Freezing and unfreezing accounts**: Dynamically control which accounts can transfer tokens in response to compliance requirements or risk events
+* **Custom access control logic**: Implement sophisticated rules for managing who can hold and transfer share tokens
+
+Hook Managers enable builders to create permissioning systems that respond to onchain or offchain events, integrate with KYC/AML providers, or implement time-based restrictions - all without requiring manual intervention or modifications to the core token contracts. This provides a flexible layer for managing compliance and access control at scale.
 
 ## Hub Managers
 
@@ -45,11 +55,21 @@ Balance Sheet Managers enable the protocol to support and manage any form of col
 
 This makes Centrifuge ideal for bridging traditional finance and DeFi through modular asset management.
 
+## Request Managers
+
+Request Managers can be implemented to enable custom investment and redemption logic cross-chain.
+
+The image below shows the primary vaults implementation in the protocol, and how it leverages the immutable core as the base for the cross-chain request handling logic. The orange contracts can be fully customized.
+
+![](./images/request-managers.png)
+
 ## Adapters
 
 Adapters are the interoperability layer of the protocol. They connect pools on Centrifuge to any blockchain, enabling cross-chain vault deployment and communication. Supported adapters include:
 
+* LayerZero adapter
 * Wormhole adapter
+* Chainlink adapter
 * Axelar adapter
 
 Adapters route cross-chain messages via the `Gateway` contract, maintaining a 1-to-many relationship between a single hub on one chain and many vaults.

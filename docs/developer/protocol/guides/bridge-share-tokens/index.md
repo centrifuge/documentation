@@ -14,7 +14,7 @@ Centrifuge supports native mint-and-burn bridging for any share token across any
 To bridge share tokens across chains, you must call the `crosschainTransferShares` function on the `Spoke` contract.
 
 ```solidity
-spoke.crosschainTransferShares{value: gas}(centrifugeId, poolId, scId, receiver, amount, remoteExtraGasLimit);
+spoke.crosschainTransferShares{value: gas}(centrifugeId, poolId, scId, receiver, amount, extraGasLimit, remoteExtraGasLimit, msg.sender);
 ```
 
 * `centrifugeId`
@@ -37,11 +37,18 @@ spoke.crosschainTransferShares{value: gas}(centrifugeId, poolId, scId, receiver,
   The amount of share tokens to transfer, expressed in the token’s decimals.
   The most common share token decimal configuration is 18.
 
-* `remoteExtraGasLimit`
-  Additional gas forwarded to the remote execution.
+* `extraGasLimit`
+  Additional gas for the cross-chain message processing on the Hub.
   This can be set to `0` in most cases.
 
-The gas value passed to the transaction is used to pay for the cross-chain transfer. You can overestimate this value as any excess gas will be refunded in the same transaction.
+* `remoteExtraGasLimit`
+  Additional gas forwarded to the remote execution on the destination chain.
+  This can be set to `0` in most cases.
+
+* `msg.sender`
+  Address to receive any excess gas refund.
+
+The `gas` value passed to the transaction is used to pay for the cross-chain transfer. You can overestimate this value as any excess gas will be refunded in the same transaction.
 
 ## Share token restrictions
 
