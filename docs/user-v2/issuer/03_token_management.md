@@ -1,10 +1,9 @@
 ---
-id: investor-management
-title: Investor Management
-sidebar_position: 2
+id: token-management
+title: Token Management
 ---
 
-# Investor Management
+# Token Management
 
 Managing who can invest in your pool is a critical part of the Centrifuge protocol, especially for compliant RWA offerings.
 

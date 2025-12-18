@@ -1,7 +1,6 @@
 ---
 id: tokenization
 title: Tokenization
-sidebar_position: 1
 ---
 
 # Tokenization

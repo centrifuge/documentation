@@ -1,7 +1,6 @@
 ---
 id: integrators
 title: Quickstart for Integrators
-sidebar_position: 2
 ---
 
 # Quickstart for Integrators

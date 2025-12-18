@@ -1,10 +1,9 @@
 ---
 id: vault
-title: Vault
-sidebar_position: 4
+title: Distribution Management
 ---
 
-# Vault
+# Distribution Management
 
 Vaults are how users interact with pools in Centrifuge. They define how assets are deposited, redeemed, and allocated across strategies.
 

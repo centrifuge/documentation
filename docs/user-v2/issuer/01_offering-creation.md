@@ -1,7 +1,6 @@
 ---
 id: offering-creation
 title: Offering Creation
-sidebar_position: 1
 ---
 
 # Offering Creation

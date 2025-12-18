@@ -1,7 +1,6 @@
 ---
 id: asset-management
 title: Asset Management
-sidebar_position: 2
 ---
 
 # Asset Management

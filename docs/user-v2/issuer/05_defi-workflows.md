@@ -1,7 +1,6 @@
 ---
 id: defi-workflows
 title: DeFi Workflows
-sidebar_position: 3
 ---
 
 # DeFi Workflows

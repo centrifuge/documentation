@@ -1,7 +1,6 @@
 ---
 id: distribution
 title: Distribution
-sidebar_position: 3
 ---
 
 # Distribution

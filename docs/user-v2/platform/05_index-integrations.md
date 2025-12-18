@@ -1,7 +1,6 @@
 ---
 id: index-integrations
 title: Index-Integrations
-sidebar_position: 4
 ---
 
 # Index-Integrations

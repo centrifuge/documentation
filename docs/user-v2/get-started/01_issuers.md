@@ -1,7 +1,6 @@
 ---
 id: issuers
 title: Quickstart for Issuers
-sidebar_position: 1
 ---
 
 # Quickstart for Issuers
