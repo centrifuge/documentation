@@ -69,83 +69,99 @@ const addresses = await centrifuge._protocolAddresses(chainId);
 const strategist = "0xStrategistAddress";
 
 const vaultDepositPolicy = {
-  assetId: assetId.toString(),
   decoder: addresses.vaultDecoder,
+  targetName: "Vault",
   target: "0xVaultAddress",
-  action: "function deposit(uint256,address)",
+  name: "Deposit",
+  selector: "function deposit(uint256,address)",
   valueNonZero: false,
   inputs: [
     {
       parameter: "Amount",
+      label: "Amount",
       input: [],
     },
     {
       parameter: "Address",
+      label: "Vault Address"
       input: ["0xVaultAddress"],
     },
   ],
 };
 
 const balanceSheetWithdrawPolicy = {
-  assetId: assetId.toString(),
   decoder: addresses.vaultDecoder,
+  targetName: "Balance Sheet",
   target: addresses.balanceSheet,
-  action: "function withdraw(uint64,bytes16,address,uint256,address,uint128)",
+  name: "Withdraw",
+  selector: "function withdraw(uint64,bytes16,address,uint256,address,uint128)",
   valueNonZero: false,
   inputs: [
     {
       parameter: "Pool ID",
+      label: "Pool ID",
       input: [poolId.toString() as HexString],
     },
     {
       parameter: "Share class ID",
+      label: "Share class ID",
       input: [scId.raw],
     },
     {
       parameter: "Asset",
+      label: "Asset",
       input: [someErc20],
     },
     {
       parameter: "Token ID",
+      label: "Token ID",
       input: [],
     },
     {
       parameter: "Receiver",
+      label: "Receiver Address",
       input: [merkleProofManager.address],
     },
     {
       parameter: "Amount",
+      label: "Amount",
       input: [],
     },
   ],
 };
 
 const balanceSheetDepositPolicy = {
-  assetId: assetId.toString(),
   decoder: addresses.vaultDecoder,
+  targetName: "Balance Sheet",
   target: addresses.balanceSheet,
-  action:
+  name: "Deposit",
+  selector:
     "function deposit(uint64 poolId, bytes16 scId, address asset, uint256, uint128)",
   valueNonZero: false,
   inputs: [
     {
       parameter: "Pool ID",
+      label: "Pool ID",
       input: [poolId.toString() as HexString],
     },
     {
       parameter: "Share class ID",
+      label: "Share class ID",
       input: [scId.raw],
     },
     {
       parameter: "Asset",
+      label: "Asset",
       input: [someErc20],
     },
     {
       parameter: "Token ID",
+      label: "Token ID",
       input: [],
     },
     {
       parameter: "Amount",
+      label: "Amount",
       input: [],
     },
   ],
