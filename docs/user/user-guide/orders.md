@@ -338,7 +338,6 @@ When using a Safe wallet, order approvals and share operations require multiple 
 3. Other signers approve in the Safe interface at [safe.global](https://app.safe.global)
 4. Once the signature threshold is met, the transaction executes
 
-See [Custody Setup](custody-setup.md) for detailed multi-sig workflows.
 
 ---
 
@@ -414,4 +413,3 @@ Approved orders cannot be easily canceled. If you need to reverse an operation:
 - [NAV](nav.md) - Update pricing before processing orders
 - [Holdings](holdings.md) - Ensure sufficient balance for redemptions
 - [Vaults](vaults.md) - Understand where investor deposits originate
-- [Custody Setup](custody-setup.md) - Multi-sig workflow for order processing

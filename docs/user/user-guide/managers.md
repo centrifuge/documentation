@@ -300,5 +300,4 @@ The Managers page shows all configured managers. For a complete audit:
 
 - [Holdings](holdings.md) - Managers control fund movements
 - [Orders](orders.md) - Hub Managers process investor orders
-- [Custody Setup](custody-setup.md) - Multi-sig wallets for manager addresses
 - [Vaults](vaults.md) - Hub Managers configure vault settings

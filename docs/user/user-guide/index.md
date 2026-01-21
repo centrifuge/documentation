@@ -1,5 +1,7 @@
 # Centrifuge Management App - User Guide
 
+**App URL:** [manage.centrifuge.io](https://manage.centrifuge.io/)
+
 Welcome to the Centrifuge Management App documentation. This guide is designed for fund operations teams managing tokenized real-world assets on the Centrifuge platform.
 
 ## What is the Centrifuge Management App?
@@ -31,8 +33,6 @@ Before using the Management App, ensure you have:
 2. Click **Connect Wallet**
 3. Select your wallet provider
 4. Approve the connection
-
-For institutional operations, we recommend using a [Safe (multi-sig) wallet](custody-setup.md).
 
 ---
 
@@ -132,17 +132,6 @@ Configure pool-level settings including structure, access, and off-chain holding
 
 ---
 
-### [Custody Setup](custody-setup.md)
-
-Configure institutional custody solutions for secure fund operations.
-
-**Key Topics**:
-- MPC custody (Fireblocks, Fordefi)
-- Safe (multi-sig) wallets
-- Transaction approval workflows
-
----
-
 ## Understanding Permissions
 
 | Role | Capabilities |
@@ -214,4 +203,3 @@ This documentation is updated regularly. Check for new features and workflow imp
 | Add team members | [Managers](managers.md) | Hub Manager |
 | Upload off-chain holdings | [Settings](settings.md) | Hub Manager |
 | Manage share classes | [Settings](settings.md) | Hub Manager |
-| Configure custody | [Custody Setup](custody-setup.md) | - |

@@ -132,7 +132,6 @@ This helps you verify that the price update will be applied consistently across 
 If using a Safe (multi-sig) wallet:
 - The NAV update will be queued as a transaction
 - Other signers will need to approve before execution
-- See [Custody Setup](custody-setup.md) for details on multi-sig workflows
 
 ## Common Questions
 
@@ -163,4 +162,3 @@ Yes, but:
 
 - [Orders](orders.md) - Process investments and redemptions at the updated NAV
 - [Holdings](holdings.md) - View and manage the assets that comprise your NAV
-- [Custody Setup](custody-setup.md) - Multi-sig workflow for NAV updates
