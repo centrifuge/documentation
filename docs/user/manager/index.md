@@ -122,6 +122,10 @@ See [Configuring access](configuring-access.md) for permission setup.
 ## Guides
 
 <div className="card-grid">
+  <a className="card-tile" href="/user/manager/workflows">
+    <h3>Example workflows</h3>
+    <p>End-to-end walkthroughs for common operations.</p>
+  </a>
   <a className="card-tile" href="/user/manager/nav-and-pricing">
     <h3>Managing NAV</h3>
     <p>Update share prices and valuations across all networks.</p>
