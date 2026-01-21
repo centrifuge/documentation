@@ -71,7 +71,7 @@ A temporary block on an investor preventing new deposits or redemptions while pr
 ## H
 
 ### Holdings
-On-chain escrow accounts storing assets (like stablecoins) on behalf of a share class. Used to fund redemption payouts and represent pool liquidity.
+Onchain escrow accounts storing assets (like stablecoins) on behalf of a share class. Used to fund redemption payouts and represent pool liquidity.
 
 ### Hub
 The primary blockchain (typically Ethereum) where the pool is deployed and where Hub Managers operate. Part of the hub-and-spoke architecture.

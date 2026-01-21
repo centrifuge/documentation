@@ -15,7 +15,7 @@ This makes Centrifuge truly multi-chain, giving investors and managers a consist
 
 In most protocols, issuing tokens on multiple chains means maintaining separate contracts, price feeds, wallets, and accounting per chain. This creates silos, increases overhead, and fragments liquidity.
 
-![](./images/hub-and-spoke.png)
+![](/assets/images/hub-and-spoke.png)
 
 Centrifuge avoids this by keeping one unified source of truth on the hub chain, while letting vaults and tokens live across networks like Ethereum, Base, or Arbitrum.
 
