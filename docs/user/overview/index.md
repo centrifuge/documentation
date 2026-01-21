@@ -17,9 +17,9 @@ Centrifuge is the open infrastructure for onchain asset management. This section
     <p>Core ideas behind the Centrifuge Protocol: hub-and-spoke architecture, vaults, assets, and token flows.</p>
   </a>
 
-  <a className="card-tile" href="/user/issuer">
-    <h3>Issuer</h3>
-    <p>Tokenize real-world assets using configurable onchain vaults through the RWA Launchpad.</p>
+  <a className="card-tile" href="/user/user-guide">
+    <h3>User Guide</h3>
+    <p>Manage tokenized real-world assets using the Centrifuge Management App.</p>
   </a>
 
   <a className="card-tile" href="/user/curator">
@@ -30,6 +30,11 @@ Centrifuge is the open infrastructure for onchain asset management. This section
   <a className="card-tile" href="/user/investor">
     <h3>Investors</h3>
     <p>Invest in tokenized assets across networks. Understand access controls and redemption flows.</p>
+  </a>
+
+  <a className="card-tile" href="/user/glossary">
+    <h3>Glossary</h3>
+    <p>Quick reference for terms used throughout the Centrifuge platform.</p>
   </a>
 
 </div>
