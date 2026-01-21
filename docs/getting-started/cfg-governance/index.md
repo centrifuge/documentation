@@ -24,18 +24,18 @@ This change enables agility in the fast-evolving RWA space while keeping CFG hol
 ## Centrifuge Network Foundation (CNF)
 
 The Centrifuge Network Foundation (CNF) is a non-profit entity dedicated to stewarding the Centrifuge ecosystem's growth, funding core infrastructure, and ensuring long-term sustainability, RWA growth, and CFG value accrual. CNF maintains transparency via public dashboards and reports and aligns operations with CFG holder interests.
-![](./images/CNF.png)
+![](./images/CNFn.png)
 Bhaji Illuminati, Lucas Vogelsang, Kevin Chan, Nick Cherney, Glenn Kennedy
 
 ### Board Structure
 
 Centrifuge Foundation's board ensures diverse expertise in finance, tech, and governance:
 
-- Bhaji Illuminati — CEO & Co-Founder of Centrifuge Labs; expertise in scaling organisations and go-to-market strategies (e.g., Dragonboat, Taulia).
-- Lucas Vogelsang — Co-Founder of Centrifuge; led engineering at DeinDeal and Taulia.
+- Bhaji Illuminati — CEO & Co-Founder of Centrifuge Labs; expertise in scaling organisations and go-to-market strategies.
 - Kevin Chan — Co-founder at Grove Labs; focuses on RWA adoption; previously at BlockTower and Deloitte.
 - Nick Cherney — Head of Innovation at Janus Henderson; ETF expert from VelocityShares and Barclays.
 - Glenn Kennedy — Founder of Leeward Management, advises on governance  for Cayman foundations.
+- Laura Birrell — Independent Director at Leeward; legal/governance leader and early Cayman digital asset founder; former GC at a FTSE 250 company and regulated VASP builder.
 
 ### Get Involved
 
