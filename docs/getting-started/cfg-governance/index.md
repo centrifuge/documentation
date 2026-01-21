@@ -25,7 +25,7 @@ This change enables agility in the fast-evolving RWA space while keeping CFG hol
 
 The Centrifuge Network Foundation (CNF) is a non-profit entity dedicated to stewarding the Centrifuge ecosystem's growth, funding core infrastructure, and ensuring long-term sustainability, RWA growth, and CFG value accrual. CNF maintains transparency via public dashboards and reports and aligns operations with CFG holder interests.
 ![](./images/CNFn.png)
-Bhaji Illuminati, Lucas Vogelsang, Kevin Chan, Nick Cherney, Glenn Kennedy
+Bhaji Illuminati, Lucas Vogelsang, Kevin Chan, Nick Cherney, Glenn Kennedy, Laura Birrell
 
 ### Board Structure
 
