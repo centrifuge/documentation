@@ -52,7 +52,7 @@ Centrifuge runs an active bug bounty program with a $250,000 maximum reward, ava
 
 ## Guardian
 
-The protocol is controlled by the Root contract, which has access on all other contracts. The Root conract enforces a 48-hour delay for any upgrades and configuratino changes.
+The protocol is controlled by the Root contract, which has access on all other contracts. The Root contract enforces a 48-hour delay for any upgrades and configuration changes.
 
 Each deployment has a Guardian role, who is authorized on the Root contract. The Guardian can pause in emergencies, schedule upgrades, and set up adapters to new networks.
 
