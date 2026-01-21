@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Investors Management
+# Investors management
 
 The Investors feature allows you to manage investor whitelisting, view investor positions, and monitor investor activity across your share class.
 
@@ -14,7 +14,7 @@ The Investors page provides:
 - Tools to add new investors and manage existing ones
 - Filtering and search capabilities
 
-## Who Can Manage Investors?
+## Who can manage investors?
 
 | Action | Required Permission |
 |--------|-------------------|
@@ -25,16 +25,16 @@ The Investors page provides:
 
 ---
 
-## Viewing Investors
+## Viewing investors
 
-### Accessing the Investors Page
+### Accessing the investors page
 
 1. Select your pool and share class
 2. Click **Investors** in the sidebar navigation
 ![Investor Overview](/assets/images/investor_overview.png)
 
 
-### Investors Table
+### Investors table
 
 The table displays the following information for each investor:
 
@@ -49,15 +49,15 @@ The table displays the following information for each investor:
 | **Pending Redemptions** | Redemptions awaiting approval |
 | **Status** | Whitelisted/Frozen status indicators |
 
-### Total Investors
+### Total investors
 
 The page header shows the total count of investors matching your current filters.
 
 ---
 
-## Filtering and Searching
+## Filtering and searching
 
-### Search by Address
+### Search by address
 
 Use the search box to find specific investors:
 1. Enter a wallet address (full or partial)
@@ -65,14 +65,14 @@ Use the search box to find specific investors:
 3. Clear the search to show all investors
 
 
-### Filter by Network
+### Filter by network
 
 Filter investors by blockchain network:
 1. Click the network filter dropdown
 2. Select one or more networks
 3. Table updates to show only investors on selected networks
 
-### Filter by Status
+### Filter by status
 
 Filter by investor activity:
 - **Only active investors**: Shows investors with non-zero holdings (default)
@@ -80,17 +80,17 @@ Filter by investor activity:
 
 ---
 
-## Adding New Investors
+## Adding new investors
 
 Before investors can deposit funds, they must be whitelisted for your share class.
 
-### Step 1: Open the Add Investor Modal
+### Step 1: Open the add investor modal
 
 Click the **Add new investor** button.
 
 > **Note**: This button is only enabled for Hub Managers. If your share class uses a freeze-only restriction hook, whitelisting may not be supported.
 
-### Step 2: Enter Investor Details
+### Step 2: Enter investor details
 
 Fill in the required information:
 
@@ -110,7 +110,7 @@ Fill in the required information:
 
 <img src="/assets/images/add_investor.png" alt="Add Investor" style={{maxWidth: '400px'}} />
 
-### Step 3: Queue Multiple Investors
+### Step 3: Queue multiple investors
 
 You can add multiple investors in a single transaction:
 1. Fill in investor details
@@ -121,7 +121,7 @@ You can add multiple investors in a single transaction:
 <img src="/assets/images/investor_queue.png" alt="Investor Queue" style={{maxWidth: '400px'}} />
 
 
-### Step 4: Save Changes
+### Step 4: Save changes
 
 Click **Save changes** to submit the transaction:
 - All queued investors are whitelisted in batch
@@ -130,11 +130,11 @@ Click **Save changes** to submit the transaction:
 
 ---
 
-## Editing Investors
+## Editing investors
 
 Click on any investor row (or the edit icon) to open the Edit Investor modal.
 
-### Available Actions
+### Available actions
 
 **Update Label**
 - Change the investor's display name
@@ -152,9 +152,9 @@ Click on any investor row (or the edit icon) to open the Edit Investor modal.
 <img src="/assets/images/edit_investor.png" alt="Edit Investor" style={{maxWidth: '400px'}} />
 ---
 
-## Understanding Investor Status
+## Understanding investor status
 
-### Status Indicators
+### Status indicators
 
 | Status | Meaning |
 |--------|---------|
@@ -162,16 +162,16 @@ Click on any investor row (or the edit icon) to open the Edit Investor modal.
 | **Not whitelisted** | Investor cannot make new transactions |
 | **Frozen** | Investor is temporarily blocked |
 
-### Frozen vs Not Whitelisted
+### Frozen vs not whitelisted
 
 - **Frozen**: Temporary block, easily reversible. Used for compliance holds or temporary restrictions.
 - **Not whitelisted**: Investor removed from access. Can be re-added if needed.
 
 ---
 
-## Investor Holdings and Orders
+## Investor holdings and orders
 
-### Holdings Display
+### Holdings display
 
 Each investor's holdings show:
 - **Value**: Holdings converted to pool currency (e.g., $50,000 USD)
@@ -179,7 +179,7 @@ Each investor's holdings show:
 
 Holdings are calculated as: `Token Balance × Price Per Share`
 
-### Order Columns
+### Order columns
 
 **Queued Orders**
 - Orders waiting to become pending
@@ -192,7 +192,7 @@ Holdings are calculated as: `Token Balance × Price Per Share`
 
 ---
 
-## Multi-Network Whitelisting
+## Multi-network whitelisting
 
 Investors must be whitelisted separately on each network:
 
@@ -201,7 +201,7 @@ Investors must be whitelisted separately on each network:
 - You must add them twice: once for Base, once for Arbitrum
 - They appear as separate rows in the investors table
 
-### Why Separate Whitelisting?
+### Why separate whitelisting?
 
 - Different networks have different smart contracts
 - Compliance requirements may vary by jurisdiction
@@ -209,9 +209,9 @@ Investors must be whitelisted separately on each network:
 
 ---
 
-## Best Practices
+## Best practices
 
-### Onboarding New Investors
+### Onboarding new investors
 
 1. Complete KYC/AML verification off-chain
 2. Collect investor's wallet address
@@ -219,14 +219,14 @@ Investors must be whitelisted separately on each network:
 4. Assign a meaningful label for identification
 5. Communicate vault addresses to the investor
 
-### Managing Investor Labels
+### Managing investor labels
 
 - Use consistent naming conventions
 - Include identifying information (company name, investor ID)
 - Update labels when information changes
 - Labels help with audit and reporting
 
-### Compliance Actions
+### Compliance actions
 
 **Temporary Hold**:
 1. Freeze the investor
@@ -240,7 +240,7 @@ Investors must be whitelisted separately on each network:
 
 ---
 
-## Common Questions
+## Common questions
 
 ### Can an investor be on multiple networks?
 
@@ -267,7 +267,7 @@ Direct transfer is not supported through this interface. The investor would need
 
 ---
 
-## Related Features
+## Related features
 
 - [Orders](orders.md) - Process investor investments and redemptions
 - [Holdings](holdings.md) - Manage fund liquidity for investor payouts

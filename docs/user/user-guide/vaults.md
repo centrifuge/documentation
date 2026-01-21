@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Vaults Management
+# Vaults management
 
 Vaults are smart contracts that serve as entry points for investor transactions. They enable investors on various blockchain networks to deposit funds and request redemptions for your share class tokens.
 
@@ -14,9 +14,9 @@ The Vaults feature allows Hub Managers to:
 - Enable or disable vaults for investor access
 - Configure vault parameters (for synchronous vaults)
 
-## Understanding Vaults
+## Understanding vaults
 
-### What is a Vault?
+### What is a vault?
 
 A **vault** is an ERC-7540 compliant smart contract that:
 - Accepts investor deposits in a specific asset (e.g., USDC)
@@ -24,14 +24,14 @@ A **vault** is an ERC-7540 compliant smart contract that:
 - Connects to your share class for token issuance
 - Manages pending investment and redemption requests
 
-### Vault Characteristics
+### Vault characteristics
 
 Each vault is uniquely identified by:
 - **Share Class**: The token class it issues
 - **Network**: The blockchain where it's deployed
 - **Asset**: The deposit currency it accepts
 
-### Vault Types
+### Vault types
 
 There are two types of vaults with different behaviors:
 
@@ -68,15 +68,15 @@ A hybrid vault type with **synchronous deposits**:
 
 ---
 
-## Viewing Vaults
+## Viewing vaults
 
-### The Vaults Page
+### The vaults page
 
 Navigate to **Vaults** in the sidebar. The page displays:
 ![Vaults Overview](/assets/images/vaults_overview.jpeg)
 
 
-### Vault Information
+### Vault information
 
 Each vault row shows:
 
@@ -88,7 +88,7 @@ Each vault row shows:
 | **Asset** | The deposit currency symbol |
 | **Vault Address** | Contract address (clickable to explorer) |
 
-### Filtering Vaults
+### Filtering vaults
 
 Use the filters at the top to narrow your view:
 - **Status**: Active, Disabled, or All
@@ -97,7 +97,7 @@ Use the filters at the top to narrow your view:
 
 ---
 
-## Vault States
+## Vault states
 
 ### Active (Enabled/Linked)
 
@@ -119,7 +119,7 @@ When a vault is **disabled**:
 
 ---
 
-## Deploying a New Vault
+## Deploying a new vault
 
 To accept deposits on a new network or for a new asset, deploy a vault.
 
@@ -129,13 +129,13 @@ To accept deposits on a new network or for a new asset, deploy a vault.
 - The network must be active for your pool
 - The asset must be configured on that network
 
-### Step 1: Click Add Vault
+### Step 1: Click Add vault
 
 Click the **Add vault** button on the Vaults page.
 
 <img src="/assets/images/add_vault.png" alt="Add Vault" style={{maxWidth: '500px'}} />
 
-### Step 2: Select the Network
+### Step 2: Select the network
 
 Choose from available networks:
 - Ethereum
@@ -144,14 +144,14 @@ Choose from available networks:
 - Avalanche
 - (Others as configured for your pool)
 
-### Step 3: Select the Asset
+### Step 3: Select the asset
 
 Choose the deposit currency:
 - USDC
 - USDT
 - Other configured stablecoins
 
-### Step 4: Select the Vault Type
+### Step 4: Select the vault type
 
 **Async-Invest**
 - Standard two-step process
@@ -162,7 +162,7 @@ Choose the deposit currency:
 - Requires additional configuration (price oracle, max deposit)
 - Redemptions remain asynchronous
 
-### Step 5: Deploy the Vault
+### Step 5: Deploy the vault
 
 Click **Deploy** to create the vault contract. This:
 1. Deploys the vault smart contract
@@ -176,11 +176,11 @@ After deployment:
 
 ---
 
-## Editing Vault Settings
+## Editing vault settings
 
 Click on any vault row to open the vault detail modal.
 
-### For All Vault Types
+### For all vault types
 
 **Enable/Disable Toggle**
 
@@ -190,7 +190,7 @@ Control whether the vault accepts new orders:
 
 <img src="/assets/images/update_vault.png" alt="Update Vault" style={{maxWidth: '500px'}} />
 
-### For Sync-Invest Vaults Only
+### For Sync-Invest vaults only
 
 **Max Deposit (Max Reserve)**
 
@@ -201,7 +201,7 @@ Set the maximum amount that can be deposited simultaneously:
 
 <img src="/assets/images/update_sync_vault.png" alt="Update SyncVault" style={{maxWidth: '500px'}} />
 
-### Vault Information Displayed
+### Vault information displayed
 
 The detail modal also shows (read-only):
 - Vault contract address 
@@ -213,23 +213,23 @@ The detail modal also shows (read-only):
 
 ---
 
-## Managing Vault Status
+## Managing vault status
 
-### When to Disable a Vault
+### When to disable a vault
 
 Consider disabling a vault when:
 - Pausing operations for maintenance
 - Winding down a share class
 - Migrating to a different vault configuration
 
-### How to Disable a Vault
+### How to disable a vault
 
 1. Click on the vault to open the detail modal
 2. Toggle the **Enabled** switch to off
 3. Confirm the transaction
 4. The vault status changes to "Disabled"
 
-### Restrictions on Enabling
+### Restrictions on enabling
 
 You **cannot enable** a vault that has:
 - Pending investments waiting for approval
@@ -239,7 +239,7 @@ This prevents issues when re-enabling a vault with stale orders. Process pending
 
 > **Note**: Disabling a vault is always allowed, even with pending orders. This lets you stop new orders while processing existing ones.
 
-### Re-enabling a Vault
+### Re-enabling a vault
 
 1. Open the vault detail modal
 2. Toggle **Enabled** back on
@@ -248,9 +248,9 @@ This prevents issues when re-enabling a vault with stale orders. Process pending
 
 ---
 
-## Vault Types in Detail
+## Vault types in detail
 
-### Async Vaults: Complete Control
+### Async vaults: complete control
 
 **Advantages**:
 - Full control over share issuance timing
@@ -266,7 +266,7 @@ Investor Deposits → Pending → Manager Approves → Manager Issues Shares →
 - You want to batch process deposits
 - You need precise control over issuance pricing
 
-### Sync-Invest Vaults: Instant Liquidity
+### Sync-Invest vaults: instant liquidity
 
 **Advantages**:
 - Better investor experience (instant shares)
@@ -289,7 +289,7 @@ Investor Redeems → Pending → Manager Approves → Manager Revokes → Comple
 - You have reliable real-time pricing
 - Your compliance allows instant issuance
 
-### Choosing the Right Type
+### Choosing the right type
 
 | Factor | Async | Sync-Invest |
 |--------|-------|-------------|
@@ -302,7 +302,7 @@ Investor Redeems → Pending → Manager Approves → Manager Revokes → Comple
 
 ---
 
-## Vaults and Other Features
+## Vaults and other features
 
 ### Vaults → Orders
 
@@ -330,9 +330,9 @@ Manage investors in the Investors section.
 
 ---
 
-## Multi-Chain Vault Strategy
+## Multi-chain vault strategy
 
-### Deploying Across Networks
+### Deploying across networks
 
 Consider your strategy for multi-chain deployment:
 
@@ -346,7 +346,7 @@ Consider your strategy for multi-chain deployment:
 - Deploy on 2-3 major networks
 - Match networks to investor locations
 
-### Managing Multiple Vaults
+### Managing multiple vaults
 
 With vaults on multiple networks:
 - Orders appear grouped by network in the Orders page
@@ -355,7 +355,7 @@ With vaults on multiple networks:
 
 ---
 
-## Common Questions
+## Common questions
 
 ### How many vaults can I have?
 
@@ -380,7 +380,7 @@ Investors interact with vaults through their own interface. They don't need the 
 
 ---
 
-## Related Features
+## Related features
 
 - [Orders](orders.md) - Process deposits and redemptions from vaults
 - [Holdings](holdings.md) - Manage funds that flow through vaults

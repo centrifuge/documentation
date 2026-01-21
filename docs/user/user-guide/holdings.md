@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Holdings Management
+# Holdings management
 
 Holdings represent the assets that your share class maintains across multiple blockchain networks. These assets form the liquidity backing your share tokens and are used to process investor redemptions.
 
@@ -15,9 +15,9 @@ The Holdings feature allows you to:
 - Track the total value of your holdings
 - Create new holdings on additional networks
 
-## Understanding Holdings
+## Understanding holdings
 
-### What are Holdings?
+### What are holdings?
 
 **Holdings** are on-chain escrow accounts that store assets (like stablecoins) on behalf of your share class. They represent:
 
@@ -25,7 +25,7 @@ The Holdings feature allows you to:
 - **Multi-chain presence**: Assets distributed across different networks
 - **NAV backing**: The real value supporting your share tokens
 
-### Holdings vs Investor Holdings
+### Holdings vs investor holdings
 
 | Term | Meaning |
 |------|---------|
@@ -34,7 +34,7 @@ The Holdings feature allows you to:
 
 The Holdings page manages pool-level assets. Individual investor positions are managed in the Investors section.
 
-### How Holdings Relate to NAV
+### How holdings relate to NAV
 
 Your total holdings value is a key component of NAV:
 
@@ -46,9 +46,9 @@ This value should be reflected in your NAV calculations to ensure accurate share
 
 ---
 
-## Viewing Holdings
+## Viewing holdings
 
-### The Holdings Table
+### The holdings table
 
 Navigate to **Holdings** in the sidebar. The table displays:
 
@@ -63,33 +63,33 @@ Navigate to **Holdings** in the sidebar. The table displays:
 
 ![Holding Overview](/assets/images/holding_page.png)
 
-### Total Holdings
+### Total holdings
 
 At the top of the page, you'll see the **Total Holdings** value - the sum of all individual holding values, converted to your pool's base currency.
 
 ---
 
-## Depositing Funds
+## Depositing funds
 
 Deposits add assets to your share class holdings. This is essential for:
 - Funding redemption payouts
 - Adding new liquidity
 - Moving assets from your wallet or on/off-ramp manager
 
-### Who Can Deposit?
+### Who can deposit?
 
 - **Balance Sheet Managers**: Can deposit from their connected wallet
 - **On/Off-Ramp Managers**: Can deposit from manager accounts
 
-### How to Deposit
+### How to deposit
 
-#### Step 1: Select the Holding
+#### Step 1: Select the holding
 
 In the Holdings table, find the asset you want to deposit and click the **Actions** dropdown, then select **Deposit**.
 
 ![Holding Drop Down options](/assets/images/holdings_dropdown.png)
 
-#### Step 2: Choose the Source
+#### Step 2: Choose the source
 
 Select where the funds will come from:
 
@@ -105,7 +105,7 @@ Select where the funds will come from:
 
 ![Deposit Holdings](/assets/images/deposit_holding.png)
 
-#### Step 3: Enter the Amount
+#### Step 3: Enter the amount
 
 1. Type the amount to deposit
 2. Or click **MAX** to deposit the full available balance
@@ -114,7 +114,7 @@ Select where the funds will come from:
    - **Deposit Amount**: What you're depositing
    - **New Balance**: Resulting holding balance after deposit
 
-#### Step 4: Submit the Transaction
+#### Step 4: Submit the transaction
 
 1. Click **Deposit**
 2. Approve the transaction in your wallet
@@ -123,25 +123,25 @@ Select where the funds will come from:
 
 ---
 
-## Withdrawing Funds
+## Withdrawing funds
 
 Withdrawals remove assets from your share class holdings. Common use cases:
 - Moving funds to your wallet
 - Transferring to off-ramp addresses for fiat conversion
 - Rebalancing across networks
 
-### Who Can Withdraw?
+### Who can withdraw?
 
 - **Balance Sheet Managers**: Can withdraw to their connected wallet
 - **Relayers**: Can withdraw to configured receiver addresses
 
-### How to Withdraw
+### How to withdraw
 
-#### Step 1: Select the Holding
+#### Step 1: Select the holding
 
 Find the asset and click **Actions** → **Withdraw**.
 
-#### Step 2: Choose the Destination
+#### Step 2: Choose the destination
 
 Select where the funds will go:
 
@@ -156,7 +156,7 @@ Select where the funds will go:
 
 ![Withdraw Holdings](/assets/images/withdraw_holdings.png)
 
-#### Step 3: Enter the Amount
+#### Step 3: Enter the amount
 
 1. Type the withdrawal amount
 2. Or click **MAX** to withdraw all available funds
@@ -167,7 +167,7 @@ Select where the funds will go:
 
 > **Warning**: Ensure sufficient holdings remain for pending redemptions.
 
-#### Step 4: Submit the Transaction
+#### Step 4: Submit the transaction
 
 1. Click **Withdraw**
 2. Approve the transaction in your wallet
@@ -175,7 +175,7 @@ Select where the funds will go:
 
 ---
 
-## Adding New Holdings
+## Adding new holdings
 
 Holdings are typically created automatically when you deploy vaults or configure assets for your share class. To add holdings for a new network or asset combination:
 
@@ -188,11 +188,11 @@ Holdings are typically created automatically when you deploy vaults or configure
 
 ---
 
-## Holdings and Redemptions
+## Holdings and redemptions
 
 Holdings are critical for processing redemptions:
 
-### Before Revoking Shares
+### Before revoking shares
 
 When processing redemptions (revoking shares), the system checks:
 1. The payout amount based on shares and price
@@ -203,7 +203,7 @@ If holdings are insufficient:
 - You can click to deposit more funds
 - Revocation cannot proceed until funded
 
-### Calculating Required Holdings
+### Calculating required holdings
 
 ```
 Required Holdings = Shares to Revoke × Token Price / Asset Price
@@ -219,22 +219,22 @@ Ensure your holdings can cover anticipated redemptions.
 
 ---
 
-## Multi-Network Holdings Management
+## Multi-network holdings management
 
-### Why Multiple Networks?
+### Why multiple networks?
 
 Your share class may hold assets across several networks to:
 - Support investors on different chains
 - Optimize gas costs
 - Distribute liquidity for availability
 
-### Viewing by Network
+### Viewing by network
 
 The Holdings table shows all holdings together. You can identify the network by:
 - The network icon in the Network column
 - Filtering or sorting by network
 
-### Rebalancing Across Networks
+### Rebalancing across networks
 
 To move funds between networks:
 1. Withdraw from Network A
@@ -245,17 +245,17 @@ To move funds between networks:
 
 ---
 
-## On/Off-Ramp Manager Integration
+## On/Off-Ramp Manager integration
 
 If an On/Off-Ramp Manager is configured for your share class:
 
-### Manager Deposits
+### Manager deposits
 
 1. Funds from on-ramp operations accumulate in the manager
 2. View manager balance in the deposit modal
 3. Transfer from manager to holdings when ready
 
-### Manager Withdrawals
+### Manager withdrawals
 
 1. Select withdrawal to a receiver address
 2. Receiver addresses must be pre-configured
@@ -265,15 +265,15 @@ See [Managers](managers.md) for configuring On/Off-Ramp Managers.
 
 ---
 
-## Best Practices
+## Best practices
 
-### Maintain Adequate Liquidity
+### Maintain adequate liquidity
 
 - Keep sufficient holdings to cover expected redemptions
 - Monitor redemption patterns and trends
 - Set up alerts for low balance situations
 
-### Regular Reconciliation
+### Regular reconciliation
 
 - Compare holdings to your NAV calculations
 - Verify prices are current
@@ -285,7 +285,7 @@ See [Managers](managers.md) for configuring On/Off-Ramp Managers.
 - Keep audit trail for compliance
 - Document rebalancing operations
 
-### Security Considerations
+### Security considerations
 
 - Only Balance Sheet Managers should have deposit/withdraw access
 - Use multi-sig for large movements
@@ -293,7 +293,7 @@ See [Managers](managers.md) for configuring On/Off-Ramp Managers.
 
 ---
 
-## Common Questions
+## Common questions
 
 ### Why is my deposit button disabled?
 
@@ -311,7 +311,7 @@ See [Managers](managers.md) for configuring On/Off-Ramp Managers.
 
 New assets must be configured at the pool level. Contact your administrator to add support for additional assets.
 
-### What's the difference between Holdings and Vaults?
+### What's the difference between holdings and vaults?
 
 - **Holdings**: Where pool assets are stored (escrow accounts)
 - **Vaults**: Entry points for investor deposits/redemptions
@@ -325,7 +325,7 @@ New assets must be configured at the pool level. Contact your administrator to a
 
 ---
 
-## Related Features
+## Related features
 
 - [NAV](nav.md) - Holdings value contributes to NAV
 - [Orders](orders.md) - Holdings fund redemption payouts

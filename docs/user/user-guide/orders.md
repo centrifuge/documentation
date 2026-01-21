@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Orders Management
+# Orders management
 
 The Orders feature is where fund operations teams process investor requests for investments (deposits) and redemptions. This is a core workflow that requires careful attention to ensure investors receive accurate share allocations and payouts.
 
@@ -18,9 +18,9 @@ The Orders page manages the complete lifecycle of investor transactions:
 3. **Approve Redemptions** - Review and approve pending withdrawal requests
 4. **Revoke Shares** - Burn shares and prepare payouts for approved redemptions
 
-## Understanding the Order Lifecycle
+## Understanding the order lifecycle
 
-### Investment Flow
+### Investment flow
 
 ```
 Investor Submits Deposit Request
@@ -42,7 +42,7 @@ Investor Submits Deposit Request
 └─────────────────────────┘
 ```
 
-### Redemption Flow
+### Redemption flow
 
 ```
 Investor Submits Redemption Request
@@ -64,7 +64,7 @@ Investor Submits Redemption Request
 └─────────────────────────┘
 ```
 
-## Who Can Process Orders?
+## Who can process orders?
 
 | Action | Required Permission |
 |--------|-------------------|
@@ -74,11 +74,11 @@ Investor Submits Redemption Request
 
 ---
 
-## Approving Investments
+## Approving investments
 
 When investors deposit funds into your vaults, their orders appear as **Pending Investments**.
 
-### Step 1: View Pending Investments
+### Step 1: View pending investments
 
 Navigate to the Orders page. The **Approve investments** section shows:
 - Number of pending orders
@@ -87,11 +87,11 @@ Navigate to the Orders page. The **Approve investments** section shows:
 
 ![Orders Pending](/assets/images/pending_orders.png)
 
-### Step 2: Open the Approval Modal
+### Step 2: Open the approval modal
 
 Click the **Approve** button to open the approval modal.
 
-### Step 3: Review Pending Orders
+### Step 3: Review pending orders
 
 The modal displays orders grouped by:
 - **Asset**: The currency deposited (e.g., USDC)
@@ -106,7 +106,7 @@ Click the arrow icon on any row to view individual investor details (addresses, 
 
 <img src="/assets/images/approve_pending_order.png" alt="Approve Pending" style={{maxWidth: '500px'}} />
 
-### Step 4: Select Orders to Approve
+### Step 4: Select orders to approve
 
 For each order group:
 1. Check the checkbox to include in approval
@@ -115,33 +115,33 @@ For each order group:
 
 > **Note**: You cannot approve a newer order until older orders in the same group are approved.
 
-### Step 5: Submit Approval
+### Step 5: Submit approval
 
 1. Review your selections
 2. Click **Approve**
 3. Confirm the transaction in your wallet
 4. Wait for confirmation
 
-### What Happens After Approval?
+### What happens after approval?
 
 Approved investments move to the **Issue shares** section. They are now ready for share issuance but the investor has not yet received their tokens.
 
 ---
 
-## Issuing Shares
+## Issuing shares
 
 After approving investments, you must **issue shares** to complete the transaction and mint tokens for investors.
 
-### Step 1: View Approved Investments
+### Step 1: View approved investments
 
 The **Issue shares** section shows investments that have been approved but not yet converted to shares.
 ![Approved Orders](/assets/images/approved_orders.png)
 
-### Step 2: Open the Issue Shares Modal
+### Step 2: Open the issue shares modal
 
 Click the **Issue** button.
 
-### Step 3: Set the Token Price
+### Step 3: Set the token price
 
 For each approved investment epoch, you must set the **price per share** at which shares will be issued.
 
@@ -155,13 +155,13 @@ New Shares = (Invested Amount × Asset Price) / Token Price Per Share
 
 <img src="/assets/images/issue_shares.png" alt="Issue Shares" style={{maxWidth: '500px'}} />
 
-### Step 4: Review and Submit
+### Step 4: Review and submit
 
 1. Review the calculated share amounts for each investor
 2. Click **Issue shares**
 3. Confirm the transaction in your wallet
 
-### After Issuance
+### After issuance
 
 - Investors receive their share tokens
 - The transaction moves to **Closed investments** (historical record)
@@ -169,22 +169,22 @@ New Shares = (Invested Amount × Asset Price) / Token Price Per Share
 
 ---
 
-## Approving Redemptions
+## Approving redemptions
 
 When investors request to redeem their shares, orders appear as **Pending Redemptions**.
 
-### Step 1: View Pending Redemptions
+### Step 1: View pending redemptions
 
 The **Approve redemptions** section shows:
 - Number of pending redemption requests
 - Total shares pending redemption
 - Estimated payout amounts
 
-### Step 2: Open the Approval Modal
+### Step 2: Open the approval modal
 
 Click the **Approve** button.
 
-### Step 3: Review Redemption Requests
+### Step 3: Review redemption requests
 
 Each order shows:
 - Investor address
@@ -194,37 +194,37 @@ Each order shows:
 
 <img src="/assets/images/approve_redemptions.png" alt="Approve Redemptions" style={{maxWidth: '500px'}} />
 
-### Step 4: Select Orders to Approve
+### Step 4: Select orders to approve
 
 1. Check the checkbox for each order to approve
 2. Optionally adjust the approval amount
 3. Review the estimated payout for each investor
 
-### Step 5: Submit Approval
+### Step 5: Submit approval
 
 1. Review your selections
 2. Click **Approve**
 3. Confirm the transaction
 
-### What Happens After Approval?
+### What happens after approval?
 
 Approved redemptions move to the **Revoke shares** section, ready for final processing.
 
 ---
 
-## Revoking Shares
+## Revoking shares
 
 After approving redemptions, you must **revoke shares** to burn the tokens and process payouts.
 
-### Step 1: View Approved Redemptions
+### Step 1: View approved redemptions
 
 The **Revoke shares** section shows redemptions ready for processing.
 
-### Step 2: Open the Revoke Shares Modal
+### Step 2: Open the revoke shares modal
 
 Click the **Revoke** button.
 
-### Step 3: Set the Token Price
+### Step 3: Set the token price
 
 For each redemption epoch, set the **price per share** at which shares will be redeemed.
 
@@ -234,22 +234,22 @@ The payout is calculated as:
 Payout Amount = (Shares × Token Price Per Share) / Asset Price
 ```
 
-### Step 4: Check Available Balance
+### Step 4: Check available balance
 
 The modal shows the **available balance** in your holdings. If the payout amount exceeds available balance:
 - A warning is displayed in red
 - You can click the edit icon to deposit more funds
 
-> **Note**: The system allows submission even with insufficient balance, but the on-chain transaction may fail. Ensure adequate holdings before proceeding.
+> **Note**: The system allows submission even with insufficient balance, but the onchain transaction may fail. Ensure adequate holdings before proceeding.
 
-### Step 5: Review and Submit
+### Step 5: Review and submit
 
 1. Ensure sufficient balance is available
 2. Review the payout amounts
 3. Click **Revoke shares**
 4. Confirm the transaction
 
-### After Revocation
+### After revocation
 
 - Shares are burned (removed from supply)
 - Payout is sent to investors from your holdings
@@ -257,14 +257,14 @@ The modal shows the **available balance** in your holdings. If the payout amount
 
 ---
 
-## Direct Issue and Revoke (Balance Sheet Manager)
+## Direct issue and revoke (Balance Sheet Manager)
 
 Balance Sheet Managers have access to direct operations that bypass the standard order workflow. These are useful for:
 - Correcting errors
 - Processing off-chain transactions
 - Special allocations
 
-### Issue Directly
+### Issue directly
 
 1. Click **Issue directly** button
 2. Select the network
@@ -280,7 +280,7 @@ Balance Sheet Managers have access to direct operations that bypass the standard
 <img src="/assets/images/issue_directly.png" alt="Issue Directly" style={{maxWidth: '500px'}} />
 
 
-### Revoke Directly
+### Revoke directly
 
 1. Click **Revoke directly** button
 2. Select the network
@@ -297,18 +297,18 @@ Balance Sheet Managers have access to direct operations that bypass the standard
 
 ---
 
-## Viewing Closed Orders
+## Viewing closed orders
 
 The **Closed investments** and **Closed redemptions** sections show historical records of completed transactions.
 
-### Information Available
+### Information available
 
 - Investor addresses
 - Amounts processed
 - Completion timestamps
 - Asset and network details
 
-### Viewing Details
+### Viewing details
 
 Click **View all** to see the complete history. You can drill down to individual investors to see their specific transaction details.
 
@@ -316,7 +316,7 @@ Click **View all** to see the complete history. You can drill down to individual
 
 ---
 
-## Understanding Queued Orders
+## Understanding queued orders
 
 **Queued orders** are investor requests that are waiting to become pending. This happens when:
 - There are already pending orders for the same asset/network
@@ -329,7 +329,7 @@ In the approval modals, queued orders are shown:
 
 ---
 
-## Processing Orders with Multi-Sig (Safe)
+## Processing orders with multi-sig (Safe)
 
 When using a Safe wallet, order approvals and share operations require multiple signatures:
 
@@ -341,9 +341,9 @@ When using a Safe wallet, order approvals and share operations require multiple 
 
 ---
 
-## Best Practices
+## Best practices
 
-### Daily Operations Checklist
+### Daily operations checklist
 
 1. **Check pending investments**: Review new deposit requests
 2. **Approve in batches**: Process orders at regular intervals
@@ -351,9 +351,9 @@ When using a Safe wallet, order approvals and share operations require multiple 
 4. **Monitor holdings**: Ensure sufficient balance for redemptions
 5. **Document exceptions**: Keep records of any direct operations
 
-### Common Workflows
+### Common workflows
 
-#### End-of-Day Processing
+#### End-of-day processing
 
 1. Update NAV to reflect current asset values
 2. Approve all pending investments
@@ -362,7 +362,7 @@ When using a Safe wallet, order approvals and share operations require multiple 
 5. Ensure sufficient holdings balance
 6. Revoke shares and process payouts
 
-#### Handling Large Orders
+#### Handling large orders
 
 For unusually large orders:
 1. Verify investor identity and compliance
@@ -370,7 +370,7 @@ For unusually large orders:
 3. Consider processing in batches if needed
 4. Document the transaction
 
-### Error Prevention
+### Error prevention
 
 - Always verify the price before issuing/revoking shares
 - Double-check investor addresses for direct operations
@@ -379,7 +379,7 @@ For unusually large orders:
 
 ---
 
-## Common Questions
+## Common questions
 
 ### Why can't I approve an order?
 
@@ -408,7 +408,7 @@ Approved orders cannot be easily canceled. If you need to reverse an operation:
 
 ---
 
-## Related Features
+## Related features
 
 - [NAV](nav.md) - Update pricing before processing orders
 - [Holdings](holdings.md) - Ensure sufficient balance for redemptions

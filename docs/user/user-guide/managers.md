@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# Managers Configuration
+# Managers configuration
 
 The Managers feature controls who can perform various operations on your pool across different blockchain networks. This is where you configure network-specific managers for your fund operations team.
 
@@ -15,7 +15,7 @@ The Managers page allows Hub Managers to:
 
 > **Note**: Hub Managers are configured separately in **Settings → Access**. See [Pool Settings](settings.md) for Hub Manager management.
 
-## Understanding the Manager Hierarchy
+## Understanding the manager hierarchy
 
 Centrifuge uses a **Hub and Spoke** model for multi-chain operations:
 
@@ -38,7 +38,7 @@ Centrifuge uses a **Hub and Spoke** model for multi-chain operations:
 
 ---
 
-## Manager Types
+## Manager types
 
 ### Hub Manager
 
@@ -153,7 +153,7 @@ First, deploy the manager contract to a network:
 <img src="/assets/images/add_balancesheet_manager.png" alt="add_onoff_manager" style={{maxWidth: '500px'}} />
 
 
-### Configuring Deposit Assets
+### Configuring deposit assets
 
 After deployment, specify which assets the manager can receive:
 
@@ -164,7 +164,7 @@ After deployment, specify which assets the manager can receive:
 
 <img src="/assets/images/add_deposit_asset.png" alt="deposit asset" style={{maxWidth: '500px'}} />
 
-### Configuring Relayers
+### Configuring relayers
 
 Relayers are addresses authorized to execute withdrawal transactions:
 
@@ -181,7 +181,7 @@ Relayers are addresses authorized to execute withdrawal transactions:
 - They cannot withdraw to arbitrary addresses
 - Useful for automated systems or operational staff
 
-### Configuring Receivers (Withdraw Addresses)
+### Configuring receivers (withdraw addresses)
 
 Receivers are pre-approved destination addresses for withdrawals:
 
@@ -198,7 +198,7 @@ Receivers are pre-approved destination addresses for withdrawals:
 - They're visible to anyone viewing the pool
 - Use for identifying bank accounts, exchanges, etc.
 
-### On/Off-Ramp Workflow
+### On/Off-Ramp workflow
 
 ```
 Funds arrive at Manager → Manager Balance Increases
@@ -209,7 +209,7 @@ Funds arrive at Manager → Manager Balance Increases
 ```
 
 
-## Permissions Summary
+## Permissions summary
 
 | Action | Hub Manager | Balance Sheet Manager | Relayer |
 |--------|------------|----------------------|---------|
@@ -227,16 +227,16 @@ Funds arrive at Manager → Manager Balance Increases
 
 ---
 
-## Cross-Chain Considerations
+## Cross-chain considerations
 
-### Network-Specific Permissions
+### Network-specific permissions
 
 Permissions are enforced per-network:
 - A Balance Sheet Manager on Base cannot move funds on Arbitrum
 - Each network needs separate manager configuration
 - Hub Managers can configure managers on any network
 
-### Deploying Across Networks
+### Deploying across networks
 
 When expanding to new networks:
 1. Ensure the network is active for your pool
@@ -246,7 +246,7 @@ When expanding to new networks:
 
 ---
 
-## Best Practices
+## Best practices
 
 ### Operations
 
@@ -255,7 +255,7 @@ When expanding to new networks:
 - **Remove Promptly**: Remove departed team members immediately
 - **Label Clearly**: Use public labels to identify receiver addresses
 
-### On/Off-Ramp Configuration
+### On/Off-Ramp configuration
 
 - **Pre-Approve Receivers**: Set up receiver addresses before you need them
 - **Limit Relayers**: Only add relayers who need withdrawal access
@@ -263,7 +263,7 @@ When expanding to new networks:
 
 ---
 
-## Common Questions
+## Common questions
 
 ### Can someone be both a Hub Manager and Balance Sheet Manager?
 
@@ -296,7 +296,7 @@ The Managers page shows all configured managers. For a complete audit:
 
 ---
 
-## Related Features
+## Related features
 
 - [Holdings](holdings.md) - Managers control fund movements
 - [Orders](orders.md) - Hub Managers process investor orders

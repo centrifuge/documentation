@@ -18,9 +18,9 @@ The Dashboard is designed for at-a-glance monitoring, displaying:
 
 ---
 
-## Dashboard Sections
+## Dashboard sections
 
-### NAV Section
+### NAV section
 
 The top of the dashboard shows your current NAV status:
 
@@ -41,18 +41,18 @@ The top of the dashboard shows your current NAV status:
 
 ---
 
-### Orders Summary
+### Orders summary
 
 The middle section provides a snapshot of order activity:
 
-#### Investments Card
+#### Investments card
 
 | Metric | Description |
 |--------|-------------|
 | **Pending investments** | Total value of deposits awaiting approval |
 | **Approved investments** | Total value of approved deposits awaiting share issuance |
 
-#### Redemptions Card
+#### Redemptions card
 
 | Metric | Description |
 |--------|-------------|
@@ -65,7 +65,7 @@ All values are displayed in your pool's base currency.
 
 ---
 
-### Holdings Preview
+### Holdings preview
 
 The bottom section shows a condensed view of your holdings:
 
@@ -79,9 +79,9 @@ This helps you quickly assess liquidity without leaving the dashboard.
 
 ---
 
-## Using the Dashboard
+## Using the dashboard
 
-### Daily Monitoring Workflow
+### Daily monitoring workflow
 
 1. **Check NAV**: Verify current NAV and price are accurate
 2. **Review pending investments**: See if new deposits need approval
@@ -89,7 +89,7 @@ This helps you quickly assess liquidity without leaving the dashboard.
 4. **Verify approved orders**: Confirm approved orders are ready for processing
 5. **Check holdings**: Ensure adequate liquidity for operations
 
-### Quick Actions
+### Quick actions
 
 From the dashboard, you can:
 - **Update NAV**: Click the "Update NAV" button to open the NAV modal
@@ -97,9 +97,9 @@ From the dashboard, you can:
 
 ---
 
-## Understanding the Metrics
+## Understanding the metrics
 
-### Investment Metrics
+### Investment metrics
 
 **Pending Investments**
 - Sum of all `pendingDeposit` amounts across vaults
@@ -111,7 +111,7 @@ From the dashboard, you can:
 - These have been approved but shares not yet issued
 - Your next action: Issue shares
 
-### Redemption Metrics
+### Redemption metrics
 
 **Pending Redemptions**
 - Sum of all `pendingRedeem` amounts (in shares)
@@ -125,7 +125,7 @@ From the dashboard, you can:
 
 ---
 
-## Dashboard vs Individual Pages
+## Dashboard vs individual pages
 
 | Feature | Dashboard | Full Page |
 |---------|-----------|-----------|
@@ -138,7 +138,7 @@ Use the Dashboard for monitoring; use individual pages for detailed management.
 
 ---
 
-## Common Questions
+## Common questions
 
 ### Why are my totals different from the Orders page?
 
@@ -154,7 +154,7 @@ The Dashboard uses real-time data from the blockchain. Values update automatical
 
 ---
 
-## Related Features
+## Related features
 
 - [NAV](nav.md) - Full NAV management
 - [Orders](orders.md) - Process investments and redemptions

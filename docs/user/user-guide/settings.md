@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# Pool Settings
+# Pool settings
 
 The Settings page provides pool-level configuration options that apply across all share classes. Changes made here affect the entire pool, not just individual tokens.
 
@@ -13,7 +13,7 @@ The Settings page includes three tabs:
 - **Access**: Hub manager configuration
 - **Details**: Additional pool details (coming soon)
 
-## Accessing Settings
+## Accessing settings
 
 1. Select your pool from the token list
 2. Click **Settings** in the sidebar (under the pool name, not under a share class)
@@ -24,9 +24,9 @@ The Settings page includes three tabs:
 
 ---
 
-## Structure Tab
+## Structure tab
 
-### Hub Chain Setup
+### Hub chain setup
 
 Displays read-only information about your pool's hub configuration:
 
@@ -39,7 +39,7 @@ This information is set at pool creation and cannot be changed.
 
 ---
 
-### Off-Chain Holdings Setup
+### Off-chain holdings setup
 
 Track assets that exist outside the blockchain, such as:
 - Bank account balances
@@ -47,21 +47,21 @@ Track assets that exist outside the blockchain, such as:
 - Real estate valuations
 - Other off-chain assets
 
-#### Why Track Off-Chain Holdings?
+#### Why track off-chain holdings?
 
 - Complete picture of fund assets
 - Accurate NAV calculations
 - Audit and reporting requirements
 - Investor transparency
 
-#### Viewing Off-Chain Holdings
+#### Viewing off-chain holdings
 
 If holdings have been uploaded:
 - **Template section**: Shows the CSV column headers
 - **Holdings table**: Displays all uploaded holding records
 - Pagination for large datasets
 
-#### Uploading Off-Chain Holdings
+#### Uploading off-chain holdings
 
 1. Click **Upload holdings** button
 2. Prepare your CSV file with appropriate columns
@@ -69,7 +69,7 @@ If holdings have been uploaded:
 4. Review the parsed data
 5. Confirm to save to pool metadata
 
-#### CSV File Format
+#### CSV file format
 
 Your CSV should include headers that describe your off-chain assets. Common columns:
 - Asset name or identifier
@@ -87,17 +87,17 @@ Real Estate Fund,Real Estate,500000,USD,Property Co,2024-01-15
 
 > **Note**: The system accepts any CSV structure. Define columns that match your reporting needs.
 
-#### Who Can Upload Holdings?
+#### Who can upload holdings?
 
 Only **Hub Managers** can upload off-chain holdings data.
 
 ---
 
-### Tokens Management
+### Tokens management
 
 View and manage all share classes (tokens) in your pool.
 
-#### Tokens Table
+#### Tokens table
 
 | Column | Description |
 |--------|-------------|
@@ -107,7 +107,7 @@ View and manage all share classes (tokens) in your pool.
 | **Networks** | Blockchains where the token is deployed |
 
 
-#### Editing a Share Class
+#### Editing a share class
 
 1. Click the edit icon on a token row
 2. The Update Token modal opens
@@ -121,7 +121,7 @@ View and manage all share classes (tokens) in your pool.
 
 <img src="/assets/images/update_token.png" alt="update token holdings" style={{maxWidth: '500px'}} />
 
-#### Adding a New Share Class
+#### Adding a new share class
 
 1. Click **Add a share class** button
 2. Fill in the required information:
@@ -136,7 +136,7 @@ View and manage all share classes (tokens) in your pool.
 
 ---
 
-## Access Tab
+## Access tab
 
 Manage Hub Managers for your pool.
 
@@ -180,23 +180,23 @@ The table shows all addresses with Hub Manager permissions:
 
 ---
 
-## Best Practices
+## Best practices
 
-### Off-Chain Holdings
+### Off-chain holdings
 
 - **Regular Updates**: Upload new holdings data on a consistent schedule
 - **Consistent Format**: Use the same CSV structure each time
 - **Documentation**: Keep records of your column definitions
 - **Audit Trail**: Archive previous uploads for compliance
 
-### Hub Manager Access
+### Hub Manager access
 
 - **Minimum Necessary**: Only grant Hub Manager access to those who need it
 - **Multi-Sig**: Use Safe wallets for Hub Manager addresses when possible
 - **Regular Review**: Periodically audit the manager list
 - **Prompt Removal**: Remove departed team members immediately
 
-### Token Management
+### Token management
 
 - **Plan Ahead**: Share class parameters are difficult to change after creation
 - **Naming Conventions**: Use clear, consistent naming
@@ -204,7 +204,7 @@ The table shows all addresses with Hub Manager permissions:
 
 ---
 
-## Common Questions
+## Common questions
 
 ### Can I change the hub chain or denomination?
 
@@ -229,7 +229,7 @@ You must be an existing Hub Manager to add new Hub Managers.
 
 ---
 
-## Related Features
+## Related features
 
 - [Managers](managers.md) - Network-specific manager configuration
 - [NAV](nav.md) - Update NAV including off-chain asset values

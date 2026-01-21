@@ -1,4 +1,4 @@
-# Centrifuge Management App - User Guide
+# Centrifuge Management App
 
 **App URL:** [manage.centrifuge.io](https://manage.centrifuge.io/)
 
@@ -126,7 +126,7 @@ Configure pool-level settings including structure, access, and off-chain holding
 
 **Key Operations**:
 - View hub chain and denomination
-- Upload off-chain holdings CSV
+- Upload offchain holdings CSV
 - Manage tokens (share classes)
 - Configure hub managers
 
