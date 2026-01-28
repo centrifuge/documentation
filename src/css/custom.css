@@ -132,3 +132,70 @@ h3 {
   line-height: 1.5;
   margin: 0;
 }
+
+/* Custom Tabs Styling */
+.tabs {
+  margin-bottom: 1rem;
+}
+
+.tabs__item {
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  color: var(--ifm-color-emphasis-700);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tabs__item:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-primary);
+}
+
+.tabs__item--active {
+  background: transparent;
+  color: var(--ifm-color-primary);
+  border-bottom: 2px solid var(--ifm-color-primary);
+}
+
+[data-theme="dark"] .tabs__item {
+  color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme="dark"] .tabs__item:hover {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-primary);
+}
+
+[data-theme="dark"] .tabs__item--active {
+  background: transparent;
+  color: var(--ifm-color-primary);
+}
+
+/* Tab content panel */
+.tabs-container > div[role="tabpanel"] {
+  padding: 1rem 0;
+}
+
+/* Tables inside tabs */
+.tabs-container table {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+.tabs-container th,
+.tabs-container td {
+  padding: 0.75rem 1rem;
+}
+
+.tabs-container th {
+  font-weight: 600;
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme="dark"] .tabs-container th {
+  background: var(--ifm-color-emphasis-200);
+}
