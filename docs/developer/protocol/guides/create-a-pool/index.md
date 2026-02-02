@@ -48,8 +48,6 @@ The denomination currency is the accounting unit for your pool. It does not rest
 
 When investors deposit or redeem through vaults, the protocol converts between the vault's deposit asset and the pool's denomination currency using price feeds. For example, if your pool is denominated in USD but accepts USDC deposits, the `pricePoolPerAsset` is used to convert USDC amounts to USD-denominated pool amounts.
 
-**Choosing a denomination currency:**
-
 You can use any of the following:
 
 - **Fiat currencies**: Use `newAssetId(isoCode)` where `isoCode` is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) numeric code (e.g., `840` for USD, `978` for EUR)
