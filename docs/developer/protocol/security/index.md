@@ -55,15 +55,15 @@ Centrifuge runs an active bug bounty program with a $250,000 maximum reward, ava
 
 ## Guardian
 
-The protocol is controlled by the Root contract, which has access on all other contracts. The Root conract enforces a 48-hour delay for any upgrades and configuratino changes.
+The protocol is controlled by the Root contract, which has access on all other contracts. The Root contract enforces a 48-hour delay for any upgrades and configuratino changes.
 
 Each deployment has a Guardian role, who is authorized on the Root contract. The Guardian can pause in emergencies, schedule upgrades, and set up adapters to new networks.
 
 | Network          | Guardian |
 |------------------|----------|
-| Ethereum Mainnet | [`0xD9D30ab47c0f096b0AA67e9B8B1624504a63e7FD`](https://app.safe.global/home?safe=eth:0xD9D30ab47c0f096b0AA67e9B8B1624504a63e7FD) |
-| Base             | [`0x8b83962fB9dB346a20c95D98d4E312f17f4C0d9b`](https://app.safe.global/home?safe=base:0x8b83962fB9dB346a20c95D98d4E312f17f4C0d9b)  |
-| Arbitrum         | [`0xa36caE0ACd40C6BbA61014282f6AE51c7807A433`](https://app.safe.global/transactions/history?safe=arb1:0xa36caE0ACd40C6BbA61014282f6AE51c7807A433)  |
-| Plume            | [`0x2d442069f78561F817d92c94924D5EaddA9C5767`](https://safe.onchainden.com/home?safe=plume:0x2d442069f78561F817d92c94924D5EaddA9C5767)  |
-| Avalanche        | [`0xb6642fEd2221e177dD29581BB6d1959Bd1c54185`](https://app.safe.global/home?safe=avax:0xb6642fEd2221e177dD29581BB6d1959Bd1c54185)  |
-| BNB Smart Chain  | [`0x57066D897cB9cDef21b9Ecd7CecdD1d39b6eE445`](https://app.safe.global/home?safe=bnb:0x57066D897cB9cDef21b9Ecd7CecdD1d39b6eE445) |
+| Ethereum Mainnet | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=eth:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6) |
+| Base             | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=base:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
+| Arbitrum         | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/transactions/history?safe=arb1:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
+| Plume            | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://safe.onchainden.com/home?safe=plume:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
+| Avalanche        | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=avax:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
+| BNB Smart Chain  | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=bnb:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6) |
