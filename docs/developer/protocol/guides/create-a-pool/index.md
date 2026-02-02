@@ -23,6 +23,38 @@ Each pool can have multiple share classes, each with its own share token. These 
 
 Each share class is deployed as a token (ERC-20 compatible) on every supported network. These tokens have a transfer hook to enable permission logic.
 
+## Pool parameters
+
+When creating a pool, you need to choose two key parameters that cannot be changed after creation: the hub chain and the denomination currency.
+
+### Hub chain
+
+The hub chain is the primary network where your pool is created and managed. All administrative transactions (such as deploying tokens and vaults, updating permissions, and managing requests) are submitted on the hub chain and then bridged to all other spoke chains where the pool operates.
+
+Choosing the right hub chain is important because:
+
+- **It cannot be changed**: Once a pool is created on a hub chain, migrating to a different hub chain would require creating an entirely new pool and migrating all users.
+- **Transaction costs**: All management operations incur gas costs on the hub chain.
+- **Latency**: Cross-chain messages originate from the hub, so spoke chain updates depend on bridge latency from the hub.
+
+For more details on how the hub and spoke architecture works, see [Chain abstraction](/developer/protocol/features/chain-abstraction/).
+
+### Denomination currency
+
+The denomination currency is the accounting unit for your pool. It does not restrict which assets investors can deposit or redeem with, those are determined by which [vaults you deploy](/developer/protocol/guides/deploy-vaults). Instead, it serves as the common unit for:
+1. **Onchain accounting**: If you use [onchain accounting](/developer/protocol/features/onchain-accounting), all asset valuations and NAV calculations are expressed in this currency.
+2. **Hub chain events**: Events emitted on the hub chain (such as deposit/redeem amounts, share prices, and pool values) are denominated in this unit.
+3. **Share price denomination**: The share price is expressed in the denomination currency. When investors deposit or redeem, the actual fulfillment price they receive is calculated as `share price × asset price`, converting between the denomination currency and their specific deposit/redeem asset.
+
+When investors deposit or redeem through vaults, the protocol converts between the vault's deposit asset and the pool's denomination currency using price feeds. For example, if your pool is denominated in USD but accepts USDC deposits, the `pricePoolPerAsset` is used to convert USDC amounts to USD-denominated pool amounts.
+
+**Choosing a denomination currency:**
+
+You can use any of the following:
+
+- **Fiat currencies**: Use `newAssetId(isoCode)` where `isoCode` is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) numeric code (e.g., `840` for USD, `978` for EUR)
+- **Registered assets**: Any ERC20 token that has been registered as an asset on any chain
+
 ## Step-by-step: creating a pool
 
 ### 1. Derive the unique pool ID
@@ -43,11 +75,7 @@ PoolId poolId = hubRegistry.poolId(centrifugeId, 1); // Derive a unique PoolId u
 
 ### 2. Create the pool
 
-Call the `createPool` function with the derived `PoolId`, the pool manager, and the denomination currency.
-
-As the denomination currency, you can use `newAssetId(840)`, where 840 is the ISO4217 identifier of USD.
-
-You can also use the ERC20 address of any other token.
+Call the `createPool` function with the derived `PoolId`, the pool manager, and the [denomination currency](#denomination-currency).
 
 ```solidity
 hub.createPool(poolId, msg.sender, newAssetId(840));
