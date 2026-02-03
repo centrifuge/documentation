@@ -70,15 +70,15 @@ console.log(metadata);
 ## 5. Query a vault
 
 Each pool can contain multiple tokens and each token can have multiple vaults.
-You can query a single vault using pool ID, token ID, chain ID, and asset address:
+You can query a single vault using pool ID, token ID, centrifuge ID, and asset address:
 
 ```typescript
 // Get tokenId based on previously defined poolId
 const tokenId = ShareClassId.from(poolId, 1);
 const assetId = AssetId.from(centId, 1);
-const chainId = 11155111; // Ethereum Sepolia
+const centrifugeId = 1; // Centrifuge network ID
 // Get a vault
-const vault = await pool.vault(chainId, tokenId, assetId);
+const vault = await pool.vault(centrifugeId, tokenId, assetId);
 ```
 
 or if you do not know token ID and asset ID you can do:
@@ -97,7 +97,7 @@ const vaults = await poolNetwork.vaults(tokenId);
 
 // OR
 
-const vaults = await shareClass.vaults(chainId);
+const vaults = await shareClass.vaults(centrifugeId);
 
 // OR if we do have asset address
 
