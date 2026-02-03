@@ -22,7 +22,7 @@ For asynchronous vaults, the `AsyncRequestManager` contract must be configured i
 1. As the Spoke Request Manager, so it can handle investment actions via the Hub.
 2. As the Balance Sheet Manager, so it can move assets in and out of the balance sheet.
 
-The `BatchRequestManager` also needs to be configure das the Hub Request Manager.
+The `BatchRequestManager` also needs to be configure as the Hub Request Manager.
 
 The configuration is done using the following commands:
 
