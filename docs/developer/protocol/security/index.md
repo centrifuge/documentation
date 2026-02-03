@@ -5,7 +5,7 @@ title: Security
 
 # Security
 
-Centrifuge has best-in-class security process:
+Centrifuge security highlights:
 * 24 security reviews to date for the Centrifuge protocol, including tier-1 audit firms Spearbit and Blackthorn.
 * Launched on mainnet in 2019, 0 exploits.
 * $250,000 bug bounty program live.
