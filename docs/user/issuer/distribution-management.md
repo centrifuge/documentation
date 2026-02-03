@@ -38,7 +38,7 @@ Holdings are onchain escrow accounts, one per asset per network.
 2. See all assets across all networks
 3. Total value shown at top
 
-![Holding Overview](/assets/images/holding_page.png)
+<img src="/assets/images/holding_page.png" alt="Holdings overview" style={{maxWidth: '600px'}} />
 
 ### Depositing to holdings
 
@@ -53,6 +53,8 @@ When you need more liquidity:
 5. Enter amount
 6. Confirm transaction
 
+<img src="/assets/images/deposit_holding.png" alt="Deposit to holdings" style={{maxWidth: '500px'}} />
+
 ### Withdrawing from holdings
 
 When you need to move funds out:
@@ -65,6 +67,8 @@ When you need to move funds out:
    - **Relayer addresses** - To pre-configured off-ramp receivers
 5. Enter amount
 6. Confirm transaction
+
+<img src="/assets/images/withdraw_holdings.png" alt="Withdraw from holdings" style={{maxWidth: '500px'}} />
 
 > **Warning:** Ensure sufficient holdings remain for pending redemptions before withdrawing.
 
@@ -130,6 +134,8 @@ Monitor holdings across networks and rebalance before you need to:
 
 For institutional funds with fiat integration, On/Off-Ramp Managers handle the bridge between crypto and traditional finance.
 
+<img src="/assets/images/manager_overview.png" alt="Managers overview" style={{maxWidth: '600px'}} />
+
 ### What On/Off-Ramp Managers do
 
 - **Receive on-ramp funds** - USDC from banking partners converting fiat
@@ -143,11 +149,23 @@ For institutional funds with fiat integration, On/Off-Ramp Managers handle the b
 3. Select network
 4. Deploy the manager contract
 
+<img src="/assets/images/add_onoff_manager.png" alt="Add On/Off-Ramp Manager" style={{maxWidth: '500px'}} />
+
 Then configure:
 
 **Deposit assets** - What the manager can receive
+
+<img src="/assets/images/add_deposit_asset.png" alt="Add deposit asset" style={{maxWidth: '500px'}} />
+
 **Relayers** - Who can trigger withdrawals
+
+<img src="/assets/images/add_relayer.png" alt="Add relayer" style={{maxWidth: '500px'}} />
+
 **Receivers** - Pre-approved withdrawal destinations
+
+<img src="/assets/images/add_receiver.png" alt="Add receiver" style={{maxWidth: '500px'}} />
+
+<img src="/assets/images/on_off_manager_overview.png" alt="On/Off-Ramp Manager overview" style={{maxWidth: '600px'}} />
 
 ### On-ramp flow (fiat → pool)
 
