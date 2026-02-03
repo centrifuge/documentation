@@ -8,7 +8,7 @@ title: Security
 Centrifuge has best-in-class security process:
 * 24 security reviews to date for the Centrifuge protocol, including tier-1 audit firms Spearbit and Blackthorn.
 * Launched on mainnet in 2019, 0 exploits.
-* $250.000 bug bounty program live.
+* $250,000 bug bounty program live.
 
 The protocol codebase is fully immutable, and any emergency functions are locked behind a 48-hour timelock.
 
