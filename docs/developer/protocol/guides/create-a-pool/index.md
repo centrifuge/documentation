@@ -51,9 +51,7 @@ The protocol uses two prices to convert between deposit assets and shares:
 
 When an investor deposits assets, the conversion flows through the pool currency:
 
-```
-Asset amount → Pool currency amount → Share amount
-```
+![Asset conversion flow](./images/asset-conversion.svg)
 
 For redemptions, the flow reverses: shares convert to pool currency via `pricePoolPerShare`, then to payout assets via `pricePoolPerAsset`.
 

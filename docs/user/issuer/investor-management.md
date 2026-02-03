@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
-# Investor lifecycle
+# Investor management
 
 The complete journey from onboarding an investor to processing their redemption.
 
@@ -10,11 +10,9 @@ The complete journey from onboarding an investor to processing their redemption.
 
 Every investor goes through a lifecycle:
 
-```
-Onboarding → Whitelisting → Investing → Holding → Redeeming → Exit
-```
+![Investor lifecycle](/assets/images/investor-lifecycle.svg)
 
-As a manager, you control each step—ensuring compliance, accurate pricing, and smooth operations.
+As an issuer, you control each step, ensuring compliance, accurate pricing, and smooth operations.
 
 ## Phase 1: Onboarding
 
@@ -43,7 +41,9 @@ Before investors can access your pool, they need to be verified and whitelisted.
    - Label (e.g., "Acme Capital" for easy identification)
 4. Save changes
 
-![Investor Overview](/assets/images/investor_overview.png)
+<img src="/assets/images/add_investor.png" alt="Add investor" style={{maxWidth: '500px'}} />
+
+<img src="/assets/images/investor_overview.png" alt="Investor overview" style={{maxWidth: '600px'}} />
 
 ### Multi-network whitelisting
 
@@ -53,7 +53,7 @@ Investors must be whitelisted **separately for each network** they want to use.
 - Add them once for Base
 - Add them again for Arbitrum
 
-This gives you granular control—an investor could be approved for one network but not another.
+This gives you granular control. An investor could be approved for one network but not another.
 
 ### Communicating with investors
 
@@ -73,6 +73,8 @@ Once whitelisted, investors can deposit funds.
 3. **Investor submits** their deposit amount
 4. **Order appears** in your app under **Orders → Pending Investments**
 
+<img src="/assets/images/pending_orders.png" alt="Pending orders" style={{maxWidth: '600px'}} />
+
 ### Your role: Approve and issue
 
 **Step 1: Review pending investments**
@@ -82,7 +84,7 @@ Once whitelisted, investors can deposit funds.
 
 **Step 2: Update NAV**
 - Ensure pricing is current before issuing shares
-- See [Pricing and NAV](pricing-and-nav.md)
+- See [Token Management](token-management.md)
 
 **Step 3: Approve**
 - Navigate to **Orders**
@@ -90,23 +92,30 @@ Once whitelisted, investors can deposit funds.
 - Select orders to approve
 - Submit transaction
 
+<img src="/assets/images/approve_pending_order.png" alt="Approve pending order" style={{maxWidth: '500px'}} />
+
 **Step 4: Issue shares**
 - Click **Issue** in Approved Investments
 - Confirm the price per share
 - Submit transaction
 
+<img src="/assets/images/issue_shares.png" alt="Issue shares" style={{maxWidth: '500px'}} />
+
 **Result:** Investor receives share tokens in their wallet.
 
 ### Share calculation
 
-```
-Shares Issued = Deposit Amount / Price per Share
+$$
+\text{Shares Issued} = \frac{\text{Deposit Amount}}{\text{Price per Share}}
+$$
 
-Example:
+**Example:**
 - Investor deposits 100,000 USDC
 - Current price: $10.00
-- Shares issued: 100,000 / 10 = 10,000 shares
-```
+
+$$
+\text{Shares Issued} = \frac{100{,}000}{10} = 10{,}000 \text{ shares}
+$$
 
 ### Async vs Sync vaults
 
@@ -138,6 +147,8 @@ If you need to temporarily block an investor:
 2. Click on the investor row
 3. Toggle **Freeze**
 4. Confirm
+
+<img src="/assets/images/edit_investor.png" alt="Edit investor" style={{maxWidth: '500px'}} />
 
 Frozen investors:
 - Keep their existing holdings
@@ -172,7 +183,7 @@ When investors want to exit, they submit redemption requests.
 
 **Step 3: Update NAV**
 - Ensure pricing is current for fair payout
-- See [Pricing and NAV](pricing-and-nav.md)
+- See [Token Management](token-management.md)
 
 **Step 4: Approve**
 - Navigate to **Orders**
@@ -180,23 +191,30 @@ When investors want to exit, they submit redemption requests.
 - Select orders to approve
 - Submit transaction
 
+<img src="/assets/images/approve_redemptions.png" alt="Approve redemptions" style={{maxWidth: '500px'}} />
+
 **Step 5: Revoke shares**
 - Click **Revoke** in Approved Redemptions
 - Confirm the price per share
 - Submit transaction
 
+<img src="/assets/images/revoke_directly.png" alt="Revoke shares" style={{maxWidth: '500px'}} />
+
 **Result:** Shares are burned, investor receives payout.
 
 ### Payout calculation
 
-```
-Payout = Shares Redeemed × Price per Share
+$$
+\text{Payout} = \text{Shares Redeemed} \times \text{Price per Share}
+$$
 
-Example:
+**Example:**
 - Investor redeems 5,000 shares
 - Current price: $11.00
-- Payout: 5,000 × 11 = 55,000 USDC
-```
+
+$$
+\text{Payout} = 5{,}000 \times 11 = 55{,}000 \text{ USDC}
+$$
 
 ### Partial redemptions
 
@@ -256,7 +274,7 @@ Direct transfers may be restricted by your token settings. Options:
 
 ### Investor lost access to their wallet
 
-Work with the investor on recovery. You cannot move tokens on their behalf—they must have wallet access.
+Work with the investor on recovery. You cannot move tokens on their behalf. They must have wallet access.
 
 ### Large redemption exceeds holdings
 
@@ -267,6 +285,5 @@ Options:
 
 ## Related
 
-- [Pricing and NAV](pricing-and-nav.md) - Pricing investments and redemptions
-- [Liquidity management](liquidity-management.md) - Ensuring you can pay redemptions
-- [Access and permissions](access-and-permissions.md) - Managing who can invest
+- [Token Management](token-management.md) - Pricing investments and redemptions
+- [Distribution Management](distribution-management.md) - Ensuring you can pay redemptions

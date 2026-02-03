@@ -2,16 +2,9 @@
 sidebar_position: 1
 ---
 
-# Getting started
+# Offering creation
 
 Launch your first tokenized offering on Centrifuge in five steps.
-
-## Before you begin
-
-You'll need:
-- **Wallet** - EOA, Safe multi-sig, or MPC custody (Fireblocks, Fordefi)
-- **KYC provider** - For investor verification
-- **Asset details** - What you're tokenizing
 
 ## Step 1: Create your pool
 
@@ -32,11 +25,11 @@ Vaults are where investors deposit. Create one per network you want to support:
 3. Choose network, asset, and vault type
 4. Deploy
 
+<img src="/assets/images/add_vault.png" alt="Add vault" style={{maxWidth: '500px'}} />
+
 **Vault types:**
 - **Async** - You approve deposits before issuing shares
 - **Sync-Invest** - Instant deposits (you still approve redemptions)
-
-→ *Learn more: [Access and permissions](access-and-permissions.md#configuring-vaults)*
 
 ## Step 3: Set initial NAV
 
@@ -47,7 +40,9 @@ Set your starting price before accepting investors:
 3. Enter initial price (typically $1.00 for new funds)
 4. Submit
 
-→ *Learn more: [Pricing and NAV](pricing-and-nav.md)*
+<img src="/assets/images/nav_update.png" alt="Update NAV" style={{maxWidth: '500px'}} />
+
+→ *Learn more: [Token Management](token-management.md)*
 
 ## Step 4: Add your team
 
@@ -59,20 +54,21 @@ Configure who can do what:
 | Balance Sheet Manager | Move funds, direct issue/revoke |
 | Relayer | Withdraw to off-ramp addresses |
 
-→ *Learn more: [Access and permissions](access-and-permissions.md)*
+<img src="/assets/images/settings.jpeg" alt="Settings" style={{maxWidth: '500px'}} />
 
-## Step 5: Whitelist investors
-
-Add investors who've completed KYC:
+## Step 5: Whitelist investors (if permissioned)
 
 1. Navigate to **Investors**
 2. Click **Add new investor**
 3. Enter wallet address, network, and label
 4. Save
 
-Share your vault address with them—they can now deposit.
+<img src="/assets/images/add_investor.png" alt="Add investor" style={{maxWidth: '500px'}} />
 
-→ *Learn more: [Investor lifecycle](investor-lifecycle.md)*
+
+<img src="/assets/images/investor_overview.png" alt="Investor overview" style={{maxWidth: '500px'}} />
+
+→ *Learn more: [Investor Management](investor-management.md)*
 
 ## You're live
 
@@ -87,7 +83,6 @@ Once investors deposit, your workflow is:
 
 | Guide | What you'll learn |
 |-------|-------------------|
-| [Pricing and NAV](pricing-and-nav.md) | How share pricing works, when to update |
-| [Investor lifecycle](investor-lifecycle.md) | Onboarding → investing → redeeming |
-| [Liquidity management](liquidity-management.md) | Holdings, on/off-ramp, paying redemptions |
-| [Access and permissions](access-and-permissions.md) | Team setup, vaults, pool settings |
+| [Investor Management](investor-management.md) | Onboarding → investing → redeeming |
+| [Token Management](token-management.md) | How share pricing works, when to update |
+| [Distribution Management](distribution-management.md) | Holdings, on/off-ramp, paying redemptions |

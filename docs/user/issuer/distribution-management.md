@@ -2,13 +2,13 @@
 sidebar_position: 4
 ---
 
-# Liquidity management
+# Distribution management
 
 How funds flow through your pool and ensuring you can always pay redemptions.
 
 ## Why liquidity matters
 
-When investors redeem shares, you pay them from your **holdings**—onchain escrow accounts that hold assets (USDC, etc.) on behalf of your pool.
+When investors redeem shares, you pay them from your **holdings**, onchain escrow accounts that hold assets (USDC, etc.) on behalf of your pool.
 
 If holdings are empty when someone redeems, you can't process the payout.
 
@@ -16,28 +16,7 @@ If holdings are empty when someone redeems, you can't process the payout.
 
 ## How funds flow
 
-```
-                    INFLOWS                              OUTFLOWS
-                       │                                    │
-     Investor deposits │                                    │ Investor redemptions
-                       ▼                                    ▼
-              ┌─────────────┐                      ┌─────────────┐
-              │   Vaults    │                      │  Holdings   │
-              └──────┬──────┘                      └──────┬──────┘
-                     │                                    │
-                     │ After you issue shares             │ When you revoke shares
-                     ▼                                    ▼
-              ┌─────────────┐                      ┌─────────────┐
-              │  Holdings   │──────────────────────│   Vaults    │
-              └─────────────┘                      └─────────────┘
-                     │                                    │
-                     │ Withdraw                           │
-                     ▼                                    │
-              ┌─────────────┐                             │
-              │  Off-ramp   │◄────────────────────────────┘
-              │  (to fiat)  │
-              └─────────────┘
-```
+![Fund flow diagram](/assets/images/fund-flow.svg)
 
 ## Holdings: Your liquidity pool
 
@@ -93,14 +72,17 @@ When you need to move funds out:
 
 Before processing redemptions, verify you have enough:
 
-```
-Required = Shares to Redeem × Price per Share
+$$
+\text{Required} = \text{Shares to Redeem} \times \text{Price per Share}
+$$
 
-Example:
+**Example:**
 - Investor redeeming 10,000 shares
 - Current price: $11.00
-- Required: 10,000 × $11 = $110,000 USDC
-```
+
+$$
+\text{Required} = 10{,}000 \times 11 = 110{,}000 \text{ USDC}
+$$
 
 If holdings are insufficient:
 1. The Revoke Shares modal shows a **warning**
@@ -169,19 +151,7 @@ Then configure:
 
 ### On-ramp flow (fiat → pool)
 
-```
-Investor wires USD
-       ↓
-Banking partner converts to USDC
-       ↓
-USDC sent to On/Off-Ramp Manager
-       ↓
-Manager balance increases
-       ↓
-You deposit from Manager → Holdings
-       ↓
-Ready to process orders
-```
+![On-ramp flow](/assets/images/onramp-flow.svg)
 
 **In the app:**
 1. See Manager balance in the deposit modal
@@ -190,17 +160,7 @@ Ready to process orders
 
 ### Off-ramp flow (pool → fiat)
 
-```
-Process redemption (Holdings → Investor)
-       ↓
-Or: Withdraw Holdings → Receiver address
-       ↓
-Off-ramp partner receives USDC
-       ↓
-Partner converts to USD
-       ↓
-USD wired to bank account
-```
+![Off-ramp flow](/assets/images/offramp-flow.svg)
 
 **In the app:**
 1. Withdraw from Holdings
@@ -236,44 +196,7 @@ Set up monitoring for:
 - Large redemption requests
 - On/Off-Ramp Manager accumulating funds
 
-## Common scenarios
-
-### "I can't process a redemption—insufficient holdings"
-
-1. Check which network needs funds
-2. Options:
-   - Deposit from your wallet
-   - Deposit from On/Off-Ramp Manager
-   - Rebalance from another network
-3. Once funded, process the redemption
-
-### "On/Off-Ramp Manager has accumulated funds"
-
-Funds sitting in the manager aren't in holdings and can't pay redemptions.
-1. Navigate to Holdings
-2. Deposit from On/Off-Ramp Manager
-3. Deploy the capital
-
-### "Investor wants fiat, not USDC"
-
-If you handle fiat for investors:
-1. Process redemption normally (Holdings → Investor wallet)
-2. Investor sends USDC to their own off-ramp
-
-Or, if you manage the off-ramp:
-1. Coordinate with investor
-2. Withdraw from Holdings to off-ramp receiver
-3. Partner converts and wires fiat
-
-### "Need to rebalance but bridge is slow"
-
-Plan ahead:
-- Monitor network-level holdings weekly
-- Initiate rebalancing before you need funds
-- Keep buffer on each active network
-
 ## Related
 
-- [Investor lifecycle](investor-lifecycle.md) - Processing redemptions
-- [Pricing and NAV](pricing-and-nav.md) - Calculating redemption payouts
-- [Access and permissions](access-and-permissions.md) - Setting up On/Off-Ramp Managers
+- [Investor Management](investor-management.md) - Processing redemptions
+- [Token Management](token-management.md) - Calculating redemption payouts

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# Pricing and NAV
+# Token management
 
 How share pricing works in Centrifuge and why it matters for your investors.
 
@@ -27,9 +27,9 @@ Unlike traditional funds where you hold "units," Centrifuge uses **price-accruin
 
 **Price per share** is calculated automatically:
 
-```
-Price per Share = Total NAV / Total Share Supply
-```
+$$
+\text{Price per Share} = \frac{\text{Total NAV}}{\text{Total Share Supply}}
+$$
 
 When you update NAV, the system recalculates the price. This new price is used for all subsequent investments and redemptions.
 
@@ -62,11 +62,13 @@ Update frequency depends on your underlying assets:
    - Review the price change percentage
    - Submit transaction
 
+<img src="/assets/images/nav_update.png" alt="Update NAV modal" style={{maxWidth: '500px'}} />
+
 3. **Wait for propagation**
    - Hub chain (Ethereum) updates immediately
    - Spoke chains (Base, Arbitrum, etc.) update within ~30 minutes
 
-![NAV Overview](/assets/images/nav_overview.png)
+<img src="/assets/images/nav_overview.png" alt="NAV overview" style={{maxWidth: '600px'}} />
 
 ## Multi-chain pricing
 
@@ -82,27 +84,15 @@ This ensures fair, consistent pricing across your entire investor base.
 
 ### Investment flow
 
-```
-Investor deposits 10,000 USDC
-         ↓
-You update NAV → Price is now $1.05
-         ↓
-You approve and issue shares
-         ↓
-Investor receives: 10,000 / 1.05 = 9,523 shares
-```
+![Investment flow](/assets/images/investment-flow.svg)
+
+Investor receives: 10,000 / 1.05 = **9,523 shares**
 
 ### Redemption flow
 
-```
-Investor redeems 5,000 shares
-         ↓
-You update NAV → Price is now $1.10
-         ↓
-You approve and revoke shares
-         ↓
-Investor receives: 5,000 × 1.10 = 5,500 USDC
-```
+![Redemption flow](/assets/images/redemption-flow.svg)
+
+Investor receives: 5,000 × 1.10 = **5,500 USDC**
 
 ## Token types and pricing behavior
 
@@ -120,13 +110,15 @@ Investor receives: 5,000 × 1.10 = 5,500 USDC
 
 Your token type is set at pool creation.
 
+<img src="/assets/images/update_token.png" alt="Token settings" style={{maxWidth: '500px'}} />
+
 ## Best practices
 
 ### Before updating
 
 - [ ] Verify your NAV calculation is accurate
 - [ ] Check for any pending orders that will process at the new price
-- [ ] Review the price change—large swings may need explanation to investors
+- [ ] Review the price change - large swings may need explanation to investors
 
 ### Consistency
 
@@ -141,7 +133,7 @@ Your token type is set at pool creation.
 
 ## Common scenarios
 
-### Price dropped—should I still update?
+### Price dropped - should I still update?
 
 Yes. Accurate pricing protects both you and your investors. Delaying updates to hide losses creates bigger problems later.
 
@@ -159,6 +151,5 @@ Orders are processed at the price **when you issue/revoke shares**, not when the
 
 ## Related
 
-- [Investor lifecycle](investor-lifecycle.md) - How pricing affects investments and redemptions
-- [Managing tokens](managing-tokens.md) - Token configuration and restrictions
-- [Getting started](getting-started.md) - Setting initial NAV
+- [Investor Management](investor-management.md) - How pricing affects investments and redemptions
+- [Offering Creation](offering-creation.md) - Setting initial NAV
