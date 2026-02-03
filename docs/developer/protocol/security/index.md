@@ -5,10 +5,10 @@ title: Security
 
 # Security
 
-Centrifuge has best-in-class security process, with highlights including
-* 24 security reviews to date for the Centrifuge protocol.
+Centrifuge has best-in-class security process:
+* 24 security reviews to date for the Centrifuge protocol, including tier-1 audit firms Spearbit and Blackthorn.
 * Launched on mainnet in 2019, 0 exploits.
-* Extensive invariant test suite.
+* $250.000 bug bounty program live.
 
 The protocol codebase is fully immutable, and any emergency functions are locked behind a 48-hour timelock.
 
@@ -59,6 +59,8 @@ Centrifuge runs an active bug bounty program with a $250,000 maximum reward, ava
 The protocol is controlled by the Root contract, which has access on all other contracts. The Root contract enforces a 48-hour delay for any upgrades and configuratino changes.
 
 Each deployment has a Guardian role, who is authorized on the Root contract. The Guardian can pause in emergencies, schedule upgrades, and set up adapters to new networks.
+
+Every transaction is verified by third-party signers from [Cantina](https://cantina.xyz/solutions/multisig-security).
 
 | Network          | Guardian |
 |------------------|----------|
