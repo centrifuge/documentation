@@ -32,6 +32,7 @@ Bhaji Illuminati, Lucas Vogelsang, Kevin Chan, Nick Cherney, Glenn Kennedy, Laur
 Centrifuge Foundation's board ensures diverse expertise in finance, tech, and governance:
 
 - Bhaji Illuminati — CEO & Co-Founder of Centrifuge Labs; expertise in scaling organisations and go-to-market strategies.
+- Lucas Vogelsang — Co-Founder of Centrifuge; led engineering at DeinDeal and Taulia.
 - Kevin Chan — Co-founder at Grove Labs; focuses on RWA adoption; previously at BlockTower and Deloitte.
 - Nick Cherney — Head of Innovation at Janus Henderson; ETF expert from VelocityShares and Barclays.
 - Glenn Kennedy — Founder of Leeward Management, advises on governance  for Cayman foundations.
