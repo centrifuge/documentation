@@ -9,11 +9,11 @@ contributors:
 
 This guide explains how to invest in and redeem from Centrifuge vaults, using both synchronous and asynchronous vault types. We’ll walk through:
 
-* How to deposit and redeem in a synchronous deposit vault (e.g., `deJTRSY` for T-bills).
-* How to interact with an asynchronous vault (e.g., `JTRSY`), which operates in two distinct phases for deposits and redemptions.
+* How to deposit and redeem in a synchronous deposit vault.
+* How to interact with an asynchronous vault, which operates in two distinct phases for deposits and redemptions.
 * How to query the share token price using the price oracle.
 
-## Synchronous deposit vaults (e.g., `deJTRSY`)
+## Synchronous deposit vaults
 
 Synchronous vaults process deposits immediately within a single transaction, and processes redemptions asynchronously.
 
@@ -62,7 +62,7 @@ vault.withdraw(vault.maxWithdraw(user), receiver, user);
 * `vault.maxWithdraw(user)` computes the maximum amount of assets that can now be withdrawn.
 * `receiver`: Address to receive the underlying asset (e.g., USDC).
 
-## Asynchronous vaults (e.g., `JTRSY`)
+## Asynchronous vaults
 
 Asynchronous vaults batch and process deposits at set intervals. Deposits and withdrawals are split into pending and claimable phases.
 
