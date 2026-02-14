@@ -20,7 +20,7 @@ into a single, Ethereum-native ERC-20 token: CFG. The migration built on [CP 141
 
 - [0xcccCCCcCCC33D538DBC2EE4fEab0a7A1FF4e8A94](https://etherscan.io/address/0xcccccccccc33d538dbc2ee4feab0a7a1ff4e8a94)
 
-## Migration Overview
+### Migration Overview
 
 The V3 CFG migration took place between **May 20, 2025 - December 15, 2025**. As part of this migration:
 
@@ -29,7 +29,7 @@ The V3 CFG migration took place between **May 20, 2025 - December 15, 2025**. As
 
 For more details, see the [Token Migration](https://docs.centrifuge.io/getting-started/token-summary/token-migration/) docs.
 
-# CFG Governance Updates
+## CFG Governance Updates
 
 Following the V3 protocol and token migrations initiatives, [CP 171](https://github.com/centrifuge/cps/blob/main/cps/cp171.md) was approved by the Centrifuge DAO on November 3, 2025. Key outcomes of this proposal include:
 
@@ -43,9 +43,9 @@ These updates to the CFG governance structure eliminate execution bottlenecks an
 
 As part of CNF’s commitment to transparency, progress and results will be reported publicly through [centrifuge.foundation](https://www.centrifuge.foundation/) and Centrifuge’s official social channels. For more details, see [Centrifuge Governance](https://docs.centrifuge.io/getting-started/cfg-governance/).
 
-# CFG Tokenomics
+## CFG Tokenomics
 
-## Token Supply
+### Token Supply
 
 As of January 2026, the total supply of CFG is **691,800,000** tokens. This includes 115,000,000 tokens minted as part of CP 149.
 
