@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /search/
 
 Sitemap: https://docs.centrifuge.io/sitemap.xml
