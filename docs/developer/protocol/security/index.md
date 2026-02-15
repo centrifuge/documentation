@@ -58,7 +58,7 @@ Centrifuge runs an active bug bounty program with a $250,000 maximum reward, ava
 
 The protocol is controlled by the Root contract, which has access on all other contracts. The Root contract enforces a 48-hour delay for any upgrades and configuratino changes.
 
-Each deployment has a Guardian role, who is authorized on the Root contract. The Guardian can pause in emergencies, schedule upgrades, and set up adapters to new networks.
+Each deployment has a Guardian role, who is authorized on the Root contract. The Guardian can pause in emergencies, schedule upgrades, and set up adapters to new networks. For a detailed technical breakdown of how pausing, upgrades, and access control work at the contract level, see [Pause & Upgrade Mechanisms](./pause-and-upgrade).
 
 Every transaction is verified by third-party signers from [Cantina](https://cantina.xyz/solutions/multisig-security).
 
