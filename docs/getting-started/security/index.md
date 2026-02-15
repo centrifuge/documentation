@@ -38,11 +38,12 @@ All Centrifuge web traffic is proxied through Cloudflare, providing layered prot
 * **Web application firewall**: Cloudflare's managed WAF is active, including the OWASP Core Ruleset, exposed credentials checks, and DDoS L7 mitigation. Rate limiting is configured to throttle abusive traffic patterns.
 * **Security headers**: Strict Content Security Policy (CSP), Permissions-Policy, Referrer-Policy, and `X-Content-Type-Options: nosniff` are enforced across all applications. Page Shield monitors client-side scripts for tampering.
 * **Workers**: Production traffic served by Cloudflare Workers operates in fail-closed mode — if a Worker hits its limits, the request is rejected rather than bypassing security controls.
-* **Account access**: Two-factor authentication is enforced for all Cloudflare account users.
+* **Account access**: hardware mandatory Two-factor authentication is enforced for all Cloudflare account users
 
 ### Continuous Security Monitoring
 
-Centrifuge uses [Aikido Security](https://www.aikido.dev/) for automated, real-time monitoring across code and infrastructure. Scans run daily and cover:
+Centrifuge uses [Aikido Security](https://www.aikido.dev/) for automated, real-time monitoring across code and infrastructure. 
+Scans cover:
 
 * **Code repositories**: Static application security testing (SAST) and source code scanning for exposed secrets.
 * **Open-source dependencies**: Vulnerability detection and license compliance checks across all packages.
@@ -70,16 +71,17 @@ The Centrifuge team maintains production-grade security standards across develop
 * All team members run endpoint firewalls — Little Snitch or LuLu — configured to company baselines, blocking unauthorized outbound network connections.
 * Credentials are managed through 1Password. Passwords are never shared or reused across services.
 * Full-disk encryption (FileVault) and automatic screen lock are enforced on all devices.
-* The team completes regular security training, including phishing awareness exercises.
+* The team completes regular security trainings, including phishing awareness exercises.
+* The Centrifuge security team performs regular controlled attacks against core contributors (phising, smithing, social engineering, etc.) and launches monthly easy-to-digest trainings for all employees.
+* The core team completed a third-party operational security review with [OPSEK](https://www.opsek.io/) in 2025.
 
 ### Operational Security
 
-* Administrative accounts are separated from day-to-day accounts. No single person holds all keys to any critical system.
-* All system access follows the principle of least privilege, with regular access reviews and credential rotation.
-* The core team has completed a third-party operational security review with [OPSEK](https://www.opsek.io/).
+* Administrative accounts are separated from day-to-day accounts and have stricter security policies. No single person holds all keys to any critical system.
+* All system access follows the principle of least privilege, with quarterly access reviews and credential rotation.
 * All code changes require peer review before merge. The development pipeline includes unit, integration, fuzz, and invariant testing.
 
-## Reporting Security Issues
+## Useful links
 
 * **Responsible disclosure**: Report security vulnerabilities to [security@centrifuge.io](mailto:security@centrifuge.io). Allow reasonable time for assessment and remediation before public disclosure.
 * **Bug bounty**: Centrifuge runs an active bug bounty program with a $250,000 maximum reward on [Cantina](https://cantina.xyz/bounties/6cc9d51a-ac1e-4385-a88a-a3924e40c00e).
