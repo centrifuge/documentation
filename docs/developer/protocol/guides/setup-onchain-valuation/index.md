@@ -8,6 +8,8 @@ category: subpage
 
 This guide walks through how to set up fully onchain NAV calculations and share pricing for a pool using the Centrifuge Protocol's [onchain accounting](/developer/protocol/features/onchain-accounting) system. By the end of this guide, your pool will automatically compute the Net Asset Value based on onchain holdings and update the share price on the Hub.
 
+![](../../features/onchain-accounting/images/onchain-accounting.png)
+
 This guide uses a pool with two asset types as an example:
 
 * **USDC**: An ERC20 stablecoin (priced 1:1 to USD)
@@ -49,7 +51,7 @@ hub.updateManager(poolId, address(simplePriceManager), true);
 Enable the [`QueueManager`](https://github.com/centrifuge/protocol/blob/main/src/managers/spoke/QueueManager.sol) for the pool. The Queue Manager allows permissionless syncing of queued asset and share updates to the Hub, which triggers NAV recomputation through the snapshot hook.
 
 ```solidity
-hub.updateManager(poolId, address(queueManager), true);
+hub.updateBalanceSheetManager(poolId, address(queueManager), true);
 ```
 
 ## Step 4: Initialize the accounting network
