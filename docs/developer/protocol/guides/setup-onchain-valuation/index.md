@@ -8,24 +8,6 @@ category: subpage
 
 This guide walks through how to set up fully onchain NAV calculations and share pricing for a pool using the Centrifuge Protocol's [onchain accounting](/developer/protocol/features/onchain-accounting) system. By the end of this guide, your pool will automatically compute the Net Asset Value based on onchain holdings and update the share price on the Hub.
 
-## Overview
-
-To set up onchain valuation, you will:
-
-1. Deposit assets into the pool's balance sheet
-2. Enable the NAV Manager and Simple Price Manager as Hub Managers
-3. Initialize the accounting network and holdings with valuation logic
-4. Connect the NAV Manager as a snapshot hook for automatic computation
-5. Set the Simple Price Manager as the NAV hook
-
-## Prerequisites
-
-Before starting, ensure you have:
-
-* A pool already created on the Hub chain (see [Create a pool](/developer/protocol/guides/create-a-pool))
-* Share classes added and deployed (see [Create a pool - Adding share classes](/developer/protocol/guides/create-a-pool#adding-share-classes))
-* A Balance Sheet Manager configured (see [Manage assets](/developer/protocol/guides/manage-assets))
-
 This guide uses a pool with two asset types as an example:
 
 * **USDC**: An ERC20 stablecoin (priced 1:1 to USD)
@@ -50,7 +32,7 @@ balanceSheet.deposit(poolId, scId, address(loanNFT), tokenId, 1);
 ```
 
 :::info[Token support]
-The balance sheet supports both ERC20 and ERC6909 tokens. Use token type `0` for ERC20 tokens and a non-zero `tokenId` for ERC6909 tokens.
+The balance sheet supports both ERC20 and ERC6909 tokens. Use token type `0` for ERC20 tokens and a non-zero `tokenId` for ERC6909 tokens. ERC721 NFTs can be supported by wrapping into ERC6909.
 :::
 
 ## Step 2: Enable Hub Managers
@@ -62,7 +44,15 @@ hub.updateManager(poolId, address(navManager), true);
 hub.updateManager(poolId, address(simplePriceManager), true);
 ```
 
-## Step 3: Initialize the accounting network
+## Step 3: Enable the Queue Manager
+
+Enable the [`QueueManager`](https://github.com/centrifuge/protocol/blob/main/src/managers/spoke/QueueManager.sol) for the pool. The Queue Manager allows permissionless syncing of queued asset and share updates to the Hub, which triggers NAV recomputation through the snapshot hook.
+
+```solidity
+hub.updateManager(poolId, address(queueManager), true);
+```
+
+## Step 4: Initialize the accounting network
 
 Initialize the NAV Manager for the network where the pool's assets are held. This sets up the double-entry bookkeeping accounts needed for NAV computation.
 
@@ -72,7 +62,7 @@ navManager.initializeNetwork(poolId, scId, centrifugeId);
 
 * `centrifugeId`: The network identifier where the assets are deposited
 
-## Step 4: Initialize holdings with valuation
+## Step 5: Initialize holdings with valuation
 
 Each holding needs a valuation strategy that determines how the asset is priced. Initialize each holding with the appropriate valuation contract.
 
@@ -96,39 +86,38 @@ navManager.initializeHolding(poolId, scId, loanNFTAssetId, address(loanValuation
 
 ### Implementing IValuation
 
-Your custom valuation contract must implement the `IValuation` interface. For a loan portfolio, the contract should return the total accrued value of all underlying loans:
-
-```solidity
-interface IValuation {
-    function currentValue(PoolId poolId, ShareClassId scId, AssetId assetId)
-        external
-        view
-        returns (uint128 value);
-}
-```
+Your custom valuation contract must implement the [`IValuation`](https://github.com/centrifuge/protocol/blob/main/src/core/hub/interfaces/IValuation.sol) interface, which has two functions — `getPrice` and `getQuote`. For a loan portfolio, the contract should return the total accrued value of all underlying loans:
 
 ```solidity
 contract LoanValuation is IValuation {
-    function currentValue(PoolId poolId, ShareClassId scId, AssetId assetId)
+    function getPrice(PoolId poolId, ShareClassId scId, AssetId assetId)
         external
         view
-        returns (uint128 value)
+        returns (D18)
     {
-        // Calculate and return the total accrued value of all loans
+        // Return the price of the asset as a fixed point number with 18 decimals
+    }
+
+    function getQuote(PoolId poolId, ShareClassId scId, AssetId assetId, uint128 baseAmount)
+        external
+        view
+        returns (uint128 quoteAmount)
+    {
+        // Calculate and return the value of baseAmount of the asset
         // in the pool's denomination currency
     }
 }
 ```
 
-## Step 5: Set up the snapshot hook
+## Step 6: Set up the snapshot hook
 
-Connect the NAV Manager as a snapshot hook on the Hub. This ensures that whenever the balance sheet state is updated (e.g. through `submitQueuedAssets` or `submitQueuedShares`), the NAV Manager is automatically triggered to recompute the NAV.
+Connect the NAV Manager as a snapshot hook on the Hub. This ensures that whenever the balance sheet state is updated (e.g. through `submitQueuedAssets`, `submitQueuedShares`, or `updateHoldingValue`), the NAV Manager is automatically triggered to recompute the NAV.
 
 ```solidity
 hub.setSnapshotHook(poolId, address(navManager));
 ```
 
-## Step 6: Set the NAV hook
+## Step 7: Set the NAV hook
 
 Set the Simple Price Manager as the NAV hook on the NAV Manager. When the NAV Manager recomputes the NAV (triggered by the snapshot hook), it forwards the result to the Simple Price Manager, which then calculates the share price as `NAV / total issuance` and calls `hub.updateSharePrice`.
 
