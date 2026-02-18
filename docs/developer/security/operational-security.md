@@ -1,10 +1,10 @@
 ---
-id: internal-security-practices
-title: Internal security practices
+id: operational-security
+title: Operational security
 sidebar_position: 5
 ---
 
-# Internal security practices
+# Operational security
 
 The Centrifuge team maintains production-grade security standards across development and operational workflows.
 
