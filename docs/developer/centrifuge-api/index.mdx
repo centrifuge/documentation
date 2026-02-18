@@ -130,36 +130,37 @@ A vault is the entry point for investors on a specific chain. Each vault connect
 
 </GraphQLExplorer>
 
-## Holdings
+## Holding escrows
 
 <GraphQLExplorer
-  query={`query GetHoldingsByPool {
-  holdings(
+  query={`query GetHoldingEscrowsByPool {
+  holdingEscrows(
     where: { poolId: "281474976710659" }
-    limit: 10
+    limit: 5
   ) {
     items {
       centrifugeId
-      poolId
-      tokenId
-      assetId
-      assetQuantity
-      totalValue
-      valuation
-      isLiability
+      assetAmount
+      assetPrice
+      asset {
+        name
+        symbol
+        decimals
+        address
+      }
     }
   }
 }`}
 >
 
-Holdings track pool-level asset positions, providing a unified view of what each pool owns. Each holding represents a specific asset position with its quantity and valuation.
+Holding escrows track the custodial asset positions for each pool on spoke chains. Each escrow holds a specific asset amount and price, linked to the on-chain asset contract.
 
 | Filter | Type | Description |
 |--------|------|-------------|
-| `poolId` | `BigInt` | Pool the holding belongs to |
+| `poolId` | `BigInt` | Pool the escrow belongs to |
 | `tokenId` | `String` | Share class token ID |
-| `isLiability` | `Boolean` | Whether the holding is a liability |
 | `assetId` | `BigInt` | Asset identifier |
+| `assetAddress` | `String` | Asset contract address |
 
 </GraphQLExplorer>
 
