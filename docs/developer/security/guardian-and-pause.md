@@ -1,10 +1,25 @@
 ---
-id: pause-and-upgrade
-title: Pause & Upgrade Mechanisms
-category: subpage
+id: guardian-and-pause
+title: Guardian & pause mechanism
+sidebar_position: 3
 ---
 
-# Pause & Upgrade Mechanisms
+# Guardian & pause mechanism
+
+The protocol is controlled by the Root contract, which has access on all other contracts. The Root contract enforces a 48-hour delay for any upgrades and configuratino changes.
+
+Each deployment has a Guardian role, who is authorized on the Root contract. The Guardian can pause in emergencies, schedule upgrades, and set up adapters to new networks.
+
+Every transaction is verified by third-party signers from [Cantina](https://cantina.xyz/solutions/multisig-security).
+
+| Network          | Guardian |
+|------------------|----------|
+| Ethereum Mainnet | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=eth:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6) |
+| Base             | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=base:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
+| Arbitrum         | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/transactions/history?safe=arb1:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
+| Plume            | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://safe.onchainden.com/home?safe=plume:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
+| Avalanche        | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=avax:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
+| BNB Smart Chain  | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=bnb:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6) |
 
 ## Introduction
 
@@ -12,7 +27,7 @@ At the protocol level, Centrifuge V3 provides a layered safety architecture comb
 
 The protocol separates emergency controls from operational management through two guardian contracts — `ProtocolGuardian` and `OpsGuardian` — each backed by independent multisig Safes. Pausing is instantaneous and requires no timelock, while privilege escalation (granting new ward permissions) always goes through a time-delayed scheduling process. This ensures the community has visibility into proposed upgrades before they take effect.
 
-## Technical Architecture
+## Technical architecture
 
 The pause and upgrade system is built on the **ward pattern** — a role-based access control framework inherited by every protocol contract. The `Root` contract sits at the top of the permission hierarchy, holding ward (admin) access on all deployed contracts. Guardian contracts mediate between the multisig Safes and Root, enforcing role separation and access policies.
 
@@ -58,11 +73,11 @@ The pause and upgrade system is built on the **ward pattern** — a role-based a
 
 **Figure 1.** Summary of the pause and upgrade access control hierarchy.
 
-## Pause Mechanism
+## Pause mechanism
 
 The pause functionality is a two-tier system: a **global protocol pause** and **granular per-chain/per-pool outgoing blocking**.
 
-### Global Pause
+### Global pause
 
 When activated, the global pause sets a boolean flag on the `Root` contract. The `Gateway` — the single routing contract for all cross-chain messages — checks this flag via a `pauseable` modifier before processing any message.
 
@@ -92,7 +107,7 @@ The `ProtocolGuardian` exposes two levels of authorization for pause:
 - **Any individual Safe owner** can call `pause()` instantly — this allows the fastest possible response time in an emergency, since a single signer from the multisig can halt cross-chain messaging without waiting for quorum.
 - **Only the full Safe multisig** can call `unpause()` — this prevents a single compromised signer from unilaterally resuming the protocol after a pause.
 
-### Outgoing Message Blocking
+### Outgoing message blocking
 
 In addition to the global pause, the `Gateway` supports **granular blocking** of outgoing messages on a per-chain, per-pool basis:
 
@@ -107,15 +122,15 @@ This allows the protocol to:
 
 The `ProtocolGuardian` uses a special `GLOBAL_POOL` (pool ID 0) to block **all** outgoing messages to a given chain, while pool managers can block outgoing messages for their specific pools.
 
-## Upgrade Process
+## Upgrade process
 
 The upgrade process uses a **spell pattern** combined with a **timelock**, ensuring all privilege escalation is transparent and auditable.
 
-### Spell Pattern
+### Spell pattern
 
 A "spell" is a single-purpose smart contract that encodes a set of admin actions. Rather than granting permanent elevated permissions, the protocol temporarily grants a spell ward access on `Root`, the spell executes its encoded actions, and then the access can be revoked.
 
-### Timelocked Scheduling
+### Timelocked scheduling
 
 All new ward permissions on `Root` must go through a time-delayed scheduling process:
 
@@ -132,7 +147,7 @@ scheduleRely(target)  →  [wait for delay]  →  executeScheduledRely(target)
 
 The maximum configurable delay is **4 weeks**, preventing a misconfiguration that could lock the protocol indefinitely.
 
-### Cross-Chain Upgrades
+### Cross-chain upgrades
 
 For spoke chains, the `ProtocolGuardian` can coordinate upgrades cross-chain via dedicated messaging:
 
@@ -141,7 +156,7 @@ For spoke chains, the `ProtocolGuardian` can coordinate upgrades cross-chain via
 
 This ensures the same timelock and transparency guarantees apply across all chains in the deployment.
 
-### Key Design Properties
+### Key design properties
 
 | Property | Mechanism |
 |---|---|
@@ -152,9 +167,9 @@ This ensures the same timelock and transparency guarantees apply across all chai
 | **No permanent escalation** | Spells are purpose-built contracts; ward access can be revoked after execution |
 | **Public execution** | Anyone can call `executeScheduledRely()` once the delay has passed |
 
-## Access Control Framework
+## Access control framework
 
-### Ward Pattern
+### Ward pattern
 
 Every protocol contract inherits the `Auth` mixin, which implements the ward pattern:
 
@@ -172,7 +187,7 @@ function deny(address user) public auth;  // Revoke ward access
 
 Root is the top-level ward on all contracts and can manage wards on any contract through `relyContract()` and `denyContract()`.
 
-### Guardian Roles
+### Guardian roles
 
 | Guardian | Controlled By | Responsibilities | Pause Authority |
 |---|---|---|---|
@@ -181,7 +196,7 @@ Root is the top-level ward on all contracts and can manage wards on any contract
 
 On **mainnet**, both Safes are Gnosis Safe multisigs. On **testnet**, they may be EOAs for operational convenience.
 
-### ProtocolGuardian Access Control
+### ProtocolGuardian access control
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -202,9 +217,9 @@ On **mainnet**, both Safes are Gnosis Safe multisigs. On **testnet**, they may b
 
 The asymmetric access for `pause()` (any owner) vs `unpause()` (full multisig) is an intentional design decision: pausing should be as fast as possible during an emergency, while unpausing requires the full governance quorum to prevent premature resumption.
 
-## Recovery Mechanisms
+## Recovery mechanisms
 
-### Token Recovery
+### Token recovery
 
 The `TokenRecoverer` contract enables authorized recovery of tokens accidentally sent to protocol contracts. It uses an atomic **grant → execute → revoke** pattern:
 
@@ -214,7 +229,7 @@ The `TokenRecoverer` contract enables authorized recovery of tokens accidentally
 
 All three steps execute in a single transaction, ensuring no lingering permissions. The `ProtocolGuardian` can also trigger cross-chain token recovery via `recoverTokens()`.
 
-### Recovery Adapters
+### Recovery adapters
 
 The multi-adapter messaging system supports **recovery adapters** — special adapters that allow authenticated parties to manually inject messages into the protocol when normal cross-chain bridges fail.
 
@@ -225,7 +240,7 @@ The `MultiAdapter` uses a quorum-based voting system with up to 8 adapters per r
 - If Axelar fails: RecoveryAdapter can inject the missing vote to reach threshold.
 - Recovery adapter votes don't accumulate negatively, so they remain available for future use.
 
-### Failed Message Handling
+### Failed message handling
 
 The `Gateway` tracks messages that fail during processing in a `failedMessages` mapping. These can be retried via `Gateway.retry()` once the underlying issue is resolved (assuming the protocol is not paused).
 
