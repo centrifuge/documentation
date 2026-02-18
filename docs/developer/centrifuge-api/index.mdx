@@ -53,7 +53,7 @@ A pool is the top-level entity that groups together share classes (tokens), vaul
 
 | Filter | Type | Description |
 |--------|------|-------------|
-| `id` | `String` | Pool ID |
+| `id` | `BigInt` | Pool ID |
 | `centrifugeId` | `String` | Centrifuge-specific pool identifier |
 | `name` | `String` | Pool name (supports `_contains`, `_starts_with`) |
 | `isActive` | `Boolean` | Whether the pool is currently active |
@@ -110,7 +110,7 @@ A token (or share class) represents ownership in a pool. TVL per token can be ca
       isActive
       status
       blockchain {
-        chainId
+        centrifugeId
         name
       }
     }
@@ -123,6 +123,7 @@ A vault is the entry point for investors on a specific chain. Each vault connect
 | Filter | Type | Description |
 |--------|------|-------------|
 | `id` | `String` | Vault contract address |
+| `centrifugeId` | `String` | Centrifuge chain identifier |
 | `poolId` | `BigInt` | Pool the vault belongs to |
 | `tokenId` | `String` | Share class token ID |
 | `isActive` | `Boolean` | Whether the vault is currently active |
@@ -158,6 +159,7 @@ Holding escrows track the custodial asset positions for each pool on spoke chain
 | Filter | Type | Description |
 |--------|------|-------------|
 | `poolId` | `BigInt` | Pool the escrow belongs to |
+| `centrifugeId` | `String` | Centrifuge chain identifier |
 | `tokenId` | `String` | Share class token ID |
 | `assetId` | `BigInt` | Asset identifier |
 | `assetAddress` | `String` | Asset contract address |
@@ -178,6 +180,7 @@ Holding escrows track the custodial asset positions for each pool on spoke chain
   ) {
     items {
       txHash
+      centrifugeId
       type
       account
       poolId
@@ -187,7 +190,7 @@ Holding escrows track the custodial asset positions for each pool on spoke chain
       tokenPrice
       createdAt
       blockchain {
-        chainId
+        centrifugeId
         name
       }
     }
@@ -200,9 +203,50 @@ Investor transactions record every invest, redeem, and claim action executed by 
 | Filter | Type | Description |
 |--------|------|-------------|
 | `account` | `String` | Investor wallet address |
+| `centrifugeId` | `String` | Centrifuge chain identifier |
 | `type` | `InvestorTransactionType` | Transaction type (e.g. `DEPOSIT_REQUEST_UPDATED`, `REDEEM_CLAIMED`, `TRANSFER_IN`) |
 | `poolId` | `BigInt` | Pool ID |
 | `tokenId` | `String` | Share class token ID |
+
+</GraphQLExplorer>
+
+## Investor positions
+
+<GraphQLExplorer
+  query={`query GetPositionsByInvestor {
+  tokenInstancePositions(
+    where: {
+      accountAddress: "0xeaafba6ae4f1c428546706d4b3b6a72fda4bac98"
+      balance_gt: "0"
+    }
+  ) {
+    items {
+      tokenId
+      centrifugeId
+      accountAddress
+      balance
+      isFrozen
+      tokenInstance {
+        address
+        blockchain {
+          centrifugeId
+          name
+        }
+      }
+    }
+  }
+}`}
+>
+
+Token instance positions represent an investor's share class token balance on a specific chain. Query by account address to see all holdings across networks.
+
+| Filter | Type | Description |
+|--------|------|-------------|
+| `accountAddress` | `String` | Investor wallet address |
+| `centrifugeId` | `String` | Centrifuge chain identifier |
+| `tokenId` | `String` | Share class token ID |
+| `isFrozen` | `Boolean` | Whether the position is frozen |
+| `balance` | `BigInt` | Token balance (supports `_gt`, `_lt`) |
 
 </GraphQLExplorer>
 
