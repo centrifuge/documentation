@@ -28,7 +28,7 @@ Node.js v20 (see .nvmrc). Minimum v18.
 - Math support via remark-math + rehype-katex
 - Solidity syntax highlighting enabled in Prism
 - Algolia search integration
-- Main branch: `develop`
+- Main branch: `main`
 
 ## Documentation pages
 
