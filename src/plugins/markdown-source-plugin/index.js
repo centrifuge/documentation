@@ -1,10 +1,19 @@
 const fs = require("fs");
 const path = require("path");
 
+function assertWithinBase(resolvedPath, baseDir) {
+  const normalizedBase = path.resolve(baseDir) + path.sep;
+  const normalizedPath = path.resolve(resolvedPath);
+  if (!normalizedPath.startsWith(normalizedBase) && normalizedPath !== path.resolve(baseDir)) {
+    throw new Error(`Path traversal detected: ${resolvedPath} is outside ${baseDir}`);
+  }
+}
+
 function findMarkdownFiles(dir, fileList = [], baseDir = dir) {
   const files = fs.readdirSync(dir);
   files.forEach((file) => {
     const filePath = path.join(dir, file);
+    assertWithinBase(filePath, baseDir);
     const stat = fs.statSync(filePath);
     if (stat.isDirectory()) {
       findMarkdownFiles(filePath, fileList, baseDir);
@@ -66,14 +75,18 @@ function cleanMarkdownForDisplay(content, filepath) {
   return content;
 }
 
-function copyDirRecursive(src, dest) {
+function copyDirRecursive(src, dest, baseSrc, baseDest) {
+  baseSrc = baseSrc || src;
+  baseDest = baseDest || dest;
   mkdirp(dest);
   const entries = fs.readdirSync(src, { withFileTypes: true });
   for (const entry of entries) {
     const srcPath = path.join(src, entry.name);
     const destPath = path.join(dest, entry.name);
+    assertWithinBase(srcPath, baseSrc);
+    assertWithinBase(destPath, baseDest);
     if (entry.isDirectory()) {
-      copyDirRecursive(srcPath, destPath);
+      copyDirRecursive(srcPath, destPath, baseSrc, baseDest);
     } else {
       fs.copyFileSync(srcPath, destPath);
     }
@@ -136,6 +149,8 @@ module.exports = function markdownSourcePlugin(context) {
         const destPath = path.join(outDir, destFile);
 
         try {
+          assertWithinBase(sourcePath, docsDir);
+          assertWithinBase(destPath, outDir);
           mkdirp(path.dirname(destPath));
           const content = fs.readFileSync(sourcePath, "utf8");
           const cleaned = cleanMarkdownForDisplay(content, mdFile);
