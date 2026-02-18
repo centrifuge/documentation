@@ -1,0 +1,382 @@
+---
+id: centrifuge-api
+title: Centrifuge API
+contributors: <Filippo Fontana:filippo@embriotech.ch>
+hide_table_of_contents: true
+---
+
+import GraphQLExplorer from '@site/src/components/GraphQLExplorer';
+
+# Centrifuge API
+
+The Centrifuge API is a public, read-only GraphQL endpoint for querying on-chain data from the Centrifuge protocol across multiple networks. Send any GraphQL-compliant `POST` request to [`https://api.centrifuge.io`](https://api.centrifuge.io). No authentication required. For interactive exploration, open the [GraphiQL UI](https://api.centrifuge.io) and use `Ctrl + Space` to trigger autocomplete.
+
+All queries accept these standard parameters:
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `limit` | `Int` | Max records to return (default 100, max 1000) |
+| `where` | `Filter` | Entity-specific filter criteria (see each section below) |
+| `orderBy` | `String` | Column to sort by (default: primary key) |
+| `orderDirection` | `String` | `"asc"` or `"desc"` (default: `"asc"`) |
+
+---
+
+## Pools
+
+<GraphQLExplorer
+  query={`query GetActivePools {
+  pools(
+    where: { isActive: true, name_not: null }
+    limit: 5
+  ) {
+    items {
+      id
+      name
+      centrifugeId
+      isActive
+      tokens {
+        items {
+          id
+          name
+          symbol
+          totalIssuance
+          tokenPrice
+        }
+      }
+    }
+  }
+}`}
+>
+
+A pool is the top-level entity that groups together share classes (tokens), vaults, and holdings across multiple networks. Each pool can issue several tokens, deploy vaults on different chains, and manage assets through a unified on-chain structure.
+
+| Filter | Type | Description |
+|--------|------|-------------|
+| `id` | `String` | Pool ID |
+| `centrifugeId` | `String` | Centrifuge-specific pool identifier |
+| `name` | `String` | Pool name (supports `_contains`, `_starts_with`) |
+| `isActive` | `Boolean` | Whether the pool is currently active |
+
+</GraphQLExplorer>
+
+## Tokens
+
+<GraphQLExplorer
+  query={`query GetTokenById {
+  tokens(
+    where: { id: "0x00010000000000060000000000000001" }
+  ) {
+    items {
+      id
+      name
+      totalIssuance
+      tokenPrice
+      pool {
+        asset {
+          decimals
+        }
+      }
+    }
+  }
+}`}
+>
+
+A token (or share class) represents ownership in a pool. TVL per token can be calculated as `totalIssuance * tokenPrice`, adjusted for `decimals`.
+
+| Filter | Type | Description |
+|--------|------|-------------|
+| `id` | `String` | Token address |
+| `poolId` | `String` | Pool the token belongs to |
+| `name` | `String` | Token name |
+| `symbol` | `String` | Token symbol |
+
+</GraphQLExplorer>
+
+## Vaults
+
+<GraphQLExplorer
+  query={`query GetVaultsByPool {
+  vaults(
+    where: { poolId: "4139607887" }
+    limit: 10
+  ) {
+    items {
+      id
+      chainId
+      poolId
+      tokenId
+      asset
+    }
+  }
+}`}
+>
+
+A vault is the entry point for investors on a specific chain. Each vault connects a pool's share class token to a deposit asset on a spoke chain, handling deposits, redemptions, and token conversions for that particular network.
+
+| Filter | Type | Description |
+|--------|------|-------------|
+| `id` | `String` | Vault contract address |
+| `poolId` | `String` | Pool the vault belongs to |
+| `chainId` | `Int` | Network chain ID |
+| `tokenId` | `String` | Share class token ID |
+
+</GraphQLExplorer>
+
+## Holdings
+
+<GraphQLExplorer
+  query={`query GetHoldingsByPool {
+  holdings(
+    where: { poolId: "4139607887" }
+    limit: 10
+  ) {
+    items {
+      id
+      poolId
+      accounts {
+        items {
+          id
+          amount
+          assetId
+        }
+      }
+    }
+  }
+}`}
+>
+
+Holdings track pool-level asset positions across different blockchains, providing a unified view of what each pool owns. Each holding contains accounts that represent specific asset positions.
+
+| Filter | Type | Description |
+|--------|------|-------------|
+| `poolId` | `String` | Pool the holding belongs to |
+
+</GraphQLExplorer>
+
+## Investor transactions
+
+<GraphQLExplorer
+  query={`query GetTransactionsByInvestor {
+  investorTransactions(
+    where: {
+      accountId: "0x1234567890abcdef1234567890abcdef12345678"
+      chainId: 1
+    }
+    limit: 5
+    orderBy: "timestamp"
+    orderDirection: "desc"
+  ) {
+    items {
+      id
+      type
+      accountId
+      chainId
+      tokenId
+      currencyAmount
+      tokenAmount
+      tokenPrice
+      timestamp
+    }
+  }
+}`}
+>
+
+Investor transactions record every invest, redeem, and claim action executed by investors in the protocol.
+
+| Filter | Type | Description |
+|--------|------|-------------|
+| `accountId` | `String` | Investor wallet address |
+| `chainId` | `Int` | Network chain ID |
+| `type` | `String` | Transaction type (e.g. `INVEST`, `REDEEM`, `CLAIM`) |
+| `tokenId` | `String` | Share class token ID |
+
+</GraphQLExplorer>
+
+## Snapshots
+
+<GraphQLExplorer
+  query={`{
+  tokenInstanceSnapshots(
+    orderBy: "timestamp"
+    orderDirection: "asc"
+    where: {
+      tokenId: "0x00010000000000060000000000000001"
+      trigger_starts_with: "ethereum"
+    }
+  ) {
+    items {
+      tokenId
+      triggerChainId
+      trigger
+      timestamp
+      totalIssuance
+      tokenPrice
+    }
+  }
+}`}
+>
+
+Snapshots capture entity state at specific points in time. Available for pools, tokens, token instances, and holdings. All snapshots share common fields: `timestamp`, `blockNumber`, `trigger`, `triggerTxHash`, and `triggerChainId`.
+
+| Entity | Description |
+|--------|-------------|
+| `PoolSnapshot` | Pool state at a point in time |
+| `TokenSnapshot` | Token details at a specific moment |
+| `TokenInstanceSnapshot` | Token instance status on a spoke chain |
+| `HoldingSnapshot` | Pool asset positions across chains |
+
+</GraphQLExplorer>
+
+---
+
+## Other entities
+
+Beyond the main entities above, the API exposes a full set of indexed resources:
+
+### Infrastructure
+
+| Entity | Description |
+|--------|-------------|
+| `Blockchain` | All blockchains the indexer is currently tracking |
+| `Deployment` | Protocol contracts and addresses deployed to a blockchain |
+
+### Protocol hub resources
+
+| Entity | Description |
+|--------|-------------|
+| `AssetRegistration` | Successful registration of an asset on a hub chain |
+| `HoldingAccount` | Specific asset position for a pool (amount + asset) |
+| `OnOffRampManager` | Cross-chain asset movement for pools |
+| `OfframpRelayer` | Authorized services that process withdrawal requests |
+| `OnRampAsset` | Token types investors can deposit for pool shares |
+| `OffRampAddress` | Pre-approved withdrawal destinations |
+| `Policy` | Merkle tree root representing allowed operations for a strategist |
+| `MerkleProofManager` | Enables strategists to execute multi-call operations on behalf of pools |
+
+### Protocol spoke resources
+
+| Entity | Description |
+|--------|-------------|
+| `Asset` | An asset on a spoke chain |
+| `TokenInstance` | Instance of a share class token on a spoke chain |
+| `Escrow` | Custodial wallet for pool assets on a spoke chain |
+
+### Cross-chain communication
+
+| Entity | Description |
+|--------|-------------|
+| `CrosschainPayload` | Data content sent from one blockchain to another |
+| `CrosschainMessage` | Structured communication between blockchains |
+| `Adapter` | Bridges that relay payloads between networks |
+| `AdapterParticipation` | Tracks adapter involvement in cross-chain transfers |
+
+### Transactional data
+
+| Entity | Description |
+|--------|-------------|
+| `OutstandingInvest` | Pending invest order awaiting fulfillment |
+| `OutstandingRedeem` | Pending redeem order awaiting fulfillment |
+| `EpochOutstandingInvest` | Aggregated outstanding invest orders (epoch-level) |
+| `EpochOutstandingRedeem` | Aggregated outstanding redeem orders (epoch-level) |
+| `InvestOrder` | Approved invest order (tracks approval to claim) |
+| `RedeemOrder` | Approved redeem order (tracks approval to claim) |
+| `EpochInvestOrder` | Approved invest order at epoch level |
+| `EpochRedeemOrder` | Approved redeem order at epoch level |
+| `TokenInstancePosition` | Investor position holding a share class token |
+
+### Actors and participants
+
+| Entity | Description |
+|--------|-------------|
+| `Account` | User-owned address (UOA) in the protocol |
+| `PoolManager` | Manager of a pool (hub or spoke) |
+| `WhitelistedInvestor` | Investor allowed to invest in a pool |
+
+---
+
+## Filtering, sorting, and pagination
+
+### Filters
+
+Use the `where` argument to filter records. Filter options are available for every column:
+
+| Filter suffix | Column types | Matches records where column... |
+|---------------|-------------|--------------------------------|
+| _(none)_ | All | equals the value |
+| `_not` | All | does not equal the value |
+| `_in` | Primitives, enums | is one of the values |
+| `_not_in` | Primitives, enums | is not one of the values |
+| `_gt` / `_lt` | Numeric | is greater / less than the value |
+| `_gte` / `_lte` | Numeric | is greater/less than or equal to the value |
+| `_contains` | String | contains the substring |
+| `_not_contains` | String | does not contain the substring |
+| `_starts_with` / `_ends_with` | String | starts / ends with the substring |
+| `_not_starts_with` / `_not_ends_with` | String | does not start / end with the substring |
+| `_has` | Lists | has the value as an element |
+| `_not_has` | Lists | does not have the value as an element |
+
+Compose filters using the `AND` and `OR` operators, which accept an array of filter objects.
+
+### Sorting
+
+Use `orderBy` and `orderDirection` to sort results:
+
+| Argument | Default | Options |
+|----------|---------|---------|
+| `orderBy` | Primary key | Any column name |
+| `orderDirection` | `"asc"` | `"asc"` or `"desc"` |
+
+### Pagination
+
+The API uses cursor-based pagination. For details, see the [Ponder.sh pagination docs](https://ponder.sh/docs/query/graphql#pagination).
+
+### Filter example
+
+<GraphQLExplorer
+  query={`{
+  tokenInstanceSnapshots(
+    orderBy: "timestamp"
+    orderDirection: "asc"
+    where: {
+      tokenId: "0x00010000000000060000000000000001"
+      trigger_starts_with: "ethereum"
+    }
+    limit: 5
+  ) {
+    items {
+      tokenId
+      trigger
+      timestamp
+      totalIssuance
+      tokenPrice
+    }
+  }
+}`}
+>
+
+This query combines filtering, sorting, and pagination: it fetches token instance snapshots for a specific token, filtered to Ethereum triggers, sorted chronologically.
+
+</GraphQLExplorer>
+
+---
+
+## Limits and performance
+
+| Limit | Value |
+|-------|-------|
+| Max page size | 1000 records per page |
+| Request timeout | 30 seconds |
+
+**Performance tips:**
+
+1. **Limit query depth**: each nested level adds a sequential database query. Keep queries to 2 levels deep or fewer.
+2. **Use pagination**: fetch records in smaller chunks with cursor-based pagination to reduce database load.
+
+## Supported networks
+
+See the [Deployments](/developer/protocol/deployments) page for the full list of supported networks and contract addresses.
+
+## Data freshness
+
+Data is typically available within 1–2 minutes of on-chain confirmation. Historical snapshots are maintained at daily intervals, with some entities also snapshotted on specific trigger events.
