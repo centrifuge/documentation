@@ -87,7 +87,7 @@ A token (or share class) represents ownership in a pool. TVL per token can be ca
 | Filter | Type | Description |
 |--------|------|-------------|
 | `id` | `String` | Token address |
-| `poolId` | `String` | Pool the token belongs to |
+| `poolId` | `BigInt` | Pool the token belongs to |
 | `name` | `String` | Token name |
 | `symbol` | `String` | Token symbol |
 
@@ -200,7 +200,7 @@ Investor transactions record every invest, redeem, and claim action executed by 
 | Filter | Type | Description |
 |--------|------|-------------|
 | `account` | `String` | Investor wallet address |
-| `type` | `InvestorTransactionType` | Transaction type (e.g. `INVEST`, `REDEEM`, `CLAIM`) |
+| `type` | `InvestorTransactionType` | Transaction type (e.g. `DEPOSIT_REQUEST_UPDATED`, `REDEEM_CLAIMED`, `TRANSFER_IN`) |
 | `poolId` | `BigInt` | Pool ID |
 | `tokenId` | `String` | Share class token ID |
 
@@ -238,6 +238,7 @@ Snapshots capture entity state at specific points in time. Available for pools, 
 | `TokenSnapshot` | Token details at a specific moment |
 | `TokenInstanceSnapshot` | Token instance status on a spoke chain |
 | `HoldingSnapshot` | Pool asset positions across chains |
+| `HoldingEscrowSnapshot` | Escrow asset amounts and prices over time |
 
 </GraphQLExplorer>
 
@@ -253,13 +254,15 @@ Beyond the main entities above, the API exposes a full set of indexed resources:
 |--------|-------------|
 | `Blockchain` | All blockchains the indexer is currently tracking |
 | `Deployment` | Protocol contracts and addresses deployed to a blockchain |
+| `PoolSpokeBlockchain` | Mapping of pools to their spoke chain deployments |
 
 ### Protocol hub resources
 
 | Entity | Description |
 |--------|-------------|
+| `Holding` | Pool-level asset position with quantity and valuation |
+| `HoldingAccount` | Categorized asset account for a pool (asset, equity, liability, etc.) |
 | `AssetRegistration` | Successful registration of an asset on a hub chain |
-| `HoldingAccount` | Specific asset position for a pool (amount + asset) |
 | `OnOffRampManager` | Cross-chain asset movement for pools |
 | `OfframpRelayer` | Authorized services that process withdrawal requests |
 | `OnRampAsset` | Token types investors can deposit for pool shares |
@@ -282,6 +285,7 @@ Beyond the main entities above, the API exposes a full set of indexed resources:
 | `CrosschainPayload` | Data content sent from one blockchain to another |
 | `CrosschainMessage` | Structured communication between blockchains |
 | `Adapter` | Bridges that relay payloads between networks |
+| `AdapterWiring` | Configuration linking adapter addresses across chains |
 | `AdapterParticipation` | Tracks adapter involvement in cross-chain transfers |
 
 ### Transactional data
@@ -290,10 +294,14 @@ Beyond the main entities above, the API exposes a full set of indexed resources:
 |--------|-------------|
 | `OutstandingInvest` | Pending invest order awaiting fulfillment |
 | `OutstandingRedeem` | Pending redeem order awaiting fulfillment |
-| `EpochOutstandingInvest` | Aggregated outstanding invest orders (epoch-level) |
-| `EpochOutstandingRedeem` | Aggregated outstanding redeem orders (epoch-level) |
+| `PendingInvestOrder` | Pending invest order with queued and pending amounts |
+| `PendingRedeemOrder` | Pending redeem order with queued and pending amounts |
 | `InvestOrder` | Approved invest order (tracks approval to claim) |
 | `RedeemOrder` | Approved redeem order (tracks approval to claim) |
+| `VaultInvestOrder` | Cross-chain invest order via a vault |
+| `VaultRedeemOrder` | Cross-chain redeem order via a vault |
+| `EpochOutstandingInvest` | Aggregated outstanding invest orders (epoch-level) |
+| `EpochOutstandingRedeem` | Aggregated outstanding redeem orders (epoch-level) |
 | `EpochInvestOrder` | Approved invest order at epoch level |
 | `EpochRedeemOrder` | Approved redeem order at epoch level |
 | `TokenInstancePosition` | Investor position holding a share class token |
