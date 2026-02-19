@@ -16,7 +16,7 @@ Centrifuge applications are built to meet institutional requirements for access 
 
 ## Infrastructure
 
-* Centrifuge Dapps run on a fully serverless architecture, minimizing the attack surface by eliminating persistent servers.
+* Centrifuge web applications run on a fully serverless architecture, minimizing the attack surface by eliminating persistent servers.
 * Containerized services undergo security scans before publication, with regular base image and dependency updates.
 * Static code analysis runs across the development pipeline, catching vulnerabilities before they reach production.
 
