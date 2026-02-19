@@ -107,6 +107,8 @@ const config: Config = {
         redirects: redirects,
       },
     ],
+    "./src/plugins/llms-txt-plugin",
+    "./src/plugins/markdown-source-plugin",
   ],
 };
 
