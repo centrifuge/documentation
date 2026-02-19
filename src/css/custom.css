@@ -71,6 +71,15 @@ h3 {
   margin-top: 1.5rem !important;
   margin-bottom: 1.5rem !important;
   display: block !important;
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+}
+
+[data-theme="dark"] .katex-display {
+  background: #1e1e1e;
+  border-color: #333;
 }
 
 .card .card__body p {

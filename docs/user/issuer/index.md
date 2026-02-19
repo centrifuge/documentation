@@ -1,127 +1,52 @@
 ---
 id: issuer
-title: Issuer
-contributors: <Graham Nelson:graham@k-f.co>
+title: Issuer Guide
 ---
 
-# Issuers
+# Issuer guide
 
-This guide helps issuers tokenize real-world assets (RWA) using Centrifuge's RWA Launchpad. It walks through the end-to-end process of launching an asset-backed issuance, from setup to deployment. 
+Launch and operate tokenized investment products on Centrifuge.
 
-## Overview
+**Issuer App:** [https://manage.centrifuge.io/](https://manage.centrifuge.io/)
 
-The RWA Launchpad is a modular suite of institutional-grade smart contracts for launching tokenized financial products. Issuers can configure asset types, fund structures, and operational logic without writing custom code.
+## What issuers do
 
-Supported use cases include:
+Issuers (fund administrators, asset managers) are responsible for:
 
-- Tokenized bonds, equity, credit, real estate, and indices
-- Fund structures like single-fund, fund-of-funds, or structured credit
-- Operational logic such as on/off-ramping, fee distribution, waterfalls, and performance reporting
+- **Launching offerings** - Configure and deploy tokenized products
+- **Managing investors** - Onboard, whitelist, and process orders
+- **Managing tokens** - Update NAV and pricing
+- **Managing distributions** - Ensure funds are available for payouts
 
-<img src="https://gateway.pinata.cloud/ipfs/bafybeieu2z5spguobpdeoyeyc7ff5vcoscoa2s4zlvdyt3j76jhviwz5si" alt="RWA Launchpad" width="800" style={{borderRadius: '8px'}} />
+## Guides
 
-## Issuance workflow
+<div className="card-grid">
+  <a className="card-tile" href="/user/issuer/offering-creation">
+    <h3>Offering Creation</h3>
+    <p>Launch your first offering in five steps.</p>
+  </a>
+  <a className="card-tile" href="/user/issuer/investor-management">
+    <h3>Investor Management</h3>
+    <p>From onboarding to redemption: the complete journey.</p>
+  </a>
+  <a className="card-tile" href="/user/issuer/token-management">
+    <h3>Token Management</h3>
+    <p>How share pricing works and when to update.</p>
+  </a>
+  <a className="card-tile" href="/user/issuer/distribution-management">
+    <h3>Distribution Management</h3>
+    <p>Holdings, on/off-ramp, and ensuring you can pay redemptions.</p>
+  </a>
+</div>
 
-### 1. Configure your product
+## Quick reference
 
-Use the Launchpad interface to configure:
-
-- All pool details (type, issuer info, providers, ratings etc)
-<details>
-<summary>Show pool details UI</summary>
-
-![Pool Details](./images/page1.png)
-
-</details>
-
-- Asset type (e.g. bond, equity, real estate)
-- Share class structure (e.g. junior/senior tranches)
-<details>
-<summary>Asset type & Share class structure UI </summary>
-
-![Share Class Details](./images/page2.png)
-
-</details>
-
-- Compliance rules (e.g. allowlist, jurisdictional controls)
-- Manager access controls 
-<details>
-<summary>Access Control UI</summary>
-
-![Access Control](./images/page3.png)
-
-</details>
-
-### 2. Deploy your pool
-
-Launchpad deploys a suite of protocol-native contracts:
-
-- ERC-20 share tokens with optional ERC-1404 restrictions
-- Vaults using ERC-4626 (for synchronous deposits) or ERC-7540 (for asynchronous flows)
-- Pooled vaults using ERC-7575 to aggregate capital across supported assets
-- On/Off Ramp Manager to control asset movements
-- Fee, accounting, and reporting modules
-
-All contracts are upgrade-free and immutable once deployed.
-
-### 3. Set up on/off-ramping
-
-Configure on-chain and off-chain capital flows:
-
-- **Onramp**: any user can deposit approved ERC20 tokens into the pool
-- **Offramp**: only authorized relayers can initiate withdrawals to predefined recipient addresses
-
-This ensures compliance and control over fund flows.
-
-### 4. Launch your issuance
-
-Once contracts are deployed and configured:
-
-- Begin accepting deposits from whitelisted or open users (based on your setup)
-- Mint and distribute share tokens
-- Fund vaults with capital or asset-backed flows
-
-Deposits and redemptions will follow the configured vault logic:
-
-- **Synchronous deposits**: users receive shares immediately (ERC-4626)
-- **Asynchronous redemptions**: requests are queued and processed via the Hub (ERC-7540)
-
-## Vault logic
-
-Centrifuge supports two primary vault configurations:
-
-- **Asynchronous vaults (ERC-7540)**  
-  Deposits and redemptions are request-based, coordinated through the Hub. This is ideal for RWAs with delayed settlement or valuation updates.
-
-- **Synchronous deposit vaults**  
-  Deposits are executed immediately using ERC-4626. Redemptions are still handled asynchronously via ERC-7540. This is ideal for liquid, onchain assets.
-
-Each share token can be backed by multiple vaults—each accepting a different asset—using the ERC-7575 standard. This allows issuers to consolidate liquidity across asset types while managing them independently.
-
-## Post-launch operations
-
-Track the performance and operations of your issuance:
-
-- Issuer Dashboard
-
-![Issuer Dashboard](./images/page5.png)
-
-- Live reporting on NAV, share price, and token supply
-
-![Update Dashboard](./images/page4.png)
-
-## Extensibility
-
-Launchpad products are fully modular. Issuers can integrate:
-
-- Custom relayers and compliance agents
-- Fee structures and waterfall models
-- Automated yield strategies
-- Interoperability with DeFi protocols
-
-## Benefits for issuers
-
-- **Fast time to market**: Launch in days, not months
-- **Secure and immutable**: Smart contracts are non-upgradeable and decentralized
-- **Composability**: Plug into the broader DeFi ecosystem
-- **Customizability**: Tailor every aspect of your product to fit your asset and investor needs
+| Task | Where |
+|------|-------|
+| Update pricing | NAV page → Update NAV |
+| Approve investments | Orders page → Approve → Issue |
+| Approve redemptions | Orders page → Approve → Revoke |
+| Add investor | Investors page → Add new investor |
+| Check liquidity | Holdings page |
+| Add team member | Settings → Access (Hub Manager) or Managers page (Balance Sheet) |
+| Deploy vault | Vaults page → Add vault |

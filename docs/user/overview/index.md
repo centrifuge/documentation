@@ -14,22 +14,27 @@ Centrifuge is the open infrastructure for onchain asset management. This section
 
   <a className="card-tile" href="/user/concepts">
     <h3>Concepts</h3>
-    <p>Core ideas behind the Centrifuge Protocol: hub-and-spoke architecture, vaults, assets, and token flows.</p>
+    <p>Core ideas behind Centrifuge: tokenization, hub-and-spoke architecture, pools, vaults, and share tokens.</p>
   </a>
 
-  <a className="card-tile" href="/user/issuer">
-    <h3>Issuer</h3>
-    <p>Tokenize real-world assets using configurable onchain vaults through the RWA Launchpad.</p>
-  </a>
-
-  <a className="card-tile" href="/user/curator">
-    <h3>Curator</h3>
-    <p>Structure and manage pools, set investment logic, and configure vault permissions.</p>
+  <a className="card-tile" href="/user/manager">
+    <h3>Manager Guide</h3>
+    <p>Launch and operate tokenized investment products using the Centrifuge Management App.</p>
   </a>
 
   <a className="card-tile" href="/user/investor">
-    <h3>Investors</h3>
+    <h3>Investor Guide</h3>
     <p>Invest in tokenized assets across networks. Understand access controls and redemption flows.</p>
+  </a>
+
+  <a className="card-tile" href="/user/curator">
+    <h3>Curator Guide</h3>
+    <p>Structure and manage pools, set investment logic, and configure vault permissions.</p>
+  </a>
+
+  <a className="card-tile" href="/user/glossary">
+    <h3>Glossary</h3>
+    <p>Quick reference for terms used throughout the Centrifuge platform.</p>
   </a>
 
 </div>
