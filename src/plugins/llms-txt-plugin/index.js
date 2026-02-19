@@ -162,12 +162,6 @@ Protocol v3.1.0 deployed on 9 chains: Ethereum, Base, Arbitrum, Avalanche, Plume
 Optimism, HyperEVM, and Monad. Core contracts deployed at identical addresses across all chains. 21+ audits
 and 4 independent security reviews.
 
-## User Roles
-
-- **Issuer:** Tokenize real-world assets using configurable onchain vaults.
-- **Curator:** Structure and manage pools, set investment logic, configure vault permissions.
-- **Investor:** Invest in tokenized assets across networks with access controls and redemption flows.
-
 ## Resources
 
 - **Documentation:** https://docs.centrifuge.io
