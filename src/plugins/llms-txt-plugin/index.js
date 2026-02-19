@@ -102,21 +102,93 @@ module.exports = function llmsTxtPlugin(context) {
       // Sort pages by URL path for consistent ordering
       pages.sort((a, b) => a.urlPath.localeCompare(b.urlPath));
 
-      // Generate llms.txt
-      const llmsTxt = [
-        "# Centrifuge Documentation",
-        "",
-        "> Documentation for the Centrifuge protocol, a platform for tokenizing and financing real-world assets on-chain.",
-        "",
-        ...pages.map((p) => `- [${p.title}](${p.url})`),
-        "",
-      ].join("\n");
+      // Group pages by top-level section
+      const sections = {
+        "getting-started": { label: "Getting Started", pages: [] },
+        user: { label: "User Documentation", pages: [] },
+        developer: { label: "Developer Documentation", pages: [] },
+      };
+      for (const p of pages) {
+        const section = p.urlPath.split("/")[0];
+        if (sections[section]) {
+          sections[section].pages.push(p);
+        }
+      }
+
+      // Generate llms.txt with overview
+      const overview = `# Centrifuge Documentation
+
+> Centrifuge is institutional-grade infrastructure for onchain asset management. It enables asset managers,
+> fintechs, and DeFi protocols to tokenize, manage, and distribute real-world assets on-chain.
+
+## Overview
+
+Centrifuge is one of the first and largest tokenization platforms, with more than $2B in real-world assets
+tokenized. It powers onchain strategies for institutions including Apollo, Janus Henderson, and S&P Dow Jones
+Indices, with tokenized assets integrating into DeFi through Sky, Aave, and Morpho.
+
+## Architecture
+
+Hub-and-spoke design. Each pool selects a single hub chain as its source of truth, then issues tokens and
+vaults across any number of spoke chains.
+
+- **Hub:** Central orchestration layer handling pool management, double-entry accounting, holdings tracking,
+  share class management, and cross-chain message coordination.
+- **Spoke:** Local registry on each chain managing token instances, vaults, escrows, and balance sheets.
+  Factory-based deployment of tokens, vaults, and escrows.
+- **Cross-chain messaging:** Multi-adapter aggregation (LayerZero, Wormhole, Chainlink, Axelar) with
+  automatic batching, gas subsidies, and built-in retries.
+
+## Vault Standards
+
+- **Asynchronous vaults (ERC-7540):** Request-based deposits and redemptions processed through the Hub.
+- **Synchronous deposit vaults (ERC-4626 + ERC-7540):** Instant deposits via ERC-4626, async redemptions.
+- **Pooled vaults (ERC-7575):** Multiple investment assets per share token, single aggregated balance sheet.
+
+## Developer Tools
+
+### Centrifuge SDK
+TypeScript/JavaScript client (\`@centrifuge/sdk\`) for investments, redemptions, reports, and pool management.
+Runs client-side and server-side. Supports full investment lifecycle: quote, deposit, claim, and reporting.
+
+### Centrifuge API
+Public read-only GraphQL endpoint at \`https://api.centrifuge.io\`. Indexed data from the multi-chain protocol
+deployment. No authentication required. Entities include pools, tokens, vaults, holdings, investor transactions,
+snapshots, and cross-chain messages.
+
+## Deployments
+
+Protocol v3.1.0 deployed on 9 chains: Ethereum, Base, Arbitrum, Avalanche, Plume, Binance Smart Chain,
+Optimism, HyperEVM, and Monad. Core contracts deployed at identical addresses across all chains. 21+ audits
+and 4 independent security reviews.
+
+## User Roles
+
+- **Issuer:** Tokenize real-world assets using configurable onchain vaults.
+- **Curator:** Structure and manage pools, set investment logic, configure vault permissions.
+- **Investor:** Invest in tokenized assets across networks with access controls and redemption flows.
+
+## Resources
+
+- **Documentation:** https://docs.centrifuge.io
+- **SDK:** https://www.npmjs.com/package/@centrifuge/sdk
+- **API:** https://api.centrifuge.io
+- **Protocol source:** https://github.com/centrifuge/protocol`;
+
+      const sectionLines = [];
+      for (const [, sec] of Object.entries(sections)) {
+        if (sec.pages.length === 0) continue;
+        sectionLines.push("", `## ${sec.label}`, "");
+        for (const p of sec.pages) {
+          sectionLines.push(`- [${p.title}](${p.url})`);
+        }
+      }
+
+      const llmsTxt = [overview, ...sectionLines, ""].join("\n");
 
       // Generate llms-full.txt
       const llmsFullTxt = [
-        "# Centrifuge Documentation",
-        "",
-        "> Documentation for the Centrifuge protocol, a platform for tokenizing and financing real-world assets on-chain.",
+        overview,
         "",
         "---",
         "",
