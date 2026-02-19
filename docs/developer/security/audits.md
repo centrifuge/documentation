@@ -35,7 +35,3 @@ sidebar_position: 1
 | [Spearbit](https://spearbit.com/)                      | V1.0        | Oct 2023        | Security review            | [`Report`](https://cantina.xyz/portfolio/693b6f24-6e47-4194-97b0-356d10dc1df6)                                                                             |
 | [Code4rena](https://code4rena.com/)                   | V1.0        | Sep 2023        | Audit competition          | [`Report`](https://code4rena.com/reports/2023-09-centrifuge)                                                                                                                |
 | [SRLabs](https://www.srlabs.de/)                     | V1.0        | Sep 2023        | Security review            | [`Report`](https://github.com/centrifuge/protocol/blob/main/docs/audits/2023-09-SRLabs.pdf)                                                                              |
-
-### Operational security
-
-The core team contributing to Centrifuge has completed an operational security review with [OPSEK](https://www.opsek.io/).
