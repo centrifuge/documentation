@@ -111,7 +111,33 @@ hub.setPoolMetadata(poolId, bytes("Testing pool"));
 
 This can include information to be shown in the UI.
 
-### 4. Notify pool registration
+### 4. Set adapters
+
+Before notifying other networks, configure the cross-chain messaging adapters for each network where the pool will operate. Adapters handle message routing between the hub chain and spoke chains via the `Gateway` contract.
+
+```solidity
+address[] memory localAdapters = new address[](1);
+localAdapters[0] = 0xD517BC7ba17271a8D87BE7355B2523bF5c750295; // LayerZero Adapter
+
+bytes32[] memory remoteAdapters = new bytes32[](1);
+remoteAdapters[0] = bytes32(bytes20(0xD517BC7ba17271a8D87BE7355B2523bF5c750295)); // LayerZero Adapter on remote chain
+
+uint8 threshold = 1;     // Number of adapters required to process a message
+uint8 recoveryIndex = 1; // Adapters from this index onward are recovery-only
+
+hub.setAdapters{value: gas}(poolId, centrifugeId, localAdapters, remoteAdapters, threshold, recoveryIndex, msg.sender);
+```
+
+* `localAdapters`: Adapter contract addresses on the hub chain
+* `remoteAdapters`: Corresponding adapter addresses on the remote chain (as `bytes32`)
+* `threshold`: Minimum number of adapters required to process a message
+* `recoveryIndex`: Index in the adapters array from which adapters are considered recovery adapters
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
+
+Adapter addresses can be found on the [deployments page](/developer/protocol/deployments). Call this for every `centrifugeId` where the pool will be launched.
+
+### 5. Notify pool registration
 
 Once created, the pool must notify the other networks of its existence. This should be called for every `centrifugeId` where the pool is going to be launched.
 
