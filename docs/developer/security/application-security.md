@@ -10,7 +10,7 @@ Centrifuge applications are built to meet institutional requirements for access 
 
 ## Access controls
 
-* All administrative access requires hardware-based two-factor authentication. Hardware security keys are phishing-resistant and cannot be stolen remotely — unlike SMS codes, TOTP authenticator apps, or cloud-based passkeys, which remain vulnerable to interception, SIM-swapping, or remote theft.
+* All administrative access requires hardware-based two-factor authentication. Hardware security keys are phishing-resistant and cannot be stolen remotely, unlike SMS codes, TOTP authenticator apps, or cloud-based passkeys, which remain vulnerable to interception, SIM-swapping, or remote theft.
 * Sensitive operations such as deployments and configuration changes require multi-signature authorization, preventing any single point of failure.
 * Application deployments are authenticated with strict role-based access controls. Infrastructure platform access is limited under least-privilege principles.
 
@@ -29,12 +29,12 @@ All web traffic is proxied through an enterprise CDN and security platform, prov
 * Web application firewall with managed rulesets, DDoS mitigation, and rate limiting.
 * Strict Content Security Policy, Permissions-Policy, and other security headers enforced across all applications.
 * Client-side script monitoring to detect tampering.
-* Fail-closed architecture — if edge services hit their limits, requests are rejected rather than bypassing security controls.
+* Fail-closed architecture: if edge services hit their limits, requests are rejected rather than bypassing security controls.
 * Hardware-based two-factor authentication enforced for all platform account users.
 
 ## Continuous security monitoring
 
-Security monitoring spans multiple layers — cloud infrastructure, CDN, application code, and onchain activity — using a combination of managed security platforms, automated scanners, and custom-built monitoring bots. Coverage includes:
+Security monitoring spans multiple layers (cloud infrastructure, CDN, application code, and onchain activity) using a combination of managed security platforms, automated scanners, and custom-built monitoring bots. Coverage includes:
 
 * Static application security testing (SAST) and source code scanning for exposed secrets.
 * Vulnerability detection and license compliance checks across all open-source dependencies.
