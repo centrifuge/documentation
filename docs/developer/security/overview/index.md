@@ -1,9 +1,9 @@
 ---
-id: security
-title: Security
+id: overview
+title: Overview
 ---
 
-# Security
+# Overview
 
 Centrifuge security highlights:
 * 24 security reviews to date for the Centrifuge protocol, including tier-1 audit firms Spearbit and Blackthorn.
@@ -12,7 +12,7 @@ Centrifuge security highlights:
 
 The protocol codebase is fully immutable, and any emergency functions are locked behind a 48-hour timelock.
 
-![](./images/auditors.png)
+![](../images/auditors.png)
 
 ## Explore
 
@@ -23,8 +23,13 @@ The protocol codebase is fully immutable, and any emergency functions are locked
     <p>Full list of protocol security reviews, audit competitions, and invariant testing engagements.</p>
   </a>
 
-  <a className="card-tile" href="/developer/security/guardian-and-pause">
-    <h3>Guardian & pause mechanism</h3>
+  <a className="card-tile" href="/developer/security/pool-access-levels">
+    <h3>Pool access levels</h3>
+    <p>Granular pool-level permissioning: hub managers, balance sheet managers, relayers, strategists, and gateway controls.</p>
+  </a>
+
+  <a className="card-tile" href="/developer/security/guardian">
+    <h3>Guardian</h3>
     <p>Protocol and ops guardian roles, multisig structure, and the global pause mechanism.</p>
   </a>
 

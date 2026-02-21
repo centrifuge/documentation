@@ -1,7 +1,7 @@
 ---
 id: application-security
 title: Application security
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Application security
