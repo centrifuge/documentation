@@ -306,8 +306,8 @@ const redirects = [
     to: "/developer/legacy/pod/",
   },
   {
-    from: "/developer/security/",
-    to: "/developer/protocol/security/",
+    from: "/developer/protocol/security/",
+    to: "/developer/security/",
   },
   {
     from: "/build/nfts/",

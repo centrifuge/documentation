@@ -1,20 +1,10 @@
 ---
-id: security
-title: Security
+id: audits
+title: Audits
+sidebar_position: 1
 ---
 
-# Security
-
-Centrifuge security highlights:
-* 24 security reviews to date for the Centrifuge protocol, including tier-1 audit firms Spearbit and Blackthorn.
-* Launched on mainnet in 2019, 0 exploits.
-* $250,000 bug bounty program live.
-
-The protocol codebase is fully immutable, and any emergency functions are locked behind a 48-hour timelock.
-
-![](./images/auditors.png)
-
-## Security reviews
+# Audits
 
 ### Protocol
 
@@ -45,28 +35,3 @@ The protocol codebase is fully immutable, and any emergency functions are locked
 | [Spearbit](https://spearbit.com/)                      | V1.0        | Oct 2023        | Security review            | [`Report`](https://cantina.xyz/portfolio/693b6f24-6e47-4194-97b0-356d10dc1df6)                                                                             |
 | [Code4rena](https://code4rena.com/)                   | V1.0        | Sep 2023        | Audit competition          | [`Report`](https://code4rena.com/reports/2023-09-centrifuge)                                                                                                                |
 | [SRLabs](https://www.srlabs.de/)                     | V1.0        | Sep 2023        | Security review            | [`Report`](https://github.com/centrifuge/protocol/blob/main/docs/audits/2023-09-SRLabs.pdf)                                                                              |
-
-### Operational securitiy
-
-The core team contributing to Centrifuge has completed an operational security review with [OPSEK](https://www.opsek.io/).
-
-## Bug bounty
-
-Centrifuge runs an active bug bounty program with a $250,000 maximum reward, available on [Cantina](https://cantina.xyz/bounties/6cc9d51a-ac1e-4385-a88a-a3924e40c00e).
-
-## Guardian
-
-The protocol is controlled by the Root contract, which has access on all other contracts. The Root contract enforces a 48-hour delay for any upgrades and configuratino changes.
-
-Each deployment has a Guardian role, who is authorized on the Root contract. The Guardian can pause in emergencies, schedule upgrades, and set up adapters to new networks.
-
-Every transaction is verified by third-party signers from [Cantina](https://cantina.xyz/solutions/multisig-security).
-
-| Network          | Guardian |
-|------------------|----------|
-| Ethereum Mainnet | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=eth:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6) |
-| Base             | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=base:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
-| Arbitrum         | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/transactions/history?safe=arb1:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
-| Plume            | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://safe.onchainden.com/home?safe=plume:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
-| Avalanche        | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=avax:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6)  |
-| BNB Smart Chain  | [`0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6`](https://app.safe.global/home?safe=bnb:0xCEb7eD5d5B3bAD3088f6A1697738B60d829635c6) |
