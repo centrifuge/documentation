@@ -307,7 +307,7 @@ const redirects = [
   },
   {
     from: "/developer/protocol/security/",
-    to: "/developer/security/",
+    to: "/developer/security/overview/",
   },
   {
     from: "/build/nfts/",
