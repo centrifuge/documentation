@@ -1,7 +1,7 @@
 ---
 id: operational-security
 title: Operational security
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Operational security
@@ -11,7 +11,7 @@ The Centrifuge team maintains production-grade security standards across develop
 ## Team standards
 
 * Every team member is issued two YubiKeys (primary and backup) and must register both on every account that supports two-factor authentication. No SMS codes or cloud-based passkeys are permitted for critical accounts.
-* All team members run endpoint firewalls — Little Snitch or LuLu — configured to company baselines, blocking unauthorized outbound network connections.
+* All team members run endpoint firewalls (Little Snitch or LuLu) configured to company baselines, blocking unauthorized outbound network connections.
 * Credentials are managed through 1Password. Passwords are never shared or reused across services.
 * Full-disk encryption (FileVault) and automatic screen lock are enforced on all devices.
 * The team completes regular security trainings, including phishing awareness exercises.
