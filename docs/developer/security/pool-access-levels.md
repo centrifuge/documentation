@@ -10,7 +10,7 @@ The protocol supports granular permissioning at the pool level. Rather than rely
 
 ## Hub manager
 
-The hub manager is the top-level role for a pool. It controls pool configuration, share class management, accounting, and cross-chain deployment. A pool admin grants this role by calling `updateHubManager` on the [`Hub`](https://github.com/centrifuge/protocol/blob/main/src/core/hub/interfaces/IHub.sol) contract.
+The hub manager is the top-level role for a pool. It controls pool configuration, share class management, accounting, and cross-chain deployment. The hub manager role is assigned during [pool creation](/developer/protocol/guides/create-a-pool/) and can be granted to additional addresses by calling `updateHubManager` on the [`Hub`](https://github.com/centrifuge/protocol/blob/main/src/core/hub/interfaces/IHub.sol) contract.
 
 Hub managers can:
 
@@ -18,10 +18,14 @@ Hub managers can:
 * Set share and asset prices
 * Manage onchain accounting (journal entries, holdings, valuations)
 * Deploy vaults and notify remote chains
-* Assign balance sheet managers, request managers, and gateway managers
+* Assign balance sheet managers, [request managers](/developer/protocol/guides/manage-a-pool/), and gateway managers
 * Configure cross-chain adapter sets per destination chain
 
 Multiple addresses can hold the hub manager role simultaneously, enabling multisig workflows or delegation to operational tooling.
+
+:::warning
+Any hub manager can grant or revoke the hub manager role for other addresses. Pools should carefully control which addresses hold this role.
+:::
 
 ## Balance sheet manager
 
@@ -51,6 +55,8 @@ The pool admin configures three independent permission sets through the hub:
 
 All three must align for a withdrawal to succeed: the caller must be a relayer, the destination must be an approved offramp, and the asset must be registered. This layered design prevents unauthorized fund movement even if a single key is compromised.
 
+See the [on/off ramp manager](/developer/protocol/managers/on-offramp-manager/) documentation for implementation details.
+
 ## Merkle proof manager
 
 The [`MerkleProofManager`](https://github.com/centrifuge/protocol/blob/main/src/managers/spoke/MerkleProofManager.sol) enables programmable allocation policies enforced through merkle proofs. Instead of granting broad balance sheet access, the pool admin assigns per-strategist policies that define exactly which operations a strategist can perform.
@@ -63,7 +69,7 @@ This means:
 * Policies can restrict by target contract, function selector, and parameter values
 * Updating a strategist's policy requires only a single root update from the hub, with no per-function permission changes
 
-The merkle proof approach supports delegation structures where multiple parties manage different aspects of a pool's assets, each operating within strictly defined boundaries.
+The merkle proof approach supports delegation structures where multiple parties manage different aspects of a pool's assets, each operating within strictly defined boundaries. See the [merkle proof manager](/developer/protocol/managers/merkle-proof-manager/) documentation for implementation details.
 
 ## Gateway manager
 
@@ -94,6 +100,6 @@ Hooks can enforce:
 * Holding period requirements
 * Any custom validation logic the pool requires
 
-The hook is set per share class and can be updated by the hub manager through `updateShareHook`. This makes the compliance layer fully upgradeable. If regulatory requirements change, the pool can deploy a new hook contract and switch to it without redeploying the share token itself. The hook contract receives contextual information about the transfer type (deposit, redemption, cross-chain transfer) through standardized address patterns, enabling different rules for different operation types.
+The hook is set per share class during [pool creation](/developer/protocol/guides/create-a-pool/) and can be updated by the hub manager through `updateShareHook`. This makes the compliance layer fully upgradeable. If regulatory requirements change, the pool can deploy a new hook contract and switch to it without redeploying the share token itself. The hook contract receives contextual information about the transfer type (deposit, redemption, cross-chain transfer) through standardized address patterns, enabling different rules for different operation types.
 
 The `updateRestriction` function allows the hub to push restriction updates to hooks on remote chains, so investor permissions can be managed centrally from the hub and propagated across all chains where the token is deployed.
