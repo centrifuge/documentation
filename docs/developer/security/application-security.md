@@ -10,7 +10,7 @@ Centrifuge applications are built to meet institutional requirements for access 
 
 ## Access controls
 
-* All administrative access requires hardware-based two-factor authentication. Hardware security keys are phishing-resistant and cannot be stolen remotely, unlike SMS codes, TOTP authenticator apps, or cloud-based passkeys, which remain vulnerable to interception, SIM-swapping, or remote theft.
+* All administrative access requires hardware-based two-factor authentication. Hardware security keys are phishing-resistant and prevent the most common account hijacking attacks.
 * Sensitive operations such as deployments and configuration changes require multi-signature authorization, preventing any single point of failure.
 * Application deployments are authenticated with strict role-based access controls. Infrastructure platform access is limited under least-privilege principles.
 
@@ -34,18 +34,19 @@ All web traffic is proxied through an enterprise CDN and security platform, prov
 
 ## Continuous security monitoring
 
-Security monitoring spans multiple layers (cloud infrastructure, CDN, application code, and onchain activity) using a combination of managed security platforms, automated scanners, and custom-built monitoring bots. Coverage includes:
+Security monitoring spans multiple layers: cloud infrastructure, CDN, application code, and onchain activity. Using a combination of managed security platforms and automated scanners, in many cases multiple layers and scanners are in place at differnt stages.
 
-* Static application security testing (SAST) and source code scanning for exposed secrets.
+Includes:
+
+* Static application security testing (SAST) and source code scans.
 * Vulnerability detection and license compliance checks across all open-source dependencies.
 * Known vulnerability scanning for all published container images.
 * Cloud infrastructure configuration audits and posture management.
 * Surface monitoring for public-facing domains.
 * Infrastructure-as-code misconfiguration detection before deployment.
-* Malware scanning across all monitored assets.
 
 ## Onchain monitoring
 
-* Dedicated monitoring bots track sensitive onchain operations: liquidity pool activity, cross-chain message relaying, and code deployment verification against published releases.
+* Dedicated monitoring tools track sensitive onchain operations: liquidity pool activity, cross-chain message relaying, and code deployment verification against published releases.
 * Real-time alerting flags anomalous transactions and state changes.
-* All deployments generate security audit logs, which are reviewed regularly for suspicious activity.
+
