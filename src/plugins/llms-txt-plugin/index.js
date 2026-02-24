@@ -123,9 +123,9 @@ module.exports = function llmsTxtPlugin(context) {
 
 ## Overview
 
-Centrifuge is one of the first and largest tokenization platforms, with more than $2B in real-world assets
-tokenized. It powers onchain strategies for institutions including Apollo, Janus Henderson, and S&P Dow Jones
-Indices, with tokenized assets integrating into DeFi through Sky, Aave, and Morpho.
+Centrifuge is institutional-grade infrastructure for the future of finance, bringing efficiency, liquidity, and composability to onchain asset management. As one of the first and largest tokenization platforms, it connects traditional capital markets to onchain rails, enabling asset managers, fintechs, and DeFi protocols to launch compliant tokenized funds with ease.
+
+Today, Centrifuge powers onchain strategies for leading institutions including Apollo, Janus Henderson, and S&P Dow Jones Indices, while its tokenized assets integrate deeply across DeFi through protocols such as Sky, Aave, and Morpho. More than $2B in real-world assets have already been tokenized through the platform, supported by 24 audits, deployments on 9 chains, and a proven security record.
 
 ## Architecture
 
@@ -139,13 +139,13 @@ vaults across any number of spoke chains.
 - **Cross-chain messaging:** Multi-adapter aggregation (LayerZero, Wormhole, Chainlink, Axelar) with
   automatic batching, gas subsidies, and built-in retries.
 
-## Vault Standards
+## Vault standards
 
 - **Asynchronous vaults (ERC-7540):** Request-based deposits and redemptions processed through the Hub.
 - **Synchronous deposit vaults (ERC-4626 + ERC-7540):** Instant deposits via ERC-4626, async redemptions.
 - **Pooled vaults (ERC-7575):** Multiple investment assets per share token, single aggregated balance sheet.
 
-## Developer Tools
+## Developer tools
 
 ### Centrifuge SDK
 TypeScript/JavaScript client (\`@centrifuge/sdk\`) for investments, redemptions, reports, and pool management.
@@ -159,8 +159,7 @@ snapshots, and cross-chain messages.
 ## Deployments
 
 Protocol v3.1.0 deployed on 9 chains: Ethereum, Base, Arbitrum, Avalanche, Plume, Binance Smart Chain,
-Optimism, HyperEVM, and Monad. Core contracts deployed at identical addresses across all chains. 21+ audits
-and 4 independent security reviews.
+Optimism, HyperEVM, and Monad. Core contracts deployed at identical addresses across all chains.
 
 ## Resources
 
