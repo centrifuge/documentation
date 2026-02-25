@@ -6,10 +6,11 @@ hide_table_of_contents: true
 ---
 
 import GraphQLExplorer from '@site/src/components/GraphQLExplorer';
+import RESTExplorer from '@site/src/components/RESTExplorer';
 
 # Centrifuge API
 
-The Centrifuge API is a public, read-only GraphQL endpoint for querying on-chain data from the Centrifuge protocol across multiple networks. Send any GraphQL-compliant `POST` request to [`https://api.centrifuge.io`](https://api.centrifuge.io). No authentication required. For interactive exploration, open the [GraphiQL UI](https://api.centrifuge.io) and use `Ctrl + Space` to trigger autocomplete.
+The Centrifuge API is a public, read-only GraphQL endpoint for querying onchain data from the Centrifuge protocol across multiple networks. Send any GraphQL-compliant `POST` request to [`https://api.centrifuge.io`](https://api.centrifuge.io). No authentication required. For interactive exploration, open the [GraphiQL UI](https://api.centrifuge.io) and use `Ctrl + Space` to trigger autocomplete.
 
 All queries accept these standard parameters:
 
@@ -19,8 +20,6 @@ All queries accept these standard parameters:
 | `where` | `Filter` | Entity-specific filter criteria (see each section below) |
 | `orderBy` | `String` | Column to sort by (default: primary key) |
 | `orderDirection` | `String` | `"asc"` or `"desc"` (default: `"asc"`) |
-
----
 
 ## Pools
 
@@ -131,7 +130,7 @@ A vault is the entry point for investors on a specific chain. Each vault connect
 
 </GraphQLExplorer>
 
-## Holding escrows
+## Holdings
 
 <GraphQLExplorer
   query={`query GetHoldingEscrowsByPool {
@@ -444,4 +443,60 @@ See the [Deployments](/developer/protocol/deployments) page for the full list of
 
 ## Data freshness
 
-Data is typically available within 1–2 minutes of on-chain confirmation. Historical snapshots are maintained at daily intervals, with some entities also snapshotted on specific trigger events.
+Data is typically available within 1-2 minutes of onchain confirmation. Historical snapshots are maintained at daily intervals, with some entities also snapshotted on specific trigger events.
+
+---
+
+## Token REST API
+
+The API also exposes REST endpoints for simple token lookups. All endpoints return JSON responses.
+
+### Token price
+
+<RESTExplorer url="https://api.centrifuge.io/tokens/0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc/price">
+
+Returns the current price of a token by its contract address, formatted as a decimal string.
+
+```
+GET /tokens/:address/price
+```
+
+#### Parameters
+
+| Field | Description |
+|-------|-------------|
+| `address` | Token contract address on any supported network |
+
+#### Response
+
+| Status | Description |
+|--------|-------------|
+| `200` | Token price returned |
+| `404` | Token address not found, or price not set |
+
+</RESTExplorer>
+
+### Token total issuance
+
+<RESTExplorer url="https://api.centrifuge.io/tokens/0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc/total-issuance">
+
+Returns the total issuance (supply) of a token by its contract address, formatted as a decimal string adjusted for the token's decimals.
+
+```
+GET /tokens/:address/total-issuance
+```
+
+#### Parameters
+
+| Field | Description |
+|-------|-------------|
+| `address` | Token contract address on any supported network |
+
+#### Response
+
+| Status | Description |
+|--------|-------------|
+| `200` | Total issuance returned |
+| `404` | Token address not found, decimals not set, or total issuance not set |
+
+</RESTExplorer>
