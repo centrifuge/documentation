@@ -60,6 +60,8 @@
 .description table {
   font-size: 0.8125rem;
   margin-top: 0.5rem;
+  width: 100% !important;
+  display: table !important;
 }
 
 .description th,
@@ -67,16 +69,21 @@
   padding: 0.5rem 0.75rem;
 }
 
+.description h4 {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-emphasis-600);
+  margin: 1.5rem 0 0.25rem;
+}
+
 .description th {
   font-weight: 600;
 }
 
-.description table {
-  border-bottom: 1px solid var(--ifm-table-border-color);
-}
-
 .description tr:last-child td {
-  border-bottom: none;
+  border-bottom: 1px solid var(--ifm-table-border-color);
 }
 
 /* ── Right column: query + response ── */
