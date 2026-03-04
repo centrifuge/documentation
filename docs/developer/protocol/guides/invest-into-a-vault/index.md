@@ -111,6 +111,48 @@ Asynchronous vaults use the same redemption flow as synchronous ones:
    vault.withdraw(vault.maxWithdraw(user), receiver, user);
    ```
 
+## Depositing or redeeming on behalf of another user
+
+The ERC-7540 standard allows a user to submit deposit and redemption requests on behalf of another address. The `requestDeposit` and `requestRedeem` functions take separate `controller` and `owner` parameters:
+
+```solidity
+vault.requestDeposit(assets, controller, owner);
+vault.requestRedeem(shares, controller, owner);
+```
+
+* `owner`: The source of the assets (for deposits) or shares (for redemptions). Must equal `msg.sender` unless the owner has approved `msg.sender` as an operator.
+* `controller`: The address that controls the request. This address can later claim the resulting shares or assets, cancel the request, and manage the request lifecycle.
+
+### Smart contract integrations
+
+If you are building a smart contract that wraps vault interactions (e.g., an aggregator or routing contract):
+
+* Your contract is typically both `msg.sender` and `owner`: users transfer assets to your contract first, and your contract calls `requestDeposit` with itself as the `owner`. Alternatively, users can approve the vault directly and your contract passes the user's address as `owner` (if the user has approved your contract as an operator).
+* Track which address is the `controller` for each request, since that address controls the claim and cancellation lifecycle.
+* When claiming on behalf of users, ensure the `controller` parameter matches the address that submitted the original request.
+
+:::info
+For smart contract integrations, call `vault.isPermissioned(address(yourContract))` before submitting any requests. If your contract cannot hold shares, deposit and claim operations will revert.
+:::
+
+### Operator permissions
+
+An owner can approve another address as an operator using `setOperator`:
+
+```solidity
+vault.setOperator(operator, true);
+```
+
+Once approved, the operator can call `requestDeposit` or `requestRedeem` with the owner's address as the `owner` parameter. The operator can also cancel requests and claim on behalf of the controller.
+
+:::warning
+Approving an operator grants it control over both the assets and shares associated with the vault. Only approve trusted addresses.
+:::
+
+## Processing times
+
+Asynchronous requests are processed by the pool manager. The time to process depends on the specific product and its subscription or redemption settlement cycle.
+
 ## Price oracle
 
 To get the latest price of vault shares in terms of the investment asset, use the `vault.convertToAssets()` method:
