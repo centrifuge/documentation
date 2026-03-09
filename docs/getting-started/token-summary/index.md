@@ -22,7 +22,7 @@ into a single, Ethereum-native ERC-20 token: CFG. The migration built on [CP 141
 
 ### Migration Overview
 
-The V3 CFG migration took place between **May 20, 2025 - December 15, 2025**. As part of this migration:
+The V3 CFG migration took place between **May 20, 2025 - December 03, 2025**. As part of this migration:
 
 - Legacy CFG and wCFG tokens were swapped at a **1:1** ratio for V3 CFG
 - Following completion, the bridge between Ethereum and the legacy Centrifuge Chain was fully deprecated
