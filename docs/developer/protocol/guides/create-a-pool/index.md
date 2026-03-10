@@ -111,7 +111,33 @@ hub.setPoolMetadata(poolId, bytes("Testing pool"));
 
 This can include information to be shown in the UI.
 
-### 4. Notify pool registration
+### 4. Set adapters
+
+Before notifying other networks, configure the cross-chain messaging adapters for each network where the pool will operate. Adapters handle message routing between the hub chain and spoke chains via the `Gateway` contract.
+
+```solidity
+address[] memory localAdapters = new address[](1);
+localAdapters[0] = 0xD517BC7ba17271a8D87BE7355B2523bF5c750295; // LayerZero Adapter
+
+bytes32[] memory remoteAdapters = new bytes32[](1);
+remoteAdapters[0] = bytes32(bytes20(0xD517BC7ba17271a8D87BE7355B2523bF5c750295)); // LayerZero Adapter on remote chain
+
+uint8 threshold = 1;     // Number of adapters required to process a message
+uint8 recoveryIndex = 1; // Adapters from this index onward are recovery-only
+
+hub.setAdapters{value: gas}(poolId, centrifugeId, localAdapters, remoteAdapters, threshold, recoveryIndex, msg.sender);
+```
+
+* `localAdapters`: Adapter contract addresses on the hub chain
+* `remoteAdapters`: Corresponding adapter addresses on the remote chain (as `bytes32`)
+* `threshold`: Minimum number of adapters required to process a message
+* `recoveryIndex`: Index in the adapters array from which adapters are considered recovery adapters
+* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
+* `msg.sender`: Address to receive any excess gas refund
+
+Adapter addresses can be found on the [deployments page](/developer/protocol/deployments). Call this for every `centrifugeId` where the pool will be launched.
+
+### 5. Notify pool registration
 
 Once created, the pool must notify the other networks of its existence. This should be called for every `centrifugeId` where the pool is going to be launched.
 
@@ -151,10 +177,11 @@ hub.addShareClass(poolId, "Tokenized MMF", "MMF", bytes32(bytes("1")));
 Once created, the pool must notify the other networks of each share class. This should be called for every `centrifugeId` where the share token is going to be launched.
 
 For each token, choose the hook that you want:
-- **`fullRestrictions`**: any user needs to be added to the memberlist for every deposit/redeem request.
-- **`redemptionRestrictions`**: any user needs to be added to the memberlist only for redeem requests.
-- **`freezeOnly`**: users don't need to be added for requests, but it is possible to freeze users.
-- **`address(0)`**: token is fully permissionless.
+- FullRestrictions: any user needs to be added to the memberlist for every deposit/redeem request as well as transfers.
+- FreelyTransferable: any user needs to be added to the memberlist for every deposit/redeem request, while transfers can be made to anyone that is not frozen.
+- RedemptionRestrictions: any user needs to be added to the memberlist only for redeem requests as well as transfers.
+- FreezeOnly: users don't need to be added for requests, but it is possible to freeze users.
+- `address(0)`: token is fully permissionless.
 
 ```solidity
 hub.notifyShareClass{value: gas}(poolId, scId, centrifugeId, bytes32(bytes20(hook)), msg.sender);
