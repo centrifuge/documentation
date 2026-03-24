@@ -9,11 +9,11 @@ contributors:
 
 This guide explains how to invest in and redeem from Centrifuge vaults, using both synchronous and asynchronous vault types. We’ll walk through:
 
-* How to deposit and redeem in a synchronous deposit vault (e.g., `deJTRSY` for T-bills).
-* How to interact with an asynchronous vault (e.g., `JTRSY`), which operates in two distinct phases for deposits and redemptions.
+* How to deposit and redeem in a synchronous deposit vault.
+* How to interact with an asynchronous vault, which operates in two distinct phases for deposits and redemptions.
 * How to query the share token price using the price oracle.
 
-## Synchronous deposit vaults (e.g., `deJTRSY`)
+## Synchronous deposit vaults
 
 Synchronous vaults process deposits immediately within a single transaction, and processes redemptions asynchronously.
 
@@ -62,7 +62,7 @@ vault.withdraw(vault.maxWithdraw(user), receiver, user);
 * `vault.maxWithdraw(user)` computes the maximum amount of assets that can now be withdrawn.
 * `receiver`: Address to receive the underlying asset (e.g., USDC).
 
-## Asynchronous vaults (e.g., `JTRSY`)
+## Asynchronous vaults
 
 Asynchronous vaults batch and process deposits at set intervals. Deposits and withdrawals are split into pending and claimable phases.
 
@@ -110,6 +110,48 @@ Asynchronous vaults use the same redemption flow as synchronous ones:
    ```solidity
    vault.withdraw(vault.maxWithdraw(user), receiver, user);
    ```
+
+## Depositing or redeeming on behalf of another user
+
+The ERC-7540 standard allows a user to submit deposit and redemption requests on behalf of another address. The `requestDeposit` and `requestRedeem` functions take separate `controller` and `owner` parameters:
+
+```solidity
+vault.requestDeposit(assets, controller, owner);
+vault.requestRedeem(shares, controller, owner);
+```
+
+* `owner`: The source of the assets (for deposits) or shares (for redemptions). Must equal `msg.sender` unless the owner has approved `msg.sender` as an operator.
+* `controller`: The address that controls the request. This address can later claim the resulting shares or assets, cancel the request, and manage the request lifecycle.
+
+### Smart contract integrations
+
+If you are building a smart contract that wraps vault interactions (e.g., an aggregator or routing contract):
+
+* Your contract is typically both `msg.sender` and `owner`: users transfer assets to your contract first, and your contract calls `requestDeposit` with itself as the `owner`. Alternatively, users can approve the vault directly and your contract passes the user's address as `owner` (if the user has approved your contract as an operator).
+* Track which address is the `controller` for each request, since that address controls the claim and cancellation lifecycle.
+* When claiming on behalf of users, ensure the `controller` parameter matches the address that submitted the original request.
+
+:::info
+For smart contract integrations, call `vault.isPermissioned(address(yourContract))` before submitting any requests. If your contract cannot hold shares, deposit and claim operations will revert.
+:::
+
+### Operator permissions
+
+An owner can approve another address as an operator using `setOperator`:
+
+```solidity
+vault.setOperator(operator, true);
+```
+
+Once approved, the operator can call `requestDeposit` or `requestRedeem` with the owner's address as the `owner` parameter. The operator can also cancel requests and claim on behalf of the controller.
+
+:::warning
+Approving an operator grants it control over both the assets and shares associated with the vault. Only approve trusted addresses.
+:::
+
+## Processing times
+
+Asynchronous requests are processed by the pool manager. The time to process depends on the specific product and its subscription or redemption settlement cycle.
 
 ## Price oracle
 
