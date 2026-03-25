@@ -19,11 +19,13 @@ Messages with variable-length payloads (`UpdateRestriction`, `Request`, `Request
 
 All pool-scoped messages (from `NotifyPool` onwards) carry a `poolId` at byte offset 1.
 
+Some messages include a `extraGasLimit` parameter, which lets the initiator reserve additional gas for the forwarded call on the destination chain.
+
 ## Core messages
 
 ### Pool-independent messages
 
-These messages are not scoped to a specific pool and do not carry a `poolId`.
+These messages are not scoped to a specific pool.
 
 #### ScheduleUpgrade
 
@@ -416,6 +418,8 @@ Forwards an arbitrary call to a contract on a remote chain, including a `sender`
 
 Several core messages carry an inner `payload` that is itself a packed submessage. Each submessage library follows the same convention as `MessageLib`: a 1-byte type prefix followed by packed fields.
 
+The submessage encoding scheme is not enforced by the core protocol. The following schema is used by the hook and vault implementations included in the protocol periphery code, but alternative submessage schemes may also be used by integrators.
+
 ### UpdateRestriction submessages
 
 Encoded by `UpdateRestrictionMessageLib` and carried inside `UpdateRestriction.payload`. The `UpdateRestrictionType` enum governs the submessage kind.
@@ -588,5 +592,3 @@ The two variants serve opposite directions and trust levels:
 - **TrustedContractUpdate** flows hub to spoke. It is initiated by a pool's hub manager through the `Hub` contract, so the receiving spoke can trust that any message of this type was authorized at the hub level. No sender field is included, and the target contract is expected to accept calls from the Gateway without additional verification.
 
 - **UntrustedContractUpdate** flows spoke to hub. It can be triggered by anyone on a spoke chain, so the hub-side target cannot assume the caller is authorized. The `sender` field carries the originating address so the target contract can apply its own access control checks.
-
-In both cases, `extraGasLimit` lets the initiator reserve additional gas for the forwarded call on the destination chain.
