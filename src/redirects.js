@@ -352,6 +352,16 @@ const redirects = [
     to: "/developer/legacy/tinlake/",
   },
 
+  // Renamed pages
+  {
+    from: "/developer/protocol/features/modular-extensions/",
+    to: "/developer/protocol/features/modularity/",
+  },
+  {
+    from: "/developer/protocol/features/modular-extensions",
+    to: "/developer/protocol/features/modularity/",
+  },
+
   // Handle trailing slashes consistently
   {
     from: "/getting-started",
