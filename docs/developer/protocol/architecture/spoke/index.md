@@ -50,6 +50,8 @@ The `BalanceSheet` contract:
 
 Vault managers like `SyncManager` and `AsyncRequestManager` interact with this module to perform vault-specific logic.
 
+**Any contract can be registered as a balance sheet manager.** This is the general-purpose extension point for how a pool's assets are held, moved, and allocated. A builder can deploy a custom balance sheet manager that routes deposits into a DeFi lending protocol, manages on/off-ramp flows to fiat, implements a multi-strategy allocation engine, or integrates with external custody solutions. The core enforces correct accounting for whatever the manager does. The allocation logic is entirely pluggable.
+
 ### ShareToken
 
 `ShareToken` is a custom ERC20 implementation with additional features:
@@ -63,6 +65,8 @@ Vault managers like `SyncManager` and `AsyncRequestManager` interact with this m
   * `FullRestrictions`
 
 These hook contracts implement the `ITransferHook` interface and can be dynamically attached to `ShareToken`.
+
+**Hooks are upgradeable without redeploying the token contract.** The share token references a hook contract that can be swapped by the pool manager. A fund can start with full restrictions during a private placement and later switch to freely transferable once the token is ready for DeFi distribution, all without migrating tokens or breaking integrations.
 
 Each `ShareToken` is instantiated by the `TokenFactory` and linked to a specific pool and share class.
 

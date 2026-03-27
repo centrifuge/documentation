@@ -85,6 +85,12 @@ The separation of approval and issuance/revocation is to be used for cases where
 For synchronous deposit vaults using ERC-4626, asset deposits skip all six stages, and shares are immediately minted into the user's wallet.
 :::
 
+### Flexible batching cadence
+
+The batching cadence is not hardcoded. There is no "daily" or "weekly" setting in the contract. The fund manager controls when epochs close by calling the approval functions. A treasury fund might run epochs hourly. A credit fund might batch weekly. A fund with complex NAV calculations might process monthly. The contracts enforce sequential epoch processing (you can't skip an epoch or process out of order) but leave the timing entirely to the manager.
+
+Different share classes and different deposit assets within the same pool can run on independent epoch cycles. A pool's USDC deposits might batch daily while its USDT deposits batch weekly, all managed independently.
+
 ### Request batching and partial fulfillment
 
 The `BatchRequestManager` maintains First-In-First-Out (FIFO) batch-based logic for all pending requests. Batches are created when the fund manager triggers an approval, all requests that are pending at that moment become part of that batch. When a batch is approved with a specific total amount, the `BatchRequestManager` processes all requests in that batch. If the approved amount is insufficient to fulfill all requests in the batch, each request is fulfilled proportionally based on its share of the total requested amount.
