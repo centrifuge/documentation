@@ -1,5 +1,6 @@
 ---
 id: modularity
+slug: /developer/protocol/features/programmable-vault-stack
 title: Programmable vault stack
 category: subpage
 contributors: <Jeroen:jeroen@k-f.co>
@@ -27,9 +28,9 @@ Here are the key extension points. The stack exposes more, but these illustrate 
 
 Every share token calls out to an `ITransferHook` implementation on every ERC-20 transfer. The hook decides whether the transfer is allowed based on the sender, receiver, and the type of operation (deposit, redemption, secondary transfer, cross-chain move).
 
-The protocol ships multiple hook implementations covering the spectrum from fully restricted (memberlist required for all operations) to freely transferable (anyone can hold and transfer, designed for deRWA tokens moving through DeFi) to freeze-only (no memberlist, just a compliance kill switch). Builders select the model that fits their product, or write their own. The interface is a single function.
+The protocol ships multiple hook implementations covering the spectrum from fully restricted (memberlist required for all operations) to freely transferable (anyone can hold and transfer) to freeze-only (no memberlist, just a compliance kill switch). Builders select the model that fits their product, or write their own. The interface is a single function.
 
-**Hooks are upgradeable without redeploying the token contract.** The share token references a hook contract that can be swapped by the pool manager. This means a fund can start with full restrictions during a private placement and later switch to freely transferable once the token is ready for DeFi distribution, all without migrating tokens or breaking integrations.
+**Hooks are upgradeable without redeploying the token contract.** The share token references a hook contract that can be swapped by the pool manager. A fund can start with full restrictions and later switch to freely transferable once the token is ready for broader distribution, all without migrating tokens or breaking integrations.
 
 ### Sync vs async vaults
 

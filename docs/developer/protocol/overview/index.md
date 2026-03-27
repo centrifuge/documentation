@@ -27,7 +27,7 @@ The protocol provides [vault implementations](/developer/protocol/features/vault
 
 ### Immutable core, programmable vault stack
 
-The protocol combines an [immutable core](/developer/protocol/architecture/overview/) with a [programmable vault stack](/developer/protocol/features/modularity/) for customization. The protocol allows customizing investment vaults, transfer hooks for compliance logic, balance sheet managers for asset allocation strategies, hub managers for automated pricing and order management, valuation contracts for asset pricing, per-pool cross-chain adapters, and much more. This architecture enables builders to innovate at the extension layer while maintaining the security guarantees of the immutable core.
+The protocol combines an [immutable core](/developer/protocol/architecture/overview/) with a [programmable vault stack](/developer/protocol/features/programmable-vault-stack/) for customization. The protocol allows customizing investment vaults, transfer hooks for compliance logic, balance sheet managers for asset allocation strategies, hub managers for automated pricing and order management, valuation contracts for asset pricing, per-pool cross-chain adapters, and much more. This architecture enables builders to innovate at the extension layer while maintaining the security guarantees of the immutable core.
 
 ### Onchain accounting
 
