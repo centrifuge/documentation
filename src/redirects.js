@@ -352,24 +352,6 @@ const redirects = [
     to: "/developer/legacy/tinlake/",
   },
 
-  // Renamed pages
-  {
-    from: "/developer/protocol/features/modular-extensions/",
-    to: "/developer/protocol/features/programmable-vault-stack/",
-  },
-  {
-    from: "/developer/protocol/features/modular-extensions",
-    to: "/developer/protocol/features/programmable-vault-stack/",
-  },
-  {
-    from: "/developer/protocol/features/modularity/",
-    to: "/developer/protocol/features/programmable-vault-stack/",
-  },
-  {
-    from: "/developer/protocol/features/modularity",
-    to: "/developer/protocol/features/programmable-vault-stack/",
-  },
-
   // Handle trailing slashes consistently
   {
     from: "/getting-started",
