@@ -75,10 +75,6 @@ interface IValuation {
 
 Valuations are pluggable per holding. A pool can use different valuation contracts for different assets: one for stablecoin reserves, another for treasury positions, a third for a structured product. When any price updates, it immediately triggers a mark-to-market revaluation of the holding, and the resulting gain or loss flows into the accounting as a balanced journal entry.
 
-### Any smart contract as a price source
-
-The `OracleValuation` contract accepts prices from authorized feeders, and those feeders can be on any chain. A spoke-side contract can read an onchain price source (a Chainlink feed, a Uniswap TWAP, an ERC-4626 share price, a Morpho market rate) and relay it to the hub via the existing cross-chain messaging path. No separate oracle infrastructure is required.
-
 ## NAV Manager
 
 The `NAVManager` implements `ISnapshotHook`, receiving callbacks when holdings reach a consistent state (i.e., when a complete sync is detected). It computes per-chain NAV from the accounting state:

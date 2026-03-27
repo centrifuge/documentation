@@ -87,14 +87,6 @@ Each pool has a dedicated subsidy escrow (deployed deterministically via CREATE2
 
 If a message is sent without sufficient gas funding, it isn't lost. The Gateway queues it as an underpaid batch. Anyone can later call `repay()` with the required gas to send it, ensuring cross-chain operations are resilient to temporary gas funding gaps.
 
-### Failed message retries and recovery
-
-Cross-chain message execution can fail for various reasons. The protocol implements built-in resilience:
-
-* **Failed message counter.** When a message fails to process on arrival, the Gateway increments a failed message counter and emits the failure reason. Anyone can call `retry()` to re-execute the message once the underlying condition is resolved. No manual message reconstruction or re-sending from the source chain is required.
-* **Recovery adapter.** For severe incidents, a `RecoveryAdapter` allows authorized parties to inject messages directly into the protocol, bypassing cross-chain infrastructure entirely. This is the last-resort recovery mechanism for stuck or lost messages, ensuring no cross-chain state becomes permanently irrecoverable.
-* **Per-pool circuit breaker.** The Gateway Manager can block outgoing messages per chain and per pool, acting as a circuit breaker for cross-chain message flow.
-
 ### Cross-chain observability
 
 [Centrifugescan](https://centrifugescan.io/) is the first cross-chain explorer built specifically for tokenized assets. It tracks the full lifecycle of cross-chain messages, investment flows, and vault state across every spoke, providing a single view rather than switching between multiple block explorers.
