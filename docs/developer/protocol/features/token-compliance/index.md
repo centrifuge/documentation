@@ -23,6 +23,7 @@ Every Centrifuge share token references an optional transfer hook contract. The 
 | --- | --- |
 | Issue tokens | Restricted to balance sheet managers |
 | Transfer tokens with compliance checks | Hook enforces rules on every `transfer` / `transferFrom` |
+| Limit token bridging | Hook is invoked on outgoing and incoming cross-chain transfers, allowing bridging to be blocked per address or per destination chain |
 | Whitelist / blacklist addresses | Memberlist with per-address validity timestamps |
 | Multiple trusted issuers | Multiple managers per token, each with independent authority |
 | Freeze / unfreeze an address | Per-address freeze flag in token storage |
@@ -38,6 +39,12 @@ The protocol ships with four pre-built hooks plus the option to set no hook at a
 - **No hook** - fully permissionless. The token behaves as a standard ERC-20 with no transfer restrictions.
 
 Beyond these, custom hooks can enforce additional rules such as maximum holder counts, minimum investment sizes, lockup periods, and jurisdiction-based restrictions. The hook is upgradeable per share class, allowing compliance rules to evolve as requirements change.
+
+## Securing vault actions
+
+The hook is invoked on every token movement with an action-specific context, so each ERC-7540 vault action can be gated independently: deposit requests, redemption requests, deposit claims, and redemption claims. The same applies to multichain transfers and peer-to-peer transfers.
+
+Issuers can, for example, require KYC on deposit requests while allowing free secondary market transfers, freeze an address for redemptions without blocking incoming transfers, or disable bridging for specific users without affecting their vault activity.
 
 ## Multichain management
 
