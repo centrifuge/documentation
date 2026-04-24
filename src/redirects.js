@@ -310,6 +310,10 @@ const redirects = [
     to: "/developer/security/overview/",
   },
   {
+    from: "/developer/security/",
+    to: "/developer/security/overview/",
+  },
+  {
     from: "/build/nfts/",
     to: "/developer/protocol/guides/invest-into-a-vault/",
   },
