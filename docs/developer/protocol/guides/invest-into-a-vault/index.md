@@ -7,111 +7,72 @@ contributors:
 
 # Invest into a vault
 
-This guide explains how to invest in and redeem from Centrifuge vaults, using both synchronous and asynchronous vault types. We’ll walk through:
+This guide explains how to invest in and redeem from Centrifuge vaults, using both asynchronous and synchronous vault types.
 
-* How to deposit and redeem in a synchronous deposit vault.
-* How to interact with an asynchronous vault, which operates in two distinct phases for deposits and redemptions.
-* How to query the share token price using the price oracle.
+## Asynchronous vaults
 
-## Synchronous deposit vaults
+Asynchronous vaults batch and process deposits at set intervals. Deposits and redemptions are split into a request phase and a claim phase, with fulfillment by the pool issuer in between.
 
-Synchronous vaults process deposits immediately within a single transaction, and processes redemptions asynchronously.
+![](./images/async-flow.png)
 
-### Depositing into a synchronous vault
+### Deposit
 
-Before depositing, approve the vault contract to spend your tokens:
+Approve the vault to spend your tokens, then submit a deposit request:
 
 ```solidity
 asset.approve(address(vault), assets);
+vault.requestDeposit(assets, user, user);
 ```
 
-Then deposit assets (e.g., USDC) to receive vault shares:
+* `assets`: amount of underlying asset to request a deposit for.
+* The second and third `user` values specify ownership and destination.
+
+The request is queued and processed by the pool issuer. After fulfillment, claim the shares:
 
 ```solidity
-vault.deposit(assets, receiver);
+vault.mint(vault.maxMint(user), user);
 ```
 
-* `assets`: Amount of underlying asset to deposit (e.g., 1000 \* 1e6 for 1000 USDC).
-* `receiver`: Address to receive the vault shares.
+* `vault.maxMint(user)` returns the number of shares available to mint based on the fulfilled request.
 
-This call mints shares in exchange for assets immediately.
+### Redemption
 
-### Redeeming from a synchronous vault
-
-Redemptions occur in two steps:
-
-#### Step 1: Submit a redemption request
+Submit a redemption request for the shares you want to redeem:
 
 ```solidity
 vault.requestRedeem(shares, user, user);
 ```
 
-* `shares`: Amount of shares to redeem.
-* The second and third `user` arguments specify both the owner and the receiver of the redemption claim.
-
-This step locks in your redemption, signaling intent to redeem vault shares.
-
-#### Step 2: Claim redemption and withdraw assets
-
-After the redemption window has passed (depending on vault-specific rules):
+After fulfillment, withdraw the underlying asset:
 
 ```solidity
 vault.withdraw(vault.maxWithdraw(user), receiver, user);
 ```
 
 * `vault.maxWithdraw(user)` computes the maximum amount of assets that can now be withdrawn.
-* `receiver`: Address to receive the underlying asset (e.g., USDC).
+* `receiver`: address to receive the underlying asset (e.g., USDC).
 
-## Asynchronous vaults
+## Synchronous deposit vaults
 
-Asynchronous vaults batch and process deposits at set intervals. Deposits and withdrawals are split into pending and claimable phases.
+Synchronous vaults process deposits immediately within a single transaction, but redemptions still settle asynchronously.
 
-### Requesting a deposit
+### Deposit
 
-Before requesting a deposit, approve the vault contract to spend your tokens:
+Approve the vault, then deposit assets to receive vault shares in the same transaction:
 
 ```solidity
 asset.approve(address(vault), assets);
+vault.deposit(assets, receiver);
 ```
 
-Then submit a deposit request:
+* `assets`: amount of underlying asset to deposit (e.g., 1000 \* 1e6 for 1000 USDC).
+* `receiver`: address to receive the vault shares.
 
-```solidity
-vault.requestDeposit(assets, user, user);
-```
+### Redemption
 
-* `assets`: Amount of underlying asset to request deposit for.
-* The second and third `user` values specify ownership and destination.
+Synchronous vaults use the same redemption flow as [asynchronous vaults](#redemption): submit `requestRedeem`, wait for fulfillment, then call `withdraw`.
 
-Your request is queued and will be processed by the issuer of the pool.
-
-### Claiming a deposit (minting shares)
-
-After the deposit request is fulfilled:
-
-```solidity
-vault.mint(vault.maxMint(user), user);
-```
-
-* `vault.maxMint(user)` returns the number of shares available to mint based on your request.
-* `user`: Receives the minted vault shares.
-
-### Redeeming (same as synchronous)
-
-Asynchronous vaults use the same redemption flow as synchronous ones:
-
-1. Request to redeem:
-
-   ```solidity
-   vault.requestRedeem(shares, user, user);
-   ```
-2. Claim redemption:
-
-   ```solidity
-   vault.withdraw(vault.maxWithdraw(user), receiver, user);
-   ```
-
-## Depositing or redeeming on behalf of another user
+## Acting on behalf of another user
 
 The ERC-7540 standard allows a user to submit deposit and redemption requests on behalf of another address. The `requestDeposit` and `requestRedeem` functions take separate `controller` and `owner` parameters:
 
@@ -120,8 +81,22 @@ vault.requestDeposit(assets, controller, owner);
 vault.requestRedeem(shares, controller, owner);
 ```
 
-* `owner`: The source of the assets (for deposits) or shares (for redemptions). Must equal `msg.sender` unless the owner has approved `msg.sender` as an operator.
-* `controller`: The address that controls the request. This address can later claim the resulting shares or assets, cancel the request, and manage the request lifecycle.
+* `owner`: the source of the assets (for deposits) or shares (for redemptions). Must equal `msg.sender` unless the owner has approved `msg.sender` as an operator.
+* `controller`: the address that controls the request. This address can later claim the resulting shares or assets, cancel the request, and manage the request lifecycle.
+
+### Operator approvals
+
+An owner can approve another address as an operator using `setOperator`:
+
+```solidity
+vault.setOperator(operator, true);
+```
+
+Once approved, the operator can call `requestDeposit` or `requestRedeem` with the owner's address as the `owner` parameter, cancel requests, and claim on behalf of the controller.
+
+:::warning
+Approving an operator grants it control over both the assets and shares associated with the vault. Only approve trusted addresses.
+:::
 
 ### Smart contract integrations
 
@@ -135,39 +110,30 @@ If you are building a smart contract that wraps vault interactions (e.g., an agg
 For smart contract integrations, call `vault.isPermissioned(address(yourContract))` before submitting any requests. If your contract cannot hold shares, deposit and claim operations will revert.
 :::
 
-### Operator permissions
+## FAQ
 
-An owner can approve another address as an operator using `setOperator`:
+### How long does it take for requests to be processed?
 
-```solidity
-vault.setOperator(operator, true);
-```
+Asynchronous requests are fulfilled by the pool issuer. The time to fulfillment depends on the specific product and its subscription or redemption settlement cycle.
 
-Once approved, the operator can call `requestDeposit` or `requestRedeem` with the owner's address as the `owner` parameter. The operator can also cancel requests and claim on behalf of the controller.
+### How do I get the current share price?
 
-:::warning
-Approving an operator grants it control over both the assets and shares associated with the vault. Only approve trusted addresses.
-:::
-
-## Processing times
-
-Asynchronous requests are processed by the pool manager. The time to process depends on the specific product and its subscription or redemption settlement cycle.
-
-## Price oracle
-
-To get the latest price of vault shares in terms of the investment asset, use the `vault.convertToAssets()` method:
+Use `vault.convertToAssets()` to convert a share amount to its current value in the investment asset:
 
 ```solidity
-// First get the share token decimals
 uint8 shareDecimals = vault.share().decimals();
-
-// Convert 1 share to its equivalent value in the investment asset
 uint256 oneShare = 10 ** shareDecimals;
 uint256 assetValue = vault.convertToAssets(oneShare);
 ```
 
-This method returns the current value denominated in the investment asset (e.g., USDC). The result is expressed in the decimals of the investment asset. For example, if the investment asset is USDC (6 decimals), the returned value will be in USDC's 6 decimal format.
+The result is denominated in the investment asset and uses the asset's decimals (e.g., 6 for USDC).
 
-:::info[Deposit and redeem prices]
-The latest price returned by `convertToAssets()` might not be the exact price at which your investment or redemption is executed, as there can be a time lag between querying the price and when the transaction is processed.
+:::info
+The price returned by `convertToAssets()` may not be the exact price at which a request is settled, since there can be a time lag between querying and fulfillment.
 :::
+
+### Who pays for cross-chain gas?
+
+Investments are processed locally. The vault mints share tokens natively on the chain where it is deployed and holds the deposited assets in a local escrow on the same chain. You only pay gas for the local transaction.
+
+Each vault interaction also emits a cross-chain message to the hub chain, so the pool issuer can keep bookkeeping consistent across every chain where the share token is deployed. The vault contracts estimate the cost of this message during the investment transaction, and the actual cost is drawn from the pool's subsidy balance held by the [Subsidy Manager](https://github.com/centrifuge/protocol/blob/main/src/utils/SubsidyManager.sol). The issuer tops this balance up per pool, so investors do not pay cross-chain fees.

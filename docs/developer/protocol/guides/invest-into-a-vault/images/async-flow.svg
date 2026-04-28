@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="560" viewBox="0 0 1300 560" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1A1B25"/>
+    </marker>
+  </defs>
+
+  <rect width="1300" height="560" fill="#FFFFFF"/>
+
+  <!-- Step labels -->
+  <text x="200" y="45" text-anchor="middle" font-size="26" font-weight="700" fill="#1A1B25">1. Request</text>
+  <text x="650" y="45" text-anchor="middle" font-size="26" font-weight="700" fill="#1A1B25">2. Fulfillment</text>
+  <text x="1100" y="45" text-anchor="middle" font-size="26" font-weight="700" fill="#1A1B25">3. Claim</text>
+
+  <!-- User card (step 1) -->
+  <rect x="60" y="80" width="280" height="110" rx="14" fill="#F2F2F5"/>
+  <text x="200" y="125" text-anchor="middle" font-size="22" font-weight="600" fill="#1A1B25">User</text>
+  <text x="200" y="160" text-anchor="middle" font-size="18" fill="#5A5C6E">calls requestDeposit(assets)</text>
+
+  <!-- Arrow: user -> vault -->
+  <line x1="200" y1="195" x2="200" y2="225" stroke="#1A1B25" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Vault card spanning full width -->
+  <rect x="60" y="230" width="1180" height="150" rx="16" fill="#F2F2F5"/>
+  <text x="650" y="290" text-anchor="middle" font-size="30" font-weight="700" fill="#1A1B25">Vault</text>
+  <text x="650" y="332" text-anchor="middle" font-size="20" fill="#5A5C6E">holds assets in a local escrow and mints share tokens natively</text>
+
+  <!-- Arrow: pool issuer -> vault -->
+  <line x1="650" y1="430" x2="650" y2="385" stroke="#1A1B25" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Pool issuer card -->
+  <rect x="510" y="430" width="280" height="110" rx="14" fill="#F2F2F5"/>
+  <text x="650" y="475" text-anchor="middle" font-size="22" font-weight="600" fill="#1A1B25">Pool issuer</text>
+  <text x="650" y="510" text-anchor="middle" font-size="18" fill="#5A5C6E">fulfills the request</text>
+
+  <!-- Arrow: vault -> user (step 3) -->
+  <line x1="1100" y1="225" x2="1100" y2="195" stroke="#1A1B25" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- User card (step 3) -->
+  <rect x="960" y="80" width="280" height="110" rx="14" fill="#F2F2F5"/>
+  <text x="1100" y="125" text-anchor="middle" font-size="22" font-weight="600" fill="#1A1B25">User</text>
+  <text x="1100" y="160" text-anchor="middle" font-size="18" fill="#5A5C6E">calls mint()</text>
+</svg>
