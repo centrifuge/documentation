@@ -1,67 +1,82 @@
 ---
-id: merkle-proof-manager
-title: Merkle Proof Manager
+id: onchain-portfolio-manager
+title: Onchain Portfolio Manager
 category: subpage
-contributors: <Jeroen:jeroen@k-f.co>
+contributors: <Jeroen:jeroen@centrifuge.io>
 ---
 
-# Merkle Proof Manager
+# Onchain Portfolio Manager
 
-> Credits: Inspired by and adapted from [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
+The Onchain Portfolio Manager (Onchain PM) is the execution layer for programmable capital allocation in Centrifuge vaults. It lets vault managers deploy assets into DeFi protocols on supported chains through authorized, multi-step strategies — with unified NAV accounting across all positions, including in-transit assets.
 
-The Merkle Proof Manager is a smart contract component in the Centrifuge protocol that enforces programmable allocation policies using Merkle tree proofs. It provides a secure and verifiable mechanism for limiting strategists to a predefined set of allocation calls, ensuring that funds can only be moved in accordance with an approved policy.
+Strategies can span swaps, bridging, vault deposits, leveraged loops, and flash loans, executed as a single atomic workflow. Governance approves complete workflows rather than individual calls, so execution wallets cannot reorder steps or substitute addresses without invalidating the authorization.
 
-This approach enhances composability and decentralization by allowing flexible integrations while maintaining strict security boundaries.
+## Execution model
 
-## How It Works
+The Onchain PM uses [Weiroll](https://github.com/weiroll/weiroll), a minimal onchain scripting VM. A strategy is a sequence of commands, each encoded as a `bytes32` word containing:
 
-At the heart of the Merkle Proof Manager is a Merkle tree, where each leaf node encodes a specific call that is permitted under the policy. The root hash of this tree, called the policy, is stored on-chain.
+- a 4-byte function selector
+- call type flags (`call`, `staticcall`, `delegatecall`)
+- input and output state indices
+- the target contract address
 
-Each leaf is derived from the following components:
+Commands execute sequentially, threading data through a shared state array. This allows later steps to consume outputs from earlier ones — for example, using the result of a price oracle read as the input amount for a swap.
 
-- **Decoder contract address**:
-   A small, protocol-specific smart contract that extracts relevant addresses from the call.
+## Authorization
 
-- **Target contract address**:
-   The address of the external smart contract to be interacted with.
+Scripts are authorized at the workflow level via a Merkle tree. The hash committed to the Merkle leaf incorporates:
 
-- **Function signature**:
-   The exact function to be called on the target contract.
+- the exact command sequence
+- a `stateBitmap` designating which state slots governance pins (fixed) versus which are runtime-variable
+- pre-committed callback hashes for flash loan steps
 
--  **Address inputs**:
-   The critical addresses used in the function call, extracted via the decoder.
+The `stateBitmap` gives governance precise control: it can pin critical addresses and amounts while allowing strategists to supply live market data at execution time. Changing any pinned element invalidates the proof.
 
-- **Value flag**:
-   A flag indicating whether the function call includes native gas tokens (e.g., `msg.value > 0`).
+Policies are assigned per strategist by the Hub via cross-chain trusted calls, and can be updated or revoked at any time.
 
-To verify that a strategist call is allowed, the caller must submit a Merkle proof. This proof confirms that the proposed call is one of the authorized leaves under the current policy root.
+## Runtime guards
 
-## Supporting New Integrations
+Three guards protect against strategy-level value loss:
 
-To support a new protocol, a custom decoder contract must be implemented. The decoder’s job is to expose the function’s address-type inputs so they can be filtered and validated during the Merkle proof process.
+**SlippageGuard** — takes balance snapshots before and after execution, enforcing cumulative loss bounds over a rolling time window. This catches aggregate slippage across multi-step strategies.
 
-#### Example: ERC-7540 Deposit Request
+**ApprovalGuard** — verifies that no ERC-20 token approvals remain after a strategy runs. This prevents strategies from leaving residual spending permissions on external contracts.
 
-To support deposit requests into an ERC-7540 vault, a minimal decoder might look like this:
+**Circuit breaker** — limits accumulated values such as cross-chain bridging volume over a period, providing a hard cap on capital exposure per execution window.
+
+## In-flight asset accounting
+
+Assets moving across chains or sitting in async vault queues are tracked using ERC-6909 accounting tokens. When an asset leaves the balance sheet (via bridge or async request), a receipt token is minted in its place. When it arrives or settles, a corresponding liability token is recorded.
+
+Both tokens are valued identically to the underlying asset, so NAV stays accurate throughout transfers. This means the portfolio manager can account for capital that is deployed, in transit, and settled — all in a single view.
+
+## Decoders
+
+Each DeFi protocol integration requires a decoder contract. Decoders are stateless contracts that extract address-type inputs from call data, allowing the authorization layer to validate that only permitted addresses are involved.
+
+Two decoders ship with the protocol:
+
+**BaseDecoder** handles core balance sheet operations: `approve` (ERC-20 and ERC-6909), `deposit`, and `withdraw`.
+
+**VaultDecoder** extends `BaseDecoder` with ERC-4626 and ERC-7540 operations: `deposit`, `mint`, `withdraw`, `redeem`, `requestDeposit`, `requestRedeem`, and their cancellation and claim variants.
+
+To integrate a new protocol, implement a decoder that exposes all address-type parameters the protocol's functions accept:
 
 ```solidity
-function requestDeposit(
-    uint256, 
-    address controller, 
-    address owner
-) external view virtual returns (bytes memory addressesFound) {
-    addressesFound = abi.encodePacked(controller, owner);
+function swap(
+    address tokenIn,
+    address tokenOut,
+    uint256, /* amountIn */
+    uint256  /* minAmountOut */
+) external pure returns (bytes memory addressesFound) {
+    addressesFound = abi.encodePacked(tokenIn, tokenOut);
 }
 ```
 
-This function allows the Merkle Proof Manager to extract and validate the `controller` and `owner` addresses, ensuring only allowed accounts are involved in the call.
+## Flash loans
 
-## Security
+Nested callbacks enable multi-provider flash loan composition. Each callback script is pre-committed in the outer script's authorization hash, with the expected caller verified per invocation. This prevents unauthorized callback substitution even at the correct nesting depth.
 
-The Merkle Proof Manager enables pool managers to:
+## Credits
 
-* Predefine exactly which contract calls are permitted
-* Limit address-level permissions per call
-* Prevent strategists from executing unauthorized transactions
-
-This model ensures strategy-level control without compromising on extensibility.
+The Onchain PM execution model is built on [Weiroll](https://github.com/weiroll/weiroll), originally developed by [@DeanEigenmann](https://x.com/deanpierce), [@matthewdif](https://x.com/matthewdif), and [@nicksdjohnson](https://x.com/nicksdjohnson). The approach to script-level authorization was further developed by [Enso](https://www.enso.finance/). The policy leaf architecture for address-level filtering is inspired by [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
