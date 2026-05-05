@@ -9,7 +9,7 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 The Onchain Portfolio Manager (Onchain PM) is the execution layer for programmable capital allocation in Centrifuge vaults. It lets vault managers deploy assets into DeFi protocols on supported chains through authorized, multi-step strategies, with unified NAV accounting across all positions including in-transit assets.
 
-Strategies can span swaps, bridging, vault deposits, leveraged loops, and flash loans, executed as a single atomic workflow. Hub managers approves complete workflows rather than individual calls, so execution wallets cannot reorder steps or substitute addresses without invalidating the authorization.
+Strategies can span swaps, bridging, vault deposits, leveraged loops, and flash loans, executed as a single atomic workflow. Hub managers approve complete workflows rather than individual calls, so execution wallets cannot reorder steps or substitute addresses without invalidating the authorization.
 
 :::info Credits
 The execution model builds on [Weiroll](https://github.com/weiroll/weiroll), originally developed by [@DeanEigenmann](https://x.com/deanpierce), [@matthewdif](https://x.com/matthewdif), and [@nicksdjohnson](https://x.com/nicksdjohnson). Script-level authorization was further developed by [Enso](https://www.enso.finance/). The policy leaf architecture for address-level filtering is inspired by [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
@@ -54,28 +54,17 @@ Assets moving across chains or sitting in async vault queues are tracked using E
 
 Both tokens are valued identically to the underlying asset, so NAV stays accurate throughout transfers. The portfolio manager accounts for capital that is deployed, in transit, and settled in a single unified view.
 
-## Decoders
+## Supported workflows
 
-Each DeFi protocol integration requires a decoder contract. Decoders are stateless contracts that extract address-type inputs from call data, allowing the authorization layer to validate that only permitted addresses are involved.
+The Onchain PM ships with a library of pre-authorized workflows covering the most common DeFi operations. Each entry in the table represents a set of Weiroll scripts that can be composed into multi-step strategies.
 
-Two decoders ship with the protocol:
-
-**BaseDecoder** handles core balance sheet operations: `approve` (ERC-20 and ERC-6909), `deposit`, and `withdraw`.
-
-**VaultDecoder** extends `BaseDecoder` with ERC-4626 and ERC-7540 operations: `deposit`, `mint`, `withdraw`, `redeem`, `requestDeposit`, `requestRedeem`, and their cancellation and claim variants.
-
-To integrate a new protocol, implement a decoder that exposes all address-type parameters the protocol's functions accept:
-
-```solidity
-function swap(
-    address tokenIn,
-    address tokenOut,
-    uint256, /* amountIn */
-    uint256  /* minAmountOut */
-) external pure returns (bytes memory addressesFound) {
-    addressesFound = abi.encodePacked(tokenIn, tokenOut);
-}
-```
+| Protocol | Actions | Workflows |
+| --- | --- | --- |
+| [Aave V3](https://aave.com/) | deposit, withdraw, account, flash loan | ~304 |
+| [Morpho](https://morpho.org/) | deposit, withdraw | ~194 |
+| [Centrifuge](https://centrifuge.io/) | deposit, request deposit, claim deposit, request redeem, claim redeem, account | ~182 |
+| [Circle CCTP](https://www.circle.com/cross-chain-transfer-protocol) | bridge, bridge claim | ~120 |
+| [USDT0](https://usdt0.to/) | bridge | ~80 |
 
 ## Flash loans
 
