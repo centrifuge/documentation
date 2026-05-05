@@ -31,7 +31,7 @@ Assets moving across chains or sitting in async queues are tracked as ERC-6909 a
 
 ## Available workflows
 
-A library of over 860 ready-to-use workflow templates is published at [centrifuge.github.io/workflows](https://centrifuge.github.io/workflows). The library covers lending and withdrawals on Aave V3 and Morpho, ERC-4626 and ERC-7540 vault interactions on Centrifuge, cross-chain USDC transfers via Circle CCTP, and USDT0 bridging.
+A library of over 860 ready-to-use workflow templates covers lending and withdrawals on Aave V3 and Morpho, ERC-4626 and ERC-7540 vault interactions on Centrifuge, cross-chain USDC transfers via Circle CCTP, and USDT0 bridging.
 
 New templates for additional protocols, assets, and chains can be added. The workflow format is open and extensible. If your use case requires a workflow that is not yet listed, reach out to the Centrifuge team or contribute a template directly.
 
