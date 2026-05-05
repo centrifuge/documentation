@@ -7,65 +7,44 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 # Onchain Portfolio Manager
 
-The Onchain Portfolio Manager (Onchain PM) is the execution layer for programmable capital allocation in Centrifuge vaults. It lets vault managers deploy assets into DeFi protocols on supported chains through authorized, multi-step strategies, with unified NAV accounting across all positions including in-transit assets.
+The Onchain Portfolio Manager lets pool operators and strategists execute pre-approved DeFi workflows on behalf of a Centrifuge pool. Workflows are multi-step sequences: withdraw from the balance sheet, deploy into protocols like Aave or Morpho, bridge across chains, and deposit received tokens back — all in a single atomic transaction.
 
-Strategies can span swaps, bridging, vault deposits, leveraged loops, and flash loans, executed as a single atomic workflow. Hub managers approve complete workflows rather than individual calls, so execution wallets cannot reorder steps or substitute addresses without invalidating the authorization.
+Workflows are Weiroll scripts: ordered command sequences where each step can consume outputs from previous ones, enabling reactive strategies that read live onchain data (prices, balances) at execution time. Every script is authorized by the pool's Hub managers through a Merkle proof policy. Strategists can only execute scripts whose hash is included in their approved policy, and Hub managers can pin specific parameters so strategists cannot substitute addresses or modify amounts at execution time.
 
 :::info Credits
 The execution model builds on [Weiroll](https://github.com/weiroll/weiroll), originally developed by [@DeanEigenmann](https://x.com/deanpierce), [@matthewdif](https://x.com/matthewdif), and [@nicksdjohnson](https://x.com/nicksdjohnson). Script-level authorization was further developed by [Enso](https://www.enso.finance/). The policy leaf architecture for address-level filtering is inspired by [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
 :::
 
-## Execution model
+## Flow of funds
 
-The Onchain PM uses [Weiroll](https://github.com/weiroll/weiroll), a minimal onchain scripting VM. A strategy is a sequence of commands, each encoded as a `bytes32` word containing:
+Assets invested into a Centrifuge pool go through the standard ERC-7540 async vault lifecycle: investors deposit, the pool operator approves deposits, and shares are issued. Once deposits are approved, the underlying assets sit on the pool's balance sheet — a non-custodial smart contract that holds all pool assets.
 
-- a 4-byte function selector
-- call type flags (`call`, `staticcall`, `delegatecall`)
-- input and output state indices
-- the target contract address
+From there, Onchain PM workflows can batch multiple operations atomically:
 
-Commands execute sequentially, threading data through a shared state array. This allows later steps to consume outputs from earlier ones: for example, using the result of a price oracle read as the input amount for a swap.
+1. Withdraw assets from the balance sheet
+2. Deploy into underlying protocols (lending, staking, liquidity pools) or bridge to other chains
+3. Deposit any received tokens (aTokens, LP tokens, receipt tokens) back to the balance sheet
 
-## Authorization
+No single party has unilateral access to withdraw funds outside of the approved Hub manager and workflow framework.
 
-Scripts are authorized at the workflow level via a Merkle tree. The hash committed to the Merkle leaf incorporates:
+Assets moving across chains or sitting in async queues are tracked as ERC-6909 accounting tokens. When an asset leaves the balance sheet, a receipt token is minted in its place; when it arrives or settles, a corresponding liability token is recorded. Both are valued identically to the underlying asset, so NAV stays accurate throughout.
 
-- the exact command sequence
-- a `stateBitmap` designating which state slots Hub managers pins (fixed) versus which are runtime-variable
-- pre-committed callback hashes for flash loan steps
+For the full investment lifecycle including deposit, approval, and redemption flows, see the [Centrifuge protocol documentation](/developer/protocol/).
 
-The `stateBitmap` gives Hub managers precise control: it can pin critical addresses and amounts while allowing strategists to supply live market data at execution time. Changing any pinned element invalidates the proof.
+## Available workflows
 
-Policies are assigned per strategist by the Hub via cross-chain trusted calls, and can be updated or revoked at any time.
+A library of over 860 ready-to-use workflow templates is published at [centrifuge.github.io/workflows](https://centrifuge.github.io/workflows). The library covers lending and withdrawals on Aave V3 and Morpho, ERC-4626 and ERC-7540 vault interactions on Centrifuge, cross-chain USDC transfers via Circle CCTP, and USDT0 bridging.
 
-## Runtime guards
+New templates for additional protocols, assets, and chains can be added. The workflow format is open and extensible. If your use case requires a workflow that is not yet listed, reach out to the Centrifuge team or contribute a template directly.
 
-Three guards protect against strategy-level value loss:
+## Security model
 
-**SlippageGuard** takes balance snapshots before and after execution, enforcing cumulative loss bounds over a rolling time window. This catches aggregate slippage across multi-step strategies.
+Every workflow execution is protected by multiple layers:
 
-**ApprovalGuard** verifies that no ERC-20 token approvals remain after a strategy runs. This prevents strategies from leaving residual spending permissions on external contracts.
+**Merkle proof policy** — only scripts approved in the strategist's policy tree can execute. The policy is a Merkle root assigned per strategist by Hub managers via cross-chain trusted calls, and can be updated or revoked at any time.
 
-**Circuit breaker** limits accumulated values such as cross-chain bridging volume over a period, providing a hard cap on capital exposure per execution window.
+**Fixed state slots** — Hub managers can pin specific parameters (addresses, amounts) in a workflow script. Changing a pinned value invalidates the Merkle proof, preventing strategists from substituting addresses or redirecting funds at execution time.
 
-## In-flight asset accounting
+**SlippageGuard** — enforces per-script slippage bounds and cumulative period loss limits across all touched assets.
 
-Assets moving across chains or sitting in async vault queues are tracked using ERC-6909 accounting tokens. When an asset leaves the balance sheet (via bridge or async request), a receipt token is minted in its place. When it arrives or settles, a corresponding liability token is recorded.
-
-Both tokens are valued identically to the underlying asset, so NAV stays accurate throughout transfers. The portfolio manager accounts for capital that is deployed, in transit, and settled in a single unified view.
-
-## Supported workflows
-
-The Onchain PM ships with a library of pre-authorized workflows covering the most common DeFi operations. Each entry in the table represents a set of Weiroll scripts that can be composed into multi-step strategies.
-
-| Protocol | Actions | Workflows |
-| --- | --- | --- |
-| [Aave V3](https://aave.com/) | deposit, withdraw, account, flash loan | ~304 |
-| [Morpho](https://morpho.org/) | deposit, withdraw | ~194 |
-| [Centrifuge](https://centrifuge.io/) | deposit, request deposit, claim deposit, request redeem, claim redeem, account | ~182 |
-| [Circle CCTP](https://www.circle.com/cross-chain-transfer-protocol) | bridge, bridge claim | ~120 |
-| [USDT0](https://usdt0.to/) | bridge | ~80 |
-
-## Flash loans
-
-Nested callbacks enable multi-provider flash loan composition. Each callback script is pre-committed in the outer script's authorization hash, with the expected caller verified per invocation. This prevents unauthorized callback substitution even at the correct nesting depth.
+**Circuit breaker** — rolling-window throughput limits and per-update value deviation caps, providing a hard ceiling on capital exposure per execution window.
