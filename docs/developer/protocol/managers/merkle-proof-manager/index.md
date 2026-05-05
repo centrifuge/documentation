@@ -23,7 +23,7 @@ From there, Onchain PM workflows can batch multiple operations atomically:
 
 1. Withdraw assets from the balance sheet
 2. Deploy into underlying protocols (lending, staking, liquidity pools) or bridge to other chains
-3. Deposit any received tokens (aTokens, LP tokens, receipt tokens) back to the balance sheet
+3. Deposit any received tokens (LP tokens, receipt tokens, aTokens) back to the balance sheet
 
 No single party has unilateral access to withdraw funds outside of the approved Hub manager and workflow framework.
 
