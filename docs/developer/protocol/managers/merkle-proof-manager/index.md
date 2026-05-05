@@ -1,67 +1,48 @@
 ---
-id: merkle-proof-manager
-title: Merkle Proof Manager
+id: onchain-portfolio-manager
+title: Onchain Portfolio Manager
 category: subpage
-contributors: <Jeroen:jeroen@k-f.co>
+contributors: <Jeroen:jeroen@centrifuge.io>
 ---
 
-# Merkle Proof Manager
+# Onchain Portfolio Manager
 
-> Credits: Inspired by and adapted from [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
+The Onchain Portfolio Manager lets pool operators and strategists execute pre-approved DeFi workflows on behalf of a Centrifuge pool. Workflows are multi-step sequences: withdraw from the balance sheet, deploy into protocols like Aave or Morpho, bridge across chains, and deposit received tokens back, all in a single atomic transaction.
 
-The Merkle Proof Manager is a smart contract component in the Centrifuge protocol that enforces programmable allocation policies using Merkle tree proofs. It provides a secure and verifiable mechanism for limiting strategists to a predefined set of allocation calls, ensuring that funds can only be moved in accordance with an approved policy.
+Workflows are Weiroll scripts: ordered command sequences where each step can consume outputs from previous ones, enabling reactive strategies that read live onchain data (prices, balances) at execution time. Every script is authorized by the pool's Hub managers through a Merkle proof policy. Strategists can only execute scripts whose hash is included in their approved policy, and Hub managers can pin specific parameters so strategists cannot substitute addresses or modify amounts at execution time.
 
-This approach enhances composability and decentralization by allowing flexible integrations while maintaining strict security boundaries.
+:::info Credits
+The execution model builds on [Weiroll](https://github.com/weiroll/weiroll), originally developed by [@DeanEigenmann](https://x.com/deanpierce), [@matthewdif](https://x.com/matthewdif), and [@nicksdjohnson](https://x.com/nicksdjohnson). Script-level authorization was further developed and audited by [Enso](https://www.enso.finance/). The policy leaf architecture for address-level filtering is inspired by [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
+:::
 
-## How It Works
+## Flow of funds
 
-At the heart of the Merkle Proof Manager is a Merkle tree, where each leaf node encodes a specific call that is permitted under the policy. The root hash of this tree, called the policy, is stored on-chain.
+Assets invested into a Centrifuge pool go through the standard ERC-7540 async vault lifecycle: investors deposit, the pool operator approves deposits, and shares are issued. Once deposits are approved, the underlying assets sit on the pool's balance sheet, a non-custodial smart contract that holds all pool assets.
 
-Each leaf is derived from the following components:
+From there, Onchain PM workflows can batch multiple operations atomically:
 
-- **Decoder contract address**:
-   A small, protocol-specific smart contract that extracts relevant addresses from the call.
+1. Withdraw assets from the balance sheet
+2. Deploy into underlying protocols (lending, staking, liquidity pools) or bridge to other chains
+3. Deposit any received tokens (LP tokens, receipt tokens, aTokens) back to the balance sheet
 
-- **Target contract address**:
-   The address of the external smart contract to be interacted with.
+No single party has unilateral access to withdraw funds outside of the approved Hub manager and workflow framework.
 
-- **Function signature**:
-   The exact function to be called on the target contract.
+Assets moving across chains or sitting in async queues are tracked as ERC-6909 accounting tokens. When an asset leaves the balance sheet, a receipt token is minted in its place; when it arrives or settles, a corresponding liability token is recorded. Both are valued identically to the underlying asset, so NAV stays accurate throughout.
 
--  **Address inputs**:
-   The critical addresses used in the function call, extracted via the decoder.
+## Available workflows
 
-- **Value flag**:
-   A flag indicating whether the function call includes native gas tokens (e.g., `msg.value > 0`).
+A library of over 860 ready-to-use workflow templates covers lending and withdrawals on Aave V3 and Morpho, ERC-4626 and ERC-7540 vault interactions on Centrifuge, cross-chain USDC transfers via Circle CCTP, and USDT0 bridging.
 
-To verify that a strategist call is allowed, the caller must submit a Merkle proof. This proof confirms that the proposed call is one of the authorized leaves under the current policy root.
+New templates for additional protocols, assets, and chains can be added. The workflow format is open and extensible. If your use case requires a workflow that is not yet listed, reach out to the Centrifuge team or contribute a template directly.
 
-## Supporting New Integrations
+## Security model
 
-To support a new protocol, a custom decoder contract must be implemented. The decoder’s job is to expose the function’s address-type inputs so they can be filtered and validated during the Merkle proof process.
+Every workflow execution is protected by multiple layers:
 
-#### Example: ERC-7540 Deposit Request
+**Merkle proof policy**: only scripts approved in the strategist's policy tree can execute. The policy is a Merkle root assigned per strategist by Hub managers via cross-chain trusted calls, and can be updated or revoked at any time.
 
-To support deposit requests into an ERC-7540 vault, a minimal decoder might look like this:
+**Fixed state slots**: Hub managers can pin specific parameters (addresses, amounts) in a workflow script. Changing a pinned value invalidates the Merkle proof, preventing strategists from substituting addresses or redirecting funds at execution time.
 
-```solidity
-function requestDeposit(
-    uint256, 
-    address controller, 
-    address owner
-) external view virtual returns (bytes memory addressesFound) {
-    addressesFound = abi.encodePacked(controller, owner);
-}
-```
+**Slippage guard**: enforces per-script slippage bounds and cumulative period loss limits across all touched assets.
 
-This function allows the Merkle Proof Manager to extract and validate the `controller` and `owner` addresses, ensuring only allowed accounts are involved in the call.
-
-## Security
-
-The Merkle Proof Manager enables pool managers to:
-
-* Predefine exactly which contract calls are permitted
-* Limit address-level permissions per call
-* Prevent strategists from executing unauthorized transactions
-
-This model ensures strategy-level control without compromising on extensibility.
+**Circuit breaker**: rolling-window throughput limits and per-update value deviation caps, providing a hard ceiling on capital exposure per execution window.
