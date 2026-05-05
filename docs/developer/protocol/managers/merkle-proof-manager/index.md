@@ -11,6 +11,10 @@ The Onchain Portfolio Manager (Onchain PM) is the execution layer for programmab
 
 Strategies can span swaps, bridging, vault deposits, leveraged loops, and flash loans, executed as a single atomic workflow. Governance approves complete workflows rather than individual calls, so execution wallets cannot reorder steps or substitute addresses without invalidating the authorization.
 
+:::info Credits
+The execution model builds on [Weiroll](https://github.com/weiroll/weiroll), originally developed by [@DeanEigenmann](https://x.com/deanpierce), [@matthewdif](https://x.com/matthewdif), and [@nicksdjohnson](https://x.com/nicksdjohnson). Script-level authorization was further developed by [Enso](https://www.enso.finance/). The policy leaf architecture for address-level filtering is inspired by [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
+:::
+
 ## Execution model
 
 The Onchain PM uses [Weiroll](https://github.com/weiroll/weiroll), a minimal onchain scripting VM. A strategy is a sequence of commands, each encoded as a `bytes32` word containing:
@@ -76,7 +80,3 @@ function swap(
 ## Flash loans
 
 Nested callbacks enable multi-provider flash loan composition. Each callback script is pre-committed in the outer script's authorization hash, with the expected caller verified per invocation. This prevents unauthorized callback substitution even at the correct nesting depth.
-
-## Credits
-
-The Onchain PM execution model is built on [Weiroll](https://github.com/weiroll/weiroll), originally developed by [@DeanEigenmann](https://x.com/deanpierce), [@matthewdif](https://x.com/matthewdif), and [@nicksdjohnson](https://x.com/nicksdjohnson). The approach to script-level authorization was further developed by [Enso](https://www.enso.finance/). The policy leaf architecture for address-level filtering is inspired by [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
