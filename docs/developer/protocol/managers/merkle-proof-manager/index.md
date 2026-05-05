@@ -9,7 +9,7 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 The Onchain Portfolio Manager (Onchain PM) is the execution layer for programmable capital allocation in Centrifuge vaults. It lets vault managers deploy assets into DeFi protocols on supported chains through authorized, multi-step strategies, with unified NAV accounting across all positions including in-transit assets.
 
-Strategies can span swaps, bridging, vault deposits, leveraged loops, and flash loans, executed as a single atomic workflow. Governance approves complete workflows rather than individual calls, so execution wallets cannot reorder steps or substitute addresses without invalidating the authorization.
+Strategies can span swaps, bridging, vault deposits, leveraged loops, and flash loans, executed as a single atomic workflow. Hub managers approves complete workflows rather than individual calls, so execution wallets cannot reorder steps or substitute addresses without invalidating the authorization.
 
 :::info Credits
 The execution model builds on [Weiroll](https://github.com/weiroll/weiroll), originally developed by [@DeanEigenmann](https://x.com/deanpierce), [@matthewdif](https://x.com/matthewdif), and [@nicksdjohnson](https://x.com/nicksdjohnson). Script-level authorization was further developed by [Enso](https://www.enso.finance/). The policy leaf architecture for address-level filtering is inspired by [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
@@ -31,10 +31,10 @@ Commands execute sequentially, threading data through a shared state array. This
 Scripts are authorized at the workflow level via a Merkle tree. The hash committed to the Merkle leaf incorporates:
 
 - the exact command sequence
-- a `stateBitmap` designating which state slots governance pins (fixed) versus which are runtime-variable
+- a `stateBitmap` designating which state slots Hub managers pins (fixed) versus which are runtime-variable
 - pre-committed callback hashes for flash loan steps
 
-The `stateBitmap` gives governance precise control: it can pin critical addresses and amounts while allowing strategists to supply live market data at execution time. Changing any pinned element invalidates the proof.
+The `stateBitmap` gives Hub managers precise control: it can pin critical addresses and amounts while allowing strategists to supply live market data at execution time. Changing any pinned element invalidates the proof.
 
 Policies are assigned per strategist by the Hub via cross-chain trusted calls, and can be updated or revoked at any time.
 
