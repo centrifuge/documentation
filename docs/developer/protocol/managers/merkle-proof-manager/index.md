@@ -7,7 +7,7 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 # Onchain Portfolio Manager
 
-The Onchain Portfolio Manager (Onchain PM) is the execution layer for programmable capital allocation in Centrifuge vaults. It lets vault managers deploy assets into DeFi protocols on supported chains through authorized, multi-step strategies — with unified NAV accounting across all positions, including in-transit assets.
+The Onchain Portfolio Manager (Onchain PM) is the execution layer for programmable capital allocation in Centrifuge vaults. It lets vault managers deploy assets into DeFi protocols on supported chains through authorized, multi-step strategies, with unified NAV accounting across all positions including in-transit assets.
 
 Strategies can span swaps, bridging, vault deposits, leveraged loops, and flash loans, executed as a single atomic workflow. Governance approves complete workflows rather than individual calls, so execution wallets cannot reorder steps or substitute addresses without invalidating the authorization.
 
@@ -24,7 +24,7 @@ The Onchain PM uses [Weiroll](https://github.com/weiroll/weiroll), a minimal onc
 - input and output state indices
 - the target contract address
 
-Commands execute sequentially, threading data through a shared state array. This allows later steps to consume outputs from earlier ones — for example, using the result of a price oracle read as the input amount for a swap.
+Commands execute sequentially, threading data through a shared state array. This allows later steps to consume outputs from earlier ones: for example, using the result of a price oracle read as the input amount for a swap.
 
 ## Authorization
 
@@ -42,17 +42,17 @@ Policies are assigned per strategist by the Hub via cross-chain trusted calls, a
 
 Three guards protect against strategy-level value loss:
 
-**SlippageGuard** — takes balance snapshots before and after execution, enforcing cumulative loss bounds over a rolling time window. This catches aggregate slippage across multi-step strategies.
+**SlippageGuard** takes balance snapshots before and after execution, enforcing cumulative loss bounds over a rolling time window. This catches aggregate slippage across multi-step strategies.
 
-**ApprovalGuard** — verifies that no ERC-20 token approvals remain after a strategy runs. This prevents strategies from leaving residual spending permissions on external contracts.
+**ApprovalGuard** verifies that no ERC-20 token approvals remain after a strategy runs. This prevents strategies from leaving residual spending permissions on external contracts.
 
-**Circuit breaker** — limits accumulated values such as cross-chain bridging volume over a period, providing a hard cap on capital exposure per execution window.
+**Circuit breaker** limits accumulated values such as cross-chain bridging volume over a period, providing a hard cap on capital exposure per execution window.
 
 ## In-flight asset accounting
 
 Assets moving across chains or sitting in async vault queues are tracked using ERC-6909 accounting tokens. When an asset leaves the balance sheet (via bridge or async request), a receipt token is minted in its place. When it arrives or settles, a corresponding liability token is recorded.
 
-Both tokens are valued identically to the underlying asset, so NAV stays accurate throughout transfers. This means the portfolio manager can account for capital that is deployed, in transit, and settled — all in a single view.
+Both tokens are valued identically to the underlying asset, so NAV stays accurate throughout transfers. The portfolio manager accounts for capital that is deployed, in transit, and settled in a single unified view.
 
 ## Decoders
 
