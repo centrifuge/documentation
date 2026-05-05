@@ -12,7 +12,7 @@ The Onchain Portfolio Manager lets pool operators and strategists execute pre-ap
 Workflows are Weiroll scripts: ordered command sequences where each step can consume outputs from previous ones, enabling reactive strategies that read live onchain data (prices, balances) at execution time. Every script is authorized by the pool's Hub managers through a Merkle proof policy. Strategists can only execute scripts whose hash is included in their approved policy, and Hub managers can pin specific parameters so strategists cannot substitute addresses or modify amounts at execution time.
 
 :::info Credits
-The execution model builds on [Weiroll](https://github.com/weiroll/weiroll), originally developed by [@DeanEigenmann](https://x.com/deanpierce), [@matthewdif](https://x.com/matthewdif), and [@nicksdjohnson](https://x.com/nicksdjohnson). Script-level authorization was further developed by [Enso](https://www.enso.finance/). The policy leaf architecture for address-level filtering is inspired by [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
+The execution model builds on [Weiroll](https://github.com/weiroll/weiroll), originally developed by [@DeanEigenmann](https://x.com/deanpierce), [@matthewdif](https://x.com/matthewdif), and [@nicksdjohnson](https://x.com/nicksdjohnson). Script-level authorization was further developed and audited by [Enso](https://www.enso.finance/). The policy leaf architecture for address-level filtering is inspired by [Boring Vault](https://github.com/Se7en-Seas/boring-vault) by Se7en-Seas.
 :::
 
 ## Flow of funds
@@ -43,6 +43,6 @@ Every workflow execution is protected by multiple layers:
 
 **Fixed state slots**: Hub managers can pin specific parameters (addresses, amounts) in a workflow script. Changing a pinned value invalidates the Merkle proof, preventing strategists from substituting addresses or redirecting funds at execution time.
 
-**SlippageGuard**: enforces per-script slippage bounds and cumulative period loss limits across all touched assets.
+**Slippage guard**: enforces per-script slippage bounds and cumulative period loss limits across all touched assets.
 
 **Circuit breaker**: rolling-window throughput limits and per-update value deviation caps, providing a hard ceiling on capital exposure per execution window.
