@@ -29,8 +29,6 @@ No single party has unilateral access to withdraw funds outside of the approved 
 
 Assets moving across chains or sitting in async queues are tracked as ERC-6909 accounting tokens. When an asset leaves the balance sheet, a receipt token is minted in its place; when it arrives or settles, a corresponding liability token is recorded. Both are valued identically to the underlying asset, so NAV stays accurate throughout.
 
-For the full investment lifecycle including deposit, approval, and redemption flows, see the [Centrifuge protocol documentation](/developer/protocol/).
-
 ## Available workflows
 
 A library of over 860 ready-to-use workflow templates is published at [centrifuge.github.io/workflows](https://centrifuge.github.io/workflows). The library covers lending and withdrawals on Aave V3 and Morpho, ERC-4626 and ERC-7540 vault interactions on Centrifuge, cross-chain USDC transfers via Circle CCTP, and USDT0 bridging.
