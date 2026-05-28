@@ -249,6 +249,54 @@ Token instance positions represent an investor's share class token balance on a 
 
 </GraphQLExplorer>
 
+## Yield
+
+<GraphQLExplorer
+  query={`query GetTokenYields {
+  tokenSnapshots(
+    where: { tokenId: "0x00010000000000060000000000000001" }
+    orderBy: "timestamp"
+    orderDirection: "desc"
+    limit: 1
+  ) {
+    items {
+      tokenId
+      timestamp
+      tokenPrice
+      yieldSinceInception
+      yieldYtd
+      yieldTtm
+      yield30d
+      yield30d360
+      yield7d
+      yield7d360
+      yield7d365
+      yield30dComp360
+      yield30dComp365
+    }
+  }
+}`}
+>
+
+Token snapshots include yield metrics computed from the token's price history. Yield values are expressed as decimal returns (e.g. `0.05` = 5%). Use the most recent snapshot for current yields, or query a time series to chart yield over time.
+
+| Field | Description |
+|-------|-------------|
+| `yieldSinceInception` | Total return since the token was first issued |
+| `yieldYtd` | Year-to-date return |
+| `yieldTtm` | Trailing twelve months return |
+| `yield7d` / `yield30d` | Simple return over the trailing 7 / 30 days |
+| `yield7d360` / `yield7d365` | 7-day return annualized on a 360 / 365 day basis |
+| `yield30d360` | 30-day return annualized on a 360 day basis |
+| `yield30dComp360` / `yield30dComp365` | 30-day return compounded and annualized on a 360 / 365 day basis |
+
+| Filter | Type | Description |
+|--------|------|-------------|
+| `tokenId` | `String` | Share class token ID |
+| `timestamp` | `BigInt` | Snapshot timestamp (supports `_gt`, `_lt`, `_gte`, `_lte`) |
+
+</GraphQLExplorer>
+
 ## Snapshots
 
 <GraphQLExplorer
