@@ -254,13 +254,13 @@ Token instance positions represent an investor's share class token balance on a 
 <GraphQLExplorer
   query={`query GetTokenYields {
   tokenSnapshots(
-    where: { tokenId: "0x00010000000000060000000000000001" }
+    where: { id: "0x00010000000000060000000000000001" }
     orderBy: "timestamp"
     orderDirection: "desc"
     limit: 1
   ) {
     items {
-      tokenId
+      id
       timestamp
       tokenPrice
       yieldSinceInception
@@ -292,8 +292,8 @@ Token snapshots include yield metrics computed from the token's price history. Y
 
 | Filter | Type | Description |
 |--------|------|-------------|
-| `tokenId` | `String` | Share class token ID |
-| `timestamp` | `BigInt` | Snapshot timestamp (supports `_gt`, `_lt`, `_gte`, `_lte`) |
+| `id` | `String` | Share class token ID |
+| `timestamp` | `String` | Snapshot timestamp (supports `_gt`, `_lt`, `_gte`, `_lte`) |
 
 </GraphQLExplorer>
 
