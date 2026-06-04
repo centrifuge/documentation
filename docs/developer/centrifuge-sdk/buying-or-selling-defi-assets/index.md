@@ -1,6 +1,6 @@
-# Run pool workflows
+# Buy and sell DeFi assets
 
-This guide shows how to use the Centrifuge SDK to run pool workflows (buying and selling assets, claiming, and updating NAV) as a strategist or an offchain keeper.
+This guide shows how to use the Centrifuge SDK to buy and sell tokenized DeFi assets within a pool, by running pool workflows (deposit, redeem, claim, and NAV updates) as a strategist or an offchain keeper.
 
 A workflow is a pre-defined, audited script (deposit, redeem, claim, price update, and so on) that a pool manager has added to a strategist's policy. You run one by name. The SDK reads the pool's onchain policy, rebuilds the proof, and submits the transaction, so there is no need to assemble policies, script hashes, or Merkle proofs yourself.
 
