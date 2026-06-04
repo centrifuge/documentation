@@ -1,6 +1,8 @@
 # Buy and sell DeFi assets
 
-This guide shows how to use the Centrifuge SDK to buy and sell tokenized DeFi assets within a pool.
+This guide shows how to use the Centrifuge SDK to buy and sell tokenized DeFi assets within a pool, by running pool workflows (deposit, redeem, claim, and NAV updates) as a strategist or an offchain keeper.
+
+A workflow is a pre-defined, audited script (deposit, redeem, claim, price update, and so on) that a pool manager has added to a strategist's policy. You run one by name. The SDK reads the pool's onchain policy, rebuilds the proof, and submits the transaction, so there is no need to assemble policies, script hashes, or Merkle proofs yourself.
 
 ## Prerequisites
 
@@ -8,11 +10,9 @@ Before you begin, make sure you have:
 
 - [Node.js](https://nodejs.org/) (v18 or later recommended)
 - A package manager: [pnpm](https://pnpm.io/), [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- A wallet or signer that can connect to Ethereum-compatible chains (e.g. MetaMask, WalletConnect, or a private key account via [Viem](https://viem.sh/))
+- A wallet or signer for the strategist the workflows were added for (e.g. a private key account via [Viem](https://viem.sh/))
 
 ## Installation
-
-Install the Centrifuge SDK in your project:
 
 ```bash
 pnpm add @centrifuge/sdk
@@ -20,179 +20,83 @@ pnpm add @centrifuge/sdk
 
 ## 1. Initialize the SDK
 
-Create a Centrifuge instance and connect it to mainnet:
-
 ```typescript
-import Centrifuge from "@centrifuge/sdk";
+import Centrifuge, { PoolId } from "@centrifuge/sdk";
 
-const centrifuge = new Centrifuge({
-  environment: "mainnet",
-});
+const centrifuge = new Centrifuge({ environment: "mainnet" });
+const pool = await centrifuge.pool(new PoolId(1));
 ```
 
 :::info
 For testing purposes, you can connect to testnet instead by setting environment: `testnet`.
 :::
 
-## 2. Deploy Merkle Proof Manager
+## 2. List the workflows you can run
+
+List the workflows in a strategist's policy across all of the pool's chains:
 
 ```typescript
-const poolId = new PoolId(1);
-const pool = await centrifuge.pool(poolId);
-const scId = ShareClassId.from(poolId, 1);
-const centrifugeId = 1; // Centrifuge network ID
-
-const poolNetworks = await pool.activeNetworks();
-
-const poolNetwork = poolNetworks.filter(
-  (activeNetwork) => activeNetwork.centrifugeId === centrifugeId
-);
-
-await poolNetwork.deployMerkleProofManager();
-```
-
-## 3. Retrieve Merkle Proof Manager and add as balance sheet manager
-
-Retrieve the deployed Merkle Proof Manager and set it as a BalanceSheet manager:
-
-```typescript
-const merkleProofManager = await poolNetwork.merkleProofManager();
-await poolNetwork.updateBalanceSheetManagers([{ centrifugeId, address: merkleProofManager.address, canManage: true }]),
-```
-
-## 4. Setup policies
-
-Policies define specific contract methods that strategists are authorized to execute for managing pool assets. The Merkle Proof Manager controls access to balance sheet functions and enables whitelisting of strategists, allowing them to perform approved operations securely:
-
-```typescript
-const addresses = await centrifuge._protocolAddresses(centrifugeId);
 const strategist = "0xStrategistAddress";
 
-const vaultDepositPolicy = {
-  decoder: addresses.vaultDecoder,
-  targetName: "Vault",
-  target: "0xVaultAddress",
-  name: "Deposit",
-  selector: "function deposit(uint256,address)",
-  valueNonZero: false,
-  inputs: [
-    {
-      parameter: "Amount",
-      label: "Amount",
-      input: [],
-    },
-    {
-      parameter: "Address",
-      label: "Vault Address"
-      input: ["0xVaultAddress"],
-    },
-  ],
-};
-
-const balanceSheetWithdrawPolicy = {
-  decoder: addresses.vaultDecoder,
-  targetName: "Balance Sheet",
-  target: addresses.balanceSheet,
-  name: "Withdraw",
-  selector: "function withdraw(uint64,bytes16,address,uint256,address,uint128)",
-  valueNonZero: false,
-  inputs: [
-    {
-      parameter: "Pool ID",
-      label: "Pool ID",
-      input: [poolId.toString() as HexString],
-    },
-    {
-      parameter: "Share class ID",
-      label: "Share class ID",
-      input: [scId.raw],
-    },
-    {
-      parameter: "Asset",
-      label: "Asset",
-      input: [someErc20],
-    },
-    {
-      parameter: "Token ID",
-      label: "Token ID",
-      input: [],
-    },
-    {
-      parameter: "Receiver",
-      label: "Receiver Address",
-      input: [merkleProofManager.address],
-    },
-    {
-      parameter: "Amount",
-      label: "Amount",
-      input: [],
-    },
-  ],
-};
-
-const balanceSheetDepositPolicy = {
-  decoder: addresses.vaultDecoder,
-  targetName: "Balance Sheet",
-  target: addresses.balanceSheet,
-  name: "Deposit",
-  selector:
-    "function deposit(uint64 poolId, bytes16 scId, address asset, uint256, uint128)",
-  valueNonZero: false,
-  inputs: [
-    {
-      parameter: "Pool ID",
-      label: "Pool ID",
-      input: [poolId.toString() as HexString],
-    },
-    {
-      parameter: "Share class ID",
-      label: "Share class ID",
-      input: [scId.raw],
-    },
-    {
-      parameter: "Asset",
-      label: "Asset",
-      input: [someErc20],
-    },
-    {
-      parameter: "Token ID",
-      label: "Token ID",
-      input: [],
-    },
-    {
-      parameter: "Amount",
-      label: "Amount",
-      input: [],
-    },
-  ],
-};
-
-centrifuge.setSigner(fundManager);
-await merkleProofManager.setPolicies(strategist, [
-  vaultDepositPolicy,
-  balanceSheetWithdrawPolicy,
-  balanceSheetDepositPolicy,
-]);
+const workflows = await pool.listWorkflows({ strategist });
+// [{ workflowRef, name, group, chainId, runtimeVariables }, ...]
 ```
 
-## 5. Withdraw funds from the balance sheet to the manager and deposit (invest) into the vault
+## 3. Manage a strategist's policy (pool manager)
 
-Withdraw funds from the pool's balance sheet, transfer them to the manager, and then deposit (invest) those funds into the vault. This process involves executing a sequence of policy-approved transactions using the MerkleProofManager, ensuring that only authorized strategists can perform these operations:
+A pool manager controls which workflows each strategist can run. `addToPolicy` reads the pool's current policy, adds the workflow, and updates both the policy metadata and the onchain permissions in one transaction:
+
+```typescript
+centrifuge.setSigner(poolManager);
+
+await pool.addToPolicy({ strategist, workflowRef: "cfg_<pool>_request_redeem" });
+```
+
+Some workflows expose configurable variables: values the pool manager fixes when adding the workflow (for example a slippage limit). They are pinned into the policy and cannot be changed by the strategist at run time. Pass them as `configurableValues`, keyed by the variable name and ABI-encoded:
+
+```typescript
+import { encodeWorkflowInputValue } from "@centrifuge/sdk";
+
+await pool.addToPolicy({
+  strategist,
+  workflowRef: "cfg_<pool>_request_redeem",
+  configurableValues: {
+    maxSlippage: encodeWorkflowInputValue("uint256", "100"),
+  },
+});
+```
+
+Remove a workflow the same way:
+
+```typescript
+await pool.removeFromPolicy({ strategist, workflowRef: "cfg_<pool>_request_redeem" });
+```
+
+## 4. Run a workflow
+
+Run a workflow by its `workflowRef`. The SDK resolves the chain, rebuilds the proof from the onchain policy, and submits:
 
 ```typescript
 centrifuge.setSigner(strategist);
-await merkleProofManager.execute([
-  {
-    policy: balanceSheetWithdrawPolicy,
-    inputs: [0, amount],
-  },
-  {
-    policy: vaultDepositPolicy,
-    inputs: [amount],
-  },
-  {
-    policy: balanceSheetDepositPolicy,
-    inputs: [0, amount],
-  },
-]);
+
+await pool.executeWorkflow({
+  strategist,
+  workflowRef: "cfg_<pool>_account", // e.g. an "Update price" workflow
+});
+```
+
+For workflows that take inputs (for example a redeem amount), pass `runtimeValues`:
+
+```typescript
+await pool.executeWorkflow({
+  strategist,
+  workflowRef: "cfg_<pool>_request_redeem",
+  runtimeValues: { amount: encodeWorkflowInputValue("uint128", "1000") },
+});
+```
+
+Pass `{ simulate: true }` to dry-run before submitting:
+
+```typescript
+await pool.executeWorkflow({ strategist, workflowRef: "cfg_<pool>_account" }, { simulate: true });
 ```
