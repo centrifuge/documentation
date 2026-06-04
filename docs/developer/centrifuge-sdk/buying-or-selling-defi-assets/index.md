@@ -1,8 +1,8 @@
 # Run pool workflows
 
-This guide shows how to use the Centrifuge SDK to run pool workflows — buying and selling assets, claiming, and updating NAV — as a strategist or an offchain keeper.
+This guide shows how to use the Centrifuge SDK to run pool workflows (buying and selling assets, claiming, and updating NAV) as a strategist or an offchain keeper.
 
-A workflow is a pre-defined, audited script (deposit, redeem, claim, price update, and so on) that a pool manager has added to a strategist's policy. You run one by name. The SDK reads the pool's onchain policy, rebuilds the proof, and submits the transaction — there is no need to assemble policies, script hashes, or Merkle proofs yourself.
+A workflow is a pre-defined, audited script (deposit, redeem, claim, price update, and so on) that a pool manager has added to a strategist's policy. You run one by name. The SDK reads the pool's onchain policy, rebuilds the proof, and submits the transaction, so there is no need to assemble policies, script hashes, or Merkle proofs yourself.
 
 ## Prerequisites
 
@@ -83,7 +83,7 @@ centrifuge.setSigner(poolManager);
 await pool.addToPolicy({ strategist, workflowRef: "cfg_<pool>_request_redeem" });
 ```
 
-Some workflows expose configurable variables — values the pool manager fixes when adding the workflow (for example a slippage limit). They are pinned into the policy and cannot be changed by the strategist at run time. Pass them as `configurableValues`, keyed by the variable name and ABI-encoded:
+Some workflows expose configurable variables: values the pool manager fixes when adding the workflow (for example a slippage limit). They are pinned into the policy and cannot be changed by the strategist at run time. Pass them as `configurableValues`, keyed by the variable name and ABI-encoded:
 
 ```typescript
 await pool.addToPolicy({
