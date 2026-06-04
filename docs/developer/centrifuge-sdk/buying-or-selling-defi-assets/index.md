@@ -1,6 +1,10 @@
-# Buy and sell DeFi assets
+# Run pool workflows
 
-This guide shows how to use the Centrifuge SDK to buy and sell tokenized DeFi assets within a pool.
+This guide shows how to use the Centrifuge SDK to run pool workflows through the Onchain Portfolio Manager — buying and selling assets, claiming, and updating NAV — as a strategist or an offchain keeper.
+
+A workflow is a pre-defined, audited script (deposit, redeem, claim, price update, and so on) published in the workflow marketplace. The Onchain Portfolio Manager (OnchainPM) is the per-pool contract that runs them. A pool manager whitelists a curated set of workflows for each strategist; the strategist (or a keeper) can then execute only those, with no broader access to pool funds.
+
+Each strategist's permissions are stored onchain as a Merkle root over the script hashes of their whitelisted workflows. Executing a workflow submits the script plus a Merkle proof, so the OnchainPM runs exactly what was whitelisted.
 
 ## Prerequisites
 
@@ -23,7 +27,7 @@ pnpm add @centrifuge/sdk
 Create a Centrifuge instance and connect it to mainnet:
 
 ```typescript
-import Centrifuge from "@centrifuge/sdk";
+import Centrifuge, { PoolId, ShareClassId } from "@centrifuge/sdk";
 
 const centrifuge = new Centrifuge({
   environment: "mainnet",
@@ -34,165 +38,121 @@ const centrifuge = new Centrifuge({
 For testing purposes, you can connect to testnet instead by setting environment: `testnet`.
 :::
 
-## 2. Deploy Merkle Proof Manager
+## 2. Resolve the pool and its network
+
+Workflows run on a specific network, so resolve the pool, the share class, and the active network you want to operate on:
 
 ```typescript
 const poolId = new PoolId(1);
-const pool = await centrifuge.pool(poolId);
 const scId = ShareClassId.from(poolId, 1);
 const centrifugeId = 1; // Centrifuge network ID
 
-const poolNetworks = await pool.activeNetworks();
-
-const poolNetwork = poolNetworks.filter(
-  (activeNetwork) => activeNetwork.centrifugeId === centrifugeId
-);
-
-await poolNetwork.deployMerkleProofManager();
+const pool = await centrifuge.pool(poolId);
+const networks = await pool.activeNetworks();
+const network = networks.find((n) => n.centrifugeId === centrifugeId)!;
 ```
 
-## 3. Retrieve Merkle Proof Manager and add as balance sheet manager
+## 3. Deploy and authorize the Onchain Portfolio Manager
 
-Retrieve the deployed Merkle Proof Manager and set it as a BalanceSheet manager:
+This is a one-time setup done by the pool manager. Deploy the OnchainPM for the network, then authorize it so it can move balance-sheet assets and mint accounting tokens:
 
 ```typescript
-const merkleProofManager = await poolNetwork.merkleProofManager();
-await poolNetwork.updateBalanceSheetManagers([{ centrifugeId, address: merkleProofManager.address, canManage: true }]),
+centrifuge.setSigner(poolManager);
+
+await network.deployOnchainPM();
+const onchainPM = await network.onchainPM();
+
+await network.authorizeOnchainPM(onchainPM.address, scId);
 ```
 
-## 4. Setup policies
+`authorizeOnchainPM` grants the OnchainPM the two roles workflows need: balance-sheet manager and accounting-token minter. You can check the status at any time with `await onchainPM.isAuthorized()`.
 
-Policies define specific contract methods that strategists are authorized to execute for managing pool assets. The Merkle Proof Manager controls access to balance sheet functions and enables whitelisting of strategists, allowing them to perform approved operations securely:
+## 4. Choose workflows from the marketplace
+
+Fetch the workflow catalog for the current environment. Each entry is pinned to a chain and carries the actions it runs, its preset variables, and its runtime inputs:
 
 ```typescript
-const addresses = await centrifuge._protocolAddresses(centrifugeId);
+const catalog = await centrifuge.workflowMarketplace();
+
+// Pick the workflows you want to whitelist for this pool, by their stable `workflowRef`.
+const deposit = catalog.find((w) => w.workflowRef === "cfg_<pool>_deposit")!;
+const redeem = catalog.find((w) => w.workflowRef === "cfg_<pool>_request_redeem")!;
+```
+
+Workflows in the `account` group (for example "Update price") update NAV and are typically run together as an accounting update — see step 7.
+
+## 5. Whitelist workflows for a strategist
+
+Whitelisting is done by the pool manager. Build a policy entry per workflow (the catalog workflow plus any values pinned at whitelist time), compute the script hashes, and commit them to the OnchainPM. The set you pass becomes the strategist's complete policy on this network:
+
+```typescript
+import { computeWorkflowGroupScriptHashes } from "@centrifuge/sdk";
+
 const strategist = "0xStrategistAddress";
 
-const vaultDepositPolicy = {
-  decoder: addresses.vaultDecoder,
-  targetName: "Vault",
-  target: "0xVaultAddress",
-  name: "Deposit",
-  selector: "function deposit(uint256,address)",
-  valueNonZero: false,
-  inputs: [
-    {
-      parameter: "Amount",
-      label: "Amount",
-      input: [],
-    },
-    {
-      parameter: "Address",
-      label: "Vault Address"
-      input: ["0xVaultAddress"],
-    },
-  ],
-};
+const policy = [deposit, redeem].map((workflow) => ({
+  workflow,
+  configurableValues: {}, // values a pool manager sets at whitelist time, if any
+  excludedActions: [], // optional actions to drop from the script
+}));
 
-const balanceSheetWithdrawPolicy = {
-  decoder: addresses.vaultDecoder,
-  targetName: "Balance Sheet",
-  target: addresses.balanceSheet,
-  name: "Withdraw",
-  selector: "function withdraw(uint64,bytes16,address,uint256,address,uint128)",
-  valueNonZero: false,
-  inputs: [
-    {
-      parameter: "Pool ID",
-      label: "Pool ID",
-      input: [poolId.toString() as HexString],
-    },
-    {
-      parameter: "Share class ID",
-      label: "Share class ID",
-      input: [scId.raw],
-    },
-    {
-      parameter: "Asset",
-      label: "Asset",
-      input: [someErc20],
-    },
-    {
-      parameter: "Token ID",
-      label: "Token ID",
-      input: [],
-    },
-    {
-      parameter: "Receiver",
-      label: "Receiver Address",
-      input: [merkleProofManager.address],
-    },
-    {
-      parameter: "Amount",
-      label: "Amount",
-      input: [],
-    },
-  ],
-};
+const scriptHashes = await computeWorkflowGroupScriptHashes({
+  centrifuge,
+  network,
+  policy,
+  strategist,
+  scId,
+});
 
-const balanceSheetDepositPolicy = {
-  decoder: addresses.vaultDecoder,
-  targetName: "Balance Sheet",
-  target: addresses.balanceSheet,
-  name: "Deposit",
-  selector:
-    "function deposit(uint64 poolId, bytes16 scId, address asset, uint256, uint128)",
-  valueNonZero: false,
-  inputs: [
-    {
-      parameter: "Pool ID",
-      label: "Pool ID",
-      input: [poolId.toString() as HexString],
-    },
-    {
-      parameter: "Share class ID",
-      label: "Share class ID",
-      input: [scId.raw],
-    },
-    {
-      parameter: "Asset",
-      label: "Asset",
-      input: [someErc20],
-    },
-    {
-      parameter: "Token ID",
-      label: "Token ID",
-      input: [],
-    },
-    {
-      parameter: "Amount",
-      label: "Amount",
-      input: [],
-    },
-  ],
-};
-
-centrifuge.setSigner(fundManager);
-await merkleProofManager.setPolicies(strategist, [
-  vaultDepositPolicy,
-  balanceSheetWithdrawPolicy,
-  balanceSheetDepositPolicy,
-]);
+centrifuge.setSigner(poolManager);
+await onchainPM.updatePolicy({ scId, strategist, scriptHashes });
 ```
 
-## 5. Withdraw funds from the balance sheet to the manager and deposit (invest) into the vault
+:::note
+`configurableValues` and `excludedActions` are pinned here, at whitelist time, and are immutable afterwards. They become part of the script hash, so the same policy must be passed at execution time to reproduce the proof.
+:::
 
-Withdraw funds from the pool's balance sheet, transfer them to the manager, and then deposit (invest) those funds into the vault. This process involves executing a sequence of policy-approved transactions using the MerkleProofManager, ensuring that only authorized strategists can perform these operations:
+## 6. Execute a workflow
+
+As the strategist (or an offchain keeper signing for that strategist), run one whitelisted workflow. Pass the full `policy` so the SDK can rebuild the Merkle proof, and `run` to select which entry to execute. `runtimeValues` carries any per-execution inputs the workflow declares:
 
 ```typescript
+import { encodeWorkflowInputValue } from "@centrifuge/sdk";
+
 centrifuge.setSigner(strategist);
-await merkleProofManager.execute([
-  {
-    policy: balanceSheetWithdrawPolicy,
-    inputs: [0, amount],
+
+await onchainPM.executeWorkflow({
+  policy,
+  run: 0, // index into `policy` — the deposit workflow
+  strategist,
+  runtimeValues: {
+    amount: encodeWorkflowInputValue("uint256", "1000"),
   },
-  {
-    policy: vaultDepositPolicy,
-    inputs: [amount],
-  },
-  {
-    policy: balanceSheetDepositPolicy,
-    inputs: [0, amount],
-  },
-]);
+});
 ```
+
+Pass `{ simulate: true }` to dry-run the execution before submitting:
+
+```typescript
+await onchainPM.executeWorkflow({ policy, run: 0, strategist }, { simulate: true });
+```
+
+## 7. Batch workflows into an accounting update
+
+Account-group workflows (price and NAV updates) are usually run together. `executeAccountingBatch` builds each selected workflow and submits them as a single atomic `multicall` — they all succeed or revert together:
+
+```typescript
+await onchainPM.executeAccountingBatch({
+  policy,
+  run: [0, 1, 2], // indices of the account workflows to run
+  strategist,
+});
+```
+
+Simulate the batch first to preview its effect and surface any workflow that would revert:
+
+```typescript
+await onchainPM.executeAccountingBatch({ policy, run: [0, 1, 2], strategist }, { simulate: true });
+```
+
+Because the batch is atomic, one un-runnable workflow reverts the whole update. Simulating first tells you which one.
