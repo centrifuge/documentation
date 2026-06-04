@@ -42,7 +42,37 @@ const workflows = await pool.listWorkflows({ strategist });
 // [{ workflowRef, name, group, chainId, runtimeVariables }, ...]
 ```
 
-## 3. Run a workflow
+## 3. Manage a strategist's policy (pool manager)
+
+A pool manager controls which workflows each strategist can run. `addToPolicy` reads the pool's current policy, adds the workflow, and updates both the policy metadata and the onchain permissions in one transaction:
+
+```typescript
+centrifuge.setSigner(poolManager);
+
+await pool.addToPolicy({ strategist, workflowRef: "cfg_<pool>_request_redeem" });
+```
+
+Some workflows expose configurable variables: values the pool manager fixes when adding the workflow (for example a slippage limit). They are pinned into the policy and cannot be changed by the strategist at run time. Pass them as `configurableValues`, keyed by the variable name and ABI-encoded:
+
+```typescript
+import { encodeWorkflowInputValue } from "@centrifuge/sdk";
+
+await pool.addToPolicy({
+  strategist,
+  workflowRef: "cfg_<pool>_request_redeem",
+  configurableValues: {
+    maxSlippage: encodeWorkflowInputValue("uint256", "100"),
+  },
+});
+```
+
+Remove a workflow the same way:
+
+```typescript
+await pool.removeFromPolicy({ strategist, workflowRef: "cfg_<pool>_request_redeem" });
+```
+
+## 4. Run a workflow
 
 Run a workflow by its `workflowRef`. The SDK resolves the chain, rebuilds the proof from the onchain policy, and submits:
 
@@ -58,8 +88,6 @@ await pool.executeWorkflow({
 For workflows that take inputs (for example a redeem amount), pass `runtimeValues`:
 
 ```typescript
-import { encodeWorkflowInputValue } from "@centrifuge/sdk";
-
 await pool.executeWorkflow({
   strategist,
   workflowRef: "cfg_<pool>_request_redeem",
@@ -71,32 +99,4 @@ Pass `{ simulate: true }` to dry-run before submitting:
 
 ```typescript
 await pool.executeWorkflow({ strategist, workflowRef: "cfg_<pool>_account" }, { simulate: true });
-```
-
-## 4. Manage a strategist's policy (pool manager)
-
-A pool manager controls which workflows each strategist can run. `addToPolicy` reads the pool's current policy, adds the workflow, and updates both the policy metadata and the onchain permissions in one transaction:
-
-```typescript
-centrifuge.setSigner(poolManager);
-
-await pool.addToPolicy({ strategist, workflowRef: "cfg_<pool>_request_redeem" });
-```
-
-Some workflows expose configurable variables: values the pool manager fixes when adding the workflow (for example a slippage limit). They are pinned into the policy and cannot be changed by the strategist at run time. Pass them as `configurableValues`, keyed by the variable name and ABI-encoded:
-
-```typescript
-await pool.addToPolicy({
-  strategist,
-  workflowRef: "cfg_<pool>_request_redeem",
-  configurableValues: {
-    maxSlippage: encodeWorkflowInputValue("uint256", "100"),
-  },
-});
-```
-
-Remove a workflow the same way:
-
-```typescript
-await pool.removeFromPolicy({ strategist, workflowRef: "cfg_<pool>_request_redeem" });
 ```
