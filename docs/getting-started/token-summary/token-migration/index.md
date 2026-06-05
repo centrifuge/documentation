@@ -9,6 +9,13 @@ With the launch of **Centrifuge V3**, a multi-chain, EVM-based protocol, the leg
 
 The migration process started on **May 20th 2025**, following a successful [governance vote](https://gov.centrifuge.io/t/cp149-migration-of-centrifuge-governance-token-cfg-to-evm/6810). The existing Centrifuge Chain is expected to be discontinued in **Q4 2025**. Detailed instructions and demo videos are provided below to assist token holders.
 
+:::info[Migration period closed]
+
+The CFG and WCFG migration period has concluded and migration is no longer available. The window closed in early December 2025 following an extension to the original November 30, 2025 deadline. A full overview of the timeline and process is available in the [CFG Token Migration Process Recap](https://gov.centrifuge.io/t/cfg-token-migration-process-recap/7341).
+
+:::
+
+
 ## Migration Overview
 
 - **Token Swap Ratio:** 1:1 (1 legacy CFG or WCFG = 1 new CFG)

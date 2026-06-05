@@ -14,8 +14,6 @@ On March 20, 2025, the CFG governance proposal [CP 149](https://github.com/centr
 
 into a single, Ethereum-native ERC-20 token: CFG. The migration built on [CP 141](https://github.com/centrifuge/cps/blob/main/cps/CP141/CP141.md), which introduced Centrifuge V3 and migrated the Centrifuge protocol itself to a native EVM execution environment.
 
-
-
 ## V3 CFG Token Contract
 
 - [0xcccCCCcCCC33D538DBC2EE4fEab0a7A1FF4e8A94](https://etherscan.io/address/0xcccccccccc33d538dbc2ee4feab0a7a1ff4e8a94)
@@ -47,41 +45,46 @@ As part of CNF’s commitment to transparency, progress and results will be repo
 
 ### Token Supply
 
-As of January 2026, the total supply of CFG is **691,800,000** tokens. This includes 115,000,000 tokens minted as part of CP 149.
 
-- 15,000,000 of the CP 149 tokens unlocked upon minting in May 2025 to support near-term operational and early stage strategic initiatives
+As of June 2026, the total supply of CFG is **697,164,473** tokens. This includes 115,000,000 tokens minted as part of [CP149](https://github.com/centrifuge/cps/blob/main/cps/CP149/CP149.md).
+
+- 15,000,000 of the CP149 tokens unlocked upon minting in May 2025 to support near-term operational and early-stage strategic initiatives
 - The remaining 100,000,000 tokens vest linearly through April 2029
-- All CP 149 tokens are part of an ecosystem **Incentives program** designed to promote long-term protocol growth
+- All CP149 tokens are part of an ecosystem **Incentives program** designed to promote long-term protocol growth
 
 ## Token Allocations
 
-As of January 2026, allocations for the CFG token supply are as follows:
+As of June 2026, allocations for the CFG token supply are as follows:
 
-![](./images/tokenallocation.png)
-![](./images/tokenallocation2.png)
+#### CFG Token Allocation (June 2026)
+
+![](./images/cfgtokenallocation2026.png)
+
 
 ### Ecosystem
 
-The Centrifuge ecosystem allocation of 24% includes the Centrifuge Treasury and is allocated for long-term ecosystem growth initiatives. All CP 149 incentives tokens vested as of January 2026 are included in this allocation.
+The Centrifuge ecosystem allocation of 14.3% includes the Centrifuge Treasury and is allocated for long-term ecosystem growth initiatives. All CP149 incentives tokens vested as of June 2026 are included in this allocation.
 
 ### Team
 
-14% of the total supply is allocated to the Centrifuge team to align long-term ecosystem incentives with the contributors actively building and growing the protocol. The allocation vests gradually through March 2030. 
+12% of the total supply is allocated to the Centrifuge team to align long-term ecosystem incentives with the contributors actively building and growing the protocol. The allocation vests gradually through May 2030. 
 
 ### Incentives
 
-This allocation consists of the newly-minted CP 149 tokens that are still locked. These incentives are allocated for sole use in ecosystem initiatives to grow and develop the Centrifuge protocol. As of January 2026, 12% of the total supply has been allocated to these incentives and is still locked. These locked tokens will vest linearly into the Centrifuge Treasury through April 2029.
+This allocation consists of the newly-minted CP 149 tokens that are still locked. These incentives are allocated for sole use in ecosystem initiatives to grow and develop the Centrifuge protocol. As of June 2026, 10.5% of the total supply has been allocated to these incentives and is still locked. These locked tokens will vest linearly into the Centrifuge Treasury through April 2029.
 
 ### Other Stakeholders
 
-The majority of other stakeholder CFG allocations have already vested; the remaining 0.1% of the total supply that was allocated to other stakeholders will vest over 3 months, through March 2026. 
+The majority of other stakeholder CFG allocations have already vested; the remaining portion that was allocated to other stakeholders will vest over 22 months, through March 2028.
 
 ### Released Supply
 
-50% of the CFG supply is considered “released” as of January 2026; these tokens are freely circulating and exclude the specific allocations mentioned above for team, incentives, ecosystem and other stakeholders.
-
+54.6% of the CFG supply is considered “released” as of June 2026; these tokens are freely circulating and exclude the specific allocations mentioned above for team, incentives, ecosystem and other stakeholders.
 
 ### CFG Emissions
+
 CFG has a 3% annual inflation rate based on the total token supply, resulting in a modest increase in total supply over time. All inflationary tokens accrue to the Centrifuge Treasury. 
-![](./images/cfgemission.png)
-This release schedule represents the current intended strategy for CFG emissions through June 2029. It is subject to change, with any significant modifications or actions to be communicated to CFG stakeholders.
+
+![](./images/cfgemission2026.png)
+
+This release schedule represents the current intended strategy for CFG emissions through December 2030. It is subject to change, with any significant modifications or actions to be communicated to CFG stakeholders.
