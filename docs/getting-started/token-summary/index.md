@@ -85,6 +85,8 @@ The majority of other stakeholder CFG allocations have already vested; the remai
 
 CFG has a 3% annual inflation rate based on the total token supply, resulting in a modest increase in total supply over time. All inflationary tokens accrue to the Centrifuge Treasury. 
 
-![](./images/cfgemission2026.png)
+#### CFG Emissions
+
+![](./images/cfgemissionv2026.png)
 
 This release schedule represents the current intended strategy for CFG emissions through December 2030. It is subject to change, with any significant modifications or actions to be communicated to CFG stakeholders.
