@@ -7,7 +7,7 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 # Write integration tests
 
-When building a custom contract against Centrifuge, you can test it against a full, fresh deployment of the protocol rather than mocking individual contracts. The protocol repo ships a base test contract that deploys the whole system and exposes helpers to set up a pool and plug in your own hooks and managers.
+When building a custom contract against Centrifuge, you can test it against a fresh deployment of the protocol rather than mocking individual contracts. The protocol repo ships a base test contract that deploys the whole system and exposes helpers to set up a pool and plug in your own hooks and managers.
 
 ## Inherit from `CentrifugeIntegrationTestWithUtils`
 
@@ -31,12 +31,10 @@ The [`DepositRedeemFeeManager` test](https://github.com/centrifuge/centrifuge-st
 
 ## Set up a pool
 
-A typical `setUp` calls `super.setUp()` to get the deployment, then deploys your contract, configures a pool, grants any roles your manager needs, and funds an investor. The starter-kit example does this as follows:
+A typical `setUp` calls `super.setUp()`, deploys your contract, configures a pool, grants the roles your manager needs, and funds test accounts. The starter-kit example does this as follows:
 
 ```solidity
 contract DepositRedeemFeeManagerTest is CentrifugeIntegrationTestWithUtils {
-    using CastLib for *;
-
     function setUp() public override {
         super.setUp(); // fresh Centrifuge deployment
 
@@ -65,18 +63,18 @@ contract DepositRedeemFeeManagerTest is CentrifugeIntegrationTestWithUtils {
 The roles and helpers above come from the base contract:
 
 - `_createPool`, `_registerUSDC`, `_mintUSDC` are helpers it provides; `FM`, `INVESTOR`, `POOL_A`, `hub`, `hubRegistry`, and `batchRequestManager` are set up for you.
-- `hub.updateHubManager(POOL_A, address(feeManager), true)`, called as the pool manager (`FM`), grants your manager the hub manager role so it can drive pool operations. Grant whatever roles your manager needs here, for a balance sheet manager that's `hub.updateBalanceSheetManager(...)`.
+- Call `hub.updateHubManager(POOL_A, address(feeManager), true)` as the pool manager (`FM`) to grant the hub manager role. Grant whatever roles your manager needs here; a balance sheet manager uses `hub.updateBalanceSheetManager(...)`.
 
-`_configurePool()` drives the Hub through the same steps a real deployment goes through: notify the pool and share class to the spoke, set the request manager, update the balance sheet manager, deploy and link the vault, and set share and asset prices.
+`_configurePool()` drives the Hub through the [usual deployment steps](../../guides/deploy-vaults/): notify the pool and share class to the spoke, set the request manager, update the balance sheet manager, deploy and link the vault, and set share and asset prices.
 
 ## Write the tests
 
-With a live deployment in place, a test calls your manager the way a real caller would and asserts on the resulting onchain state, not on mocked return values. Because the deployment is real, an assertion after, say, issuing shares reflects the full path through the Hub, spoke, vault, and balance sheet.
+With a live deployment in place, a test calls your manager and asserts on the resulting onchain state. An assertion after, say, issuing shares reflects the full path through the Hub, spoke, vault, and balance sheet.
 
 Two things make these tests effective:
 
-- **Act as the right role.** Use Foundry's `vm.prank` with the addresses the base contract sets up (the fund manager, an investor) to exercise both the authorized and unauthorized paths. Asserting that an unauthorized caller reverts is as important as the happy path.
-- **Assert on real state and events.** Check balances, share supply, and emitted events after the call rather than trusting a mock.
+- **Act as the right role.** Use Foundry's `vm.prank` with the addresses the base contract sets up (the fund manager, an investor) to exercise both the authorized and unauthorized paths. Test the unauthorized path too: assert that an unauthorized caller reverts.
+- **Assert on real state and events.** Check balances, share supply, and emitted events after the call.
 
 ```solidity
 function testIssueSharesWithDepositFee() public {

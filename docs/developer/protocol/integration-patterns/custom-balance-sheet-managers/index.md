@@ -7,7 +7,7 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 # Custom balance sheet managers
 
-The balance sheet is the non-custodial contract that holds a pool's assets and shares on each chain. A balance sheet manager is an address authorized to move and account for those assets through the balance sheet's API. By writing your own manager, you can build pool-specific logic directly on top of the protocol's accounting primitives.
+The [balance sheet](../../architecture/spoke/) is the non-custodial contract that holds a pool's assets and shares on each chain. A balance sheet manager is an address authorized to move and account for those assets through the balance sheet's API. By writing your own manager, you can build pool-specific logic directly on top of the protocol's accounting primitives.
 
 The protocol's own [`AsyncRequestManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/AsyncRequestManager.sol) is a balance sheet manager, and the best reference implementation to read when building your own.
 
@@ -23,12 +23,12 @@ A balance sheet manager calls into the balance sheet to:
 Reserving, unreserving, and the note calls all operate per share class, so the `scId` parameter selects which holdings a call applies to. For a pool with both USHP and sUSHP holdings, the same manager handles each by passing the matching `scId`.
 
 :::warning Reservations are shared across managers
-A reservation is recorded on the balance sheet itself, not on the manager that made it. All balance sheet managers for a pool share the same reserved balances: assets reserved by one manager cannot be withdrawn by any other manager, and any manager can `unreserve` them. The `reserver` and `reason` arguments are bookkeeping tags, not access control, so coordinate reservation logic across managers if a pool uses more than one.
+A reservation is recorded on the balance sheet itself, not on the manager that made it. All balance sheet managers for a pool share the same reserved balances: any manager can reserve or unreserve, and a reservation blocks every manager from withdrawing those assets. The `reserver` and `reason` arguments are bookkeeping tags, not access control, so coordinate reservation logic across managers if a pool uses more than one.
 :::
 
 ## Permissions
 
-A manager must be authorized for the pool on the chain where it operates. A Hub manager grants this with `updateBalanceSheetManager`:
+To authorize a manager for a pool on a given chain, a Hub manager calls `updateBalanceSheetManager` (see [Manage assets](../../guides/manage-assets/) for configuring a balance sheet manager):
 
 ```solidity
 function updateBalanceSheetManager(
@@ -39,8 +39,6 @@ function updateBalanceSheetManager(
     address refund
 ) external payable;
 ```
-
-Once granted, the manager can call the balance sheet functions below directly on the spoke chain.
 
 ## API options
 
@@ -87,8 +85,8 @@ enum WithdrawMode {
 }
 ```
 
-Use `EscrowAndTransfer` when settling a redemption to a user, as the async redeem flow does.
+Use `EscrowAndTransfer` when settling a redemption to a user.
 
 ## Testing
 
-Because a custom manager touches the full deposit, redeem, and accounting path, test it against a real deployment rather than mocks. See [Write integration tests](../write-integration-tests/) for the `CentrifugeIntegrationTestWithUtils` base contract, which sets up a pool and lets you register your manager and exercise these flows end to end.
+Because a custom manager touches the full deposit, redeem, and accounting path, test it against a real deployment rather than mocks. See [Write integration tests](../write-integration-tests/) for the `CentrifugeIntegrationTestWithUtils` base contract, which sets up a pool and lets you test your manager against the full flow.

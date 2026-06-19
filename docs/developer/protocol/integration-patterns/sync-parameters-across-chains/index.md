@@ -19,7 +19,7 @@ Use this pattern for any contract whose parameters are controlled by the pool an
 
 ## Implement `ITrustedContractUpdate`
 
-Your contract implements [`ITrustedContractUpdate`](https://github.com/centrifuge/protocol/blob/main/src/core/utils/interfaces/IContractUpdate.sol). The protocol calls `trustedCall` on your contract when an update is triggered from the Hub. The call carries the pool and share class it applies to, plus an opaque `payload` that your contract decodes and acts on.
+Your contract implements [`ITrustedContractUpdate`](https://github.com/centrifuge/protocol/blob/main/src/core/utils/interfaces/IContractUpdate.sol). The protocol calls `trustedCall` on your contract when a Hub manager triggers an update. The call carries the pool and share class it applies to, plus an opaque `payload` that your contract decodes and acts on.
 
 ```solidity
 interface ITrustedContractUpdate {
@@ -29,7 +29,7 @@ interface ITrustedContractUpdate {
 }
 ```
 
-A minimal implementation guards the caller, decodes the payload into the parameter you want to change, and applies it. The only authorized caller is the protocol's contract updater, whose address your contract stores at deployment. This mirrors the protocol's own [`OnchainPM`](https://github.com/centrifuge/protocol/blob/main/src-ir/OnchainPM.sol#L52-L64), which updates a strategist's policy root this way.
+A minimal implementation guards the caller, decodes the payload into the parameter you want to change, and applies it. The only authorized caller is the protocol's contract updater, whose address your contract stores at deployment. This mirrors the protocol's own [`OnchainPM`](https://github.com/centrifuge/protocol/blob/main/src-ir/OnchainPM.sol#L52-L64), which updates a strategist's policy root via the same pattern.
 
 ```solidity
 contract MyManager is ITrustedContractUpdate {
@@ -37,6 +37,11 @@ contract MyManager is ITrustedContractUpdate {
     PoolId public immutable poolId;
 
     mapping(bytes32 strategist => bytes32 root) public policy;
+
+    constructor(address contractUpdater_, PoolId poolId_) {
+        contractUpdater = contractUpdater_;
+        poolId = poolId_;
+    }
 
     function trustedCall(PoolId poolId_, ShareClassId, bytes calldata payload) external {
         require(poolId == poolId_, InvalidPoolId());
@@ -57,7 +62,7 @@ The `payload` is whatever your contract and the Hub caller agree on, here a `(st
 
 ## Trigger updates from the Hub
 
-A Hub manager triggers the update by calling `updateContract` on the Hub. The `target` is your contract's address on the destination chain (as `bytes32`), and `payload` is the encoded parameter your `trustedCall` expects.
+A Hub manager triggers the update by calling `updateContract` on the Hub. `target` is your contract address on the destination chain (as `bytes32`), and `payload` is the data your `trustedCall` decodes.
 
 ```solidity
 function updateContract(
@@ -71,7 +76,9 @@ function updateContract(
 ) external payable;
 ```
 
-Because messaging is native to the Hub, a single call already crosses to the target chain. To update the same contract on several chains at once, batch the calls with `multicall` (the Hub inherits `IBatchedMulticall`):
+Set `extraGasLimit` to cover the gas your `trustedCall` needs to execute on the destination chain; `refund` receives any unused gas.
+
+Because messaging is native to the Hub, a single call crosses to the target chain. To update the same contract on several chains at once, batch the calls with `multicall` (the Hub inherits `IBatchedMulticall`):
 
 ```solidity
 hub.multicall([
@@ -85,7 +92,7 @@ Each entry is routed to its `centrifugeId` and delivered to that chain's `truste
 
 ## Worked example: rotating a Merkle root across two chains
 
-To rotate the authorized Merkle root for a pool deployed on two spoke chains, encode the new root as the payload and batch one `updateContract` per chain:
+Encode the new root as the payload and batch one `updateContract` per chain:
 
 ```solidity
 bytes memory payload = abi.encode(newRoot);
