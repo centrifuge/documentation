@@ -78,7 +78,7 @@ function updateContract(
 
 Set `extraGasLimit` to cover the gas your `trustedCall` needs to execute on the destination chain; `refund` receives any unused gas.
 
-Because messaging is native to the Hub, a single call crosses to the target chain. To update the same contract on several chains at once, batch the calls with `multicall` (the Hub inherits `IBatchedMulticall`):
+A message originating from the Hub goes to only one Spoke. To update the same contract on several chains at once, batch the calls with `multicall` (the Hub inherits `IBatchedMulticall`):
 
 ```solidity
 hub.multicall([
