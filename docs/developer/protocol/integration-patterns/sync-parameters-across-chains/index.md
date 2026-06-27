@@ -7,15 +7,7 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 # Sync parameters across chains
 
-When a custom contract holds parameters that need to change over time, such as a Merkle root, a fee rate, or an allowlist, those updates often need to land on every chain where the contract is deployed. The contract update pattern lets you make these changes from the Hub and have them propagate to each spoke chain natively, so you don't manage a separate update flow per chain.
-
-## When to use this
-
-Use this pattern for any contract whose parameters are controlled by the pool and may change after deployment. Common cases:
-
-- Updating a Merkle root that authorizes a strategist's workflows
-- Changing fee parameters on a custom manager
-- Rotating an address or toggling a configuration flag
+When a custom contract holds parameters that need to change over time, those updates often need to land on every chain where the contract is deployed. The contract update pattern lets you make these changes from the Hub and have them propagate to each spoke chain natively, so you don't manage a separate update flow per chain, and don't need to hold secure cold wallets on each chain. Common cases include updating a Merkle root, changing fee parameters on a custom manager, or rotating an address or toggling a configuration flag.
 
 ## Implement `ITrustedContractUpdate`
 
@@ -89,18 +81,3 @@ hub.multicall([
 ```
 
 Each entry is routed to its `centrifugeId` and delivered to that chain's `trustedCall`. The `scId` lets one call target a specific share class, so the same payload shape can update per-share-class parameters.
-
-## Worked example: rotating a Merkle root across two chains
-
-Encode the new root as the payload and batch one `updateContract` per chain:
-
-```solidity
-bytes memory payload = abi.encode(newRoot);
-
-hub.multicall([
-    abi.encodeCall(hub.updateContract, (poolId, scId, chainA, managerOnA, payload, extraGas, refund)),
-    abi.encodeCall(hub.updateContract, (poolId, scId, chainB, managerOnB, payload, extraGas, refund))
-]);
-```
-
-Both chains receive the new root in one transaction from the Hub, and your `trustedCall` implementation writes it into storage on each.

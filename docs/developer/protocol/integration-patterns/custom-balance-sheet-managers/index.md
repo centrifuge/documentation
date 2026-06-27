@@ -7,9 +7,13 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 # Custom balance sheet managers
 
-The [balance sheet](../../architecture/spoke/) is the non-custodial contract that holds a pool's assets and shares on each chain. A balance sheet manager is an address authorized to move and account for those assets through the balance sheet's API. By writing your own manager, you can build pool-specific logic directly on top of the protocol's accounting primitives.
+The [balance sheet](../../architecture/spoke/) is the contract that manages a pool's assets and shares on each chain (the assets and shares themselves are held in a separate escrow). A balance sheet manager is an address authorized to move and account for those assets through the balance sheet's API. By writing your own manager, you can build pool-specific logic directly on top of the protocol's accounting primitives.
 
-The protocol's own [`AsyncRequestManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/AsyncRequestManager.sol) is a balance sheet manager, and the best reference implementation to read when building your own.
+Examples of balance sheet managers in the protocol:
+
+- [`AsyncRequestManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/AsyncRequestManager.sol) — handles async deposit and redemption requests for ERC-7540 vaults.
+- [`OnOffRampManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/OnOffRampManager.sol) — enables fiat on/off ramps by bridging off-chain settlement into the protocol's accounting.
+- [`OnchainPortfolioManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/OnchainPortfolioManager.sol) — manages onchain portfolios, tracking asset positions directly on the balance sheet.
 
 ## What they can do
 
