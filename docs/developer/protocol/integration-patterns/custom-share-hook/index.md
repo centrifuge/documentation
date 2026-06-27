@@ -7,10 +7,10 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 # Custom share hook
 
-Each share class has an ERC-20 share token deployed on every spoke chain. The token's transfer behaviour is governed by a configurable hook contract. By extending [`BaseTransferHook`](https://github.com/centrifuge/protocol/blob/main/src/hooks/BaseTransferHook.sol) you can layer in custom compliance logic — allowlists, transfer freezes, jurisdiction rules — without touching the token contract itself.
+Each share class has an ERC-20 share token deployed on every spoke chain. The token's transfer behaviour is governed by a configurable hook contract. By extending [`BaseTransferHook`](https://github.com/centrifuge/protocol/blob/main/src/hooks/BaseTransferHook.sol) you can layer in custom compliance logic (allowlists, transfer freezes, jurisdiction rules) without touching the token contract itself.
 
 :::info Scope of this page
-`BaseTransferHook` and the handlers described here are designed for the protocol's existing vault and `AsyncRequestManager` setup. If you deploy a fully custom vault, these hooks may not be called or may not apply in full — verify against your vault's transfer path.
+`BaseTransferHook` and the handlers described here are designed for the protocol's existing vault and `AsyncRequestManager` setup. If you deploy a fully custom vault, these hooks may not be called or may not apply in full. Verify against your vault's transfer path.
 :::
 
 The protocol ships four ready-made implementations you can deploy directly or use as a reference:
@@ -35,7 +35,7 @@ function onERC20Transfer(address from, address to, uint256 value, HookData calld
     external returns (bytes4);
 
 // Called on authorized transfers (mint, burn, protocol-internal moves).
-// Cannot block the transfer — return value is ignored. Override only to update state.
+// Cannot block the transfer; return value is ignored. Override only to update state.
 function onERC20AuthTransfer(address sender, address from, address to, uint256 value, HookData calldata hookData)
     external returns (bytes4);
 
@@ -44,7 +44,7 @@ function checkERC20Transfer(address from, address to, uint256 value, HookData ca
     external view returns (bool);
 ```
 
-In `BaseTransferHook`, `onERC20Transfer` delegates to `checkERC20Transfer` and reverts if it returns `false`. `onERC20AuthTransfer` is a no-op by default (it cannot be blocked). `checkERC20Transfer` is abstract — you must implement it.
+In `BaseTransferHook`, `onERC20Transfer` delegates to `checkERC20Transfer` and reverts if it returns `false`. `onERC20AuthTransfer` is a no-op by default (it cannot be blocked). `checkERC20Transfer` is abstract and must be implemented.
 
 ## Transfer type classifiers
 
@@ -75,7 +75,7 @@ function checkERC20Transfer(address from, address to, uint256, HookData calldata
 
 ## hookData: per-address storage
 
-Every address holding share tokens carries 16 bytes of custom data — `hookData` — stored alongside its token balance. The struct has two fields, one for each side of a transfer:
+Every address holding share tokens carries 16 bytes of custom data (`hookData`), stored alongside its token balance. The struct has two fields, one for each side of a transfer:
 
 ```solidity
 struct HookData {
@@ -86,7 +86,7 @@ struct HookData {
 
 `BaseTransferHook` uses these 16 bytes with a fixed layout:
 
-- **Upper 8 bytes (bits 127–64):** `validUntil` — a `uint64` Unix timestamp. The address is a valid member until this time.
+- **Upper 8 bytes (bits 127–64):** `validUntil`, a `uint64` Unix timestamp. The address is a valid member until this time.
 - **Bit 0 (least significant):** freeze flag. Set to `1` to freeze the address.
 
 The remaining bits are unused and available for custom extensions. The 16-byte limit exists because hook data is packed with the token balance in a single storage slot.
@@ -101,7 +101,7 @@ function isSourceOrTargetFrozen(address from, address to, HookData calldata hook
 
 ## Hook managers
 
-The hub manager can authorize per-token managers on each spoke that can update hook state locally — without a cross-chain Hub round-trip. This is useful for compliance oracles or KYC providers that need to act immediately on a single chain.
+The hub manager can authorize per-token managers on each spoke that can update hook state locally, without a cross-chain Hub round-trip. This is useful for compliance oracles or KYC providers that need to act immediately on a single chain.
 
 A manager is granted via a Hub-side `updateContract` call that encodes a `TrustedCall.UpdateHookManager` payload. Once authorized, the manager can call:
 
@@ -116,7 +116,7 @@ function unfreeze(address token, address user) external;
 
 These calls take effect immediately on the spoke where they are submitted. For changes that need to propagate to every chain, use the Hub-driven `updateRestriction` path instead, which uses the same [sync parameters](../sync-parameters-across-chains/) pattern.
 
-Note that endorsed protocol addresses and pool escrows cannot be frozen or added as members — the hook enforces this.
+Note that endorsed protocol addresses and pool escrows cannot be frozen or added as members; the hook enforces this.
 
 ## Updating the hook
 

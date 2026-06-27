@@ -11,9 +11,9 @@ The [balance sheet](../../architecture/spoke/) is the contract that manages a po
 
 Examples of balance sheet managers in the protocol:
 
-- [`AsyncRequestManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/AsyncRequestManager.sol) — handles async deposit and redemption requests for ERC-7540 vaults.
-- [`OnOffRampManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/OnOffRampManager.sol) — enables fiat on/off ramps by bridging off-chain settlement into the protocol's accounting.
-- [`OnchainPortfolioManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/OnchainPortfolioManager.sol) — manages onchain portfolios, tracking asset positions directly on the balance sheet.
+- [`AsyncRequestManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/AsyncRequestManager.sol): handles async deposit and redemption requests for ERC-7540 vaults.
+- [`OnOffRampManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/OnOffRampManager.sol): enables fiat on/off ramps by bridging off-chain settlement into the protocol's accounting.
+- [`OnchainPortfolioManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/OnchainPortfolioManager.sol): manages onchain portfolios, tracking asset positions directly on the balance sheet.
 
 ## What they can do
 
