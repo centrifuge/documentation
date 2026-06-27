@@ -1,11 +1,11 @@
 ---
-id: custom-share-token
-title: Custom share token
+id: custom-share-hook
+title: Custom share hook
 category: subpage
 contributors: <Jeroen:jeroen@centrifuge.io>
 ---
 
-# Custom share token
+# Custom share hook
 
 Each share class has an ERC-20 share token deployed on every spoke chain. The token's transfer behaviour is governed by a configurable hook contract. By extending [`BaseTransferHook`](https://github.com/centrifuge/protocol/blob/main/src/hooks/BaseTransferHook.sol) you can layer in custom compliance logic — allowlists, transfer freezes, jurisdiction rules — without touching the token contract itself.
 
