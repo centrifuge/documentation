@@ -7,22 +7,11 @@ contributors: <Jeroen:jeroen@centrifuge.io>
 
 # Custom share hook
 
-Each share class has an ERC-20 share token deployed on every spoke chain. The token's transfer behaviour is governed by a configurable hook contract. By extending [`BaseTransferHook`](https://github.com/centrifuge/protocol/blob/main/src/hooks/BaseTransferHook.sol) you can layer in custom compliance logic (allowlists, transfer freezes, jurisdiction rules) without touching the token contract itself.
+The [token compliance](/developer/protocol/features/token-compliance/) page gives an overview of the hook system and the four built-in compliance profiles. This page covers how to extend [`BaseTransferHook`](https://github.com/centrifuge/protocol/blob/main/src/hooks/BaseTransferHook.sol) to build a custom profile.
 
 :::info Scope of this page
 `BaseTransferHook` and the handlers described here are designed for the protocol's existing vault and `AsyncRequestManager` setup. If you deploy a fully custom vault, these hooks may not be called or may not apply in full. Verify against your vault's transfer path.
 :::
-
-The protocol ships four ready-made implementations you can deploy directly or use as a reference:
-
-| Contract | Behaviour |
-|---|---|
-| [`FullRestrictions`](https://github.com/centrifuge/protocol/blob/main/src/hooks/FullRestrictions.sol) | Membership required for all transfers to non-protocol addresses |
-| [`FreelyTransferable`](https://github.com/centrifuge/protocol/blob/main/src/hooks/FreelyTransferable.sol) | Free transfers; membership required for deposit and redeem requests |
-| [`RedemptionRestrictions`](https://github.com/centrifuge/protocol/blob/main/src/hooks/RedemptionRestrictions.sol) | Free transfers; membership required only for redeem requests |
-| [`FreezeOnly`](https://github.com/centrifuge/protocol/blob/main/src/hooks/FreezeOnly.sol) | Fully open; only frozen accounts are blocked |
-
-If none of these fit, extend `BaseTransferHook` and override `checkERC20Transfer`.
 
 ## Callbacks
 
