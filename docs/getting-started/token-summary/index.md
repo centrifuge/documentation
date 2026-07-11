@@ -5,10 +5,6 @@ description: Overview of the CFG token, including the contract address, tokenomi
 contributors: <Imdior:ivan@centrifuge.io>
 ---
 
-{/* Restructured July 2026. Migration content is deprecated to a short Token History section at the
-    bottom of the page */}
-
-
 # Centrifuge Tokenomics Overview
 
 CFG is the native token of the Centrifuge ecosystem, issued as an ERC-20 token on Ethereum.
@@ -60,13 +56,11 @@ The majority of other stakeholder CFG allocations have already vested; the remai
 
 CFG has a 3% annual inflation rate based on the total token supply, resulting in a modest increase in total supply over time. All inflationary tokens accrue to the Centrifuge Treasury. 
 
-#### CFG Emissions
-
 ![](./images/cfgemissionv2026.png)
 
 This release schedule represents the current intended strategy for CFG emissions through December 2030. It is subject to change, with any significant modifications or actions to be communicated to CFG stakeholders.
 
-## CFG Governance Updates
+#### CFG Governance Updates
  
 Following the V3 protocol and token migrations initiatives, [CP171](https://github.com/centrifuge/cps/blob/main/cps/cp171.md) was approved by the Centrifuge DAO on November 3, 2025. Key outcomes of this proposal include:
  
@@ -78,7 +72,7 @@ These updates to the CFG governance structure eliminate execution bottlenecks an
 - **Maximize value accrual to CFG** by streamlining decision-making and execution
 As part of CNF's commitment to transparency, progress and results will be reported publicly through [centrifuge.foundation](https://www.centrifuge.foundation/) and Centrifuge's official social channels. For more details, see [Centrifuge Governance](https://docs.centrifuge.io/getting-started/cfg-governance/).
  
-## Token History
+#### Token History
  
 In March 2025, governance proposal [CP149](https://github.com/centrifuge/cps/blob/main/cps/CP149/CP149.md) introduced the current CFG token, consolidating legacy CFG from the deprecated Centrifuge Chain and Wrapped CFG (WCFG) on Ethereum into a single Ethereum native ERC-20 token at a **1:1** ratio. The change built on [CP141](https://github.com/centrifuge/cps/blob/main/cps/CP141/CP141.md), which migrated the Centrifuge protocol itself to a native EVM execution environment.
  
