@@ -11,9 +11,9 @@ Tokenization on Centrifuge is the process of representing assets or strategies a
 Each tokenized asset is created and managed through a **pool**, which contains one or more **vaults**, and each vault issues **share tokens** to investors. These tokens may be held, transferred, and used across supported EVM-compatible networks, depending on how the pool is configured.
 
 > Learn more:  
-> - [What is a pool?](/user/concepts/pools)  
+> - [What is a pool?](https://docs.centrifuge.io/user/concepts/vaults/)  
 > - [How vaults work](/user/concepts/vaults)  
-> - [Understanding share tokens](/user/concepts/tokens)
+> - [Understanding share tokens](https://docs.centrifuge.io/user/concepts/share-tokens/)
 
 ## Why tokenization?
 
