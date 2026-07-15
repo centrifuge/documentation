@@ -6,10 +6,14 @@ on:
   pull_request:
     paths:
       - docs/developer/protocol/deployments/**
+      - scripts/verify-deployments.mjs
+      - .github/workflows/verify-deployments.yml
   push:
     branches: [main]
     paths:
       - docs/developer/protocol/deployments/**
+      - scripts/verify-deployments.mjs
+      - .github/workflows/verify-deployments.yml
   workflow_dispatch:
 
 jobs:
