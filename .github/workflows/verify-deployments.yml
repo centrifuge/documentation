@@ -1,0 +1,37 @@
+name: Verify deployments
+
+# Cross-checks the addresses on the Deployments page against the Centrifuge API.
+# Runs only when that page (or the verification script) changes.
+on:
+  pull_request:
+    paths:
+      - docs/developer/protocol/deployments/**
+      - scripts/verify-deployments.mjs
+      - .github/workflows/verify-deployments.yml
+  push:
+    branches: [main]
+    paths:
+      - docs/developer/protocol/deployments/**
+      - scripts/verify-deployments.mjs
+      - .github/workflows/verify-deployments.yml
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      # Contract addresses (Core, Adapters, Admin, Hooks, Managers, Valuations,
+      # Vaults tabs) against the Deployment entity.
+      - name: Verify contract addresses against the Deployment entity
+        run: node scripts/verify-deployments.mjs --scope=contracts
+
+      # Token and vault addresses against the TokenInstance and Vault entities.
+      - name: Verify token and vault addresses against the API
+        if: '!cancelled()'
+        run: node scripts/verify-deployments.mjs --scope=tokens,vaults
