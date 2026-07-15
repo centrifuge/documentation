@@ -9,7 +9,7 @@
 
 import { readdir, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { dirname, join, resolve, relative } from 'node:path';
+import { dirname, resolve, relative } from 'node:path';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(HERE, '..');
@@ -36,7 +36,8 @@ async function* walk(dir) {
     return;
   }
   for (const e of entries) {
-    const p = join(dir, e.name);
+    const p = resolve(dir, e.name);
+    if (relative(dir, p).startsWith('..')) continue; // never escape the scanned dir
     if (e.isDirectory()) yield* walk(p);
     else if (EXTENSIONS.has(p.slice(p.lastIndexOf('.')))) yield p;
   }

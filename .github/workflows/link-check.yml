@@ -7,6 +7,9 @@ on:
   pull_request:
     paths:
       - docs/**
+      - scripts/check-link-schemes.mjs
+      - lychee.toml
+      - .github/workflows/link-check.yml
   workflow_dispatch:
 
 jobs:
@@ -48,7 +51,7 @@ jobs:
 
       - name: Check links with lychee
         if: steps.scope.outputs.empty != 'true'
-        uses: lycheeverse/lychee-action@v2
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
           args: --config lychee.toml --no-progress ${{ steps.scope.outputs.files }}
           fail: true
