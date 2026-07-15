@@ -1,0 +1,57 @@
+# Configuration for the lychee link checker (used by .github/workflows/link-check.yml).
+#
+# lychee validates external (http/https) links. Internal links are resolved
+# against a sentinel base URL and then excluded, because the Docusaurus build
+# already validates internal links against the real route table (onBrokenLinks).
+
+# Resolve root-relative and relative links against this sentinel host so they
+# become regular URLs, then exclude the host below. Without a base URL, lychee
+# errors on root-relative links ("cannot resolve").
+base_url = "https://internal.invalid"
+
+# Only check web links.
+scheme = ["https", "http"]
+
+# Retry transient failures before giving up.
+max_retries = 3
+retry_wait_time = 2
+timeout = 20
+
+# Some servers reject HEAD; fall back to GET.
+method = "get"
+
+# Treat success plus rate-limiting as acceptable, so CI does not fail on 429s.
+accept = ["200..=299", "429"]
+
+# Skip internal links (now under the sentinel host), local dev URLs, and the
+# auth-walled legacy Tinlake app (returns 401).
+exclude = [
+  "^https?://internal\\.invalid",
+  "^https?://localhost",
+  "^https?://127\\.0\\.0\\.1",
+  "^https?://legacy\\.tinlake\\.centrifuge\\.io",
+  # Block explorers bot-block automated requests (403). The addresses they link
+  # to are validated against the API by the verify-deployments workflow.
+  "etherscan\\.io",
+  "basescan\\.org",
+  "arbiscan\\.io",
+  "snowscan\\.xyz",
+  "snowtrace\\.io",
+  "bscscan\\.com",
+  "monadscan\\.com",
+  "pharosscan\\.xyz",
+  "hyperevmscan\\.io",
+  "explorer\\.plume\\.org",
+  "solscan\\.io",
+  "stellar\\.expert",
+]
+
+# Skip archived legacy docs, where external link rot is expected.
+exclude_path = [
+  "docs/developer/legacy",
+  "docs/getting-started/legacy",
+]
+
+# Cache results between runs to reduce load and flakiness.
+cache = true
+max_cache_age = "2d"
