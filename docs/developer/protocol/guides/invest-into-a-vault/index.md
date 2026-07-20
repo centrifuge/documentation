@@ -118,7 +118,13 @@ Asynchronous requests are fulfilled by the pool issuer. The time to fulfillment 
 
 ### How do I get the current share price?
 
-Use `vault.convertToAssets()` to convert a share amount to its current value in the investment asset:
+Use `vault.pricePerShare()` to read the latest price of one share, quoted in the investment asset's decimals (e.g., 6 for USDC):
+
+```solidity
+uint256 sharePrice = vault.pricePerShare();
+```
+
+This is the preferred way to get the latest price. Alternatively, `vault.convertToAssets()` converts a specific share amount to its current value in the investment asset:
 
 ```solidity
 uint8 shareDecimals = vault.share().decimals();
@@ -126,10 +132,10 @@ uint256 oneShare = 10 ** shareDecimals;
 uint256 assetValue = vault.convertToAssets(oneShare);
 ```
 
-The result is denominated in the investment asset and uses the asset's decimals (e.g., 6 for USDC).
+Both are denominated in the investment asset and use the asset's decimals.
 
 :::info
-The price returned by `convertToAssets()` may not be the exact price at which a request is settled, since there can be a time lag between querying and fulfillment.
+These prices may not be the exact price at which a request is settled, since there can be a time lag between querying and fulfillment.
 :::
 
 ### Who pays for cross-chain gas?
