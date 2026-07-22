@@ -31,7 +31,7 @@ Asynchronous vaults follow the ERC-7540 standard. In this model, deposits and re
 - Suited for RWA strategies with offchain components  
 - Requests are queued, approved, priced, and fulfilled  
 
-> Learn more: [Managing investment requests](/user/concepts/onchain-accounting)
+> Learn more: [Managing investment requests](https://docs.centrifuge.io/developer/protocol/features/onchain-accounting/)
 
 ## Multi-asset support
 

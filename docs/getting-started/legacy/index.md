@@ -5,7 +5,7 @@ contributors: <Frederik Gartenmeister:frederik@k-f.co>
 ---
 
 # Legacy Protocols
-Centrifuge was founded with the vision of bringing real-world financial products on-chain, and its journey can be traced through three major protocol generations, with [Centrifuge V3](/getting-started/protocol-summary) being the latest one.
+Centrifuge was founded with the vision of bringing real-world financial products on-chain, and its journey can be traced through three major protocol generations, with [Centrifuge V3](https://docs.centrifuge.io/developer/protocol/overview/) being the latest one.
 
 **2017 – The first on-chain tokenized credit system**
 The team’s initial milestone was building one of the earliest tokenized financing systems on Ethereum. Even in its earliest form, the protocol showed how off-chain receivables—such as invoices or loan agreements—could be represented by ERC-20 tokens, opening traditional credit markets to the emerging world of DeFi.

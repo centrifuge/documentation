@@ -92,4 +92,4 @@ Centrifuge’s multi-chain protocol gives you:
 This design eliminates the need to duplicate logic or infrastructure and removes the complexity of scaling across chains.
 
 > Want to learn more about how the messaging system works?  
-> See the [developer documentation on chain abstraction](/developer/protocol/chain-abstraction/)
+> See the [developer documentation on chain abstraction](https://docs.centrifuge.io/developer/protocol/features/chain-abstraction/)
