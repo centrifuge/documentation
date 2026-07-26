@@ -13,7 +13,7 @@ Each tokenized asset is created and managed through a **pool**, which contains o
 > Learn more:  
 > - [What is a pool?](https://docs.centrifuge.io/user/concepts/vaults/)  
 > - [How vaults work](/user/concepts/vaults)  
-> - [Understanding share tokens](https://docs.centrifuge.io/user/concepts/share-tokens/)
+> - [Understanding share tokens](/user/concepts/share-tokens/)
 
 ## Why tokenization?
 
