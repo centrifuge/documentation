@@ -1,37 +1,37 @@
 ---
 id: concepts
 title: Concepts
-contributors: <Graham Nelson:graham@k-f.co>
+contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 
 # Concepts
 
-Centrifuge introduces several core concepts that define how the protocol works. These concepts form the foundation for understanding tokenized strategies, vault behavior, and multi-chain asset management.
-
-Explore these topics to get a clear overview of how Centrifuge fits together.
+Shared concepts behind products managed through Centrifuge. The [issuer](/user/issuer) and [investor](/user/investor) guides link here instead of re-explaining them.
 
 ## Explore
 
 <div className="card-grid">
 
-  <a className="card-tile" href="/user/concepts/tokenization">
-    <h3>Tokenization</h3>
-    <p>Turn real-world or onchain assets into programmable share tokens, backed by smart contract logic.</p>
+  <a className="card-tile" href="/user/concepts/pools">
+    <h3>Pools and share tokens</h3>
+    <p>The pool as the product's onchain management, share classes, and the token as the ownership layer.</p>
   </a>
-    <a className="card-tile" href="/user/concepts/multi-chain">
-    <h3>Multi-Chain Protocol</h3>
-    <p>Access liquidity and interact with vaults on any supported chain, coordinated through a single hub.</p>
-  </a>
-    <a className="card-tile" href="/user/concepts/pools">
-    <h3>Pools</h3>
-    <p>Create and manage investment products using share classes, vaults, and permissioned logic.</p>
-  </a>
-    <a className="card-tile" href="/user/concepts/share-tokens">
-    <h3>Share Tokens</h3>
-    <p>Understand share tokens, permissioning rules, and how ownership is tracked across chains.</p>
-  </a>
+
   <a className="card-tile" href="/user/concepts/vaults">
     <h3>Vaults</h3>
-    <p>Deposit, redeem, and allocate assets through vaults that support synchronous or asynchronous flows.</p>
+    <p>The entry path into a pool: instant vs request-based execution, multiple assets and networks.</p>
   </a>
+
+  <a className="card-tile" href="/user/concepts/pricing">
+    <h3>Pricing</h3>
+    <p>How product valuations determine token prices and remain consistent across networks.</p>
+  </a>
+
+  <a className="card-tile" href="/user/concepts/access-permissions">
+    <h3>Access and permissions</h3>
+    <p>The whitelisting model and the transfer-control patterns, from fully restricted to freely transferable.</p>
+  </a>
+
 </div>
+
+Terms used across the documentation are defined in the [glossary](/getting-started/glossary).

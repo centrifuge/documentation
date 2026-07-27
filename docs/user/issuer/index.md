@@ -7,7 +7,7 @@ contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 
 # Issuer guide
 
-Centrifuge gives issuers and asset managers an onchain operations platform for financial products. The issuer structures the offering and the Centrifuge management app becomes the onchain management path for it: issuance, investor access, pricing, distribution and reporting, operated from one interface.
+Centrifuge gives issuers and asset managers an onchain operations platform for financial products. The issuer structures the offering and the Centrifuge Management app becomes the onchain management path for it: issuance, investor access, pricing, distribution and reporting, operated from one interface.
 
 The protocol abstracts the contract-level complexity. Issuers don't write or deploy code; they operate the product through the app, with the kind of controls expected from traditional fund infrastructure.
 
@@ -34,7 +34,7 @@ Creating a product in Centrifuge is not primarily a technical act — it is the 
 
 That reflection is the pool. The pool represents the product's onchain management: it holds the balance sheet, defines the share classes, and is the place from which the issuer controls operations — investors, orders, pricing, liquidity. Everything in the rest of this guide happens within a pool.
 
-Pools are currently set up through an authorized onboarding process. Once registered onchain, they appear in the management app, where issuers configure and operate the product’s share classes, tokens, vaults, investor access, pricing and distribution.
+Pools are currently set up through an authorized onboarding process. Once registered onchain, they appear in the Management app, where issuers configure and operate the product’s share classes, tokens, vaults, investor access, pricing and distribution.
 
 ## Token management
 

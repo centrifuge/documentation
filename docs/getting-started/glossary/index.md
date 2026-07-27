@@ -50,10 +50,10 @@ An ERC-20 token representing user ownership in a specific share class. Issued wh
 A smart contract that manages deposits, redemptions, and asset allocations for a specific strategy. Vaults can be synchronous or asynchronous.
 
 **Synchronous vault (ERC-4626)**  
-A vault where deposits are fulfilled immediately. Shares are minted on deposit; redemptions are typically processed asynchronously.
+A vault with instant execution: deposits are fulfilled immediately and shares are minted in the same transaction. Redemptions remain request-based.
 
 **Asynchronous vault (ERC-7540)**  
-A vault where deposits and redemptions are request-based and processed in batches. Useful for offchain or delayed asset management.
+A vault with request-based execution: deposits and redemptions become orders that the issuer processes, and the investor then claims the result. Useful for offchain or delayed asset management.
 
 **Pooled vault (ERC-7575)**  
 A share token that collects value across multiple vaults. Enables strategies with multiple currencies or layered structures.
@@ -63,6 +63,15 @@ The identifier for a specific investment currency (ERC-20 or ERC-6909) used in a
 
 **NAV (Net Asset Value)**  
 The total value of a vault or share class, representing its current worth based on asset prices and liabilities.
+
+**Balance sheet**  
+The pool's onchain record of the assets it holds.
+
+**Deposit capacity**  
+The bound an issuer sets on how much liquidity a synchronous vault accepts.
+
+**On/off-ramp**  
+The issuer-side rails that control how assets move in and out of a pool: accepted assets, authorized relayers and approved withdrawal addresses.
 
 ## Token standards
 
@@ -102,3 +111,15 @@ The act of converting share tokens back into the original asset or currency, usu
 
 **Composability**  
 The ability of Centrifuge assets to integrate into DeFi protocols and strategies.
+
+**Whitelist**  
+The set of addresses approved by the issuer to interact with a product. Maintained per network: approval on one network does not carry over to another.
+
+**Order**  
+A deposit or redemption request waiting to be processed by the issuer.
+
+**Claim**  
+The final step of a request-based operation: collecting the tokens (after a deposit) or the funds (after a redemption) once the issuer has processed the order.
+
+**Freeze**  
+The issuer's ability to block a specific address from operating with the token.

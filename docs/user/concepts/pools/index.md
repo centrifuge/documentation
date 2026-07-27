@@ -1,93 +1,38 @@
 ---
 id: pools
-title: Pools
+title: Pools and share tokens
 category: subpage
-contributors: <Graham Nelson:graham@k-f.co>
+contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 
-# Pools
+# Pools and share tokens
 
-A pool is the core structure that represents an investment product on Centrifuge. Each pool can contain one or more vaults, serve one or multiple investor groups, and be deployed across multiple chains.
+## The pool
 
-Pools are created and managed by issuers or curators, who configure how capital is accepted, tracked, and distributed.
+A pool is the onchain representation and management path of a financial product. Whether the product originated offchain — a fund, a credit strategy — or is purely onchain, the pool is where it lives and where it is operated: it maintains the product's onchain balance sheet, defines the share classes, and is the place from which the issuer manages investor access, orders, pricing and liquidity.
 
-## What is a pool?
+Everything else in Centrifuge hangs off a pool: tokens represent claims on it, [vaults](/user/concepts/vaults) are entry points into it, and [permissions](/user/concepts/access-permissions) govern who can interact with it.
 
-A pool brings together everything needed to run a tokenized investment strategy:
+## Share classes
 
-- Share tokens for investors
-- Vaults to manage deposits and redemptions
-- Pricing logic and valuation updates
-- Permissions and investor rules
+A pool contains one or more share classes. Each share class has its own token and can define distinct economic terms, pricing and investor permissions. A single product can serve different investor bases through different classes: for example, a permissioned institutional class and a freely transferable class distributed through DeFi, both backed by the same pool.
 
-Each pool has a unique ID and is anchored on a single hub chain. From there, it can operate across any number of supported spoke chains.
+## The token: ownership layer
 
-## Pools can include:
+Each share class is represented by a token — the ownership layer of the product:
 
-- **Multiple vaults**, each with its own logic or currency
-- **Multiple share classes**, such as junior/senior tranches
-- **Custom permissions**, including investor whitelisting and redemption restrictions
+- It follows industry token standards, such as ERC-20, making it compatible with common wallets and custody infrastructure.
+- It is issued when an investor subscribes and burned when they redeem.
+- Changes in the value allocated to the share class are reflected in its price per share. The price may rise or fall; a holder's balance only changes when tokens are issued, redeemed or transferred.
+- Depending on its transfer restrictions and available integrations, it can remain fully permissioned or be used across DeFi.
 
-## Share classes and share tokens
+A token can be distributed to several networks while remaining one asset, with one supply and one price — see [Vaults](/user/concepts/vaults) for how distribution works and [Pricing](/user/concepts/pricing) for how the price stays consistent everywhere.
 
-Each pool contains one or more **share classes**, which define how tokens are issued and what claims investors have.
+## Why tokenize
 
-- Every share class issues its own token
-- Tokens follow the ERC-20 standard, with optional compliance rules
-- Tokens can be permissioned or fully open depending on the configuration
+Representing ownership as a token is what connects a financial product to onchain distribution:
 
-For example, a pool might include:
-
-- A permissioned senior share class for institutional investors
-- A permissionless junior share class for open access
-
-## Vaults within a pool
-
-Each share class can be connected to one or more vaults. Vaults are deployed to spoke chains where users invest and redeem.
-
-- Vaults define how assets flow into and out of the pool
-- Vaults can use synchronous or asynchronous flows
-- Assets are tracked and settled across chains through the Hub
-
-For more, see the [Vaults](/user/concept/vaults) section.
-
-## Creating a pool
-
-When creating a pool, managers choose:
-
-- A hub chain (for central control)
-- A base currency (e.g. USD, USDC)
-- Share classes and their names, symbols, and metadata
-- Permissioning rules for each share class
-
-After setup, the pool is registered across selected networks and ready to accept deposits.
-
-## Managing a pool
-
-Pool managers are responsible for maintaining and updating:
-
-- **Share prices**, which determine how much each token is worth
-- **Asset prices**, especially in multi-asset vaults
-- **Investment requests**, including approval, issuance, and redemption flows
-
-All of this is coordinated through the Hub chain, even if users are interacting from other chains.
-
-For asynchronous vaults, requests go through a lifecycle that includes:
-
-1. **Pending**: The user submits a deposit or redemption
-2. **Approved**: The request is confirmed and capital is unlocked
-3. **Issued or revoked**: The share price is applied
-4. **Fulfilled**: The vault is updated
-5. **Claimed**: The user receives their shares or assets
-
-Vaults using synchronous deposits (ERC-4626) skip this process, shares are minted immediately upon deposit.
-
-## Summary
-
-Pools are the foundation for every product in Centrifuge. They allow managers to launch customizable, multi-chain investment strategies with:
-
-- Multiple share classes and investor types
-- Vaults tailored to capital flow and liquidity needs
-- Cross-chain operations, all coordinated through one hub
-
-Whether you're launching a tokenized fund or investing in a diversified strategy, everything starts with a pool.
+- **Transferable** — positions can move between approved parties, or freely where the product allows it.
+- **Composable** — tokens can integrate with exchanges, lending markets and other protocols.
+- **Auditable** — issuance, transfers and redemptions are recorded onchain.
+- **Programmable** — product rules can be enforced onchain alongside the offering’s offchain processes.

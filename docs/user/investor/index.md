@@ -66,9 +66,9 @@ It can apply to investing only, redeeming only, or both — and it is granted pe
 
 Common restriction profiles include:
 
-- **Fully restricted** — subscription, redemption and transfers all require the allowlist: the token only moves between approved addresses.
-- **Transferable but gated** — the allowlist applies to subscribing and redeeming, while the token itself circulates freely: even if the investor acquired it on a secondary market, redeeming against the pool still requires being allowlisted.
-- **Redemption gated** — subscription and transfers are open; only allowlisted investors can redeem.
+- **Fully restricted** — subscription, redemption and transfers all require the whitelist: the token only moves between approved addresses.
+- **Transferable but gated** — the whitelist applies to subscribing and redeeming, while the token itself circulates freely: even if the investor acquired it on a secondary market, redeeming against the pool still requires being whitelisted.
+- **Redemption gated** — subscription and transfers are open; only whitelisted investors can redeem.
 - **Open with freeze controls** — operations are open, and the issuer keeps the ability to freeze specific addresses.
 
 On the issuer's side, the investor's access takes effect onchain the moment they are added to the product's investor list.
