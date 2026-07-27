@@ -34,7 +34,7 @@ In 2023, Centrifuge launched [Centrifuge Prime](https://centrifuge.mirror.xyz/Ky
 
 Also in 2023, Centrifuge held the first [Real-World Asset Summit](https://www.rwasummit.io/), where we brought together leaders from both traditional and decentralized finance to accelerate the future of the tokenized asset industry.
 
-Additionally, Centrifuge was one of the founding members of the [Tokenized Asset Coalition](https://www.rwa.xyz/tokenized-asset-coalition) alongside industry leaders like Circle, Coinbase, and more, with the mission of working together to bring the next trillion dollars of assets onchain.
+Additionally, Centrifuge was one of the founding members of the [Tokenized Asset Coalition](https://tacoalition.org/about) alongside industry leaders like Circle, Coinbase, and more, with the mission of working together to bring the next trillion dollars of assets onchain.
 
 ### Cross-chain expansion and looking ahead
 

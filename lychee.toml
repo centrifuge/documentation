@@ -44,6 +44,9 @@ exclude = [
   "explorer\\.plume\\.org",
   "solscan\\.io",
   "stellar\\.expert",
+  # Medium bot-blocks automated requests (403); these articles resolve in a browser.
+  "^https://medium\\.com/centrifuge/defi-2-0-first-real-world-loan-is-financed-on-maker-fbe24675428f$",
+  "^https://medium\\.com/centrifuge/rwa-market-the-aave-market-for-real-world-assets-goes-live-48976b984dde$",
 ]
 
 # Skip archived legacy docs, where external link rot is expected.
