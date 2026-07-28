@@ -114,7 +114,7 @@ Operating a product is a team effort, and the pool separates duties into distinc
 
 - **Hub managers** — full control over the pool's configuration: tokens, permissions, pricing and the other roles. The top-level administrators of the product.
 - **Balance sheet managers** — authorized to move the product's assets in and out of the pool's balance sheet. Granted per network, so operational reach can be scoped to where each operator works.
-- **Policy-based managers and operators** — contract-based operators, such as merkle proof managers and onchain portfolio managers, that execute pre-approved operations within limits defined by the issuer (see [Operational flexibility and automation](#operational-flexibility-and-automation)).
+- **Policy-based managers and operators** — contract-based operators, such as Merkle Proof Managers and Onchain Portfolio Managers, that execute pre-approved operations within limits defined by the issuer (see [Operational flexibility and automation](#operational-flexibility-and-automation)).
 
 This separation keeps day-to-day operations away from top-level control: an operator can run the product's routine flows without being able to change its configuration.
 
@@ -153,7 +153,7 @@ For instant-execution vaults, deposits settle without issuer intervention. Redem
 
 ## Operational flexibility and automation
 
-The platform provides an onchain portfolio management layer for repeatable, pre-approved operations, such as subscribing into other onchain products, moving liquidity between chains and updating accounting prices.
+The platform provides the Onchain Portfolio Manager (Onchain PM), an execution layer for repeatable, pre-approved operations, such as subscribing into other onchain products, moving liquidity between chains and updating accounting prices. The [curator guide](/user/curator) covers it in detail.
 
 A manager defines the permitted actions and guardrails — such as slippage protection — while an authorized operator executes the workflows within those boundaries. Everything runs onchain, within limits set from the UI.
 
