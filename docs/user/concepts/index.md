@@ -6,7 +6,7 @@ contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 
 # Concepts
 
-Shared concepts behind products managed through Centrifuge. The [issuer](/user/issuer) and [investor](/user/investor) guides link here instead of re-explaining them.
+This section introduces the core concepts behind products managed through Centrifuge. It explains how pools, share classes, tokens and vaults work together to represent a product onchain, define investor ownership and provide different paths for entering and exiting a product. These concepts apply across different product structures and operating models.
 
 ## Explore
 
