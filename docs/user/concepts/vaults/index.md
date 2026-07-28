@@ -30,7 +30,7 @@ Redemptions are processed through requests on every vault type — only deposits
 
 ## Several vaults, one token
 
-A single share token can be served by several vaults, each accepting a different asset (ERC-7575). One class might be investable in USDC through one vault and in another currency through a second, with all capital consolidated in the same pool balance sheet and every investor receiving the same token.
+A single share token can be served by several vaults, each accepting a different asset (ERC-7575). One class might be investable in USDC through one vault and in another investment asset through a second, with all capital consolidated in the same pool balance sheet and every investor receiving the same token.
 
 ## Vaults and networks
 

@@ -26,9 +26,9 @@ The products available to investors cover a range of structures:
 
 Products can be permissioned, open, or integrated into DeFi — the [Access](#access) section covers what that means for the investor.
 
-Each product defines its own terms: accepted currencies, access requirements, minimum investment, liquidity and processing cadence. The product page is always the reference.
+Each product defines its own terms: accepted investment assets, access requirements, minimum investment, liquidity and processing cadence. The product page is always the reference.
 
-A product is not limited to a single entry point: it can be open on several networks and accept several currencies. The investor chooses where and how to enter, and the product remains the same — one balance sheet, one price.
+A product is not limited to a single entry point: it can be open on several networks and accept several investment assets. The investor chooses where and how to enter, and the product remains the same — one balance sheet, one price.
 
 ![](./images/deJTRSY_dashboard.jpg)
 > Product page with key facts and performance.
@@ -39,7 +39,7 @@ Every product an investor invests in is built from the same three pieces:
 
 - **Pool** — the onchain representation and management path of a financial structure, whether it originated offchain or is purely onchain. The issuer operates the product — investors, orders, pricing, liquidity — through its pool.
 - **Token** — the ownership layer of a share class. It is what the investor holds in their wallet, what carries the price, and what moves — across chains or into DeFi, within the rules of the product.
-- **Vault** — the way in and out of the product. A vault defines the investment asset, network and subscription flow. Deposits may settle instantly or follow a request-based process, while redemptions are processed through requests. A single token can be served by several vaults, so the same product can accept different currencies and networks.
+- **Vault** — the way in and out of the product. A vault defines the investment asset, network and subscription flow. Deposits may settle instantly or follow a request-based process, while redemptions are processed through requests. A single token can be served by several vaults, so the same product can accept different investment assets and networks.
 
 See [Pools](/user/concepts/pools) and [Vaults](/user/concepts/vaults) for the background.
 
@@ -49,7 +49,7 @@ See [Pools](/user/concepts/pools) and [Vaults](/user/concepts/vaults) for the ba
 ## What the investor needs
 
 - A wallet on one of the networks where the product is distributed.
-- The product's accepted currency (for example USDC) and gas for transactions.
+- The product's accepted investment asset (for example USDC) and gas for transactions.
 - Access to the product, where its terms require it — see below.
 
 ## Access
@@ -78,7 +78,7 @@ On the issuer's side, the investor's access takes effect onchain the moment they
 
 ## How investing works
 
-The investor invests directly from their wallet, in the product's accepted currency. Depending on the vault they enter through, execution takes one of two forms:
+The investor invests directly from their wallet, in the product's accepted investment asset. Depending on the vault they enter through, execution takes one of two forms:
 
 - **Instant** — the investor deposits and receives the tokens in the same transaction. Nothing to wait for and nothing to claim.
 - **Request-based** — the deposit becomes an order. The issuer processes orders at the product's cadence — often once related offchain operations complete — and the investor then **claims the tokens** in the app. Receiving the tokens is a two-step experience: deposit, then claim.
@@ -110,7 +110,7 @@ The token's price history — and every detail behind it — is tracked in the p
 
 ## Redeeming
 
-Redemptions follow the order flow on every product: the investor requests a redemption, the issuer processes it at the product's cadence, and the investor then claims the funds — in the product's currency, back in their wallet, ready to off-ramp. Like investments, a pending redemption can be cancelled before it is processed.
+Redemptions follow the order flow on every product: the investor requests a redemption, the issuer processes it at the product's cadence, and the investor then claims the funds — in the product's investment asset, back in their wallet. Like investments, a pending redemption can be cancelled before it is processed.
 
 For freely transferable tokens, selling on a secondary market is an alternative exit that settles instantly at the market price.
 
@@ -123,6 +123,6 @@ Pending and settled redemptions stay visible in the order history:
 
 - **Self-custody** — the investor's position is a token in their own wallet, not an entry in someone's database. Funds in flight sit in onchain escrow, not with the issuer.
 - **Transparency** — pricing, orders and settlement are visible onchain and in the app, on both sides of every order.
-- **Access on the investor's terms** — invest from the preferred chain, with the currency the product accepts.
+- **Access on the investor's terms** — invest from the preferred chain, with the investment asset the product accepts.
 - **Liquidity options** — platform redemptions on every product, plus DeFi markets where the token is freely transferable.
 - **Clear responsibilities** — Centrifuge provides the infrastructure; each product is issued and managed by its issuer. Questions about a specific product go to its issuer, through the contact details on the product page.

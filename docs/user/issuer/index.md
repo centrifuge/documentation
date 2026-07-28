@@ -34,7 +34,34 @@ Creating a product in Centrifuge is not primarily a technical act — it is the 
 
 That reflection is the pool. The pool represents the product's onchain management: it holds the balance sheet, defines the share classes, and is the place from which the issuer controls operations — investors, orders, pricing, liquidity. Everything in the rest of this guide happens within a pool.
 
-Pools are currently set up through an authorized onboarding process. Once registered onchain, they appear in the Management app, where issuers configure and operate the product’s share classes, tokens, vaults, investor access, pricing and distribution.
+Pools are currently set up through an authorized onboarding process. Once registered onchain, they appear in the Management app, where issuers configure and operate the product’s share classes, tokens, vaults, investor access, pricing and distribution. The details of what that process requires are covered in [Launching a product](#launching-a-product).
+
+## Launching a product
+
+Getting a product onto Centrifuge begins with an onboarding intake. Prospective issuers provide a small set of launch parameters and the pool is then registered onchain. Once registered, its ongoing configuration and operations are managed through the Management app.
+
+The initial parameters are deliberately limited. Other product components — including distribution networks, token permissions, vaults, accepted investment assets and pricing configuration — can be configured after the pool exists. The hub chain and denomination cannot be changed later, so they require particular consideration before launch.
+
+| Required parameter | Notes |
+|---|---|
+| Hub chain | Where the pool is managed. Cannot be changed later. The default is Ethereum. |
+| Denomination | Unit of account for pricing and accounting. Cannot be changed later. The default is USD. |
+| Hub manager wallet | Registered as pool admin at creation. Additional hub managers can be added or removed later. |
+| Token name | ERC-20 name, 1 to 128 characters. Changeable later. |
+| Token ticker | ERC-20 symbol, 1 to 32 characters. Changeable later. |
+
+### Hub manager setup
+
+The hub manager wallet requires particular care before launch. Hub managers have top-level control over the pool: they can deploy tokens and vaults, set prices, update investor permissions, configure crosschain connectivity and grant or revoke manager roles.
+
+Any hub manager can remove another hub manager, including the original admin. The protocol does not prevent the final hub manager from being removed, so changes to this role should be made deliberately.
+
+Recommended practice:
+
+- Multi-party computation (MPC) custody is the recommended default, with a policy requiring more than one approver and destinations restricted to approved Centrifuge Hub contracts.
+- A multisig is also suitable, with a threshold of at least 3-of-5. Signers should use separate hardware wallets held by different people, with at least one device kept offline as a recovery signer.
+- Keep the admin wallet separate from operational addresses used for issuance and price updates.
+- Keep the admin wallet funded with the native gas asset required by its hub chain, including enough to cover crosschain messaging.
 
 ## Token management
 
@@ -67,7 +94,7 @@ These controls are not fixed at launch — permissions can be updated from the a
 A share token can be deployed across multiple networks while remaining part of the same share class. From the Management app, issuers can view its existing deployments and extend distribution to additional networks. The protocol handles the underlying crosschain coordination, maintaining a unified supply and consistent price for the share class across its deployments.
 
 ![](./images/crosschain.jpg)
-> Cross-chain section.
+> Crosschain section.
 
 ### Vaults: managing the product's entry points
 
@@ -80,11 +107,11 @@ Redemptions are processed through requests on every vault type — only deposits
 
 From the app, the issuer manages the product's entry points over its whole life:
 
-- Add vaults as distribution grows — a new accepted currency, or a new network. To distribute the token to investors on another chain, the issuer deploys a vault there.
+- Add vaults as distribution grows — a new accepted investment asset, or a new network. To distribute the token to investors on another chain, the issuer deploys a vault there.
 - Enable or disable a vault to open or pause entry through it, without affecting the rest of the product.
 - Adjust the deposit capacity of instant vaults as the strategy's liquidity changes.
 
-Several vaults can serve the same token — for example one per currency, or one per chain — and each is managed independently.
+Several vaults can serve the same token — for example one per investment asset, or one per chain — and each is managed independently.
 
 ![](./images/vaults.jpg)
 > Vaults section.
@@ -116,7 +143,7 @@ Operating a product is a team effort, and the pool separates duties into distinc
 - **Balance sheet managers** — authorized to move the product's assets in and out of the pool's balance sheet. Granted per network, so operational reach can be scoped to where each operator works.
 - **Policy-based managers and operators** — contract-based operators, such as Merkle Proof Managers and Onchain Portfolio Managers, that execute pre-approved operations within limits defined by the issuer (see [Operational flexibility and automation](#operational-flexibility-and-automation)).
 
-This separation keeps day-to-day operations away from top-level control: an operator can run the product's routine flows without being able to change its configuration.
+This separation keeps day-to-day operations away from top-level control: an operator can run the product's routine flows without being able to change its configuration. For guidance on securing the hub manager wallet, see [Launching a product](#launching-a-product).
 
 ![](./images/access.jpg)
 > Settings access section showing the managers of a pool.
