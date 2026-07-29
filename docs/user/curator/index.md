@@ -5,6 +5,10 @@ category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 
+import '../../../src/css/custom.css';
+import onchainPM from './images/onchainPM.jpg';
+import subscribe from './images/subscribe.jpg';
+
 # Curator guide
 
 Curators design and operate allocation strategies using the same infrastructure issuers use for tokenized products. In the curator role, they focus on allocating a pool's capital across onchain venues — including other tokenized products, DeFi protocols and liquidity across networks — rather than originating the underlying assets. The resulting strategy can be fully onchain or form the onchain allocation layer of a blended product.
@@ -32,7 +36,10 @@ Curator describes responsibility for the investment strategy, while manager and 
 
 Before submission, the app can simulate a workflow and preview its expected effect based on the current onchain state. The steps submitted in a transaction execute atomically on the originating network. Crosschain operations initiate a separate settlement process on the destination network.
 
-![](./images/onchainPM.jpg)
+<img
+  src={onchainPM}
+  className="screenshot"
+/>
 > Workflow section.
 
 For the underlying mechanism, see the [Merkle Proof Manager](/developer/protocol/managers/merkle-proof-manager/) in the developer documentation.
@@ -57,7 +64,10 @@ Approved workflows operate within controls configured by the manager:
 
 If an onchain guardrail rejects a workflow, the transaction reverts and its local actions are rolled back.
 
-![](./images/subscribe.jpg)
+<img
+  src={subscribe}
+  className="screenshot"
+/>
 > Workflow execution view with its simulation summary.
 
 ## The result

@@ -4,6 +4,19 @@ title: Issuer
 category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
+import '../../../src/css/custom.css';
+import deJTRSYDashboard from './images/deJTRSY_dashboard.jpg';
+import settings from './images/settings.jpg';
+import token from './images/token.jpg';
+import crosschain from './images/crosschain.jpg';
+import vaults from './images/vaults.jpg';
+import navPanel from './images/NAV_panel.jpg';
+import registerAsset from './images/register_asset.jpg';
+import onoffRamp from './images/onoff_ramp.jpg';
+import access from './images/access.jpg';
+import investors from './images/investors_view.jpg';
+import orders from './images/orders_view.jpg';
+import onchainPM from './images/onchainPM.jpg';
 
 # Issuer guide
 
@@ -11,7 +24,10 @@ Centrifuge gives issuers and asset managers an onchain operations platform for f
 
 The protocol abstracts the contract-level complexity. Issuers don't write or deploy code; they operate the product through the app, with the kind of controls expected from traditional fund infrastructure.
 
-![](./images/deJTRSY_dashboard.jpg)
+<img
+  src={deJTRSYDashboard}
+  className="screenshot"
+/>
 > Product page with key facts and performance information.
 
 ## What issuers can build
@@ -71,11 +87,17 @@ Each share class of the pool is represented by a token. The token is what invest
 
 A pool can have a single token or several, each with its own terms.
 
-![](./images/settings.jpg)
+<img
+  src={settings}
+  className="screenshot"
+/>
 > Settings section to manage products and share classes
 
 The issuer can view and modify the token details of the product.
-![](./images/token.jpg)
+<img
+  src={token}
+  className="screenshot"
+/>
 > Advanced settings section with token details.
 
 ### Transfer restrictions
@@ -93,7 +115,10 @@ These controls are not fixed at launch — permissions can be updated from the a
 
 A share token can be deployed across multiple networks while remaining part of the same share class. From the Management app, issuers can view its existing deployments and extend distribution to additional networks. The protocol handles the underlying crosschain coordination, maintaining a unified supply and consistent price for the share class across its deployments.
 
-![](./images/crosschain.jpg)
+<img
+  src={crosschain}
+  className="screenshot"
+/>
 > Crosschain section.
 
 ### Vaults: managing the product's entry points
@@ -113,26 +138,38 @@ From the app, the issuer manages the product's entry points over its whole life:
 
 Several vaults can serve the same token — for example one per investment asset, or one per chain — and each is managed independently.
 
-![](./images/vaults.jpg)
+<img
+  src={vaults}
+  className="screenshot"
+/>
 > Vaults section.
 
 ### Pricing (NAV)
 
 Each token’s price is derived from the value allocated to its share class and the product’s established valuation methodology. The issuer records and publishes valuation updates through the Management app, and the protocol propagates them across every network where the token is distributed.
 
-![](./images/NAV_panel.jpg)
+<img
+  src={navPanel}
+  className="screenshot"
+/>
 > The NAV section of the app.
 
 ## Asset and liquidity management
 
 Additional assets can be registered for use in the pool's balance sheet and operational flows. A registered asset can become an investor entry point when the issuer deploys a vault that accepts it (see [Vaults](#vaults-managing-the-products-entry-points)).
 
-![](./images/register_asset.jpg)
+<img
+  src={registerAsset}
+  className="screenshot"
+/>
 > Asset registration section.
 
 Issuers can also configure how assets move in and out of the product: the assets accepted by on/off-ramp flows, the relayers authorized to operate them, and the addresses that may receive withdrawals. These controls are separate from vaults. Vaults define how investors subscribe and redeem, while on/off-ramp configuration supports the issuer’s balance sheet and settlement operations.
 
-![](./images/onoff_ramp.jpg)
+<img
+  src={onoffRamp}
+  className="screenshot"
+/>
 > Settings On/Off Ramp section.
 
 ## Roles and permissions
@@ -145,7 +182,10 @@ Operating a product is a team effort, and the pool separates duties into distinc
 
 This separation keeps day-to-day operations away from top-level control: an operator can run the product's routine flows without being able to change its configuration. For guidance on securing the hub manager wallet, see [Launching a product](#launching-a-product).
 
-![](./images/access.jpg)
+<img
+  src={access}
+  className="screenshot"
+/>
 > Settings access section showing the managers of a pool.
 
 ## Investor management
@@ -161,7 +201,10 @@ Beyond adding investors, the app works as the operational console for the invest
 - Freeze and unfreeze accounts when intervention is needed.
 - Review an investor's transaction history, and export investors and transactions to CSV for reporting.
 
-![](./images/investors_view.jpg)
+<img
+  src={investors}
+  className="screenshot"
+/>
 > Investors view with the option to add new investors.
 
 ## Investment operations
@@ -175,7 +218,10 @@ For request-based vaults, the Management app gives issuers visibility and contro
 
 For instant-execution vaults, deposits settle without issuer intervention. Redemptions remain request-based.
 
-![](./images/orders_view.jpg)
+<img
+  src={orders}
+  className="screenshot"
+/>
 > Orders section with pending investments and redemptions.
 
 ## Operational flexibility and automation
@@ -184,7 +230,10 @@ The platform provides the Onchain Portfolio Manager (Onchain PM), an execution l
 
 A manager defines the permitted actions and guardrails — such as slippage protection — while an authorized operator executes the workflows within those boundaries. Everything runs onchain, within limits set from the UI.
 
-![](./images/onchainPM.jpg)
+<img
+  src={onchainPM}
+  className="screenshot"
+/>
 > OnchainPM workflows section.
 
 ## Why issuers choose Centrifuge

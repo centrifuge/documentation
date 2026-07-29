@@ -4,6 +4,16 @@ title: Investor
 category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
+import '../../../src/css/custom.css';
+import catalog from './images/catalog.jpg';
+import deJTRSYDashboard from './images/deJTRSY_dashboard.jpg';
+import vaults from './images/vaults.jpg';
+import investors from './images/investors_view.jpg';
+import orders from './images/orders_panel.jpg';
+import holdings from './images/holdings.jpg';
+import nav from './images/NAV.jpg';
+import closedOrders from './images/closed_orders.jpg';
+
 
 # Investor guide
 
@@ -11,7 +21,10 @@ Centrifuge gives investors direct onchain access to tokenized financial products
 
 The complexity stays on the platform side: the investor interacts with a simple interface — explore products, invest, track the position, redeem — while permissioning, pricing and settlement run onchain underneath.
 
-![](./images/catalog.jpg)
+<img
+  src={catalog}
+  className="screenshot"
+/>
 > App home showing the products catalog.
 
 ## What investors can invest in
@@ -30,7 +43,10 @@ Each product defines its own terms: accepted investment assets, access requireme
 
 A product is not limited to a single entry point: it can be open on several networks and accept several investment assets. The investor chooses where and how to enter, and the product remains the same — one balance sheet, one price.
 
-![](./images/deJTRSY_dashboard.jpg)
+<img
+  src={deJTRSYDashboard}
+  className="screenshot"
+/>
 > Product page with key facts and performance.
 
 ## How products are structured
@@ -43,7 +59,10 @@ Every product an investor invests in is built from the same three pieces:
 
 See [Pools](/user/concepts/pools) and [Vaults](/user/concepts/vaults) for the background.
 
-![](./images/vaults.jpg)
+<img
+  src={vaults}
+  className="screenshot"
+/>
 > Vaults panel for deJTRSY.
 
 ## What the investor needs
@@ -73,7 +92,10 @@ Common restriction profiles include:
 
 On the issuer's side, the investor's access takes effect onchain the moment they are added to the product's investor list.
 
-![](./images/investors_view.jpg)
+<img
+  src={investors}
+  className="screenshot"
+/>
 > Behind the scenes: the investor whitelist as the issuer manages it.
 
 ## How investing works
@@ -87,7 +109,10 @@ While a request is pending, the assets are held by protocol contracts according 
 
 The app shows the state of the orders at all times — pending, processed, claimable — so the investor always knows where their money is. On the issuer's side, the order appears in their operations view, where it is approved and settled; the full order history remains visible.
 
-![](./images/orders_panel.jpg)
+<img
+  src={orders}
+  className="screenshot"
+/>
 > Behind the scenes: the order as the issuer sees and processes it.
 
 ## The token
@@ -100,12 +125,18 @@ The token the investor receives is the ownership layer of the investment: it car
 
 Positions are visible per network in the holdings view:
 
-![](./images/holdings.jpg)
+<img
+  src={holdings}
+  className="screenshot"
+/>
 > Holdings view with the positions in each network.
 
 The token's price history — and every detail behind it — is tracked in the price view:
 
-![](./images/NAV.jpg)
+<img
+  src={nav}
+  className="screenshot"
+/>
 > Price history of the token.
 
 ## Redeeming
@@ -116,7 +147,10 @@ For freely transferable tokens, selling on a secondary market is an alternative 
 
 Pending and settled redemptions stay visible in the order history:
 
-![](./images/closed_orders.jpg)
+<img
+  src={closedOrders}
+  className="screenshot"
+/>
 > Behind the scenes: redemption history in the issuer's order view.
 
 ## What this means for the investor
