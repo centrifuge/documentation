@@ -7,8 +7,6 @@ contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 import '../../../src/css/custom.css';
 import deJTRSYDashboard from './images/deJTRSY_dashboard.jpg';
 import settings from './images/settings.jpg';
-import token from './images/token.jpg';
-import crosschain from './images/crosschain.jpg';
 import vaults from './images/vaults.jpg';
 import navPanel from './images/NAV_panel.jpg';
 import registerAsset from './images/register_asset.jpg';
@@ -22,7 +20,7 @@ import onchainPM from './images/onchainPM.jpg';
 
 Centrifuge gives issuers and asset managers an onchain operations platform for financial products. The issuer structures the offering and the Centrifuge Management app becomes the onchain management path for it: issuance, investor access, pricing, distribution and reporting, operated from one interface.
 
-The protocol abstracts the contract-level complexity. Issuers don't write or deploy code; they operate the product through the app, with the kind of controls expected from traditional fund infrastructure.
+The protocol abstracts the contract-level complexity. Issuers don't write or deploy code; they operate the product through the app, with the kind of controls expected from traditional finance infrastructure.
 
 <img
   src={deJTRSYDashboard}
@@ -93,13 +91,6 @@ A pool can have a single token or several, each with its own terms.
 />
 > Settings section to manage products and share classes
 
-The issuer can view and modify the token details of the product.
-<img
-  src={token}
-  className="screenshot"
-/>
-> Advanced settings section with token details.
-
 ### Transfer restrictions
 
 Subscription, redemption and transfer permissions are three configurable dimensions applied per token. This makes very different distribution models possible on the same infrastructure. Common restriction profiles include:
@@ -110,16 +101,6 @@ Subscription, redemption and transfer permissions are three configurable dimensi
 - **Open with freeze controls** — operations are open, and the issuer retains the ability to freeze specific addresses if required.
 
 These controls are not fixed at launch — permissions can be updated from the app as the offering evolves. Who is on the whitelist is a separate, day-to-day operation: see [Investor management](#investor-management).
-
-### Distributing the token across chains
-
-A share token can be deployed across multiple networks while remaining part of the same share class. From the Management app, issuers can view its existing deployments and extend distribution to additional networks. The protocol handles the underlying crosschain coordination, maintaining a unified supply and consistent price for the share class across its deployments.
-
-<img
-  src={crosschain}
-  className="screenshot"
-/>
-> Crosschain section.
 
 ### Vaults: managing the product's entry points
 

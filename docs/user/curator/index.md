@@ -42,7 +42,7 @@ Before submission, the app can simulate a workflow and preview its expected effe
 />
 > Workflow section.
 
-For the underlying mechanism, see the [Merkle Proof Manager](/developer/protocol/managers/merkle-proof-manager/) in the developer documentation.
+For the underlying mechanism, see the [onchainPM](/developer/protocol/managers/merkle-proof-manager/) in the developer documentation.
 
 ## What can be automated
 

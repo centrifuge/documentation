@@ -16,9 +16,6 @@ The third version of the Centrifuge protocol, designed for scalable, permissionl
 **RWA (Real-World Asset)**  
 A physical or offchain financial asset such as bonds, real estate, or private credit that is tokenized onchain.
 
-**RWA Launchpad**  
-The no-code interface for issuers to configure, deploy, and manage tokenized financial products using Centrifuge contracts.
-
 **Hub chain**  
 The central coordination chain for a pool. Manages accounting, permissions, share prices, and controls interactions across spoke chains.
 
@@ -93,7 +90,7 @@ A standard that enables a single token to represent positions across multiple va
 ## User roles
 
 **Issuer**  
-Deploys a new pool using the RWA Launchpad. Responsible for onboarding assets and configuring structure and compliance.
+Structures a financial product and operates it onchain through a pool. Responsible for its tokens, investor access, pricing and distribution.
 
 **Curator**  
 Designs and manages tokenized strategies by composing assets, vaults, and rules. May or may not involve RWAs.
