@@ -4,7 +4,6 @@ title: Investor
 category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
-import '../../../src/css/custom.css';
 import catalog from './images/catalog.jpg';
 import deJTRSYDashboard from './images/deJTRSY_dashboard.jpg';
 import vaults from './images/vaults.jpg';

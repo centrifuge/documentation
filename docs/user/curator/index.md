@@ -5,7 +5,6 @@ category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 
-import '../../../src/css/custom.css';
 import onchainPM from './images/onchainPM.jpg';
 import subscribe from './images/subscribe.jpg';
 
