@@ -45,12 +45,16 @@ For the underlying mechanism, see the [onchainPM](/developer/protocol/managers/m
 
 ## What can be automated
 
-The workflow catalog turns recurring operations into repeatable, pre-approved flows. An operator triggers a workflow, which then executes its configured sequence of actions:
+The workflow catalog turns recurring operations into repeatable, pre-approved flows. An operator triggers a workflow, which then executes its configured sequence of actions.
 
-- **Subscribing to other products** — workflows can cover each stage of the investment lifecycle: subscribing, claiming share tokens, requesting a redemption and claiming the resulting assets.
-- **Moving liquidity across networks** — transferring the product's stablecoins or share tokens between the networks it operates on.
-- **Price updates** — updating the recorded value of onchain positions so that the pool's net asset value (NAV) and share price can reflect them accurately.
-- **DeFi operations** — deploying and withdrawing liquidity in supported external protocols.
+Workflows are not written by the curator: they are provided by the platform as a curated catalog. Each workflow is a fixed sequence of actions with pinned, verified contract addresses, reviewed under a security framework before release, and identified by a deterministic hash — what the manager approves is exactly what the operator can execute, nothing else. The catalog is versioned and expands over time, so new workflows and integrations become available to managers as they are released.
+
+The catalog covers the main families of operations an onchain strategy needs:
+
+- **Investing in other tokenized products** — a workflow for each stage of the investment lifecycle against another pool: Subscribe, Claim subscription, Redeem and Claim redemption, covering both instant and request-based products.
+- **DeFi venues** — supplying and withdrawing liquidity in established lending markets and yield vaults, including leveraged strategies, and swapping assets where the strategy requires it.
+- **Moving liquidity across networks** — sending the product's stablecoins between the networks it operates on and claiming them on the destination network, and transferring share tokens across chains for products distributed on several networks.
+- **Accounting and price updates** — per-token accounting update and redeem position accounting update workflows that reprice the pool's onchain positions, so its net asset value (NAV) and share price reflect them accurately, and sync the updated prices to every network.
 
 ### Guardrails
 
