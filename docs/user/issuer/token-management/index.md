@@ -34,7 +34,7 @@ These controls are scoped per token, not per pool: each share class carries its 
 
 ## Investor management
 
-For permissioned products, the issuer controls which addresses can subscribe and redeem. Onboarding an investor — after the KYC/AML or eligibility process the offering requires — ends with adding their address to the token's whitelist in the app. Access is gated per token and per network: the whitelist belongs to the share class the investor is approved for, and approval on one network is not automatically extended to the others.
+For permissioned products, the issuer controls which addresses can subscribe and redeem. Onboarding an investor — after the KYC/AML or eligibility process the offering requires — ends with adding their address to the token's whitelist in the app. The addition takes effect onchain on the selected networks. Access is gated per token and per network: the whitelist belongs to the share class the investor is approved for, and approval on one network is not automatically extended to the others.
 
 Beyond adding investors, the app works as the operational console for the investor base:
 
