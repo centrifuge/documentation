@@ -30,7 +30,7 @@ From the app, the issuer manages the product's execution paths over their whole 
 - Disable and re-enable a vault. A disabled vault accepts no new deposits or requests, without affecting the rest of the product.
 - Adjust the deposit capacity of instant vaults as the strategy's liquidity changes.
 
-Reaching investors on a new network involves the token as well as the vault. A share token can be deployed across multiple networks while remaining part of the same share class — the protocol handles the underlying crosschain coordination, maintaining a unified supply and a consistent price across deployments. The issuer then opens subscriptions and redemptions there by deploying a vault on that network.
+Reaching investors on a new network involves the token as well as the vault. A share token can be deployed across multiple networks while remaining part of the same share class — the protocol handles the underlying crosschain coordination, maintaining a unified supply and a consistent price across deployments (see [Deploying the token to networks](/user/issuer/token-management#deploying-the-token-to-networks)). The issuer then opens subscriptions and redemptions there by deploying a vault on that network.
 
 Several vaults can serve the same token — for example one per investment asset, or one per chain — and each is managed independently.
 

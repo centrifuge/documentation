@@ -6,6 +6,7 @@ contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 import settings from '../images/settings.jpg';
 import investors from '../images/investors_view.jpg';
+import updateShareClass from '../images/update_share_class.jpg';
 
 # Token management
 
@@ -20,6 +21,22 @@ A pool can have a single token or several, each with its own terms.
   className="screenshot"
 />
 > Settings section to manage products and share classes
+
+## Deploying the token to networks
+
+A share class is defined in the pool; deploying it creates its token on the networks where the product will be distributed. The flow runs from the same settings section:
+
+1. The issuer opens the share class to update it.
+2. In the Networks panel, they add all target networks. The selected compliance mode determines whether the same built-in restrictions apply across deployments or each network uses a custom hook.
+3. Saving the changes starts the deployment to every newly selected network as one coordinated action from the Hub.
+
+Whether the token launches on one network or on five, it is one step — no per-chain deployment project. Each deployment remains part of the same share class, and more networks can be added later as distribution grows (see [Distribution](/user/issuer/distribution)).
+
+<img
+  src={updateShareClass}
+  className="screenshot"
+/>
+> Update share class modal with several networks being added.
 
 ## Transfer restrictions
 
