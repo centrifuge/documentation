@@ -10,7 +10,7 @@ import access from '../images/access.jpg';
 
 Getting a product onto Centrifuge begins with an onboarding intake. Prospective issuers provide a small set of launch parameters and the pool is then registered onchain. Once registered, its ongoing configuration and operations are managed through the Management app.
 
-The initial parameters are deliberately limited. Other product components — including distribution networks, token permissions, vaults, accepted investment assets and pricing configuration — can be configured after the pool exists. The hub chain and denomination cannot be changed later, so they require particular consideration before launch.
+The initial parameters are deliberately limited. Other product components — including distribution networks, token permissions, vaults, accepted investment assets and pricing configuration — can be configured after the pool exists. The hub chain and denomination cannot be changed later, so they require particular consideration before launch. The hub chain is where the pool's controls and accounting live — see [Hub and spokes](/user/concepts/pools#hub-and-spokes).
 
 | Required parameter | Notes |
 |---|---|
