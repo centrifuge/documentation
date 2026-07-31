@@ -5,6 +5,7 @@ category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 import access from '../images/access.jpg';
+import walletPatterns from '../images/wallet-access-patterns.png';
 
 # Launching a product
 
@@ -48,3 +49,13 @@ This separation keeps day-to-day operations away from top-level control: an oper
   className="screenshot"
 />
 > Settings access section showing the managers of a pool.
+
+A recommended operating pattern is to assign high-privilege administration and day-to-day operations to separate wallets or custody policies, with security controls proportional to each function. A hardened MPC or multisig setup protects Hub administration, while separate operational wallets or policies can handle routine Hub functions and act on individual Spokes — moving balance-sheet assets on their assigned networks or executing pre-approved workflows.
+
+Every Hub manager wallet has full onchain authority, so any function-specific limits between Hub administration and Hub operations must be enforced by the corresponding wallet or custody policy. Balance sheet managers are scoped per network, while workflow operators execute only through pre-approved workflows.
+
+<img
+  src={walletPatterns}
+  className="screenshot"
+/>
+> Recommended wallet access pattern: high-privilege Hub administration is separated from Hub operations and network-scoped balance-sheet access on the Spokes.

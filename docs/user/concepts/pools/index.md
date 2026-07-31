@@ -4,6 +4,7 @@ title: Pools and share tokens
 category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
+import hubAndSpoke from './images/hub-and-spoke.png';
 
 # Pools and share tokens
 
@@ -22,7 +23,10 @@ Internally, every pool is organized in a hub-and-spoke structure. It matters to 
 
 A pool has one hub and as many spokes as networks it distributes on, kept in sync by the protocol's messaging. Hub and spoke are roles, not separate systems: a spoke can live on the hub's own chain — a product distributed only there still has both, with operations between them settling directly on that chain.
 
-![](./images/hub-and-spoke.png)
+<img
+  src={hubAndSpoke}
+  className="screenshot"
+/>
 > One hub controls and accounts for the product; each distribution network is a spoke — including, if the issuer chooses, the hub chain itself.
 
 ## Share classes
