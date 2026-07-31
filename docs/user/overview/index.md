@@ -3,6 +3,7 @@ id: overview
 title: Overview
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
+import rolesTogether from './images/roles-together.png';
 
 # User documentation
 
@@ -19,6 +20,12 @@ This section is organized by role. Each guide describes what the platform enable
 **Curators** design and oversee how a pool's capital is allocated across onchain positions. The Onchain Portfolio Manager provides controlled execution: managers define the permitted workflows and limits, and authorized operators run them. See the [curator guide](/user/curator).
 
 These roles can come together in the same product: the issuer manages the pool, investors enter and exit through its vaults and, where the strategy includes onchain allocation, a curator manages how its capital is deployed.
+
+<img
+  src={rolesTogether}
+  className="screenshot"
+/>
+> One product, three roles: the issuer operates the pool, investors enter and exit through its vaults, and the curator — as the product's portfolio manager — allocates its capital across onchain venues.
 
 ## Explore
 
