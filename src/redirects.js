@@ -381,7 +381,7 @@ const redirects = [
   },
   {
     from: "/user/concepts/multi-chain/",
-    to: "/user/concepts/vaults/",
+    to: "/user/concepts/pools/",
   },
 ];
 
