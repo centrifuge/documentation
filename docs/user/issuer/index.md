@@ -3,16 +3,16 @@ id: issuer
 title: Issuer
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
-import deJTRSYDashboard from './images/deJTRSY_dashboard.jpg';
+import JTRSYDashboard from './images/JTRSY_dashboard.jpg';
 
 # Issuer guide
 
 Centrifuge gives issuers and asset managers an onchain operations platform for financial products. The issuer structures the offering and the Centrifuge Management app becomes the onchain management path for it: issuance, investor access, pricing, distribution and reporting, operated from one interface.
 
-The protocol abstracts the contract-level complexity. Issuers can configure and operate standard product structures through the app without having to write or deploy code, using controls familiar from traditional financial infrastructure.
+The protocol abstracts the contract level complexity. Issuers can configure and operate standard product structures through the app without having to write or deploy code, using controls familiar from traditional financial infrastructure.
 
 <img
-  src={deJTRSYDashboard}
+  src={JTRSYDashboard}
   className="screenshot"
 />
 > Product page with key facts and performance information.
