@@ -546,7 +546,7 @@ The response is an object with a `routes` array. Each route contains:
 
 ### Quote
 
-<RESTExplorer url="https://api.centrifuge.io/bridge/quote?fromChain=1&toChain=8453&fromToken=0x0000000000000000000000000000000000000000&fromAmount=1000000000000000000&toAddress=0x0000000000000000000000000000000000000000">
+<RESTExplorer url="https://api.centrifuge.io/bridge/quote?fromChain=1&toChain=8453&fromToken=0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc&fromAmount=1000000000000000000&toAddress=0xa0a6282a3adbc3d6b76cd1129cd17607316dc2c1">
 
 Prices a single transfer along a route and returns the parameters needed to execute it.
 
@@ -577,8 +577,20 @@ GET /bridge/quote
   "standard": "CentrifugeV31",
   "fromChainId": 1,
   "toChainId": 8453,
-  "fromToken": { "address": "0x…", "chainId": 1, "symbol": "JAAA", "name": "…", "decimals": 18 },
-  "toToken": { "address": "0x…", "chainId": 8453, "symbol": "JAAA", "name": "…", "decimals": 18 },
+  "fromToken": {
+    "address": "0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc",
+    "chainId": 1,
+    "symbol": "deJAAA",
+    "name": "JAAA deRWA",
+    "decimals": 18
+  },
+  "toToken": {
+    "address": "0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc",
+    "chainId": 8453,
+    "symbol": "deJAAA",
+    "name": "JAAA deRWA",
+    "decimals": 18
+  },
   "fromAmount": "1000000000000000000",
   "toAmount": "1000000000000000000",
   "estimate": {
@@ -605,11 +617,11 @@ GET /bridge/quote
     "value": "13312621905887",
     "chainId": 1,
     "args": {
-      "token": "0x…",
+      "token": "0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc",
       "amount": "1000000000000000000",
-      "receiver": "0x000000000000000000000000<recipient>",
+      "receiver": "0xa0a6282a3adbc3d6b76cd1129cd17607316dc2c1000000000000000000000000",
       "destinationChainId": "8453",
-      "refundAddress": "0x…"
+      "refundAddress": "0xa0a6282a3adbc3d6b76cd1129cd17607316dc2c1"
     }
   }
 }
@@ -619,7 +631,7 @@ GET /bridge/quote
 
 ### Transfer status
 
-<RESTExplorer url="https://api.centrifuge.io/bridge/status?txHash=0x0000000000000000000000000000000000000000000000000000000000000000">
+<RESTExplorer url="https://api.centrifuge.io/bridge/status?txHash=0x8ed8d7b674cee04e46a5055c6906fc67003a312726abe19efd8356ffeebef3d8">
 
 Returns the status of a transfer, given its source-chain transaction hash. The endpoint responds with `200` and a `NOT_FOUND` status even before the transaction is indexed, so it is safe to poll.
 
@@ -643,28 +655,34 @@ GET /bridge/transaction/:txHash
 
 ```json
 {
-  "transactionId": "0x…",
+  "transactionId": "0x27598b43d94e925da5a6f95eff0aef9f7e8058146dab475892114c2c0380eec1",
   "tool": "centrifuge",
   "status": "DONE",
   "substatus": "COMPLETED",
   "substatusMessage": null,
-  "toAddress": "0x…",
+  "toAddress": "0xa0a6282a3adbc3d6b76cd1129cd17607316dc2c1",
   "sending": {
-    "txHash": "0x…",
-    "txLink": "https://etherscan.io/tx/0x…",
-    "chainId": 1,
-    "amount": "1000000000000000000",
-    "token": { "address": "0x…", "chainId": 1, "symbol": "JAAA", "name": "…", "decimals": 18 },
-    "gasPrice": "…",
-    "timestamp": 1730000000
+    "txHash": "0x8ed8d7b674cee04e46a5055c6906fc67003a312726abe19efd8356ffeebef3d8",
+    "txLink": "https://basescan.org/tx/0x8ed8d7b674cee04e46a5055c6906fc67003a312726abe19efd8356ffeebef3d8",
+    "chainId": 8453,
+    "amount": "250000000000000000000000",
+    "token": {
+      "address": "0x00010000000000030000000000000001",
+      "chainId": 8453,
+      "symbol": "deJAAA",
+      "name": "JAAA deRWA",
+      "decimals": 18
+    },
+    "gasPrice": "1000000",
+    "timestamp": 1751457600
   },
   "receiving": {
-    "txHash": "0x…",
-    "txLink": "https://basescan.org/tx/0x…",
-    "chainId": 8453,
-    "tokenAddress": "0x…",
-    "tokenAmount": "1000000000000000000",
-    "timestamp": 1730000210
+    "txHash": "0x71196784f52a21fb608978750ffb622424ce3b797528c74b6ff6e7c506b4fc60",
+    "txLink": "https://etherscan.io/tx/0x71196784f52a21fb608978750ffb622424ce3b797528c74b6ff6e7c506b4fc60",
+    "chainId": 1,
+    "tokenAddress": "0x00010000000000030000000000000001",
+    "tokenAmount": "250000000000000000000000",
+    "timestamp": 1751457810
   }
 }
 ```
