@@ -500,3 +500,173 @@ GET /tokens/:address/total-issuance
 | `404` | Token address not found, decimals not set, or total issuance not set |
 
 </RESTExplorer>
+
+---
+
+## Bridge REST API
+
+The Bridge REST API is the offchain interface for moving Centrifuge tokens across chains. It exposes route discovery, quoting, and transfer-status endpoints that bridges and aggregators use to integrate Centrifuge token transfers, following the conventions those integrators expect.
+
+All endpoints are served under `https://api.centrifuge.io/bridge` and return JSON. No authentication required.
+
+Centrifuge share class tokens are natively multichain: the same token is deployed on several chains and moves between them through the protocol's own messaging layer rather than a wrapped-asset bridge. Transfers are 1:1 — the amount received equals the amount sent, and the bridge fee is paid separately in the source chain's native token. Routes are available where the token bridge is deployed (currently Ethereum and Base).
+
+### Routes
+
+<RESTExplorer url="https://api.centrifuge.io/bridge/routes">
+
+Returns every available cross-chain transfer route. Each entry is a directional pair: a token on a source chain that can be moved to the same token on a destination chain.
+
+```
+GET /bridge/routes
+```
+
+#### Response
+
+The response is an object with a `routes` array. Each route contains:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `tokenId` | `String` | Share class token identifier |
+| `tokenName` | `String` | Human-readable token name |
+| `fromAddress` | `String` | Token contract address on the source chain |
+| `toAddress` | `String` | Token contract address on the destination chain |
+| `fromChainId` | `String` | EVM chain ID of the source chain |
+| `fromChainName` | `String` | Name of the source chain |
+| `toChainId` | `String` | EVM chain ID of the destination chain |
+| `toChainName` | `String` | Name of the destination chain |
+| `minTransferSize` | `String` | Minimum transfer amount, in the token's smallest unit |
+| `maxTransferSize` | `String` | Maximum transfer amount, in the token's smallest unit (`uint128` max means unlimited) |
+| `decimals` | `Int` | Token decimals |
+| `estimatedDuration` | `Int` | Estimated transfer time, in seconds |
+| `estimatedGas` | `Int` | Estimated gas for the destination-chain execution |
+| `standard` | `String` | Transfer standard, `CentrifugeV31` |
+
+</RESTExplorer>
+
+### Quote
+
+<RESTExplorer url="https://api.centrifuge.io/bridge/quote?fromChain=1&toChain=8453&fromToken=0x0000000000000000000000000000000000000000&fromAmount=1000000000000000000&toAddress=0x0000000000000000000000000000000000000000">
+
+Prices a single transfer along a route and returns the parameters needed to execute it.
+
+```
+GET /bridge/quote
+```
+
+#### Query parameters
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `fromChain` | yes | EVM chain ID of the source chain |
+| `toChain` | yes | EVM chain ID of the destination chain |
+| `fromToken` | yes | Token contract address on the source chain |
+| `fromAmount` | yes | Amount to transfer, in the token's smallest unit |
+| `toAddress` | yes | Recipient address on the destination chain |
+| `fromAddress` | no | Sender address; used as the native-fee refund address on the source chain |
+| `toToken` | no | Token address on the destination chain (must resolve to the same share class) |
+| `slippage` | no | Accepted for compatibility; ignored, since transfers are 1:1 |
+
+#### Response
+
+`toAmount` equals `fromAmount` (1:1 transfer). Fees are returned in `estimate.feeCosts` and paid in the source chain's native token (`included: false`), not deducted from the amount. `parameters` describes the token bridge `send` call to submit onchain — decoded call arguments, not encoded calldata.
+
+```json
+{
+  "tool": "centrifuge",
+  "standard": "CentrifugeV31",
+  "fromChainId": 1,
+  "toChainId": 8453,
+  "fromToken": { "address": "0x…", "chainId": 1, "symbol": "JAAA", "name": "…", "decimals": 18 },
+  "toToken": { "address": "0x…", "chainId": 8453, "symbol": "JAAA", "name": "…", "decimals": 18 },
+  "fromAmount": "1000000000000000000",
+  "toAmount": "1000000000000000000",
+  "estimate": {
+    "fromAmount": "1000000000000000000",
+    "toAmount": "1000000000000000000",
+    "toAmountMin": "1000000000000000000",
+    "approvalAddress": "0x82a6c7753380f98c093b27c53f86ef6b09c40f49",
+    "executionDuration": 210,
+    "feeCosts": [
+      {
+        "name": "Bridge fee",
+        "description": "Cross-chain message delivery fee, paid in the source chain native token",
+        "chainId": 1,
+        "tokenAddress": "0x0000000000000000000000000000000000000000",
+        "amount": "13312621905887",
+        "included": false
+      }
+    ],
+    "gasEstimate": 254235
+  },
+  "parameters": {
+    "contractAddress": "0x82a6c7753380f98c093b27c53f86ef6b09c40f49",
+    "functionName": "send",
+    "value": "13312621905887",
+    "chainId": 1,
+    "args": {
+      "token": "0x…",
+      "amount": "1000000000000000000",
+      "receiver": "0x000000000000000000000000<recipient>",
+      "destinationChainId": "8453",
+      "refundAddress": "0x…"
+    }
+  }
+}
+```
+
+</RESTExplorer>
+
+### Transfer status
+
+<RESTExplorer url="https://api.centrifuge.io/bridge/status?txHash=0x0000000000000000000000000000000000000000000000000000000000000000">
+
+Returns the status of a transfer, given its source-chain transaction hash. The endpoint responds with `200` and a `NOT_FOUND` status even before the transaction is indexed, so it is safe to poll.
+
+```
+GET /bridge/status?txHash=:txHash
+GET /bridge/transaction/:txHash
+```
+
+#### Response
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `transactionId` | `String` | Cross-chain transfer identifier |
+| `tool` | `String` | `centrifuge` |
+| `status` | `String` | `NOT_FOUND`, `PENDING`, or `DONE` |
+| `substatus` | `String` | `WAIT_SOURCE_CONFIRMATIONS`, `WAIT_DESTINATION_TRANSACTION`, `COMPLETED`, or `PARTIAL` |
+| `substatusMessage` | `String` | Human-readable detail, or `null` |
+| `toAddress` | `String` | Recipient address on the destination chain |
+| `sending` | `Object` | Source-chain leg: `txHash`, `txLink`, `chainId`, `amount`, `token`, `gasPrice`, `timestamp` |
+| `receiving` | `Object` | Destination-chain leg once delivered: `txHash`, `txLink`, `chainId`, `tokenAddress`, `tokenAmount`, `timestamp`; `null` until then |
+
+```json
+{
+  "transactionId": "0x…",
+  "tool": "centrifuge",
+  "status": "DONE",
+  "substatus": "COMPLETED",
+  "substatusMessage": null,
+  "toAddress": "0x…",
+  "sending": {
+    "txHash": "0x…",
+    "txLink": "https://etherscan.io/tx/0x…",
+    "chainId": 1,
+    "amount": "1000000000000000000",
+    "token": { "address": "0x…", "chainId": 1, "symbol": "JAAA", "name": "…", "decimals": 18 },
+    "gasPrice": "…",
+    "timestamp": 1730000000
+  },
+  "receiving": {
+    "txHash": "0x…",
+    "txLink": "https://basescan.org/tx/0x…",
+    "chainId": 8453,
+    "tokenAddress": "0x…",
+    "tokenAmount": "1000000000000000000",
+    "timestamp": 1730000210
+  }
+}
+```
+
+</RESTExplorer>
