@@ -569,63 +569,20 @@ GET /bridge/quote
 
 #### Response
 
-`toAmount` equals `fromAmount` (1:1 transfer). Fees are returned in `estimate.feeCosts` and paid in the source chain's native token (`included: false`), not deducted from the amount. `parameters` describes the token bridge `send` call to submit onchain — decoded call arguments, not encoded calldata.
+`toAmount` equals `fromAmount` (1:1 transfer). Fees are returned in `estimate.feeCosts` and paid in the source chain's native token (`included: false`), not deducted from the amount.
 
-```json
-{
-  "tool": "centrifuge",
-  "standard": "CentrifugeV31",
-  "fromChainId": 1,
-  "toChainId": 8453,
-  "fromToken": {
-    "address": "0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc",
-    "chainId": 1,
-    "symbol": "deJAAA",
-    "name": "JAAA deRWA",
-    "decimals": 18
-  },
-  "toToken": {
-    "address": "0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc",
-    "chainId": 8453,
-    "symbol": "deJAAA",
-    "name": "JAAA deRWA",
-    "decimals": 18
-  },
-  "fromAmount": "1000000000000000000",
-  "toAmount": "1000000000000000000",
-  "estimate": {
-    "fromAmount": "1000000000000000000",
-    "toAmount": "1000000000000000000",
-    "toAmountMin": "1000000000000000000",
-    "approvalAddress": "0x82a6c7753380f98c093b27c53f86ef6b09c40f49",
-    "executionDuration": 210,
-    "feeCosts": [
-      {
-        "name": "Bridge fee",
-        "description": "Cross-chain message delivery fee, paid in the source chain native token",
-        "chainId": 1,
-        "tokenAddress": "0x0000000000000000000000000000000000000000",
-        "amount": "13312621905887",
-        "included": false
-      }
-    ],
-    "gasEstimate": 254235
-  },
-  "parameters": {
-    "contractAddress": "0x82a6c7753380f98c093b27c53f86ef6b09c40f49",
-    "functionName": "send",
-    "value": "13312621905887",
-    "chainId": 1,
-    "args": {
-      "token": "0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc",
-      "amount": "1000000000000000000",
-      "receiver": "0xa0a6282a3adbc3d6b76cd1129cd17607316dc2c1000000000000000000000000",
-      "destinationChainId": "8453",
-      "refundAddress": "0xa0a6282a3adbc3d6b76cd1129cd17607316dc2c1"
-    }
-  }
-}
-```
+| Field | Type | Description |
+|-------|------|-------------|
+| `tool` | `String` | Bridge identifier, `centrifuge` |
+| `standard` | `String` | Transfer standard, `CentrifugeV31` |
+| `fromChainId` | `Int` | EVM chain ID of the source chain |
+| `toChainId` | `Int` | EVM chain ID of the destination chain |
+| `fromToken` | `Object` | Source token: `address`, `chainId`, `symbol`, `name`, `decimals` |
+| `toToken` | `Object` | Destination token: `address`, `chainId`, `symbol`, `name`, `decimals` |
+| `fromAmount` | `String` | Amount sent, in the token's smallest unit |
+| `toAmount` | `String` | Amount received, in the token's smallest unit (equals `fromAmount`) |
+| `estimate` | `Object` | Pricing: `toAmountMin`, `approvalAddress`, `executionDuration` (seconds), `feeCosts` (array), `gasEstimate` |
+| `parameters` | `Object` | Decoded arguments for the token bridge `send` call to submit onchain, or `null` |
 
 </RESTExplorer>
 
