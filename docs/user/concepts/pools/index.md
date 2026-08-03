@@ -42,12 +42,3 @@ Each share class is represented by a token, the ownership layer of the product:
 - Depending on its transfer restrictions and available integrations, it can remain fully permissioned or be used across DeFi.
 
 A token can be distributed to several networks while remaining one asset, with one supply and one price. See [Vaults](/user/concepts/vaults) for how distribution works and [Pricing](/user/concepts/pricing) for how the price stays consistent everywhere.
-
-## Why tokenize
-
-Representing ownership as a token is what connects a financial product to onchain distribution:
-
-- **Transferable**: positions can move between approved parties, or freely where the product allows it.
-- **Composable**: tokens can integrate with exchanges, lending markets and other protocols.
-- **Auditable**: issuance, transfers and redemptions are recorded onchain.
-- **Programmable**: product rules can be enforced onchain alongside the offering’s offchain processes.
