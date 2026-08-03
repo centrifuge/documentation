@@ -7,13 +7,13 @@ import rolesTogether from './images/roles-together.png';
 
 # User documentation
 
-Centrifuge is the open infrastructure for onchain asset management. Financial products are represented and operated onchain through pools: issuers manage product operations, investors access them from their own wallets, and curators design and oversee onchain allocation strategies. Permissions and settlement are enforced onchain, while product valuations are published and kept consistent across deployments. Centrifuge provides the rails; each product remains the responsibility of its issuer and appointed managers.
+Centrifuge is the open infrastructure for onchain asset management. Financial products are represented and operated onchain through pools: issuers manage product operations, investors access them from their own wallets, and curators design and oversee onchain allocation strategies. Permissions and settlement are enforced onchain, while product valuations are published and kept consistent across deployments. Centrifuge provides the rails, and each product remains the responsibility of its issuer and appointed managers.
 
 This section is organized by role. Each guide describes what the platform enables for that role, while the shared background is covered in [Concepts](/user/concepts).
 
 ## Roles
 
-**Issuers** structure a financial product and operate it onchain through the Management app — issuance, investor access, pricing, orders, distribution and reporting, from one interface and without writing code. See the [issuer guide](/user/issuer).
+**Issuers** structure a financial product and operate it onchain through the Management app: issuance, investor access, pricing, orders, distribution and reporting, from one interface and without writing code. See the [issuer guide](/user/issuer).
 
 **Investors** get direct onchain access to tokenized products: they invest from their own wallet, hold a token representing their position and redeem according to the product's terms. See the [investor guide](/user/investor).
 
@@ -23,9 +23,8 @@ These roles can come together in the same product: the issuer manages the pool, 
 
 <img
   src={rolesTogether}
-  className="screenshot"
 />
-> One product, three roles: the issuer operates the pool, investors enter and exit through its vaults, and the curator — as the product's portfolio manager — allocates its capital across onchain venues.
+> One product, three roles: the issuer operates the pool, investors enter and exit through its vaults, and the curator, as the product's portfolio manager, allocates its capital across onchain venues.
 
 ## Explore
 

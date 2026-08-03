@@ -20,9 +20,9 @@ Two properties are worth remembering:
 
 Combined, these controls produce very different distribution models on the same infrastructure. Common restriction profiles include:
 
-- **Fully restricted** — subscription, redemption and transfers all require the whitelist. Transfers only settle if the receiver is whitelisted too. The classic institutional fund share.
-- **Transferable but gated** — the whitelist applies to subscriptions and redemptions, while transfers are unrestricted: the token can circulate in DeFi, but redeeming against the pool still requires the holder to be whitelisted.
-- **Redemption gated** — subscription and transfers are open; only whitelisted investors can redeem.
-- **Open with freeze controls** — operations are open, and the issuer retains the ability to freeze specific addresses if required.
+- **Fully restricted**: subscription, redemption and transfers all require the whitelist. Transfers only settle if the receiver is whitelisted too. The classic institutional fund share.
+- **Transferable but gated**: the whitelist applies to subscriptions and redemptions, while transfers are unrestricted. The token can circulate in DeFi, but redeeming against the pool still requires the holder to be whitelisted.
+- **Redemption gated**: subscription and transfers are open, and only whitelisted investors can redeem.
+- **Open with freeze controls**: operations are open, and the issuer retains the ability to freeze specific addresses if required.
 
-These controls are not fixed at launch: the issuer can update permissions as the offering evolves.
+These controls are not fixed at launch. The issuer can update permissions as the offering evolves.

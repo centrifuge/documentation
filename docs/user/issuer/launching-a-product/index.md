@@ -11,7 +11,7 @@ import walletPatterns from '../images/wallet-access-patterns.png';
 
 Getting a product onto Centrifuge begins with an onboarding intake. Prospective issuers provide a small set of launch parameters and the pool is then registered onchain. Once registered, its ongoing configuration and operations are managed through the Management app.
 
-The initial parameters are deliberately limited. Other product components — including distribution networks, token permissions, vaults, accepted investment assets and pricing configuration — can be configured after the pool exists. The hub chain and denomination cannot be changed later, so they require particular consideration before launch. The hub chain is where the pool's controls and accounting live — see [Hub and spokes](/user/concepts/pools#hub-and-spokes).
+The initial parameters are deliberately limited. Other product components (including distribution networks, token permissions, vaults, accepted investment assets and pricing configuration) can be configured after the pool exists. The hub chain and denomination cannot be changed later, so they require particular consideration before launch. The hub chain is where the pool's controls and accounting live (see [Hub and spokes](/user/concepts/pools#hub-and-spokes)).
 
 | Required parameter | Notes |
 |---|---|
@@ -38,11 +38,11 @@ Recommended practice:
 
 Operating a product is a team effort, and the pool separates duties into distinct administrative roles. All of them are granted and revoked from the app's access settings, and every change takes effect onchain:
 
-- **Hub managers** — full control over the pool's configuration: tokens, permissions, pricing and the other roles. The top-level administrators of the product.
-- **Balance sheet managers** — authorized to move the product's assets in and out of the pool's balance sheet. Granted per network, so operational reach can be scoped to where each operator works.
-- **Policy-based managers and operators** — contract-based operators, such as Merkle Proof Managers and Onchain Portfolio Managers, that execute pre-approved operations within limits defined by the issuer (see [Operations and automation](/user/issuer/operations-automation)).
+- **Hub managers**: full control over the pool's configuration: tokens, permissions, pricing and the other roles. The top-level administrators of the product.
+- **Balance sheet managers**: authorized to move the product's assets in and out of the pool's balance sheet. Granted per network, so operational reach can be scoped to where each operator works.
+- **Policy-based managers and operators**: contract-based operators, such as Merkle Proof Managers and Onchain Portfolio Managers, that execute pre-approved operations within limits defined by the issuer (see [Operations and automation](/user/issuer/operations-automation)).
 
-This separation keeps day-to-day operations away from top-level control: an operator can run the product's routine flows without being able to change its configuration. For guidance on securing the hub manager wallet, see [Hub manager setup](#hub-manager-setup).
+This separation keeps day-to-day operations away from top-level control. An operator can run the product's routine flows without being able to change its configuration. For guidance on securing the hub manager wallet, see [Hub manager setup](#hub-manager-setup).
 
 <img
   src={access}
@@ -50,12 +50,11 @@ This separation keeps day-to-day operations away from top-level control: an oper
 />
 > Settings access section showing the managers of a pool.
 
-A recommended operating pattern is to assign high-privilege administration and day-to-day operations to separate wallets or custody policies, with security controls proportional to each function. A hardened MPC or multisig setup protects Hub administration, while separate operational wallets or policies can handle routine Hub functions and act on individual Spokes — moving balance-sheet assets on their assigned networks or executing pre-approved workflows.
+A recommended operating pattern is to assign high-privilege administration and day-to-day operations to separate wallets or custody policies, with security controls proportional to each function. A hardened MPC or multisig setup protects Hub administration, while separate operational wallets or policies can handle routine Hub functions and act on individual Spokes, moving balance-sheet assets on their assigned networks or executing pre-approved workflows.
 
 Every Hub manager wallet has full onchain authority, so any function-specific limits between Hub administration and Hub operations must be enforced by the corresponding wallet or custody policy. Balance sheet managers are scoped per network, while workflow operators execute only through pre-approved workflows.
 
 <img
   src={walletPatterns}
-  className="screenshot"
 />
-> Recommended wallet access pattern: high-privilege Hub administration is separated from Hub operations and network-scoped balance-sheet access on the Spokes.
+> Recommended wallet access pattern, with high-privilege Hub administration separated from Hub operations and network-scoped balance-sheet access on the Spokes.

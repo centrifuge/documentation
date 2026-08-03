@@ -53,6 +53,9 @@ Pages are organized under `docs/` in three top-level sections: `getting-started/
 - Use active voice and "we" where appropriate
 - Describe systems as operating, not as problems to be solved. Prefer "optimizing", "scaling", "standardizing" over "exploring", "testing", "experimenting"
 - Avoid filler superlatives: "comprehensive", "cutting-edge", "revolutionary", "world-class", "industry-leading"
+- Avoid em dashes (—). Use commas, parentheses or separate sentences instead. In definition-style lists, write `**Term**: description`
+- Use colons only to introduce an enumeration or a list, or as a title separator in headings ("Vaults: the product's execution paths"). For explanations or appositions in prose, use a period or a comma
+- Avoid semicolons. Split into two sentences or join with a comma and a conjunction
 - No emoji in docs
 
 ## Terminology
