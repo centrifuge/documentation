@@ -109,7 +109,7 @@ The act of converting share tokens back into the original asset or currency, usu
 **Composability**  
 The ability of Centrifuge assets to integrate into DeFi protocols and strategies.
 
-**Whitelist**  
+**Memberlist**  
 The set of addresses approved by the issuer to interact with a product. Maintained per network: approval on one network does not carry over to another.
 
 **Order**  

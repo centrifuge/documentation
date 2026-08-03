@@ -29,7 +29,7 @@ This section introduces the core concepts behind products managed through Centri
 
   <a className="card-tile" href="/user/concepts/access-permissions">
     <h3>Access and permissions</h3>
-    <p>The whitelisting model and the transfer-control patterns, from fully restricted to freely transferable.</p>
+    <p>The memberlist model and the transfer-control patterns, from fully restricted to freely transferable.</p>
   </a>
 
 </div>

@@ -80,7 +80,7 @@ For instant-execution vaults, deposits settle without issuer intervention. Redem
 
 Not every subscription needs to arrive through a vault. For orders received offchain, the issuer can issue tokens directly to an investor's address, or process a direct redemption, using the applicable price for the operation, from the same Orders section. In one direct-issuance flow, the issuer can add multiple investors and assign an individual amount and execution price to each, useful for settling a batch of offchain subscriptions executed under different terms. These per-investor execution prices apply only to the corresponding direct settlements, and they do not change the share class's published token price.
 
-Direct operations still respect the token's whitelist, and give the issuer full flexibility to combine onchain requests with offchain distribution channels. Direct redemptions are best coordinated with the investor in advance, since they bypass the standard request flow.
+Direct operations still respect the token's memberlist, and give the issuer full flexibility to combine onchain requests with offchain distribution channels. Direct redemptions are best coordinated with the investor in advance, since they bypass the standard request flow.
 
 <img
   src={issue}

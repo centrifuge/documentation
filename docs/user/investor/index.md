@@ -65,7 +65,7 @@ See [Pools](/user/concepts/pools) and [Vaults](/user/concepts/vaults) for the ba
 
 Each product defines its own permissioning logic. Before investing, the investor should make sure they meet the eligibility requirements.
 
-Some products require whitelisting. The wallet address must be approved by the issuer before the investor can interact with the product. Whitelisting may involve:
+Some products require membership. The wallet address must be approved by the issuer and added to the product's memberlist before the investor can interact with it. Onboarding may involve:
 
 - KYC/AML verification
 - Jurisdictional restrictions
@@ -75,9 +75,9 @@ It can apply to investing only, redeeming only, or both, and it is granted per n
 
 Common restriction profiles include:
 
-- **Fully restricted**: subscription, redemption and transfers all require the whitelist, so the token only moves between approved addresses.
-- **Transferable but gated**: the whitelist applies to subscribing and redeeming, while the token itself circulates freely. Even if the investor acquired it on a secondary market, redeeming against the pool still requires being whitelisted.
-- **Redemption gated**: subscription and transfers are open, and only whitelisted investors can redeem.
+- **Fully restricted**: subscription, redemption and transfers all require membership, so the token only moves between approved addresses.
+- **Transferable but gated**: the memberlist applies to subscribing and redeeming, while the token itself circulates freely. Even if the investor acquired it on a secondary market, redeeming against the pool still requires being a member.
+- **Redemption gated**: subscription and transfers are open, and only members can redeem.
 - **Open with freeze controls**: operations are open, and the issuer keeps the ability to freeze specific addresses.
 
 <img

@@ -74,7 +74,7 @@ Pools are currently set up through an authorized onboarding process. Once regist
 
 - **One interface for the whole lifecycle**: issuance, investors, pricing, orders, liquidity and distribution are operated from the same app.
 - **Complexity is abstracted**: multichain distribution, permissioning and price propagation are platform capabilities, not engineering projects.
-- **Controls that meet institutional requirements**: whitelisting, transfer restrictions, freeze capability, role separation and order-based liquidity management.
+- **Controls that meet institutional requirements**: memberlists, transfer restrictions, freeze capability, role separation and order-based liquidity management.
 - **DeFi reach when needed**: the same product can stay fully permissioned or extend into open DeFi distribution, on the issuer's terms.
 
 Issuers evaluating Centrifuge for a product can reach out through [centrifuge.io](https://centrifuge.io) to discuss their structure.
