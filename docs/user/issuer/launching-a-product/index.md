@@ -9,7 +9,7 @@ import walletPatterns from '../images/wallet-access-patterns.png';
 
 # Launching a product
 
-Getting a product onto Centrifuge begins with an onboarding intake. Prospective issuers provide a small set of launch parameters and the pool is then registered onchain. Once registered, its ongoing configuration and operations are managed through the Management app. To start the process, issuers can get in touch through [centrifuge.io](https://centrifuge.io).
+Launching a product on Centrifuge requires a small set of launch parameters. Once they are provided, the pool is registered onchain, and from that point its configuration and operations are managed through the Management app. To begin, issuers can get in touch through [centrifuge.io](https://centrifuge.io).
 
 The initial parameters are deliberately limited. Other product components (including distribution networks, token permissions, vaults, accepted investment assets and pricing configuration) can be configured after the pool exists. The hub chain and denomination cannot be changed later, so they require particular consideration before launch. The hub chain is where the pool's controls and accounting live (see [Hub and spokes](/user/concepts/pools#hub-and-spokes)).
 

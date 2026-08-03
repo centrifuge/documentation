@@ -10,6 +10,8 @@ import updateShareClass from '../images/update_share_class.jpg';
 
 # Token management
 
+Token management covers the token over its whole life: what it represents, where it is deployed, the rules that govern who can hold and move it, and the day-to-day management of the investor base.
+
 ## The token is the ownership layer
 
 Each share class of the pool is represented by a token. The token is what investors hold, what carries the price, and what moves. It can be distributed to multiple chains and, depending on how the issuer configures it, traded or sold on DeFi protocols.
