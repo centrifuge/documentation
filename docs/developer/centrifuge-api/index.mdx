@@ -509,7 +509,7 @@ The Bridge REST API is the offchain interface for moving Centrifuge tokens acros
 
 All endpoints are served under `https://api.centrifuge.io/bridge` and return JSON. No authentication required.
 
-Centrifuge share class tokens are natively multichain: the same token is deployed on several chains and moves between them through the protocol's own messaging layer rather than a wrapped-asset bridge. Transfers are 1:1 — the amount received equals the amount sent, and the bridge fee is paid separately in the source chain's native token. Routes are available where the token bridge is deployed (currently Ethereum and Base).
+Centrifuge share class tokens are natively multichain: the same token is deployed on several chains and moves between them through the protocol's own messaging layer rather than a wrapped-asset bridge. Transfers are 1:1. The amount received equals the amount sent, and the bridge fee is paid separately in the source chain's native token. Routes are available where the token bridge is deployed (currently Ethereum and Base).
 
 ### Routes
 
