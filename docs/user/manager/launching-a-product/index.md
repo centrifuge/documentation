@@ -8,7 +8,7 @@ import access from '../images/access.jpg';
 
 # Launching a product
 
-Launching a product on Centrifuge requires a small set of launch parameters. Once they are provided, the pool is registered onchain, and from that point its configuration and operations are managed through the Management app. To begin, issuers can get in touch through [centrifuge.io](https://centrifuge.io).
+Launching a product on Centrifuge requires a small set of launch parameters. Once they are provided, the pool is registered onchain, and from that point its configuration and operations are managed through the Management app. To begin, managers can get in touch through [centrifuge.io](https://centrifuge.io).
 
 The initial parameters are deliberately limited. Other product components (including distribution networks, token permissions, vaults, accepted investment assets and pricing configuration) can be configured after the pool exists. The hub chain and denomination cannot be changed later, so they require particular consideration before launch. The hub chain is where the pool's controls and accounting live (see [Hub and spokes](/user/concepts/pools#hub-and-spokes)).
 
@@ -32,7 +32,7 @@ Operating a product is a team effort, and the pool separates duties into distinc
 
 - **Hub managers**: full control over the pool's configuration, including tokens, permissions, pricing and the other roles.
 - **Balance sheet managers**: authorized to move the product's assets in and out of the pool's balance sheet. Granted per network, so their scope can be limited to specific networks.
-- **Policy-based managers and operators**: contract-based operators, such as Merkle Proof Managers and Onchain Portfolio Managers, that execute pre-approved operations within limits defined by the issuer (see [Operations and automation](/user/issuer/operations-automation)).
+- **Policy-based managers and operators**: contract-based operators, such as Merkle Proof Managers and Onchain Portfolio Managers, that execute pre-approved operations within limits defined by the manager (see [Operations and automation](/user/manager/operations-automation)).
 
 These roles separate top-level pool configuration, network-specific balance sheet operations and the execution of pre-approved workflows.
 

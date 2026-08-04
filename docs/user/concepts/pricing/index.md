@@ -13,7 +13,7 @@ Pricing connects a pool's denomination, its share classes and the investment ass
 
 Each share class has its own share price, expressed in the pool's denomination. It represents the value of one token in that class.
 
-The product is valued according to its established valuation methodology. Value is allocated across its share classes, and the issuer records and publishes the resulting share prices through the Management app. A share price may rise or fall while an investor's token balance remains unchanged, unless tokens are issued, redeemed or transferred.
+The product is valued according to its established valuation methodology. Value is allocated across its share classes, and the manager records and publishes the resulting share prices through the Management app. A share price may rise or fall while an investor's token balance remains unchanged, unless tokens are issued, redeemed or transferred.
 
 ## Asset prices
 

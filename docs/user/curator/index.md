@@ -10,9 +10,9 @@ import subscribe from './images/subscribe.jpg';
 
 # Curator guide
 
-Curators design and operate allocation strategies using the same infrastructure issuers use for tokenized products. In the curator role, they focus on allocating a pool's capital across onchain venues (including other tokenized products, DeFi protocols and liquidity across networks) rather than originating the underlying assets. The resulting strategy can be fully onchain or form the onchain allocation layer of a blended product.
+Curators design and operate allocation strategies using the same infrastructure managers use for tokenized products. In the curator role, they focus on allocating a pool's capital across onchain venues (including other tokenized products, DeFi protocols and liquidity across networks) rather than originating the underlying assets. The resulting strategy can be fully onchain or form the onchain allocation layer of a blended product.
 
-This guide covers what is specific to curators, which is executing a strategy through the Onchain Portfolio Manager (Onchain PM). Everything else about operating the product (tokens, vaults, investors, pricing) works as described in the [issuer guide](/user/issuer).
+This guide covers what is specific to curators, which is executing a strategy through the Onchain Portfolio Manager (Onchain PM). Everything else about operating the product (tokens, vaults, investors, pricing) works as described in the [manager guide](/user/manager).
 
 ## What curators do
 

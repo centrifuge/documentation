@@ -11,11 +11,11 @@ import holdingsWithdraw from '../images/holdings_withdraw.jpg';
 
 # Asset and liquidity
 
-The pool has its own balance sheet, made up of the assets backing the product, held and tracked per network. This section covers how issuers register assets, monitor holdings and move liquidity in and out of the product securely.
+The pool has its own balance sheet, made up of the assets backing the product, held and tracked per network. This section covers how managers register assets, monitor holdings and move liquidity in and out of the product securely.
 
 ## Registering assets
 
-Additional assets can be registered for use in the pool's balance sheet and operational flows. A registered asset can become an investor entry point when the issuer deploys a vault that accepts it (see [Distribution](/user/issuer/distribution)).
+Additional assets can be registered for use in the pool's balance sheet and operational flows. A registered asset can become an investor entry point when the manager deploys a vault that accepts it (see [Distribution](/user/manager/distribution)).
 
 <img
   src={registerAsset}
@@ -25,7 +25,7 @@ Additional assets can be registered for use in the pool's balance sheet and oper
 
 ## Holdings
 
-The Holdings view shows the pool's balance sheet per network: each position with its quantity, price and value, and the total value at the top. From the same view, the issuer can deposit assets into the balance sheet, withdraw them through the configured off-ramp, and export the holdings for reporting.
+The Holdings view shows the pool's balance sheet per network: each position with its quantity, price and value, and the total value at the top. From the same view, the manager can deposit assets into the balance sheet, withdraw them through the configured off-ramp, and export the holdings for reporting.
 
 <img
   src={holdings}
@@ -58,4 +58,4 @@ Once configured, the flows are simple and constrained by construction:
 />
 > Withdraw dialog from the Holdings view showing the allowlisted destinations.
 
-These controls are separate from vaults. Vaults define how investors subscribe and redeem, while on/off-ramps support the issuer's balance sheet and settlement operations.
+These controls are separate from vaults. Vaults define how investors subscribe and redeem, while on/off-ramps support the manager's balance sheet and settlement operations.

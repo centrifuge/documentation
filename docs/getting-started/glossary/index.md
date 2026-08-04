@@ -50,7 +50,7 @@ A smart contract that manages deposits, redemptions, and asset allocations for a
 A vault with instant execution: deposits are fulfilled immediately and shares are minted in the same transaction. Redemptions remain request-based.
 
 **Asynchronous vault (ERC-7540)**  
-A vault with request-based execution: deposits and redemptions become orders that the issuer processes, and the investor then claims the result. Useful for offchain or delayed asset management.
+A vault with request-based execution: deposits and redemptions become orders that the manager processes, and the investor then claims the result. Useful for offchain or delayed asset management.
 
 **Pooled vault (ERC-7575)**  
 A share token that collects value across multiple vaults. Enables strategies with multiple currencies or layered structures.
@@ -65,10 +65,10 @@ The total value of a vault or share class, representing its current worth based 
 The pool's onchain record of the assets it holds.
 
 **Deposit capacity**  
-The bound an issuer sets on how much liquidity a synchronous vault accepts.
+The bound a manager sets on how much liquidity a synchronous vault accepts.
 
 **On/off-ramp**  
-The issuer-side rails that control how assets move in and out of a pool: accepted assets, authorized relayers and approved withdrawal addresses.
+The manager-side rails that control how assets move in and out of a pool: accepted assets, authorized relayers and approved withdrawal addresses.
 
 ## Token standards
 
@@ -89,7 +89,7 @@ A standard that enables a single token to represent positions across multiple va
 
 ## User roles
 
-**Issuer**  
+**Manager**  
 Structures a financial product and operates it onchain through a pool. Responsible for its tokens, investor access, pricing and distribution.
 
 **Curator**  
@@ -110,13 +110,13 @@ The act of converting share tokens back into the original asset or currency, usu
 The ability of Centrifuge assets to integrate into DeFi protocols and strategies.
 
 **Memberlist**  
-The set of addresses approved by the issuer to interact with a product. Maintained per network: approval on one network does not carry over to another.
+The set of addresses approved by the manager to interact with a product. Maintained per network: approval on one network does not carry over to another.
 
 **Order**  
-A deposit or redemption request waiting to be processed by the issuer.
+A deposit or redemption request waiting to be processed by the manager.
 
 **Claim**  
-The final step of a request-based operation: collecting the tokens (after a deposit) or the funds (after a redemption) once the issuer has processed the order.
+The final step of a request-based operation: collecting the tokens (after a deposit) or the funds (after a redemption) once the manager has processed the order.
 
 **Freeze**  
-The issuer's ability to block a specific address from operating with the token.
+The manager's ability to block a specific address from operating with the token.

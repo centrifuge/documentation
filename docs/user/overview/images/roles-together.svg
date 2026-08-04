@@ -6,10 +6,10 @@
   </defs>
   <rect width="1200" height="620" fill="white"/>
 
-  <!-- Issuer -->
+  <!-- Manager -->
   <circle cx="150" cy="58" r="11" fill="#4b5563"/>
   <rect x="136" y="72" width="28" height="30" rx="13" fill="#4b5563"/>
-  <text x="150" y="124" font-size="16" font-weight="bold" fill="#16181d" text-anchor="middle">Issuer</text>
+  <text x="150" y="124" font-size="16" font-weight="bold" fill="#16181d" text-anchor="middle">Manager</text>
   <text x="150" y="143" font-size="13.5" fill="#9aa0aa" text-anchor="middle">operates the product</text>
   <text x="150" y="161" font-size="13.5" fill="#9aa0aa" text-anchor="middle">Management app</text>
   <path d="M 205 100 C 320 115, 410 165, 470 224" fill="none" stroke="#1f2630" stroke-width="2" marker-end="url(#ah)"/>

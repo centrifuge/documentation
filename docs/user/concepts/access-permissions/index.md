@@ -11,7 +11,7 @@ Access to a product is enforced onchain. This page covers the memberlist that go
 
 ## The memberlist model
 
-Products can apply memberlist requirements separately to subscriptions, redemptions and token transfers. When an offering requires KYC/AML verification, anti-money laundering or other eligibility checks, those checks take place through the issuer's onboarding process. Once approved, the investor's address is added to the relevant memberlist through the Management app.
+Products can apply memberlist requirements separately to subscriptions, redemptions and token transfers. When an offering requires KYC/AML verification, anti-money laundering or other eligibility checks, those checks take place through the manager's onboarding process. Once approved, the investor's address is added to the relevant memberlist through the Management app.
 
 Two properties are worth remembering:
 
@@ -41,6 +41,6 @@ Combined, these controls produce very different distribution models on the same 
 - **Fully restricted**: subscription, redemption and transfers all require membership. Transfers only settle if the receiver is on the memberlist too. The classic institutional fund share.
 - **Transferable but gated**: the memberlist applies to subscriptions and redemptions, while transfers are unrestricted. The token can circulate in DeFi, but redeeming against the pool still requires the holder to be a member.
 - **Redemption gated**: subscription and transfers are open, and only members can redeem.
-- **Open with freeze controls**: operations are open, and the issuer retains the ability to freeze specific addresses if required.
+- **Open with freeze controls**: operations are open, and the manager retains the ability to freeze specific addresses if required.
 
-A product can also run fully open, with no restrictions at all. These controls are not fixed at launch, and the issuer can update them as the offering evolves.
+A product can also run fully open, with no restrictions at all. These controls are not fixed at launch, and the manager can update them as the offering evolves.

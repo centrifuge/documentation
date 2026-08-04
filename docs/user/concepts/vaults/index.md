@@ -18,15 +18,15 @@ Centrifuge supports two vault configurations:
 - The investor deposits and receives share tokens in the same transaction.
 - Redemptions remain request-based.
 - Suited to liquid strategies where on-demand issuance is possible.
-- The issuer can bound how much liquidity the vault accepts through a deposit capacity.
+- The manager can bound how much liquidity the vault accepts through a deposit capacity.
 
 **Request-based (asynchronous, ERC-7540)**
 
 - Both deposits and redemptions follow an order lifecycle.
-- The investor submits a request, the issuer processes it according to the product's cadence, and the investor claims the resulting tokens or assets.
+- The investor submits a request, the manager processes it according to the product's cadence, and the investor claims the resulting tokens or assets.
 - Suited to products with offchain settlement or periodic valuation.
 
-Redemptions are processed through requests on every vault type. Only deposits can settle instantly. This lets the issuer manage outgoing liquidity according to the product's terms.
+Redemptions are processed through requests on every vault type. Only deposits can settle instantly. This lets the manager control outgoing liquidity according to the product's terms.
 
 ## Several vaults, one token
 
@@ -34,7 +34,7 @@ A single share token can be served by several vaults, each accepting a different
 
 ## Vaults and networks
 
-Vaults are how a product reaches investors on different networks. The token itself can be deployed to several chains. To open subscriptions and redemptions on one of them, the issuer deploys a vault there.
+Vaults are how a product reaches investors on different networks. The token itself can be deployed to several chains. To open subscriptions and redemptions on one of them, the manager deploys a vault there.
 
 Investors interact locally, investing from whichever network suits them in the asset that vault accepts, while the protocol coordinates the product across its deployments: one balance sheet, one supply, one price everywhere. See [Pricing](/user/concepts/pricing) for how valuations stay consistent across networks.
 

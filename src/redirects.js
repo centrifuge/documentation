@@ -370,6 +370,12 @@ const redirects = [
     to: "/developer/protocol/guides/invest-into-a-vault/",
   },
 
+  // Manager guide rename (2026-08): /user/issuer moved to /user/manager
+  {
+    from: "/user/issuer/",
+    to: "/user/manager/",
+  },
+
   // Concepts restructure (2026-07): pages folded into the new structure
   {
     from: "/user/concepts/tokenization/",

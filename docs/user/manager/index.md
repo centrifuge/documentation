@@ -1,15 +1,15 @@
 ---
-id: issuer
-title: Issuer
+id: manager
+title: Manager
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 import JTRSYDashboard from './images/JTRSY_dashboard.jpg';
 
-# Issuer guide
+# Manager guide
 
-Centrifuge gives issuers and asset managers an onchain operations platform for financial products. The issuer structures the offering and the Centrifuge Management app becomes the onchain management path for it: issuance, investor access, pricing, distribution and reporting, operated from one interface.
+Centrifuge gives managers an onchain operations platform for financial products. The manager structures the offering and the Centrifuge Management app becomes the onchain management path for it: issuance, investor access, pricing, distribution and reporting, operated from one interface.
 
-The protocol abstracts the contract level complexity. Issuers can configure and operate standard product structures through the app without having to write or deploy code, using controls familiar from traditional financial infrastructure.
+The protocol abstracts the contract level complexity. Managers can configure and operate standard product structures through the app without having to write or deploy code, using controls familiar from traditional financial infrastructure.
 
 <img
   src={JTRSYDashboard}
@@ -17,7 +17,7 @@ The protocol abstracts the contract level complexity. Issuers can configure and 
 />
 > Product page with key facts and performance information.
 
-## What issuers can build
+## What managers can build
 
 The platform is flexible enough to represent very different product structures:
 
@@ -33,37 +33,37 @@ These are patterns, not fixed templates: access rules, currencies, liquidity ter
 
 ## The offering, onchain
 
-Creating a product in Centrifuge is not primarily a technical act. It is the onchain reflection of a structure the issuer has set up offchain. For purely onchain strategies, it is the structure itself.
+Creating a product in Centrifuge is not primarily a technical act. It is the onchain reflection of a structure the manager has set up offchain. For purely onchain strategies, it is the structure itself.
 
-That reflection is the pool. The pool represents the product's onchain management: it holds the balance sheet, defines the share classes, and is the place from which the issuer controls operations (investors, orders, pricing, liquidity). Everything in the rest of this guide happens within a pool.
+That reflection is the pool. The pool represents the product's onchain management: it holds the balance sheet, defines the share classes, and is the place from which the manager controls operations (investors, orders, pricing, liquidity). Everything in the rest of this guide happens within a pool.
 
-Pools are currently set up through an authorized onboarding process. Once registered onchain, they appear in the Management app, where issuers configure and operate the product's share classes, tokens, vaults, investor access, pricing and distribution. The details of what that process requires are covered in [Launching a product](/user/issuer/launching-a-product).
+Pools are currently set up through an authorized onboarding process. Once registered onchain, they appear in the Management app, where managers configure and operate the product's share classes, tokens, vaults, investor access, pricing and distribution. The details of what that process requires are covered in [Launching a product](/user/manager/launching-a-product).
 
 ## Explore
 
 <div className="card-grid">
 
-  <a className="card-tile" href="/user/issuer/launching-a-product">
+  <a className="card-tile" href="/user/manager/launching-a-product">
     <h3>Launching a product</h3>
     <p>The launch parameters, hub manager setup and the roles that operate the pool.</p>
   </a>
 
-  <a className="card-tile" href="/user/issuer/token-management">
+  <a className="card-tile" href="/user/manager/token-management">
     <h3>Token management</h3>
     <p>The token as the ownership layer: transfer restrictions and investor management.</p>
   </a>
 
-  <a className="card-tile" href="/user/issuer/distribution">
+  <a className="card-tile" href="/user/manager/distribution">
     <h3>Distribution</h3>
     <p>Vaults as execution paths, crosschain distribution, pricing and order management.</p>
   </a>
 
-  <a className="card-tile" href="/user/issuer/asset-liquidity">
+  <a className="card-tile" href="/user/manager/asset-liquidity">
     <h3>Asset and liquidity</h3>
     <p>Asset registration, the holdings view and secure on/off-ramps.</p>
   </a>
 
-  <a className="card-tile" href="/user/issuer/operations-automation">
+  <a className="card-tile" href="/user/manager/operations-automation">
     <h3>Operations and automation</h3>
     <p>The Onchain Portfolio Manager: pre-approved workflows within guardrails.</p>
   </a>
