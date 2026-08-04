@@ -7,7 +7,7 @@ import rolesTogether from './images/roles-together.png';
 
 # User documentation
 
-Centrifuge is the open infrastructure for onchain asset management. Financial products are represented and operated onchain through pools: issuers manage product operations, investors access them from their own wallets, and curators design and oversee onchain allocation strategies. Permissions and settlement are enforced onchain. The issuer records valuation updates, and the protocol propagates the resulting share token prices to every network where those tokens are distributed. Centrifuge provides the rails, and each product remains the responsibility of its issuer and appointed managers.
+Centrifuge is the open infrastructure for onchain asset management. Financial products are represented and operated onchain through pools: issuers manage product operations, investors access them from their own wallets, and curators design and oversee onchain allocation strategies. Centrifuge provides the rails, and each product remains the responsibility of its issuer and appointed managers.
 
 This section is organized by role. Each guide describes what the platform enables for that role, while the shared background is covered in [Concepts](/user/concepts).
 

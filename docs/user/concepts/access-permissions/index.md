@@ -7,6 +7,8 @@ contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 
 # Access and permissions
 
+Access to a product is enforced onchain. This page covers the memberlist that governs who can interact with a token, the compliance controls built on top of it, and the distribution patterns they produce.
+
 ## The memberlist model
 
 Products can apply memberlist requirements separately to subscriptions, redemptions and token transfers. When an offering requires KYC/AML verification, anti-money laundering or other eligibility checks, those checks take place through the issuer's onboarding process. Once approved, the investor's address is added to the relevant memberlist through the Management app.

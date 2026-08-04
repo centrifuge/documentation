@@ -53,7 +53,7 @@ Every product an investor invests in is built from the same three pieces:
 - **Token**: the ownership layer of a share class. It is what the investor holds in their wallet, what carries the price, and what moves, across chains or into DeFi, within the rules of the product.
 - **Vault**: the way in and out of the product. A vault defines the investment asset, network and subscription flow. Deposits may settle instantly or follow a request-based process, while redemptions are processed through requests. A single token can be served by several vaults, so the same product can accept different investment assets and networks.
 
-See [Pools](/user/concepts/pools) and [Vaults](/user/concepts/vaults) for the background. In the app, this maps to a simple choice. The investor picks the investment asset and network they want to enter with, and the vault behind that choice determines how execution works.
+See [Pools](/user/concepts/pools), [Share classes and tokens](/user/concepts/share-tokens) and [Vaults](/user/concepts/vaults) for the background. In the app, this maps to a simple choice. The investor picks the investment asset and network they want to enter with, and the vault behind that choice determines how execution works.
 
 ## What the investor needs
 

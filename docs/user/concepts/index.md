@@ -13,8 +13,13 @@ This section introduces the core concepts behind products managed through Centri
 <div className="card-grid">
 
   <a className="card-tile" href="/user/concepts/pools">
-    <h3>Pools and share tokens</h3>
-    <p>The pool as the product's onchain management, share classes, and the token as the ownership layer.</p>
+    <h3>Pools</h3>
+    <p>How a pool provides the product's onchain management path and organizes operations across its hub and spokes.</p>
+  </a>
+
+  <a className="card-tile" href="/user/concepts/share-tokens">
+    <h3>Share classes and tokens</h3>
+    <p>How share classes structure a product and how their tokens represent ownership.</p>
   </a>
 
   <a className="card-tile" href="/user/concepts/vaults">

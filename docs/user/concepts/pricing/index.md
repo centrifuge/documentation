@@ -7,6 +7,8 @@ contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 
 # Pricing
 
+Every token carries a price that comes from the product's valuation. This page covers how that price is set and how it reaches every network.
+
 ## How token prices are determined
 
 The product is valued according to its established valuation methodology. That value is allocated across its share classes, producing a price per share for each token. The issuer records and publishes valuation updates through the Management app, using the valuation sources and processes defined by the product.

@@ -372,12 +372,8 @@ const redirects = [
 
   // Concepts restructure (2026-07): pages folded into the new structure
   {
-    from: "/user/concepts/share-tokens/",
-    to: "/user/concepts/pools/",
-  },
-  {
     from: "/user/concepts/tokenization/",
-    to: "/user/concepts/pools/",
+    to: "/user/concepts/share-tokens/",
   },
   {
     from: "/user/concepts/multi-chain/",
