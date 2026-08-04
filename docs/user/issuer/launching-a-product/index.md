@@ -5,7 +5,6 @@ category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 import access from '../images/access.jpg';
-import walletPatterns from '../images/wallet-access-patterns.png';
 
 # Launching a product
 
@@ -23,38 +22,22 @@ The initial parameters are deliberately limited. Other product components (inclu
 
 ## Hub manager setup
 
-The hub manager wallet requires particular care before launch. Hub managers have top-level control over the pool: they can deploy tokens and vaults, set prices, update investor permissions, configure crosschain connectivity and grant or revoke manager roles.
+The wallet supplied at launch is registered as the pool's initial hub manager. Hub managers have top-level control over the pool: they can deploy tokens and vaults, set prices, update investor permissions, configure crosschain connectivity and grant or revoke manager roles.
 
-Any hub manager can remove another hub manager, including the original admin. The protocol does not prevent the final hub manager from being removed, so changes to this role should be made deliberately.
-
-Recommended practice:
-
-- Multi-party computation (MPC) custody is the recommended default, with a policy requiring more than one approver and destinations restricted to approved Centrifuge Hub contracts.
-- A multisig is also suitable, with a threshold of at least 3-of-5. Signers should use separate hardware wallets held by different people, with at least one device kept offline as a recovery signer.
-- Keep the admin wallet separate from operational addresses used for issuance and price updates.
-- Keep the admin wallet funded with the native gas asset required by its hub chain, including enough to cover crosschain messaging.
+Any hub manager can remove another hub manager, including the one registered at launch. The protocol also permits the final hub manager to be removed, which leaves the pool without top-level administrative access.
 
 ## Roles and permissions
 
 Operating a product is a team effort, and the pool separates duties into distinct administrative roles. All of them are granted and revoked from the app's access settings, and every change takes effect onchain:
 
-- **Hub managers**: full control over the pool's configuration: tokens, permissions, pricing and the other roles. The top-level administrators of the product.
-- **Balance sheet managers**: authorized to move the product's assets in and out of the pool's balance sheet. Granted per network, so operational reach can be scoped to where each operator works.
+- **Hub managers**: full control over the pool's configuration, including tokens, permissions, pricing and the other roles.
+- **Balance sheet managers**: authorized to move the product's assets in and out of the pool's balance sheet. Granted per network, so their scope can be limited to specific networks.
 - **Policy-based managers and operators**: contract-based operators, such as Merkle Proof Managers and Onchain Portfolio Managers, that execute pre-approved operations within limits defined by the issuer (see [Operations and automation](/user/issuer/operations-automation)).
 
-This separation keeps day-to-day operations away from top-level control. An operator can run the product's routine flows without being able to change its configuration. For guidance on securing the hub manager wallet, see [Hub manager setup](#hub-manager-setup).
+These roles separate top-level pool configuration, network-specific balance sheet operations and the execution of pre-approved workflows.
 
 <img
   src={access}
   className="screenshot"
 />
 > Settings access section showing the managers of a pool.
-
-A recommended operating pattern is to assign high-privilege administration and day-to-day operations to separate wallets or custody policies, with security controls proportional to each function. A hardened MPC or multisig setup protects Hub administration, while separate operational wallets or policies can handle routine Hub functions and act on individual Spokes, moving balance-sheet assets on their assigned networks or executing pre-approved workflows.
-
-Every Hub manager wallet has full onchain authority, so any function-specific limits between Hub administration and Hub operations must be enforced by the corresponding wallet or custody policy. Balance sheet managers are scoped per network, while workflow operators execute only through pre-approved workflows.
-
-<img
-  src={walletPatterns}
-/>
-> Recommended wallet access pattern, with high-privilege Hub administration separated from Hub operations and network-scoped balance-sheet access on the Spokes.
