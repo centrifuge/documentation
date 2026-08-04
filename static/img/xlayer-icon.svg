@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 448" width="448" height="448" role="img" aria-label="X Layer">
+  <circle cx="224" cy="224" r="220" fill="#0d0d0d" />
+  <g fill="#ffffff">
+    <rect x="107" y="132" width="60" height="60" rx="8" />
+    <rect x="232" y="132" width="60" height="60" rx="8" />
+    <rect x="169.5" y="194.5" width="60" height="60" rx="8" />
+    <rect x="107" y="257" width="60" height="60" rx="8" />
+    <rect x="232" y="257" width="60" height="60" rx="8" />
+  </g>
+  <g fill="#ffffff">
+    <rect x="300" y="132" width="16" height="60" rx="4" opacity="0.55" />
+    <rect x="324" y="132" width="16" height="60" rx="4" opacity="0.3" />
+    <rect x="300" y="257" width="16" height="60" rx="4" opacity="0.55" />
+    <rect x="324" y="257" width="16" height="60" rx="4" opacity="0.3" />
+  </g>
+</svg>
