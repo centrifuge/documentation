@@ -500,3 +500,114 @@ GET /tokens/:address/total-issuance
 | `404` | Token address not found, decimals not set, or total issuance not set |
 
 </RESTExplorer>
+
+---
+
+## Bridge REST API
+
+The Bridge REST API is the offchain interface for moving Centrifuge tokens across chains. It exposes route discovery, quoting, and transfer-status endpoints that bridges and aggregators use to integrate Centrifuge token transfers, following the conventions those integrators expect.
+
+All endpoints are served under `https://api.centrifuge.io/bridge` and return JSON. No authentication required.
+
+Centrifuge share class tokens are natively multichain: the same token is deployed on several chains and moves between them through the protocol's own messaging layer rather than a wrapped-asset bridge. Transfers are 1:1. The amount received equals the amount sent, and the bridge fee is paid separately in the source chain's native token. Routes are available where the token bridge is deployed (currently Ethereum and Base).
+
+### Routes
+
+<RESTExplorer url="https://api.centrifuge.io/bridge/routes">
+
+Returns every available cross-chain transfer route. Each entry is a directional pair: a token on a source chain that can be moved to the same token on a destination chain.
+
+```
+GET /bridge/routes
+```
+
+#### Response
+
+The response is an object with a `routes` array. Each route contains:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `tokenId` | `String` | Share class token identifier |
+| `tokenName` | `String` | Human-readable token name |
+| `fromAddress` | `String` | Token contract address on the source chain |
+| `toAddress` | `String` | Token contract address on the destination chain |
+| `fromChainId` | `String` | EVM chain ID of the source chain |
+| `fromChainName` | `String` | Name of the source chain |
+| `toChainId` | `String` | EVM chain ID of the destination chain |
+| `toChainName` | `String` | Name of the destination chain |
+| `minTransferSize` | `String` | Minimum transfer amount, in the token's smallest unit |
+| `maxTransferSize` | `String` | Maximum transfer amount, in the token's smallest unit (`uint128` max means unlimited) |
+| `decimals` | `Int` | Token decimals |
+| `estimatedDuration` | `Int` | Estimated transfer time, in seconds |
+| `estimatedGas` | `Int` | Estimated gas for the destination-chain execution |
+| `standard` | `String` | Transfer standard, `CentrifugeV31` |
+
+</RESTExplorer>
+
+### Quote
+
+<RESTExplorer url="https://api.centrifuge.io/bridge/quote?fromChain=1&toChain=8453&fromToken=0xaaa0008c8cf3a7dca931adaf04336a5d808c82cc&fromAmount=1000000000000000000&toAddress=0xa0a6282a3adbc3d6b76cd1129cd17607316dc2c1">
+
+Prices a single transfer along a route and returns the parameters needed to execute it.
+
+```
+GET /bridge/quote
+```
+
+#### Query parameters
+
+| Parameter | Required | Description |
+|-----------|----------|-------------|
+| `fromChain` | yes | EVM chain ID of the source chain |
+| `toChain` | yes | EVM chain ID of the destination chain |
+| `fromToken` | yes | Token contract address on the source chain |
+| `fromAmount` | yes | Amount to transfer, in the token's smallest unit |
+| `toAddress` | yes | Recipient address on the destination chain |
+| `fromAddress` | no | Sender address; used as the native-fee refund address on the source chain |
+| `toToken` | no | Token address on the destination chain (must resolve to the same share class) |
+| `slippage` | no | Accepted for compatibility; ignored, since transfers are 1:1 |
+
+#### Response
+
+`toAmount` equals `fromAmount` (1:1 transfer). Fees are returned in `estimate.feeCosts` and paid in the source chain's native token (`included: false`), not deducted from the amount.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `tool` | `String` | Bridge identifier, `centrifuge` |
+| `standard` | `String` | Transfer standard, `CentrifugeV31` |
+| `fromChainId` | `Int` | EVM chain ID of the source chain |
+| `toChainId` | `Int` | EVM chain ID of the destination chain |
+| `fromToken` | `Object` | Source token: `address`, `chainId`, `symbol`, `name`, `decimals` |
+| `toToken` | `Object` | Destination token: `address`, `chainId`, `symbol`, `name`, `decimals` |
+| `fromAmount` | `String` | Amount sent, in the token's smallest unit |
+| `toAmount` | `String` | Amount received, in the token's smallest unit (equals `fromAmount`) |
+| `estimate` | `Object` | Pricing: `toAmountMin`, `approvalAddress`, `executionDuration` (seconds), `feeCosts` (array), `gasEstimate` |
+| `parameters` | `Object` | Decoded arguments for the token bridge `send` call to submit onchain, or `null` |
+
+</RESTExplorer>
+
+### Transfer status
+
+<RESTExplorer url="https://api.centrifuge.io/bridge/status?txHash=0x8ed8d7b674cee04e46a5055c6906fc67003a312726abe19efd8356ffeebef3d8">
+
+Returns the status of a transfer, given its source-chain transaction hash. The endpoint responds with `200` and a `NOT_FOUND` status even before the transaction is indexed, so it is safe to poll.
+
+```
+GET /bridge/status?txHash=:txHash
+GET /bridge/transaction/:txHash
+```
+
+#### Response
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `transactionId` | `String` | Cross-chain transfer identifier |
+| `tool` | `String` | `centrifuge` |
+| `status` | `String` | `NOT_FOUND`, `PENDING`, or `DONE` |
+| `substatus` | `String` | `WAIT_SOURCE_CONFIRMATIONS`, `WAIT_DESTINATION_TRANSACTION`, `COMPLETED`, or `PARTIAL` |
+| `substatusMessage` | `String` | Human-readable detail, or `null` |
+| `toAddress` | `String` | Recipient address on the destination chain |
+| `sending` | `Object` | Source-chain leg: `txHash`, `txLink`, `chainId`, `amount`, `token`, `gasPrice`, `timestamp` |
+| `receiving` | `Object` | Destination-chain leg once delivered: `txHash`, `txLink`, `chainId`, `tokenAddress`, `tokenAmount`, `timestamp`; `null` until then |
+
+</RESTExplorer>
