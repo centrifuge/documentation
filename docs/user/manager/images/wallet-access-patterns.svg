@@ -1,0 +1,41 @@
+<svg viewBox="0 0 1200 460" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2630"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="460" fill="white"/>
+
+  <!-- Manager actor -->
+  <circle cx="110" cy="182" r="11" fill="#4b5563"/>
+  <rect x="96" y="196" width="28" height="30" rx="13" fill="#4b5563"/>
+  <text x="110" y="248" font-size="16" font-weight="bold" fill="#16181d" text-anchor="middle">Manager</text>
+
+  <!-- Single wallet -->
+  <path d="M 152 208 L 198 216" fill="none" stroke="#1f2630" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="205" y="170" width="280" height="120" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
+  <text x="227" y="205" font-size="18" font-weight="bold" fill="#16181d">Wallet</text>
+  <text x="227" y="228" font-size="13.5" fill="#9aa0aa">single wallet, MPC custody</text>
+  <text x="227" y="247" font-size="13.5" fill="#9aa0aa">approval thresholds per function</text>
+
+  <!-- Pool functions -->
+  <rect x="720" y="40" width="440" height="380" rx="16" fill="#f7f8fa"/>
+  <text x="746" y="74" font-size="19" font-weight="bold" fill="#16181d">Pool</text>
+  <rect x="746" y="94" width="388" height="76" rx="12" fill="#ffffff"/>
+  <text x="768" y="126" font-size="16" font-weight="bold" fill="#16181d">Administration</text>
+  <text x="768" y="147" font-size="13.5" fill="#9aa0aa">roles, permissions, tokens</text>
+  <rect x="746" y="190" width="388" height="76" rx="12" fill="#ffffff"/>
+  <text x="768" y="222" font-size="16" font-weight="bold" fill="#16181d">Operations</text>
+  <text x="768" y="243" font-size="13.5" fill="#9aa0aa">pricing and order processing</text>
+  <rect x="746" y="286" width="388" height="76" rx="12" fill="#ffffff"/>
+  <text x="768" y="318" font-size="16" font-weight="bold" fill="#16181d">Balance sheet</text>
+  <text x="768" y="339" font-size="13.5" fill="#9aa0aa">asset movements, per network</text>
+
+  <!-- Threshold arrows -->
+  <path d="M 485 205 C 580 190, 640 162, 712 136" fill="none" stroke="#1f2630" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="592" y="148" font-size="13.5" fill="#9aa0aa" text-anchor="middle">higher threshold</text>
+  <path d="M 485 230 L 712 228" fill="none" stroke="#1f2630" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="592" y="216" font-size="13.5" fill="#9aa0aa" text-anchor="middle">lower threshold</text>
+  <path d="M 485 255 C 580 272, 640 300, 712 322" fill="none" stroke="#1f2630" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="592" y="320" font-size="13.5" fill="#9aa0aa" text-anchor="middle">higher threshold</text>
+</svg>

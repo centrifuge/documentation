@@ -5,6 +5,7 @@ category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 import access from '../images/access.jpg';
+import walletPatterns from '../images/wallet-access-patterns.png';
 
 # Launching a product
 
@@ -31,7 +32,7 @@ Any hub manager can remove another hub manager, including the one registered at 
 Operating a product is a team effort, and the pool separates duties into distinct administrative roles. All of them are granted and revoked from the app's access settings, and every change takes effect onchain:
 
 - **Hub managers**: full control over the pool's configuration, including tokens, permissions, pricing and the other roles.
-- **Balance sheet managers**: authorized to move the product's assets in and out of the pool's balance sheet. Granted per network, so their scope can be limited to specific networks.
+- **Balance sheet managers**: when required, authorized to move the product's assets in and out of the pool's balance sheet. The role is granted per network, so its scope can be limited to specific networks.
 - **Policy-based managers and operators**: contract-based operators, such as Merkle Proof Managers and Onchain Portfolio Managers, that execute pre-approved operations within limits defined by the manager (see [Operations and automation](/user/manager/operations-automation)).
 
 These roles separate top-level pool configuration, network-specific balance sheet operations and the execution of pre-approved workflows.
@@ -41,3 +42,10 @@ These roles separate top-level pool configuration, network-specific balance shee
   className="screenshot"
 />
 > Settings access section showing the managers of a pool.
+
+In practice, a single MPC wallet can serve as the hub manager and, where required, be granted additional protocol roles. Rather than using separate wallets for hub administration and routine hub operations, its custody policy can apply different approval thresholds based on the transaction. High-risk actions, including pool administration and balance sheet movements, should use stricter approvals. These thresholds are enforced by the MPC policy, not by separate roles in the core protocol.
+
+<img
+  src={walletPatterns}
+/>
+> A single MPC wallet with function-specific approval thresholds.
