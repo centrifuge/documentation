@@ -1,68 +1,73 @@
-<svg viewBox="0 0 1200 560" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+<svg viewBox="0 0 1200 740" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2630"/>
     </marker>
   </defs>
+  <rect width="1200" height="740" fill="white"/>
 
-  <rect width="1200" height="560" fill="white"/>
+  <!-- Issuer actor -->
+  <circle cx="120" cy="32" r="11" fill="#4b5563"/>
+  <rect x="106" y="46" width="28" height="30" rx="13" fill="#4b5563"/>
+  <text x="120" y="97" font-size="16" font-weight="bold" fill="#16181d" text-anchor="middle">Issuer</text>
+  <text x="120" y="116" font-size="13.5" fill="#9aa0aa" text-anchor="middle">Management app</text>
+  <path d="M 120 124 L 120 215" fill="none" stroke="#1f2630" stroke-width="2" marker-end="url(#ah)"/>
 
-  <!-- Issuer entry point -->
-  <rect x="40" y="28" width="220" height="66" rx="12" fill="#fff8e6" stroke="#ffc012" stroke-width="2"/>
-  <text x="150" y="55" font-size="18" font-weight="bold" fill="#1f2630" text-anchor="middle">Issuer</text>
-  <text x="150" y="79" font-size="15" fill="#6b7280" text-anchor="middle">Management app</text>
-  <path d="M 150 94 L 150 178" fill="none" stroke="#6b7280" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <!-- Network A (hub chain) -->
+  <rect x="40" y="150" width="560" height="360" rx="16" fill="#f7f8fa"/>
+  <text x="66" y="184" font-size="19" font-weight="bold" fill="#16181d">Network A</text>
+  <text x="66" y="205" font-size="13.5" fill="#9aa0aa">hub chain</text>
 
-  <!-- Network A container (hub chain) -->
-  <rect x="40" y="120" width="650" height="330" rx="16" fill="none" stroke="#9aa0aa" stroke-width="2" stroke-dasharray="8 6"/>
-  <text x="435" y="152" font-size="19" fill="#6b7280">Network A (hub chain)</text>
+  <rect x="66" y="222" width="245" height="215" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
+  <text x="88" y="255" font-size="18" font-weight="bold" fill="#16181d">Hub</text>
+  <text x="88" y="275" font-size="13.5" fill="#9aa0aa">controls and accounting</text>
+  <rect x="88" y="289" width="200" height="34" rx="17" fill="#eef0f4"/>
+  <text x="188" y="311" font-size="14" fill="#3f4650" text-anchor="middle">Roles and permissions</text>
+  <rect x="88" y="333" width="200" height="34" rx="17" fill="#eef0f4"/>
+  <text x="188" y="355" font-size="14" fill="#3f4650" text-anchor="middle">Pricing and accounting</text>
+  <rect x="88" y="377" width="200" height="34" rx="17" fill="#eef0f4"/>
+  <text x="188" y="399" font-size="14" fill="#3f4650" text-anchor="middle">Order processing</text>
 
-  <!-- Hub box -->
-  <rect x="55" y="185" width="235" height="210" rx="12" fill="#1f2630"/>
-  <text x="77" y="228" font-size="28" font-weight="bold" fill="#ffffff">Hub</text>
-  <text x="77" y="258" font-size="16" fill="#ffc012">Controls and accounting</text>
-  <text x="77" y="295" font-size="16" fill="#d1d5db">•  Permissions and roles</text>
-  <text x="77" y="323" font-size="16" fill="#d1d5db">•  Pricing and accounting</text>
-  <text x="77" y="351" font-size="16" fill="#d1d5db">•  Order processing</text>
+  <rect x="330" y="222" width="245" height="215" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
+  <text x="352" y="255" font-size="18" font-weight="bold" fill="#16181d">Spoke</text>
+  <text x="352" y="275" font-size="13.5" fill="#9aa0aa">distribution and balance sheet</text>
+  <rect x="352" y="289" width="200" height="34" rx="17" fill="#eef0f4"/>
+  <text x="452" y="311" font-size="14" fill="#3f4650" text-anchor="middle">Share token and vaults</text>
+  <rect x="352" y="333" width="200" height="34" rx="17" fill="#eef0f4"/>
+  <text x="452" y="355" font-size="14" fill="#3f4650" text-anchor="middle">Balance sheet holdings</text>
+  <rect x="352" y="377" width="200" height="34" rx="17" fill="#eef0f4"/>
+  <text x="452" y="399" font-size="14" fill="#3f4650" text-anchor="middle">Optional on/off-ramps</text>
 
-  <!-- Spoke box on hub chain -->
-  <rect x="420" y="195" width="260" height="190" rx="12" fill="#ffffff" stroke="#cbd0d8" stroke-width="2"/>
-  <text x="442" y="238" font-size="28" font-weight="bold" fill="#1f2630">Spoke</text>
-  <text x="442" y="268" font-size="16" fill="#6b7280">Distribution and balance sheet</text>
-  <text x="442" y="303" font-size="16" fill="#4b5563">•  Share token and vaults</text>
-  <text x="442" y="331" font-size="16" fill="#4b5563">•  Balance sheet holdings</text>
-  <text x="442" y="359" font-size="16" fill="#4b5563">•  Optional on/off-ramps</text>
+  <text x="320" y="478" font-size="14" fill="#9aa0aa" text-anchor="middle">hub and spoke on the same chain communicate directly</text>
 
-  <!-- Hub <-> local spoke communication -->
-  <line x1="290" y1="310" x2="420" y2="310" stroke="#6b7280" stroke-width="2.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-  <text x="355" y="260" font-size="13" fill="#6b7280" text-anchor="middle">
-    <tspan x="355">direct</tspan>
-    <tspan x="355" dy="16">same-chain</tspan>
-    <tspan x="355" dy="16">communication</tspan>
-  </text>
+  <!-- Network B -->
+  <rect x="760" y="150" width="400" height="264" rx="16" fill="#f7f8fa"/>
+  <text x="786" y="184" font-size="19" font-weight="bold" fill="#16181d">Network B</text>
+  <rect x="786" y="200" width="348" height="192" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
+  <text x="808" y="234" font-size="18" font-weight="bold" fill="#16181d">Spoke</text>
+  <text x="808" y="254" font-size="13.5" fill="#9aa0aa">distribution and balance sheet</text>
+  <rect x="808" y="268" width="185" height="32" rx="16" fill="#eef0f4"/>
+  <text x="900" y="289" font-size="13" fill="#3f4650" text-anchor="middle">Share token and vaults</text>
+  <rect x="808" y="308" width="185" height="32" rx="16" fill="#eef0f4"/>
+  <text x="900" y="329" font-size="13" fill="#3f4650" text-anchor="middle">Balance sheet holdings</text>
+  <rect x="808" y="348" width="185" height="32" rx="16" fill="#eef0f4"/>
+  <text x="900" y="369" font-size="13" fill="#3f4650" text-anchor="middle">Optional on/off-ramps</text>
 
-  <!-- Network B container -->
-  <rect x="700" y="35" width="460" height="250" rx="16" fill="none" stroke="#9aa0aa" stroke-width="2" stroke-dasharray="8 6"/>
-  <text x="730" y="67" font-size="19" fill="#6b7280">Network B</text>
-  <rect x="840" y="80" width="270" height="190" rx="12" fill="#ffffff" stroke="#cbd0d8" stroke-width="2"/>
-  <text x="862" y="123" font-size="28" font-weight="bold" fill="#1f2630">Spoke</text>
-  <text x="862" y="153" font-size="16" fill="#6b7280">Distribution and balance sheet</text>
-  <text x="862" y="188" font-size="16" fill="#4b5563">•  Share token and vaults</text>
-  <text x="862" y="216" font-size="16" fill="#4b5563">•  Balance sheet holdings</text>
-  <text x="862" y="244" font-size="16" fill="#4b5563">•  Optional on/off-ramps</text>
+  <!-- Network C -->
+  <rect x="760" y="444" width="400" height="264" rx="16" fill="#f7f8fa"/>
+  <text x="786" y="478" font-size="19" font-weight="bold" fill="#16181d">Network C</text>
+  <rect x="786" y="494" width="348" height="192" rx="12" fill="#ffffff" stroke="#e6e8ec"/>
+  <text x="808" y="528" font-size="18" font-weight="bold" fill="#16181d">Spoke</text>
+  <text x="808" y="548" font-size="13.5" fill="#9aa0aa">distribution and balance sheet</text>
+  <rect x="808" y="562" width="185" height="32" rx="16" fill="#eef0f4"/>
+  <text x="900" y="583" font-size="13" fill="#3f4650" text-anchor="middle">Share token and vaults</text>
+  <rect x="808" y="602" width="185" height="32" rx="16" fill="#eef0f4"/>
+  <text x="900" y="623" font-size="13" fill="#3f4650" text-anchor="middle">Balance sheet holdings</text>
+  <rect x="808" y="642" width="185" height="32" rx="16" fill="#eef0f4"/>
+  <text x="900" y="663" font-size="13" fill="#3f4650" text-anchor="middle">Optional on/off-ramps</text>
 
-  <!-- Network C container -->
-  <rect x="700" y="295" width="460" height="250" rx="16" fill="none" stroke="#9aa0aa" stroke-width="2" stroke-dasharray="8 6"/>
-  <text x="730" y="327" font-size="19" fill="#6b7280">Network C</text>
-  <rect x="840" y="340" width="270" height="190" rx="12" fill="#ffffff" stroke="#cbd0d8" stroke-width="2"/>
-  <text x="862" y="383" font-size="28" font-weight="bold" fill="#1f2630">Spoke</text>
-  <text x="862" y="413" font-size="16" fill="#6b7280">Distribution and balance sheet</text>
-  <text x="862" y="448" font-size="16" fill="#4b5563">•  Share token and vaults</text>
-  <text x="862" y="476" font-size="16" fill="#4b5563">•  Balance sheet holdings</text>
-  <text x="862" y="504" font-size="16" fill="#4b5563">•  Optional on/off-ramps</text>
-
-  <!-- Cross-chain messaging curves -->
-  <path d="M 250 185 C 250 105, 560 105, 832 170" fill="none" stroke="#6b7280" stroke-width="2.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
-  <path d="M 195 395 C 195 485, 560 485, 832 440" fill="none" stroke="#6b7280" stroke-width="2.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
-  <text x="530" y="97" font-size="16" fill="#6b7280" text-anchor="middle">protocol messaging</text>
+  <!-- Messaging links -->
+  <text x="680" y="241" font-size="14" fill="#9aa0aa" text-anchor="middle">protocol messaging</text>
+  <path d="M 600 255 L 760 255" fill="none" stroke="#c5c9cf" stroke-width="2" stroke-dasharray="6 6"/>
+  <path d="M 600 470 L 760 470" fill="none" stroke="#c5c9cf" stroke-width="2" stroke-dasharray="6 6"/>
 </svg>

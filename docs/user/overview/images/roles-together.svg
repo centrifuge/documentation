@@ -1,57 +1,59 @@
 <svg viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
   <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f2630"/>
     </marker>
   </defs>
-
   <rect width="1200" height="620" fill="white"/>
-  <text x="600" y="42" font-size="19" fill="#6b7280" text-anchor="middle">One product, three roles</text>
 
   <!-- Issuer -->
-  <rect x="60" y="60" width="290" height="110" rx="12" fill="#fff8e6" stroke="#ffc012" stroke-width="2"/>
-  <text x="82" y="100" font-size="22" font-weight="bold" fill="#1f2630">Issuer</text>
-  <text x="82" y="128" font-size="15" fill="#6b7280">operates the product</text>
-  <text x="82" y="152" font-size="15" fill="#6b7280">Management app</text>
+  <circle cx="150" cy="58" r="11" fill="#4b5563"/>
+  <rect x="136" y="72" width="28" height="30" rx="13" fill="#4b5563"/>
+  <text x="150" y="124" font-size="16" font-weight="bold" fill="#16181d" text-anchor="middle">Issuer</text>
+  <text x="150" y="143" font-size="13.5" fill="#9aa0aa" text-anchor="middle">operates the product</text>
+  <text x="150" y="161" font-size="13.5" fill="#9aa0aa" text-anchor="middle">Management app</text>
+  <path d="M 205 100 C 320 115, 410 165, 470 224" fill="none" stroke="#1f2630" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="318" y="102" font-size="14" fill="#9aa0aa" text-anchor="middle">investor access, pricing, orders</text>
 
   <!-- Curator -->
-  <rect x="850" y="60" width="290" height="110" rx="12" fill="#fff8e6" stroke="#ffc012" stroke-width="2"/>
-  <text x="872" y="100" font-size="22" font-weight="bold" fill="#1f2630">Curator</text>
-  <text x="872" y="128" font-size="15" fill="#6b7280">acts as portfolio manager</text>
-  <text x="872" y="152" font-size="15" fill="#6b7280">through Onchain PM</text>
+  <circle cx="1050" cy="58" r="11" fill="#4b5563"/>
+  <rect x="1036" y="72" width="28" height="30" rx="13" fill="#4b5563"/>
+  <text x="1050" y="124" font-size="16" font-weight="bold" fill="#16181d" text-anchor="middle">Curator</text>
+  <text x="1050" y="143" font-size="13.5" fill="#9aa0aa" text-anchor="middle">acts as portfolio manager</text>
+  <text x="1050" y="161" font-size="13.5" fill="#9aa0aa" text-anchor="middle">through the Onchain PM</text>
+  <path d="M 995 100 C 880 115, 790 165, 730 224" fill="none" stroke="#1f2630" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="884" y="102" font-size="14" fill="#9aa0aa" text-anchor="middle">allocates the pool's capital</text>
 
   <!-- Investor -->
-  <rect x="60" y="450" width="290" height="110" rx="12" fill="#fff8e6" stroke="#ffc012" stroke-width="2"/>
-  <text x="82" y="490" font-size="22" font-weight="bold" fill="#1f2630">Investor</text>
-  <text x="82" y="518" font-size="15" fill="#6b7280">invests from their own wallet</text>
-  <text x="82" y="542" font-size="15" fill="#6b7280">Investment app</text>
-
-  <!-- Onchain venues -->
-  <rect x="850" y="450" width="290" height="110" rx="12" fill="#ffffff" stroke="#cbd0d8" stroke-width="2"/>
-  <text x="872" y="490" font-size="22" font-weight="bold" fill="#1f2630">Onchain venues</text>
-  <text x="872" y="518" font-size="15" fill="#6b7280">other tokenized products,</text>
-  <text x="872" y="542" font-size="15" fill="#6b7280">DeFi protocols, other networks</text>
+  <circle cx="150" cy="452" r="11" fill="#4b5563"/>
+  <rect x="136" y="466" width="28" height="30" rx="13" fill="#4b5563"/>
+  <text x="150" y="518" font-size="16" font-weight="bold" fill="#16181d" text-anchor="middle">Investor</text>
+  <text x="150" y="537" font-size="13.5" fill="#9aa0aa" text-anchor="middle">invests from their own wallet</text>
+  <text x="150" y="555" font-size="13.5" fill="#9aa0aa" text-anchor="middle">Investment app</text>
+  <path d="M 208 478 C 320 468, 410 430, 470 386" fill="none" stroke="#1f2630" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="330" y="500" font-size="14" fill="#9aa0aa" text-anchor="middle">invests and redeems through vaults</text>
 
   <!-- Pool -->
-  <rect x="460" y="240" width="280" height="150" rx="12" fill="#1f2630"/>
-  <text x="482" y="283" font-size="24" font-weight="bold" fill="#ffffff">Pool</text>
-  <text x="482" y="311" font-size="15" fill="#ffc012">the product onchain</text>
-  <text x="482" y="343" font-size="15" fill="#d1d5db">•  balance sheet and share tokens</text>
-  <text x="482" y="369" font-size="15" fill="#d1d5db">•  vaults as entry points</text>
+  <rect x="470" y="190" width="260" height="260" rx="16" fill="#f7f8fa"/>
+  <text x="494" y="226" font-size="20" font-weight="bold" fill="#16181d">Pool</text>
+  <text x="494" y="248" font-size="13.5" fill="#9aa0aa">the product onchain</text>
+  <rect x="494" y="262" width="212" height="46" rx="10" fill="#ffffff"/>
+  <text x="600" y="291" font-size="15.5" fill="#1f2630" text-anchor="middle">Balance sheet</text>
+  <rect x="494" y="320" width="212" height="46" rx="10" fill="#ffffff"/>
+  <text x="600" y="349" font-size="15.5" fill="#1f2630" text-anchor="middle">Share tokens</text>
+  <rect x="494" y="378" width="212" height="46" rx="10" fill="#ffffff"/>
+  <text x="600" y="407" font-size="15.5" fill="#1f2630" text-anchor="middle">Vaults</text>
 
-  <!-- Issuer -> Pool -->
-  <path d="M 350 115 C 430 115, 470 165, 507 236" fill="none" stroke="#6b7280" stroke-width="2.5" marker-end="url(#arrow)"/>
-  <text x="468" y="100" font-size="15" fill="#6b7280" text-anchor="middle">investor access, pricing, orders</text>
+  <!-- Onchain venues -->
+  <rect x="880" y="410" width="280" height="170" rx="16" fill="#f7f8fa"/>
+  <text x="904" y="446" font-size="18" font-weight="bold" fill="#16181d">Onchain venues</text>
+  <rect x="904" y="466" width="196" height="32" rx="16" fill="#ffffff"/>
+  <text x="1002" y="487" font-size="13.5" fill="#3f4650" text-anchor="middle">Other tokenized products</text>
+  <rect x="904" y="510" width="118" height="32" rx="16" fill="#ffffff"/>
+  <text x="963" y="531" font-size="13.5" fill="#3f4650" text-anchor="middle">DeFi protocols</text>
+  <rect x="1032" y="510" width="118" height="32" rx="16" fill="#ffffff"/>
+  <text x="1091" y="531" font-size="13.5" fill="#3f4650" text-anchor="middle">Other networks</text>
 
-  <!-- Curator -> Pool -->
-  <path d="M 850 115 C 770 115, 730 165, 693 236" fill="none" stroke="#6b7280" stroke-width="2.5" marker-end="url(#arrow)"/>
-  <text x="748" y="100" font-size="15" fill="#6b7280" text-anchor="middle">allocates the pool's capital</text>
-
-  <!-- Investor <-> Pool -->
-  <path d="M 350 505 C 430 505, 470 458, 507 394" fill="none" stroke="#6b7280" stroke-width="2.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-  <text x="480" y="528" font-size="15" fill="#6b7280" text-anchor="middle">invests and redeems through vaults</text>
-
-  <!-- Pool <-> Venues -->
-  <path d="M 693 394 C 730 458, 770 505, 850 505" fill="none" stroke="#6b7280" stroke-width="2.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-  <text x="742" y="528" font-size="15" fill="#6b7280" text-anchor="middle">capital and returns</text>
+  <path d="M 730 392 C 790 420, 830 450, 872 478" fill="none" stroke="#1f2630" stroke-width="2" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="826" y="404" font-size="14" fill="#9aa0aa" text-anchor="middle">capital and returns</text>
 </svg>
