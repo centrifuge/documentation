@@ -7,16 +7,28 @@ contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 
 # Pricing
 
-Every token carries a price that comes from the product's valuation. This page covers how that price is set and how it reaches every network.
+Pricing connects a pool's denomination, its share classes and the investment assets accepted by its vaults. This page explains the prices used for investment operations and how they are kept aligned across networks.
 
-## How token prices are determined
+## Share prices
 
-The product is valued according to its established valuation methodology. That value is allocated across its share classes, producing a price per share for each token. The issuer records and publishes valuation updates through the Management app, using the valuation sources and processes defined by the product.
+Each share class has its own share price, expressed in the pool's denomination. It represents the value of one token in that class.
 
-Changes in value are reflected in the token's price per share, which may rise or fall, while the investor's token balance remains unchanged unless tokens are issued, redeemed or transferred.
+The product is valued according to its established valuation methodology. Value is allocated across its share classes, and the issuer records and publishes the resulting share prices through the Management app. A share price may rise or fall while an investor's token balance remains unchanged, unless tokens are issued, redeemed or transferred.
 
-For request-based operations, the price applied when the request is fulfilled determines how many tokens are issued or how much of the redemption asset is returned. This may differ from the price displayed when the investor initially submits the request.
+## Asset prices
+
+An asset price expresses the value of an investment asset accepted by a vault in the pool's denomination. For example, a vault accepting USDC for a USD-denominated pool may use a price of 1.0, while an asset with a different value requires its own price.
+
+## How vaults combine prices
+
+Vaults use the asset price and share price together to convert between investment assets and share tokens.
+
+For a deposit, the investment asset is first valued in the pool's denomination and then converted into shares. For a redemption, the process is reversed to determine how much of the redemption asset is returned.
+
+For request-based operations, the execution prices are set when the request is fulfilled. They may therefore differ from the prices displayed when the investor submitted the request.
+
+Vaults can enforce maximum ages for share and asset prices. If a required price is outdated, an operation cannot settle until an up-to-date price is available.
 
 ## How prices reach every network
 
-A valuation update is published once and propagated to every network where the token is deployed. Investors, apps and integrations therefore reference a consistent price for the share class across its deployments.
+Share and asset price updates are managed from the pool's hub and propagated to the networks where the corresponding tokens and vaults are deployed. This keeps the prices used by investors, apps and integrations aligned across the product's deployments.

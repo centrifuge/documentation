@@ -19,7 +19,7 @@ Each share class is represented by a token, the ownership layer of the product:
 
 - It follows industry token standards, such as ERC-20, making it compatible with common wallets and custody infrastructure.
 - It is issued when an investor subscribes and burned when they redeem.
-- Changes in the value allocated to the share class are reflected in its price per share. The price may rise or fall, while a holder's balance only changes when tokens are issued, redeemed or transferred.
+- It carries the price per share of its class. How that price is set and evolves is covered in [Pricing](/user/concepts/pricing).
 - Depending on its transfer restrictions and available integrations, it can remain fully permissioned or be used across DeFi.
 
-A token can be distributed to several networks while remaining one asset, with one supply and one price. See [Vaults](/user/concepts/vaults) for how distribution works and [Pricing](/user/concepts/pricing) for how the price stays consistent everywhere.
+A token can be distributed to several networks while remaining one asset, with one supply and one price. See [Vaults](/user/concepts/vaults) for how distribution works.
