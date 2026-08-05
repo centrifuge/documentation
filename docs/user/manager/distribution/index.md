@@ -5,14 +5,12 @@ category: subpage
 contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 import vaults from '../images/vaults.jpg';
-import navPanel from '../images/NAV_panel.jpg';
-import updateNav from '../images/update_NAV.jpg';
 import orders from '../images/orders_view.jpg';
 import issue from '../images/issue.jpg';
 
 # Distribution
 
-Distribution is how the product reaches its investors: the vaults they enter and exit through, the price their orders settle at, and the order flow the manager operates day to day.
+Distribution is how the product reaches its investors: the vaults they enter and exit through, and the order flow the manager operates day to day. How the product's valuation and share prices are published is covered in [NAV and share prices](/user/manager/nav).
 
 ## Vaults: the product's execution paths
 
@@ -40,24 +38,6 @@ Several vaults can serve the same token (for example one per investment asset, o
   className="screenshot"
 />
 > Vaults section.
-
-## Pricing (NAV)
-
-Each token's price is derived from the value allocated to its share class and the product's established valuation methodology. The manager records and publishes valuation updates through the Management app, and the protocol propagates them across every network where the token is distributed.
-
-The update can be entered as a total NAV or as a NAV per share. Before submitting, the app previews the resulting price per token on every network where the token is deployed, so the manager sees the current and the new price side by side. Once published, the update is propagated to every network. The app shows the status of each deployment and flags any network still awaiting the update, making price alignment easy to verify.
-
-<img
-  src={updateNav}
-  className="screenshot"
-/>
-> Update NAV modal.
-
-<img
-  src={navPanel}
-  className="screenshot"
-/>
-> The NAV section of the app.
 
 ## Order management
 

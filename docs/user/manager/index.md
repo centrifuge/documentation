@@ -55,12 +55,17 @@ Pools are currently set up through an authorized onboarding process. Once regist
 
   <a className="card-tile" href="/user/manager/distribution">
     <h3>Distribution</h3>
-    <p>Vaults as execution paths, crosschain distribution, pricing and order management.</p>
+    <p>Vaults as execution paths, crosschain distribution and order management.</p>
   </a>
 
   <a className="card-tile" href="/user/manager/asset-liquidity">
     <h3>Asset and liquidity</h3>
     <p>Asset registration, the holdings view and secure on/off-ramps.</p>
+  </a>
+
+  <a className="card-tile" href="/user/manager/nav">
+    <h3>NAV and share prices</h3>
+    <p>How the manager publishes valuations and share prices to every network.</p>
   </a>
 
   <a className="card-tile" href="/user/manager/operations-automation">

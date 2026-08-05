@@ -25,7 +25,9 @@ Additional assets can be registered for use in the pool's balance sheet and oper
 
 ## Holdings
 
-The Holdings view shows the pool's balance sheet per network: each position with its quantity, price and value, and the total value at the top. From the same view, the manager can deposit assets into the balance sheet, withdraw them through the configured off-ramp, and export the holdings for reporting.
+The Holdings view shows the pool's onchain balance sheet per network: each position with its quantity, price and value, and the total value at the top. From the same view, the manager can deposit assets into the balance sheet, withdraw them through the configured off-ramp, and export the holdings for reporting.
+
+Holdings and NAV are related but separate. Holdings shows the pool's onchain balance sheet, while a NAV update publishes the valuation used to determine share prices. See [NAV and share prices](/user/manager/nav).
 
 <img
   src={holdings}
