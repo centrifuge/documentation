@@ -13,7 +13,7 @@ import claim from './images/claim.jpg';
 
 # Investor guide
 
-Centrifuge gives investors direct onchain access to tokenized financial products: funds, yield strategies and other structures published by managers. Investors use the Centrifuge Investment app, directly from their own wallet: they explore the catalog, invest with one of the product's accepted investment assets, receive tokens representing their position and redeem according to the product's terms.
+Centrifuge is the platform that provides investors direct onchain access to the tokenized financial products offered by independent issuers. Investors can use the Centrifuge Investment app directly from their own wallet: they explore offerings, subscribe to a tokenized offering, receive tokens representing their position, and redeem according to the offering terms.
 
 The complexity stays on the platform side. The investor interacts with a simple interface (explore products, invest, track the position, redeem) while permissioning, pricing and settlement run onchain underneath.
 
@@ -21,23 +21,19 @@ The complexity stays on the platform side. The investor interacts with a simple 
   src={home}
   className="screenshot"
 />
-> Investment app home with the products catalog.
+> Investment app home with the open offerings.
 
 ## What investors can invest in
 
-The products available to investors cover a range of structures:
+The offerings available to investors cover a range of tokens covering different use cases and underlying assets:
 
-- **Tokenized funds**: money market, treasury, credit or other pooled vehicles where the token represents a share of the fund and its price tracks the fund's valuation. Each product listing gives the investor access to a specific share token, with its own terms, price and investor requirements.
-- **Products backed by offchain assets**: credit, fixed income, equity or other real-world exposures brought onchain.
+- **Tokenized securities**: the underlying real-world (offchain) assets are regulated securities. Access is permissioned.
 - **DeFi-native yield tokens**: freely transferable tokens that the investor can also trade on exchanges or use as collateral, in addition to investing and redeeming on the platform.
-- **Onchain and blended strategies**: products whose capital is allocated across onchain venues by a curator, or portfolios that combine onchain and offchain assets.
-- **Products that invest in other products**: fund-of-funds and feeder structures whose holdings include share tokens issued by other products.
+- **Blended strategies**: products whose capital is allocated across onchain venues by a curator, or portfolios that combine onchain and/or offchain assets. Permissioning depends on the underlying.
 
-Products can be permissioned, open, or integrated into DeFi. The [Access](#access) section covers what that means for the investor.
+It displays each offering's key terms at a glance (assets under management, APY, asset type, and minimum investment), and each product page expands on them: performance, available networks, facts about the manager, and the product's terms. The product page brings this information together and links to the terms and resources provided by the issuer. It is important to understand that the issuer is providing this information, not Centrifuge. Depending on the underlying assets, structure, and offering terms, investors should carefully check who is providing the information (only the issuer or also third-party independent parties like an administrator or trustee), when it is updated, and whether it can be verified (by an Oracle, etc.).
 
-The catalog shows each product's key terms at a glance (assets under management, APY, asset type and minimum investment), and each product page expands on them: performance, available networks, facts about the manager and the product's terms. The product page brings this information together and links to the terms and resources made available by the manager.
-
-A product is not limited to a single entry point. It can be open on several networks and accept several investment assets. The investor chooses where and how to enter, while the selected share token remains the same and maintains a consistent price across its supported networks and entry points.
+Offerings are not limited to a single blockchain/network. Investors choose where and how to enter, while the selected offering remains the same and maintains a consistent token price across its supported networks.
 
 <img
   src={productPage}
@@ -51,14 +47,14 @@ Every product an investor invests in is built from the same three pieces:
 
 - **Pool**: the onchain representation and management path of a financial structure, whether it originated offchain or is purely onchain. The manager operates the product (investors, orders, pricing, liquidity) through its pool.
 - **Token**: the ownership layer of a share class. It is what the investor holds in their wallet, what carries the price, and what moves, across chains or into DeFi, within the rules of the product.
-- **Vault**: the way in and out of the product. A vault defines the investment asset, network and subscription flow. Deposits may settle instantly or follow a request-based process, while redemptions are processed through requests. A single token can be served by several vaults, so the same product can accept different investment assets and networks.
+- **Vault**: the way in and out of the product. A vault defines the stablecoin, network and subscription flow. Deposits may settle instantly or follow a request-based process, while redemptions are processed through requests. A single token can be served by several vaults, so the same product can accept different stablecoins and networks.
 
-See [Pools](/user/concepts/pools), [Share classes and tokens](/user/concepts/share-tokens) and [Vaults](/user/concepts/vaults) for the background. In the app, this maps to a simple choice. The investor picks the investment asset and network they want to enter with, and the vault behind that choice determines how execution works.
+See [Pools](/user/concepts/pools), [Share classes and tokens](/user/concepts/share-tokens) and [Vaults](/user/concepts/vaults) for the background. In the app, this maps to a simple choice. The investor picks the stablecoin and network they want to enter with, and the vault behind that choice determines how execution works.
 
 ## What the investor needs
 
 - A wallet on one of the networks where the product is distributed, connected to the app.
-- The product's accepted investment asset (for example USDC) and gas for transactions.
+- The product's accepted stablecoin (for example USDC) and gas for transactions.
 - Access to the product, where its terms require it (see below).
 
 ## Access
@@ -71,7 +67,7 @@ Some products require membership. The wallet address must be approved by the man
 - Jurisdictional restrictions
 - Wallet pre-approval
 
-It can apply to investing only, redeeming only, or both, and it is granted per network. Approval on one network does not carry over to another. The app flags when onboarding is required, down to the specific investment asset and network, and points the investor to the manager's onboarding contact. For some products, availability also depends on the investor's jurisdiction, and the app restricts access where required.
+It can apply to investing only, redeeming only, or both, and it is granted per network. Approval on one network does not carry over to another. The app flags when onboarding is required, down to the specific stablecoin and network, and points the investor to the manager's onboarding contact. For some products, availability also depends on the investor's jurisdiction, and the app restricts access where required.
 
 Common restriction profiles include:
 
@@ -88,7 +84,7 @@ Common restriction profiles include:
 
 ## How investing works
 
-The investor invests from the product page: they pick the investment asset and network to enter with, enter the amount, and the app shows the tokens they can expect to receive before confirming. The app guides the remaining steps: the token approval and the investment itself. Depending on the vault behind that choice, execution takes one of two forms:
+The investor invests from the product page: they pick the stablecoin and network to enter with, enter the amount, and the app shows the tokens they can expect to receive before confirming. The app guides the remaining steps: the token approval and the investment itself. Depending on the vault behind that choice, execution takes one of two forms:
 
 - **Instant**: the investor deposits and receives the tokens in the same transaction. Nothing to wait for and nothing to claim.
 - **Request-based**: the deposit becomes an order. The manager processes orders at the product's cadence (often once related offchain operations complete) and the investor then **claims the tokens** in the app. Receiving the tokens is a two-step experience: deposit, then claim.
@@ -121,7 +117,7 @@ The position lives in the investor's wallet, like any other token. On each produ
 
 ## Redeeming
 
-Redemptions follow the order flow on every product: the investor requests a redemption from the product page, sees the estimated amount they will receive, and the manager processes the request at the product's cadence. The investor then claims the funds in the product's investment asset, back in their wallet. The final amount is determined by the price at which the request is processed.
+Redemptions follow the order flow on every product: the investor requests a redemption from the product page, sees the estimated amount they will receive, and the manager processes the request at the product's cadence. The investor then claims the funds in the product's stablecoin, back in their wallet. The final amount is determined by the price at which the request is processed.
 
 For freely transferable tokens, selling on a secondary market is an alternative exit that settles instantly at the market price.
 
@@ -135,6 +131,6 @@ For freely transferable tokens, selling on a secondary market is an alternative 
 
 - **Self-custody**: the investor's position is a token in their own wallet, not an entry in someone's database. Funds in flight sit in onchain escrow, not with the manager.
 - **Transparency**: onchain pricing, positions and order states are surfaced in the app, allowing investors to follow their investment and settlement status.
-- **Access on the investor's terms**: invest from the preferred chain, with the investment asset the product accepts.
+- **Access on the investor's terms**: invest from the preferred chain, with the stablecoin the product accepts.
 - **Liquidity options**: platform redemptions on every product, plus DeFi markets where the token is freely transferable.
 - **Clear responsibilities**: Centrifuge provides the infrastructure, and each product is issued and operated by its manager. Questions about a specific product go to its manager, through the contact details on the product page.
