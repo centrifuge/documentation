@@ -1,37 +1,42 @@
 ---
 id: concepts
 title: Concepts
-contributors: <Graham Nelson:graham@k-f.co>
+contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 
 # Concepts
 
-Centrifuge introduces several core concepts that define how the protocol works. These concepts form the foundation for understanding tokenized strategies, vault behavior, and multi-chain asset management.
-
-Explore these topics to get a clear overview of how Centrifuge fits together.
+This section introduces the core concepts behind products managed through Centrifuge. It explains how pools, share classes, tokens and vaults work together to represent a product onchain, define investor ownership and provide different paths for entering and exiting a product. These concepts apply across different product structures and operating models.
 
 ## Explore
 
 <div className="card-grid">
 
-  <a className="card-tile" href="/user/concepts/tokenization">
-    <h3>Tokenization</h3>
-    <p>Turn real-world or onchain assets into programmable share tokens, backed by smart contract logic.</p>
-  </a>
-    <a className="card-tile" href="/user/concepts/multi-chain">
-    <h3>Multi-Chain Protocol</h3>
-    <p>Access liquidity and interact with vaults on any supported chain, coordinated through a single hub.</p>
-  </a>
-    <a className="card-tile" href="/user/concepts/pools">
+  <a className="card-tile" href="/user/concepts/pools">
     <h3>Pools</h3>
-    <p>Create and manage investment products using share classes, vaults, and permissioned logic.</p>
+    <p>How a pool provides the product's onchain management path and organizes operations across its hub and spokes.</p>
   </a>
-    <a className="card-tile" href="/user/concepts/share-tokens">
-    <h3>Share Tokens</h3>
-    <p>Understand share tokens, permissioning rules, and how ownership is tracked across chains.</p>
+
+  <a className="card-tile" href="/user/concepts/share-tokens">
+    <h3>Share classes and tokens</h3>
+    <p>How share classes structure a product and how their tokens represent ownership.</p>
   </a>
+
   <a className="card-tile" href="/user/concepts/vaults">
     <h3>Vaults</h3>
-    <p>Deposit, redeem, and allocate assets through vaults that support synchronous or asynchronous flows.</p>
+    <p>The entry path into a pool: instant vs request-based execution, multiple assets and networks.</p>
   </a>
+
+  <a className="card-tile" href="/user/concepts/pricing">
+    <h3>Pricing</h3>
+    <p>How product valuations determine token prices and remain consistent across networks.</p>
+  </a>
+
+  <a className="card-tile" href="/user/concepts/access-permissions">
+    <h3>Access and permissions</h3>
+    <p>The memberlist model and the transfer-control patterns, from fully restricted to freely transferable.</p>
+  </a>
+
 </div>
+
+Terms used across the documentation are defined in the [glossary](/getting-started/glossary).

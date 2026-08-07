@@ -2,92 +2,30 @@
 id: pools
 title: Pools
 category: subpage
-contributors: <Graham Nelson:graham@k-f.co>
+contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
+import hubAndSpoke from './images/hub-and-spoke.png';
 
 # Pools
 
-A pool is the core structure that represents an investment product on Centrifuge. Each pool can contain one or more vaults, serve one or multiple investor groups, and be deployed across multiple chains.
+Every product on Centrifuge is built around a pool. This page covers the pool itself and the hub-and-spoke structure it runs on. The tokens a pool issues are covered in [Share classes and tokens](/user/concepts/share-tokens).
 
-Pools are created and managed by issuers or curators, who configure how capital is accepted, tracked, and distributed.
+## The pool
 
-## What is a pool?
+A pool is the onchain representation and management path of a financial product. Whether the product originated offchain (a fund, a credit strategy) or is purely onchain, the pool is where it lives and where it is operated: it maintains the product's onchain balance sheet, defines the share classes, and is the place from which the manager controls investor access, orders, pricing and liquidity.
 
-A pool brings together everything needed to run a tokenized investment strategy:
+Everything else in Centrifuge hangs off a pool: [tokens](/user/concepts/share-tokens) represent claims on it, [vaults](/user/concepts/vaults) are entry points into it, and [permissions](/user/concepts/access-permissions) govern who can interact with it.
 
-- Share tokens for investors
-- Vaults to manage deposits and redemptions
-- Pricing logic and valuation updates
-- Permissions and investor rules
+## Hub and spokes
 
-Each pool has a unique ID and is anchored on a single hub chain. From there, it can operate across any number of supported spoke chains.
+Internally, every pool is organized in a hub-and-spoke structure. It matters to the manager because it defines where each part of the product runs:
 
-## Pools can include:
+- **Hub**: the pool's control and accounting center, on the hub chain chosen at launch. Permissions and roles, pricing and accounting, and the processing of orders live here. The manager operates the product from its hub.
+- **Spokes**: the networks where the product meets investors. Each spoke holds the token's local deployment, its vaults and the pool's balance sheet on that network, including its on/off-ramps.
 
-- **Multiple vaults**, each with its own logic or currency
-- **Multiple share classes**, such as junior/senior tranches
-- **Custom permissions**, including investor whitelisting and redemption restrictions
+A pool has one hub and as many spokes as networks it distributes on, kept in sync by the protocol's messaging. Hub and spoke are roles, not separate systems. A spoke can live on the hub's own chain. A product distributed only there still has both, with operations between them settling directly on that chain.
 
-## Share classes and share tokens
-
-Each pool contains one or more **share classes**, which define how tokens are issued and what claims investors have.
-
-- Every share class issues its own token
-- Tokens follow the ERC-20 standard, with optional compliance rules
-- Tokens can be permissioned or fully open depending on the configuration
-
-For example, a pool might include:
-
-- A permissioned senior share class for institutional investors
-- A permissionless junior share class for open access
-
-## Vaults within a pool
-
-Each share class can be connected to one or more vaults. Vaults are deployed to spoke chains where users invest and redeem.
-
-- Vaults define how assets flow into and out of the pool
-- Vaults can use synchronous or asynchronous flows
-- Assets are tracked and settled across chains through the Hub
-
-For more, see the [Vaults](/user/concept/vaults) section.
-
-## Creating a pool
-
-When creating a pool, managers choose:
-
-- A hub chain (for central control)
-- A base currency (e.g. USD, USDC)
-- Share classes and their names, symbols, and metadata
-- Permissioning rules for each share class
-
-After setup, the pool is registered across selected networks and ready to accept deposits.
-
-## Managing a pool
-
-Pool managers are responsible for maintaining and updating:
-
-- **Share prices**, which determine how much each token is worth
-- **Asset prices**, especially in multi-asset vaults
-- **Investment requests**, including approval, issuance, and redemption flows
-
-All of this is coordinated through the Hub chain, even if users are interacting from other chains.
-
-For asynchronous vaults, requests go through a lifecycle that includes:
-
-1. **Pending**: The user submits a deposit or redemption
-2. **Approved**: The request is confirmed and capital is unlocked
-3. **Issued or revoked**: The share price is applied
-4. **Fulfilled**: The vault is updated
-5. **Claimed**: The user receives their shares or assets
-
-Vaults using synchronous deposits (ERC-4626) skip this process, shares are minted immediately upon deposit.
-
-## Summary
-
-Pools are the foundation for every product in Centrifuge. They allow managers to launch customizable, multi-chain investment strategies with:
-
-- Multiple share classes and investor types
-- Vaults tailored to capital flow and liquidity needs
-- Cross-chain operations, all coordinated through one hub
-
-Whether you're launching a tokenized fund or investing in a diversified strategy, everything starts with a pool.
+<img
+  src={hubAndSpoke}
+/>
+> One hub controls and accounts for the product. Each distribution network is a spoke, including, if the manager chooses, the hub chain itself.
