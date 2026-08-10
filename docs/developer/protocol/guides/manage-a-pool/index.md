@@ -9,57 +9,6 @@ contributors:
 
 This guide outlines how to manage a pool on the Centrifuge protocol.
 
-## Price updates
-
-Each pool on the Centrifuge protocol can have multiple share classes. The price of each share token must be maintained and updated to reflect its current value. This price is managed at the protocol level through the Hub contract.
-
-To update the token price for a specific share class in a pool, call the following function on the Hub:
-
-```solidity
-hub.updateSharePrice(poolId, scId, sharePrice, uint64(block.timestamp));
-```
-
-* `poolId`: the unique identifier of the pool
-* `scId`: the identifier of the share class within the pool
-* `sharePrice`: the new price of the share token (18 decimal fixed point integer)
-* `uint64(block.timestamp)`: timestamp when the price was computed
-
-:::info[On-chain pricing]
-Currently, the pricing mechanism is intended to be provided by an off-chain computation. In the future, on-chain price calculations will be implemented, using the holdings and double-entry bookkeeping accounting mechanism of the Hub.
-:::
-
-### Pushing to price oracles
-
-After updating the share token price, it must be pushed to the price oracle on each deployed network. This ensures that other contracts and off-chain components can retrieve the latest share price.
-
-To notify the price oracle, call the following function:
-
-```solidity
-hub.notifySharePrice{value: gas}(poolId, scId, centrifugeId, msg.sender);
-```
-
-* `poolId`: the identifier of the pool whose share price was updated
-* `scId`: the share class identifier for which the price was updated
-* `centrifugeId`: the network identifier where the oracle should receive the updated price
-* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
-* `msg.sender`: Address to receive any excess gas refund
-
-
-### Updating and pushing asset prices
-
-Since multiple assets can be used to invest in the same pool, the price of the asset denominated in the currency of the pool (e.g. USD) also needs to be set.
-
-By default, this price is assumed to be `1.0`, implying a 1-to-1 peg between all assets.
-
-This needs to be pushed to the asset price oracle on each network once:
-
-```solidity
-hub.notifyAssetPrice{value: gas}(poolId, scId, assetId, msg.sender);
-```
-
-* `gas`: The amount of native currency to cover cross-chain messaging costs (excess will be refunded)
-* `msg.sender`: Address to receive any excess gas refund
-
 ## Managing investment requests
 
 Investment requests, whether deposits or redemptions, are submitted by users through vaults operating on various chains. Despite being initiated on different networks, these requests are managed centrally on the Hub chain. This ensures consistent processing and coordination across the entire protocol.

@@ -1,0 +1,58 @@
+name: Link check
+
+# Catches broken links in the docs: dead external links (404s, etc.) and
+# malformed URL schemes (e.g. a "ttps://" typo). Internal links are validated
+# by the Docusaurus build (see build.yml).
+on:
+  pull_request:
+    paths:
+      - docs/**
+      - scripts/check-link-schemes.mjs
+      - lychee.toml
+      - .github/workflows/link-check.yml
+  workflow_dispatch:
+
+jobs:
+  # Fast, deterministic, no network. Runs over all docs.
+  malformed-schemes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - name: Check for malformed link schemes
+        run: node scripts/check-link-schemes.mjs
+
+  # Checks external links reachable. On a PR it only checks the changed docs
+  # files, so a PR is judged on the links it touches. A manual run
+  # (workflow_dispatch) checks the whole docs tree.
+  dead-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine files to check
+        id: scope
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            files=$(git diff --name-only --diff-filter=d \
+              "${{ github.event.pull_request.base.sha }}" \
+              "${{ github.event.pull_request.head.sha }}" \
+              -- docs | grep -E '\.mdx?$' || true)
+          else
+            files=$(git ls-files docs | grep -E '\.mdx?$')
+          fi
+          files=$(echo "$files" | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          [ -z "$(echo "$files" | tr -d ' ')" ] && echo "empty=true" >> "$GITHUB_OUTPUT" || true
+
+      - name: Check links with lychee
+        if: steps.scope.outputs.empty != 'true'
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --config lychee.toml --no-progress ${{ steps.scope.outputs.files }}
+          fail: true
+          token: ${{ secrets.GITHUB_TOKEN }}
