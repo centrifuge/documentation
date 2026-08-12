@@ -16,9 +16,6 @@ The third version of the Centrifuge protocol, designed for scalable, permissionl
 **RWA (Real-World Asset)**  
 A physical or offchain financial asset such as bonds, real estate, or private credit that is tokenized onchain.
 
-**RWA Launchpad**  
-The no-code interface for issuers to configure, deploy, and manage tokenized financial products using Centrifuge contracts.
-
 **Hub chain**  
 The central coordination chain for a pool. Manages accounting, permissions, share prices, and controls interactions across spoke chains.
 
@@ -50,10 +47,10 @@ An ERC-20 token representing user ownership in a specific share class. Issued wh
 A smart contract that manages deposits, redemptions, and asset allocations for a specific strategy. Vaults can be synchronous or asynchronous.
 
 **Synchronous vault (ERC-4626)**  
-A vault where deposits are fulfilled immediately. Shares are minted on deposit; redemptions are typically processed asynchronously.
+A vault with instant execution: deposits are fulfilled immediately and shares are minted in the same transaction. Redemptions remain request-based.
 
 **Asynchronous vault (ERC-7540)**  
-A vault where deposits and redemptions are request-based and processed in batches. Useful for offchain or delayed asset management.
+A vault with request-based execution: deposits and redemptions become orders that the manager processes, and the investor then claims the result. Useful for offchain or delayed asset management.
 
 **Pooled vault (ERC-7575)**  
 A share token that collects value across multiple vaults. Enables strategies with multiple currencies or layered structures.
@@ -63,6 +60,15 @@ The identifier for a specific investment currency (ERC-20 or ERC-6909) used in a
 
 **NAV (Net Asset Value)**  
 The total value of a vault or share class, representing its current worth based on asset prices and liabilities.
+
+**Balance sheet**  
+The pool's onchain record of the assets it holds.
+
+**Deposit capacity**  
+The bound a manager sets on how much liquidity a synchronous vault accepts.
+
+**On/off-ramp**  
+The manager-side rails that control how assets move in and out of a pool: accepted assets, authorized relayers and approved withdrawal addresses.
 
 ## Token standards
 
@@ -83,8 +89,8 @@ A standard that enables a single token to represent positions across multiple va
 
 ## User roles
 
-**Issuer**  
-Deploys a new pool using the RWA Launchpad. Responsible for onboarding assets and configuring structure and compliance.
+**Manager**  
+Structures a financial product and operates it onchain through a pool. Responsible for its tokens, investor access, pricing and distribution.
 
 **Curator**  
 Designs and manages tokenized strategies by composing assets, vaults, and rules. May or may not involve RWAs.
@@ -102,3 +108,15 @@ The act of converting share tokens back into the original asset or currency, usu
 
 **Composability**  
 The ability of Centrifuge assets to integrate into DeFi protocols and strategies.
+
+**Memberlist**  
+The set of addresses approved by the manager to interact with a product. Maintained per network: approval on one network does not carry over to another.
+
+**Order**  
+A deposit or redemption request waiting to be processed by the manager.
+
+**Claim**  
+The final step of a request-based operation: collecting the tokens (after a deposit) or the funds (after a redemption) once the manager has processed the order.
+
+**Freeze**  
+The manager's ability to block a specific address from operating with the token.

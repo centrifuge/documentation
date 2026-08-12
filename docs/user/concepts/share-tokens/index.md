@@ -1,77 +1,25 @@
 ---
 id: share-tokens
-title: Share Tokens
+title: Share classes and tokens
 category: subpage
-contributors: <Graham Nelson:graham@k-f.co>
+contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 
-# Share Tokens
+# Share classes and tokens
 
-In Centrifuge, tokens represent ownership in a vault or pool. They are the interface for investors to hold, redeem, or interact with tokenized strategies.
+A [pool](/user/concepts/pools) reaches its investors through share classes and their tokens. This page covers how classes structure a product and what the token represents.
 
-Each token follows standard Ethereum formats, but can also include additional logic for permissioning, compliance, or cross-chain behavior.
+## Share classes
 
-## Share tokens
+A pool contains one or more share classes. Each share class has its own token and can define distinct economic terms, pricing and investor permissions. A single product can serve different investor bases through different classes, for example a permissioned institutional class and a freely transferable class distributed through DeFi, both backed by the same pool.
 
-Every share class in a pool has its own **share token**. These tokens:
+## The token: ownership layer
 
-- Represent a claim on the pool’s assets or yield  
-- Follow the ERC-20 standard (so they work in most wallets and DeFi apps)  
-- Are issued when a user deposits, and burned when they redeem  
-- Are **price-accruing**, meaning their value increases over time rather than their balance increasing
+Each share class is represented by a token, the ownership layer of the product:
 
-Share tokens are deployed on **spoke chains** where users interact with vaults.
+- It follows industry token standards, such as ERC-20, making it compatible with common wallets and custody infrastructure.
+- It is issued when an investor subscribes and burned when they redeem.
+- It carries the price per share of its class. How that price is set and evolves is covered in [Pricing](/user/concepts/pricing).
+- Depending on its transfer restrictions and available integrations, it can remain fully permissioned or be used across DeFi.
 
-### Example
-
-A pool might include:
-
-- A senior share token: permissioned for institutional investors  
-- A junior share token: open to all users  
-
-Both tokens exist across the same spoke chains, but have different rules and risk profiles.
-
-## Permissioning
-
-Not all share tokens are open to everyone. Depending on the pool configuration, tokens can include **transfer restrictions**.
-
-Centrifuge supports multiple permissioning options:
-
-- **Fully permissionless**: anyone can invest, redeem, or transfer  
-- **Restricted redemptions**: deposits are open, but redemptions require approval  
-- **Full restrictions**: all transfers require whitelisting  
-- **Freeze only**: users are unrestricted unless explicitly frozen  
-
-This is enforced using smart contract hooks that control who can interact with the token.
-
-## Token behavior across chains
-
-Although a token may be visible on multiple chains, it behaves as **one unified asset**. The Hub coordinates:
-
-- Total supply  
-- Valuation  
-- Redemption logic  
-
-Users can invest or redeem on any chain where the vault is deployed. All state changes are synced through Centrifuge’s messaging system.
-
-## How token pricing works
-
-Each token has a **price per share** that is updated by the pool manager on the Hub. This price reflects the value of the vault’s underlying assets and is used to:
-
-- Issue the correct number of shares when someone deposits  
-- Calculate how much someone receives when redeeming  
-
-Prices are pushed to local oracles on each chain so external contracts and apps can retrieve the current value.
-
-Because tokens are price-accruing, the token balance in your wallet stays constant, but its value increases over time as the strategy yields returns.
-
-## Summary
-
-Tokens in Centrifuge give users access to onchain investment strategies in a familiar ERC-20 format, but with built-in support for:
-
-- Compliance and permissioning  
-- Accurate cross-chain accounting  
-- Price-accruing logic that reflects value growth  
-- Integration with wallets, DeFi protocols, and oracles  
-
-Whether you’re holding tokens in your wallet or using them in DeFi, they represent real positions in tokenized, managed assets.
+A token can be distributed to several networks while remaining one asset, with one supply and one price. See [Vaults](/user/concepts/vaults) for how distribution works.

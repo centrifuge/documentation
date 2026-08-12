@@ -1,89 +1,78 @@
 ---
 id: curator
 title: Curator
-contributors: <Graham Nelson:graham@k-f.co>
+category: subpage
+contributors: <Alonso Rodriguez:alonso@centrifuge.io>
 ---
 
-# Curators
+import onchainPM from './images/onchainPM.jpg';
+import subscribe from './images/subscribe.jpg';
 
-Curators are strategy designers within the Centrifuge protocol. They create and manage tokenized investment products by configuring vaults, allocating capital, and managing performance. Centrifuge serves as the strategy execution layer—giving curators a programmable, chain-abstracted platform for building custom structured products.
+# Curator guide
 
-Unlike issuers, curators do not originate RWAs. Instead, they compose strategies using existing assets—including RWA vault tokens, DeFi primitives, or other Centrifuge pools.
+Curators design and operate allocation strategies using the same infrastructure managers use for tokenized products. In the curator role, they focus on allocating a pool's capital across onchain venues (including other tokenized products, DeFi protocols and liquidity across networks) rather than originating the underlying assets. The resulting strategy can be fully onchain or form the onchain allocation layer of a blended product.
 
-## Two types of curator strategies
+This guide covers what is specific to curators, which is executing a strategy through the Onchain Portfolio Manager (Onchain PM). Everything else about operating the product (tokens, vaults, investors, pricing) works as described in the [manager guide](/user/manager).
 
-### 1. Direct-to-user strategies
+## What curators do
 
-In this model, curators configure vaults that users can deposit into directly. These vaults are typically structured around a single asset strategy and may use:
+A curated product uses the same pool structure as other products. Investors subscribe and redeem through vaults and hold the share token of their share class. What distinguishes the curator role is how capital is allocated. The curator can compose a strategy from onchain building blocks, either as a fully onchain product or as part of a broader blended strategy:
 
-- A stablecoin yield vault
-- A Centrifuge pool token (e.g. Anemoy RWA vault)
-- A fixed-income DeFi position
+- **Other tokenized products**: subscribing to the share tokens of other pools, in fund-of-funds or feeder structures.
+- **DeFi venues**: deploying liquidity into established protocols, such as lending markets or yield strategies.
+- **Multiple networks**: placing the product's liquidity where it is needed, across the networks the product operates on.
 
-Users interact directly with the vault. The curator manages allocation, fees, and performance reporting.
+These onchain positions make the strategy auditable end to end. Holdings and operations are recorded onchain, while their accounting values are reflected in the pool's balance sheet as prices are updated.
 
-**Example**:  
-A curator creates a USDC-denominated vault that allocates into a leveraged LRT/ETH strategy. Users deposit directly into the vault.
+## The Onchain PM
 
-### 2. Multi-layered strategies via vault tokens
+Executing a strategy involves recurring operations: subscribing, redeeming, rebalancing, moving liquidity. The Onchain PM is the pool's execution layer for these operations, built around a separation of duties:
 
-Curators can also build **meta-vaults** by depositing vault tokens (ERC-20) from underlying strategies into a higher-level structure. This enables feeder-fund-style products and simplifies downstream integrations.
+- **The manager defines what is allowed.** The manager selects the workflows available to each operator and configures their parameters and limits.
+- **The operator executes within those boundaries.** An authorized operator runs the approved workflows when the strategy requires it. Operations outside the approved set, or beyond the configured limits, do not execute.
 
-All capital flows into the base Centrifuge strategy vault. The curator only needs to manage one vault at the execution layer—simplifying rebalancing, reporting, and risk.
+Curator describes responsibility for the investment strategy, while manager and operator describe onchain permissions. Depending on the operating model, the curator may act as manager or operator, or delegate execution to another party. These boundaries are enforced onchain, allowing routine operations to be delegated without granting unrestricted control over the pool's configuration or assets.
 
-**Example**:  
-- Vault A (e.g. Anemoy) holds RWAs  
-- Vault B (e.g. LRT strategy) holds staked ETH positions  
-- Curator creates Vault C that deposits into both A and B  
-- Vault C tokens are deposited into an external aggregator (e.g. Morpho)
+Before submission, the app can simulate a workflow and preview its expected effect based on the current onchain state. The steps submitted in a transaction execute atomically on the originating network. Crosschain operations initiate a separate settlement process on the destination network.
 
-This pattern supports composability and abstraction while maintaining a single point of capital execution.
+<img
+  src={onchainPM}
+  className="screenshot"
+/>
+> Workflow section.
 
-## Why build strategies on Centrifuge?
+For the underlying mechanism, see the [onchainPM](/developer/protocol/managers/merkle-proof-manager/) in the developer documentation.
 
-- **Multi-currency vault infrastructure**  
-  Native support for multiple investment assets and ERC-7575 pooled vaults.
+## What can be automated
 
-- **Composable DeFi & RWA integration**  
-  Combine yield-bearing DeFi tokens and tokenized RWAs in a single strategy.
+The workflow catalog turns recurring operations into repeatable, pre-approved flows. An operator triggers a workflow, which then executes its configured sequence of actions.
 
-- **Protocol-level abstraction**  
-  Manage investment operations cross-chain from a single Hub deployment.
+Workflows are not written by the curator. They are provided by the platform as a curated catalog. Each workflow is a fixed sequence of actions with pinned, verified contract addresses, reviewed under a security framework before release, and identified by a deterministic hash. What the manager approves is exactly what the operator can execute, nothing else. The catalog is versioned and expands over time, so new workflows and integrations become available to managers as they are released.
 
-- **Custom vault configuration**  
-  Choose between synchronous (ERC-4626) and asynchronous (ERC-7540) flows—or mix both.
+The catalog covers the main families of operations an onchain strategy needs:
 
-- **Fine-grained control via Merkle Proof Manager**  
-  Restrict interactions, define strategy rules, and automate execution.
+- **Investing in other tokenized products**: a workflow for each stage of the investment lifecycle against another pool: Subscribe, Claim subscription, Redeem and Claim redemption, covering both instant and request-based products.
+- **DeFi venues**: supplying and withdrawing liquidity in established lending markets and yield vaults, including leveraged strategies, and swapping assets where the strategy requires it.
+- **Moving liquidity across networks**: sending the product's stablecoins between the networks it operates on and claiming them on the destination network, and transferring share tokens across chains for products distributed on several networks.
+- **Accounting and price updates**: per-token accounting update and redeem position accounting update workflows that reprice the pool's onchain positions, so its net asset value (NAV) and share price reflect them accurately, and sync the updated prices to every network.
 
-## NAV management
+### Guardrails
 
-Curators are responsible for managing the Net Asset Value (NAV) of their pools. This includes:
+Approved workflows operate within controls configured by the manager:
 
-- Tracking underlying asset prices
-- Updating NAV onchain
-- Ensuring accurate pricing for deposits and redemptions
+- **Policy restrictions**: only workflows assigned to the operator can execute.
+- **Fixed parameters**: addresses, assets or other sensitive inputs can be fixed when the workflow is approved.
+- **Slippage protection**: limits acceptable value loss per execution and cumulatively over a period.
+- **Circuit breakers**: rolling limits can cap how much value moves within a configured period.
 
-## Custom UI and integrations
+If an onchain guardrail rejects a workflow, the transaction reverts and its local actions are rolled back.
 
-Curators can build custom user interfaces to:
+<img
+  src={subscribe}
+  className="screenshot"
+/>
+> Workflow execution view with its simulation summary.
 
-- Streamline investor UX
-- Control branding and messaging
-- Build analytics or dashboards
+## The result
 
-## Merkle Proof Manager
-
-> Learn more: [Merkle Proof Manager →](/developer/protocol/managers/merkle-proof-manager/)
-
-The Merkle Proof Manager allows curators to enforce programmable strategies by limiting allowed contract calls.
-
-### Benefits
-
-- Enforces only whitelisted interactions with external protocols
-- Locks vault logic into predefined flows
-- Enables secure integration with external DeFi protocols
-
-## Summary
-
-Centrifuge gives curators a robust foundation to define, launch, and scale onchain strategies. Whether building direct-to-user vaults or composing layered feeder products, curators benefit from composable infrastructure, chain abstraction, and secure capital management.
+Curators can separate strategy control from routine execution while retaining onchain enforcement and auditability. Managers define the permitted workflows and guardrails, while operators execute them without receiving unrestricted control over the pool's assets.
