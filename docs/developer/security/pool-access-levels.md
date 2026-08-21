@@ -82,7 +82,7 @@ The protocol ships [`BatchRequestManager`](https://github.com/centrifuge/protoco
 The request manager role carries no custody rights on its own. Moving assets in or out of the pool escrow and issuing or revoking share tokens require the balance sheet manager role, which is granted separately. In the default deployment the same contract holds both, so `AsyncRequestManager` is also a balance sheet manager.
 
 :::info[Settlement decisions belong to the hub manager]
-Approving requests and pricing them are not powers of the request manager role. On `BatchRequestManager`, `approveDeposits`, `approveRedeems`, `issueShares`, `revokeShares`, `forceCancelDepositRequest`, and `forceCancelRedeemRequest` are all gated on the caller being a hub manager of the pool, and each takes a price supplied by that caller. A hub manager that stops approving can stall redemptions indefinitely.
+Approving requests and pricing them are not powers of the request manager role. On `BatchRequestManager`, `approveDeposits`, `approveRedeems`, `issueShares`, `revokeShares`, `forceCancelDepositRequest`, and `forceCancelRedeemRequest` are all gated on the caller being a hub manager of the pool, and each takes a price supplied by that caller. A hub manager that stops approving can stall redemptions indefinitely, though `notifyDeposit` and `notifyRedeem` are permissionless, so no role can prevent an investor from claiming a request that has already settled.
 :::
 
 See [manage a pool](/developer/protocol/guides/manage-a-pool/) for the request lifecycle and [deploy vaults](/developer/protocol/guides/deploy-vaults/) for the setup calls.
@@ -152,13 +152,6 @@ This complements the protocol-level pause mechanism, controlled by the [guardian
 * Block outgoing messages for their pool on a specific destination chain.
 
 This provides a pool-level circuit breaker. If suspicious activity is detected, the pool's gateway manager can halt cross-chain operations for that pool without affecting other pools or requiring a protocol-wide pause.
-
-### Any address
-
-#### Capabilities
-
-* Trigger an onramp deposit for an asset the pool has enabled, after transferring the tokens to the on/off ramp contract (`OnOffRamp.deposit`).
-* Push a claim for a settled request (`BatchRequestManager.notifyDeposit`, `notifyRedeem`). These are permissionless, so no role can prevent an investor from claiming once shares have been issued or revoked.
 
 ## Multi-adapter security
 
