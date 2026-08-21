@@ -18,7 +18,7 @@ Hub managers can:
 * Set share and asset prices
 * Manage onchain accounting (journal entries, holdings, valuations)
 * Deploy vaults and notify remote chains
-* Assign balance sheet managers, [request managers](/developer/protocol/guides/manage-a-pool/), and gateway managers
+* Assign balance sheet managers, [request managers](#request-manager), and gateway managers
 * Configure cross-chain adapter sets per destination chain
 
 Multiple addresses can hold the hub manager role simultaneously, enabling multisig workflows or delegation to operational tooling.
@@ -39,6 +39,32 @@ Balance sheet managers can:
 * Submit queued asset and share updates to the hub
 
 This separation means asset custody operations are independent from pool configuration. A balance sheet manager cannot modify share classes, change prices, or alter the pool's accounting structure.
+
+## Request manager
+
+The request manager runs the deposit and redemption request lifecycle for a pool. The hub manager assigns it by calling `setRequestManager` on the [`Hub`](https://github.com/centrifuge/protocol/blob/main/src/core/hub/interfaces/IHub.sol) contract. A single call registers the hub-side manager for the pool and target chain, and propagates the spoke-side manager address to that chain.
+
+The role has two halves:
+
+* **Hub-side request manager** ([`IHubRequestManager`](https://github.com/centrifuge/protocol/blob/main/src/core/hub/interfaces/IHubRequestManager.sol)): registered per pool and per remote chain. It is the only address the hub accepts request callbacks from, so it is the only actor that can tell a spoke chain that deposits were approved, that shares were issued or revoked, or that a request was fulfilled.
+* **Spoke-side request manager** ([`ISpokeRequestManager`](https://github.com/centrifuge/protocol/blob/main/src/core/spoke/interfaces/ISpokeRequestManager.sol)): registered per pool on each spoke chain. It is the only address allowed to forward investor requests from that chain to the hub.
+
+Request managers can:
+
+* Approve pending deposit and redeem requests in batches, at an asset price supplied by the caller
+* Issue and revoke shares for approved batches, at a share price supplied by the caller
+* Force-cancel a request, but only where the investor has already submitted a cancellation
+* Forward investor requests from a spoke chain to the hub, and deliver the resulting callbacks back to the vault
+
+Request managers cannot configure share classes, set pool prices, touch holdings or accounting, or change adapters. The role also carries no custody rights on its own. Moving assets in or out of the pool escrow and issuing or revoking share tokens require the balance sheet manager role, which is granted separately. In the default deployment the same contract holds both roles, so the spoke-side request manager is also a balance sheet manager.
+
+Claiming stays outside the role. Once shares are issued or revoked, `notifyDeposit` and `notifyRedeem` are permissionless, so a request manager cannot stop an investor from claiming a settled request.
+
+:::warning
+Approval and issuance prices are supplied by the request manager, and approvals are manager-initiated. A request manager that stops approving can stall redemptions, and pools should treat the role as price-critical. Setting it to an address that cannot handle requests halts all deposit and redeem flow for that pool on that chain.
+:::
+
+The protocol ships [`BatchRequestManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/BatchRequestManager.sol) as the hub-side implementation, which maintains the epoch and batching logic, and [`AsyncRequestManager`](https://github.com/centrifuge/protocol/blob/main/src/vaults/AsyncRequestManager.sol) as the spoke-side implementation for asynchronous vaults. See [manage a pool](/developer/protocol/guides/manage-a-pool/) for the request lifecycle and [deploy vaults](/developer/protocol/guides/deploy-vaults/) for the setup calls.
 
 ## On/off ramp manager
 
