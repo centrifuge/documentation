@@ -5,7 +5,7 @@ const redirects = [
   // Cent-node redirects
   {
     from: "/cent-node/further-reading/testnets/",
-    to: "/developer/legacy/centrifuge-chain/networks/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/cent-node/getting-started/chain-account/",
@@ -55,19 +55,19 @@ const redirects = [
   // Chain redirects
   {
     from: "/chain/ethereum-bridge/about/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/chain/ethereum-bridge/bridge-operations/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/chain/further-resources/resources/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/chain/get-started/account/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/chain/get-started/run-node/",
@@ -75,7 +75,7 @@ const redirects = [
   },
   {
     from: "/chain/get-started/validate/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/chain/governance/about-governance/",
@@ -83,7 +83,7 @@ const redirects = [
   },
   {
     from: "/chain/overview/testnets/",
-    to: "/developer/legacy/centrifuge-chain/networks/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/chain/overview/introduction/",
@@ -123,15 +123,15 @@ const redirects = [
   // NFTs redirects
   {
     from: "/nfts/overview/anatomy/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/nfts/overview/introduction/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/nfts/overview/verification/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
 
   // 2024 Layout Update redirects
@@ -241,7 +241,7 @@ const redirects = [
   },
   {
     from: "/use/contribute-network/",
-    to: "/developer/legacy/centrifuge-chain/contributing/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/use/cfg-bridge/",
@@ -251,7 +251,7 @@ const redirects = [
   // Build section redirects
   {
     from: "/build/cent-chain/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/build/tinlake/",
@@ -279,23 +279,23 @@ const redirects = [
   },
   {
     from: "/developer/centrifuge-chain/overview/",
-    to: "/developer/legacy/centrifuge-chain/overview/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/developer/centrifuge-chain/codebase/",
-    to: "/developer/legacy/centrifuge-chain/codebase/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/developer/centrifuge-chain/networks/",
-    to: "/developer/legacy/centrifuge-chain/networks/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/developer/centrifuge-chain/evm/",
-    to: "/developer/legacy/centrifuge-chain/evm/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/developer/centrifuge-chain/contributing/",
-    to: "/developer/legacy/centrifuge-chain/contributing/",
+    to: "/getting-started/legacy/centrifuge-v2/",
   },
   {
     from: "/developer/pod/",
