@@ -158,9 +158,9 @@ snapshots, and cross-chain messages.
 
 ## Deployments
 
-Protocol v3.1.0 deployed on 9 chains: Ethereum, Base, Arbitrum, Avalanche, Plume, Binance Smart Chain,
-Optimism, HyperEVM, and Monad. Core contracts deployed at identical addresses across all chains. 21+ audits
-and 4 independent security reviews.
+Protocol v3.1.0 deployed on 11 chains: Ethereum, Base, Arbitrum, Avalanche, Plume, BNB Smart Chain, Optimism, HyperEVM, Monad, Pharos, X Layer. Fund share tokens are additionally issued natively on Solana and Stellar.
+Core contracts deployed at identical addresses across all chains. 
+Security: 28 protocol security reviews and audits to date, listed at https://docs.centrifuge.io/developer/security/audits. 
 
 ## Resources
 

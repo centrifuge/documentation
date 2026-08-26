@@ -57,6 +57,7 @@ const NETWORK_IDS = {
   optimism: '10',
   monad: '11',
   pharos: '12',
+  x layer: '13',
 };
 // Non-EVM networks are not covered by the API address lookups below; skip them.
 const NON_EVM_IDS = new Set(['7', '8']);
