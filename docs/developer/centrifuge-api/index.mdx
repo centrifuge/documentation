@@ -130,6 +130,45 @@ A vault is the entry point for investors on a specific chain. Each vault connect
 
 </GraphQLExplorer>
 
+## Assets
+
+<GraphQLExplorer
+  query={`query GetAssetIdByAddress {
+  assets(
+    where: {
+      blockchainId: "11155111"
+      address: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    }
+    limit: 1
+  ) {
+    items {
+      id
+      assetId
+      address
+      name
+      symbol
+      decimals
+      blockchain {
+        id
+        name
+        centrifugeId
+      }
+    }
+  }
+}`}
+>
+
+Resolve the protocol `assetId` for a deposit asset from its EVM contract address and chain. Filter by `blockchainId` (numeric chain ID, e.g. `11155111` for Ethereum Sepolia, `1` for Ethereum mainnet) and `address` (checksummed or lowercase EVM address). The returned `assetId` is the uint128 identifier used in vault wiring, balance sheet calls, and SDK helpers such as `AssetId.from(centrifugeId, assetCounter)`.
+
+| Filter | Type | Description |
+|--------|------|-------------|
+| `blockchainId` | `BigInt` | Numeric chain ID the asset is registered on |
+| `address` | `String` | ERC-20 / ERC-6909 contract address |
+| `assetId` | `BigInt` | Protocol asset identifier |
+| `centrifugeId` | `String` | Centrifuge chain identifier for the spoke |
+
+</GraphQLExplorer>
+
 ## Holdings
 
 <GraphQLExplorer
