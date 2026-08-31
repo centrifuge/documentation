@@ -95,6 +95,12 @@ const config: Config = {
       indexName: "centrifuge",
       contextualSearch: true,
       insights: false,
+      askAi: {
+        assistantId: "QnXp61BFNAyf",
+        appId: "Q7BQ8D4TVA",
+        apiKey: "2a75cfd883570849b5343da30e1a7f6c",
+        indexName: "centrifuge",
+      },
     },
   } satisfies Preset.ThemeConfig,
   stylesheets: [
