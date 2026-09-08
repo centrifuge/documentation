@@ -6,9 +6,10 @@ title: Overview
 # Overview
 
 Centrifuge security highlights:
-* 24 security reviews to date for the Centrifuge protocol, including tier-1 audit firms Spearbit and Blackthorn.
+* 33 security reviews to date for the Centrifuge protocol, including tier-1 audit firms Spearbit and Blackthorn.
 * Launched on mainnet in 2019, 0 exploits.
 * $250,000 bug bounty program live on [Cantina](https://cantina.xyz/bounties/6cc9d51a-ac1e-4385-a88a-a3924e40c00e).
+* Real-time onchain monitoring through [Hypernative](https://www.hypernative.io/).
 
 The protocol codebase is fully immutable, and any emergency functions are locked behind a 48-hour timelock.
 
@@ -35,7 +36,7 @@ The protocol codebase is fully immutable, and any emergency functions are locked
 
   <a className="card-tile" href="/developer/security/application-security">
     <h3>Application security</h3>
-    <p>Access controls, infrastructure isolation, network protection, and continuous monitoring.</p>
+    <p>Access controls, infrastructure isolation, network protection, and Hypernative onchain monitoring.</p>
   </a>
 
   <a className="card-tile" href="/developer/security/operational-security">

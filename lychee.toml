@@ -44,6 +44,11 @@ exclude = [
   "explorer\\.plume\\.org",
   "solscan\\.io",
   "stellar\\.expert",
+  # X blocks unauthenticated automated requests (403); profiles resolve in a browser.
+  "^https://x\\.com/",
+  # Substack blocks requests from datacenter IPs such as CI runners (403); these
+  # articles resolve in a browser.
+  "^https://getrecon\\.substack\\.com/",
   # Medium bot-blocks automated requests (403); these articles resolve in a browser.
   "^https://medium\\.com/centrifuge/defi-2-0-first-real-world-loan-is-financed-on-maker-fbe24675428f$",
   "^https://medium\\.com/centrifuge/rwa-market-the-aave-market-for-real-world-assets-goes-live-48976b984dde$",
