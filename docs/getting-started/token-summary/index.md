@@ -77,3 +77,13 @@ As part of CNF's commitment to transparency, progress and results will be report
 In March 2025, governance proposal [CP149](https://github.com/centrifuge/cps/blob/main/cps/CP149/CP149.md) introduced the current CFG token, consolidating legacy CFG from the deprecated Centrifuge Chain and Wrapped CFG (WCFG) on Ethereum into a single Ethereum native ERC-20 token at a **1:1** ratio. The change built on [CP141](https://github.com/centrifuge/cps/blob/main/cps/CP141/CP141.md), which migrated the Centrifuge protocol itself to a native EVM execution environment.
  
 The migration ran from **May 20, 2025 to December 4, 2025**, followed by a case by case review period that ended on **April 10, 2026**. **The migration is permanently closed** and legacy CFG and WCFG can no longer be exchanged for CFG. A full overview of the timeline and process is available in the [CFG Token Migration Process Recap](https://gov.centrifuge.io/t/cfg-token-migration-process-recap/7341).
+
+#### Token-to-Equity Proposal (CP172)
+
+On September 10, 2026, CFG holders approved [CP172](https://github.com/centrifuge/cps/blob/main/cps/CP172.md), a proposal to explore a transition from token to equity. The Snapshot vote closed with 73,291,052 CFG in favor, 990,548 against and 100,651 abstaining.
+
+CP172 contemplates re-registering the Centrifuge Network Foundation as a Cayman Islands exempted company able to issue shares, and offering eligible CFG holders the opportunity to subscribe for equity at a subscription price of one CFG token per share.
+
+This proposal remains subject to completion of legal structuring, approvals, and any conversion would be subject to eligibility requirements. Questions can be sent to tokenizedequity@centrifuge.io.
+
+*This summary is for information only. It is not an invitation or offer to sell, solicit or subscribe for any security or token.*
