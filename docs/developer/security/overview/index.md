@@ -7,11 +7,12 @@ title: Overview
 
 Centrifuge security highlights:
 * Live on mainnet since 2019 with zero exploits, across more than $3.5B in tokenized assets.
-* Fully immutable contracts, with emergency functions locked behind a 48-hour timelock.
 * 38 security reviews by 14 independent firms and researchers, including Spearbit, Sherlock, Blackthorn and yAudit.
 * Formally verified core protocol across the hub, spoke, and messaging contracts ([report](https://github.com/centrifuge/protocol/blob/main/docs/audits/2026-09-FV.pdf)).
 * $250,000 bug bounty program live on [Cantina](https://cantina.xyz/bounties/6cc9d51a-ac1e-4385-a88a-a3924e40c00e).
 * Real-time onchain monitoring through [Hypernative](https://www.hypernative.io/).
+
+The protocol codebase is fully immutable, and any emergency functions are locked behind a 48-hour timelock.
 
 ![](../images/auditors.png)
 
