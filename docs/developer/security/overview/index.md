@@ -6,7 +6,8 @@ title: Overview
 # Overview
 
 Centrifuge security highlights:
-* 33 security reviews to date for the Centrifuge protocol, including tier-1 audit firms Spearbit and Blackthorn.
+* 38 security reviews to date for the Centrifuge protocol, including tier-1 audit firms Spearbit and Blackthorn.
+* Formally verified core protocol, with machine-checked properties across the hub, spoke, and messaging contracts ([report](https://github.com/centrifuge/protocol/blob/main/docs/audits/2026-09-FV.pdf)).
 * Launched on mainnet in 2019, 0 exploits.
 * $250,000 bug bounty program live on [Cantina](https://cantina.xyz/bounties/6cc9d51a-ac1e-4385-a88a-a3924e40c00e).
 * Real-time onchain monitoring through [Hypernative](https://www.hypernative.io/).
