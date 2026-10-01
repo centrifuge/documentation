@@ -7,7 +7,7 @@ contributors:
 
 # Bridge share tokens
 
-Centrifuge supports native mint-and-burn bridging for any share token across any supported network. This guide explains how to use the bridge.
+Centrifuge supports native mint-and-burn bridging for any share token across the supported EVM networks. This guide explains how to use the bridge.
 
 ## Bridging
 
@@ -20,6 +20,9 @@ spoke.crosschainTransferShares{value: gas}(centrifugeId, poolId, scId, receiver,
 * `centrifugeId`
   The identifier of the target network.
   You can look up valid IDs on the [deployments](https://docs.centrifuge.io/developer/protocol/deployments/#centrifuge-ids) page.
+  :::warning
+  Share tokens can only be bridged between EVM networks. Solana (`centrifugeId` 7) and Stellar (`centrifugeId` 8) cannot be used as a target network.
+  :::
 
 * `poolId`
   The pool identifier from which the shares will be transferred.

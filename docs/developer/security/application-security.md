@@ -34,7 +34,7 @@ All web traffic is proxied through an enterprise CDN and security platform, prov
 
 ## Continuous security monitoring
 
-Security monitoring spans multiple layers: cloud infrastructure, CDN, application code, and onchain activity. Using a combination of managed security platforms and automated scanners, in many cases multiple layers and scanners are in place at differnt stages.
+Security monitoring spans multiple layers: cloud infrastructure, CDN, application code, and onchain activity. Using a combination of managed security platforms and automated scanners, in many cases multiple layers and scanners are in place at different stages.
 
 Includes:
 
@@ -47,6 +47,9 @@ Includes:
 
 ## Onchain monitoring
 
+Onchain activity is monitored in real time through [Hypernative](https://www.hypernative.io/), alongside our own dedicated monitoring tools.
+
+* Hypernative watches the deployed protocol contracts across all supported networks, flagging anomalous transactions, permission changes, and state changes as they happen.
+* Detections route to the on-call security rotation, so the guardian multisigs can pause the protocol if an incident requires it.
 * Dedicated monitoring tools track sensitive onchain operations: liquidity pool activity, cross-chain message relaying, and code deployment verification against published releases.
-* Real-time alerting flags anomalous transactions and state changes.
 
