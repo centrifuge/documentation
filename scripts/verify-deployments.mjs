@@ -57,6 +57,8 @@ const NETWORK_IDS = {
   optimism: '10',
   monad: '11',
   pharos: '12',
+  'x layer': '13',
+  arc: '14',
 };
 // Non-EVM networks are not covered by the API address lookups below; skip them.
 const NON_EVM_IDS = new Set(['7', '8']);
@@ -117,6 +119,14 @@ const CONTRACT_FIELDS = {
   'Batch Request Manager': 'batchRequestManager',
   'Refund Escrow Factory': 'refundEscrowFactory',
   'Subsidy Manager': 'subsidyManager',
+  'Accounting Token': 'accountingToken',
+  'Script Helpers': 'scriptHelpers',
+  'Onchain PM Factory': 'onchainPMFactory',
+  'Flash Loan Helper': 'flashLoanHelper',
+  'Approval Guard': 'approvalGuard',
+  'Circuit Breaker Guard': 'circuitBreakerGuard',
+  'Slippage Guard': 'slippageGuard',
+  'OnOffRamp Factory': 'onOffRampFactory',
 };
 
 const ADDR = /0x[0-9a-fA-F]{40}/;
